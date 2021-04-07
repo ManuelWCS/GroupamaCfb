@@ -1,0 +1,32 @@
+.fullHeader {
+    width: 100%;
+    height: 10vh;
+    background-color: #405270;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
+}
+
+.title {
+    font-size: 36px;
+    color: white;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bolder;
+    font-style: italic;
+    margin-right: 32px;
+}
+.logo {
+    width: 90px;
+    height: 80px;
+}
+
+@media screen and (min-width:367px) and (max-width:1024px) {
+
+    .fullHeader {
+      width: 100%;
+    }
+  
+  }
