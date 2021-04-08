@@ -9,17 +9,21 @@ function Filter() {
       </div>
 
       <div className="form">
-        <label htmlFor="Sexe"> Sexe :</label>
-        <select name="chooseSex" id="sex-select">
+        <label htmlFor="Category"> Catégorie :</label>
+        <select name="chooseCategory" id="select-category">
           <option value=""> Veuillez choisir</option>
-          <option value="homme">Homme</option>
-          <option value="femme">Femme</option>
-          <option value="non-précisé">Non-précisé</option>
+          <option value="enfants">Enfants (entre 6 et 13 ans) </option>
+          <option value="adolescents">
+            Adolescents garçons (entre 13 et 18 ans){" "}
+          </option>
+          <option value="adolescentes">
+            Adolescentes filles (entre 13 et 18 ans)
+          </option>
+          <option value="seniorH">Seniors Hommes (entre 18 et 35 ans)</option>
+          <option value="seniorF">Seniors Femmes (entre 18 et 35 ans)</option>
+          <option value="veteransH">Vétérans Hommes (35 ans et + )</option>
+          <option value="veteransF">Vétérans Femmes (35 ans et + )</option>
         </select>
-      </div>
-      <div className="form">
-        <label htmlFor="age"> Âge : </label>
-        <input id="number" type="number" value="17 ans"></input>
       </div>
       <div className="form">
         <label htmlFor="ZIP"> Code Postal :</label>
@@ -27,8 +31,7 @@ function Filter() {
       </div>
 
       <div className="form">
-          <button className="button"> TROUVER MON CLUB</button>
-
+        <button className="button"> TROUVER MON CLUB</button>
       </div>
     </div>
   );

@@ -4,13 +4,15 @@ import "./App.css";
 import Home from "./components/Home/Home";
 import Filter from "./components/filters/Filter";
 import Test from "./components/TEST/Test";
-
+import Loader from './components/loader/Loader';
 function App() {
   return (
     <div className="App">
       <Header />
       <Filter />
-      <Home />
+      <Loader/>
+
+       <Home /> 
     </div>
   );
 }

@@ -4,11 +4,6 @@
   
 }
 
-
-@media screen and (min-width:367px) and (max-width:1024px) {
-
-  .map {
-    width: 100%;
-  }
-
+.map {
+  margin:0;
 }
