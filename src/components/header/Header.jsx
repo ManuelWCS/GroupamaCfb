@@ -1,10 +1,11 @@
 import React from 'react'
 import './Header.css'
+import HeaderLogo from '../../assets/logoCFB.png'
 
 function Header() {
     return (
         <div className="fullHeader">   
-        <img className="logo" src="https://pngimg.com/uploads/football/football_PNG52775.png"/>
+        <img className="logo" src={HeaderLogo}/>
         <h1 className="title"> Clubs Région</h1>
 
             

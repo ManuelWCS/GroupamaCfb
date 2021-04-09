@@ -58,6 +58,7 @@ function Home() {
   }, []);
   console.log(instance);
 
+
   useEffect(() => {
     axios
       .get("http://localhost:8000/api/test")
