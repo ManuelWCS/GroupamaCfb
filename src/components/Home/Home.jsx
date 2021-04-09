@@ -88,9 +88,9 @@ function Home() {
       {location.loaded === true ?
           <Marker position={[location.coordinates.lat, location.coordinates.lng]}>
             <Popup>
-              <h2>{countClose} transactions ont eu lieu près de chez vous !</h2>
+              <h2>{countClose} Vous êtes ici !</h2>
             </Popup>
-            <Circle center={[location.coordinates.lat, location.coordinates.lng]} radius={20000} />
+            <Circle center={[location.coordinates.lat, location.coordinates.lng]} radius={10000} />
           </Marker>
           : null}
       {instance.map((instances) => {
