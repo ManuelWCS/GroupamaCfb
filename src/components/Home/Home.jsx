@@ -6,17 +6,18 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import LogoClub from "../../assets/LogoClub.png";
 import LogoLigue from "../../assets/logoLigue.png";
-import useGeolocation from '../Hook/useGeolocation';
+import useGeolocation from "../Hook/useGeolocation";
+import MarkerClusterGroup from 'react-leaflet-markercluster';
 
 function Home() {
   const [instance, setInstance] = useState([]);
   const [club, setClub] = useState([]);
   const location = useGeolocation();
   const [countClose, setCountClose] = useState(0);
-  const [latMin, setLatMin] = useState(0)
-  const [latMax, setLatMax] = useState(0)
-  const [lngMin, setLngMin] = useState(0)
-  const [lngMax, setLngMax] = useState(0)
+  const [latMin, setLatMin] = useState(0);
+  const [latMax, setLatMax] = useState(0);
+  const [lngMin, setLngMin] = useState(0);
+  const [lngMax, setLngMax] = useState(0);
 
   const markerInstance = L.icon({
     iconSize: [60, 60],
@@ -36,20 +37,19 @@ function Home() {
     iconUrl: LogoLigue,
   });
 
-
   useEffect(() => {
     if (location.loaded === true) {
-      setLatMin(location.coordinates.lat - 0.180227)
-      setLatMax(location.coordinates.lat + 0.180227)
-      setLngMin(location.coordinates.lng - 0.246349)
-      setLngMax(location.coordinates.lng + 0.246349)
+      setLatMin(location.coordinates.lat - 0.180227);
+      setLatMax(location.coordinates.lat + 0.180227);
+      setLngMin(location.coordinates.lng - 0.246349);
+      setLngMax(location.coordinates.lng + 0.246349);
     } else {
-      setLatMin(0)
-      setLatMin(0)
-      setLngMin(0)
-      setLngMax(0)
+      setLatMin(0);
+      setLatMin(0);
+      setLngMin(0);
+      setLngMax(0);
     }
-  }, [location])
+  }, [location]);
 
   useEffect(() => {
     axios
@@ -57,7 +57,6 @@ function Home() {
       .then((res) => setInstance(res.data));
   }, []);
   console.log(instance);
-
 
   useEffect(() => {
     axios
@@ -67,9 +66,16 @@ function Home() {
   console.log(club);
 
   let setMap = [47.830261, 1.93609];
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/react-leaflet-markercluster/dist/styles.min.css"
+    />
+  </head>;
 
   return (
-    
     <MapContainer center={setMap} zoom={8} className="map">
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -86,14 +92,17 @@ function Home() {
         </Popup>
       </Marker>
 
-      {location.loaded === true ?
-          <Marker position={[location.coordinates.lat, location.coordinates.lng]}>
-            <Popup>
-              <h2>{countClose} Vous êtes ici !</h2>
-            </Popup>
-            <Circle center={[location.coordinates.lat, location.coordinates.lng]} radius={10000} />
-          </Marker>
-          : null}
+      {location.loaded === true ? (
+        <Marker position={[location.coordinates.lat, location.coordinates.lng]}>
+          <Popup>
+            <h2>{countClose} Vous êtes ici !</h2>
+          </Popup>
+          <Circle
+            center={[location.coordinates.lat, location.coordinates.lng]}
+            radius={30000}
+          />
+        </Marker>
+      ) : null}
       {instance.map((instances) => {
         return (
           <Marker position={[instances.lat, instances.long]}>
@@ -104,8 +113,10 @@ function Home() {
           </Marker>
         );
       })}
-       
-      {club.slice(0, 1000).map((clubs) => {
+
+<MarkerClusterGroup>
+
+      {club.slice(0, 3590).map((clubs) => {
         return (
           <Marker position={[clubs.Lat, clubs.Long]} icon={markerClub}>
             <Popup>
@@ -116,7 +127,7 @@ function Home() {
           </Marker>
         );
       })}
-     
+      </MarkerClusterGroup>;
     </MapContainer>
   );
 }
