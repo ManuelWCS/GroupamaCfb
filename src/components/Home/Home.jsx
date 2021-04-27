@@ -4,10 +4,16 @@ import { MapContainer, Marker, Popup, TileLayer, Circle } from "react-leaflet";
 import L from "leaflet";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import LogoClub from "../../assets/LogoClub.png";
-import LogoLigue from "../../assets/logoLigue.png";
 import useGeolocation from "../Hook/useGeolocation";
-import MarkerClusterGroup from 'react-leaflet-markercluster';
+import MarkerClusterGroup from "react-leaflet-markercluster";
+import LogoClub from "../../assets/LogoClub.png";
+import LogoLigue from "../../assets/MarqueurLigue.png";
+import LogoLoiret from "../../assets/DistrictLoiret.png";
+import LogoEure from "../../assets/EureEtLoire.png";
+import LogoIndreLoire from "../../assets/IndreEtLoire.png";
+import LogoLoireCher from "../../assets/LoireEtCher.png";
+import LogoIndre from "../../assets/Marqueur-district-indre.png";
+import LogoCher from "../../assets/Marqueur cher (1).png";
 
 function Home() {
   const [instance, setInstance] = useState([]);
@@ -19,22 +25,52 @@ function Home() {
   const [lngMin, setLngMin] = useState(0);
   const [lngMax, setLngMax] = useState(0);
 
-  const markerInstance = L.icon({
-    iconSize: [60, 60],
-    iconAnchor: [40, 60],
-    iconUrl: Marker,
+  const MarkerLigue = L.icon({
+    iconSize: [50, 50],
+    iconAnchor: [23.5, 47],
+    iconUrl: LogoLigue,
+  });
+
+  const MarkerLoiret = L.icon({
+    iconSize: [50, 50],
+    iconAnchor: [23.5, 47],
+    iconUrl: LogoLoiret,
+  });
+
+  const MarkerEureEtLoire = L.icon({
+    iconSize: [50, 50],
+    iconAnchor: [23.5, 47],
+    iconUrl: LogoEure,
+  });
+
+  const MarkerIndreEtLoire = L.icon({
+    iconSize: [50, 50],
+    iconAnchor: [23.5, 47],
+    iconUrl: LogoIndreLoire,
+  });
+
+  const MarkerLoireEtCher = L.icon({
+    iconSize: [50, 50],
+    iconAnchor: [23.5, 47],
+    iconUrl: LogoLoireCher,
+  });
+
+  const MarkerIndre = L.icon({
+    iconSize: [50, 50],
+    iconAnchor: [23.5, 47],
+    iconUrl: LogoIndre,
+  });
+
+  const MarkerCher = L.icon({
+    iconSize: [50, 50],
+    iconAnchor: [23.5, 47],
+    iconUrl: LogoCher,
   });
 
   const markerClub = L.icon({
     iconSize: [50, 50],
     iconAnchor: [40, 60],
     iconUrl: LogoClub,
-  });
-
-  const markerLigue = L.icon({
-    iconSize: [70, 70],
-    iconAnchor: [40, 60],
-    iconUrl: LogoLigue,
   });
 
   useEffect(() => {
@@ -66,14 +102,6 @@ function Home() {
   console.log(club);
 
   let setMap = [47.830261, 1.93609];
-  <head>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/react-leaflet-markercluster/dist/styles.min.css"
-    />
-  </head>;
 
   return (
     <MapContainer center={setMap} zoom={8} className="map">
@@ -81,8 +109,7 @@ function Home() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
-
-      <Marker position={[47.830261, 1.93609]}>
+      <Marker position={[47.830261, 1.93609]} icon={MarkerLigue}>
         <Popup className="LiguePopUp">
           <a href="https://stage.foot-centre.fr">
             <img className="logoLigue" src={LogoLigue} />
@@ -91,7 +118,6 @@ function Home() {
           </a>
         </Popup>
       </Marker>
-
       {location.loaded === true ? (
         <Marker position={[location.coordinates.lat, location.coordinates.lng]}>
           <Popup>
@@ -103,31 +129,70 @@ function Home() {
           />
         </Marker>
       ) : null}
-      {instance.map((instances) => {
-        return (
-          <Marker position={[instances.lat, instances.long]}>
-            <Popup>
-              <h1>{instances.name}</h1>
-              <h1>{instances.info}</h1>
-            </Popup>
-          </Marker>
-        );
-      })}
+      <Marker position={[47.9168433, 1.9246721]} icon={MarkerLoiret}>
+        <Popup className="InstancePopUp">
+          <a href="https://stage.foot-centre.fr">
+            <img className="logoLigue" src={LogoLoiret} />
+            <h1>District de Football du Loiret </h1>
+            <h2> {instance.info} </h2>
+          </a>
+        </Popup>
+      </Marker>
 
-<MarkerClusterGroup>
+      <Marker position={[47.115630, 2.358490]} icon={MarkerCher}>
+        <Popup className="InstancePopUp">
+          <a href="https://stage.foot-centre.fr">
+            <img className="logoLigue" src={LogoCher} />
+            <h1>District de Football du Cher </h1>
+            <h2> {instance.info} </h2>
+          </a>
+        </Popup>
+      </Marker>
 
-      {club.slice(0, 3590).map((clubs) => {
-        return (
-          <Marker position={[clubs.Lat, clubs.Long]} icon={markerClub}>
-            <Popup>
-              <h1>{clubs.NomClub}</h1>
-              <h2>{clubs.AdressePostale}</h2>
-              <h3>{clubs.MailClub}</h3>
-            </Popup>
-          </Marker>
-        );
-      })}
-      </MarkerClusterGroup>;
+      <Marker position={[48.429180, 1.460210]} icon={MarkerEureEtLoire}>
+        <Popup className="InstancePopUp">
+          <a href="https://stage.foot-centre.fr">
+            <img className="logoLigue" src={LogoEure} />
+            <h1>District de Football d'Eure Et Loire </h1>
+            <h2> {instance.info} </h2>
+          </a>
+        </Popup>
+      </Marker>
+
+      <Marker position={[46.792670, 1.697260]} icon={MarkerIndre}>
+        <Popup className="InstancePopUp">
+          <a href="https://stage.foot-centre.fr">
+            <img className="logoLigue" src={LogoIndre} />
+            <h1>District de Football de l'Indre </h1>
+            <h2> {instance.info} </h2>
+          </a>
+        </Popup>
+      </Marker>
+
+      <Marker position={[47.379130, 0.726720]} icon={MarkerIndreEtLoire}>
+        <Popup className="InstancePopUp">
+          <a href="https://stage.foot-centre.fr">
+            <img className="logoLigue" src={LogoIndreLoire} />
+            <h1>District de Football de l'Indre </h1>
+            <h2> {instance.info} </h2>
+          </a>
+        </Popup>
+      </Marker>
+
+      <MarkerClusterGroup>
+        {club.slice(0, 3590).map((clubs) => {
+          return (
+            <Marker position={[clubs.Lat, clubs.Long]} icon={markerClub}>
+              <Popup>
+                <h1>{clubs.NomClub}</h1>
+                <h2>{clubs.AdressePostale}</h2>
+                <h3>{clubs.MailClub}</h3>
+              </Popup>
+            </Marker>
+          );
+        })}
+      </MarkerClusterGroup>
+      ;
     </MapContainer>
   );
 }
