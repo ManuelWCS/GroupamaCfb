@@ -5,15 +5,15 @@
   align-items: center;
   width: 100vw;
   position: absolute;
-  background-color: black;
+  backdrop-filter: blur(2px);
   z-index: 10000;
   animation-name: total;
   animation-duration: 1400s;
 }
 
 .tutoLoader {
-  width: 60vw;
-  height: 80vh;
+  width: 50vw;
+  height: 70vh;
 }
 
 .titles {

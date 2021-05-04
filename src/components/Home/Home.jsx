@@ -15,15 +15,22 @@ import LogoLoireCher from "../../assets/LoireEtCher.png";
 import LogoIndre from "../../assets/Marqueur-district-indre.png";
 import LogoCher from "../../assets/Marqueur cher (1).png";
 
+
+
 function Home() {
   const [instance, setInstance] = useState([]);
   const [club, setClub] = useState([]);
+  const [equipe, setEquipe] = useState([]);
   const location = useGeolocation();
   const [countClose, setCountClose] = useState(0);
   const [latMin, setLatMin] = useState(0);
   const [latMax, setLatMax] = useState(0);
   const [lngMin, setLngMin] = useState(0);
   const [lngMax, setLngMax] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+
+  
+  
 
   const MarkerLigue = L.icon({
     iconSize: [50, 50],
@@ -69,7 +76,7 @@ function Home() {
 
   const markerClub = L.icon({
     iconSize: [50, 50],
-    iconAnchor: [40, 60],
+    iconAnchor: [23.5, 47],
     iconUrl: LogoClub,
   });
 
@@ -101,6 +108,13 @@ function Home() {
   }, []);
   console.log(club);
 
+  useEffect(() => {
+    axios
+    .get("http://localhost:8000/api/equipes")
+    .then((res) => setEquipe(res.data))
+  }, []);
+  console.log(equipe)
+
   let setMap = [47.830261, 1.93609];
 
   return (
@@ -118,6 +132,7 @@ function Home() {
           </a>
         </Popup>
       </Marker>
+
       {location.loaded === true ? (
         <Marker position={[location.coordinates.lat, location.coordinates.lng]}>
           <Popup>
@@ -138,61 +153,74 @@ function Home() {
           </a>
         </Popup>
       </Marker>
-
-      <Marker position={[47.115630, 2.358490]} icon={MarkerCher}>
+      <Marker position={[47.11563, 2.35849]} icon={MarkerCher}>
         <Popup className="InstancePopUp">
           <a href="https://stage.foot-centre.fr">
-            <img className="logoLigue" src={LogoCher} />
+            <img className="logoInstance" src={LogoCher} />
             <h1>District de Football du Cher </h1>
             <h2> {instance.info} </h2>
           </a>
         </Popup>
       </Marker>
-
-      <Marker position={[48.429180, 1.460210]} icon={MarkerEureEtLoire}>
+      <Marker position={[48.42918, 1.46021]} icon={MarkerEureEtLoire}>
         <Popup className="InstancePopUp">
           <a href="https://stage.foot-centre.fr">
-            <img className="logoLigue" src={LogoEure} />
+            <img className="logoInstance" src={LogoEure} />
             <h1>District de Football d'Eure Et Loire </h1>
             <h2> {instance.info} </h2>
           </a>
         </Popup>
       </Marker>
-
-      <Marker position={[46.792670, 1.697260]} icon={MarkerIndre}>
+      <Marker position={[46.79267, 1.69726]} icon={MarkerIndre}>
         <Popup className="InstancePopUp">
           <a href="https://stage.foot-centre.fr">
-            <img className="logoLigue" src={LogoIndre} />
+            <img className="logoInstance" src={LogoIndre} />
             <h1>District de Football de l'Indre </h1>
             <h2> {instance.info} </h2>
           </a>
         </Popup>
       </Marker>
-
-      <Marker position={[47.379130, 0.726720]} icon={MarkerIndreEtLoire}>
+      <Marker position={[47.37913, 0.72672]} icon={MarkerIndreEtLoire}>
         <Popup className="InstancePopUp">
           <a href="https://stage.foot-centre.fr">
-            <img className="logoLigue" src={LogoIndreLoire} />
+            <img className="logoInstance" src={LogoIndreLoire} />
             <h1>District de Football de l'Indre </h1>
             <h2> {instance.info} </h2>
           </a>
         </Popup>
       </Marker>
-
-      <MarkerClusterGroup>
+      
+      <MarkerClusterGroup
+        onClusterClick={(cluster) =>
+          console.warn(
+            "cluster-click",
+            cluster,
+            cluster.layer.getAllChildMarkers()
+          )
+        }
+      >
         {club.slice(0, 3590).map((clubs) => {
           return (
-            <Marker position={[clubs.Lat, clubs.Long]} icon={markerClub}>
-              <Popup>
-                <h1>{clubs.NomClub}</h1>
-                <h2>{clubs.AdressePostale}</h2>
-                <h3>{clubs.MailClub}</h3>
+            <Marker position={[clubs.Lat, clubs.Longitude]} icon={markerClub}>
+              <Popup className="clubPopUp">
+                <h1>{clubs.NomClub}</h1> <br></br>
+                
+                <h2>{clubs.AdressePostale}</h2><br></br>
+                <h3>{clubs.MailClub}</h3><br></br>
+                <p>
+                  {" "}
+                  Le championnat : {clubs.NomChampionnat}<br></br>
+                  L'équipe : {clubs.NomEquipe}<br></br>
+                  ID : {clubs.NumClub}<br></br>
+                  Nom : {clubs.NomClub}<br></br>
+                </p>
               </Popup>
             </Marker>
           );
         })}
       </MarkerClusterGroup>
-      ;
+      
+     
     </MapContainer>
   );
 }
