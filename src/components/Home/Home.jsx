@@ -14,6 +14,9 @@ import LogoIndreLoire from "../../assets/IndreEtLoire.png";
 import LogoLoireCher from "../../assets/LoireEtCher.png";
 import LogoIndre from "../../assets/Marqueur-district-indre.png";
 import LogoCher from "../../assets/Marqueur cher (1).png";
+import Header from '../header/Header'
+import Filters from '../filters/Filter'
+import Loader from '../loader/Loader'
 
 
 
@@ -94,12 +97,6 @@ function Home() {
     }
   }, [location]);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/instances")
-      .then((res) => setInstance(res.data));
-  }, []);
-  console.log(instance);
 
   useEffect(() => {
     axios
@@ -118,6 +115,12 @@ function Home() {
   let setMap = [47.830261, 1.93609];
 
   return (
+    <div>
+      <Header/>
+      <Filters/>
+      <Loader/>
+      
+   
     <MapContainer center={setMap} zoom={8} className="map">
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -151,7 +154,7 @@ function Home() {
             <h1>District de Football du Loiret </h1>
             <h2> {instance.info} </h2>
           </a>
-        </Popup>
+        </Popup> 
       </Marker>
       <Marker position={[47.11563, 2.35849]} icon={MarkerCher}>
         <Popup className="InstancePopUp">
@@ -199,9 +202,9 @@ function Home() {
           )
         }
       >
-        {club.slice(0, 3590).map((clubs) => {
+        {club.map((clubs, index) => {
           return (
-            <Marker position={[clubs.Lat, clubs.Longitude]} icon={markerClub}>
+            <Marker position={[clubs.Lat, clubs.Longitude]} icon={markerClub} >
               <Popup className="clubPopUp">
                 <h1>{clubs.NomClub}</h1> <br></br>
                 
@@ -214,6 +217,7 @@ function Home() {
                   ID : {clubs.NumClub}<br></br>
                   Nom : {clubs.NomClub}<br></br>
                 </p>
+
               </Popup>
             </Marker>
           );
@@ -222,7 +226,11 @@ function Home() {
       
      
     </MapContainer>
+    </div> 
+    
   );
 }
+
+
 
 export default Home;

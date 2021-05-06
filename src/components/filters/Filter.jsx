@@ -1,10 +1,12 @@
 import React from "react";
 import "./Filter.css";
+import Button from '../../assets/button.png';
+import { Link } from 'react-router-dom';
 
 function Filter() {
   return (
     <div className="fullFilter">
-      <div className="form">
+      <div className="filterTitle">
         <h1> Veuillez remplir ces champs :</h1>
       </div>
 
@@ -29,10 +31,14 @@ function Filter() {
         <label htmlFor="ZIP"> Code Postal :</label>
         <input id="ZIP" type="text" value="45000"></input>
       </div>
-
       <div className="form">
-        <button className="button"> TROUVER MON CLUB</button>
+        <Link to="/trouvetonclub">  <img classname="button" src={Button}>
+          
+          </img> </Link>
+       
       </div>
+
+      
     </div>
   );
 }
