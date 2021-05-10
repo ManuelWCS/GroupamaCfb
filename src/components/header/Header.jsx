@@ -8,7 +8,7 @@ function Header() {
         <div className="fullHeader">   
          <Link to="/">
         <img className="logo" src={HeaderLogo}/></Link>
-        <h1 className="title"> Clubs Région</h1>
+        
         
         
 

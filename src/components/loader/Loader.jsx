@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Loader.css";
-import LogoLigue from "../../assets/logoLigue.png";
-import user from "../../assets/userss.png";
-import loader from "../../assets/web.png"
+
+import IntroVideo from '../../assets/CFBVideo.mp4'
 
 function Loader() {
   const [page, setPage] = useState([]);
@@ -18,7 +17,14 @@ function Loader() {
   return (
     <div onClick={showPage} className="total">
       <div className="total-part">
-        <img className="tutoLoader" src={loader}/>
+        {/* <img className="tutoLoader" src={loader}/> */}
+        <video className="tutoLoader"  autoPlay={true}>
+          <source src={IntroVideo}
+          type="video/mp4">
+            
+
+          </source>
+        </video>
         
       
       </div>

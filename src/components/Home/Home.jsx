@@ -18,8 +18,6 @@ import Header from '../header/Header'
 import Filters from '../filters/Filter'
 import Loader from '../loader/Loader'
 
-
-
 function Home() {
   const [instance, setInstance] = useState([]);
   const [club, setClub] = useState([]);
@@ -115,13 +113,17 @@ function Home() {
   let setMap = [47.830261, 1.93609];
 
   return (
-    <div>
+    <div className="FullHome">
       <Header/>
       <Filters/>
       <Loader/>
       
+      
    
     <MapContainer center={setMap} zoom={8} className="map">
+      
+    
+      
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -135,6 +137,7 @@ function Home() {
           </a>
         </Popup>
       </Marker>
+     
 
       {location.loaded === true ? (
         <Marker position={[location.coordinates.lat, location.coordinates.lng]}>

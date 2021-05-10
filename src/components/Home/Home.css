@@ -1,16 +1,15 @@
 .leaflet-container {
-  width: 100%;
+  width: 100vw;
   height: 80vh;
-  
 }
 
 .map {
-  margin:0;
+  margin: 0;
 }
 
-
-
-.markercluster-map { height: 90vh; }
+.markercluster-map {
+  height: 90vh;
+}
 
 .logoLigue {
   width: 150px;
@@ -31,7 +30,7 @@
   top: 0;
   left: 0;
 }
- 
+
 .box {
   position: relative;
   width: 70%;
@@ -45,9 +44,9 @@
   border: 1px solid #999;
   overflow: auto;
 }
- 
+
 .close-icon {
-  content: 'x';
+  content: "x";
   cursor: pointer;
   position: fixed;
   right: calc(15% - 30px);
@@ -60,4 +59,18 @@
   text-align: center;
   border: 1px solid #999;
   font-size: 20px;
+}
+
+@media only screen and (min-width: 321px) and (max-width: 767px) {
+  .map {
+    height: 80vh;
+    width: 100vw;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .map {
+    height: 80vh;
+    width: 100vw;
+  }
 }

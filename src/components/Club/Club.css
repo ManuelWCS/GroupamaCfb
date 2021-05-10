@@ -1,11 +1,47 @@
 .fullClub { 
     width: 100vw;
-    height: 100vh;
-    background-color: salmon;
+    height: 100vh ;
+
+   
 }
 
 .Filtres {
     display: flex;
-    justify-content: space-around;
-    margin-top:32px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    background-image: url('../../assets/filtres.png');
+    height: 10vh;
+}
+
+.Filtres select {
+    margin-top:42px;
+}
+
+
+
+h1 {
+    color: black; 
+}
+
+.results {
+
+   display: flex;
+   flex-direction: column;
+}
+
+.resultsDiv {
+    height: 220px;
+    width: 550px;
+    background-color: white ;
+    margin-bottom: 16px;
+    box-shadow: 2px 2px 2px 2px ;
+    margin-left:86px;
+    margin-top: 86px;
+    padding : 16px 16px 16px 16px;
+    border-radius: 10px;
+}
+
+.titleCard {
+    border-bottom : 1px solid black;
 }

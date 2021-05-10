@@ -3,26 +3,23 @@
     height: 10vh;
     background-color: white;
     display: flex;
-    justify-content: space-around;
-}
-
-.filterTitle {
-    margin-left:184px;
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
+    justify-content: flex-end;
+    background-image: url('../../assets/filtres.png');
+    background-size: cover;
+    background-position: center;
+    
 }
 
 .form {
     display: flex; 
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 img {
-    height: 165px;
+    height: 155px;
     width: 250px;
+    margin-top: 16px;
 }
 
 img:hover {
@@ -30,16 +27,33 @@ img:hover {
 }
 
 
-
-@media screen and (min-width:367px) and (max-width:1024px) {
-
+@media only screen and (min-width: 321px) and (max-width: 767px) {
     .fullFilter {
-      width: 100%;
-      height: 15vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: flex-start;
+        display: flex;
+        justify-content: flex-start;
     }
-  
+    
+    img.button {
+        width: 150px;
+        height: 102px;
+        margin-top: 12px;
+        
+    }
   }
+  
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    
+    .fullFilter {
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    img.button {
+        width: 150px;
+        height: 102px;
+        margin-top: 12px;
+        
+    }
+    
+  }
+  

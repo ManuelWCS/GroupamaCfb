@@ -7,7 +7,9 @@
 	justify-content: space-between;
 	align-items: center;
 	align-content: center;
-    background-color: #405270;
+    background-image: url('../../assets/header.png');
+    background-size: cover;
+    background-position: center;
 }
 
 .title {
@@ -22,5 +24,48 @@
     width: 200px;
     height: 180px;
     margin-top: 54px;
+    margin-left: 12vw;
     
 }
+
+@media only screen and (min-width: 321px) and (max-width: 767px) {
+    .fullHeader {
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .logo {
+        width: 120px;
+        height: 120px;
+        margin:0;
+    }
+
+    .title {
+        font-size :32px;
+        margin-left: 32px;
+    }
+  }
+  
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .fullHeader {
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        
+    }
+    .logo {
+        width: 120px;
+        height: 120px;
+        margin:0;
+    }
+
+    .title {
+        font-size :32px;
+        margin-left: 32px;
+    }
+  }
+  
