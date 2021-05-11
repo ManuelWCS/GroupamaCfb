@@ -16,27 +16,27 @@
     justify-content: flex-end;
 }
 
-img {
+.button {
     height: 155px;
     width: 250px;
     margin-top: 16px;
 }
 
-img:hover {
-    
-}
 
-
-@media only screen and (min-width: 321px) and (max-width: 767px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
     .fullFilter {
         display: flex;
         justify-content: flex-start;
+        flex-direction: row-reverse;
+        height: 5vh;
+        align-items: center;
     }
     
-    img.button {
-        width: 150px;
-        height: 102px;
-        margin-top: 12px;
+     .button {
+        width: 100px;
+        height: 70px;
+        margin-top: 1.5vh;
+        margin-right: 2vw;
         
     }
   }
@@ -46,14 +46,18 @@ img:hover {
     .fullFilter {
         display: flex;
         justify-content: flex-start;
+        flex-direction: row-reverse;
     }
     
     img.button {
-        width: 150px;
-        height: 102px;
+        width: 170px;
+        height: 122px;
         margin-top: 12px;
+        margin-right: 5vw;
         
     }
+
+    
     
   }
   

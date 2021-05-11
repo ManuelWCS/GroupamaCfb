@@ -8,30 +8,24 @@
   backdrop-filter: blur(2px);
   z-index: 10000;
   animation-name: total;
-  animation-duration: 30s;
-}
-
-.tutoLoader {
-  width: 50vw;
-  height: 100%;
-
+  animation-duration: 15s;
 }
 
 
-
-.titles {
-  color: black;
-}
 
 @keyframes total {
   0% {
     opacity: 100%;
+    /* transform: scale(.3); */
+    border-radius: 100%;
   }
-  90% {
+  80% {
     opacity: 100%;
+    /* transform: scale(1.5); */
   }
   100% {
     opacity: 0%;
+    
   }
 }
 
@@ -40,45 +34,76 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 60vh;
 }
 
-.total-part-div {
-  width: 90vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  /* background-color: white; */
-  border: 3px solid #5a9449;
+
+
+.tutoLoader {
+  height: 50vh;
+  width: 50vw;
+  border-radius: 15px;
+  /* animation-name: stretch;
+  animation-duration: 1.5s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running; */
 }
 
-.tuto {
-  width: 200%;
-  height: 30vh;
-  /* background-color: white; */
-  display: flex;
-  justify-content: space-around;
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .tutoLoader {
+    height: 100vh;
+    width: 80vw;
+  }
+
+  .total {
+    height: 100vh;
+    width: 100vw;
+  }
+
+
+  @keyframes total {
+    0% {
+      opacity: 100%;
+      /* transform: scale(.3); */
+      border-radius: 100%;
+    }
+    80% {
+      opacity: 100%;
+    }
+    100% {
+      opacity: 0%;
+      
+    }
+  }
 }
 
-.tuto1 {
-  width: 100%;
-  height: 30vh;
-  /* background-color: green; */
-  margin: 16px 16px 16px 16px;
-}
-.tuto2 {
-  width: 100%;
-  height: 30vh;
-  /* background-color: red; */
-  margin: 16px 16px 16px 16px;
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+ 
+  .total {
+    display: flex;
+    opacity: 0%;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    position: absolute;
+    backdrop-filter: blur(2px);
+    z-index: 10000;
+    animation-name: total;
+    animation-duration: 15s;
+  }
+
+  .tutoLoader {
+    height: 100vh;
+    width: 80vw;
+  }
+
 }
 
-.tuto3 {
-  width: 100%;
-  height: 30vh;
-  /* background-color: blue; */
-  margin: 16px 16px 16px 16px;
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
 }

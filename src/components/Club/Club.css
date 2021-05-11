@@ -1,47 +1,125 @@
-.fullClub { 
-    width: 100vw;
-    height: 100vh ;
-
-   
+.fullClub {
+  width: 100vw;
+  height: 100vh;
 }
 
 .Filtres {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 32px;
-    background-image: url('../../assets/filtres.png');
-    height: 10vh;
+  display: flex;
+  margin-bottom: 32px;
+  background-image: url("../../assets/filtres.png");
+  height: 10vh;
+  flex-direction: row;
 }
 
 .Filtres select {
-    margin-top:42px;
+  margin-top: 42px;
 }
 
-
-
 h1 {
-    color: black; 
+  color: black;
+}
+
+.red {
+  color:#C1272D;
+  margin-right: 5px;
+}
+
+.blue {
+  color :#528BB9;
+  margin-right: 5px;
 }
 
 .results {
+  display: flex;
+  flex-direction: column;
 
-   display: flex;
-   flex-direction: column;
 }
 
 .resultsDiv {
-    height: 220px;
-    width: 550px;
-    background-color: white ;
-    margin-bottom: 16px;
-    box-shadow: 2px 2px 2px 2px ;
-    margin-left:86px;
-    margin-top: 86px;
-    padding : 16px 16px 16px 16px;
-    border-radius: 10px;
+  height: 220px;
+  width: 550px;
+  background-color: white;
+  margin-bottom: 16px;
+  box-shadow: 2px 2px 2px 2px;
+  margin-left: 86px;
+  margin-top: 86px;
+  padding: 16px 16px 16px 16px;
+  border-radius: 10px;
 }
 
 .titleCard {
-    border-bottom : 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.selectCity {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .fullClub {
+    width: 100vw;
+    display: block;
+  }
+
+  .Filtres {
+    width: 100vw;
+    display: block;
+  }
+
+  .categoryFilter {
+    display: block;
+    width: 100vw;
+    margin:0;
+    height: 17vh;
+    background-image: url("../../assets/filtres.png");
+  }
+
+  .categoryFilter select {
+    width: 70vw;
+  }
+
+  .categoryFilter label {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+  .filtresTitle {
+    margin-top: 10vh;
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 5vh;
+  }
+  .selectCity {
+    margin-right: 2.2vw;
+  }
+
+  .results {
+    width: 100vw;
+    display: block;
+  }
+
+  .resultsDiv {
+    display: none;
+  }
+  .resultsDivMobile {
+    width: 100vw;
+
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  
+  .categoryFilter {
+    display: block;
+    width: 100vw;
+    margin:0;
+    height: 15vh;
+    background-image: url("../../assets/filtres.png");
+  }
+
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
 }

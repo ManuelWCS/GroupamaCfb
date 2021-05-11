@@ -3,7 +3,6 @@ import Header from "../header/Header.jsx";
 import "./Club.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { MapContainer, TileLayer } from "react-leaflet";
 
 function Club() {
   const [equipe, setEquipe] = useState([]);
@@ -61,9 +60,8 @@ function Club() {
             <option value="veteransH">Vétérans Hommes (35 ans et + )</option>
             <option value="veteransF">Vétérans Femmes (35 ans et + )</option>
           </select>
-        </div>
 
-        <form onSubmit={refreshPage}>
+        <form onSubmit={refreshPage} className="selectCity">
           <label htmlFor="City"> Votre ville :</label>
           <select
             onChange={(e) => {
@@ -81,16 +79,17 @@ function Club() {
           </select>
         </form>
       </div>
+            </div>
 
-      <h1>
-        Les équipes près de {ville} pour la catégorie {category}{" "}
+      <h1 className="filtresTitle">
+        Les équipes près de <span className="red">{ville} </span>pour la catégorie <span className="blue">{category}{" "}</span>
       </h1>
 
       <div className="results">
         {club
           .filter((clubs) => clubs.Localite === `${ville}`)
           .map((clubs) => (
-            <div className="resultsDiv">
+            <div className="resultsDiv" className="resultsDivMobile">
               <h3 className="titleCard">Club : {clubs.NomChampionnat} </h3>
               <br></br>
               <h3>Equipe : {clubs.NomEquipe}</h3>
@@ -106,8 +105,13 @@ function Club() {
               </h3>{" "}
             </div>
           ))}
+          
+      </div>
+      <div className="Map">
+        
       </div>
     </div>
+
   );
 }
 
