@@ -36,7 +36,7 @@ h1 {
 }
 
 .resultsDiv {
-  height: 220px;
+  height: 2900px;
   width: 550px;
   background-color: white;
   margin-bottom: 16px;
@@ -47,6 +47,11 @@ h1 {
   border-radius: 10px;
 }
 
+.resultsDivMobile {
+  height: 200px;
+}
+
+
 .titleCard {
   border-bottom: 1px solid black;
 }
@@ -55,6 +60,19 @@ h1 {
   display: flex;
   justify-content: center;
   align-content: center;
+}
+
+button {
+  margin-left: 90vh;
+}
+
+.leaflet-container2 {
+  width: 25vw;
+  height: 25vh;
+}
+
+.filtresTitle {
+  margin-top:15vh;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
@@ -107,7 +125,6 @@ h1 {
 
   }
 }
-
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   
   .categoryFilter {
