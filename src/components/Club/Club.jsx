@@ -52,10 +52,10 @@ function Club() {
       <Header />
       <div className="Filtres">
         <div className="categoryFilter">
-          <label htmlFor="Category"> Catégorie :</label>
           <select
             name="chooseCategory"
             id="select-category"
+            className="selector"
             placeholder="Choisir categorie"
             onChange={(e) => {
               setSelectedCategory(e.target.value);
@@ -71,8 +71,8 @@ function Club() {
           </select>
 
           <form onSubmit={refreshPage} className="selectCity">
-            <label htmlFor="City"> Votre ville :</label>
             <select
+            className="selector2"
               onChange={(e) => {
                 setVille(e.target.value);
               }}
@@ -87,7 +87,7 @@ function Club() {
               })}
             </select>
           </form>
-          <button onClick={testFct}>Test</button>
+          <button className="buttonClub" onClick={testFct}>Test</button>
         </div>
       </div>
 

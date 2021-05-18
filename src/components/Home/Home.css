@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gothic+A1&display=swap');
+
 .leaflet-container {
   width: 100vw;
   height: 80vh;
@@ -17,9 +19,8 @@
 }
 
 .instance img {
-  height: 1000px;}
-
-
+  height: 1000px;
+}
 
 .logoInstance {
   width: 200px;
@@ -50,7 +51,41 @@
   overflow: auto;
 }
 
+.NameClub {
+  font-family: "Bebas Neue", cursive;
+  color: rgba(193, 39, 45);
+  text-align: center;
+  font-size: 3em;
+}
 
+.details {
+  display: flex;
+  flex-direction: row;
+  margin-right: 1em;
+}
+
+.icons {
+  width: 6em;
+  height: 4em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.mailIcon {
+  width: 4em;
+  height: 3em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.Content {
+  font-size: 1.5em;
+  font-family: 'Gothic A1', sans-serif;}
+
+  .clubPopUp {
+    display: flex;
+    flex-direction: column;
+  }
 
 @media only screen and (min-width: 321px) and (max-width: 767px) {
   .map {

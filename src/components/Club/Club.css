@@ -5,8 +5,12 @@
 
 .Filtres {
   display: flex;
+  width: 100%;
   margin-bottom: 32px;
-  background-image: url("../../assets/filtres.png");
+  background-image: url("../../assets/Habillage/inputs.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 10vh;
   flex-direction: row;
 }
@@ -15,24 +19,43 @@
   margin-top: 42px;
 }
 
-h1 {
-  color: black;
+.categoryFilter {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  left: 10vw;
+  position: relative;
+}
+
+.selector {
+  position: relative;
+  left: 40%;
+  top: -20%;
+}
+
+.selector2 {
+  right: 22%;
+  top: -20%;
+  position: relative;
+}
+
+.buttonClub {
+  top: 14%;
 }
 
 .red {
-  color:#C1272D;
+  color: #c1272d;
   margin-right: 5px;
 }
 
 .blue {
-  color :#528BB9;
+  color: #528bb9;
   margin-right: 5px;
 }
 
 .results {
   display: flex;
   flex-direction: column;
-
 }
 
 .resultsDiv {
@@ -50,7 +73,6 @@ h1 {
 .resultsDivMobile {
   height: 200px;
 }
-
 
 .titleCard {
   border-bottom: 1px solid black;
@@ -72,7 +94,7 @@ button {
 }
 
 .filtresTitle {
-  margin-top:15vh;
+  margin-top: 15vh;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
@@ -89,7 +111,7 @@ button {
   .categoryFilter {
     display: block;
     width: 100vw;
-    margin:0;
+    margin: 0;
     height: 17vh;
     background-image: url("../../assets/filtres.png");
   }
@@ -114,7 +136,7 @@ button {
 
   .results {
     width: 100vw;
-    display: block;
+    display: flex;
   }
 
   .resultsDiv {
@@ -122,19 +144,17 @@ button {
   }
   .resultsDivMobile {
     width: 100vw;
-
+    background-color: red;
   }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  
   .categoryFilter {
     display: block;
     width: 100vw;
-    margin:0;
+    margin: 0;
     height: 15vh;
     background-image: url("../../assets/filtres.png");
   }
-
 }
 
 /* Desktops and laptops ----------- */

@@ -11,15 +11,17 @@ import LogoLigue from "../../assets/MarqueurLigue.png";
 import LogoLoiret from "../../assets/DistrictLoiret.png";
 import LogoEure from "../../assets/EureEtLoire.png";
 import LogoIndreLoire from "../../assets/IndreEtLoire.png";
-import LogoLoireCher from "../../assets/LoireEtCher.png";
-import LogoIndre from "../../assets/Marqueur-district-indre.png";
+import LogoLoireCher from "../../assets/Marqueurs/LoireCher2.png"
+import LogoIndre from "../../assets/indre.png";
 import LogoCher from "../../assets/Marqueur cher (1).png";
 import Header from "../header/Header";
 import Filters from "../filters/Filter";
 import Loader from "../loader/Loader";
+import loc from '../../assets/PopUp/localisation.png';
+import mail from '../../assets/PopUp/mail.png';
+import tel from '../../assets/PopUp/tel.png'
 
 function Home() {
-  const [instance, setInstance] = useState([]);
   const [club, setClub] = useState([]);
   const [equipe, setEquipe] = useState([]);
   const location = useGeolocation();
@@ -56,7 +58,7 @@ function Home() {
 
   const MarkerLoireEtCher = L.icon({
     iconSize: [50, 50],
-    iconAnchor: [23.5, 47],
+    iconAnchor: [40, 110],
     iconUrl: LogoLoireCher,
   });
 
@@ -124,7 +126,6 @@ function Home() {
             <a href="https://service-clubs.foot-centre.fr/">
               <img className="logoLigue" src={LogoLigue} />
               <h1>Ligue Centre Val de Loire </h1>
-              <h2> {instance.info} </h2>
             </a>
           </Popup>
         </Marker>
@@ -148,7 +149,6 @@ function Home() {
             <a href="https://stage.foot-centre.fr">
               <img className="logoInstance" src={LogoCher} />
               <h1>District de Football du Cher </h1>
-              <h2> {instance.info} </h2>
             </a>
           </Popup>
         </Marker>
@@ -157,7 +157,6 @@ function Home() {
             <a href="https://stage.foot-centre.fr">
               <img className="logoInstance" src={LogoEure} />
               <h1>District de Football d'Eure Et Loire </h1>
-              <h2> {instance.info} </h2>
             </a>
           </Popup>
         </Marker>
@@ -166,7 +165,6 @@ function Home() {
             <a href="https://stage.foot-centre.fr">
               <img className="logoInstance" src={LogoIndre} />
               <h1>District de Football de l'Indre </h1>
-              <h2> {instance.info} </h2>
             </a>
           </Popup>
         </Marker>
@@ -175,17 +173,22 @@ function Home() {
             <a href="https://stage.foot-centre.fr">
               <img className="logoInstance" src={LogoIndreLoire} />
               <h1>District de Football de l'Indre </h1>
-              <h2> {instance.info} </h2>
             </a>
           </Popup>
         </Marker>
-        <Marker position={[47.9168433, 1.9246721]} icon={MarkerLoiret} src="instance">
+        <Marker position={[47.9168433, 1.9246721]} icon={MarkerLoiret} >
           <Popup className="InstancePopUp">
             <a href="">
               <img className="logoInstance" src={LogoLoiret} />
               <h1>District de Football du Loiret </h1>
-              <h2> {instance.info} </h2>
             </a>
+          </Popup>
+        </Marker>
+        <Marker position={[47.5766331, 1.3026806]} icon={MarkerLoireEtCher}>
+          <Popup className="InstancePopUp">
+            <img className="logoInstance" src={LogoLoireCher}/>
+            <h1>District de Football du Loir et Cher</h1>
+
           </Popup>
         </Marker>
 
@@ -202,22 +205,21 @@ function Home() {
             return (
               <Marker position={[clubs.Lat, clubs.Longitude]} icon={markerClub}>
                 <Popup className="clubPopUp">
-                  <h1>{clubs.NomClub}</h1> <br></br>
-                  <h2>{clubs.AdressePostale}</h2>
+
+                  <h1 className="NameClub">{clubs.NomClub}</h1> <br></br>
+                <div className="details">
+                    <img src={loc} className="icons" />
+                  <h2 className="Content">{clubs.AdressePostale}</h2>
+                  </div>
                   <br></br>
-                  <h3>{clubs.MailClub}</h3>
+                  <div className="details">
+                  <img src={mail} className="mailIcon" />
+
+                  <h3 className="Content">{clubs.MailClub}</h3>
+
+                  </div>
                   <br></br>
-                  <p>
-                    {" "}
-                    Le championnat : {clubs.NomChampionnat}
-                    <br></br>
-                    L'équipe : {clubs.NomEquipe}
-                    <br></br>
-                    ID : {clubs.NumClub}
-                    <br></br>
-                    Nom : {clubs.NomClub}
-                    <br></br>
-                  </p>
+               
                 </Popup>
               </Marker>
             );
