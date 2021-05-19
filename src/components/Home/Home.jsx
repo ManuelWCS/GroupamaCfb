@@ -139,7 +139,7 @@ function Home() {
             </Popup>
             <Circle
               center={[location.coordinates.lat, location.coordinates.lng]}
-              radius={30000}
+              radius={10000}
             />
           </Marker>
         ) : null}
@@ -218,8 +218,9 @@ function Home() {
                   <h3 className="Content">{clubs.MailClub}</h3>
 
                   </div>
-                  <br></br>
                
+
+                  
                 </Popup>
               </Marker>
             );

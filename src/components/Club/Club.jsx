@@ -4,6 +4,8 @@ import "./Club.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { MapContainer, Marker, Popup, TileLayer, Circle } from "react-leaflet";
+import homebtn from "../../assets/Boutons/home.png";
+import { Link } from "react-router-dom";
 
 function Club() {
   const [equipe, setEquipe] = useState([]);
@@ -35,17 +37,21 @@ function Club() {
       .then((res) => setCategory(res.data));
   }, []);
   console.log(category);
- 
 
   function refreshPage() {
     window.location.reload();
   }
 
   function testFct() {
-    setClubChoisi(club.filter((clubs) => clubs.Localite === `${ville}` && clubs.Category === `${SelectedCategory}`));
+    setClubChoisi(
+      club.filter(
+        (clubs) =>
+          clubs.Localite === `${ville}` &&
+          clubs.Category === `${SelectedCategory}`
+      )
+    );
     console.log(clubChoisi);
   }
-
 
   return (
     <div className="fullClub">
@@ -72,7 +78,7 @@ function Club() {
 
           <form onSubmit={refreshPage} className="selectCity">
             <select
-            className="selector2"
+              className="selector2"
               onChange={(e) => {
                 setVille(e.target.value);
               }}
@@ -87,7 +93,12 @@ function Club() {
               })}
             </select>
           </form>
-          <button className="buttonClub" onClick={testFct}>Test</button>
+          <button className="buttonClub" onClick={testFct}>
+            Test
+          </button>
+          <Link to="/">
+            <img className="homebtn" src={homebtn} alt="acceuil" />
+          </Link>
         </div>
       </div>
 
@@ -98,7 +109,11 @@ function Club() {
 
       <div className="results">
         {club
-          .filter((clubs) => clubs.Localite === `${ville}` && clubs.Category === `${SelectedCategory}`)
+          .filter(
+            (clubs) =>
+              clubs.Localite === `${ville}` &&
+              clubs.Category === `${SelectedCategory}`
+          )
           .map((clubs, index) => (
             <div
               className="resultsDiv"
@@ -118,9 +133,7 @@ function Club() {
                 Mail et personne à contacter{clubs.MailClub} {clubs.Civilite}{" "}
                 {clubs.Nom} {clubs.Prenom}{" "}
               </h3>{" "}
-              <h3>
-                CATEGORIE {clubs.Category}
-              </h3>{" "}
+              <h3>CATEGORIE {clubs.Category}</h3>{" "}
             </div>
           ))}
       </div>
