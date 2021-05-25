@@ -21,7 +21,7 @@
   top:-6%;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 767px) {
+@media only screen and (min-width: 319px) and (max-width: 767px) {
   .fullHeader {
     width: 100vw;
     display: flex;
@@ -30,7 +30,7 @@
     background-image: url("../../assets/header.png");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position:left;
     height: 10vh;
     margin-bottom: 0;
   }

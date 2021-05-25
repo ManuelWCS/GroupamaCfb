@@ -5,9 +5,11 @@ import { Link} from "react-router-dom";
 function Header() {
   return (
    
-      <div className="fullHeader"></div>
+      <div className="fullHeader"><div className="headerMobile"></div>
+      
+      </div>
     
   );
 }
 
-export default Header;
+export default Header; 

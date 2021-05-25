@@ -6,6 +6,7 @@ import axios from "axios";
 import { MapContainer, Marker, Popup, TileLayer, Circle } from "react-leaflet";
 import homebtn from "../../assets/Boutons/home.png";
 import { Link } from "react-router-dom";
+import buttonImg from '../../assets/button.png'
 
 function Club() {
   const [equipe, setEquipe] = useState([]);
@@ -93,33 +94,38 @@ function Club() {
               })}
             </select>
           </form>
-          <button className="buttonClub" onClick={testFct}>
-            Test
-          </button>
+          
+        </div>
+
+        <div className="buttons"> 
           <Link to="/">
             <img className="homebtn" src={homebtn} alt="acceuil" />
           </Link>
+          <button className="buttonClub" onClick={testFct}> 
+            Test
+          </button>
         </div>
       </div>
 
       <h1 className="filtresTitle">
         Les équipes près de <span className="red">{ville} </span>pour la
-        catégorie <span className="blue"> </span>
+        <br></br> catégorie <span className="blue"> {SelectedCategory} </span>
       </h1>
+    <div className="resultsAndMap">
 
       <div className="results">
         {club
           .filter(
             (clubs) =>
-              clubs.Localite === `${ville}` &&
-              clubs.Category === `${SelectedCategory}`
-          )
-          .map((clubs, index) => (
-            <div
+            clubs.Localite === `${ville}` &&
+            clubs.Category === `${SelectedCategory}`
+            )
+            .map((clubs, index) => (
+              <div
               className="resultsDiv"
               className="resultsDivMobile"
               key={index}
-            >
+              >
               <h3 className="titleCard">Club : {clubs.NomChampionnat} </h3>
               <br></br>
               <h3>Equipe : {clubs.NomEquipe}</h3>
@@ -136,8 +142,7 @@ function Club() {
               <h3>CATEGORIE {clubs.Category}</h3>{" "}
             </div>
           ))}
-      </div>
-
+        </div>
       <div className="Map">
         <MapContainer
           center={[47.830261, 1.93609]}
@@ -158,6 +163,8 @@ function Club() {
             </Popup>
           </Marker>
         </MapContainer>
+      </div>
+
       </div>
     </div>
   );

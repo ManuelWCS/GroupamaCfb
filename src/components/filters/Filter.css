@@ -1,62 +1,56 @@
 .fullFilter {
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    justify-content: flex-end;
-    background-image: url('../../assets/Habillage/BandeauhabillagePNG.png');
-    background-size: cover;
-    background-position: center;
-    
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-end;
+  background-image: url("../../assets/filtres.png");
+  background-size: cover;
+  background-position: center;
+  margin: 0;
 }
 
 .form {
-    display: flex; 
-    align-items: center;
-    justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .button {
-    height: 155px;
-    width: 250px;
-    margin-top: 16px;
+  height: 155px;
+  width: 250px;
+  margin-top: 16px;
 }
 
-
-@media only screen and (min-width: 320px) and (max-width: 767px) {
-    .fullFilter {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: row-reverse;
-        height: 5vh;
-        align-items: center;
-    }
-    
-     .button {
-        width: 100px;
-        height: 70px;
-        margin-top: 1.5vh;
-        margin-right: 2vw;
-        
-    }
+@media only screen and (min-width: 319px) and (max-width: 767px) {
+  .fullFilter {
+    display: flex;
+    width: 100vw;
+    background-image: url("../../assets/filtres.png");
+    background-size: cover;
+    background-position: center;
+    height: 5vh;
+    justify-content: flex-end;
   }
-  
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    
-    .fullFilter {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: row-reverse;
-    }
-    
-    img.button {
-        width: 170px;
-        height: 122px;
-        margin-top: 12px;
-        margin-right: 5vw;
-        
-    }
 
-    
-    
+  .button {
+    width: 120px;
+    height: 90px;
+    margin-top: 1.5vh;
+    margin-right: 2vw;
   }
-  
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .fullFilter {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+  }
+
+  img.button {
+    width: 170px;
+    height: 122px;
+    margin-top: 12px;
+    margin-right: 5vw;
+  }
+}

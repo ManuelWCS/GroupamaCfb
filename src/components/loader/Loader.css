@@ -11,8 +11,6 @@
   animation-duration: 15s;
 }
 
-
-
 @keyframes total {
   0% {
     opacity: 100%;
@@ -21,11 +19,11 @@
   }
   80% {
     opacity: 100%;
+    border-radius: 25%;
     /* transform: scale(1.5); */
   }
   100% {
     opacity: 0%;
-    
   }
 }
 
@@ -36,8 +34,6 @@
   align-items: center;
   height: 60vh;
 }
-
-
 
 .tutoLoader {
   height: 50vh;
@@ -53,7 +49,6 @@
   animation-play-state: running; */
 }
 
-
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .tutoLoader {
     height: 100vh;
@@ -61,29 +56,11 @@
   }
 
   .total {
-    height: 100vh;
-    width: 100vw;
-  }
-
-
-  @keyframes total {
-    0% {
-      opacity: 100%;
-      /* transform: scale(.3); */
-      border-radius: 100%;
-    }
-    80% {
-      opacity: 100%;
-    }
-    100% {
-      opacity: 0%;
-      
-    }
+    display: none;
   }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
- 
   .total {
     display: flex;
     opacity: 0%;
@@ -101,7 +78,6 @@
     height: 100vh;
     width: 80vw;
   }
-
 }
 
 /* Desktops and laptops ----------- */
