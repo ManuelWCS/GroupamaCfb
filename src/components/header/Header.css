@@ -1,5 +1,5 @@
 .fullHeader {
-  width: 100%;
+  width: 100vw;
   height: 10vh;
   display: flex;
   flex-direction: row;
@@ -12,36 +12,15 @@
   background-position: center;
 }
 
-.logo {
-  width: 220px;
-  height: 200px;
-  margin-top: 2vh;
-  margin-left: 15vw;
-  position: absolute;
-  top:-6%;
-}
-
 @media only screen and (min-width: 319px) and (max-width: 767px) {
   .fullHeader {
     width: 100vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-image: url("../../assets/header.png");
+    background-image: url("../../assets/Habillage/header.png");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position:left;
+    background-position: center;
     height: 10vh;
     margin-bottom: 0;
-  }
-  .logo {
-    width: 70px;
-    height: 70px;
-    margin-top: 2vh;
-    margin-left: 12.5vw;
-    position: absolute;
-    top: -1%;
-    left: -2%
   }
 }
 
@@ -51,23 +30,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-image: url("../../assets/header.png");
+    background-image: url("../../assets/Habillage/header.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center ;
+    background-position: center;
     height: 10vh;
     margin-bottom: 0;
   }
-  .logo {
-    width: 118px;
-    height: 118px;
-    margin-top: 0.5vh;
-    margin-left: 13vw;
-    position: fixed;
-    top:-3%
-  }
-
-
 }
 
 /* Desktops and laptops ----------- */
