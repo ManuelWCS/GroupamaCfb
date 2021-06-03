@@ -135,7 +135,7 @@ function Home() {
             position={[location.coordinates.lat, location.coordinates.lng]}
           >
             <Popup>
-              <h2>{countClose} Vous êtes ici !</h2>
+              <h2> Vous êtes ici !</h2>
             </Popup>
             <Circle
               center={[location.coordinates.lat, location.coordinates.lng]}
