@@ -23,7 +23,6 @@ import tel from '../../assets/PopUp/tel.png'
 
 function Home() {
   const [club, setClub] = useState([]);
-  const [equipe, setEquipe] = useState([]);
   const location = useGeolocation();
   const [countClose, setCountClose] = useState(0);
   const [latMin, setLatMin] = useState(0);
@@ -101,12 +100,7 @@ function Home() {
   }, []);
   console.log(club);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/equipes")
-      .then((res) => setEquipe(res.data));
-  }, []);
-  console.log(equipe);
+
 
   let setMap = [47.830261, 1.93609];
 
