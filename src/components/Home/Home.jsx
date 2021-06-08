@@ -95,7 +95,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/test")
+      .get("https://api-clubs-cvl.herokuapp.com/clubsfiltered")
       .then((res) => setClub(res.data));
   }, []);
   console.log(club);
