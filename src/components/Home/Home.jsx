@@ -197,19 +197,19 @@ function Home() {
         >
           {club.map((clubs, index) => {
             return (
-              <Marker position={[clubs.Lat, clubs.Longitude]} icon={markerClub}>
+              <Marker position={[clubs.Latitude, clubs.Longitude]} icon={markerClub}>
                 <Popup className="clubPopUp">
 
-                  <h1 className="NameClub">{clubs.NomClub}</h1> <br></br>
+                  <h1 className="NameClub">{clubs.name}</h1> <br></br>
                 <div className="details">
                     <img src={loc} className="icons" />
-                  <h2 className="Content">{clubs.AdressePostale}</h2>
+                  <h2 className="Content">{clubs.adresse}</h2>
                   </div>
                   <br></br>
                   <div className="details">
                   <img src={mail} className="mailIcon" />
 
-                  <h3 className="Content">{clubs.MailClub}</h3>
+                  <h3 className="Content">{clubs.mail}</h3>
 
                   </div>
                
