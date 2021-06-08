@@ -8,7 +8,7 @@ import homebtn from "../../assets/Boutons/home.png";
 import { Link } from "react-router-dom";
 import LogoClub from "../../assets/Marqueurs/SelectedClub.png";
 import L from "leaflet";
-
+import logomail from '../../assets/Boutons/contact.png'
 function Club() {
   const [villeclub, setVilleClub] = useState([]);
   const [ville, setVille] = useState([]);
@@ -61,6 +61,8 @@ function Club() {
     console.log(clubChoisi);
     console.log(SelectedCategory);
   }
+
+  
 
   return (
     <div className="fullClub">
@@ -132,18 +134,20 @@ function Club() {
                 className="resultsDivMobile"
                 key={index}
               >
-                <h3 className="titleCard">Club : {clubs.name} </h3>
-                <br></br>
-                <h3>Equipe : {clubs.Equipe}</h3>
-                <h3>
+                
+                <div className="box">
+                <h1 className="titleCard">{clubs.name} </h1>
+
+                <h3 className="cardDescription"> Equipe : {clubs.Equipe}</h3>
+                <h3 className="cardDescription">
                   {" "}
-                  Ville du club : {clubs.Adresse} {clubs.Latitude}{" "}
-                  {clubs.Longitude}{" "}
+                  Adresse club : <span className="red">{clubs.Adresse} </span>
                 </h3>
-                <h3> Adresse du club : {clubs.AdressePostale} </h3>
-                <h3>Nom de l'équipe : {clubs.NomEquipe} </h3>
-                <h3>Mail et personne à contacter{clubs.Mail} </h3>{" "}
-                <h3>CATEGORIE {clubs.Category}</h3>{" "}
+                <h3 className="cardDescription">CATEGORIE : <span className="blue"> {clubs.Category} </span></h3>{" "}
+                
+               <div className="contact"> <img src={logomail}  className="iconContact" /> </div>
+               <div className="hidden"> {clubs.Mail}</div>
+                </div>
               </div>
             ))}
         </div>

@@ -1,7 +1,6 @@
 .fullClub {
   width: 100vw;
   height: 100vh;
-  
 }
 
 .Filtres {
@@ -16,7 +15,7 @@
   flex-direction: row;
 }
 
-.Filtres select  {
+.Filtres select {
   margin-top: 5vh;
 }
 
@@ -26,7 +25,6 @@
   justify-content: center;
   position: relative;
   flex-direction: row;
-
 }
 
 .selector {
@@ -35,7 +33,6 @@
   top: -20%;
   width: 250px;
 }
-
 
 .selector2 {
   right: 60%;
@@ -65,7 +62,7 @@
   width: 50vw;
 }
 
-.resultsDiv {
+/* .resultsDiv {
   height: 2900px;
   width: 550px;
   background-color: blue;
@@ -75,14 +72,17 @@
   margin-top: 86px;
   padding: 16px 16px 16px 16px;
   border-radius: 10px;
-}
+} */
 
-.resultsDivMobile {
-  height: 200px;
-}
 
+.cardDescription {
+  margin-top: 4px;
+  margin-bottom: 4px;
+
+}
 .titleCard {
-  border-bottom: 1px solid black;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .selectCity {
@@ -91,7 +91,14 @@
   align-content: center;
 }
 
-
+.box {
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+    border-radius: 20px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
 
 .leaflet-container2 {
   width: 30vw;
@@ -108,13 +115,12 @@
   height: 50px;
   margin-top: 4px;
 }
- 
+
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
-
-} 
+}
 
 .resultsAndMap {
   display: flex;
@@ -122,36 +128,64 @@
   justify-content: space-around;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 767px) {
- 
-.Filtres {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+.iconContact {
+  width: 105px;
+  height: 65px;
+
 }
-.categoryFilter {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;}
 
-.selectCity {
+.contact {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;}
+  justify-content: flex-end;
+}
 
-.buttons {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;}
 
-.homebtn {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;}
-  
+
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .Filtres {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .categoryFilter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .selectCity {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .homebtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  
 }
 
 /* Desktops and laptops ----------- */
