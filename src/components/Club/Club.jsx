@@ -10,15 +10,12 @@ import LogoClub from "../../assets/Marqueurs/SelectedClub.png";
 import L from "leaflet";
 
 function Club() {
-  const [equipe, setEquipe] = useState([]);
+  const [villeclub, setVilleClub] = useState([]);
   const [ville, setVille] = useState([]);
   const [category, setCategory] = useState([]);
   const [SelectedCategory, setSelectedCategory] = useState([]);
   const [club, setClub] = useState([]);
   const [clubChoisi, setClubChoisi] = useState([]);
-  const [position, setPosition] = useState([]);
-  const [clubLat, setclubLat] = useState([]);
-  const [clubLong, setclubLong] = useState([]);
 
   const markerClub = L.icon({
     iconSize: [50, 50],
@@ -28,23 +25,23 @@ function Club() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/villes")
-      .then((res) => setEquipe(res.data));
+      .get("https://api-clubs-cvl.herokuapp.com/cities")
+      .then((res) => setVilleClub(res.data));
   }, []);
-  console.log(equipe);
+  console.log(villeclub);
   console.log(SelectedCategory);
   console.log(ville);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/equipes")
+      .get("https://api-clubs-cvl.herokuapp.com/allteams")
       .then((res) => setClub(res.data));
   }, []);
   console.log(club);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/category")
+      .get("https://api-clubs-cvl.herokuapp.com/categories")
       .then((res) => setCategory(res.data));
   }, []);
   console.log(category);
@@ -57,7 +54,7 @@ function Club() {
     setClubChoisi(
       club.filter(
         (clubs) =>
-          clubs.Localite === `${ville}` &&
+          clubs.adresse === `${ville}` &&
           clubs.Category === `${SelectedCategory}`
           
       )
@@ -84,8 +81,8 @@ function Club() {
           >
             {category.map((categorie, key) => {
               return (
-                <option key={key} value={categorie.Category}>
-                  {categorie.Category}{" "}
+                <option key={key} value={categorie.name}>
+                  {categorie.name}{" "}
                 </option>
               );
             })}
@@ -98,11 +95,11 @@ function Club() {
                 setVille(e.target.value);
               }}
             >
-              {equipe.map((equipes, key) => {
+              {villeclub.map((villeclub, key) => {
                 return (
-                  <option key={key} value={equipes.Localite}>
+                  <option key={key} value={villeclub.name}>
                     {" "}
-                    {equipes.Localite}{" "}
+                    {villeclub.name}{" "}
                   </option>
                 );
               })}
@@ -129,7 +126,7 @@ function Club() {
           {club
             .filter(
               (clubs) =>
-                clubs.Localite === `${ville}` &&
+                clubs.Adresse === `${ville}` &&
                 clubs.Category === `${SelectedCategory}`
             )
             .map((clubs, index) => (
@@ -138,12 +135,12 @@ function Club() {
                 className="resultsDivMobile"
                 key={index}
               >
-                <h3 className="titleCard">Club : {clubs.NomChampionnat} </h3>
+                <h3 className="titleCard">Club : {clubs.Name} </h3>
                 <br></br>
                 <h3>Equipe : {clubs.NomEquipe}</h3>
                 <h3>
                   {" "}
-                  Ville du club : {clubs.Localite} {clubs.Lat} {clubs.Longitude}{" "}
+                  Ville du club : {clubs.adresse} {clubs.Latitude} {clubs.Longitude}{" "}
                 </h3>
                 <h3> Adresse du club : {clubs.AdressePostale} </h3>
                 <h3>Nom de l'équipe : {clubs.NomEquipe} </h3>
