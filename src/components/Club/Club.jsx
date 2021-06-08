@@ -54,15 +54,12 @@ function Club() {
     setClubChoisi(
       club.filter(
         (clubs) =>
-          clubs.adresse === `${ville}` &&
+          clubs.Localite === `${ville}` &&
           clubs.Category === `${SelectedCategory}`
-          
       )
     );
     console.log(clubChoisi);
     console.log(SelectedCategory);
-    console.log(clubChoisi.Lat)
-    
   }
 
   return (
@@ -125,9 +122,9 @@ function Club() {
         <div className="results">
           {club
             .filter(
-              (clubs) =>
-                clubs.Adresse === `${ville}` &&
-                clubs.Category === `${SelectedCategory}`
+              (club) =>
+                club.Localite === `${ville}` &&
+                club.Category === `${SelectedCategory}`
             )
             .map((clubs, index) => (
               <div
@@ -135,19 +132,17 @@ function Club() {
                 className="resultsDivMobile"
                 key={index}
               >
-                <h3 className="titleCard">Club : {clubs.Name} </h3>
+                <h3 className="titleCard">Club : {clubs.name} </h3>
                 <br></br>
-                <h3>Equipe : {clubs.NomEquipe}</h3>
+                <h3>Equipe : {clubs.Equipe}</h3>
                 <h3>
                   {" "}
-                  Ville du club : {clubs.adresse} {clubs.Latitude} {clubs.Longitude}{" "}
+                  Ville du club : {clubs.Adresse} {clubs.Latitude}{" "}
+                  {clubs.Longitude}{" "}
                 </h3>
                 <h3> Adresse du club : {clubs.AdressePostale} </h3>
                 <h3>Nom de l'équipe : {clubs.NomEquipe} </h3>
-                <h3>
-                  Mail et personne à contacter{clubs.MailClub} {clubs.Civilite}{" "}
-                  {clubs.Nom} {clubs.Prenom}{" "}
-                </h3>{" "}
+                <h3>Mail et personne à contacter{clubs.Mail} </h3>{" "}
                 <h3>CATEGORIE {clubs.Category}</h3>{" "}
               </div>
             ))}
@@ -175,11 +170,11 @@ function Club() {
             {clubChoisi.map((clubsChoisis, index) => {
               return (
                 <Marker
-                  position={[clubsChoisis.Lat, clubsChoisis.Longitude]}
+                  position={[clubsChoisis.Latitude, clubsChoisis.Longitude]}
                   icon={markerClub}
                 >
                   <Popup className="NameClub">
-                    <h1>{clubsChoisis.AdressePostale}</h1>
+                    <h1>{clubsChoisis.Adresse}</h1>
                   </Popup>
                 </Marker>
               );
