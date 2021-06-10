@@ -14,9 +14,21 @@
 }
 
 .logoLigue {
-  width: 180px;
-  height: 210px;
+  width: 150px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: 150px;
+
 }
+
+.popupContain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 
 .instance img {
   height: 1000px;

@@ -11,15 +11,15 @@ import LogoLigue from "../../assets/MarqueurLigue.png";
 import LogoLoiret from "../../assets/DistrictLoiret.png";
 import LogoEure from "../../assets/EureEtLoire.png";
 import LogoIndreLoire from "../../assets/IndreEtLoire.png";
-import LogoLoireCher from "../../assets/Marqueurs/LoireCher2.png"
+import LogoLoireCher from "../../assets/Marqueurs/LoireCher2.png";
 import LogoIndre from "../../assets/indre.png";
 import LogoCher from "../../assets/Marqueur cher (1).png";
 import Header from "../header/Header";
 import Filters from "../filters/Filter";
 import Loader from "../loader/Loader";
-import loc from '../../assets/PopUp/localisation.png';
-import mail from '../../assets/PopUp/mail.png';
-import tel from '../../assets/PopUp/tel.png'
+import loc from "../../assets/PopUp/localisation.png";
+import mail from "../../assets/PopUp/mail.png";
+import tel from "../../assets/PopUp/tel.png";
 
 function Home() {
   const [club, setClub] = useState([]);
@@ -38,7 +38,7 @@ function Home() {
   });
 
   const MarkerLoiret = L.icon({
-    iconSize: [50, 50],
+    iconSize: [70, 60],
     iconAnchor: [23.5, 47],
     iconUrl: LogoLoiret,
   });
@@ -56,13 +56,13 @@ function Home() {
   });
 
   const MarkerLoireEtCher = L.icon({
-    iconSize: [50, 50],
+    iconSize: [50, 60],
     iconAnchor: [40, 110],
     iconUrl: LogoLoireCher,
   });
 
   const MarkerIndre = L.icon({
-    iconSize: [50, 50],
+    iconSize: [70, 50],
     iconAnchor: [23.5, 47],
     iconUrl: LogoIndre,
   });
@@ -100,8 +100,6 @@ function Home() {
   }, []);
   console.log(club);
 
-
-
   let setMap = [47.830261, 1.93609];
 
   return (
@@ -117,10 +115,11 @@ function Home() {
         />
         <Marker position={[47.830261, 1.93609]} icon={MarkerLigue}>
           <Popup className="LiguePopUp">
-            <a href="https://service-clubs.foot-centre.fr/">
-              <img className="logoLigue" src={LogoLigue} />
-              <h1>Ligue Centre Val de Loire </h1>
-            </a>
+            <div className="popupContain ">
+              <a href="https://service-clubs.foot-centre.fr/">
+                <h1>Ligue Centre Val de Loire </h1>
+              </a>
+            </div>
           </Popup>
         </Marker>
 
@@ -137,52 +136,48 @@ function Home() {
             />
           </Marker>
         ) : null}
-       
+
         <Marker position={[47.11563, 2.35849]} icon={MarkerCher}>
           <Popup className="InstancePopUp">
-            <a href="https://stage.foot-centre.fr">
-              <img className="logoInstance" src={LogoCher} />
+            <a href="https://cher.fff.fr/competitions/">
               <h1>District de Football du Cher </h1>
             </a>
           </Popup>
         </Marker>
         <Marker position={[48.42918, 1.46021]} icon={MarkerEureEtLoire}>
           <Popup className="InstancePopUp">
-            <a href="https://stage.foot-centre.fr">
-              <img className="logoInstance" src={LogoEure} />
+            <a href="https://eure-et-loir.fff.fr/competitions/">
               <h1>District de Football d'Eure Et Loire </h1>
             </a>
           </Popup>
         </Marker>
         <Marker position={[46.79267, 1.69726]} icon={MarkerIndre}>
           <Popup className="InstancePopUp">
-            <a href="https://stage.foot-centre.fr">
-              <img className="logoInstance" src={LogoIndre} />
+            <a href="https://indre.fff.fr/competitions/">
               <h1>District de Football de l'Indre </h1>
             </a>
           </Popup>
         </Marker>
         <Marker position={[47.37913, 0.72672]} icon={MarkerIndreEtLoire}>
           <Popup className="InstancePopUp">
-            <a href="https://stage.foot-centre.fr">
-              <img className="logoInstance" src={LogoIndreLoire} />
-              <h1>District de Football de l'Indre </h1>
+            <a href="https://indre-et-loire.fff.fr/competitions/">
+              <h1>District de Football de l'Indre Et Loire </h1>
             </a>
           </Popup>
         </Marker>
-        <Marker position={[47.9168433, 1.9246721]} icon={MarkerLoiret} >
+        <Marker position={[47.9168433, 1.9246721]} icon={MarkerLoiret}>
           <Popup className="InstancePopUp">
-            <a href="">
-              <img className="logoInstance" src={LogoLoiret} />
+            <a href="https://foot-loiret.fff.fr/competitions/">
               <h1>District de Football du Loiret </h1>
             </a>
           </Popup>
         </Marker>
         <Marker position={[47.5766331, 1.3026806]} icon={MarkerLoireEtCher}>
           <Popup className="InstancePopUp">
-            <img className="logoInstance" src={LogoLoireCher}/>
-            <h1>District de Football du Loir et Cher</h1>
+            <a href="https://loir-et-cher.fff.fr/competitions/">
 
+            <h1>District de Football du Loir-et-Cher</h1>
+            </a>
           </Popup>
         </Marker>
 
@@ -197,24 +192,22 @@ function Home() {
         >
           {club.map((clubs, index) => {
             return (
-              <Marker position={[clubs.Latitude, clubs.Longitude]} icon={markerClub}>
+              <Marker
+                position={[clubs.Latitude, clubs.Longitude]}
+                icon={markerClub}
+              >
                 <Popup className="clubPopUp">
-
                   <h1 className="NameClub">{clubs.name}</h1> <br></br>
-                <div className="details">
+                  <div className="details">
                     <img src={loc} className="icons" />
-                  <h2 className="Content">{clubs.adresse}</h2>
+                    <h2 className="Content">{clubs.adresse}</h2>
                   </div>
                   <br></br>
                   <div className="details">
-                  <img src={mail} className="mailIcon" />
+                    <img src={mail} className="mailIcon" />
 
-                  <h3 className="Content">{clubs.mail}</h3>
-
+                    <h3 className="Content">{clubs.mail}</h3>
                   </div>
-               
-
-                  
                 </Popup>
               </Marker>
             );

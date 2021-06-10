@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
 .fullClub {
   width: 100vw;
   height: 100vh;
@@ -55,11 +58,17 @@
   color: #528bb9;
   margin-right: 5px;
 }
+::-webkit-scrollbar-thumb:hover {
+  background: #555;}
 
 .results {
   display: flex;
   flex-direction: column;
   width: 50vw;
+  height: 70vh;
+  overflow: scroll;
+  overflow-x: hidden;
+ 
 }
 
 /* .resultsDiv {
@@ -76,13 +85,21 @@
 
 
 .cardDescription {
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-family: 'Nanum Gothic', sans-serif;
+  font: size 1em;
+  color: #3E3E3E;
+  /* letter-spacing: 0.08em; */
 
 }
 .titleCard {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  text-align: center;
+  color:#BC4344;
+  font-family: 'Nanum Gothic', sans-serif;
+
 }
 
 .selectCity {
@@ -98,6 +115,8 @@
     border-radius: 20px;
     margin-top: 16px;
     margin-bottom: 16px;
+    border: 2px solid  #868686;
+   
 }
 
 .leaflet-container2 {
@@ -108,8 +127,14 @@
 .filtresTitle {
   margin-top: 10vh;
   margin-left: 2em;
+  font-family: 'Nanum Gothic', sans-serif;
+
 }
 
+input, select, textarea {
+  font-family: 'Nanum Gothic', sans-serif;
+
+}
 .homebtn {
   width: 50px;
   height: 50px;
@@ -129,8 +154,8 @@
 }
 
 .iconContact {
-  width: 105px;
-  height: 65px;
+  width: 45px;
+  height: 45px;
 
 }
 
@@ -153,6 +178,20 @@
   background-color: rgba(0,0,0,0.5); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
+}
+
+.cardImgTxt {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.iconsClubs {
+  height: 25px;
+  width: 25px;
+  margin-right: 1em;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {

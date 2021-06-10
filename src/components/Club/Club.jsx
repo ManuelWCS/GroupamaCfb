@@ -8,7 +8,12 @@ import homebtn from "../../assets/Boutons/home.png";
 import { Link } from "react-router-dom";
 import LogoClub from "../../assets/Marqueurs/SelectedClub.png";
 import L from "leaflet";
-import logomail from '../../assets/Boutons/contact.png'
+import logomail from "../../assets/Boutons/contact.png";
+import geologo from "../../assets/PopUp/localisation.png";
+import maillogo from "../../assets/PopUp/mail.png";
+import ballon from "../../assets/Habillage/balloon.png";
+import '../Home/Home.css'
+
 function Club() {
   const [villeclub, setVilleClub] = useState([]);
   const [ville, setVille] = useState([]);
@@ -61,8 +66,6 @@ function Club() {
     console.log(clubChoisi);
     console.log(SelectedCategory);
   }
-
-  
 
   return (
     <div className="fullClub">
@@ -134,19 +137,24 @@ function Club() {
                 className="resultsDivMobile"
                 key={index}
               >
-                
                 <div className="box">
-                <h1 className="titleCard">{clubs.name} </h1>
-
-                <h3 className="cardDescription"> Equipe : {clubs.Equipe}</h3>
-                <h3 className="cardDescription">
-                  {" "}
-                  Adresse club : <span className="red">{clubs.Adresse} </span>
-                </h3>
-                <h3 className="cardDescription">CATEGORIE : <span className="blue"> {clubs.Category} </span></h3>{" "}
-                
-               <div className="contact"> <img src={logomail}  className="iconContact" /> </div>
-               <div className="hidden"> {clubs.Mail}</div>
+                  <h1 className="titleCard">{clubs.Equipe}</h1>
+                  <div className="cardImgTxt">
+                    <img src={geologo} className="iconsClubs" />
+                    <h3 className="cardDescription"> {clubs.Adresse}</h3>
+                  </div>
+                  <div className="cardImgTxt">
+                    <img src={maillogo} className="iconsClubs" />
+                    <h3 className="cardDescription">{clubs.Mail}</h3>{" "}
+                  </div>
+                  <div className="cardImgTxt">
+                    <img src={ballon} className="iconsClubs" />
+                    <h3 className="cardDescription">{clubs.Category}</h3>{" "}
+                  </div>
+                  
+                  <div className="contact">
+                    <img src={logomail} className="iconContact" />{" "}
+                  </div>
                 </div>
               </div>
             ))}
@@ -163,11 +171,7 @@ function Club() {
             />
             <Marker position={[47.830261, 1.93609]}>
               <Popup className="LiguePopUp">
-                <a href="https://service-clubs.foot-centre.fr/">
-                  <img className="logoLigue" />
-                  <h1>Ligue Centre Val de Loire </h1>
-                  <h2> </h2>
-                </a>
+                <h1>Ligue Centre Val de Loire </h1>
               </Popup>
             </Marker>
 
@@ -177,8 +181,8 @@ function Club() {
                   position={[clubsChoisis.Latitude, clubsChoisis.Longitude]}
                   icon={markerClub}
                 >
-                  <Popup className="NameClub">
-                    <h1>{clubsChoisis.Adresse}</h1>
+                  <Popup className="clubPopUp">
+                    <h1 className="NameClub">{clubsChoisis.Adresse}</h1>
                   </Popup>
                 </Marker>
               );
