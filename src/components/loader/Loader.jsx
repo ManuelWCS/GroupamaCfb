@@ -16,7 +16,7 @@ function Loader() {
   return (
     <div onClick={showPage} className="total">
       <div className="total-part">
-        {/* <img className="tutoLoader" src={loader}/> */}
+        { <img className="tutoLoader" src={Loader}/> }
         <video className="tutoLoader" autoPlay={true}>
           <source src={IntroVideo} type="video/mp4"></source>
         </video>

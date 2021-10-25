@@ -16,7 +16,6 @@
   .fullHeader {
     width: 100vw;
     background-image: url("../../assets/Habillage/Bandeaumobile.png");
-    background-size: contain;
     height: 10vh;
     margin-bottom: 0;
   }

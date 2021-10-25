@@ -223,6 +223,43 @@ input, select, textarea {
     flex-direction: column;
     justify-content: space-around;
   }
+
+  .Filtres {
+    display: block;
+    width: 100%;
+  background-image: url("../../assets/filtres.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 10vh;
+  flex-direction: flex-end;
+}
+
+.categoryFilter {
+  display: none;
+}
+
+.homebtn {
+  display: none;
+}
+
+.filtresTitle {
+  text-align: center;
+  margin: auto;
+}
+
+.results {
+  display: none;
+}
+
+.resultsAndMap {
+  display: flex;
+  width: 100%;
+}
+
+.Map {
+  display: flex;
+}
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 }
