@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../header/Header.jsx";
-import "./Club.css";
+// import "./Club.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";

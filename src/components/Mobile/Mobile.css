@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+
+
 .pageMobile {
   width: 100%;
   height: 100%;
@@ -8,12 +12,16 @@
   align-items: center;
   align-content: center;
   margin: auto;
+  background-image: url('../../assets/Habillage/backgroundPhone2.png');
+  background-position: center fixed; 
+  background-size: cover;
+
 
 }
 
 .toolBar {
-  background-color: white;
-  height: 100px;
+  background-color: blue;
+  height: 50px;
   width: 100vw;
   border: 1px solid white;
   display: flex;
@@ -22,6 +30,9 @@
   justify-content: flex-end;
   align-items: flex-start;
   align-content: center;
+  background-image: url('../../assets/filtres.png');
+  margin-top: 0;
+  margin-bottom: 2vh;
 }
 
 .popUp {
@@ -29,6 +40,8 @@
 }
 .openModalBtn {
   margin-right: 12px;
+  background-image: url('../../assets/Boutons/howitworks.png');
+  height: 25px;
 }
 
 .leaflet-container3 {
@@ -36,8 +49,8 @@
   height: 50vh;
   margin-bottom: 4vh;
   z-index: 0;
-
 }
+
 
 .modalBackground {
   width: 100vw;
@@ -123,6 +136,11 @@
   background-color: crimson;
 }
 
+.btnImg {
+  height: 100px;
+  width: 150px;
+}
+
 .illustration {
   width: 100%;
   background-color: rgb(255, 255, 255);
@@ -155,7 +173,6 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background: yellow;
   width: 100vw;
   
 }
@@ -170,13 +187,20 @@
   text-align: start;
 }
 
+.filtres select {
+  width: 200px;
+}
+
+
+
+
+
 .cityFilter {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   padding: 6px 6px 6px 6px;
-  background: green;
 
 }
 
@@ -187,7 +211,6 @@
   padding: 6px 6px 6px 6px;
   z-index: 0;
   align-items: center;
-  background: red;
 }
 
 .categoryFilter span {
@@ -196,4 +219,73 @@
 
 .inputTitle {
   text-align: start;
+}
+
+.hidden {
+
+  display: none;
+}
+
+.searchResults {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.red {
+  color: #c1272d;
+
+}
+
+.blue {
+  color: #528bb9;
+
+}
+
+.searchResults h2 {
+  font-size: 14px;
+}
+
+.searchResults:nth-child(odd) {
+  padding-top:8px;
+  padding-bottom: 8px;
+}
+.searchResults:nth-child(even) {
+  padding-top:8px;
+  padding-bottom: 8px;
+}
+
+.clubCards {
+  height: 550px;
+  width: 80vw;
+  background: blue;
+}
+
+.results {
+  height: auto;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardClub {
+  height: 25vh;
+  border: 1px solid white;
+  width: 80vw;
+  font-size: 15px;
+  background:rgb(230, 230, 230);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:1vh;
+  margin-bottom: 1vh;
+}
+
+.cardClub h1 {
+  color: white;
+  font-size: 14pt;
 }
