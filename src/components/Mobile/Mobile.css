@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
-
-
+@import url('../Mobile/fonts.css');
 
 .pageMobile {
-  width: 100%;
+  width: 100% max-content;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -13,7 +12,7 @@
   align-content: center;
   margin: auto;
   background-image: url('../../assets/Habillage/backgroundPhone2.png');
-  background-position: center fixed; 
+  background-position: center;
   background-size: cover;
 
 
@@ -190,7 +189,9 @@
 .filtres select {
   width: 200px;
 }
-
+.test {
+  background: transparent;
+}
 
 
 
@@ -277,15 +278,180 @@
   border: 1px solid white;
   width: 80vw;
   font-size: 15px;
-  background:rgb(230, 230, 230);
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top:1vh;
   margin-bottom: 1vh;
+  border-radius: 12px;
+  
 }
 
 .cardClub h1 {
   color: white;
   font-size: 14pt;
+}
+
+.cardClub:nth-child(1n) {
+  height: 195px;
+  width: 335px;
+  background-image: url('../../assets/Cartes/Carte-rouge.png');
+}
+
+.cardClub:nth-child(2n) {
+  height: 195px;
+  width: 335px;
+  background-image: url('../../assets/Cartes/Carte-bleu.png');
+
+}
+
+.cardClub:nth-child(3n) {
+  height: 195px;
+  width: 335px;
+  background-image: url('../../assets/Cartes/Carte-grise.png');
+
+}
+
+.cardClub:nth-child(4n) {
+  height: 195px;
+  width: 335px;
+  background-image: url('../../assets/Cartes/Carte-turquoise.png');
+
+}
+
+.cardClub:nth-child(1n) .cardImages:nth-child(1n){
+  background-image: url('../../assets/Logos/Localisation-rouge.png');
+  background-size: contain;
+}
+
+.cardClub:nth-child(2n) .cardImages:nth-child(1n){
+  background-image: url('../../assets/Logos/Localisation-bleu.png');
+  background-size: contain;}
+
+.cardClub:nth-child(3n) .cardImages:nth-child(1n){
+  background-image: url('../../assets/Logos/Localisation-gris.png');
+  background-repeat: no-repeat;
+
+  background-size: contain;}
+
+.cardClub:nth-child(4n) .cardImages:nth-child(1n){
+  background-image: url('../../assets/Logos/Localisation-turquoise.png');
+  background-size: contain;
+}
+
+.cardClub:nth-child(1n) .secondRow:nth-child(1n){
+  background-image: url('../../assets/Logos/Mail-rouge.png');
+  background-size: contain;
+  height: 28px;
+  background-repeat: no-repeat;
+  margin-left: 4.2pt;
+  border : transparent;
+}
+
+.cardClub:nth-child(2n) .secondRow:nth-child(1n){
+  background-image: url('../../assets/Logos/Mail-bleu.png');
+  background-size: contain;
+  height: 28px;
+  background-repeat: no-repeat;
+  margin-left: 4.2pt;
+  border : transparent;
+}
+
+.cardClub:nth-child(3n) .secondRow:nth-child(1n){
+  background-image: url('../../assets/Logos/Mail-gris.png');
+  background-size: contain;
+  height: 28px;
+  background-repeat: no-repeat;
+  margin-left: 4.2pt;
+  border : transparent;
+}
+.cardClub:nth-child(4n) .secondRow:nth-child(1n){
+  background-image: url('../../assets/Logos/Mail-turquoise.png');
+  background-size: contain;
+  height: 28px;
+  background-repeat: no-repeat;
+  margin-left: 4.2pt;
+  border : transparent;
+}
+
+
+
+
+.mail {
+  margin-left: 35px;
+}
+
+
+.contact {
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: baseline;
+	align-content: space-between;
+  margin-top:8vh;
+}
+
+.cardImages {
+  height: 28px;
+  width: 28px;
+  margin-right: 4pt;
+  margin-left: 4pt;
+  margin-bottom : 4pt;
+  
+}
+
+.firstRow, .secondRow{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+}
+
+.clubTypo  {
+  font-family: 'nuvel';
+  font-weight: normal;
+  padding: 4px 4px 4px 4px;
+  mix-blend-mode: normal;
+  letter-spacing: 1.7px;
+  color: #f1f1f1;
+  animation: fade 1.5s linear forwards;
+  text-align: start;
+  font-size: 13pt;
+  margin-left: 12px;
+  margin-top: 8px;
+
+  
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.equipeName {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 12px;
+  margin-left: 8px;
+  font-size: 15pt;
+  color: black;
+  
+}
+
+.spane a {
+  text-decoration: none;
+  outline: none;
+  color: black;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  
 }

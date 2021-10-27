@@ -4,7 +4,12 @@ import Header from "../header/Header.jsx";
 import Button from '../../assets/Boutons/buttontransparent.png'
 import { useState, render, useEffect } from "react";
 import axios from "axios";
-import Howitworks from '../../assets/Boutons/howitworks.png'
+import Howitworks from '../../assets/Boutons/howitworks.png';
+import pin from '../../assets/PopUp/localisation.png';
+import mail from '../../assets/PopUp/mail.png';
+import '../../assets/fonts/Nuvel.ttf';
+import '../../assets/fonts/nuvel-webfont.woff'
+
 
 import {
   MapContainer,
@@ -17,6 +22,7 @@ import {
 import Modal from './Modal';
 
 const position = [47.830261, 1.93609];
+
 
 function Mobile() {
 
@@ -63,6 +69,27 @@ function Mobile() {
     window.location.reload();
   }
 
+  function LocationMarker() {
+    const [position, setPosition] = useState(null)
+    const map = useMapEvents({
+      click() {
+        map.locate()
+      },
+      locationfound(e) {
+        setPosition(e.latlng)
+        map.flyTo(e.latlng, map.getZoom())
+      },
+
+    })
+
+    return position === null ? null : (
+      <Marker position={position}>
+        <Popup>You are </Popup>
+      </Marker>
+    )
+  }
+
+
 
  
 
@@ -105,6 +132,8 @@ function Mobile() {
               </Marker>
             )
           })}
+
+          <LocationMarker/>
         </MapContainer>
 
       </div>
@@ -174,7 +203,31 @@ function Mobile() {
         {selectedClub.map((selectedClub, index) =>
         (
           <div className="cardClub">
-            <h1>{selectedClub.Equipe}</h1>
+            <div>
+              <div className="cardInfo">
+              <h2 className="clubTypo">
+              {selectedClub.Club}
+                </h2> 
+                <div className="contact">
+                  <div className="firstRow">
+                    <div className="test">
+
+                  <img className="cardImages"/> 
+                    </div>
+                  <span className="spane"> {selectedClub.Adresse}</span>
+                    </div>
+                    <div className="secondRow">
+                      <div className="test">
+
+                    <img className="cardImages2"/> 
+                      </div>
+                    <span className="spane"> <a className="mail" href={`mailto:${selectedClub.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}> {selectedClub.Mail}</a></span>
+                    </div>
+
+                  </div>
+                  </div>
+
+              </div>
           </div>
 
         ))}

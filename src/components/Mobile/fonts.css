@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'nuvel';
+    src: local('nuvel'),
+         url('../../assets/fonts/Nuvel.ttf') format('truetype'),
+         url('../../assets/fonts/nuvel-webfont.woff2') format('woff2');
+}
