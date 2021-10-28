@@ -9,6 +9,9 @@ import pin from '../../assets/PopUp/localisation.png';
 import mail from '../../assets/PopUp/mail.png';
 import '../../assets/fonts/Nuvel.ttf';
 import '../../assets/fonts/nuvel-webfont.woff'
+import MarkerClusterGroup from "react-leaflet-markercluster";
+import Searchbar from "../Searchbar/Searchbar";
+
 
 
 import {
@@ -20,8 +23,8 @@ import {
   useMapEvents,
 } from "react-leaflet";
 import Modal from './Modal';
+import useGelocation from "../Hook/useGeolocation";
 
-const position = [47.830261, 1.93609];
 
 
 function Mobile() {
@@ -33,6 +36,29 @@ function Mobile() {
   const [categoryInput, setcategoryInput] = useState([]);
   const [allClubs, setallClubs] = useState([]);
   const [selectedClub, setselectedClub] = useState([]);
+  const location = useGelocation();
+  const [latMin, setLatMin] = useState(0);
+  const [latMax, setLatMax] = useState(0);
+  const [lngMin, setLngMin] = useState(0);
+  const [lngMax, setLngMax] = useState(0);
+
+
+  useEffect(() => {
+    if (location.loaded === true) {
+      setLatMin(location.coordinates.lat - 0.180227);
+      setLatMax(location.coordinates.lat + 0.180227);
+      setLngMin(location.coordinates.lng - 0.246349);
+      setLngMax(location.coordinates.lng + 0.246349);
+   
+    } else {
+      setLatMin(0);
+      setLatMin(0);
+      setLngMin(0);
+      setLngMax(0);
+    }
+    console.log(location)
+  }, [location] 
+  );
 
 
   useEffect(() => {
@@ -69,27 +95,10 @@ function Mobile() {
     window.location.reload();
   }
 
-  function LocationMarker() {
-    const [position, setPosition] = useState(null)
-    const map = useMapEvents({
-      click() {
-        map.locate()
-      },
-      locationfound(e) {
-        setPosition(e.latlng)
-        map.flyTo(e.latlng, map.getZoom())
-      },
-
-    })
-
-    return position === null ? null : (
-      <Marker position={position}>
-        <Popup>You are </Popup>
-      </Marker>
-    )
-  }
 
 
+
+  let setMap = [47.830261, 1.93609];
 
  
 
@@ -111,17 +120,30 @@ function Mobile() {
 
       </div>
       <div className="map">
-        <MapContainer className="leaflet-container3" center={position} zoom={9} scrollWheelZoom={true}>
+        <MapContainer className="leaflet-container3" center={setMap} zoom={9} scrollWheelZoom={true}>
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={position}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
 
+        { location.loaded === true ? (
+          <Marker position={[location.coordinates.lat, location.coordinates.lng]}>
+            <Popup> 
+              <h2>je suis ali</h2>
+              </Popup>
+              </Marker> ) : null}
+         
+          
+              <MarkerClusterGroup
+              animate={true}
+          onClusterClick={(cluster) =>
+            console.warn(
+              "cluster-click",
+              cluster,
+              cluster.layer.getAllChildMarkers()
+            )
+          }
+        >
           {selectedClub.map((selectedClubs, propKey) => {
             return (
               <Marker
@@ -132,14 +154,14 @@ function Mobile() {
               </Marker>
             )
           })}
-
-          <LocationMarker/>
+        </MarkerClusterGroup>
         </MapContainer>
 
       </div>
       {/* Fin div map  */}
 
       <div className="filtres">
+        <Searchbar placeholder="" data={allClubs}/>
         <div className="cityFilter">
           <span>VOTRE VILLE/CODE POSTAL </span>
           <select
@@ -185,7 +207,6 @@ function Mobile() {
 
         <img className="button" src={Button} onClick={findClub}></img>
       </div>
-      <searchSentence/>
  
       <div className={cityInput && categoryInput ? 'searchResults' : 'hidden'}>
         <h4>
@@ -196,7 +217,6 @@ function Mobile() {
         </h2>
 
       </div>  
-      <searchSentence/>
 
 
       <div className="results">
