@@ -49,31 +49,27 @@
   margin-bottom: 4vh;
   z-index: 0;
 }
-
-
 .modalBackground {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(200, 200, 200);
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
-
 }
-
 .modalContainer {
   width: 500px;
   height: 500px;
   border-radius: 12px;
-  background-color: white;
+  background-image: url('../../assets/Habillage/PopUp.png');
+  background-repeat: no-repeat;
+  background-size: contain;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
   padding: 25px;
   z-index: 1;
-
 }
 
 .modalContainer .title {
@@ -81,22 +77,19 @@
   text-align: center;
   margin-top: 10px;
   z-index: 1;
-
 }
 
 .titleCloseBtn {
   display: flex;
   justify-content: flex-end;
   z-index: 1;
-
 }
 
 .titleCloseBtn button {
   background-color: transparent;
   border: none;
   font-size: 25px;
-  cursor: pointer;
-}
+  cursor: pointer;}
 
 .modalContainer .body {
   flex: 50%;
@@ -107,7 +100,6 @@
   text-align: center;
   flex-direction: column;
   z-index: 1;
-
 }
 
 .modalContainer .footer {
@@ -116,7 +108,6 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
-
 }
 
 .modalContainer .footer button {
@@ -129,7 +120,9 @@
   border-radius: 8px;
   font-size: 20px;
   cursor: pointer;
-}
+  margin-bottom: 76px;}
+
+
 
 #cancelBtn {
   background-color: crimson;
@@ -173,13 +166,14 @@
   flex-direction: column;
   justify-content: center;
   width: 100vw;
+  width: fit-content;
   
 }
 
-.filtres input {
+/* .filtres input {
   width: 50vw;
   outline: none;
-}
+} */
 
 .filtres span {
   font-size: 16px;
@@ -187,11 +181,31 @@
 }
 
 .filtres select {
-  width: 200px;
+  width: 218px;
 }
 .test {
   background: transparent;
 }
+
+.categorieSelector {
+  background-color: white;
+  height: 30px;
+  width: 250px;
+  font-size: 18px;
+  border-radius: 4px;
+}
+
+
+
+.titleInput {
+  font-family: 'nuvel';
+  color:black;
+}
+
+.titleInput span {
+  font-size: 85px;
+}
+
 
 
 
@@ -207,11 +221,13 @@
 
 .categoryFilter {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
   padding: 6px 6px 6px 6px;
   z-index: 0;
-  align-items: center;
 }
 
 .categoryFilter span {
@@ -233,6 +249,12 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
+}
+
+.selectText {
+  color: blue;
+  font-size: 20px;
+  width: 100px;
 }
 
 .red {

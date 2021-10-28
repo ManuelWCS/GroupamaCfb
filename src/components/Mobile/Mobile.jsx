@@ -11,9 +11,6 @@ import '../../assets/fonts/Nuvel.ttf';
 import '../../assets/fonts/nuvel-webfont.woff'
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import Searchbar from "../Searchbar/Searchbar";
-
-
-
 import {
   MapContainer,
   Marker,
@@ -26,9 +23,7 @@ import Modal from './Modal';
 import useGelocation from "../Hook/useGeolocation";
 
 
-
 function Mobile() {
-
   const [openModal, setOpenModal] = useState(false);
   const [allCities, setallCities] = useState([]);
   const [cityInput, setcityInput] = useState([]);
@@ -94,13 +89,7 @@ function Mobile() {
   function pageRefresh() {
     window.location.reload();
   }
-
-
-
-
   let setMap = [47.830261, 1.93609];
-
-
 
 
 
@@ -108,7 +97,6 @@ function Mobile() {
     <div className="pageMobile">
       <Header />
       <div className="toolBar">
-
         <img src={Howitworks} className="btnImg" onClick={() => {
           setOpenModal(true)
         }}/>
@@ -157,6 +145,8 @@ function Mobile() {
       {/* Fin div map  */}
 
       <div className="filtres">
+        <div className="inputCity">
+        <span className="titleInput">VOTRE VILLE </span>
         <Searchbar placeholder="" merguez={(value)=>{
           setcityInput(value)
         }
@@ -165,8 +155,8 @@ function Mobile() {
         data={allCities} onChange={(e) => {
               setcityInput(e.target.value);
             }} />
+        </div>
         <div className="cityFilter">
-          <span>VOTRE VILLE/CODE POSTAL </span>
 {/* 
           
           <select
@@ -188,7 +178,7 @@ function Mobile() {
         <div className="categoriesFilter">
 
           <div className="categoryFilter">
-            <span className="inputTitle">VOTRE CATEGORIE: </span>
+            <span className="titleInput">VOTRE CATEGORIE: </span>
             <form onSubmit={pageRefresh} className="categoryForm">
               <select
                 className="categorieSelector"
@@ -201,27 +191,27 @@ function Mobile() {
 
                 {categorie.map((categorie, categoryKey) => {
                   return (
-                    <option key={categoryKey} value={categorie.name}> {categorie.name}</option>
-                  )
-                })}
+                    <option className="selectText" key={categoryKey} value={categorie.name}> {categorie.name} </option>
+                    )
+                  })}
               </select>
             </form>
 
           </div>
+          
         </div>
 
         <img className="button" src={Button} onClick={findClub}></img>
       </div>
  
-      <div className={cityInput && categoryInput ? 'searchResults' : 'hidden'}>
+     <div className={cityInput && categoryInput ? 'searchResults' : 'hidden'}>
         <h4>
           Les équipes près de </h4>
           <h2> <em className="red"> {cityInput} </em></h2>   
           <h4> avec la catégorie :</h4>
         <h2> <strong className="blue"> {categoryInput}</strong> :
         </h2>
-
-      </div>  
+      </div>   
 
 
       <div className="results">

@@ -6,7 +6,7 @@ import CloseIcon from '@material-ui/icons/Close';
 function Searchbar({placeholder, data, merguez}) {
     const [filteredData, setFilteredData] = useState([]);
     const [wordEntered, setwordEntered] = useState("");
-
+   
 
 
     const handleFilter = (event) => {
@@ -28,27 +28,20 @@ function Searchbar({placeholder, data, merguez}) {
 
         }
     }
-
     const clearInput = () => {
         setFilteredData([]);
         setwordEntered('')
     }
-
-
-
     return (
         <div className="search">
          <div className="searchInputs">
              <input type="text" placeholder={placeholder} onChange={handleFilter} value={wordEntered}></input>
-             <div className="searchIcon"> { filteredData.length === 0 ? <SearchIcon/> : <CloseIcon id="clearBtn" onClick={clearInput}/>
-}</div>
+             <div className="searchIcon"> { filteredData.length === 0 ? <SearchIcon/> : <CloseIcon id="clearBtn" onClick={clearInput}/>}</div>
          </div>
-
-       { filteredData.slice(0 , 15).length !=0 && (
-         <div className="dataResult">
-
-             { filteredData.map((value, key ) => {
-                 return <p onClick={()=>{
+       { filteredData.length !==0 && (
+         <div className="dataResult"  >
+             { filteredData.slice(0 , 3).map((value, key ) => {
+                 return <p  onClick={()=>{
                     merguez(value.name)
                  } 
                  } className="dataItem" target="_blank"> {value.name}</p>

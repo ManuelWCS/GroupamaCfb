@@ -3,20 +3,24 @@
 }
 
 .search input {
-    background-color: gray;
-    border: 0;
+    background-color: white;
     border-radius: 2px;
     font-size:18px;
-    width: 300px;
+    width: 180px;
     height: 30px;
 }
 
 .searchIcon {
     height: 30px;
-    width: 60px;
-    background-color: blue;
+    width: 30px;
+    background-color: white;
     display:grid;
     place-items: center;
+    border: 2px solid rgba(0, 0, 0, 0.521)
+}
+
+.searchIcon:active {
+    border: 1px solid black;
 }
 
 input:focus {
@@ -25,7 +29,7 @@ input:focus {
 
 .dataResult {
     margin-top:5px;
-    width: 300px;
+    width: 150px;
     height: 100px;
     background-color: white;
     box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
@@ -42,7 +46,10 @@ input:focus {
     height: 50px;
     display: flex;
     align-items: center;
-    color: green;
+    color: black;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    
 }
 
 .dataItem p {
@@ -52,3 +59,8 @@ input:focus {
 #clearBtn {
     cursor :pointer;
 }
+
+.hiddenSearch {
+    display: none ;
+}
+
