@@ -20,7 +20,7 @@
     "react-leaflet-markercluster": "^3.0.0-rc1",
     "react-pose": "^4.0.10",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
+    "react-scripts": "^4.0.3",
     "reactjs-popup": "^2.0.4",
     "web-vitals": "^0.2.4",
     "yarn": "^1.22.10"

@@ -100,10 +100,6 @@ function Mobile() {
 
   let setMap = [47.830261, 1.93609];
 
- 
-
-
-
 
 
 
@@ -120,7 +116,7 @@ function Mobile() {
 
       </div>
       <div className="map">
-        <MapContainer className="leaflet-container3" center={setMap} zoom={9} scrollWheelZoom={true}>
+        <MapContainer className="leaflet-container3" center={setMap} zoom={9} scrollWheelZoom={true} minZoom={5}>
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -129,7 +125,7 @@ function Mobile() {
         { location.loaded === true ? (
           <Marker position={[location.coordinates.lat, location.coordinates.lng]}>
             <Popup> 
-              <h2>je suis ali</h2>
+              <h2>je suis al</h2>
               </Popup>
               </Marker> ) : null}
          
@@ -161,9 +157,18 @@ function Mobile() {
       {/* Fin div map  */}
 
       <div className="filtres">
-        <Searchbar placeholder="" data={allClubs}/>
+        <Searchbar placeholder="" merguez={(value)=>{
+          setcityInput(value)
+        }
+ 
+        } 
+        data={allCities} onChange={(e) => {
+              setcityInput(e.target.value);
+            }} />
         <div className="cityFilter">
           <span>VOTRE VILLE/CODE POSTAL </span>
+{/* 
+          
           <select
             className="citySelector"
             name="city" id=""
@@ -177,7 +182,7 @@ function Mobile() {
                 <option key={key} value={allCities.name}> {allCities.name}</option>
               )
             })}
-          </select>
+          </select> */}
 
         </div>
         <div className="categoriesFilter">
