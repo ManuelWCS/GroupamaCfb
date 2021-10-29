@@ -2,11 +2,9 @@ import React from "react";
 import "./Mobile.css";
 import Header from "../header/Header.jsx";
 import Button from '../../assets/Boutons/buttontransparent.png'
-import { useState, render, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Howitworks from '../../assets/Boutons/howitworks.png';
-import pin from '../../assets/PopUp/localisation.png';
-import mail from '../../assets/PopUp/mail.png';
 import '../../assets/fonts/Nuvel.ttf';
 import '../../assets/fonts/nuvel-webfont.woff'
 import MarkerClusterGroup from "react-leaflet-markercluster";
@@ -16,8 +14,7 @@ import {
   Marker,
   Popup,
   TileLayer,
-  Circle,
-  useMapEvents,
+  useMapEvents
 } from "react-leaflet";
 import Modal from './Modal';
 import useGelocation from "../Hook/useGeolocation";
@@ -60,21 +57,16 @@ function Mobile() {
     axios.get("https://api-clubs-cvl.herokuapp.com/cities")
       .then((res) => setallCities(res.data))
   }, []);
-  console.log(allCities)
-  console.log(cityInput)
 
   useEffect(() => {
     axios.get("https://api-clubs-cvl.herokuapp.com/categories")
       .then((res) => setCategorie(res.data))
   }, [])
-  console.log(categorie)
-  console.log(categoryInput)
 
   useEffect(() => {
     axios.get("https://api-clubs-cvl.herokuapp.com/allteams").then((res) => setallClubs(res.data))
   }, []);
 
-  console.log(allClubs)
 
 
   function findClub() {
@@ -84,7 +76,7 @@ function Mobile() {
         allClubs.Category === `${categoryInput}`
       )
     )
-  } console.log(selectedClub)
+  } 
 
   function pageRefresh() {
     window.location.reload();
@@ -95,7 +87,8 @@ function Mobile() {
 
   return (
     <div className="pageMobile">
-      <Header />
+    <Header />
+        <div className="background">
       <div className="toolBar">
         <img src={Howitworks} className="btnImg" onClick={() => {
           setOpenModal(true)
@@ -147,13 +140,14 @@ function Mobile() {
       <div className="filtres">
         <div className="inputCity">
         <span className="titleInput">VOTRE VILLE </span>
-        <Searchbar placeholder="" merguez={(value)=>{
+        <Searchbar placeholder="" selection={(value)=>{
           setcityInput(value)
         }
  
         } 
         data={allCities} onChange={(e) => {
               setcityInput(e.target.value);
+              
             }} />
         </div>
         <div className="cityFilter">
@@ -201,7 +195,7 @@ function Mobile() {
           
         </div>
 
-        <img className="button" src={Button} onClick={findClub}></img>
+        <img className="buttonFind" src={Button} onClick={findClub}></img>
       </div>
  
      <div className={cityInput && categoryInput ? 'searchResults' : 'hidden'}>
@@ -247,7 +241,10 @@ function Mobile() {
 
         ))}
       </div>
-
+          </div>
+          <div className="footeur">
+            <p>je suis le footeur</p>
+          </div>
     </div>
     // Fin de PageMobile
   );

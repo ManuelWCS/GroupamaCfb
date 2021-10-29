@@ -15,7 +15,7 @@ function Modal({closeModal}) {
                     <div className=""></div>
                     </div>
                 <div className="footer">
-                    <button onClick={() => closeModal(false)}>OK</button>
+                    <button className="exitPopup" onClick={() => closeModal(false)}>OK</button>
                 </div>
 
 
