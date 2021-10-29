@@ -508,9 +508,29 @@
 
 .footeur {
   width: 100vw;
-  height: 90px;
+  height: 32px;
   background-color: #3586C2;
-  border-top: 4px inset #1C6EA4;
+  border-top: 4px inset #1C6EA4;  
+}
 
+.footeur p {
+  text-align: center;
+  padding: 8px 8px 8px 8px;
+}
+
+
+@media screen and (min-width: 767px) and (max-width:1024px) {
+  .background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   background-image: url('../../assets/Habillage/backgroundPhone2.png'); 
+   background-position: center;
+    background-size: cover;
+    width: 100vw;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  
+  }
   
 }

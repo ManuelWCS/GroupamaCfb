@@ -7,6 +7,7 @@ import axios from "axios";
 import Howitworks from '../../assets/Boutons/howitworks.png';
 import '../../assets/fonts/Nuvel.ttf';
 import '../../assets/fonts/nuvel-webfont.woff'
+import L from "leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import Searchbar from "../Searchbar/Searchbar";
 import {
@@ -18,6 +19,9 @@ import {
 } from "react-leaflet";
 import Modal from './Modal';
 import useGelocation from "../Hook/useGeolocation";
+import MarqueurClub from '../../assets/LogoClub.png';
+import MarqueurLigue from '../../assets/MarqueurLigue.png';
+
 
 
 function Mobile() {
@@ -33,6 +37,18 @@ function Mobile() {
   const [latMax, setLatMax] = useState(0);
   const [lngMin, setLngMin] = useState(0);
   const [lngMax, setLngMax] = useState(0);
+
+  const LigueMarqueur = L.icon({
+    iconSize: [40,60],
+    iconAnchor: [23.5 , 47],
+    iconUrl : MarqueurLigue,
+  })
+
+  const ClubMarqueur = L.icon({
+    iconSize: [50,50],
+    iconAnchor: [23.5 , 47],
+    iconUrl : MarqueurClub,
+  })
 
 
   useEffect(() => {
@@ -84,7 +100,6 @@ function Mobile() {
   let setMap = [47.830261, 1.93609];
 
 
-
   return (
     <div className="pageMobile">
     <Header />
@@ -109,6 +124,10 @@ function Mobile() {
               <h2>je suis al</h2>
               </Popup>
               </Marker> ) : null}
+
+              <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
+
+              </Marker>
          
           
               <MarkerClusterGroup
@@ -124,11 +143,12 @@ function Mobile() {
           {selectedClub.map((selectedClubs, propKey) => {
             return (
               <Marker
-                position={[selectedClubs.Latitude, selectedClubs.Longitude]} value={propKey}>
+                position={[selectedClubs.Latitude, selectedClubs.Longitude]} value={propKey} icon={ClubMarqueur}>
                 <Popup className="popUp">
                   <h1 className="nameClub"> {selectedClubs.Adresse} </h1>
                 </Popup>
               </Marker>
+              
             )
           })}
         </MarkerClusterGroup>
@@ -243,7 +263,7 @@ function Mobile() {
       </div>
           </div>
           <div className="footeur">
-            <p>je suis le footeur</p>
+            <p>Ligue de Football du Centre-Val de Loire</p>
           </div>
     </div>
     // Fin de PageMobile
