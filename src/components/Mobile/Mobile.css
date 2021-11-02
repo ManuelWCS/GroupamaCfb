@@ -48,7 +48,15 @@
 }
 
 .popUp {
-  margin-right: 12px;
+  height: 36px;
+  width: 280px;
+  background: white;
+  border-radius: 40px;
+}
+.nameClub {
+  color:crimson;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size:16px;
 }
 .openModalBtn {
   margin-right: 12px;
@@ -227,7 +235,12 @@
 
 .titleInput {
   font-family: 'nuvel';
-  color:black;
+  color:crimson;
+}
+
+.titleInput2 {
+  color:#3586C2;
+  font-family:'nuvel';
 }
 
 .titleInput span {
@@ -324,7 +337,7 @@
 }
 
 .cardClub {
-  height: 25vh;
+  height: 35vh;
   border: 1px solid white;
   width: 80vw;
   font-size: 15px;
@@ -501,9 +514,7 @@
   text-decoration: none;
   outline: none;
   color: black;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-  
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
 
 .footeur {

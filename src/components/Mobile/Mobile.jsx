@@ -39,7 +39,10 @@ function Mobile() {
   const [latMax, setLatMax] = useState(0);
   const [lngMin, setLngMin] = useState(0);
   const [lngMax, setLngMax] = useState(0);
-  const [countClose, setCountClose] = useState(0)
+  const [bounds, setBounds] = useState([50.505, 30.57])
+  const [latMap, setlatMap]  = useState(0);
+  const [lngMap, setlngMap] = useState(0)
+  const [mapView, setmapView] =useState([47.830261, 1.93609])
 
   const LigueMarqueur = L.icon({
     iconSize: [40,60],
@@ -70,17 +73,6 @@ function Mobile() {
     console.log(location)
   }, [location] 
   );
-
-  let countClubs = selectedClub.filter(function(Club) {
-    return ( selectedClub.Latitude <= latMax && selectedClub.L >= latMin&& selectedClub.Longitude <= lngMax && selectedClub.Longitude >= lngMin )
-  })
-
-  useEffect(()=> {
-    setCountClose(countClubs.length)
-  }, [countClubs]
-  )
-
-
   useEffect(() => {
     axios.get("https://api-clubs-cvl.herokuapp.com/cities")
       .then((res) => setallCities(res.data))
@@ -96,20 +88,31 @@ function Mobile() {
   }, []);
 
 
-
   function findClub() {
     setselectedClub(
       allClubs.filter((allClubs) =>
         allClubs.Localite === `${cityInput}` &&
         allClubs.Category === `${categoryInput}`
-      )
-    )
-  } 
+        )
+        
+        )
+      } 
+      console.log(selectedClub)
 
   function pageRefresh() {
     window.location.reload();
   }
-  let setMap = [47.830261, 1.93609];
+  // let setMap = [0, 0];
+
+  // function centerMapZoom () {
+    let setMap = [47.830261, 1.93609];
+
+  //   setlatMap(selectedClub[0].Latitude) || setlngMap(selectedClub[0].Longitude);
+  //   setmapView([latMap, lngMap])
+  //   console.log(lngMap)
+  //   console.log(latMap)
+  //   console.log(selectedClub)
+  // }
 
 
   return (
@@ -128,7 +131,7 @@ function Mobile() {
         <input type="range" min="1" max="10" value="1" id="myRange" className="slider"/>
       </div>
       <div className="map">
-        <MapContainer className="leaflet-container3" center={setMap} zoom={9} scrollWheelZoom={true} minZoom={5}>
+        <MapContainer  className="leaflet-container3" center={setMap} zoom={4} scrollWheelZoom={true} minZoom={5}>
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -137,7 +140,7 @@ function Mobile() {
         { location.loaded === true ? (
           <Marker position={[location.coordinates.lat, location.coordinates.lng]}>
             <Popup> 
-              <h2> Je suis ici </h2> 
+              <h2 className="myPosition"> Ma position </h2> 
               </Popup>
               </Marker> ) : null}
 
@@ -170,7 +173,7 @@ function Mobile() {
           })}
           <Circle 
           center={setMap}
-          radius={1000}/>
+          radius={10000}/>
         </MarkerClusterGroup>
         </MapContainer>
 
@@ -212,7 +215,7 @@ function Mobile() {
         <div className="categoriesFilter">
 
           <div className="categoryFilter">
-            <span className="titleInput">VOTRE CATEGORIE: </span>
+            <span className="titleInput2">VOTRE CATEGORIE: </span>
             <form onSubmit={pageRefresh} className="categoryForm">
               <select
                 className="categorieSelector"
@@ -283,7 +286,7 @@ function Mobile() {
       </div>
           </div>
           <div className="footeur">
-            <p>Ligue de Football du Centre-Val de Loire</p>
+            <p>Ligue Centre-Val de Loire de Football</p>
           </div>
     </div>
     // Fin de PageMobile
