@@ -235,7 +235,7 @@ function Mobile() {
           
         </div>
 
-        <img className="buttonFind" src={Button} onClick={findClub}></img>
+        <img className="buttonFind" src={Button} onClick={findClub} ></img>
       </div>
  
      <div className={cityInput && categoryInput ? 'searchResults' : 'hidden'}>

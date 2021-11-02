@@ -9,17 +9,18 @@ function Searchbar({placeholder, data, selection}) {
     const [wordSelected, setWordSelected] = useState(false);
 
     
-    const Fermeur = ( )=> {
-        if (wordSelected === true) {
-            let cible = document.getElementById('1')
-            cible.addEventListener('click',() =>  {
-                cible.parentNode.style.display ="none"
-                console.log(cible.parentNode)
-            })
+    // const Fermeur = ( )=> {
+    //     if (wordSelected === true) {
+    //         let cible = document.getElementById('1')
+    //         cible.addEventListener('click',(e) =>  {
+    //             cible.parentNode.style.display ="none"
+    //             console.log(cible.parentNode)
+    //             e.preventDefault()
+    //         })
 
-        }
+    //     }
 
-    }
+    // }
    
 
 
@@ -38,6 +39,7 @@ function Searchbar({placeholder, data, selection}) {
             console.log(searchWord)
             console.log(newFilter)
             console.log(filteredData)
+            console.log(wordSelected)
         }
     }
 
@@ -49,17 +51,18 @@ function Searchbar({placeholder, data, selection}) {
     return (
         <div className="search">
          <div className="searchInputs">
-             <input type="text" placeholder={placeholder} onChange={handleFilter} value={wordEntered}></input>
+             <input type="text" placeholder={placeholder} onChange={handleFilter} value={wordEntered} onClick={() => {
+                 setWordSelected(false)
+             }}></input>
              <div className="searchIcon"> { filteredData.length === 0 ? <SearchIcon/> : <CloseIcon id="clearBtn" onClick={clearInput}/>}</div>
          </div>
        { filteredData.length !==0 && (
-         <div className="dataResult">
+         <div className={wordSelected ? "dropdownClicked" : "dataResult"} > 
              { filteredData.slice(0 , 3).map((value, key ) => {
                  
                  return <p  id="dataResult" onClick={()=>{
                     selection(value.name)
                     setWordSelected(true)
-                    Fermeur();
                     setwordEntered(value.name)
                  } 
                  } className="dataItem" id="1"target="_blank"> {value.name}</p>

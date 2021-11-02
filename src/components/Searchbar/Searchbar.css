@@ -68,3 +68,7 @@ input:focus {
     width: 150px;
     height: 100px;
 }
+
+.dropdownClicked {
+    display: none;
+}
