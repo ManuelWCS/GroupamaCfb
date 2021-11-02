@@ -14,13 +14,15 @@ import {
   MapContainer,
   Marker,
   Popup,
-  TileLayer,
-  useMapEvents
+  Circle,
+  TileLayer
 } from "react-leaflet";
 import Modal from './Modal';
 import useGelocation from "../Hook/useGeolocation";
 import MarqueurClub from '../../assets/LogoClub.png';
 import MarqueurLigue from '../../assets/MarqueurLigue.png';
+
+
 
 
 
@@ -37,6 +39,7 @@ function Mobile() {
   const [latMax, setLatMax] = useState(0);
   const [lngMin, setLngMin] = useState(0);
   const [lngMax, setLngMax] = useState(0);
+  const [countClose, setCountClose] = useState(0)
 
   const LigueMarqueur = L.icon({
     iconSize: [40,60],
@@ -67,6 +70,15 @@ function Mobile() {
     console.log(location)
   }, [location] 
   );
+
+  let countClubs = selectedClub.filter(function(Club) {
+    return ( selectedClub.Latitude <= latMax && selectedClub.L >= latMin&& selectedClub.Longitude <= lngMax && selectedClub.Longitude >= lngMin )
+  })
+
+  useEffect(()=> {
+    setCountClose(countClubs.length)
+  }, [countClubs]
+  )
 
 
   useEffect(() => {
@@ -111,6 +123,10 @@ function Mobile() {
         {openModal && <Modal closeModal={setOpenModal} />}
 
       </div>
+
+      <div className="slideContainer">
+        <input type="range" min="1" max="10" value="1" id="myRange" className="slider"/>
+      </div>
       <div className="map">
         <MapContainer className="leaflet-container3" center={setMap} zoom={9} scrollWheelZoom={true} minZoom={5}>
           <TileLayer
@@ -121,7 +137,7 @@ function Mobile() {
         { location.loaded === true ? (
           <Marker position={[location.coordinates.lat, location.coordinates.lng]}>
             <Popup> 
-              <h2>je suis al</h2>
+              <h2> Je suis ici </h2> 
               </Popup>
               </Marker> ) : null}
 
@@ -140,6 +156,7 @@ function Mobile() {
             )
           }
         >
+
           {selectedClub.map((selectedClubs, propKey) => {
             return (
               <Marker
@@ -151,6 +168,9 @@ function Mobile() {
               
             )
           })}
+          <Circle 
+          center={setMap}
+          radius={1000}/>
         </MarkerClusterGroup>
         </MapContainer>
 
