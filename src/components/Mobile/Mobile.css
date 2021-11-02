@@ -1,6 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 @import url('../Mobile/fonts.css');
 
+body:before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background: url('../../assets/Habillage/backgroundPhone2.png') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .pageMobile {
   width: 100%;
   height: 100%;
@@ -11,9 +27,7 @@
   align-items: center;
   align-content: center;
   margin: auto;
-  /* background-image: url('../../assets/Habillage/backgroundPhone2.png'); 
-  background-position: center;
-  background-size: cover; */
+  
 
 
 }
@@ -22,7 +36,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
- background-image: url('../../assets/Habillage/backgroundPhone2.png'); 
+ /* background-image: url('../../assets/Habillage/backgroundPhone2.png');  */
  background-position: center;
   background-size: cover;
   width: 100vw;
@@ -52,6 +66,8 @@
   width: 280px;
   background: white;
   border-radius: 40px;
+  text-align: center;
+  display: block;
 }
 .nameClub {
   color:crimson;
@@ -229,6 +245,8 @@
   width: 250px;
   font-size: 18px;
   border-radius: 4px;
+  color: #3586C2;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 
@@ -293,11 +311,13 @@
 }
 
 .selectText {
-  color: blue;
-  font-size: 20px;
+  color: #3586C2;
+  font-size: 16px;
   width: 100px;
 }
-
+ input option {
+  width: 2px;
+}
 .red {
   color: #c1272d;
 
@@ -517,6 +537,14 @@
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
 
+.spane {
+  text-decoration: none;
+  outline: none;
+  color: black;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+
+}
+
 .footeur {
   width: 100vw;
   height: 32px;
@@ -527,6 +555,7 @@
 .footeur p {
   text-align: center;
   padding: 8px 8px 8px 8px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 

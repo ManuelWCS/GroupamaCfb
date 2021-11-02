@@ -51,7 +51,7 @@ function Searchbar({placeholder, data, selection}) {
     return (
         <div className="search">
          <div className="searchInputs">
-             <input type="text" placeholder={placeholder} onChange={handleFilter} value={wordEntered} onClick={() => {
+             <input className="cityI" type="text" placeholder={placeholder} onChange={handleFilter} value={wordEntered} onClick={() => {
                  setWordSelected(false)
              }}></input>
              <div className="searchIcon"> { filteredData.length === 0 ? <SearchIcon/> : <CloseIcon id="clearBtn" onClick={clearInput}/>}</div>
