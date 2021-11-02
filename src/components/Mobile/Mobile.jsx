@@ -102,6 +102,10 @@ function Mobile() {
   function pageRefresh() {
     window.location.reload();
   }
+
+  function scrollTop() {
+    document.getElementById('scroll').scroll(0,0)
+  }
   // let setMap = [0, 0];
 
   // function centerMapZoom () {
@@ -131,7 +135,7 @@ function Mobile() {
         <input type="range" min="1" max="10" value="1" id="myRange" className="slider"/>
       </div>
       <div className="map">
-        <MapContainer  className="leaflet-container3" center={setMap} zoom={7} scrollWheelZoom={true} minZoom={5}>
+        <MapContainer  doubleClickZoom={true} className="leaflet-container3" center={setMap} zoom={7} scrollWheelZoom={true} minZoom={5}>
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -251,16 +255,16 @@ function Mobile() {
       </div>   
 
 
-      <div className="results">
+      <div className="results" >
         {selectedClub.map((selectedClub, index) =>
         (
-          <div className="cardClub">
-            <div>
+          <div className="cardClub" id="scroll" >
+            <div >
               <div className="cardInfo">
               <h2 className="clubTypo">
               {selectedClub.Club}
                 </h2> 
-                <div className="contact">
+                <div className="contact" >
                   <div className="firstRow">
                     <div className="test">
 
