@@ -131,7 +131,7 @@ function Mobile() {
         <input type="range" min="1" max="10" value="1" id="myRange" className="slider"/>
       </div>
       <div className="map">
-        <MapContainer  className="leaflet-container3" center={setMap} zoom={4} scrollWheelZoom={true} minZoom={5}>
+        <MapContainer  className="leaflet-container3" center={setMap} zoom={7} scrollWheelZoom={true} minZoom={5}>
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

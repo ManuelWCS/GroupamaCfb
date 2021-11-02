@@ -265,6 +265,10 @@ body:before {
   font-size: 85px;
 }
 
+.cityInput {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: crimson;
+}
 
 
 

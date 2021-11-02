@@ -11,7 +11,7 @@ function Searchbar({placeholder, data, selection}) {
     
     // const Fermeur = ( )=> {
     //     if (wordSelected === true) {
-    //         let cible = document.getElementById('1')
+    //         let cible = document.getElementById('one')
     //         cible.addEventListener('click',(e) =>  {
     //             cible.parentNode.style.display ="none"
     //             console.log(cible.parentNode)
@@ -51,7 +51,7 @@ function Searchbar({placeholder, data, selection}) {
     return (
         <div className="search">
          <div className="searchInputs">
-             <input className="cityI" type="text" placeholder={placeholder} onChange={handleFilter} value={wordEntered} onClick={() => {
+             <input className="cityInput" type="text" placeholder={placeholder} onChange={handleFilter} value={wordEntered} onClick={() => {
                  setWordSelected(false)
              }}></input>
              <div className="searchIcon"> { filteredData.length === 0 ? <SearchIcon/> : <CloseIcon id="clearBtn" onClick={clearInput}/>}</div>
@@ -65,7 +65,7 @@ function Searchbar({placeholder, data, selection}) {
                     setWordSelected(true)
                     setwordEntered(value.name)
                  } 
-                 } className="dataItem" id="1"target="_blank"> {value.name}</p>
+                 } className="dataItem" id="one"target="_blank"> {value.name}</p>
              })}
          </div>
  
