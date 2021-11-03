@@ -1,13 +1,13 @@
 .fullHeader {
   width: 100vw;
-  height: 10vh;
+  height: 15vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  background-image: url("../../assets/Habillage/headerv4.png");
+  background-image: url("../../assets/Habillage/headerv5.png");
   background-size: cover;
   background-position: center;
   margin:0px;
@@ -18,8 +18,8 @@
 @media only screen and (min-width: 319px) and (max-width: 390px) {
   .fullHeader {
     width: 100vw;
-    background-image: url("../../assets/Habillage/headerv4.png");
-    height: 10vh;
+    background-image: url("../../assets/Habillage/headerv5.png");
+    height: 15vh;
     margin-bottom: 0;
     background-size: cover;
     background-position: center;
@@ -31,7 +31,7 @@
     width: 100vw;
     height: 15vh;
     margin-bottom: 0;
-    background-image: url("../../assets/Habillage/headerv4.png");
+    background-image: url("../../assets/Habillage/headerv5.png");
     background-size: cover;
     background-position: center;
     
@@ -45,7 +45,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-image: url("../../assets/Habillage/headerv4.png");
+    background-image: url("../../assets/Habillage/headerv5.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -59,14 +59,14 @@
 
   .fullHeader {
   width: 100vw;
-  height: 6vh;
+  height: 10vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  background-image: url("../../assets/Habillage/header.png");
+  background-image: url("../../assets/Habillage/headerv5.png");
   background-size: cover;
   background-position: center;
   margin:0px;
