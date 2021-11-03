@@ -152,6 +152,9 @@ function Mobile() {
             <Popup> 
               <h2 className="myPosition"> Ma position </h2> 
               </Popup>
+              <Circle 
+          center={setMap}
+          radius={10000}/>
               </Marker> ) : null}
 
               <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
@@ -175,15 +178,13 @@ function Mobile() {
               <Marker
                 position={[selectedClubs.Latitude, selectedClubs.Longitude]} value={propKey} icon={ClubMarqueur}>
                 <Popup className="popUp">
-                  <h1 className="nameClub"> {selectedClubs.Adresse} </h1>
+                  <h1 className="nameClub"> {selectedClubs.Club} {selectedClubs.Adresse} </h1>
                 </Popup>
               </Marker>
               
             )
           })}
-          <Circle 
-          center={setMap}
-          radius={10000}/>
+        
         </MarkerClusterGroup>
         </MapContainer>
 
