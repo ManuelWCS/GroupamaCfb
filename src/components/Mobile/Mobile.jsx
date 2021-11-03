@@ -21,7 +21,11 @@ import Modal from './Modal';
 import useGelocation from "../Hook/useGeolocation";
 import MarqueurClub from '../../assets/LogoClub.png';
 import MarqueurLigue from '../../assets/MarqueurLigue.png';
-import footerImg from '../../assets/Habillage/FooterV1.png'
+import webLogo from '../../assets/footer/web.png';
+import ytLogo from '../../assets/footer/youtube.png';
+import fbLogo from '../../assets/footer/fb.png'
+
+
 
 
 function Mobile() {
@@ -43,8 +47,8 @@ function Mobile() {
   const [mapView, setmapView] =useState([47.830261, 1.93609])
 
   const LigueMarqueur = L.icon({
-    iconSize: [40,60],
-    iconAnchor: [23.5 , 47],
+    iconSize: [40,50],
+    iconAnchor: [13.5 , 47],
     iconUrl : MarqueurLigue,
   })
 
@@ -128,9 +132,9 @@ function Mobile() {
         }}/>
         {openModal && <Modal closeModal={setOpenModal} />}
       </div>
-      <div className="slideContainer">
+      {/* <div className="slideContainer">
         <input type="range" min="1" max="10" value="1" id="myRange" className="slider"/>
-      </div>
+      </div> */}
       <div className="map">
         <MapContainer  doubleClickZoom={true} className="leaflet-container3" center={setMap} zoom={7} scrollWheelZoom={true} minZoom={5}>
           <TileLayer
@@ -230,7 +234,7 @@ function Mobile() {
         </div>
         <img className="buttonFind" src={Button} onClick={findClub} ></img>
       </div> 
-     <div className={cityInput && categoryInput ? 'searchResults' : 'hidden'}>
+     <div className={ !selectedClub ? 'searchResults' : 'hidden'}>
         <h4>
           Les équipes près de </h4>
           <h2> <em className="red"> {cityInput} </em></h2>   
@@ -238,7 +242,7 @@ function Mobile() {
         <h2> <strong className="blue"> {categoryInput}</strong> :
         </h2>
       </div> 
-      <div className="results" >
+     <div className="results" >
         {selectedClub.map((selectedClub, index) =>
         (
           <div className="cardClub" id="scroll"  >
@@ -267,12 +271,27 @@ function Mobile() {
           </div>
 
         ))}
-      </div>
+      </div> 
           </div>
-          <div className="footeur">
-            <img src={footerImg}  className="footerbckg"/>
-           
-          </div>
+      <div className="footeur">
+
+
+        <div>
+          <a href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html">
+            <img className="logosFooter" src={webLogo} /></a></div>
+          
+       
+        <div>
+          <a href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q">
+            <img className="logosFooter" src={ytLogo} />
+          </a></div>
+        <div>
+          <a href="https://www.facebook.com/LCFofficiel/?ref=bookmarks"><img className="logosFooter" src={fbLogo} />  </a> </div>
+
+</div>  
+
+
+
     </div>
     // Fin de PageMobile
   );
