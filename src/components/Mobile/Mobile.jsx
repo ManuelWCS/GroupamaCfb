@@ -23,9 +23,6 @@ import MarqueurClub from '../../assets/LogoClub.png';
 import MarqueurLigue from '../../assets/MarqueurLigue.png';
 
 
-
-
-
 function Mobile() {
   const [openModal, setOpenModal] = useState(false);
   const [allCities, setallCities] = useState([]);
@@ -102,24 +99,19 @@ function Mobile() {
   function pageRefresh() {
     window.location.reload();
   }
-
   function scrollTop() {
     document.getElementById('scroll').scroll(0,0)
   }
   // let setMap = [0, 0];
-
   // function centerMapZoom () {
     let setMap = [47.830261, 1.93609];
-
   //   setlatMap(selectedClub[0].Latitude) || setlngMap(selectedClub[0].Longitude);
   //   setmapView([latMap, lngMap])
   //   console.log(lngMap)
   //   console.log(latMap)
   //   console.log(selectedClub)
   // }
-
   // const fonctionRef = useRef(null)
-
   // const handleButtonClick = function () {
   //   console.log(fonctionRef.current.value)
   // }
@@ -134,9 +126,7 @@ function Mobile() {
           setOpenModal(true)
         }}/>
         {openModal && <Modal closeModal={setOpenModal} />}
-
       </div>
-
       <div className="slideContainer">
         <input type="range" min="1" max="10" value="1" id="myRange" className="slider"/>
       </div>
@@ -146,7 +136,6 @@ function Mobile() {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-
         { location.loaded === true ? (
           <Marker position={[location.coordinates.lat, location.coordinates.lng]}>
             <Popup> 
@@ -156,12 +145,8 @@ function Mobile() {
           center={setMap}
           radius={10000}/>
               </Marker> ) : null}
-
               <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
-
               </Marker>
-         
-          
               <MarkerClusterGroup
               animate={true}
           onClusterClick={(cluster) =>
@@ -187,7 +172,6 @@ function Mobile() {
         
         </MarkerClusterGroup>
         </MapContainer>
-
       </div>
       {/* Fin div map  */}
 
@@ -196,9 +180,7 @@ function Mobile() {
         <span className="titleInput">VOTRE VILLE </span>
         <Searchbar placeholder="" selection={(value)=>{
           setcityInput(value)
-        }
- 
-        } 
+        }} 
         data={allCities} onChange={(e) => {
               setcityInput(e.target.value);
               
@@ -224,7 +206,6 @@ function Mobile() {
 
         </div>
         <div className="categoriesFilter">
-
           <div className="categoryFilter">
             <span className="titleInput2">VOTRE CATEGORIE: </span>
             <form onSubmit={pageRefresh} className="categoryForm">
@@ -244,14 +225,10 @@ function Mobile() {
                   })}
               </select>
             </form>
-
-          </div>
-          
+          </div>          
         </div>
-
         <img className="buttonFind" src={Button} onClick={findClub} ></img>
-      </div>
- 
+      </div> 
      <div className={cityInput && categoryInput ? 'searchResults' : 'hidden'}>
         <h4>
           Les équipes près de </h4>
@@ -259,9 +236,7 @@ function Mobile() {
           <h4> avec la catégorie :</h4>
         <h2> <strong className="blue"> {categoryInput}</strong> :
         </h2>
-      </div>   
-
-
+      </div> 
       <div className="results" >
         {selectedClub.map((selectedClub, index) =>
         (
@@ -281,15 +256,12 @@ function Mobile() {
                     </div>
                     <div className="secondRow">
                       <div className="test">
-
                     <img className="cardImages2"/> 
                       </div>
                     <span className="spane"> <a className="mail" href={`mailto:${selectedClub.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}> {selectedClub.Mail}</a></span>
                     </div>
-
                   </div>
                   </div>
-
               </div>
           </div>
 
