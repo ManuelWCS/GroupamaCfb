@@ -2,7 +2,7 @@ import React from "react";
 import "./Mobile.css";
 import Header from "../header/Header.jsx";
 import Button from '../../assets/Boutons/buttontransparent.png'
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Howitworks from '../../assets/Boutons/howitworks.png';
 import '../../assets/fonts/Nuvel.ttf';
@@ -116,6 +116,12 @@ function Mobile() {
   //   console.log(lngMap)
   //   console.log(latMap)
   //   console.log(selectedClub)
+  // }
+
+  // const fonctionRef = useRef(null)
+
+  // const handleButtonClick = function () {
+  //   console.log(fonctionRef.current.value)
   // }
 
 
@@ -258,7 +264,7 @@ function Mobile() {
       <div className="results" >
         {selectedClub.map((selectedClub, index) =>
         (
-          <div className="cardClub" id="scroll" >
+          <div className="cardClub" id="scroll"  >
             <div >
               <div className="cardInfo">
               <h2 className="clubTypo">
