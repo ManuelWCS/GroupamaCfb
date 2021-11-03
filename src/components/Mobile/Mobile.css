@@ -43,17 +43,15 @@ body:before {
 }
 
 .toolBar {
-  background: #3586C2;
   height: 50px;
   width: 100vw;
-  border: 1px solid white;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: flex-start;
   align-content: center;
-  background-image: url('../../assets/filtres.png');
+  /* background-image: url('../../assets/filtres.png'); */
   margin-top: 0;
   margin-bottom: 2vh;
 }
@@ -180,6 +178,9 @@ body:before {
 .btnImg {
   height: 100px;
   width: 150px;
+  margin-right: 6vh;
+  margin-top: 4vh;
+  margin-bottom: 1vh;
 }
 
 .illustration {
