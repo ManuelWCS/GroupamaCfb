@@ -566,29 +566,23 @@ body:before {
 
 .footeur {
   width: 100vw;
-  height: 8vh;
   background-color: #293D6B;
-  border-top: 3px inset black;
-  background-image: url('../../assets/Habillage/FooterV1.png') no-repeat;
-  background-position: cover;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  border-bottom: 50px #293D6B;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-content: space-between;
+  left: 0;
+  bottom: 0; 
 }
 
-.footeur p {
-  text-align: center;
-  padding: 8px 8px 8px 8px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
 
 .logosFooter {
   height: 18px;
   width: 18px;
   padding: 8px 8px 8px 8px;
-  margin-top: 1vh;
   animation: fade 3s linear;
+
 }
 
 .footerbckg {
@@ -597,6 +591,9 @@ body:before {
   height: auto;
   position :absolute;}
 
+ .footer div {
+   margin-top: 50px;
+ }
 
 
  /* Format tablette  */

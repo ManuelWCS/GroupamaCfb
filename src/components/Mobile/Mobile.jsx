@@ -281,7 +281,7 @@ function Mobile() {
             <img className="logosFooter" src={webLogo} /></a></div>
           
        
-        <div>
+        <div className="testibg">
           <a href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q">
             <img className="logosFooter" src={ytLogo} />
           </a></div>
