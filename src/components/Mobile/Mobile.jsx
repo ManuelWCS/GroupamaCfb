@@ -21,6 +21,7 @@ import Modal from './Modal';
 import useGelocation from "../Hook/useGeolocation";
 import MarqueurClub from '../../assets/LogoClub.png';
 import MarqueurLigue from '../../assets/MarqueurLigue.png';
+import footerImg from '../../assets/Habillage/FooterV1.png'
 
 
 function Mobile() {
@@ -269,7 +270,8 @@ function Mobile() {
       </div>
           </div>
           <div className="footeur">
-            <p>Ligue Centre-Val de Loire de Football</p>
+            <img src={footerImg}  className="footerbckg"/>
+           
           </div>
     </div>
     // Fin de PageMobile

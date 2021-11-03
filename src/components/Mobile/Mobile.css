@@ -565,10 +565,10 @@ body:before {
 
 .footeur {
   width: 100vw;
-  height: 32px;
-  background-color: #3586C2;
-  border-top: 4px inset #1C6EA4;  
-
+  background-color: #EAEDE1;
+  /* border-top: 4px inset #1C6EA4;    */
+  background-image: url('../../assets/Habillage/FooterV1.png') no-repeat;
+  background-position: cover;
 }
 
 .footeur p {
@@ -576,6 +576,12 @@ body:before {
   padding: 8px 8px 8px 8px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.footerbckg {
+  width: 100vw;
+  background-color: #EAEDE1;
+  height: auto;
+  position :absolute;}
 
 
 

@@ -29,7 +29,7 @@
 @media screen and (min-width:390px) and (max-width: 767px) {
   .fullHeader {
     width: 100vw;
-    height: 10vh;
+    height: 15vh;
     margin-bottom: 0;
     background-image: url("../../assets/Habillage/headerV2.png");
     background-size: cover;
@@ -41,6 +41,7 @@
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .fullHeader {
     width: 100vw;
+    height: 15vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
