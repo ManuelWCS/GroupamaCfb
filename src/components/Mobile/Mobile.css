@@ -393,6 +393,7 @@ body:before {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  border-right: 1px crimson;
   
 }
 
@@ -404,6 +405,7 @@ body:before {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  border-right:cornflowerblue
   
 
 }
@@ -416,6 +418,7 @@ body:before {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  border-right: 1px grey;
   
 
 }
@@ -428,6 +431,7 @@ body:before {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  border-right: 1px turquoise;
   
 
 }
