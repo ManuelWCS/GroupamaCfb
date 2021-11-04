@@ -10,8 +10,11 @@ import '../../assets/fonts/nuvel-webfont.woff'
 import L from "leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import Searchbar from "../Searchbar/Searchbar";
+import map from 'leaflet'
+
 import {
   MapContainer,
+  Map,
   Marker,
   Popup,
   Circle,
@@ -41,10 +44,14 @@ function Mobile() {
   const [latMax, setLatMax] = useState(0);
   const [lngMin, setLngMin] = useState(0);
   const [lngMax, setLngMax] = useState(0);
-  const [bounds, setBounds] = useState([50.505, 30.57])
   const [latMap, setlatMap]  = useState(0);
-  const [lngMap, setlngMap] = useState(0)
-  const [mapView, setmapView] =useState([47.830261, 1.93609])
+  const [lngMap, setlngMap] = useState(0);
+  const [mapView, setmapView] =useState([47.830261, 1.93609]);
+
+  const mapRef = useRef()
+
+
+
 
   const LigueMarqueur = L.icon({
     iconSize: [40,50],
@@ -104,24 +111,9 @@ function Mobile() {
   function pageRefresh() {
     window.location.reload();
   }
-  function scrollTop() {
-    document.getElementById('scroll').scroll(0,0)
-  }
-  // let setMap = [0, 0];
-  // function centerMapZoom () {
     let setMap = [47.830261, 1.93609];
-  //   setlatMap(selectedClub[0].Latitude) || setlngMap(selectedClub[0].Longitude);
-  //   setmapView([latMap, lngMap])
-  //   console.log(lngMap)
-  //   console.log(latMap)
-  //   console.log(selectedClub)
-  // }
-  // const fonctionRef = useRef(null)
-  // const handleButtonClick = function () {
-  //   console.log(fonctionRef.current.value)
-  // }
 
-
+  
   return (
     <div className="pageMobile">
     <Header />
@@ -139,7 +131,7 @@ function Mobile() {
         <input type="range" min="1" max="10" value="1" id="myRange" className="slider"/>
       </div> */}
       <div className="map">
-        <MapContainer  doubleClickZoom={true} className="leaflet-container3" center={setMap} zoom={7} scrollWheelZoom={true} minZoom={5}>
+        <MapContainer  doubleClickZoom={true} className="leaflet-container3" center={setMap} zoom={7} scrollWheelZoom={true} minZoom={5}  ref={mapRef} >
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"

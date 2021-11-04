@@ -45,8 +45,8 @@ body:before {
 .mainTitle {
   text-align: center;
   width: 80vw;
-  margin-top:3vh;
-  margin-bottom: 3vh;
+  margin-top:16px;
+  margin-bottom: 16px;
   font-family: 'Century Gothic';
   font-size: 12px;
 }
@@ -62,7 +62,7 @@ body:before {
   align-content: center;
   /* background-image: url('../../assets/filtres.png'); */
   margin-top: 0;
-  margin-bottom: 2vh;
+  margin-bottom: 16px;
 }
 
 .popUp {
@@ -90,7 +90,7 @@ body:before {
 .leaflet-container3 {
   width: 80vw;
   height: 50vh;
-  margin-bottom: 4vh;
+  margin-bottom: 28px;
   z-index: 0;
 }
 .modalBackground {
@@ -190,9 +190,9 @@ body:before {
 .btnImg {
   height: 100px;
   width: 150px;
-  margin-right: 6vh;
-  margin-top: 4vh;
-  margin-bottom: 1vh;
+  margin-right: 16px;
+  margin-top: 8px;
+  margin-bottom: 4px;
 }
 
 .illustration {
@@ -380,9 +380,9 @@ body:before {
   width: 80vw;
   font-size: 15px;
   display: flex;
-  margin-top:1vh;
-  margin-bottom: 1vh;
-  border-radius: 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-radius: 2px;
   
 }
 
@@ -441,10 +441,10 @@ body:before {
   margin-left: 2vw;
   min-height: 28px;
   min-width: 28px;
-  margin-bottom: 1.5vh;
+  margin-bottom: 8px;
 }
 .locInfo {
-  margin-top: 1vh;
+  margin-top: 8px;
 }
 .cardClub:nth-child(1n) .locLogo:nth-child(1n) {
   background-image: url('../../assets/Logos/Localisation-rouge.png') ;
@@ -497,8 +497,8 @@ body:before {
 }
 
 
-
-
+.cardInfo {
+  margin-top: 16px;}
 
 
 /* 
@@ -529,7 +529,8 @@ body:before {
   background-repeat: no-repeat;
   margin-left: 4.2pt;
   border : transparent;
-  margin-bottom: 2vh;
+  margin-bottom: 6px;
+
 }
 
 .cardClub:nth-child(2n) .secondRow:nth-child(1n){
@@ -582,7 +583,7 @@ body:before {
 	justify-content: space-around;
 	align-items: baseline;
 	align-content: space-evenly;
-  margin-top:3vh;
+  margin-top: 16px;
 }
 
 .cardImages {
@@ -647,7 +648,7 @@ a:hover {color:black;
   font-size: 13pt;
   margin-left: 12px;
   margin-top: 8px;
-  margin-bottom: 5vh;
+  margin-bottom: 24px;
 
   
 }
