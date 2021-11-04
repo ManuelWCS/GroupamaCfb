@@ -386,7 +386,7 @@ body:before {
 }
 
 .cardClub:nth-child(1n) {
-  height: 196px;
+  height: 194px;
   width: 270px;
   background-image: url('../../assets/Cartes/Carte-rouge.png');
   display: flex;
@@ -396,7 +396,7 @@ body:before {
 }
 
 .cardClub:nth-child(2n) {
-  height: 196px;
+  height: 194px;
   width: 270px;
   background-image: url('../../assets/Cartes/Carte-bleu.png');
   display: flex;
@@ -407,7 +407,7 @@ body:before {
 }
 
 .cardClub:nth-child(3n) {
-  height: 196px;
+  height: 194px;
   width: 270px;
   background-image: url('../../assets/Cartes/Carte-grise.png');
   display: flex;
@@ -418,7 +418,7 @@ body:before {
 }
 
 .cardClub:nth-child(4n) {
-  height: 196px;
+  height: 194px;
   width: 270px;
   background-image: url('../../assets/Cartes/Carte-turquoise.png');
   display: flex;
@@ -437,7 +437,8 @@ body:before {
   margin-bottom: 8px;
 }
 .locInfo {
-  margin-top: 8px;
+  margin-top: 4px;
+  font-family: 'Century Gothic';
 }
 .cardClub:nth-child(1n) .locLogo:nth-child(1n) {
   background-image: url('../../assets/Logos/Localisation-rouge.png') ;
