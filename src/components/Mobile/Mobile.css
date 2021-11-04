@@ -501,26 +501,6 @@ body:before {
   margin-top: 16px;}
 
 
-/* 
-.cardClub:nth-child(1n) .cardImages:nth-child(1n){
-  background-image: url('../../assets/Logos/Localisation-rouge.png');
-  background-size: contain;
-}
-
-.cardClub:nth-child(2n) .cardImages:nth-child(1n){
-  background-image: url('../../assets/Logos/Localisation-bleu.png');
-  background-size: contain;}
-
-.cardClub:nth-child(3n) .cardImages:nth-child(1n){
-  background-image: url('../../assets/Logos/Localisation-gris.png');
-  background-repeat: no-repeat;
-
-  background-size: contain;}
-
-.cardClub:nth-child(4n) .cardImages:nth-child(1n){
-  background-image: url('../../assets/Logos/Localisation-turquoise.png');
-  background-size: contain;
-} */
 
 .cardClub:nth-child(1n) .secondRow:nth-child(1n){
   background-image: url('../../assets/Logos/Mail-rouge.png');

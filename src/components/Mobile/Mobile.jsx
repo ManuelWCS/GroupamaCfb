@@ -10,20 +10,23 @@ import '../../assets/fonts/nuvel-webfont.woff'
 import L from "leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import Searchbar from "../Searchbar/Searchbar";
-import map from 'leaflet'
-
 import {
   MapContainer,
-  Map,
   Marker,
   Popup,
   Circle,
-  TileLayer
+  TileLayer,
+  useMapEvents
 } from "react-leaflet";
 import Modal from './Modal';
 import useGelocation from "../Hook/useGeolocation";
 import MarqueurClub from '../../assets/LogoClub.png';
 import MarqueurLigue from '../../assets/MarqueurLigue.png';
+import MarqueurCher from '../../assets/Marqueurs/MarqueurCher.png';
+import MarqueurEureEtLoir from '../../assets/Marqueurs/MarqueurEureEtLoire.png';
+import MarqueurIndre from '../../assets/Marqueurs/MarqueurIndre.png';
+import MarqueurLoiretCher from '../../assets/Marqueurs/MarqueurLoireEtCher.png';
+import MarqueurLoiret from '../../assets/Marqueurloiret.png'
 import webLogo from '../../assets/footer/web.png';
 import ytLogo from '../../assets/footer/youtube.png';
 import fbLogo from '../../assets/footer/fb.png'
@@ -32,6 +35,7 @@ import fbLogo from '../../assets/footer/fb.png'
 
 
 function Mobile() {
+  const mapRef = useRef();
   const [openModal, setOpenModal] = useState(false);
   const [allCities, setallCities] = useState([]);
   const [cityInput, setcityInput] = useState([]);
@@ -44,13 +48,6 @@ function Mobile() {
   const [latMax, setLatMax] = useState(0);
   const [lngMin, setLngMin] = useState(0);
   const [lngMax, setLngMax] = useState(0);
-  const [latMap, setlatMap]  = useState(0);
-  const [lngMap, setlngMap] = useState(0);
-  const [mapView, setmapView] =useState([47.830261, 1.93609]);
-
-  const mapRef = useRef()
-
-
 
 
   const LigueMarqueur = L.icon({
@@ -64,6 +61,38 @@ function Mobile() {
     iconAnchor: [23.5 , 47],
     iconUrl : MarqueurClub,
   })
+
+  const CherMarqueur = L.icon({
+    iconSize: [50,50],
+    iconAnchor: [13.50 , 47],
+    iconUrl : MarqueurCher,
+  })
+
+  const EureEtLoirMarqueur = L.icon({
+    iconSize: [55,55],
+    iconAnchor: [13.50 , 47],
+    iconUrl : MarqueurEureEtLoir
+  })
+
+  const IndreMarqueur = L.icon({
+    iconSize: [40,50],
+    iconAnchor: [13.50 , 47],
+    iconUrl : MarqueurIndre
+  })
+  
+  const LoirEtCherMarqueur = L.icon({
+    iconSize: [40,50],
+    iconAnchor: [13.50 , 47],
+    iconUrl : MarqueurLoiretCher
+  })
+
+  const LoiretMarqueur = L.icon({
+    iconSize: [60,50],
+    iconAnchor: [13.50 , 47],
+    iconUrl : MarqueurLoiret
+  })
+
+
 
 
   useEffect(() => {
@@ -97,14 +126,12 @@ function Mobile() {
   }, []);
 
 
-  function findClub() {
+  function findClub() {    
     setselectedClub(
       allClubs.filter((allClubs) =>
         allClubs.Localite === `${cityInput}` &&
         allClubs.Category === `${categoryInput}`
-        )
-        
-        )
+        ))
       } 
       console.log(selectedClub)
 
@@ -112,7 +139,6 @@ function Mobile() {
     window.location.reload();
   }
     let setMap = [47.830261, 1.93609];
-
   
   return (
     <div className="pageMobile">
@@ -127,11 +153,9 @@ function Mobile() {
         }}/>
         {openModal && <Modal closeModal={setOpenModal} />}
       </div>
-      {/* <div className="slideContainer">
-        <input type="range" min="1" max="10" value="1" id="myRange" className="slider"/>
-      </div> */}
+      
       <div className="map">
-        <MapContainer  doubleClickZoom={true} className="leaflet-container3" center={setMap} zoom={7} scrollWheelZoom={true} minZoom={5}  ref={mapRef} >
+        <MapContainer  doubleClickZoom={true} className="leaflet-container3" center={setMap} zoom={7} scrollWheelZoom={true} minZoom={5} setmapView ref={mapRef} >
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
@@ -147,6 +171,43 @@ function Mobile() {
               </Marker> ) : null}
               <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
               </Marker>
+              <Marker position={[47.11563, 2.35849]} icon={CherMarqueur}>
+          <Popup className="InstancePopUp">
+            <a href="https://cher.fff.fr/competitions/">
+              <h1>District de Football du Cher </h1>
+            </a>
+          </Popup>
+        </Marker>
+        <Marker position={[48.42918, 1.46021]} icon={EureEtLoirMarqueur}>
+          <Popup className="InstancePopUp">
+            <a href="https://eure-et-loir.fff.fr/competitions/">
+              <h1>District de Football d'Eure Et Loire </h1>
+            </a>
+          </Popup>
+        </Marker>
+        <Marker position={[46.79267, 1.69726]} icon={IndreMarqueur}>
+          <Popup className="InstancePopUp">
+            <a href="https://indre.fff.fr/competitions/">
+              <h1>District de Football de l'Indre </h1>
+            </a>
+          </Popup>
+        </Marker>
+        
+        <Marker position={[47.9168433, 1.9246721]} icon={LoiretMarqueur}>
+          <Popup className="InstancePopUp">
+            <a href="https://foot-loiret.fff.fr/competitions/">
+              <h1>District de Football du Loiret </h1>
+            </a>
+          </Popup>
+        </Marker>
+        <Marker position={[47.5766331, 1.3026806]} icon={LoirEtCherMarqueur}>
+          <Popup className="InstancePopUp">
+            <a href="https://loir-et-cher.fff.fr/competitions/">
+
+            <h1>District de Football du Loir-et-Cher</h1>
+            </a>
+          </Popup>
+        </Marker>
               <MarkerClusterGroup
               animate={true}
           onClusterClick={(cluster) =>
