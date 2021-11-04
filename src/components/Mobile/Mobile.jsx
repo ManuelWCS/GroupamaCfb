@@ -145,7 +145,7 @@ function Mobile() {
     <Header />
         <div className="background">
           <div className="mainTitle">
-            <h1 className="mainTitle1">Trouvez un club près de chez vous !</h1>
+            <h1 className="mainTitle1">Trouvez un club près de chez <i className="typo">vous</i> !</h1>
           </div>
       <div className="toolBar">
         <img src={Howitworks} className="btnImg" onClick={() => {

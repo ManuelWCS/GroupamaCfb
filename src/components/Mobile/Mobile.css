@@ -46,8 +46,8 @@ body:before {
   text-align: center;
   width: 80vw;
   margin-top:16px;
-  margin-bottom: 16px;
-  font-family: 'Century Gothic';
+  margin-bottom: 12px;
+  font-family: 'nuvel';
   font-size: 12px;
 }
 
@@ -63,6 +63,10 @@ body:before {
   /* background-image: url('../../assets/filtres.png'); */
   margin-top: 0;
   margin-bottom: 16px;
+}
+
+.typo {
+  color:crimson;
 }
 
 .popUp {
@@ -232,10 +236,6 @@ body:before {
   
 }
 
-/* .filtres input {
-  width: 50vw;
-  outline: none;
-} */
 
 .filtres span {
   font-size: 16px;
@@ -245,10 +245,6 @@ body:before {
 .filtres select {
   width: 218px;
 }
-/* .test {
-  background: transparent;
-} */
-
 .categorieSelector {
   background-color: white;
   height: 30px;
@@ -359,10 +355,7 @@ body:before {
   padding-bottom: 8px;
 }
 
-/* .clubCards {
-  height: 550px;
-  width: 80vw;
-} */
+
 
 .results {
   height: auto;
@@ -393,7 +386,7 @@ body:before {
 }
 
 .cardClub:nth-child(1n) {
-  height: 190px;
+  height: 196px;
   width: 270px;
   background-image: url('../../assets/Cartes/Carte-rouge.png');
   display: flex;
@@ -403,7 +396,7 @@ body:before {
 }
 
 .cardClub:nth-child(2n) {
-  height: 190px;
+  height: 196px;
   width: 270px;
   background-image: url('../../assets/Cartes/Carte-bleu.png');
   display: flex;
@@ -414,7 +407,7 @@ body:before {
 }
 
 .cardClub:nth-child(3n) {
-  height: 190px;
+  height: 196px;
   width: 270px;
   background-image: url('../../assets/Cartes/Carte-grise.png');
   display: flex;
@@ -425,7 +418,7 @@ body:before {
 }
 
 .cardClub:nth-child(4n) {
-  height: 190px;
+  height: 196px;
   width: 270px;
   background-image: url('../../assets/Cartes/Carte-turquoise.png');
   display: flex;
@@ -438,7 +431,7 @@ body:before {
 .locLogo {
   max-height: 28px;
   max-width: 42px;
-  margin-left: 2vw;
+  margin-left: 5px;
   min-height: 28px;
   min-width: 28px;
   margin-bottom: 8px;
@@ -449,23 +442,23 @@ body:before {
 .cardClub:nth-child(1n) .locLogo:nth-child(1n) {
   background-image: url('../../assets/Logos/Localisation-rouge.png') ;
   background-size: cover;
-  margin-right: 2vw;  
+  margin-right: 4px;  
 }
 
 .cardClub:nth-child(2n) .locLogo:nth-child(1n) {
   background-image: url('../../assets/Logos/Localisation-bleu.png') ;
   background-size: cover;
-  margin-right: 2vw;  
+  margin-right: 4px;  
 }
 .cardClub:nth-child(3n) .locLogo:nth-child(1n) {
   background-image: url('../../assets/Logos/Localisation-gris.png') ;
   background-size: cover;
-  margin-right: 2vw;  
+  margin-right: 4px;  
 }
 .cardClub:nth-child(4n) .locLogo:nth-child(1n) {
   background-image: url('../../assets/Logos/Localisation-turquoise.png') ;
   background-size: cover;
-  margin-right: 2vw;  
+  margin-right: 4px;  
 }
 
 .infoLogo {
@@ -479,6 +472,7 @@ body:before {
 .cardClub:nth-child(1n) .infoLogo:nth-child(1n) {
   background-image: url('../../assets/Logos/Info-rouge.png');
   background-size: cover;
+  margin-left: 6px;
 }
 
 .cardClub:nth-child(2n) .infoLogo:nth-child(1n) {
@@ -507,7 +501,7 @@ body:before {
   background-size: contain;
   height: 28px;
   background-repeat: no-repeat;
-  margin-left: 4.2pt;
+  margin-left: 6px;
   border : transparent;
   margin-bottom: 6px;
 
@@ -518,7 +512,7 @@ body:before {
   background-size: contain;
   height: 28px;
   background-repeat: no-repeat;
-  margin-left: 4.2pt;
+  margin-left: 6px;
   border : transparent;
 }
 
@@ -527,7 +521,7 @@ body:before {
   background-size: contain;
   height: 28px;
   background-repeat: no-repeat;
-  margin-left: 4.2pt;
+  margin-left: 6px;
   border : transparent;
 }
 .cardClub:nth-child(4n) .secondRow:nth-child(1n){
@@ -535,7 +529,7 @@ body:before {
   background-size: contain;
   height: 28px;
   background-repeat: no-repeat;
-  margin-left: 4.2pt;
+  margin-left: 6px;
   border : transparent;
 }
 
@@ -716,8 +710,5 @@ a:hover {color:black;
     background-size: cover;
     width: 100vw;
     background-attachment: fixed;
-    background-repeat: no-repeat;
-  
-  }
-  
+    background-repeat: no-repeat;}
 }
