@@ -394,7 +394,7 @@ body:before {
 
 .cardClub:nth-child(1n) {
   height: 190px;
-  width: 250px;
+  width: 270px;
   background-image: url('../../assets/Cartes/Carte-rouge.png');
   display: flex;
   justify-content: space-between;
@@ -404,7 +404,7 @@ body:before {
 
 .cardClub:nth-child(2n) {
   height: 190px;
-  width: 250px;
+  width: 270px;
   background-image: url('../../assets/Cartes/Carte-bleu.png');
   display: flex;
   justify-content: space-between;
@@ -415,7 +415,7 @@ body:before {
 
 .cardClub:nth-child(3n) {
   height: 190px;
-  width: 250px;
+  width: 270px;
   background-image: url('../../assets/Cartes/Carte-grise.png');
   display: flex;
   justify-content: space-between;
@@ -426,7 +426,7 @@ body:before {
 
 .cardClub:nth-child(4n) {
   height: 190px;
-  width: 250px;
+  width: 270px;
   background-image: url('../../assets/Cartes/Carte-turquoise.png');
   display: flex;
   justify-content: space-between;
@@ -435,6 +435,73 @@ body:before {
 
 }
 
+.locLogo {
+  max-height: 28px;
+  max-width: 42px;
+  margin-left: 2vw;
+  min-height: 28px;
+  min-width: 28px;
+  margin-bottom: 1.5vh;
+}
+.locInfo {
+  margin-top: 1vh;
+}
+.cardClub:nth-child(1n) .locLogo:nth-child(1n) {
+  background-image: url('../../assets/Logos/Localisation-rouge.png') ;
+  background-size: cover;
+  margin-right: 2vw;  
+}
+
+.cardClub:nth-child(2n) .locLogo:nth-child(1n) {
+  background-image: url('../../assets/Logos/Localisation-bleu.png') ;
+  background-size: cover;
+  margin-right: 2vw;  
+}
+.cardClub:nth-child(3n) .locLogo:nth-child(1n) {
+  background-image: url('../../assets/Logos/Localisation-gris.png') ;
+  background-size: cover;
+  margin-right: 2vw;  
+}
+.cardClub:nth-child(4n) .locLogo:nth-child(1n) {
+  background-image: url('../../assets/Logos/Localisation-turquoise.png') ;
+  background-size: cover;
+  margin-right: 2vw;  
+}
+
+.infoLogo {
+  max-height: 28px;
+  max-width: 42px;
+  margin-left: 2vw;
+  min-height: 28px;
+  min-width: 28px;
+}
+
+.cardClub:nth-child(1n) .infoLogo:nth-child(1n) {
+  background-image: url('../../assets/Logos/Info-rouge.png');
+  background-size: cover;
+}
+
+.cardClub:nth-child(2n) .infoLogo:nth-child(1n) {
+  background-image: url('../../assets/Logos/Info-bleu.png');
+  background-size: cover;
+}
+
+.cardClub:nth-child(3n) .infoLogo:nth-child(1n) {
+  background-image: url('../../assets/Logos/Info-gris.png');
+  background-size: cover;
+}
+
+.cardClub:nth-child(4n) .infoLogo:nth-child(1n) {
+  background-image: url('../../assets/Logos/Info-turquoise.png');
+  background-size: cover;
+}
+
+
+
+
+
+
+/* 
 .cardClub:nth-child(1n) .cardImages:nth-child(1n){
   background-image: url('../../assets/Logos/Localisation-rouge.png');
   background-size: contain;
@@ -453,7 +520,7 @@ body:before {
 .cardClub:nth-child(4n) .cardImages:nth-child(1n){
   background-image: url('../../assets/Logos/Localisation-turquoise.png');
   background-size: contain;
-}
+} */
 
 .cardClub:nth-child(1n) .secondRow:nth-child(1n){
   background-image: url('../../assets/Logos/Mail-rouge.png');
@@ -462,6 +529,7 @@ body:before {
   background-repeat: no-repeat;
   margin-left: 4.2pt;
   border : transparent;
+  margin-bottom: 2vh;
 }
 
 .cardClub:nth-child(2n) .secondRow:nth-child(1n){
@@ -491,7 +559,16 @@ body:before {
 }
 
 
+.secondRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.thirdRow {
+  display: flex;
+}
 
 .mail {
   margin-left: 35px;
@@ -502,10 +579,10 @@ body:before {
   display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	justify-content: flex-start;
+	justify-content: space-around;
 	align-items: baseline;
-	align-content: space-between;
-  margin-top:7vh;
+	align-content: space-evenly;
+  margin-top:3vh;
 }
 
 .cardImages {
@@ -528,6 +605,36 @@ body:before {
 	align-content: center;
 }
 
+.moreInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.moreInfoclub {
+  margin-left: 2vw;
+  font-family: 'Century Gothic';
+}
+
+.infoLogo a {
+  text-decoration: none;
+  outline: 0;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color:black;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {color:black;
+  text-decoration: none;}
+
 .clubTypo  {
   font-family: 'nuvel';
   font-weight: normal;
@@ -540,6 +647,7 @@ body:before {
   font-size: 13pt;
   margin-left: 12px;
   margin-top: 8px;
+  margin-bottom: 5vh;
 
   
 }

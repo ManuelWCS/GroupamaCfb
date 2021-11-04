@@ -256,19 +256,27 @@ function Mobile() {
               {selectedClub.Club}
                 </h2> 
                 <div className="contact" >
-                  <div className="firstRow">
+                  {/* <div className="firstRow">
                     <div className="test">
 
                   <img className="cardImages"/> 
                     </div>
                   <span className="spane"> {selectedClub.Adresse}</span>
-                    </div>
+                    </div> */}
                     <div className="secondRow">
-                      <div className="test">
                     <img className="cardImages2"/> 
-                      </div>
                     <span className="spane"> <a className="mail" href={`mailto:${selectedClub.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}> {selectedClub.Mail}</a></span>
+                 
                     </div>
+                    <div className="thirdRow">
+                      <div className="locLogo"/> 
+                      <span className="locInfo"> {selectedClub.Adresse} </span>
+                      </div>
+                      <div className="moreInfo">
+                        <div className="infoLogo">                
+                        </div>
+                        <a href={`https://foot-centre.fff.fr/recherche-clubs/?query=${selectedClub.Localite}`}> <span className="moreInfoclub"> Voir plus d'informations</span></a>
+                      </div>
                   </div>
                   </div>
               </div>
