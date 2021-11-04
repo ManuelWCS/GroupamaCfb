@@ -42,6 +42,15 @@ body:before {
 
 }
 
+.mainTitle {
+  text-align: center;
+  width: 80vw;
+  margin-top:3vh;
+  margin-bottom: 3vh;
+  font-family: 'Century Gothic';
+  font-size: 12px;
+}
+
 .toolBar {
   height: 50px;
   width: 100vw;
@@ -57,17 +66,20 @@ body:before {
 }
 
 .popUp {
-  height: 36px;
-  width: 280px;
+  height: 5vh;
+  width: fit-content;
   background: white;
   border-radius: 40px;
   text-align: center;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .nameClub {
   color:crimson;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size:16px;
+  font-family: 'Century Gothic';
+
 }
 .openModalBtn {
   margin-right: 12px;
@@ -233,9 +245,9 @@ body:before {
 .filtres select {
   width: 218px;
 }
-.test {
+/* .test {
   background: transparent;
-}
+} */
 
 .categorieSelector {
   background-color: white;
@@ -244,9 +256,13 @@ body:before {
   font-size: 18px;
   border-radius: 4px;
   color: #3586C2;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Century Gothic';
+
 }
 
+.nameClub1 {
+  color: #3586C2;
+}
 
 
 .titleInput {
@@ -264,7 +280,7 @@ body:before {
 }
 
 .cityInput {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Century Gothic';
   color: crimson;
 }
 
@@ -489,7 +505,7 @@ body:before {
 	justify-content: flex-start;
 	align-items: baseline;
 	align-content: space-between;
-  margin-top:8vh;
+  margin-top:7vh;
 }
 
 .cardImages {
@@ -498,8 +514,10 @@ body:before {
   margin-right: 4pt;
   margin-left: 4pt;
   margin-bottom : 4pt;
-  
+  background-position: center no-repeat;
+    
 }
+
 
 .firstRow, .secondRow{
   display: flex;
@@ -541,7 +559,7 @@ body:before {
 }
 
 .equipeName {
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Century Gothic';
   margin-top: 12px;
   margin-left: 8px;
   font-size: 15pt;
@@ -553,14 +571,16 @@ body:before {
   text-decoration: none;
   outline: none;
   color: black;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  font-family: 'Century Gothic';
+
 }
 
 .spane {
   text-decoration: none;
   outline: none;
   color: black;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  font-family: 'Century Gothic';
+
 
 }
 

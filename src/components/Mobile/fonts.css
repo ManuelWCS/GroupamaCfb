@@ -4,3 +4,9 @@
          url('../../assets/fonts/Nuvel.ttf') format('truetype'),
          url('../../assets/fonts/nuvel-webfont.woff2') format('woff2');
 }
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: local('Century Gothic'),
+    url('../../assets/fonts/CenturyGothic.ttf') format('truetype');
+}

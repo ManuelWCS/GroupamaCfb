@@ -126,6 +126,9 @@ function Mobile() {
     <div className="pageMobile">
     <Header />
         <div className="background">
+          <div className="mainTitle">
+            <h1 className="mainTitle1">Trouvez un club près de chez vous !</h1>
+          </div>
       <div className="toolBar">
         <img src={Howitworks} className="btnImg" onClick={() => {
           setOpenModal(true)
@@ -168,7 +171,8 @@ function Mobile() {
               <Marker
                 position={[selectedClubs.Latitude, selectedClubs.Longitude]} value={propKey} icon={ClubMarqueur}>
                 <Popup className="popUp">
-                  <h1 className="nameClub"> {selectedClubs.Club} {selectedClubs.Adresse} </h1>
+                <h2 className="nameClub1"> {selectedClubs.Club}  </h2>
+                  <h5 className="nameClub">  {selectedClubs.Adresse} </h5>
                 </Popup>
               </Marker>
               
