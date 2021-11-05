@@ -52,7 +52,8 @@ input:focus {
     color: black;
     overflow-y: hidden;
     overflow-x: hidden;
-    padding-right: 16px;    
+    padding-right: 16px;
+    font-family: 'Century Gothic';    
 }
 
 

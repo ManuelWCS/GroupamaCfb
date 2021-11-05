@@ -26,7 +26,8 @@ import MarqueurCher from '../../assets/Marqueurs/MarqueurCher.png';
 import MarqueurEureEtLoir from '../../assets/Marqueurs/MarqueurEureEtLoire.png';
 import MarqueurIndre from '../../assets/Marqueurs/MarqueurIndre.png';
 import MarqueurLoiretCher from '../../assets/Marqueurs/MarqueurLoireEtCher.png';
-import MarqueurLoiret from '../../assets/Marqueurloiret.png'
+import MarqueurLoiret from '../../assets/Marqueurloiret.png';
+import MarqueurIndreEtLoire2 from '../../assets/Marqueurs/MarqueurIndreEtLoire.png';
 import webLogo from '../../assets/footer/web.png';
 import ytLogo from '../../assets/footer/youtube.png';
 import fbLogo from '../../assets/footer/fb.png'
@@ -35,7 +36,6 @@ import fbLogo from '../../assets/footer/fb.png'
 
 
 function Mobile() {
-  const mapRef = useRef();
   const [openModal, setOpenModal] = useState(false);
   const [allCities, setallCities] = useState([]);
   const [cityInput, setcityInput] = useState([]);
@@ -91,6 +91,11 @@ function Mobile() {
     iconAnchor: [13.50 , 47],
     iconUrl : MarqueurLoiret
   })
+  const IndreEtLoireMarqueur = L.icon({
+    iconSize: [60,50],
+    iconAnchor: [13.50, 47],
+    iconUrl : MarqueurIndreEtLoire2
+  })
 
 
 
@@ -145,7 +150,7 @@ function Mobile() {
     <Header />
         <div className="background">
           <div className="mainTitle">
-            <h1 className="mainTitle1">Trouvez un club près de chez <i className="typo">vous</i> !</h1>
+            <h1 className="mainTitle1">Trouvez un club près de chez <b className="typo">vous</b> !</h1>
           </div>
       <div className="toolBar">
         <img src={Howitworks} className="btnImg" onClick={() => {
@@ -155,7 +160,7 @@ function Mobile() {
       </div>
       
       <div className="map">
-        <MapContainer  doubleClickZoom={true} className="leaflet-container3" center={setMap} zoom={7} scrollWheelZoom={true} minZoom={5} setmapView ref={mapRef} >
+        <MapContainer  doubleClickZoom={true} className="leaflet-container3" center={setMap} zoom={7} scrollWheelZoom={true} minZoom={5}  >
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
@@ -174,21 +179,21 @@ function Mobile() {
               <Marker position={[47.11563, 2.35849]} icon={CherMarqueur}>
           <Popup className="InstancePopUp">
             <a href="https://cher.fff.fr/competitions/">
-              <h1>District de Football du Cher </h1>
+              <h3>District de Football du Cher </h3>
             </a>
           </Popup>
         </Marker>
         <Marker position={[48.42918, 1.46021]} icon={EureEtLoirMarqueur}>
           <Popup className="InstancePopUp">
             <a href="https://eure-et-loir.fff.fr/competitions/">
-              <h1>District de Football d'Eure Et Loire </h1>
+              <h3>District de Football d'Eure Et Loire </h3>
             </a>
           </Popup>
         </Marker>
         <Marker position={[46.79267, 1.69726]} icon={IndreMarqueur}>
           <Popup className="InstancePopUp">
             <a href="https://indre.fff.fr/competitions/">
-              <h1>District de Football de l'Indre </h1>
+              <h3>District de Football de l'Indre </h3>
             </a>
           </Popup>
         </Marker>
@@ -196,7 +201,7 @@ function Mobile() {
         <Marker position={[47.9168433, 1.9246721]} icon={LoiretMarqueur}>
           <Popup className="InstancePopUp">
             <a href="https://foot-loiret.fff.fr/competitions/">
-              <h1>District de Football du Loiret </h1>
+              <h3>District de Football du Loiret </h3>
             </a>
           </Popup>
         </Marker>
@@ -204,7 +209,7 @@ function Mobile() {
           <Popup className="InstancePopUp">
             <a href="https://loir-et-cher.fff.fr/competitions/">
 
-            <h1>District de Football du Loir-et-Cher</h1>
+            <h3>District de Football du Loir-et-Cher</h3>
             </a>
           </Popup>
         </Marker>
