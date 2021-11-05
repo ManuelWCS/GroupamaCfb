@@ -245,7 +245,7 @@ function Mobile() {
           }
         >
 
-          {selectedClub.map((selectedClubs, propKey, )  => {
+          {selectedClub.map((selectedClubs, propKey )  => {
             return (
               <Marker
                 position={[selectedClubs.Latitude, selectedClubs.Longitude]} value={propKey} icon={ClubMarqueur}>
@@ -326,7 +326,7 @@ function Mobile() {
         </h2>
       </div> 
      <div className="results" >
-        {resArr.map((selectedClub, index) =>
+        {selectedClub.map((selectedClub, index) =>
         (
           <div className="cardClub" id="scroll"  >
             <div >
