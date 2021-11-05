@@ -1,22 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 @import url('../Mobile/fonts.css');
 
-body:before {
-  content: "";
-  display: block;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -10;
-  background: url('../../assets/Habillage/backgroundPhone2.png') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  overflow-x: hidden;
+
+@media screen and (min-width:320px) and (max-width:425px) {
+  body:before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background: url('../../assets/Habillage/backgroundPhone2.png') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x: hidden;
+  }
 }
+
 .pageMobile {
   width: 100%;
   height: 100%;
@@ -837,15 +841,29 @@ a:hover {color:black;
 }
 
 @media screen and (min-width:1024px) {
-  
-  body {
-    overflow-x:hidden;
+
+    body:before {
+      content: "";
+      display: block;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -10;
+      background: url('../../assets/Habillage/Fondtablette.png') no-repeat center center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      overflow-x: hidden;
    
   }
 
   .background {
     display: flex;
     flex-direction: column;
+
     
   }
 

@@ -49,6 +49,7 @@ function Mobile() {
   const [latMax, setLatMax] = useState(0);
   const [lngMin, setLngMin] = useState(0);
   const [lngMax, setLngMax] = useState(0);
+  const [modal, setModal] = useState(false);
 
 
   const LigueMarqueur = L.icon({
