@@ -54,7 +54,21 @@ body:before {
 
 .InstancePopUp {
   font-family: 'Century Gothic';
-  background: #3586C2;
+  color: #293D6B;
+}
+
+.InstancePopUp h3 {
+  font-family: 'Century Gothic';
+  color: #293D6B;
+}
+
+.InstanceLigue {
+  font-family: 'Century Gothic';
+  color:#c1272d;
+}
+
+.InstanceLigue h3 {
+  color: #c1272d;
 }
 .toolBar {
   height: 50px;
@@ -404,7 +418,6 @@ body:before {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  border-right: 1px crimson;
   
 }
 
@@ -416,7 +429,6 @@ body:before {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  border-right:cornflowerblue
   
 
 }
@@ -442,7 +454,6 @@ body:before {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  border-right: 1px turquoise;
   
 
 }
@@ -577,7 +588,7 @@ body:before {
 	justify-content: space-around;
 	align-items: baseline;
 	align-content: space-evenly;
-  margin-top: 16px;
+  margin-top: 8px;
 }
 
 .cardImages {
@@ -633,7 +644,7 @@ a:hover {color:black;
 .clubTypo  {
   font-family: 'nuvel';
   font-weight: normal;
-  padding: 4px 4px 4px 4px;
+  padding: 4px 4px;
   mix-blend-mode: normal;
   letter-spacing: 1.7px;
   color: #f1f1f1;
@@ -642,7 +653,7 @@ a:hover {color:black;
   font-size: 13pt;
   margin-left: 12px;
   margin-top: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 
   
 }
@@ -716,6 +727,68 @@ a:hover {color:black;
 
  .footer div {
    margin-top: 50px;
+ }
+
+
+ /* Media queries pour adapter les cartes aux petits téléphones  */
+
+ @media screen and (min-width:320px) and (max-width:375px) {
+
+
+.cardClub:nth-child(1n) {
+  height: 194px;
+  width: 275px;
+  background-image: url('../../assets/Cartes/Carte-rouge.png') no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 16px;
+
+  
+}
+
+.cardClub:nth-child(2n) {
+  height: 194px;
+  width: 275px;
+  background-image: url('../../assets/Cartes/Carte-bleu.png') no-repeat;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background-position: center; 
+  border-radius: 16px;
+
+
+}
+
+.cardClub:nth-child(3n) {
+  height: 194px;
+  width: 275px;
+  background-image: url('../../assets/Cartes/Carte-grise.png') no-repeat; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background-position: center;
+  border-radius: 16px;
+
+}
+
+.cardClub:nth-child(4n) {
+  height: 194px;
+  width: 275px;
+  background-image: url('../../assets/Cartes/Carte-turquoise.png') no-repeat;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background-position: center;
+  border-radius: 16px;
+
+}
+   
  }
 
 

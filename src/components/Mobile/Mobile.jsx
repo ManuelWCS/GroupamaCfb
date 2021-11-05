@@ -69,7 +69,7 @@ function Mobile() {
   })
 
   const EureEtLoirMarqueur = L.icon({
-    iconSize: [55,55],
+    iconSize: [50,50],
     iconAnchor: [13.50 , 47],
     iconUrl : MarqueurEureEtLoir
   })
@@ -139,11 +139,27 @@ function Mobile() {
         ))
       } 
       console.log(selectedClub)
+      console.log(allClubs)
 
   function pageRefresh() {
     window.location.reload();
   }
     let setMap = [47.830261, 1.93609];
+
+    var resArr = []
+    allClubs.filter(function(item) {
+      var i = resArr.findIndex(x => (x.Category == item.Category ));
+      if (i <= -1) {
+        resArr.push(item)
+      }
+      return null 
+    })
+
+  
+
+
+  
+
   
   return (
     <div className="pageMobile">
@@ -175,24 +191,29 @@ function Mobile() {
           radius={10000}/>
               </Marker> ) : null}
               <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
+              <Popup className="InstanceLigue">
+            <a href="https://foot-centre.fff.fr//">
+              <h3 >Ligue Centre-Val de Loire </h3>
+            </a>
+          </Popup>
               </Marker>
               <Marker position={[47.11563, 2.35849]} icon={CherMarqueur}>
           <Popup className="InstancePopUp">
-            <a href="https://cher.fff.fr/competitions/">
+            <a href="https://cher.fff.fr/">
               <h3>District de Football du Cher </h3>
             </a>
           </Popup>
         </Marker>
         <Marker position={[48.42918, 1.46021]} icon={EureEtLoirMarqueur}>
           <Popup className="InstancePopUp">
-            <a href="https://eure-et-loir.fff.fr/competitions/">
+            <a href="https://eure-et-loir.fff.fr/">
               <h3>District de Football d'Eure Et Loire </h3>
             </a>
           </Popup>
         </Marker>
         <Marker position={[46.79267, 1.69726]} icon={IndreMarqueur}>
           <Popup className="InstancePopUp">
-            <a href="https://indre.fff.fr/competitions/">
+            <a href="https://indre.fff.fr/">
               <h3>District de Football de l'Indre </h3>
             </a>
           </Popup>
@@ -200,14 +221,14 @@ function Mobile() {
         
         <Marker position={[47.9168433, 1.9246721]} icon={LoiretMarqueur}>
           <Popup className="InstancePopUp">
-            <a href="https://foot-loiret.fff.fr/competitions/">
+            <a href="https://foot-loiret.fff.fr/">
               <h3>District de Football du Loiret </h3>
             </a>
           </Popup>
         </Marker>
         <Marker position={[47.5766331, 1.3026806]} icon={LoirEtCherMarqueur}>
           <Popup className="InstancePopUp">
-            <a href="https://loir-et-cher.fff.fr/competitions/">
+            <a href="https://loir-et-cher.fff.fr/">
 
             <h3>District de Football du Loir-et-Cher</h3>
             </a>
@@ -224,7 +245,7 @@ function Mobile() {
           }
         >
 
-          {selectedClub.map((selectedClubs, propKey) => {
+          {selectedClub.map((selectedClubs, propKey, )  => {
             return (
               <Marker
                 position={[selectedClubs.Latitude, selectedClubs.Longitude]} value={propKey} icon={ClubMarqueur}>
@@ -305,7 +326,7 @@ function Mobile() {
         </h2>
       </div> 
      <div className="results" >
-        {selectedClub.map((selectedClub, index) =>
+        {resArr.map((selectedClub, index) =>
         (
           <div className="cardClub" id="scroll"  >
             <div >
@@ -314,13 +335,7 @@ function Mobile() {
               {selectedClub.Club}
                 </h2> 
                 <div className="contact" >
-                  {/* <div className="firstRow">
-                    <div className="test">
-
-                  <img className="cardImages"/> 
-                    </div>
-                  <span className="spane"> {selectedClub.Adresse}</span>
-                    </div> */}
+                  
                     <div className="secondRow">
                     <img className="cardImages2"/> 
                     <span className="spane"> <a className="mail" href={`mailto:${selectedClub.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}> {selectedClub.Mail}</a></span>
