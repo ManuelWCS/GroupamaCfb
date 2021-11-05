@@ -30,7 +30,8 @@ import MarqueurLoiret from '../../assets/Marqueurloiret.png';
 import MarqueurIndreEtLoire2 from '../../assets/Marqueurs/MarqueurIndreEtLoire.png';
 import webLogo from '../../assets/footer/web.png';
 import ytLogo from '../../assets/footer/youtube.png';
-import fbLogo from '../../assets/footer/fb.png'
+import fbLogo from '../../assets/footer/fb.png';
+import ballon from '../../assets/Habillage/balloon.png'
 
 
 
@@ -146,15 +147,7 @@ function Mobile() {
   }
     let setMap = [47.830261, 1.93609];
 
-    var resArr = []
-    allClubs.filter(function(item) {
-      var i = resArr.findIndex(x => (x.Category == item.Category ));
-      if (i <= -1) {
-        resArr.push(item)
-      }
-      return null 
-    })
-
+    
   
 
 
@@ -174,13 +167,14 @@ function Mobile() {
         }}/>
         {openModal && <Modal closeModal={setOpenModal} />}
       </div>
-      
-      <div className="map">
+        <div className="mobile">
+
+      <div className="map" >
         <MapContainer  doubleClickZoom={true} className="leaflet-container3" center={setMap} zoom={7} scrollWheelZoom={true} minZoom={5}  >
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
-          />
+            />
         { location.loaded === true ? (
           <Marker position={[location.coordinates.lat, location.coordinates.lng]}>
             <Popup> 
@@ -236,65 +230,78 @@ function Mobile() {
         </Marker>
               <MarkerClusterGroup
               animate={true}
-          onClusterClick={(cluster) =>
-            console.warn(
-              "cluster-click",
+              onClusterClick={(cluster) =>
+                console.warn(
+                  "cluster-click",
               cluster,
               cluster.layer.getAllChildMarkers()
-            )
+              )
           }
-        >
+          >
 
           {selectedClub.map((selectedClubs, propKey )  => {
             return (
               <Marker
-                position={[selectedClubs.Latitude, selectedClubs.Longitude]} value={propKey} icon={ClubMarqueur}>
+              position={[selectedClubs.Latitude, selectedClubs.Longitude]} value={propKey} icon={ClubMarqueur}>
                 <Popup className="popUp">
                 <h2 className="nameClub1"> {selectedClubs.Club}  </h2>
                   <h5 className="nameClub">  {selectedClubs.Adresse} </h5>
                 </Popup>
               </Marker>
               
-            )
-          })}
+              )
+            })}
         
         </MarkerClusterGroup>
         </MapContainer>
       </div>
       {/* Fin div map  */}
-
       <div className="filtres">
+
         <div className="inputCity">
+        <div className="filtersImg">
+          <img src={ballon}  alt="ballon.jpeg" className="filterLogos" />
+        </div>
+          <div className="desktop">
+
         <span className="titleInput">VOTRE VILLE </span>
         <Searchbar placeholder="" selection={(value)=>{
           setcityInput(value)
         }} 
         data={allCities} onChange={(e) => {
-              setcityInput(e.target.value);
-              
-            }} />
+          setcityInput(e.target.value);
+          
+        }} />
+        </div>
         </div>
         <div className="cityFilter">
 {/* 
           
           <select
-            className="citySelector"
-            name="city" id=""
-            placeholder="Votre Ville"
-            onChange={(e) => {
-              setcityInput(e.target.value);
-            }}>
-            <option value="" disabled selected hidden>Choisir</option>
-            {allCities.map((allCities, key) => {
+          className="citySelector"
+          name="city" id=""
+          placeholder="Votre Ville"
+          onChange={(e) => {
+            setcityInput(e.target.value);
+          }}>
+          <option value="" disabled selected hidden>Choisir</option>
+          {allCities.map((allCities, key) => {
               return (
                 <option key={key} value={allCities.name}> {allCities.name}</option>
-              )
-            })}
+                )
+              })}
           </select> */}
 
         </div>
         <div className="categoriesFilter">
           <div className="categoryFilter">
+          <div className="filtersImg">
+          <img src={ballon}  alt="ballon.jpeg" className="filterLogos" />
+
+          </div>
+          <div className="desktop">
+            
+
             <span className="titleInput2">VOTRE CATEGORIE: </span>
             <form onSubmit={pageRefresh} className="categoryForm">
               <select
@@ -313,10 +320,12 @@ function Mobile() {
                   })}
               </select>
             </form>
+                    </div>
           </div>          
         </div>
         <img className="buttonFind" src={Button} onClick={findClub} ></img>
       </div> 
+       </div>
      <div className={ !selectedClub ? 'searchResults' : 'hidden'}>
         <h4>
           Les équipes près de </h4>
@@ -355,12 +364,12 @@ function Mobile() {
               </div>
           </div>
 
-        ))}
+))}
       </div> 
           </div>
+
+
       <div className="footeur">
-
-
         <div>
           <a href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html">
             <img className="logosFooter" src={webLogo} /></a></div>
