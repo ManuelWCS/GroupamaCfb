@@ -1,11 +1,114 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gothic+A1&display=swap');
+
 .leaflet-container {
-  width: 100%;
+  width: 100vw;
   height: 80vh;
-  
 }
 
 .map {
-  margin:0;
+  margin: 0;
 }
 
-.markercluster-map { height: 90vh; }
+.markercluster-map {
+  height: 90vh;
+}
+
+.logoLigue {
+  width: 150px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: 150px;
+
+}
+
+.popupContain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+
+/* 
+
+.instance img {
+  height: 1000px;
+}
+
+.logoInstance {
+  width: 200px;
+  height: 210px;
+}
+
+.popup-box {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+} */
+/* 
+.box {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #999;
+  overflow: auto;
+}
+
+.NameClub {
+  font-family: "Bebas Neue", cursive;
+  color: rgba(193, 39, 45);
+  text-align: center;
+  font-size: 3em;
+} */
+
+/* .details {
+  display: flex;
+  flex-direction: row;
+  margin-right: 1em;
+}
+
+.icons {
+  width: 6em;
+  height: 4em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.mailIcon {
+  width: 4em;
+  height: 3em;
+  margin-left: 1em;
+  margin-right: 1em;
+} */
+
+/* .Content {
+  font-size: 1.5em;
+  font-family: 'Gothic A1', sans-serif;}
+
+  .clubPopUp {
+    display: flex;
+    flex-direction: column;
+  } */
+
+/* @media only screen and (min-width: 319px) and (max-width: 767px) {
+  .leaflet-container {
+    height: 80vh;
+    width: 100vw;
+    margin: 0;
+  }
+} */
+/* 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .map {
+    height: 80vh;
+    width: 100vw;
+  }
+} */

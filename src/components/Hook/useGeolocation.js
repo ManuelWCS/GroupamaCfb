@@ -27,7 +27,7 @@ const useGelocation = () => {
         if(!("geolocation" in navigator)) {
             onError({
                 code: 0,
-                message: "Geolocation not supported",
+                message: "Geolocation not supported / Géolocalisation non prise en charge",
             });
         }
 
