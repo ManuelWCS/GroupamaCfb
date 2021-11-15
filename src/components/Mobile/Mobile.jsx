@@ -2,7 +2,7 @@ import React from "react";
 import "./Mobile.css";
 import Header from "../header/Header.jsx";
 import Button from '../../assets/Boutons/buttontransparent.png'
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Howitworks from '../../assets/Boutons/howitworks.png';
 import '../../assets/fonts/Nuvel.ttf';
@@ -15,8 +15,7 @@ import {
   Marker,
   Popup,
   Circle,
-  TileLayer,
-  useMapEvents
+  TileLayer
 } from "react-leaflet";
 import Modal from './Modal';
 import useGelocation from "../Hook/useGeolocation";
@@ -148,6 +147,8 @@ function Mobile() {
   }
     let setMap = [47.830261, 1.93609];
 
+    const bounds = [[47.83000, 1.93000],[41.83000, 0.5000]];
+
     
   
 
@@ -171,7 +172,7 @@ function Mobile() {
         <div className="mobile">
 
       <div className="map" >
-        <MapContainer  doubleClickZoom={true} className="leaflet-container3" center={setMap} zoom={7} scrollWheelZoom={true} minZoom={5}  >
+        <MapContainer bounds={bounds} doubleClickZoom={true} className="leaflet-container3" center={setMap} zoom={7} scrollWheelZoom={true} minZoom={5}  >
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
