@@ -7,22 +7,8 @@ function Searchbar({placeholder, data, selection}) {
     const [filteredData, setFilteredData] = useState([]);
     const [wordEntered, setwordEntered] = useState("");
     const [wordSelected, setWordSelected] = useState(false);
-
     
-    // const Fermeur = ( )=> {
-    //     if (wordSelected === true) {
-    //         let cible = document.getElementById('one')
-    //         cible.addEventListener('click',(e) =>  {
-    //             cible.parentNode.style.display ="none"
-    //             console.log(cible.parentNode)
-    //             e.preventDefault()
-    //         })
-
-    //     }
-
-    // }
-   
-
+    
 
     const handleFilter = (event) => {
         const searchWord = event.target.value;
@@ -59,6 +45,8 @@ function Searchbar({placeholder, data, selection}) {
        { filteredData.length !==0 && (
          <div className={wordSelected ? "dropdownClicked" : "dataResult"} > 
              { filteredData.slice(0 , 3).map((value, key ) => {
+
+                
                  
                  return <p  id="dataResult" onClick={()=>{
                     selection(value.name)

@@ -31,6 +31,7 @@ import webLogo from '../../assets/footer/web.png';
 import ytLogo from '../../assets/footer/youtube.png';
 import fbLogo from '../../assets/footer/fb.png';
 import ballon from '../../assets/Habillage/balloon.png'
+import { Widgets } from "@material-ui/icons";
 
 
 
@@ -139,8 +140,12 @@ function Mobile() {
         allClubs.Category === `${categoryInput}`
         ))
       } 
-      console.log(selectedClub)
-      console.log(allClubs)
+      // console.log(selectedClub)
+      // console.log(allClubs)
+
+      function scrollTop() {
+        window.location.href="#results"
+      }
 
   function pageRefresh() {
     window.location.reload();
@@ -152,7 +157,6 @@ function Mobile() {
 
 
     
-  
 
 
   
@@ -176,7 +180,7 @@ function Mobile() {
       <div className="map" >
         <MapContainer bounds={bounds} doubleClickZoom={true} className="leaflet-container3" center={setMap} zoom={7} scrollWheelZoom={true} minZoom={5}  >
           <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
             url="https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
             />
         { location.loaded === true ? (
@@ -250,6 +254,7 @@ function Mobile() {
                 <Popup className="popUp">
                 <h2 className="nameClub1"> {selectedClubs.Club}  </h2>
                   <h5 className="nameClub">  {selectedClubs.Adresse} </h5>
+                  <h6 className="redirect" onClick={scrollTop}>  Voir carte Club</h6>
                 </Popup>
               </Marker>
               
@@ -279,22 +284,7 @@ function Mobile() {
         </div>
         </div>
         <div className="cityFilter">
-{/* 
-          
-          <select
-          className="citySelector"
-          name="city" id=""
-          placeholder="Votre Ville"
-          onChange={(e) => {
-            setcityInput(e.target.value);
-          }}>
-          <option value="" disabled selected hidden>Choisir</option>
-          {allCities.map((allCities, key) => {
-              return (
-                <option key={key} value={allCities.name}> {allCities.name}</option>
-                )
-              })}
-          </select> */}
+
 
         </div>
         <div className="categoriesFilter">
@@ -338,7 +328,7 @@ function Mobile() {
         <h2> <strong className="blue"> {categoryInput}</strong> :
         </h2>
       </div> 
-     <div className="results" >
+     <div className="results" id="results" >
         {selectedClub.map((selectedClub, index) =>
         (
           <div className="cardClub" id="scroll"  >
