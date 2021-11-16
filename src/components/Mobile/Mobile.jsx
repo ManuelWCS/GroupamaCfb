@@ -14,6 +14,7 @@ import {
   MapContainer,
   Marker,
   Popup,
+  useMap,
   Circle,
   TileLayer
 } from "react-leaflet";
@@ -36,6 +37,7 @@ import { Widgets } from "@material-ui/icons";
 
 
 
+
 function Mobile() {
   const [openModal, setOpenModal] = useState(false);
   const [allCities, setallCities] = useState([]);
@@ -50,8 +52,12 @@ function Mobile() {
   const [lngMin, setLngMin] = useState(0);
   const [lngMax, setLngMax] = useState(0);
   const [modal, setModal] = useState(false);
+  const [map, setMap ] = useState(null);
+  const [position, setPosition] = useState([47.830261, 1.93609])
 
 
+  
+  
   const LigueMarqueur = L.icon({
     iconSize: [40,50],
     iconAnchor: [13.5 , 47],
@@ -63,7 +69,7 @@ function Mobile() {
     iconAnchor: [23.5 , 47],
     iconUrl : MarqueurClub,
   })
-
+  
   const CherMarqueur = L.icon({
     iconSize: [50,50],
     iconAnchor: [13.50 , 47],
@@ -87,7 +93,7 @@ function Mobile() {
     iconAnchor: [13.50 , 47],
     iconUrl : MarqueurLoiretCher
   })
-
+  
   const LoiretMarqueur = L.icon({
     iconSize: [60,50],
     iconAnchor: [13.50 , 47],
@@ -98,9 +104,9 @@ function Mobile() {
     iconAnchor: [13.50, 47],
     iconUrl : MarqueurIndreEtLoire2
   })
-
-
-
+  
+  
+  
 
   useEffect(() => {
     if (location.loaded === true) {
@@ -108,7 +114,7 @@ function Mobile() {
       setLatMax(location.coordinates.lat + 0.180227);
       setLngMin(location.coordinates.lng - 0.246349);
       setLngMax(location.coordinates.lng + 0.246349);
-   
+      
     } else {
       setLatMin(0);
       setLatMin(0);
@@ -121,46 +127,50 @@ function Mobile() {
   useEffect(() => {
     axios.get("https://api-clubs-cvl.herokuapp.com/cities")
       .then((res) => setallCities(res.data))
-  }, []);
-
-  useEffect(() => {
-    axios.get("https://api-clubs-cvl.herokuapp.com/categories")
+    }, []);
+    
+    useEffect(() => {
+      axios.get("https://api-clubs-cvl.herokuapp.com/categories")
       .then((res) => setCategorie(res.data))
-  }, [])
-
+    }, [])
+    
   useEffect(() => {
     axios.get("https://api-clubs-cvl.herokuapp.com/allteams").then((res) => setallClubs(res.data))
   }, []);
 
-
+  
   function findClub() {    
     setselectedClub(
       allClubs.filter((allClubs) =>
-        allClubs.Localite === `${cityInput}` &&
-        allClubs.Category === `${categoryInput}`
+      allClubs.Localite === `${cityInput}` &&
+      allClubs.Category === `${categoryInput}`
         ))
       } 
       // console.log(selectedClub)
       // console.log(allClubs)
-
+      
       function scrollTop() {
         window.location.href="#results"
       }
-
-  function pageRefresh() {
-    window.location.reload();
-  }
-    let setMap = [47.830261, 1.93609];
-
-    const bounds = [[47.83000, 1.93000],[41.83000, 0.5000]];
-
-
-
+      
+      function pageRefresh() {
+        window.location.reload();
+      }
+      
+      const bounds = [[47.83000, 1.93000],[41.83000, 0.5000]];
+      
+      function SetViewOnClick({latitude, longitude}) {
+        const map = useMap();
+    map.setView([latitude, longitude], map.getZoom());
     
-
-
+    return null;
+  }
+  let setMapy = [47.830261, 1.93609];
+    
   
-
+  
+  
+  
   
   return (
     <div className="pageMobile">
@@ -178,7 +188,8 @@ function Mobile() {
         <div className="mobile">
 
       <div className="map" >
-        <MapContainer bounds={bounds} doubleClickZoom={true} className="leaflet-container3" center={setMap} zoom={7} scrollWheelZoom={true} minZoom={5}  >
+        <MapContainer doubleClickZoom={true} className="leaflet-container3" center={setMapy} zoom={7} scrollWheelZoom={true} minZoom={5}  >
+          
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
             url="https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
@@ -189,7 +200,7 @@ function Mobile() {
               <h2 className="myPosition"> Ma position </h2> 
               </Popup>
               <Circle 
-          center={setMap}
+          center={setMapy}
           radius={10000}/>
               </Marker> ) : null}
               <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
@@ -317,6 +328,7 @@ function Mobile() {
                     </div>
           </div>          
         </div>
+        <button className="localize"> Localisez moi </button>
         <img className="buttonFind" src={Button} onClick={findClub} ></img>
       </div> 
        </div>
