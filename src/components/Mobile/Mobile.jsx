@@ -13,8 +13,8 @@ import Searchbar from "../Searchbar/Searchbar";
 import {
   MapContainer,
   Marker,
-  Popup,
   useMap,
+  Popup,  
   Circle,
   TileLayer
 } from "react-leaflet";
@@ -52,11 +52,7 @@ function Mobile() {
   const [lngMin, setLngMin] = useState(0);
   const [lngMax, setLngMax] = useState(0);
   const [modal, setModal] = useState(false);
-  const [map, setMap ] = useState(null);
-  const [position, setPosition] = useState([47.830261, 1.93609])
 
-
-  
   
   const LigueMarqueur = L.icon({
     iconSize: [40,50],
@@ -138,6 +134,7 @@ function Mobile() {
     axios.get("https://api-clubs-cvl.herokuapp.com/allteams").then((res) => setallClubs(res.data))
   }, []);
 
+
   
   function findClub() {    
     setselectedClub(
@@ -159,17 +156,41 @@ function Mobile() {
       
       const bounds = [[47.83000, 1.93000],[41.83000, 0.5000]];
       
-      function SetViewOnClick({latitude, longitude}) {
-        const map = useMap();
-    map.setView([latitude, longitude], map.getZoom());
-    
-    return null;
-  }
+
   let setMapy = [47.830261, 1.93609];
-    
-  
-  
-  
+  function LocationMarker() {
+    const [position, setPosition] = useState(null);
+    const [bbox, setBbox] = useState([]);
+    L.icon({
+        iconSize: [25, 41],
+        iconAnchor: [10, 41],
+        popupAnchor: [2, -40],
+        iconUrl: "https://unpkg.com/leaflet@1.6/dist/images/marker-icon.png",
+        shadowUrl: "https://unpkg.com/leaflet@1.6/dist/images/marker-shadow.png"
+      });
+
+    const map = useMap();
+
+    useEffect(() => {
+      map.locate().on("locationfound", function (e) {
+        setPosition(e.latlng);
+        map.flyTo(e.latlng, map.getZoom());
+        const radius = e.accuracy;
+        const circle = L.circle(e.latlng, radius);
+        circle.addTo(map);
+        setBbox(e.bounds.toBBoxString().split(","));
+      });
+    }, [map]);
+
+    return position === null ? null : (
+      <Marker position={position} >
+        <Popup>
+          You are here. <br />
+        </Popup>
+      </Marker>
+    );
+  }
+
   
   
   return (
@@ -188,7 +209,7 @@ function Mobile() {
         <div className="mobile">
 
       <div className="map" >
-        <MapContainer doubleClickZoom={true} className="leaflet-container3" center={setMapy} zoom={7} scrollWheelZoom={true} minZoom={5}  >
+        <MapContainer doubleClickZoom={true} className="leaflet-container3" center={setMapy} zoom={7} scrollWheelZoom={true} minZoom={5}   >
           
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
@@ -202,7 +223,7 @@ function Mobile() {
               <Circle 
           center={setMapy}
           radius={10000}/>
-              </Marker> ) : null}
+              </Marker> ) : null} 
               <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
               <Popup className="InstanceLigue">
             <a href="https://foot-centre.fff.fr//">
@@ -273,6 +294,7 @@ function Mobile() {
             })}
         
         </MarkerClusterGroup>
+      
         </MapContainer>
       </div>
       {/* Fin div map  */}
@@ -316,7 +338,7 @@ function Mobile() {
                 onChange={(e) => {
                   setcategoryInput(e.target.value);
                 }}>
-                <option value="" disabled selected hidden>Choisir</option>
+                <option value="" disabled selected hidden>CATEGORIE </option>
 
                 {categorie.map((categorie, categoryKey) => {
                   return (
@@ -328,8 +350,8 @@ function Mobile() {
                     </div>
           </div>          
         </div>
-        <button className="localize"> Localisez moi </button>
-        <img className="buttonFind" src={Button} onClick={findClub} ></img>
+       
+        <img className="buttonFind" src={Button} onClick={findClub} alt="BoutonTrouverUnClub" ></img>
       </div> 
        </div>
      <div className={ !selectedClub ? 'searchResults' : 'hidden'}>
@@ -352,7 +374,7 @@ function Mobile() {
                 <div className="contact" >
                   
                     <div className="secondRow">
-                    <img className="cardImages2"/> 
+                    <img className="cardImages2" alt="LogoMail"/> 
                     <span className="spane"> <a className="mail" href={`mailto:${selectedClub.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}> {selectedClub.Mail}</a></span>
                  
                     </div>
