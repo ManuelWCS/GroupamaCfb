@@ -1,7 +1,7 @@
 import "./App.css";
 import { Switch, Route } from 'react-router';
 // import Mobile2 from './components/Mobile/Mobile2.jsx'
-// import Mobile from './components/Mobile/Mobile.jsx'
+import Mobile from './components/Mobile/Mobile.jsx'
 
 
 
