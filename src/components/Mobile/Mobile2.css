@@ -42,9 +42,22 @@
  
     width: 80vw;
     height: 50vh !important;
-    margin-bottom: 28px;
+    margin-bottom: 74px;
     z-index: 0;
     margin-top:7vh;
+}
+
+.mapContent {
+  order: 0;
+  
+}
+
+.mobileContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
 
 /* Titre sous le header, possède une div en colonne pour toujours centrer le texte */
@@ -81,7 +94,7 @@
     width: 100%;
     display: flex;
     justify-content:flex-end;
-    padding: 8px 8px  8px 8px;
+    padding:4px 4px 4px 4px;
     margin-bottom: 16px;
     
 }
@@ -90,7 +103,6 @@
 height: 100px;
   width: 150px;
   margin-right: 16px;
-  margin-top: 8px;
   margin-bottom: 4px;
 }
 
@@ -98,14 +110,90 @@ height: 100px;
 
 .filters {
     height: 5vh;
-    background-color: pink;
     width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.filtersWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.agefilterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top:24px;
+}
+
+.ageTitle {
+  font-family: 'Nuvel';
+  color:darkblue;
+}
+
+input {
+ 
+  padding: 4px 4px 4px 4px;
+  font-family: 'Century Gothic';
+  color:darkblue;
+  background-color: #fff;
+  border-radius: 4px;
+  margin: 4px 4px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+ 
+  input[type=text]{
+    background-color: #293D6B;
+  color: wheat;
+  width: 218px;
+  height: 30px;
+
 }
 
 
+.genderContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top:24px;
 
+}
 
+.genderWrapper {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: flex-end;
+}
 
+.genderTitle {
+  font-family: 'Nuvel';
+  font-size: 16px;
+  color: #BBDEF0;
+  padding: 4px 4px ;
+}
+
+.genderChoice {
+  font-size: 16px;
+  font-weight: bolder;  
+  font-family: 'Century Gothic';
+}
+
+input[type=radio] {
+  padding: 4px 4px 4px 4px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
 
 
 
@@ -211,10 +299,6 @@ height: 100px;
    
   }
   
-
-
-
-
   .mainTitle {
     padding-top: 16px;
     font-size: 24px;

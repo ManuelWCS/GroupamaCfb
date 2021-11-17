@@ -374,7 +374,7 @@ function Mobile() {
                 <div className="contact" >
                   
                     <div className="secondRow">
-                    <img className="cardImages2" alt="LogoMail"/> 
+                    <img className="cardImages2" /> 
                     <span className="spane"> <a className="mail" href={`mailto:${selectedClub.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}> {selectedClub.Mail}</a></span>
                  
                     </div>
