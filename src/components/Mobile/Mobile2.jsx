@@ -113,16 +113,21 @@ export default function Leaflet() {
                       value="Female"
                       checked={gender === 'Female'}
                       onClick={() => setGender('Female')}
-                      /></label>
+                      /></label></div></div>
+
+                      <div className="categoryContainer">
+                          <span className="categoryTitle">CATEGORIE :</span>
+                          <div className="categoryWrapper">
+                          <span className="categorySelected"> Libre foot anim</span>
+
+                          </div>
+
+                      </div>
 
 
-                        </div>
 
-                       
-                          
-                            
 
-                        </div>
+
                         </div>
 
                     </div>
