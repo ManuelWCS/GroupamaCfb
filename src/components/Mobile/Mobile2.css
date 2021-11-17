@@ -35,7 +35,7 @@
     width: 100vw;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    height: 80vh; /* Forcé la height ici car sinon la carte prenait toute la hauteur*/ 
+    height: 80vh; /* Forcé la height ici car sinon la carte prenait toute la hauteur*/
   }
 
   .leafletContainer4 {
@@ -135,9 +135,11 @@ height: 100px;
 .ageTitle {
   font-family: 'Nuvel';
   color:darkblue;
+  margin-top:89px;
+
 }
 
-input {
+.ageInput {
  
   padding: 4px 4px 4px 4px;
   font-family: 'Century Gothic';
@@ -150,7 +152,7 @@ input {
 }
 
  
-  input[type=text]{
+ .ageInput {
   background-image: url('../../assets/Habillage/balloon.png');
   background-repeat: no-repeat;
   color: darkblue;
@@ -159,11 +161,7 @@ input {
   background-position: right  1em bottom 12px ;
   font-weight: bolder;
 
-
 }
-
-
-
 
 .genderContainer {
   display: flex;
@@ -230,16 +228,23 @@ input[type=radio] {
 	align-content: center;
 }
 
-
-
-
-
 .categorySelected {
   font-size: 16px;
   font-weight: bolder;  
   font-family: 'Century Gothic';
 }
 
+
+.searchbarContainer {
+  margin-top:24px;
+}
+
+.searchbarTitle {
+  font-family: 'Nuvel';
+  font-size: 16px;
+  color: darkcyan;
+  margin-top:24px;
+}
 
 
 
