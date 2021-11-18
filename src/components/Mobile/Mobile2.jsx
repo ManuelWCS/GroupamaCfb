@@ -76,6 +76,8 @@ export default function Leaflet() {
       propertyFiltered.type === cat.type))
   
       const clubFiltered = allclubs.filter((item)=>item.Category === categorie[0].name);
+
+      
    }
 
     
