@@ -10,7 +10,7 @@ function App() {
     <div className="App">
              <Switch>
             {/* <Route exact path="/" component={Mobile}/>  */}
-             <Route path="/mobile2" component={Mobile2}/> 
+             <Route exact path="/" component={Mobile2}/> 
        </Switch>
     </div>
   );

@@ -13,7 +13,7 @@ function Searchbar({placeholder, data, selection}) {
     const handleFilter = (event) => {
         const searchWord = event.target.value;
         setwordEntered(searchWord)
-        const newFilter = data.filter((value)=> {
+        const newFilter = data.filter((value , key)=> {
             return value.name.toLowerCase().includes(searchWord.toLowerCase());
         });
 
@@ -44,7 +44,7 @@ function Searchbar({placeholder, data, selection}) {
          </div>
        { filteredData.length !==0 && (
          <div className={wordSelected ? "dropdownClicked" : "dataResult"} > 
-             { filteredData.slice(0 , 3).map((value, key ) => {
+             { filteredData.slice(0 ,1 ).map((value, key ) => {
 
                 
                  
@@ -53,7 +53,7 @@ function Searchbar({placeholder, data, selection}) {
                     setWordSelected(true)
                     setwordEntered(value.name)
                  } 
-                 } className="dataItem" id="one"target="_blank"> {value.name}</p>
+                 } className="dataItem" id="one"target="_blank" key={key}> {value.name}</p>
              })}
          </div>
  
