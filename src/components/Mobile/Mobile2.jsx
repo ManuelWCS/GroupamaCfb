@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
-import Select from "react-select";
 import L from "leaflet";
 import Header from "../header/Header";
 import "./Mobile2.css";
@@ -58,51 +57,26 @@ export default function Leaflet() {
   const [allclubs, setallClubs] = useState([]);
   const [categorySelected, setcategorySelected] = useState([]);
   const [selectedClub, setselectedClub] = useState([]);
+  
 
-  function FindClub() {
-    console.log(ageEntered);
-    console.log(gender)
-    console.log(citySelected)
+  const [propertyFiltered, setPropertyFiltered]= useState({
+    ageEntered:15,
+    city:"paris",
+    type:'Libre',
+    gender: "Male",
+    category: "libre",
+  })
 
-    if (ageEntered < '11' || gender === 'Male') {
-        console.log(categorySelected)
-        setcategorySelected(`Libre / Football d'animation` )
-    }
-
-    if (ageEntered < '11' || gender === 'Female'){
-        setcategorySelected(`Libre / Football d'animation Féminin`)
-    }
-    if (ageEntered === '12' || gender === 'Male'){
-        setcategorySelected(`Libre / U13 -U12`)
-    }
-    if (ageEntered === '12' || gender === 'Female'){
-        setcategorySelected(`Libre / U13 -U12 Féminine`)
-    }
-    if (ageEntered === '13' || gender === 'Male'){
-        setcategorySelected(`Libre / U13 -U12`)
-    }
-    if (ageEntered === '13' || gender === 'Female'){
-        setcategorySelected(`Libre / U13 -U12 Féminine`)
-    } 
-    if (ageEntered === '14' || gender === 'Male'){
-        setcategorySelected(`Libre / U15 -U14`)
-    }
-    if (ageEntered === '14' || gender === 'Female'){
-        setcategorySelected(`Libre / U15 -U14 Féminine`)
-    } 
-    if (ageEntered > '15' || gender === 'Male'){
-        setcategorySelected(`Libre / Senior`)
-    }
-    if (ageEntered > '15' || gender === 'Female'){
-        setcategorySelected(`Libre / Senior Féminine`)
-    } 
-    
-    
-    
-
-  }
-
-
+   const filteringClub =()=>{
+    let categorie = category.filter(
+      (cat)=>
+     ( propertyFiltered.gender === cat.gender 
+      && propertyFiltered.ageEntered >= cat.minAge
+      && propertyFiltered.ageEntered <= cat.maxAge &&
+      propertyFiltered.type === cat.type))
+  
+      const clubFiltered = allclubs.filter((item)=>item.Category === categorie[0].name);
+   }
 
     
    useEffect(() => {
@@ -112,15 +86,15 @@ export default function Leaflet() {
   console.log(cities)
 
   useEffect(() => {
-      axios.get("https://api-clubs-cvl.herokuapp.com/categories")
+      axios.get("http://localhost:8080/categories")
       .then((res) => setCategory(res.data))
     }, [])
     console.log(category)
 
     useEffect(() => {
         axios.get("https://api-clubs-cvl.herokuapp.com/allteams").then((res) => setallClubs(res.data))   
-    } , [])
-  
+    } , []) 
+    console.log(allclubs)
 
   return (
     <div className="fullContent">
@@ -221,8 +195,8 @@ export default function Leaflet() {
                 </div>
 
                 <div className="buttonContainer">
-                  <button
-                    onClick={FindClub}
+                  <button onClick={()=>filteringClub()}
+                    
                   >
                     HELLO{" "}
                   </button>
