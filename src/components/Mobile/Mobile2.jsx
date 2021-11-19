@@ -46,7 +46,7 @@ export function LocationMarker() {
 }
 
 
- 
+
 
 export default function Leaflet() {
   const [gender, setGender] = useState("");
@@ -54,55 +54,57 @@ export default function Leaflet() {
   const [isValid, setisValid] = useState(false);
   const [cities, setCities] = useState([]);
   const [category, setCategory] = useState([]);
-  const [citySelected, setcitySelected]= useState([]);
+  const [citySelected, setcitySelected] = useState([]);
   const [allclubs, setallClubs] = useState([]);
   const [categorySelected, setcategorySelected] = useState([]);
-  const [selectedClub, setselectedClub] = useState([]);
-  
 
-  const [propertyFiltered, setPropertyFiltered]= useState({
-    ageEntered: 12,
+
+  const [propertyFiltered, setPropertyFiltered] = useState({
+    ageEntered: null,
     citySelected: "ORLEANS",
-    type:'Libre',
-    gender: 'Male',
+    type: 'Libre',
+    gender: null,
     category: "libre",
   })
 
-   const filteringClub =()=>{
+  const filteringClub = () => {
     let categorie = category.filter(
-      (cat)=>
-     ( propertyFiltered.gender === cat.gender 
-      && propertyFiltered.ageEntered >= cat.minAge
-      && propertyFiltered.ageEntered <= cat.maxAge &&
-      propertyFiltered.type === cat.type))
-  
-      const clubFiltered = allclubs.filter((item) => item.Category  === categorie[0].name &&
-      item.Localite === propertyFiltered.citySelected) ;
-      console.log(clubFiltered)
-      console.log(categorie)
-   }
+      (cat) =>
+      (propertyFiltered.gender === cat.gender
+        && propertyFiltered.ageEntered >= cat.minAge
+        && propertyFiltered.ageEntered <= cat.maxAge &&
+        propertyFiltered.type === cat.type))
 
-   const oneChange= () => {
-     
-   }
+    const clubFiltered = allclubs.filter((item) => item.Category === categorie[0].name &&
+      item.Localite === propertyFiltered.citySelected);
+    // console.log(clubFiltered)
+    // console.log(categorie)
+    // console.log(propertyFiltered)
+    // console.log(citySelected)
+  }
 
-    
-   useEffect(() => {
-  axios.get("https://api-clubs-cvl.herokuapp.com/cities")
-    .then((res) => setCities(res.data))
-  }, []);
-  console.log(cities)
+  const oneChange = (e) => {
+    setPropertyFiltered({ ...propertyFiltered, [e.target.name]: e.target.value })
+  }
+
+
 
   useEffect(() => {
-      axios.get("https://api-clubs-cvl.herokuapp.com/categories")
-      .then((res) => setCategory(res.data))
-    }, [])
-    console.log(category)
+    axios.get("https://api-clubs-cvl.herokuapp.com/cities")
+      .then((res) => setCities(res.data))
+  }, []);
+  // console.log(cities)
 
-    useEffect(() => {
-        axios.get("https://api-clubs-cvl.herokuapp.com/allteams").then((res) => setallClubs(res.data))   
-    } , []) 
-    console.log(allclubs)
+  useEffect(() => {
+    axios.get("https://api-clubs-cvl.herokuapp.com/categories")
+      .then((res) => setCategory(res.data))
+  }, [])
+  // console.log(category)
+
+  useEffect(() => {
+    axios.get("https://api-clubs-cvl.herokuapp.com/allteams").then((res) => setallClubs(res.data))
+  }, [])
+  // console.log(allclubs)
 
   return (
     <div className="fullContent">
@@ -143,11 +145,13 @@ export default function Leaflet() {
               <div className="agefilterContainer">
                 <span className="ageTitle"> VOTRE AGE</span>
                 <input
+                  name="ageEntered"
                   id="ageInput"
                   className="ageInput"
-                  onChange={(e) => {
-                    setageEntered(e.target.value);
-                  }}
+                  // onChange={(e) => {
+                  //   setageEntered(e.target.value);
+                  // }}
+                  onChange={(e) => { oneChange(e) }}
                   type="number"
                   min="0"
                   max="99"
@@ -162,9 +166,11 @@ export default function Leaflet() {
                   <label className="genderChoice" htmlFor="man">
                     Masculine
                     <input
+                      name="gender"
                       type="checkbox"
                       value="Male"
-                      onClick={() => setGender("Male")}
+                      // onClick={() => setGender("Male")}
+                      onClick={(e) => { oneChange(e) }}
                       id="checkboxMale"
                       className="checkboxes"
 
@@ -175,43 +181,81 @@ export default function Leaflet() {
                   <label className="genderChoice" htmlFor="woman">
                     Féminine
                     <input
+                      name="gender"
                       type="checkbox"
                       value="Female"
                       id="checkboxFemale"
-                    onClick={() => setGender("Female")}
-                    className="checkboxes"
+                      onChange={(e) => { oneChange(e) }}
+                      className="checkboxes"
 
                     />
                   </label>
                 </div>
+              </div>
 
-                <div className="categoryContainer">
-                  <span className="categoryTitle">CATEGORIE :</span>
-                  <div className="categoryWrapper">
-                    <span className="categorySelected"> {categorySelected} à {citySelected}</span>
-                  </div>
+              <div className="categoryContainer">
+                <span className="categoryTitle">CATEGORIE :</span>
+                <div className="categoryWrapper">
+                  <span className="categorySelected"> {categorySelected} à {citySelected}</span>
                 </div>
+              </div>
 
-                <div className="searchbarContainer">
-                  <span className="searchbarTitle"> VOTRE VILLE </span>
-                  <Searchbar placeholder="Rechercher" selection={(value) => {
-                      setcitySelected(value)
+              <div className="searchbarContainer">
+                <span className="searchbarTitle"> VOTRE VILLE </span>
+                <Searchbar placeholder="Rechercher" name="citySelected"
+                  selection={(value) => {
+                    setcitySelected(value)
                   }}
-                  data={cities} onChange={(e)=> {
-                      setcitySelected(e.target.value)
-                  }} />
-                </div>
+                  data={cities}
 
-                <div className="buttonContainer">
-                   <button className="trigger">
-                    
-                    <img className="btnClub" src={buttonImg} onClick={() => filteringClub()}/>
-                  
-                  </button> 
+                />
+              </div>
+
+              <div className="buttonContainer">
+                <button className="trigger">
+
+                  <img className="btnClub" src={buttonImg} onClick={() => filteringClub()} />
+
+                </button>
+              </div>
+
+            </div>
+            <div className="resultats">
+              hello je suis les résultats
+              <div className="cardClub" id="scroll">
+                <div className="cardInfo">
+                  <h2 className="clubTypo"></h2>
+                  <div className="contact">
+                    <div className="secondRow">
+                      <img src="" alt="" className="cardImages2" />
+                      <span className="spane">
+                        <a href="" className="mail"></a>
+                      </span>
+
+                    </div>
+                    <div className="thirdRow">
+                      <div className="locLogo" />
+                      <span className="locInfo"></span>
+
+                    </div>
+                    <div className="moreInfo">
+                      <div className="infoLogo">
+                      </div>
+                      <a href="">
+                        <span className="moreInfoclub"></span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+
+
+
+
+
           </div>
+          {/* // Fin de la div qui englobe tout 'background' */}
         </div>
       </div>
 
