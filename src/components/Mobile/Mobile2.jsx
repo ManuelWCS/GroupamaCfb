@@ -7,10 +7,17 @@ import popupBtn from "../../assets/Boutons/howitworks.png";
 import webLogo2 from "../../assets/footer/web.png";
 import ytLogo from "../../assets/footer/youtube.png";
 import fbLogo from "../../assets/footer/fb.png";
-import Searchbar from "../Searchbar/Searchbar.js";
+// import Searchbar from "../Searchbar/Searchbar.js";
 import axios from "axios";
 import buttonImg from '../../assets/Boutons/buttontransparent.png'
 
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 
 export function LocationMarker() {
   const [position, setPosition] = useState(null);
@@ -46,6 +53,9 @@ export function LocationMarker() {
 }
 
 
+  
+
+
 
 
 export default function Leaflet() {
@@ -61,13 +71,16 @@ export default function Leaflet() {
 
   const [propertyFiltered, setPropertyFiltered] = useState({
     ageEntered: null,
-    citySelected: "ORLEANS",
+    citySelected: "",
     type: 'Libre',
-    gender: null,
-    category: "libre",
+    gender: '',
+    category: "",
   })
 
-  const filteringClub = () => {
+  console.log(propertyFiltered)
+
+  const filteringClub = (e) => {
+    e.preventDefault();
     let categorie = category.filter(
       (cat) =>
       (propertyFiltered.gender === cat.gender
@@ -75,12 +88,23 @@ export default function Leaflet() {
         && propertyFiltered.ageEntered <= cat.maxAge &&
         propertyFiltered.type === cat.type))
 
+        console.log(categorie)
+
     const clubFiltered = allclubs.filter((item) => item.Category === categorie[0].name &&
       item.Localite === propertyFiltered.citySelected);
-    // console.log(clubFiltered)
-    // console.log(categorie)
-    // console.log(propertyFiltered)
-    // console.log(citySelected)
+
+      console.log(clubFiltered)
+
+      const mapper = () => {
+        clubFiltered.map((x, index) => {
+          return (
+            <li> {x.name}</li>
+            
+          )
+          console.log(x)
+        })
+      }
+         
   }
 
   const oneChange = (e) => {
@@ -91,7 +115,13 @@ export default function Leaflet() {
 
   useEffect(() => {
     axios.get("https://api-clubs-cvl.herokuapp.com/cities")
-      .then((res) => setCities(res.data))
+      .then((res) => {
+        let result = [];
+        res.data.forEach(element => {
+          result.push({label:element.name})
+        });
+        setCities(result)
+      })
   }, []);
   // console.log(cities)
 
@@ -141,10 +171,11 @@ export default function Leaflet() {
           </div>
 
           <div className="filters">
-            <div className="filtersWrapper">
+            <form className="filtersWrapper" onSubmit={(e) => filteringClub(e)}>
               <div className="agefilterContainer">
                 <span className="ageTitle"> VOTRE AGE</span>
                 <input
+                required
                   name="ageEntered"
                   id="ageInput"
                   className="ageInput"
@@ -161,11 +192,26 @@ export default function Leaflet() {
               </div>
 
               <div className="genderContainer">
+                {/* <span className="genderTitle">COMPETITION :</span> */}
+                <div className="" >
+                <FormControl component="fieldset">
                 <span className="genderTitle">COMPETITION :</span>
-                <div className="genderWrapper" >
-                  <label className="genderChoice" htmlFor="man">
+                  <RadioGroup
+                    row
+                    aria-label="gender"
+                    defaultValue="female"
+                    name="gender"
+                    onChange={(e)=>oneChange(e)}
+                  >
+                    <FormControlLabel value="Male" control={<Radio />} label="Masculine" />
+                    <FormControlLabel value="Female" control={<Radio />} label="Feminine" />
+                    {/* <FormControlLabel value="other" control={<Radio />} label="Other" /> */}
+                  </RadioGroup>
+                </FormControl>
+                  {/* <label className="genderChoice" htmlFor="man">
                     Masculine
                     <input
+                    required
                       name="gender"
                       type="checkbox"
                       value="Male"
@@ -181,6 +227,7 @@ export default function Leaflet() {
                   <label className="genderChoice" htmlFor="woman">
                     Féminine
                     <input
+                    required
                       name="gender"
                       type="checkbox"
                       value="Female"
@@ -189,7 +236,7 @@ export default function Leaflet() {
                       className="checkboxes"
 
                     />
-                  </label>
+                  </label> */}
                 </div>
               </div>
 
@@ -202,26 +249,32 @@ export default function Leaflet() {
 
               <div className="searchbarContainer">
                 <span className="searchbarTitle"> VOTRE VILLE </span>
-                <Searchbar placeholder="Rechercher" name="citySelected"
-                  selection={(value) => {
-                    setcitySelected(value)
+                <Autocomplete
+                  disablePortal
+                  id="combo-box-demo"
+                  inputValue={propertyFiltered.citySelected}
+                  options={cities}
+                  onInputChange={(event, newInputValue) => {
+                    setPropertyFiltered({...propertyFiltered, citySelected: newInputValue});
                   }}
-                  data={cities}
-
+                  sx={{ width: 250 }}
+                  renderInput={(params) => 
+                      <TextField {...params} label="Rechercher" />
+                }
                 />
               </div>
 
               <div className="buttonContainer">
-                <button className="trigger">
-
-                  <img className="btnClub" src={buttonImg} onClick={() => filteringClub()} />
-
+                <button className="trigger" type="submit">
+                  <img className="btnClub" src={buttonImg} />
                 </button>
               </div>
 
-            </div>
+            </form>
             <div className="resultats">
               hello je suis les résultats
+              <mapper/>
+             
               <div className="cardClub" id="scroll">
                 <div className="cardInfo">
                   <h2 className="clubTypo"></h2>
@@ -249,11 +302,6 @@ export default function Leaflet() {
                 </div>
               </div>
             </div>
-
-
-
-
-
           </div>
           {/* // Fin de la div qui englobe tout 'background' */}
         </div>
