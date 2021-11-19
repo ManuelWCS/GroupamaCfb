@@ -9,6 +9,7 @@ import ytLogo from "../../assets/footer/youtube.png";
 import fbLogo from "../../assets/footer/fb.png";
 import Searchbar from "../Searchbar/Searchbar.js";
 import axios from "axios";
+import buttonImg from '../../assets/Boutons/buttontransparent.png'
 
 
 export function LocationMarker() {
@@ -60,10 +61,10 @@ export default function Leaflet() {
   
 
   const [propertyFiltered, setPropertyFiltered]= useState({
-    ageEntered:15,
-    city:"paris",
+    ageEntered: 12,
+    citySelected: "ORLEANS",
     type:'Libre',
-    gender: "Male",
+    gender: 'Male',
     category: "libre",
   })
 
@@ -75,9 +76,14 @@ export default function Leaflet() {
       && propertyFiltered.ageEntered <= cat.maxAge &&
       propertyFiltered.type === cat.type))
   
-      const clubFiltered = allclubs.filter((item)=>item.Category === categorie[0].name);
+      const clubFiltered = allclubs.filter((item) => item.Category  === categorie[0].name &&
+      item.Localite === propertyFiltered.citySelected) ;
+      console.log(clubFiltered)
+      console.log(categorie)
+   }
 
-      
+   const oneChange= () => {
+     
    }
 
     
@@ -88,7 +94,7 @@ export default function Leaflet() {
   console.log(cities)
 
   useEffect(() => {
-      axios.get("http://localhost:8080/categories")
+      axios.get("https://api-clubs-cvl.herokuapp.com/categories")
       .then((res) => setCategory(res.data))
     }, [])
     console.log(category)
@@ -197,11 +203,11 @@ export default function Leaflet() {
                 </div>
 
                 <div className="buttonContainer">
-                  <button onClick={()=>filteringClub()}
+                   <button className="trigger">
                     
-                  >
-                    HELLO{" "}
-                  </button>
+                    <img className="btnClub" src={buttonImg} onClick={() => filteringClub()}/>
+                  
+                  </button> 
                 </div>
               </div>
             </div>

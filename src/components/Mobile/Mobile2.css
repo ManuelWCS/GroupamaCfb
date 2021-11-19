@@ -130,7 +130,7 @@ height: 100px;
   justify-content: center;
   align-items: flex-start;
   padding-top:24px;
-  margin-top:32px;
+  margin-top:43px;
 }
 
 .ageTitle {
@@ -258,12 +258,30 @@ input[type=checkbox]:checked {
 
 
 
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 50px;
+  margin:auto;
+
+  
+}
+
+.trigger {
+  background-color: transparent;
+  border: none;
+}
 
 
+.btnClub {
+  height: 80px;
+  width: 120px;
+  margin-top: 45px;
 
-
-
-
+}
 
 
 
