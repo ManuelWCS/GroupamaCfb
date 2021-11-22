@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('../Mobile/fonts.css');
+
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+
+}
+
+
+.fullPage {
+    height: 100vh;
+    background-color: darkred;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    padding : 0;
+    background-image: url('./Fond2.svg');
+}
+
+
+.firstTitle {
+    height: 82px;
+    width: 80vw;
+    background-color: blue;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.titlePart1, .titlePart2 {
+    font-size: 24px;
+    color: blue;
+    margin: 4px 4px;
+    font-family: 'Nuvel';
+    text-transform: uppercase;
+    text-align: center;
+}
