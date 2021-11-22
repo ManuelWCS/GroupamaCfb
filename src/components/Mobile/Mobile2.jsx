@@ -18,6 +18,10 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import InputAdornment from '@mui/material/InputAdornment';
+
+
 
 export function LocationMarker() {
   const [position, setPosition] = useState(null);
@@ -174,7 +178,7 @@ export default function Leaflet() {
             <form className="filtersWrapper" onSubmit={(e) => filteringClub(e)}>
               <div className="agefilterContainer">
                 <span className="ageTitle"> VOTRE AGE</span>
-                <input
+                {/* <input
                 required
                   name="ageEntered"
                   id="ageInput"
@@ -188,7 +192,11 @@ export default function Leaflet() {
                   max="99"
                   maxLength={2}
                   placeholder="Votre age ici "
-                ></input>
+                ></input> */}
+
+                
+                <TextField label="Âge"  type="number"margin="normal" name="ageEntered" helperText='Renseingez votre aĝe ici' focused inputProps={{inputMode: 'numeric', pattern: '[0-9]*', placeholder: 'Tapez votre âge ici'} } onChange={(e) => {oneChange(e)}} 
+                />
               </div>
 
               <div className="genderContainer">
@@ -202,8 +210,9 @@ export default function Leaflet() {
                     defaultValue="female"
                     name="gender"
                     onChange={(e)=>oneChange(e)}
+                    error="Vous devez renseigner une compétition"  required={true}
                   >
-                    <FormControlLabel value="Male" control={<Radio />} label="Masculine" />
+                    <FormControlLabel  value="Male" control={<Radio />} label="Masculine" />
                     <FormControlLabel value="Female" control={<Radio />} label="Feminine" />
                     {/* <FormControlLabel value="other" control={<Radio />} label="Other" /> */}
                   </RadioGroup>
@@ -240,12 +249,12 @@ export default function Leaflet() {
                 </div>
               </div>
 
-              <div className="categoryContainer">
+              {/* <div className="categoryContainer">
                 <span className="categoryTitle">CATEGORIE :</span>
                 <div className="categoryWrapper">
-                  <span className="categorySelected"> {categorySelected} à {citySelected}</span>
+                  <span className="categorySelected"> {categorie} <span/span>
                 </div>
-              </div>
+              </div> */}
 
               <div className="searchbarContainer">
                 <span className="searchbarTitle"> VOTRE VILLE </span>
