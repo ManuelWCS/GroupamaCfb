@@ -13,6 +13,7 @@
       height: 100%;
       z-index: -10;
       background: url('../../assets/Habillage/backgroundPhone2.png') no-repeat center center;
+      /* background: url('./fond.svg') no-repeat center; */
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -37,7 +38,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-   /* background-image: url('../../assets/Habillage/backgroundPhone2.png');  */
    background-position: center;
     background-size: cover;
     width: 100vw;
@@ -290,17 +290,15 @@ input[type=checkbox]:checked {
   margin-top: 45px;
 
 }
-
 .resultats {
+  height: auto;
+  width: 80vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  margin-top: 2vh;
-
+  padding-bottom: 36px;
 }
-
 
 
 
@@ -328,7 +326,9 @@ input[type=checkbox]:checked {
         width: 100%;
         height: 100%;
         z-index: -10;
-        background: url('../../assets/Habillage/Fondtablette.png') no-repeat center center;
+        /* background: url('../../assets/Habillage/Fondtablette.png') no-repeat center center; */
+        background: url('./fond.svg') no-repeat center;
+
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -370,6 +370,7 @@ input[type=checkbox]:checked {
 
   .leafletContainer4 {
       width: 50vw;
+      z-index: 10;
   }
 
   .popupContainer {

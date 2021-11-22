@@ -1,39 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap,useMapEvents } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import Header from "../header/Header";
 import "./Mobile2.css";
 import popupBtn from "../../assets/Boutons/howitworks.png";
-
 import axios from "axios";
 import buttonImg from '../../assets/Boutons/buttontransparent.png'
-
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
+import svg from './fond.svg'
+import MarkerClusterGroup from "react-leaflet-markercluster";
+import 'react-leaflet-markercluster/dist/styles.min.css';
 
-
-
-export function MarkerClub(latlong) {
-const [position, setPosition] = useState(null);
-
-
-useMapEvents({
-  click: (e) => {
-    setPosition(e.latlng); // 👈 add marker
-
-    /* CODE TO ADD NEW PLACE TO STORE (check the source code) */
-  },
-});
- 
-return position === null ? null : (
-  <Marker position={position}></Marker>
-);
- 
-}
 
 
 
@@ -48,10 +30,9 @@ export function GeoLoc() {
     iconUrl: "https://unpkg.com/leaflet@1.6/dist/images/marker-icon.png",
     shadowUrl: "https://unpkg.com/leaflet@1.6/dist/images/marker-shadow.png",
   });
+  
 
   const map = useMap();
-
- 
 
   useEffect(() => {
     map.locate().on("locationfound", function (e) {
@@ -76,19 +57,12 @@ export function GeoLoc() {
 }
 
 
-  
-
-
-
-
 export default function Leaflet() {
   
   const [cities, setCities] = useState([]);
   const [category, setCategory] = useState([]);
   const [allclubs, setallClubs] = useState([]);
-
   const [clubFiltered, setClubFiltered] = useState([]);
-
   const [propertyFiltered, setPropertyFiltered] = useState({
     ageEntered: null,
     citySelected: "",
@@ -110,16 +84,13 @@ export default function Leaflet() {
 
     const result = allclubs.filter((item) => item.Category === categorie[0].name && item.Localite === propertyFiltered.citySelected);
 
-    console.log(typeof(result.Latitude))
-     setClubFiltered(result);    
+     setClubFiltered(result);
+     console.log(result)   
   }
 
   const oneChange = (e) => {
     setPropertyFiltered({ ...propertyFiltered, [e.target.name]: e.target.value })
   }
-
-  
- 
 
 
 
@@ -133,23 +104,22 @@ export default function Leaflet() {
         setCities(result)
       })
   }, []);
-  // console.log(cities)
 
   useEffect(() => {
     axios.get("https://api-clubs-cvl.herokuapp.com/categories")
       .then((res) => setCategory(res.data))
   }, [])
-  // console.log(category)
 
   useEffect(() => {
     axios.get("https://api-clubs-cvl.herokuapp.com/allteams").then((res) => setallClubs(res.data))
   }, [])
-  // console.log(allclubs)
 
   return (
     <div className="fullContent">
-      <Header />
       <div className="content">
+      
+      <Header />
+       
         <div className="mainTitleDiv">
           <h1 className="mainTitle">Trouvez un club près </h1>
           <h1 className="mainTitle">
@@ -167,16 +137,29 @@ export default function Leaflet() {
             <MapContainer
               className="leafletContainer4"
               center={[48.856614, 2.3522219]}
-              zoom={13}
-              scrollWheelZoom
+              zoom={7}
+              scrollWheelZoom={true}
               style={{ height: "100vh" }}
               doubleClickZoom={true}
+              zoomControl={true}
             >
               <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
               <GeoLoc />
+
+              
+              <MarkerClusterGroup
+              animate={true}
+              onClusterClick={(cluster) =>
+                console.warn(
+                  "cluster-click",
+              cluster,
+              cluster.layer.getAllChildMarkers()
+              )
+          }
+          >
                 {clubFiltered.length !== 0 ?
                 clubFiltered.slice(0,100).map((res, index )=>{
                   return (
@@ -188,6 +171,8 @@ export default function Leaflet() {
                 })
               :null
               }
+
+              </MarkerClusterGroup>
                    
                    
               
@@ -201,21 +186,6 @@ export default function Leaflet() {
             <form className="filtersWrapper" onSubmit={(e) => filteringClub(e)}>
               <div className="agefilterContainer">
                 <span className="ageTitle"> VOTRE AGE</span>
-                {/* <input
-                required
-                  name="ageEntered"
-                  id="ageInput"
-                  className="ageInput"
-                  // onChange={(e) => {
-                  //   setageEntered(e.target.value);
-                  // }}
-                  onChange={(e) => { oneChange(e) }}
-                  type="number"
-                  min="0"
-                  max="99"
-                  maxLength={2}
-                  placeholder="Votre age ici "
-                ></input> */}
 
                 
                 <TextField label="Âge"  type="number"margin="normal" name="ageEntered" helperText='Renseingez votre aĝe ici' focused inputProps={{inputMode: 'numeric', pattern: '[0-9]*', placeholder: 'Tapez votre âge ici'} } onChange={(e) => {oneChange(e)}} 
@@ -237,7 +207,7 @@ export default function Leaflet() {
                   >
                     <FormControlLabel  value="Male" control={<Radio />} label="Masculine" />
                     <FormControlLabel value="Female" control={<Radio />} label="Feminine" />
-                    {/* <FormControlLabel value="other" control={<Radio />} label="Other" /> */}
+           
                   </RadioGroup>
                 </FormControl>
               
@@ -271,35 +241,40 @@ export default function Leaflet() {
 
             </form>
             <div className="resultats">
-              hello je suis les résultats
               
-             
-              <div className="cardClub" id="scroll">
+              {clubFiltered.length !==0 ?
+              clubFiltered.map((clubCible , index) => {        
+                return (    
+              <div className="cardClub" id="scroll" key={index}>
                 <div className="cardInfo">
-                  <h2 content ="title of club" className="clubTypo"> {}</h2>
+                  <h2 content ="title of club" className="clubTypo"> {clubCible.Club}</h2>
                   <div className="contact">
                     <div className="secondRow">
                       <img src="" alt="" className="cardImages2" />
                       <span className="spane">
-                        <a title="envoyerMailClub"content="mail-contact" href="/" className="mail"></a>
+                        <a title="envoyerMailClub"content="mail-contact" href={`mailto:${clubCible.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`} className="mail">{clubCible.Mail}</a>
                       </span>
 
                     </div>
                     <div className="thirdRow">
                       <div className="locLogo" />
-                      <span className="locInfo"></span>
+                      <span className="locInfo"> {clubCible.Adresse}</span>
 
                     </div>
                     <div className="moreInfo">
                       <div className="infoLogo">
                       </div>
-                      <a href="www.google.com">
+                      <a href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubCible.Localite}`}> 
                         <span className="moreInfoclub"></span>
                       </a>
                     </div>
                   </div>
                 </div>
-              </div>
+              </div>)
+
+              })
+              :null 
+            }
             </div>
           </div>
           {/* // Fin de la div qui englobe tout 'background' */}

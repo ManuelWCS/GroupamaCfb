@@ -346,6 +346,7 @@ html, body {
 	align-content: flex-start;
   padding: 6px 6px 6px 6px;
   z-index: 0;
+  margin-right: 16px;
 }
 
 .categoryFilter span {
