@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap,useMapEvents } from "react-leaflet";
 import L from "leaflet";
 import Header from "../header/Header";
 import "./Mobile2.css";
 import popupBtn from "../../assets/Boutons/howitworks.png";
-import webLogo2 from "../../assets/footer/web.png";
-import ytLogo from "../../assets/footer/youtube.png";
-import fbLogo from "../../assets/footer/fb.png";
-// import Searchbar from "../Searchbar/Searchbar.js";
+
 import axios from "axios";
 import buttonImg from '../../assets/Boutons/buttontransparent.png'
 
@@ -17,15 +14,33 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import InputAdornment from '@mui/material/InputAdornment';
 
 
 
-export function LocationMarker() {
+export function MarkerClub(latlong) {
+const [position, setPosition] = useState(null);
+
+
+useMapEvents({
+  click: (e) => {
+    setPosition(e.latlng); // 👈 add marker
+
+    /* CODE TO ADD NEW PLACE TO STORE (check the source code) */
+  },
+});
+ 
+return position === null ? null : (
+  <Marker position={position}></Marker>
+);
+ 
+}
+
+
+
+export function GeoLoc() {
   const [position, setPosition] = useState(null);
-  const [bbox, setBbox] = useState([]);
+
+
   L.icon({
     iconSize: [25, 41],
     iconAnchor: [10, 41],
@@ -36,6 +51,8 @@ export function LocationMarker() {
 
   const map = useMap();
 
+ 
+
   useEffect(() => {
     map.locate().on("locationfound", function (e) {
       setPosition(e.latlng);
@@ -43,17 +60,19 @@ export function LocationMarker() {
       const radius = e.accuracy;
       const circle = L.circle(e.latlng, radius + 1000);
       circle.addTo(map);
-      setBbox(e.bounds.toBBoxString().split(","));
+    
     });
   }, [map]);
+
+
 
   return position === null ? null : (
     <Marker position={position}>
       <Popup>
         Vous êtes ici <br />
       </Popup>
-    </Marker>
-  );
+    </Marker>)
+  
 }
 
 
@@ -63,15 +82,12 @@ export function LocationMarker() {
 
 
 export default function Leaflet() {
-  const [gender, setGender] = useState("");
-  const [ageEntered, setageEntered] = useState();
-  const [isValid, setisValid] = useState(false);
+  
   const [cities, setCities] = useState([]);
   const [category, setCategory] = useState([]);
-  const [citySelected, setcitySelected] = useState([]);
   const [allclubs, setallClubs] = useState([]);
-  const [categorySelected, setcategorySelected] = useState([]);
 
+  const [clubFiltered, setClubFiltered] = useState([]);
 
   const [propertyFiltered, setPropertyFiltered] = useState({
     ageEntered: null,
@@ -80,8 +96,6 @@ export default function Leaflet() {
     gender: '',
     category: "",
   })
-
-  console.log(propertyFiltered)
 
   const filteringClub = (e) => {
     e.preventDefault();
@@ -94,26 +108,18 @@ export default function Leaflet() {
 
         console.log(categorie)
 
-    const clubFiltered = allclubs.filter((item) => item.Category === categorie[0].name &&
-      item.Localite === propertyFiltered.citySelected);
+    const result = allclubs.filter((item) => item.Category === categorie[0].name && item.Localite === propertyFiltered.citySelected);
 
-      console.log(clubFiltered)
-
-      const mapper = () => {
-        clubFiltered.map((x, index) => {
-          return (
-            <li> {x.name}</li>
-            
-          )
-          console.log(x)
-        })
-      }
-         
+    console.log(typeof(result.Latitude))
+     setClubFiltered(result);    
   }
 
   const oneChange = (e) => {
     setPropertyFiltered({ ...propertyFiltered, [e.target.name]: e.target.value })
   }
+
+  
+ 
 
 
 
@@ -153,7 +159,7 @@ export default function Leaflet() {
         </div>
 
         <div className="popupContainer">
-          <img className="popUp" src={popupBtn}></img>
+          <img className="popUp" alt="Bouton comment ça marche" src={popupBtn}></img>
         </div>
 
         <div className="mobileContent">
@@ -170,7 +176,24 @@ export default function Leaflet() {
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <LocationMarker />
+              <GeoLoc />
+                {clubFiltered.length !== 0 ?
+                clubFiltered.slice(0,100).map((res, index )=>{
+                  return (
+                  <Marker key ={index} position={[res.Latitude, res.Longitude]} >
+                   <Popup>
+                     test
+                   </Popup>
+                   </Marker>)
+                })
+              :null
+              }
+                   
+                   
+              
+            
+              
+  
             </MapContainer>
           </div>
 
@@ -217,44 +240,11 @@ export default function Leaflet() {
                     {/* <FormControlLabel value="other" control={<Radio />} label="Other" /> */}
                   </RadioGroup>
                 </FormControl>
-                  {/* <label className="genderChoice" htmlFor="man">
-                    Masculine
-                    <input
-                    required
-                      name="gender"
-                      type="checkbox"
-                      value="Male"
-                      // onClick={() => setGender("Male")}
-                      onClick={(e) => { oneChange(e) }}
-                      id="checkboxMale"
-                      className="checkboxes"
-
-
-                    />
-                  </label>
-
-                  <label className="genderChoice" htmlFor="woman">
-                    Féminine
-                    <input
-                    required
-                      name="gender"
-                      type="checkbox"
-                      value="Female"
-                      id="checkboxFemale"
-                      onChange={(e) => { oneChange(e) }}
-                      className="checkboxes"
-
-                    />
-                  </label> */}
+              
                 </div>
               </div>
 
-              {/* <div className="categoryContainer">
-                <span className="categoryTitle">CATEGORIE :</span>
-                <div className="categoryWrapper">
-                  <span className="categorySelected"> {categorie} <span/span>
-                </div>
-              </div> */}
+       
 
               <div className="searchbarContainer">
                 <span className="searchbarTitle"> VOTRE VILLE </span>
@@ -275,23 +265,23 @@ export default function Leaflet() {
 
               <div className="buttonContainer">
                 <button className="trigger" type="submit">
-                  <img className="btnClub" src={buttonImg} />
+                  <img className="btnClub" alt="bouton trouve ton club"src={buttonImg} />
                 </button>
               </div>
 
             </form>
             <div className="resultats">
               hello je suis les résultats
-              <mapper/>
+              
              
               <div className="cardClub" id="scroll">
                 <div className="cardInfo">
-                  <h2 className="clubTypo"></h2>
+                  <h2 content ="title of club" className="clubTypo"> {}</h2>
                   <div className="contact">
                     <div className="secondRow">
                       <img src="" alt="" className="cardImages2" />
                       <span className="spane">
-                        <a href="" className="mail"></a>
+                        <a title="envoyerMailClub"content="mail-contact" href="/" className="mail"></a>
                       </span>
 
                     </div>
@@ -303,7 +293,7 @@ export default function Leaflet() {
                     <div className="moreInfo">
                       <div className="infoLogo">
                       </div>
-                      <a href="">
+                      <a href="www.google.com">
                         <span className="moreInfoclub"></span>
                       </a>
                     </div>

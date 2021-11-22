@@ -1,10 +1,10 @@
-import React, {Link } from "react";
+import React from "react";
 import "./Header.css";
 
 function Header() {
   return (
    
-    <a href=""> 
+    <a href="/"> 
       <div className="fullHeader">
         
         <div className="headerMobile"></div></div> </a>
