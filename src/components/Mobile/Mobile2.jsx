@@ -137,7 +137,7 @@ export default function Leaflet() {
             <MapContainer
               className="leafletContainer4"
               center={[48.856614, 2.3522219]}
-              zoom={7}
+              zoom={13}
               scrollWheelZoom={true}
               style={{ height: "100vh" }}
               doubleClickZoom={true}
