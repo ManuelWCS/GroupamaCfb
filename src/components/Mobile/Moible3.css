@@ -5,38 +5,149 @@
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url('./Fond2.svg');
+    background-repeat: no-repeat;
 
 }
 
 
 .fullPage {
     height: 100vh;
-    background-color: darkred;
     width: 100%;
-    background-size: cover;
-    background-attachment: fixed;
     padding : 0;
+    /* background-size: cover;
+    background-attachment: fixed;
     background-image: url('./Fond2.svg');
+    background-repeat: no-repeat; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 
 .firstTitle {
     height: 82px;
     width: 80vw;
-    background-color: blue;
-    margin:auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
 }
 
 .titlePart1, .titlePart2 {
     font-size: 24px;
-    color: blue;
+    color: #3586c2;
     margin: 4px 4px;
     font-family: 'Nuvel';
     text-transform: uppercase;
+    text-align: center;    
+}
+
+.titlePart1 {
+    padding-top: 32px;
+}
+
+.titlePart2 {
+    padding-bottom: 16px;
+}
+.mapContainer {
+    display: block;
+}
+
+.mapLeaflet {
+    height: 50vh;
+    width: 80vw;
+    top: 50%;
+    margin-right:auto;
+    margin-left: auto;
+}
+
+.legendMap {
     text-align: center;
+    padding: 12px 12px 12px 12px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.legend {
+    color :white;
+    font-family: 'Century Gothic';
+}
+ 
+    
+
+.birthday {
+    color : #3586c2;
+    font-weight: 700;
+}
+
+.ranked {
+    color : #c1272d;
+    font-weight: 700;
+}
+
+.filtrations {
+    border-right: 1px inset #3586c2 ;
+    border-bottom:1px inset #3586c2;
+    border-top: 1px solid #3586c2;
+    border-left: 1px inset #3586c2;
+    border-radius: 12px;;
+    width: 75vw;
+    padding: 8px 8px 8px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.filterTitle1 {
+    font-family: 'Nuvel';
+    color:#3586c2;
+}
+.filtre1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+.filterTitle2 {
+    font-family: 'Nuvel';
+    color:#c1272d;
+}
+
+.filterTitle3 {
+    font-family: 'Nuvel';
+    color: #293D6B;
+}
+
+.filtre3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top:18px;
+    margin-bottom:18px;
+} 
+
+.btnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 50px;
+    margin:auto;
+    padding-bottom: 12px;
+}
+
+.findclubBtn {
+    height: 100px;
+    width: 150px;
+}
+
+.btnBackground {
+    background-color: transparent;
+    border: none;
 }

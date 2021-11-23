@@ -30,7 +30,7 @@ export function GeoLoc() {
     iconUrl: "https://unpkg.com/leaflet@1.6/dist/images/marker-icon.png",
     shadowUrl: "https://unpkg.com/leaflet@1.6/dist/images/marker-shadow.png",
   });
-  
+
 
   const map = useMap();
 
@@ -41,7 +41,7 @@ export function GeoLoc() {
       const radius = e.accuracy;
       const circle = L.circle(e.latlng, radius + 1000);
       circle.addTo(map);
-    
+
     });
   }, [map]);
 
@@ -53,12 +53,12 @@ export function GeoLoc() {
         Vous êtes ici <br />
       </Popup>
     </Marker>)
-  
+
 }
 
 
 export default function Leaflet() {
-  
+
   const [cities, setCities] = useState([]);
   const [category, setCategory] = useState([]);
   const [allclubs, setallClubs] = useState([]);
@@ -80,12 +80,12 @@ export default function Leaflet() {
         && propertyFiltered.ageEntered <= cat.maxAge &&
         propertyFiltered.type === cat.type))
 
-        console.log(categorie)
+    console.log(categorie)
 
     const result = allclubs.filter((item) => item.Category === categorie[0].name && item.Localite === propertyFiltered.citySelected);
 
-     setClubFiltered(result);
-     console.log(result)   
+    setClubFiltered(result);
+    console.log(result)
   }
 
   const oneChange = (e) => {
@@ -99,7 +99,7 @@ export default function Leaflet() {
       .then((res) => {
         let result = [];
         res.data.forEach(element => {
-          result.push({label:element.name})
+          result.push({ label: element.name })
         });
         setCities(result)
       })
@@ -117,9 +117,9 @@ export default function Leaflet() {
   return (
     <div className="fullContent">
       <div className="content">
-      
-      <Header />
-       
+
+        <Header />
+
         <div className="mainTitleDiv">
           <h1 className="mainTitle">Trouvez un club près </h1>
           <h1 className="mainTitle">
@@ -149,36 +149,36 @@ export default function Leaflet() {
               />
               <GeoLoc />
 
-              
+
               <MarkerClusterGroup
-              animate={true}
-              onClusterClick={(cluster) =>
-                console.warn(
-                  "cluster-click",
-              cluster,
-              cluster.layer.getAllChildMarkers()
-              )
-          }
-          >
+                animate={true}
+                onClusterClick={(cluster) =>
+                  console.warn(
+                    "cluster-click",
+                    cluster,
+                    cluster.layer.getAllChildMarkers()
+                  )
+                }
+              >
                 {clubFiltered.length !== 0 ?
-                clubFiltered.slice(0,100).map((res, index )=>{
-                  return (
-                  <Marker key ={index} position={[res.Latitude, res.Longitude]} >
-                   <Popup>
-                     test
-                   </Popup>
-                   </Marker>)
-                })
-              :null
-              }
+                  clubFiltered.slice(0, 100).map((res, index) => {
+                    return (
+                      <Marker key={index} position={[res.Latitude, res.Longitude]} >
+                        <Popup>
+                          test
+                        </Popup>
+                      </Marker>)
+                  })
+                  : null
+                }
 
               </MarkerClusterGroup>
-                   
-                   
-              
-            
-              
-  
+
+
+
+
+
+
             </MapContainer>
           </div>
 
@@ -187,34 +187,34 @@ export default function Leaflet() {
               <div className="agefilterContainer">
                 <span className="ageTitle"> VOTRE AGE</span>
 
-                
-                <TextField label="Âge"  type="number"margin="normal" name="ageEntered" helperText='Renseingez votre aĝe ici' focused inputProps={{inputMode: 'numeric', pattern: '[0-9]*', placeholder: 'Tapez votre âge ici'} } onChange={(e) => {oneChange(e)}} 
+
+                <TextField label="Âge" type="number" margin="normal" name="age" helperText='Renseingez votre aĝe ici' focused inputProps={{ inputMode: 'numeric', pattern: '[0-9]*', placeholder: 'Tapez votre âge ici' }} onChange={(e) => { oneChange(e) }}
                 />
               </div>
 
               <div className="genderContainer">
                 {/* <span className="genderTitle">COMPETITION :</span> */}
                 <div className="" >
-                <FormControl component="fieldset">
-                <span className="genderTitle">COMPETITION :</span>
-                  <RadioGroup
-                    row
-                    aria-label="gender"
-                    defaultValue="female"
-                    name="gender"
-                    onChange={(e)=>oneChange(e)}
-                    error="Vous devez renseigner une compétition"  required={true}
-                  >
-                    <FormControlLabel  value="Male" control={<Radio />} label="Masculine" />
-                    <FormControlLabel value="Female" control={<Radio />} label="Feminine" />
-           
-                  </RadioGroup>
-                </FormControl>
-              
+                  <FormControl component="fieldset">
+                    <span className="genderTitle">COMPETITION :</span>
+                    <RadioGroup
+                      row
+                      aria-label="gender"
+                      defaultValue="female"
+                      name="gender"
+                      onChange={(e) => oneChange(e)}
+                      error="Vous devez renseigner une compétition" required={true}
+                    >
+                      <FormControlLabel value="Male" control={<Radio />} label="Masculine" />
+                      <FormControlLabel value="Female" control={<Radio />} label="Feminine" />
+
+                    </RadioGroup>
+                  </FormControl>
+
                 </div>
               </div>
 
-       
+
 
               <div className="searchbarContainer">
                 <span className="searchbarTitle"> VOTRE VILLE </span>
@@ -224,57 +224,57 @@ export default function Leaflet() {
                   inputValue={propertyFiltered.citySelected}
                   options={cities}
                   onInputChange={(event, newInputValue) => {
-                    setPropertyFiltered({...propertyFiltered, citySelected: newInputValue});
+                    setPropertyFiltered({ ...propertyFiltered, citySelected: newInputValue });
                   }}
                   sx={{ width: 250 }}
-                  renderInput={(params) => 
-                      <TextField {...params} label="Rechercher" />
-                }
+                  renderInput={(params) =>
+                    <TextField {...params} label="Rechercher" />
+                  }
                 />
               </div>
 
               <div className="buttonContainer">
                 <button className="trigger" type="submit">
-                  <img className="btnClub" alt="bouton trouve ton club"src={buttonImg} />
+                  <img className="btnClub" alt="bouton trouve ton club" src={buttonImg} />
                 </button>
               </div>
 
             </form>
             <div className="resultats">
-              
-              {clubFiltered.length !==0 ?
-              clubFiltered.map((clubCible , index) => {        
-                return (    
-              <div className="cardClub" id="scroll" key={index}>
-                <div className="cardInfo">
-                  <h2 content ="title of club" className="clubTypo"> {clubCible.Club}</h2>
-                  <div className="contact">
-                    <div className="secondRow">
-                      <img src="" alt="" className="cardImages2" />
-                      <span className="spane">
-                        <a title="envoyerMailClub"content="mail-contact" href={`mailto:${clubCible.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`} className="mail">{clubCible.Mail}</a>
-                      </span>
 
-                    </div>
-                    <div className="thirdRow">
-                      <div className="locLogo" />
-                      <span className="locInfo"> {clubCible.Adresse}</span>
+              {clubFiltered.length !== 0 ?
+                clubFiltered.map((clubCible, index) => {
+                  return (
+                    <div className="cardClub" id="scroll" key={index}>
+                      <div className="cardInfo">
+                        <h2 content="title of club" className="clubTypo"> {clubCible.Club}</h2>
+                        <div className="contact">
+                          <div className="secondRow">
+                            <img src="" alt="" className="cardImages2" />
+                            <span className="spane">
+                              <a title="envoyerMailClub" content="mail-contact" href={`mailto:${clubCible.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`} className="mail">{clubCible.Mail}</a>
+                            </span>
 
-                    </div>
-                    <div className="moreInfo">
-                      <div className="infoLogo">
+                          </div>
+                          <div className="thirdRow">
+                            <div className="locLogo" />
+                            <span className="locInfo"> {clubCible.Adresse}</span>
+
+                          </div>
+                          <div className="moreInfo">
+                            <div className="infoLogo">
+                            </div>
+                            <a href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubCible.Localite}`}>
+                              <span className="moreInfoclub"></span>
+                            </a>
+                          </div>
+                        </div>
                       </div>
-                      <a href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubCible.Localite}`}> 
-                        <span className="moreInfoclub"></span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>)
+                    </div>)
 
-              })
-              :null 
-            }
+                })
+                : null
+              }
             </div>
           </div>
           {/* // Fin de la div qui englobe tout 'background' */}
