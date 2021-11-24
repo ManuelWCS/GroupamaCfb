@@ -38,9 +38,9 @@ export default function Footer({children}) {
       
 
             <div style={footerStyle}>     
-             <div><img src={footerLogo} style={logoStyle}/> </div>
-             <div><img src={footerLogo2} style={logoStyle}/> </div>
-             <div><img src={footerLogo3} style={logoStyle}/> </div>
+             <div><img src={footerLogo} alt="facebook logo"style={logoStyle}/> </div>
+             <div><img src={footerLogo2} alt="site web ligue" style={logoStyle}/> </div>
+             <div><img src={footerLogo3} alt="youtube logo"style={logoStyle}/> </div>
          
 </div>
         </div>

@@ -201,6 +201,33 @@ html, body {
     width: 16px;
 }
 
+.searchresultConainter {
+    height: auto;
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+  
+
+
+}
+
+.cardResult {
+    height: 35vh;
+    width: 635px;
+    background-image: url('../../assets/Cartes/bleue.svg');
+    background-position: center;
+    background-size: cover;
+    margin-right: 0px;
+    margin-left: 0px;
+    
+  
+   
+
+}
+
 
 @media screen and (min-width: 1023px) {
 
