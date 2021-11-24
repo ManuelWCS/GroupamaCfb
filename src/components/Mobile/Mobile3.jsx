@@ -12,9 +12,7 @@ import btnPicture from "../../assets/Boutons/buttontransparent.png";
 import axios from "axios";
 import Geolocalisation from "../Hook/Geolocalisation";
 import MarkerClusterGroup from "react-leaflet-markercluster";
-import footerLogo1 from '../../assets/footer/fb.png';
-import footerLogo2 from '../../assets/footer/web.png';
-import footerLogo3 from '../../assets/footer/youtube.png';
+
 import Footer from '../../components/Footer/Footer.jsx'
 
 
