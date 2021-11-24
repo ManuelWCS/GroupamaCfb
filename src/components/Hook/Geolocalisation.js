@@ -22,12 +22,12 @@ function Geolocalisation() {
               map.flyTo(e.latlng, map.getZoom());
               const radius = e.accuracy;
               const circle = L.circle(e.latlng, radius + 1000);
-              circle.addTo(map);    
+              circle.addTo(map); 
    })
       }, [map]);
 
     return positionFound === null ? "Geolocalisation not supported" : (
-        <Marker position={positionFound}>
+        <Marker className="MyPosition"position={positionFound}>
         <Popup>
             Vous êtes ici
         </Popup>

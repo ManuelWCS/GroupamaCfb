@@ -16,11 +16,7 @@ html, body {
 .fullPage {
     height: 100vh;
     width: 100%;
-    padding : 0;
-    /* background-size: cover;
-    background-attachment: fixed;
-    background-image: url('./Fond2.svg');
-    background-repeat: no-repeat; */
+    padding : 0;    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +24,7 @@ html, body {
 }
 
 
-.firstTitle {
+.subContainer {
     height: 82px;
     width: 80vw;
 }
@@ -70,7 +66,7 @@ html, body {
 }
 
 .legend {
-    color :white;
+    color :black;
     font-family: 'Century Gothic';
 }
  
@@ -87,10 +83,7 @@ html, body {
 }
 
 .filtrations {
-    border-right: 1px inset #3586c2 ;
-    border-bottom:1px inset #3586c2;
-    border-top: 1px solid #3586c2;
-    border-left: 1px inset #3586c2;
+    
     border-radius: 12px;;
     width: 75vw;
     padding: 8px 8px 8px 8px;
@@ -120,15 +113,17 @@ html, body {
 .filterTitle3 {
     font-family: 'Nuvel';
     color: #293D6B;
+    margin: top 14px;
+    margin-bottom: 14px;
 }
 
 .filtre3 {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: flex-start;
     margin-top:18px;
-    margin-bottom:18px;
+    margin-bottom:48px;
 } 
 
 .btnContainer {
@@ -143,11 +138,101 @@ html, body {
 }
 
 .findclubBtn {
+    margin-top: 36px;
     height: 100px;
     width: 150px;
+    margin-bottom: 36px;
 }
 
 .btnBackground {
     background-color: transparent;
     border: none;
+}
+
+.hiddenSearchResult {
+    display: none;
+}
+
+.marker-cluster-small div {
+    background-color: #1692eb;
+}
+
+.marker-cluster-medium {
+    background-color: rgb(255, 255, 255);
+    border: 1 px solid black;
+}
+
+.marker-cluster-small {
+    background-color: rgb(255, 255, 255);
+    border: 1 px solid black;
+}
+
+.marker-cluster-big {
+    background-color: rgb(255, 255, 255);
+    border: 1 px solid black;
+}
+
+.marker-cluster span  {
+    color:#fcfcfc;
+    font-size: 20px;
+    font-weight: bold;
+}
+.leaflet-marker-icon :not(.MyPosition){
+    background-color: #293D6B;
+}
+
+.test {
+    background-color: #293D6B;
+    height: 32px;
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    left: 0 ; right: 0; bottom: 0; 
+    height:[footer-height];
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.logoFooter {
+    height: 16px;
+    width: 16px;
+}
+
+
+@media screen and (min-width: 1023px) {
+
+.subContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content:  safe;
+    align-items: stretch;
+}
+
+.mapLeaflet {
+    height: 60vh;
+    width: 35vw;
+    margin-top:7vh;
+}
+
+.legendMap {
+    order: -1;
+    width: 350px;
+}
+
+.filtrations {
+    order: -3;
+    width: 50vw;
+}
+
+.titlePart1, .titlePart2 {
+    display: none;
+}
+
+.legendAndForm {
+    margin-top: 0vh;
+}
+
 }

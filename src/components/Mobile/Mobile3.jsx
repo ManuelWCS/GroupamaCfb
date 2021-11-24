@@ -12,6 +12,9 @@ import btnPicture from "../../assets/Boutons/buttontransparent.png";
 import axios from "axios";
 import Geolocalisation from "../Hook/Geolocalisation";
 import MarkerClusterGroup from "react-leaflet-markercluster";
+import footerLogo1 from '../../assets/footer/fb.png';
+import footerLogo2 from '../../assets/footer/web.png';
+import footerLogo3 from '../../assets/footer/youtube.png';
 
 
 
@@ -29,10 +32,9 @@ function Mobile3() {
         category: "",
     })
 
-    // function remove() {
-    //     let list = document.getElementById('test')
-    //     list.removeChild(list.childNodes[0]);
-    // }
+
+
+    
 
     const filterSearch = (e) => {
         e.preventDefault();
@@ -52,7 +54,7 @@ function Mobile3() {
 
         if (resultofSearch.length === 0) {
             console.log('y a R ')
-            let node = document.createElement('LI');
+            let node = document.createElement('div');
             let textNode = document.createTextNode("Pas de résultats correspondant à votre recherche");
             node.appendChild(textNode);
             document.getElementById('test').appendChild(node)
@@ -63,6 +65,8 @@ function Mobile3() {
     }
 
     }
+
+    
 
    
     const handleChange = (e) => {
@@ -100,7 +104,7 @@ function Mobile3() {
         <div className="fullPage">
             <Header />
 
-            <div className="firstTitle">
+            <div className="subContainer">
                 <h1 className="titlePart1">Trouvez un club près </h1>
                 <h1 className="titlePart2">de chez vous ! </h1>
 
@@ -144,6 +148,9 @@ function Mobile3() {
                         </MarkerClusterGroup>
                     </MapContainer>
                 </main>
+                <div className="legendAndForm">
+
+               
                 <section className="legendMap">
                     <p className="legend">
                         Entrez votre <em className="birthday">date de naissance </em>et la{" "}
@@ -207,6 +214,7 @@ function Mobile3() {
                                 id="combo-box-demo"
                                 inputValue={formData.city}
                                 options={allcities}
+                                noOptionsText="Pas d'élement correspondant"
                                 onInputChange={(event, newInputValue) => {
                                     setformData({ ...formData, city: newInputValue });
                                 }}
@@ -215,18 +223,24 @@ function Mobile3() {
                                     <TextField {...params} label="Rechercher" />
                                 )}
                             />
+                              <div className="hiddenSearchResult" id='hidden'>
+                                <p className="resultError"> Nique ta mère</p>
+                            </div>
                         </div>
+                        
 
                         <div className="btnContainer" id='test'>
-                            <button className="btnBackground" type="submit" >
+                            <button className="btnBackground" type="submit">
                                 <img
                                     className="findclubBtn"
                                     alt="trouvez votre club"
                                     src={btnPicture}
                                 />
                             </button>
+                          
                         </div>
                     </form>
+                    </div>
 
                     <div className="searchresultsContainer">
                         <div className="cardResult">
@@ -256,7 +270,17 @@ function Mobile3() {
 
                     </div>
                 </div>
+
             </div>
+            <footer className="test">
+               <a href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html"> <img src={footerLogo2} alt="logo Site Internet" className="logoFooter" /> </a>
+               <a href="https://www.facebook.com/LCFofficiel/?ref=bookmarks"> <img src={footerLogo1} alt="" className="logoFooter" /> </a>
+               <a href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q"> <img src={footerLogo3} alt="" className="logoFooter" /> </a>
+               
+                
+
+            </footer>
+         
         </div>
     );
 }
