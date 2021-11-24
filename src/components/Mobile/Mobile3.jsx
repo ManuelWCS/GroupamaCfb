@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../header/Header";
 import "./Moible3.css";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -29,12 +29,17 @@ function Mobile3() {
         category: "",
     })
 
+    // function remove() {
+    //     let list = document.getElementById('test')
+    //     list.removeChild(list.childNodes[0]);
+    // }
+
     const filterSearch = (e) => {
         e.preventDefault();
         let categorieWanted = categories.filter(
             (categorySelected) =>
             (formData.gender2 === categorySelected.gender
-                && formData.age >= categorySelected.minAge && categorySelected.age <= categorySelected.maxAge && formData.type === categorySelected.type))
+                && formData.age >= categorySelected.minAge && formData.age <= categorySelected.maxAge && formData.type === categorySelected.type))
 
         
 
@@ -42,10 +47,24 @@ function Mobile3() {
             clubWanted.Category === categorieWanted[0].name && clubWanted.Localite === formData.city);
 
         setclubSearch(resultofSearch);
+
+        
+
+        if (resultofSearch.length === 0) {
+            console.log('y a R ')
+            let node = document.createElement('LI');
+            let textNode = document.createTextNode("Pas de résultats correspondant à votre recherche");
+            node.appendChild(textNode);
+            document.getElementById('test').appendChild(node)
         console.log(resultofSearch)
+    } else {
+        console.log(resultofSearch)
+        console.log(formData)
+    }
 
     }
 
+   
     const handleChange = (e) => {
         setformData({ ...formData, [e.target.name]: e.target.value })
     }
@@ -198,8 +217,8 @@ function Mobile3() {
                             />
                         </div>
 
-                        <div className="btnContainer">
-                            <button className="btnBackground" type="submit">
+                        <div className="btnContainer" id='test'>
+                            <button className="btnBackground" type="submit" >
                                 <img
                                     className="findclubBtn"
                                     alt="trouvez votre club"
