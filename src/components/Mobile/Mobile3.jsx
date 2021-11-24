@@ -15,6 +15,7 @@ import MarkerClusterGroup from "react-leaflet-markercluster";
 import footerLogo1 from '../../assets/footer/fb.png';
 import footerLogo2 from '../../assets/footer/web.png';
 import footerLogo3 from '../../assets/footer/youtube.png';
+import Footer from '../../components/Footer/Footer.jsx'
 
 
 
@@ -272,14 +273,15 @@ function Mobile3() {
                 </div>
 
             </div>
-            <footer className="test">
+            {/* <footer className="test">
                <a href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html"> <img src={footerLogo2} alt="logo Site Internet" className="logoFooter" /> </a>
                <a href="https://www.facebook.com/LCFofficiel/?ref=bookmarks"> <img src={footerLogo1} alt="" className="logoFooter" /> </a>
                <a href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q"> <img src={footerLogo3} alt="" className="logoFooter" /> </a>
                
                 
 
-            </footer>
+            </footer> */}
+            <Footer/>
          
         </div>
     );
