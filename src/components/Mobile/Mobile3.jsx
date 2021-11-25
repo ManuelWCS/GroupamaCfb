@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../header/Header";
 import "./Moible3.css";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -13,6 +13,8 @@ import axios from "axios";
 import Geolocalisation from "../Hook/Geolocalisation";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import Footer from '../../components/Footer/Footer.jsx';
+
+
 
 
 
@@ -32,7 +34,7 @@ function Mobile3() {
 
 
 
-    
+  
 
     const filterSearch = (e) => {
         e.preventDefault();
@@ -61,8 +63,11 @@ function Mobile3() {
         console.log(resultofSearch)
         console.log(formData)
     }
+    
 
     }
+
+   
 
     
 
@@ -97,6 +102,7 @@ function Mobile3() {
         axios.get("https://api-clubs-cvl.herokuapp.com/allteams").then((res) => setallTeams(res.data))
     }, [])
 
+   
 
 
 
@@ -121,6 +127,7 @@ function Mobile3() {
                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
+                           
                         <Geolocalisation />
 
                         <MarkerClusterGroup
@@ -139,7 +146,7 @@ function Mobile3() {
                                     return (
                                         <Marker key={index2} position={[res.Latitude, res.Longitude]} >
                                             <Popup>
-                                                test
+                                               <p> {res.name}</p>
                                             </Popup>
                                         </Marker>)
                                 })
@@ -243,34 +250,39 @@ function Mobile3() {
                     </form>
                     </div>
 
+                    <div className="resul">
+
+
 
                     {clubSearch.length !==0 ? 
                         clubSearch.map((clubSelected, Uniqueindex) => {
                             return (
+                                <div className="searchresultsContainer">
                        
-                    <div className="searchresultsContainer">
                         <div className="cardResult" key={Uniqueindex}>
-                            <div className="cardWrapper">
-                                <span className="clubnameContainer">
-                                         {clubSelected.name}
+                            <div className="titleContainer">
+                                <span className="titleCard">
+                                    {clubSelected.name}
                                 </span>
-                                <div className="infoContainer">
-                                    <div className="logosContainer">
-                                        <div className="logo1"></div>
-                                        <div className="logo2"></div>
-                                        <div className="logo3"></div>
+                            </div>
 
-                                    </div>
-
-                                    <div className="contentContainer">
-                                        <div className="mailContainer"> {clubSelected.Mail}</div>
-                                        <div className="adressContainer">{clubSelected.Adresse}</div>
-                                        <div className="seeMoreContainer"> Voir plus d'infos</div>
-                                    </div>
-
-                                </div>
+                            <div className="columnContainer">
+                            <div className="column1">
+                                <div className="logo1"></div>
+                                <div className="logo2"></div>
+                                <div className="logo3"></div>
 
                             </div>
+                            <div className="column2">
+
+                            <div className="info1"> {clubSelected.Mail}</div>
+                            <div className="info2">{clubSelected.Adresse}</div>
+                            <div className="info3">Voir plus d'infos</div>
+                            </div>
+
+                            </div>
+                          
+                          
                         </div>
 
 
@@ -282,6 +294,8 @@ function Mobile3() {
                 </div>
 
             </div>
+            </div>
+
      
             <Footer/>
          
