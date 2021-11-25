@@ -9,6 +9,7 @@ html, body {
     background-attachment: fixed;
     background-image: url('./Fond2.svg');
     background-repeat: no-repeat;
+    margin-bottom: 36px;
 
 }
 
@@ -220,6 +221,8 @@ html, body {
     background-repeat : no-repeat;
     border-radius: 12px;
 }
+
+
 
 .titleContainer {
     height: 64px;

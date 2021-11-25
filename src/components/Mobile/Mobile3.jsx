@@ -52,17 +52,17 @@ function Mobile3() {
 
         
 
-        if (resultofSearch.length === 0) {
-            console.log('y a R ')
-            let node = document.createElement('div');
-            let textNode = document.createTextNode("Pas de résultats correspondant à votre recherche");
-            node.appendChild(textNode);
-            document.getElementById('test').appendChild(node)
-        console.log(resultofSearch)
-    } else {
-        console.log(resultofSearch)
-        console.log(formData)
-    }
+    //     if (resultofSearch.length === 0) {
+    //         console.log('y a R ')
+    //         let node = document.createElement('div');
+    //         let textNode = document.createTextNode("Pas de résultats correspondant à votre recherche");
+    //         node.appendChild(textNode);
+    //         document.getElementById('test').appendChild(node)
+    //     console.log(resultofSearch)
+    // } else {
+    //     console.log(resultofSearch)
+    //     console.log(formData)
+    // }
     
 
     }
