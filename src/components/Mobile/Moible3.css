@@ -214,18 +214,19 @@ html, body {
 .cardResult {
     height: 220px;
     width: 305px;
-    border: 1px solid black;
     background-image: url('../../assets/Cartes/Carte-bleu.png');
     background-position: center;
     background-size: cover;
     background-repeat : no-repeat;
     border-radius: 12px;
+    margin-top:16px;
+    margin-bottom: 16px;
 }
+
 
 .cardResult:nth-child(2n) {
     height: 220px;
     width: 305px;
-    border: 1px solid black;
     background-image: url('../../assets/Cartes/Carte-rouge.png');
     background-position: center;
     background-size: cover;
@@ -236,7 +237,6 @@ html, body {
 .cardResult:nth-child(3n) {
     height: 220px;
     width: 305px;
-    border: 1px solid black;
     background-image: url('../../assets/Cartes/Carte-grise.png');
     background-position: center;
     background-size: cover;
@@ -246,12 +246,13 @@ html, body {
 .cardResult:nth-child(4n) {
     height: 220px;
     width: 305px;
-    border: 1px solid black;
     background-image: url('../../assets/Cartes/Carte-turquoise.png');
     background-position: center;
     background-size: cover;
     background-repeat : no-repeat;
     border-radius: 12px;
+    margin-top:16px;
+    margin-bottom: 16px;
 }
 
 
