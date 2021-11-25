@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../header/Header";
 import "./Moible3.css";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -52,17 +52,7 @@ function Mobile3() {
 
         
 
-    //     if (resultofSearch.length === 0) {
-    //         console.log('y a R ')
-    //         let node = document.createElement('div');
-    //         let textNode = document.createTextNode("Pas de résultats correspondant à votre recherche");
-    //         node.appendChild(textNode);
-    //         document.getElementById('test').appendChild(node)
-    //     console.log(resultofSearch)
-    // } else {
-    //     console.log(resultofSearch)
-    //     console.log(formData)
-    // }
+   
     
 
     }
@@ -257,7 +247,6 @@ function Mobile3() {
                     {clubSearch.length !==0 ? 
                         clubSearch.map((clubSelected, Uniqueindex) => {
                             return (
-                                <div className="searchresultsContainer">
                        
                         <div className="cardResult" key={Uniqueindex}>
                             <div className="titleContainer">
@@ -283,7 +272,7 @@ function Mobile3() {
                             </div>
                           
                           
-                        </div>
+                        
 
 
                     </div>)
@@ -291,8 +280,7 @@ function Mobile3() {
                         : null }
                         
                        
-                </div>
-
+               
             </div>
             </div>
 
@@ -300,6 +288,7 @@ function Mobile3() {
             <Footer/>
          
         </div>
+        </div> 
     );
 }
 
