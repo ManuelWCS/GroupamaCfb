@@ -252,20 +252,20 @@ function Mobile3() {
                         <div className="cardResult" key={Uniqueindex}>
                             <div className="cardWrapper">
                                 <span className="clubnameContainer">
-                                        wesh alors {clubSelected.name}
+                                         {clubSelected.name}
                                 </span>
                                 <div className="infoContainer">
                                     <div className="logosContainer">
-                                        <div className="1"></div>
-                                        <div className="2"></div>
-                                        <div className="3"></div>
+                                        <div className="logo1"></div>
+                                        <div className="logo2"></div>
+                                        <div className="logo3"></div>
 
                                     </div>
 
                                     <div className="contentContainer">
-                                        <div className="mailContainer"></div>
-                                        <div className="adressContainer"></div>
-                                        <div className="seeMoreContainer"></div>
+                                        <div className="mailContainer"> {clubSelected.Mail}</div>
+                                        <div className="adressContainer">{clubSelected.Adresse}</div>
+                                        <div className="seeMoreContainer"> Voir plus d'infos</div>
                                     </div>
 
                                 </div>

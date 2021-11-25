@@ -203,28 +203,140 @@ html, body {
 
 .searchresultConainter {
     height: auto;
-    width: 85vw;
+    width: 80vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin:auto;
+    padding-bottom: 264px;
+    margin-bottom: 164px;
   
 
 
 }
 
+.clubnameContainer{
+    padding-top:14px;
+    margin-left: 8px;
+    font-family: 'Nuvel';
+    font-size: 20px;
+}
+
 .cardResult {
-    height: 35vh;
-    width: 635px;
-    background-image: url('../../assets/Cartes/bleue.svg');
+    height: 225px;
+    width: 325px;
+    background-image: url('../../assets/Cartes/Carte-bleu.png');
     background-position: center;
     background-size: cover;
     margin-right: 0px;
     margin-left: 0px;
+    border-radius: 12px;
+    background-repeat: no-repeat;
+
+}
+
+.cardWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.logosContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-left: 8px;
+    margin-top:42px;
+}
+
+.logo1 {
+    background-image: url('../../assets/Logos/Mail-bleu.png');
+    height: 32px;
+    width: 32px;
+    background-size: cover;
+    margin-top:4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+
+}
+
+.logo2 {
+    background-image: url('../../assets/Logos/Localisation-bleu.png');
+    height: 32px;
+    width: 32px;
+    background-size: cover;
+    margin-top:4px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+
+}
+
+.logo3 {
+    background-image: url('../../assets/Logos/Info-bleu.png');
+    height: 32px;
+    width: 32px;
+    background-size: cover;
+    margin-top:18px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px solid black;
+
     
-  
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top:24px;
+    border: 1px solid black;
+
+
+}
+
+.mailContainer {
    
+    margin-left: 16px;
+    padding-top:24px;
+    padding-bottom: 8px;
+    padding-left:12px;
+    padding-right:12px;
+    font-family: 'Century Gothic';
+    border: 1px solid black;
+
+}
+
+.adressContainer {
+    margin-left: 16px;
+    padding-bottom: 8px;
+    padding-top:8px;
+    padding-left:12px;
+    padding-right:12px;
+    font-family: 'Century Gothic';
+    border: 1px solid black;
+
+
+}
+
+.seeMoreContainer {
+    margin-left: 16px;
+    padding-top:12px;
+    padding-bottom: 8px;
+    padding-left:12px;
+    padding-right:12px;
+    font-family: 'Century Gothic';
+    border: 1px solid black;
+
 
 }
 
