@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../header/Header";
 import "./Moible3.css";
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -46,19 +46,19 @@ function Mobile3() {
         iconUrl: ligueMarker,
     })
     const eureEtLoirMarqueur = L.icon({
-        iconSize: [40, 50],
+        iconSize: [50, 50],
         iconAnchor: [13.5, 47],
         iconUrl: eureEtLoireMarker,
     })
 
     const loiretMarqueur = L.icon({
-        iconSize: [40, 50],
-        iconAnchor: [13.5, 47],
+        iconSize: [70, 50],
+        iconAnchor: [13.5, 40],
         iconUrl: loiretMarker,
     })
 
     const cherMarqueur = L.icon({
-        iconSize: [40, 50],
+        iconSize: [60, 50],
         iconAnchor: [13.5, 47],
         iconUrl: cherMarker,
     })
@@ -75,7 +75,7 @@ function Mobile3() {
     })
 
     const indreEtLoirMarqueur = L.icon({
-        iconSize: [40, 50],
+        iconSize: [55, 50],
         iconAnchor: [13.5, 47],
         iconUrl: indreEtLoireMarker,
     })
@@ -160,6 +160,7 @@ function Mobile3() {
                         center={[48.856614, 2.3522219]}
                         zoom={13}
                         scrollWheelZoom={true}
+                        minZoo={6}
                         doubleClickZoom={true}
                         zoomControl={true}
                     >
@@ -194,6 +195,60 @@ function Mobile3() {
                             }
 
                         </MarkerClusterGroup>
+                        <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
+              <Popup className="InstanceLigue">
+            <a href="https://foot-centre.fff.fr//">
+              <h3 >Ligue Centre-Val de Loire </h3>
+            </a>
+          </Popup>
+              </Marker>
+              <Marker position={[47.11563, 2.35849]} icon={cherMarqueur}>
+          <Popup className="InstancePopUp">
+            <a href="https://cher.fff.fr/">
+              <h3>District de Football du Cher </h3>
+            </a>
+          </Popup>
+        </Marker>
+        <Marker position={[48.42918, 1.46021]} icon={eureEtLoirMarqueur}>
+          <Popup className="InstancePopUp">
+            <a href="https://eure-et-loir.fff.fr/">
+              <h3>District de Football d'Eure Et Loire </h3>
+            </a>
+          </Popup>
+        </Marker>
+        <Marker position={[46.79267, 1.69726]} icon={indreMarqueur}>
+          <Popup className="InstancePopUp">
+            <a href="https://indre.fff.fr/">
+              <h3>District de Football de l'Indre </h3>
+            </a>
+          </Popup>
+        </Marker>
+         <Marker position={[47.9168433, 1.9246721]} icon={loiretMarqueur}>
+          <Popup className="InstancePopUp">
+            <a href="https://foot-loiret.fff.fr/">
+              <h3>District de Football du Loiret </h3>
+            </a>
+          </Popup>
+        </Marker>
+        <Marker position={[47.5766331, 1.3026806]} icon={loireEtcherMarqueur}>
+          <Popup className="InstancePopUp">
+            <a href="https://loir-et-cher.fff.fr/">
+
+            <h3>District de Football du Loir-et-Cher</h3>
+            </a>
+          </Popup>
+        </Marker>
+
+        <Marker position={[47.379130,0.726720]} icon={indreEtLoirMarqueur}>
+          <Popup className="InstancePopUp">
+            <a href="https://indre-et-loire.fff.fr/">
+
+            <h3>District de Football d'Indre-Et-Loire'</h3>
+            </a>
+          </Popup>
+        </Marker>
+
+
                     </MapContainer>
                 </main>
                 <div className="legendAndForm">
