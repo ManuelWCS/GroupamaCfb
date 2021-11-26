@@ -34,7 +34,7 @@ function Mobile3() {
     const [formData, setformData] = useState({
         age: null,
         city: "",
-        type: 'Libre',
+        type: '',
         gender2: '',
         category: "",
     })
@@ -85,6 +85,7 @@ function Mobile3() {
         iconAnchor: [13.5, 47],
         iconUrl: clubMarker,
     })
+    console.log(formData)
 
 
 
@@ -305,6 +306,41 @@ function Mobile3() {
                                             value="Female"
                                             control={<Radio />}
                                             label="Feminine"
+                                        />
+                                    </RadioGroup>
+                                </FormControl>
+                            </div>
+
+
+                            <div className="filtre4">
+                                <FormControl component="fieldset">
+                                    <span className="filterTitle4">PRATIQUE SOUHAITEE :</span>
+                                    <RadioGroup
+                                        row
+                                        aria-label="type"
+                                        defaultValue="Libre"
+                                        name="type"
+                                        error="Vous devez renseigner une compétition"
+                                        onChange={(e) => handleChange(e)}
+                                        required={true}
+                                    >
+                                        <FormControlLabel
+                                            value="Libre"
+                                            className="radio1"
+                                            control={<Radio />}
+                                            label="Libre"
+                                        />
+                                        <FormControlLabel
+                                            className="radio1"
+                                            value="Loisir"
+                                            control={<Radio />}
+                                            label="Loisir"
+                                        />
+                                          <FormControlLabel
+                                            className="radio1"
+                                            value="Futsal"
+                                            control={<Radio />}
+                                            label="Futsal"
                                         />
                                     </RadioGroup>
                                 </FormControl>

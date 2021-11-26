@@ -319,12 +319,27 @@ html, body {
     background-size: cover;
 }
 
+.css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label {
+    font-family: 'Century Gothic';
+    font-size: 14px;
+}
+
+.css-y3ahi9-MuiAutocomplete-root .MuiOutlinedInput-root .MuiAutocomplete-input {
+    font-family: 'Century Gothic';
+    font-size: 14px;
+}
 
 
 
 
+.filtre4 {
+    margin-top:16px;
+    margin-bottom: 16px;
+}
 
-
+.filterTitle4 {
+    font-family: 'Nuvel';
+}
 
 
 
