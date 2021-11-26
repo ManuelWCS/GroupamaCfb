@@ -27,7 +27,7 @@ function Geolocalisation() {
       }, [map]);
 
     return positionFound === null ? "Geolocalisation not supported" : (
-        <Marker className="MyPosition"position={positionFound}>
+        <Marker className="MyPosition"position={positionFound} >
         <Popup>
             Vous êtes ici
         </Popup>

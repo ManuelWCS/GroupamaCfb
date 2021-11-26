@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../header/Header";
 import "./Moible3.css";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -13,8 +13,15 @@ import axios from "axios";
 import Geolocalisation from "../Hook/Geolocalisation";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import Footer from '../../components/Footer/Footer.jsx';
-
-
+import L from "leaflet";
+import clubMarker from '../../assets/Marqueurs/LogoClub.png';
+import indreMarker from '../../assets/Marqueurs/MarqueurIndre.png';
+import indreEtLoireMarker from '../../assets/Marqueurs/IndreEtLoire.png';
+import loirEtcher from '../../assets/Marqueurs/LoireCher2.png';
+import cherMarker from '../../assets/Marqueurs/MarqueurCher.png';
+import loiretMarker from '../../assets/Marqueurs/Marqueurloiret.png';
+import eureEtLoireMarker from '../../assets/Marqueurs/MarqueurEureEtLoire.png';
+import ligueMarker from '../../assets/Marqueurs/MarqueurLigue.png';
 
 
 
@@ -33,8 +40,57 @@ function Mobile3() {
     })
 
 
+    const LigueMarqueur = L.icon({
+        iconSize: [40, 50],
+        iconAnchor: [13.5, 47],
+        iconUrl: ligueMarker,
+    })
+    const eureEtLoirMarqueur = L.icon({
+        iconSize: [40, 50],
+        iconAnchor: [13.5, 47],
+        iconUrl: eureEtLoireMarker,
+    })
 
-  
+    const loiretMarqueur = L.icon({
+        iconSize: [40, 50],
+        iconAnchor: [13.5, 47],
+        iconUrl: loiretMarker,
+    })
+
+    const cherMarqueur = L.icon({
+        iconSize: [40, 50],
+        iconAnchor: [13.5, 47],
+        iconUrl: cherMarker,
+    })
+
+    const loireEtcherMarqueur = L.icon({
+        iconSize: [40, 50],
+        iconAnchor: [13.5, 47],
+        iconUrl: loirEtcher,
+    })
+    const indreMarqueur = L.icon({
+        iconSize: [40, 50],
+        iconAnchor: [13.5, 47],
+        iconUrl: indreMarker,
+    })
+
+    const indreEtLoirMarqueur = L.icon({
+        iconSize: [40, 50],
+        iconAnchor: [13.5, 47],
+        iconUrl: indreEtLoireMarker,
+    })
+
+    const clubMarqueur = L.icon({
+        iconSize: [50, 50],
+        iconAnchor: [13.5, 47],
+        iconUrl: clubMarker,
+    })
+
+
+
+
+
+
 
     const filterSearch = (e) => {
         e.preventDefault();
@@ -43,30 +99,24 @@ function Mobile3() {
             (formData.gender2 === categorySelected.gender
                 && formData.age >= categorySelected.minAge && formData.age <= categorySelected.maxAge && formData.type === categorySelected.type))
 
-        
+
 
         const resultofSearch = allteams.filter((clubWanted) =>
             clubWanted.Category === categorieWanted[0].name && clubWanted.Localite === formData.city);
 
         setclubSearch(resultofSearch);
-
-        
-
-   
-    
-
+        console.log(resultofSearch)
     }
 
-   
 
-    
 
-   
+
+
     const handleChange = (e) => {
         setformData({ ...formData, [e.target.name]: e.target.value })
     }
 
-  
+
 
 
 
@@ -92,7 +142,7 @@ function Mobile3() {
         axios.get("https://api-clubs-cvl.herokuapp.com/allteams").then((res) => setallTeams(res.data))
     }, [])
 
-   
+
 
 
 
@@ -117,12 +167,12 @@ function Mobile3() {
                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
-                           
+
                         <Geolocalisation />
 
                         <MarkerClusterGroup
                             animate={true}
-                            
+
                             onClusterClick={(cluster) =>
                                 console.warn(
                                     "cluster-click",
@@ -134,9 +184,9 @@ function Mobile3() {
                             {clubSearch.length !== 0 ?
                                 clubSearch.slice(0, 100).map((res, index2) => {
                                     return (
-                                        <Marker key={index2} position={[res.Latitude, res.Longitude]} >
-                                            <Popup>
-                                               <p> {res.name}</p>
+                                        <Marker icon={clubMarqueur} key={index2} position={[res.Latitude, res.Longitude]} >
+                                            <Popup key={index2}>
+                                                <p> {res.Club}</p>
                                             </Popup>
                                         </Marker>)
                                 })
@@ -148,147 +198,147 @@ function Mobile3() {
                 </main>
                 <div className="legendAndForm">
 
-               
-                <section className="legendMap">
-                    <p className="legend">
-                        Entrez votre <em className="birthday">date de naissance </em>et la{" "}
-                        <em className="ranked"> compétition </em> souhaitée pour découvrir
-                        les clubs à proximité !{" "}
-                    </p>
-                </section>
 
-                <div className="filtrations">
-                    <form className="filtrationsWrapper" onSubmit={(e) => filterSearch(e)}>
-                        <div className="filtre1">
-                            <span className="filterTitle1">VOTRE ÂGE </span>
-                            <TextField
-                                label="Âge"
-                                type="number"
-                                margin="normal"
-                                name="age"
-                                onChange={(e) => { handleChange(e) }}
-                                helperText="Renseingez votre aĝe ici"
-                                focused
-                                inputProps={{
-                                    inputMode: "numeric",
-                                    pattern: "[0-9]*",
-                                    placeholder: "10, 15, 30...",
-                                }}
-                            />
-                        </div>
+                    <section className="legendMap">
+                        <p className="legend">
+                            Entrez votre <em className="birthday">date de naissance </em>et la{" "}
+                            <em className="ranked"> compétition </em> souhaitée pour découvrir
+                            les clubs à proximité !{" "}
+                        </p>
+                    </section>
 
-                        <div className="filtre2">
-                            <FormControl component="fieldset">
-                                <span className="filterTitle2">COMPETITION :</span>
-                                <RadioGroup
-                                    row
-                                    aria-label="gender"
-                                    defaultValue="female"
-                                    name="gender2"
-                                    error="Vous devez renseigner une compétition"
-                                    onChange={(e) => handleChange(e)}
-                                    required={true}
-                                >
-                                    <FormControlLabel
-                                        value="Male"
-                                        className="radio1"
-                                        control={<Radio />}
-                                        label="Masculine"
-                                    />
-                                    <FormControlLabel
-                                        className="radio1"
-                                        value="Female"
-                                        control={<Radio />}
-                                        label="Feminine"
-                                    />
-                                </RadioGroup>
-                            </FormControl>
-                        </div>
-
-                        <div className="filtre3">
-                            <span className="filterTitle3"> VOTRE VILLE </span>
-                            <Autocomplete
-                                disablePortal
-                                id="combo-box-demo"
-                                inputValue={formData.city}
-                                options={allcities}
-                                noOptionsText="Pas d'élement correspondant"
-                                onInputChange={(event, newInputValue) => {
-                                    setformData({ ...formData, city: newInputValue });
-                                }}
-                                sx={{ width: 250 }}
-                                renderInput={(params) => (
-                                    <TextField {...params} label="Rechercher" />
-                                )}
-                            />
-                              <div className="hiddenSearchResult" id='hidden'>
-                                <p className="resultError"> Nique ta mère</p>
-                            </div>
-                        </div>
-                        
-
-                        <div className="btnContainer" id='test'>
-                            <button className="btnBackground" type="submit">
-                                <img
-                                    className="findclubBtn"
-                                    alt="trouvez votre club"
-                                    src={btnPicture}
+                    <div className="filtrations">
+                        <form className="filtrationsWrapper" onSubmit={(e) => filterSearch(e)}>
+                            <div className="filtre1">
+                                <span className="filterTitle1">VOTRE ÂGE </span>
+                                <TextField
+                                    label="Âge"
+                                    type="number"
+                                    margin="normal"
+                                    name="age"
+                                    onChange={(e) => { handleChange(e) }}
+                                    helperText="Renseingez votre aĝe ici"
+                                    focused
+                                    inputProps={{
+                                        inputMode: "numeric",
+                                        pattern: "[0-9]*",
+                                        placeholder: "10, 15, 30...",
+                                    }}
                                 />
-                            </button>
-                          
-                        </div>
-                    </form>
+                            </div>
+
+                            <div className="filtre2">
+                                <FormControl component="fieldset">
+                                    <span className="filterTitle2">COMPETITION :</span>
+                                    <RadioGroup
+                                        row
+                                        aria-label="gender"
+                                        defaultValue="female"
+                                        name="gender2"
+                                        error="Vous devez renseigner une compétition"
+                                        onChange={(e) => handleChange(e)}
+                                        required={true}
+                                    >
+                                        <FormControlLabel
+                                            value="Male"
+                                            className="radio1"
+                                            control={<Radio />}
+                                            label="Masculine"
+                                        />
+                                        <FormControlLabel
+                                            className="radio1"
+                                            value="Female"
+                                            control={<Radio />}
+                                            label="Feminine"
+                                        />
+                                    </RadioGroup>
+                                </FormControl>
+                            </div>
+
+                            <div className="filtre3">
+                                <span className="filterTitle3"> VOTRE VILLE </span>
+                                <Autocomplete
+                                    disablePortal
+                                    id="combo-box-demo"
+                                    inputValue={formData.city}
+                                    options={allcities}
+                                    noOptionsText="Pas d'élement correspondant"
+                                    onInputChange={(event, newInputValue) => {
+                                        setformData({ ...formData, city: newInputValue });
+                                    }}
+                                    sx={{ width: 250 }}
+                                    renderInput={(params) => (
+                                        <TextField {...params} label="Rechercher" />
+                                    )}
+                                />
+                                <div className="hiddenSearchResult" id='hidden'>
+                                    <p className="resultError"> Nique ta mère</p>
+                                </div>
+                            </div>
+
+
+                            <div className="btnContainer" id='test'>
+                                <button className="btnBackground" type="submit">
+                                    <img
+                                        className="findclubBtn"
+                                        alt="trouvez votre club"
+                                        src={btnPicture}
+                                    />
+                                </button>
+
+                            </div>
+                        </form>
                     </div>
 
                     <div className="resul">
 
 
 
-                    {clubSearch.length !==0 ? 
-                        clubSearch.map((clubSelected, Uniqueindex) => {
-                            return (
-                       
-                        <div className="cardResult" key={Uniqueindex}>
-                            <div className="titleContainer">
-                                <span className="titleCard">
-                                    {clubSelected.name}
-                                </span>
-                            </div>
+                        {clubSearch.length !== 0 ?
+                            clubSearch.map((clubSelected, Uniqueindex) => {
+                                return (
 
-                            <div className="columnContainer">
-                            <div className="column1">
-                                <div className="logo1"></div>
-                                <div className="logo2"></div>
-                                <div className="logo3"></div>
+                                    <div className="cardResult" key={Uniqueindex}>
+                                        <div className="titleContainer">
+                                            <span className="titleCard">
+                                                {clubSelected.name}
+                                            </span>
+                                        </div>
 
-                            </div>
-                            <div className="column2">
+                                        <div className="columnContainer">
+                                            <div className="column1">
+                                                <div className="logo1"></div>
+                                                <div className="logo2"></div>
+                                                <div className="logo3"></div>
 
-                            <div className="info1"> {clubSelected.Mail}</div>
-                            <div className="info2">{clubSelected.Adresse}</div>
-                            <div className="info3">Voir plus d'infos</div>
-                            </div>
+                                            </div>
+                                            <div className="column2">
 
-                            </div>
-                          
-                          
-                        
+                                                <div className="info1"> {clubSelected.Mail}</div>
+                                                <div className="info2">{clubSelected.Adresse}</div>
+                                                <div className="info3">Voir plus d'infos</div>
+                                            </div>
+
+                                        </div>
 
 
-                    </div>)
-                        })
-                        : null }
-                        
-                       
-               
+
+
+
+                                    </div>)
+                            })
+                            : null}
+
+
+
+                    </div>
+                </div>
+
+
+                <Footer />
+
             </div>
-            </div>
-
-     
-            <Footer/>
-         
         </div>
-        </div> 
     );
 }
 
