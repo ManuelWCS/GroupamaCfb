@@ -31,6 +31,7 @@ function Mobile3() {
     const [categories, setCategories] = useState([]);
     const [allteams, setallTeams] = useState([]);
     const [clubSearch, setclubSearch] = useState([]);
+    const [map, setMap] = useState(null)
     const [formData, setformData] = useState({
         age: null,
         city: "",
@@ -107,7 +108,19 @@ function Mobile3() {
 
         setclubSearch(resultofSearch);
         console.log(resultofSearch)
-    }
+       
+        if (resultofSearch.length === 0)
+         console.log("There are no available locations");
+  
+      const arrayOfLatLngs = resultofSearch.map(({ Latitude, Longitude }) => [
+        Latitude,
+        Longitude
+      ]);
+      const bounds = L.latLngBounds(arrayOfLatLngs);
+      if (map) map.flyToBounds(bounds);
+    };
+
+
 
 
 
@@ -116,6 +129,7 @@ function Mobile3() {
     const handleChange = (e) => {
         setformData({ ...formData, [e.target.name]: e.target.value })
     }
+
 
 
 
@@ -158,12 +172,14 @@ function Mobile3() {
                 <main className="mapContainer">
                     <MapContainer
                         className="mapLeaflet"
+                        id="map"
                         center={[48.856614, 2.3522219]}
                         zoom={13}
                         scrollWheelZoom={true}
                         minZoo={6}
                         doubleClickZoom={true}
                         zoomControl={true}
+                        whenCreated={setMap}
                     >
                         <TileLayer
                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -318,7 +334,6 @@ function Mobile3() {
                                     <RadioGroup
                                         row
                                         aria-label="type"
-                                        defaultValue="Libre"
                                         name="type"
                                         error="Vous devez renseigner une compétition"
                                         onChange={(e) => handleChange(e)}
@@ -369,7 +384,7 @@ function Mobile3() {
 
 
                             <div className="btnContainer" id='test'>
-                                <button className="btnBackground" type="submit">
+                                <button className="btnBackground" id='scrollBtn'type="submit">
                                     <img
                                         className="findclubBtn"
                                         alt="trouvez votre club"
