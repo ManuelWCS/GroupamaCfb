@@ -120,9 +120,12 @@ function Mobile3() {
       if (map) map.flyToBounds(bounds);
     };
 
+    function scrollTop() {
+        window.location.href="#map"
+      }
 
 
-
+ 
 
 
 
@@ -384,7 +387,7 @@ function Mobile3() {
 
 
                             <div className="btnContainer" id='test'>
-                                <button className="btnBackground" id='scrollBtn'type="submit">
+                                <button className="btnBackground" id='scrollBtn'type="submit" onClick={scrollTop}>
                                     <img
                                         className="findclubBtn"
                                         alt="trouvez votre club"
