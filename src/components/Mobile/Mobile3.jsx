@@ -428,7 +428,7 @@ function Mobile3() {
                                     <div className="cardResult" key={Uniqueindex}>
                                         <div className="titleContainer">
                                             <span className="titleCard">
-                                                {clubSelected.name}
+                                                {clubSelected.Club}
                                             </span>
                                         </div>
 
