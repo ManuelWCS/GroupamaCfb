@@ -9,19 +9,21 @@ html, body {
     background-attachment: fixed;
     background-image: url('./Fond2.svg');
     background-repeat: no-repeat;
-    margin-bottom: 36px;
+    /* margin-bottom: 36px; */
 
 }
 
 
 .fullPage {
-    height: 100vh;
+    height: 87vh;
+    max-height: fit-content;
     width: 100%;
     padding : 0;    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    /* overflow-y:hidden; */
 }
 
 
@@ -91,6 +93,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     
 }
 
@@ -133,7 +136,7 @@ html, body {
     align-items: center;
     justify-content: center;
     width: 170px;
-    height: 50px;
+    height: 25px;
     margin:auto;
     padding-bottom: 12px;
 }
@@ -149,6 +152,7 @@ html, body {
     background-color: transparent;
     border: none;
 }
+
 
 .hiddenSearchResult {
     display: none;
@@ -255,6 +259,10 @@ html, body {
     margin-bottom: 16px;
 }
 
+.resultatsDesktop {
+    display: none;
+}
+
 
 
 .cardResult:nth-child(1n) .logo1:nth-child(1n) {
@@ -328,6 +336,11 @@ html, body {
     font-family: 'Century Gothic';
     font-size: 14px;
 }
+
+#test2 {
+    display: none;
+}
+
 
 
 
@@ -404,27 +417,40 @@ html, body {
 
 @media screen and (min-width: 1023px) {
 
+    .fullPage {
+        display: flex;
+    }
+
 .subContainer{
     display: flex;
     flex-direction: row;
-    justify-content:  safe;
+    justify-content:  space-around;
     align-items: stretch;
 }
 
 .mapLeaflet {
     height: 60vh;
-    width: 35vw;
-    margin-top:7vh;
+    width: 25vw;
+    margin-top: 2.5vh;
 }
 
 .legendMap {
-    order: -1;
     width: 350px;
+    border: 1px solid pink;
 }
 
 .filtrations {
-    order: -3;
-    width: 50vw;
+    width: 40vw;
+    margin-top:2.5vh;
+    max-width: fit-content;
+    margin-left: 128px;
+    
+    
+}
+
+.filtrations {
+    display: flex;
+    flex-direction: row;
 }
 
 .titlePart1, .titlePart2 {
@@ -434,5 +460,44 @@ html, body {
 .legendAndForm {
     margin-top: 0vh;
 }
+
+.legendMap {
+    display: none;
+}
+
+.resul {
+    display: none;
+}
+
+.resultatsDesktop {
+    display: flex;
+    order:1;
+    width: 400px;
+    height: 850px;
+    margin-top:5vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#test {
+    display: none;
+}
+
+#test2 {
+    display: block;
+    margin-top:-85px;
+}
+
+
+
+
+
+
+
+
 
 }

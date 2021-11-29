@@ -121,7 +121,7 @@ function Mobile3() {
     };
 
     function scrollTop() {
-        window.location.href="#map"
+        window.location.href=('#map')
       }
 
 
@@ -381,24 +381,42 @@ function Mobile3() {
                                     )}
                                 />
                                 <div className="hiddenSearchResult" id='hidden'>
-                                    <p className="resultError"> Nique ta mère</p>
                                 </div>
                             </div>
 
 
+
                             <div className="btnContainer" id='test'>
                                 <button className="btnBackground" id='scrollBtn'type="submit" onClick={scrollTop}>
+                             
+
                                     <img
                                         className="findclubBtn"
                                         alt="trouvez votre club"
                                         src={btnPicture}
                                     />
                                 </button>
+                                
+
+                            </div>
+
+
+                            <div className="btnContainer" id='test2'>
+                                <button className="btnBackground" id='scrollBtn'type="submit">
+                             
+
+                                    <img
+                                        className="findclubBtn"
+                                        alt="trouvez votre club"
+                                        src={btnPicture}
+                                    />
+                                </button>
+                                
 
                             </div>
                         </form>
                     </div>
-
+                        
                     <div className="resul">
 
 
@@ -440,8 +458,46 @@ function Mobile3() {
 
 
 
+
                     </div>
                 </div>
+                                <div className="resultatsDesktop">
+                                {clubSearch.length !== 0 ?
+                            clubSearch.map((clubSelected, Uniqueindex) => {
+                                return (
+
+                                    <div className="cardResult" key={Uniqueindex}>
+                                        <div className="titleContainer">
+                                            <span className="titleCard">
+                                                {clubSelected.name}
+                                            </span>
+                                        </div>
+
+                                        <div className="columnContainer">
+                                            <div className="column1">
+                                                <div className="logo1"></div>
+                                                <div className="logo2"></div>
+                                                <div className="logo3"></div>
+
+                                            </div>
+                                            <div className="column2">
+
+                                                <div className="info1"> {clubSelected.Mail}</div>
+                                                <div className="info2">{clubSelected.Adresse}</div>
+                                                <div className="info3">Voir plus d'infos</div>
+                                            </div>
+
+                                        </div>
+
+
+
+
+
+                                    </div>)
+                            })
+                            : null}
+                               
+                            </div>
 
 
                 <Footer />
