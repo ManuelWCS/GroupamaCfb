@@ -1,6 +1,8 @@
 import React, {useState, useEffect } from 'react';
 import {Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
+import '../Mobile/Moible3.css'
+
 
 
 function Geolocalisation() {
@@ -28,8 +30,8 @@ function Geolocalisation() {
 
     return positionFound === null ? "Geolocalisation not supported" : (
         <Marker className="MyPosition"position={positionFound} >
-        <Popup>
-            Vous êtes ici
+        <Popup className="userPopUp">
+            <h3> Vous êtes ici</h3>
         </Popup>
         </Marker>
     )

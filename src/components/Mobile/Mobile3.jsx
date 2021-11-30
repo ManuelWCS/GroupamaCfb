@@ -92,10 +92,11 @@ function Mobile3() {
 
 
 
-
-
     const filterSearch = (e) => {
         e.preventDefault();
+
+
+        if (formData.age && formData.gender2 && formData.type && formData.city) {
         let categorieWanted = categories.filter(
             (categorySelected) =>
             (formData.gender2 === categorySelected.gender
@@ -107,18 +108,23 @@ function Mobile3() {
             clubWanted.Category === categorieWanted[0].name && clubWanted.Localite === formData.city);
 
         setclubSearch(resultofSearch);
+        
+         if (resultofSearch.length === 0)
+          console.log("There are no available locations");
         console.log(resultofSearch)
-       
-        if (resultofSearch.length === 0)
-         console.log("There are no available locations");
   
       const arrayOfLatLngs = resultofSearch.map(({ Latitude, Longitude }) => [
         Latitude,
         Longitude
       ]);
       const bounds = L.latLngBounds(arrayOfLatLngs);
-      if (map) map.flyToBounds(bounds);
-    };
+      if (map) map.flyToBounds(bounds)} else {
+          console.log('tg')
+
+      }}
+    
+
+    
 
     function scrollTop() {
         window.location.href=('#map')
@@ -206,7 +212,7 @@ function Mobile3() {
                                 clubSearch.slice(0, 100).map((res, index2) => {
                                     return (
                                         <Marker icon={clubMarqueur} key={index2} position={[res.Latitude, res.Longitude]} >
-                                            <Popup key={index2}>
+                                            <Popup key={index2} className='markersPopUp'>
                                                 <p> {res.Club}</p>
                                             </Popup>
                                         </Marker>)
@@ -287,12 +293,14 @@ function Mobile3() {
                             <div className="filtre1">
                                 <span className="filterTitle1">VOTRE ÂGE </span>
                                 <TextField
+                                
+                                 variant="outlined"
                                     label="Âge"
                                     type="number"
                                     margin="normal"
                                     name="age"
                                     onChange={(e) => { handleChange(e) }}
-                                    helperText="Renseingez votre aĝe ici"
+                                    helperText="Renseignez votre aĝe ici"
                                     focused
                                     inputProps={{
                                         inputMode: "numeric",
@@ -313,6 +321,7 @@ function Mobile3() {
                                         error="Vous devez renseigner une compétition"
                                         onChange={(e) => handleChange(e)}
                                         required={true}
+                                        helperText='Vous devez renseigner le champ'
                                     >
                                         <FormControlLabel
                                             value="Male"
@@ -332,7 +341,7 @@ function Mobile3() {
 
 
                             <div className="filtre4">
-                                <FormControl component="fieldset">
+                                <FormControl component="fieldset" required={true}>
                                     <span className="filterTitle4">PRATIQUE SOUHAITEE :</span>
                                     <RadioGroup
                                         row
@@ -371,7 +380,7 @@ function Mobile3() {
                                     id="combo-box-demo"
                                     inputValue={formData.city}
                                     options={allcities}
-                                    noOptionsText="Pas d'élement correspondant"
+                                    noOptionsText='Pas de résultats correspondants à votre recherche'
                                     onInputChange={(event, newInputValue) => {
                                         setformData({ ...formData, city: newInputValue });
                                     }}

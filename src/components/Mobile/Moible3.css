@@ -117,7 +117,7 @@ html, body {
 .filterTitle3 {
     font-family: 'Nuvel';
     color: #293D6B;
-    margin: top 14px;
+    margin-top: 14px;
     margin-bottom: 14px;
 }
 
@@ -352,6 +352,7 @@ html, body {
 
 .filterTitle4 {
     font-family: 'Nuvel';
+    color: #3586c2;
 }
 
 
@@ -413,6 +414,47 @@ html, body {
     font-family: 'Century Gothic';
 }
 
+
+.InstancePopUp h3 {
+    font-family: 'Century Gothic';
+    color: #293D6B;
+    text-decoration: none;
+    outline: none;
+  }
+  
+  .InstancePopUp a {
+    text-decoration: none;
+  }
+
+  .InstancePopUp a:visited {
+    text-decoration: none;
+  }
+
+  .InstanceLigue h3{
+    font-family: 'Century Gothic';
+    color:#c1272d;
+  }
+
+    
+  .InstanceLigue a {
+    text-decoration: none;
+  }
+
+  .InstanceLigue a:visited {
+    text-decoration: none;
+  }
+
+  .userPopUp h3{
+      font-family: 'Century Gothic';
+      color: #3586c2;
+
+  }
+
+  .markersPopUp p {
+      font-weight: 'Century Gothic';
+      color: #293D6B;
+      font-size: 14px;
+  }
 
 
 @media screen and (min-width: 1023px) {
