@@ -10,20 +10,19 @@ html, body {
     background-image: url('./Fond2.svg');
     background-repeat: no-repeat;
     /* margin-bottom: 36px; */
+    max-height: fit-content;
 
 }
 
 
 .fullPage {
-    height: 87vh;
-    max-height: fit-content;
+    height: 800px;
     width: 100%;
-    padding : 0;    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    /* overflow-y:hidden; */
+    overflow-x:auto;
 }
 
 
@@ -515,7 +514,7 @@ html, body {
     display: flex;
     order:1;
     width: 400px;
-    height: 850px;
+    height:450px;
     margin-top:5vh;
     overflow-x: hidden;
     overflow-y: auto;
