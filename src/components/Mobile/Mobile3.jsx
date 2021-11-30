@@ -22,6 +22,7 @@ import cherMarker from '../../assets/Marqueurs/MarqueurCher.png';
 import loiretMarker from '../../assets/Marqueurs/Marqueurloiret.png';
 import eureEtLoireMarker from '../../assets/Marqueurs/MarqueurEureEtLoire.png';
 import ligueMarker from '../../assets/Marqueurs/MarqueurLigue.png';
+import '../Mobile/Mobile3Responsive.css'
 
 
 
@@ -175,8 +176,8 @@ function Mobile3() {
             <Header />
 
             <div className="mobiletitleContainer">
-            <h1 className="titlePart1">Trouvez un club près </h1>
-                <h1 className="titlePart2">de chez vous ! </h1>
+            <h1 className="titlePart1">Trouvez un <em className="blue"> club </em> près </h1>
+                <h1 className="titlePart2">de chez  <strong className="strong"> vous !</strong> </h1>
 
             </div>
 
@@ -296,6 +297,13 @@ function Mobile3() {
                     </MapContainer>
                 </main>
                 <div className="legendAndForm">
+                <section className="legendMapMobile">
+                        <p className="legend">
+                            Entrez votre <em className="birthday">date de naissance </em>et la{" "}
+                            <em className="ranked"> compétition </em> souhaitée pour découvrir
+                            les clubs à proximité !{" "}
+                        </p>
+                    </section>
 
 
 
@@ -311,7 +319,6 @@ function Mobile3() {
                                     margin="normal"
                                     name="age"
                                     onChange={(e) => { handleChange(e) }}
-                                    helperText="Renseignez votre aĝe ici"
                                     focused
                                     inputProps={{
                                         inputMode: "numeric",
@@ -332,7 +339,6 @@ function Mobile3() {
                                         error="Vous devez renseigner une compétition"
                                         onChange={(e) => handleChange(e)}
                                         required={true}
-                                        helperText='Vous devez renseigner le champ'
                                     >
                                         <FormControlLabel
                                             value="Male"
@@ -437,7 +443,7 @@ function Mobile3() {
                         </form>
                     </div>
                         
-                    <div className="resul">
+                    <div className="resultats">
 
 
 

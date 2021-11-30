@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  background-image: url("../../assets/Header/header.png");
+  background-image: url("../../assets/Header/grandHeader.png");
   background-size: cover;
   background-position: center;
   margin:0px;
@@ -41,14 +41,14 @@
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .fullHeader {
     width: 100vw;
-    height: 7vh;
+    height: 90px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    background-image: url("../../assets/Header/header.png");
+    justify-content: center;
+    background-image: url("../../assets/Header/grandHeader.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center; 
+
     margin-bottom: 0;
   }
 }
@@ -58,14 +58,14 @@
 
   .fullHeader {
   width: 100vw;
-  height: 10vh;
+  height: 17vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  background-image: url("../../assets/Header/header.png");
+  background-image: url("../../assets/Header/grandHeader.png");
   background-size: cover;
   background-position: center;
   margin:0px;

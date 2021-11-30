@@ -1,0 +1,117 @@
+
+@media screen and (min-width: 1023px) {
+
+    .fullPage {
+        display: flex;
+    }
+
+.subContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content:  space-around;
+    align-items: stretch;
+}
+
+.mapLeaflet {
+    height: 60vh;
+    width: 25vw;
+    margin-top: 0vh;
+}
+
+
+
+.filtrations {
+    width: 40vw;
+    margin-top:1.5vh;
+    max-width: fit-content;
+    margin-left: 128px;
+    
+    
+}
+
+.filtrations {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.legendAndForm {
+    margin-top: 0vh;
+}
+
+
+.resultats {
+    display: none;
+}
+
+.resultatsDesktop {
+    display: flex;
+    order:1;
+    width: 400px;
+    height:450px;
+    margin-top:5vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#test {
+    display: none;
+}
+
+#test2 {
+    display: block;
+    margin-top:-85px;
+}
+
+.mobiletitleContainer {
+    display: none;
+}
+
+.titleContainerDesktop {
+    display: flex;
+    flex-direction: column;
+    padding:  4px 4px 4px 4px;
+    margin-top:12px;
+}
+
+.mobiletitleContainer .titlePart1 .blue {
+    color: #293D6B;
+
+}
+
+
+.blue {
+    color: #293D6B;
+}
+
+.strong {
+    color: #c1272d;
+}
+
+
+.titleCardContainer {
+    height: 64px;
+    width: 305px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 8px;
+    font-family: 'Nuvel';
+}
+
+.legendMapMobile {
+    display: none;
+}
+
+
+
+
+
+
+
+
+}
