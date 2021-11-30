@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 @import url('../Mobile/fonts.css');
 
-
+@media screen and (min-width: 320px) and (max-width:1023px) {
 html, body {
     max-width: 100%;
     overflow-x: hidden;
     background-size: cover;
     background-attachment: fixed;
-    background-image: url('../../assets/FONDS/Fond-ordinateur.png');
+    background-image: url('./Fond2.svg');
     background-repeat: no-repeat;
     /* margin-bottom: 36px; */
     max-height: fit-content;
 
 }
-
+}
 
 .fullPage {
     height: 800px;

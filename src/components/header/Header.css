@@ -18,7 +18,7 @@
 @media only screen and (min-width: 319px) and (max-width: 767px) {
   .fullHeader {
     width: 100vw;
-    background-image: url("../../assets/Header/headerv5.png");
+    background-image: url("../../assets/Header/mobileCM.png");
     height: 15vh;
     margin-bottom: 0;
     background-size: cover;
@@ -45,7 +45,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: url("../../assets/Header/grandHeader.png");
+    background-image: url("../../assets/Header/HeaderCM.png");
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -65,7 +65,7 @@
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  background-image: url("../../assets/Header/grandHeader.png");
+  background-image: url("../../assets/Header/HeaderCM.png");
   background-size: cover;
   background-position: center;
   margin:0px;
