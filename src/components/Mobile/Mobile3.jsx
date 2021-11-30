@@ -13,7 +13,7 @@ import axios from "axios";
 import Geolocalisation from "../Hook/Geolocalisation";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import Footer from "../../components/Footer/Footer.jsx";
-import L from "leaflet";
+import L, { marker } from "leaflet";
 import clubMarker from "../../assets/Marqueurs/LogoClub.png";
 import indreMarker from "../../assets/Marqueurs/MarqueurIndre.png";
 import indreEtLoireMarker from "../../assets/Marqueurs/IndreEtLoire.png";
@@ -83,6 +83,11 @@ function Mobile3() {
     iconAnchor: [13.5, 47],
     iconUrl: clubMarker,
   });
+
+  const normalMarker = L.icon({
+    iconSize: [50, 50],
+    iconAnchor: [13.5, 47],
+  })
   console.log(formData);
 
   const filterSearch = (e) => {
@@ -277,6 +282,13 @@ function Mobile3() {
               </Popup>
             </Marker>
           </MapContainer>
+          <div className="markerLegend">
+
+            <div className="marker1">
+              <img src={normalMarker}/>
+            </div>
+          
+          </div>
         </main>
         <div className="legendAndForm">
           <section className="legendMapMobile">
@@ -390,7 +402,7 @@ function Mobile3() {
                   )}
                 />
                 <div className="linkTo" id="linkTo">
-                  <p>Si votre ville n'apparaît pas, essayez d'afficher tous les clubs</p>
+                  <p>Si votre ville n'apparaît pas, <a href='/clubs'> essayez d'afficher tous les clubs </a> </p>
                 </div>
               </div>
 
@@ -437,7 +449,12 @@ function Mobile3() {
                           <div className="logo3"></div>
                         </div>
                         <div className="column2">
-                          <div className="info1"> {clubSelected.Mail}</div>
+
+
+                          <div className="info1"> <a className="mail" href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}>{clubSelected.Mail} </a>
+                          
+                          
+                          </div>
                           <div className="info2">{clubSelected.Adresse}</div>
                           <div className="info3">Voir plus d'infos</div>
                         </div>
@@ -466,7 +483,11 @@ function Mobile3() {
                       <div className="column2">
                         <div className="info1"> {clubSelected.Mail}</div>
                         <div className="info2">{clubSelected.Adresse}</div>
-                        <div className="info3">Voir plus d'infos</div>
+                        <div className="info3">
+                          <a href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}>
+                          
+                          
+                          Voir plus d'infos </a> </div>
                       </div>
                     </div>
                   </div>

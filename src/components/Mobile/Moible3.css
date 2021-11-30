@@ -59,8 +59,6 @@ html, body {
     flex-wrap: nowrap;
 }
 
-
-
 .mapContainer {
     display: block;
 }
@@ -96,7 +94,21 @@ html, body {
     color: #c1272d;
 }
 
+
+.info3 a {
+    text-decoration: none;
+    color: black;
+}
+
+.info3 a:visited {
+    text-decoration: none;
+}
  
+.markerLegend {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: row;
+}
     
 
 .birthday {
@@ -503,3 +515,4 @@ html, body {
     font-family: 'Century Gothic';
     font-size: 12px;
 }
+
