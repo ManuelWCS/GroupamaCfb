@@ -7,7 +7,7 @@ html, body {
     overflow-x: hidden;
     background-size: cover;
     background-attachment: fixed;
-    background-image: url('./Fond2.svg');
+    background-image: url('../../assets/FONDS/Fond-ordinateur.png');
     background-repeat: no-repeat;
     /* margin-bottom: 36px; */
     max-height: fit-content;
@@ -174,9 +174,6 @@ html, body {
 }
 
 
-.hiddenSearchResult {
-    display: none;
-}
 
 .marker-cluster-small div {
     background-color: #1692eb;
@@ -491,4 +488,15 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.linkTo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top:16px;
+    margin-bottom: 16px;
+    font-family: 'Century Gothic';
+    font-size: 12px;
 }
