@@ -174,9 +174,27 @@ function Mobile3() {
         <div className="fullPage">
             <Header />
 
-            <div className="subContainer">
-                <h1 className="titlePart1">Trouvez un club près </h1>
+            <div className="mobiletitleContainer">
+            <h1 className="titlePart1">Trouvez un club près </h1>
                 <h1 className="titlePart2">de chez vous ! </h1>
+
+            </div>
+
+            <div className="titleContainerDesktop">
+            <h1 className="titlePart1">Trouvez un <em className="blue"> club </em> près de chez <strong className="strong"> vous !</strong>  </h1>
+            <section className="legendMap">
+                        <p className="legend">
+                            Entrez votre <em className="birthday">date de naissance </em>et la{" "}
+                            <em className="ranked"> compétition </em> souhaitée pour découvrir
+                            les clubs à proximité !{" "}
+                        </p>
+                    </section>
+                
+
+            </div>
+
+            <div className="subContainer">
+            
 
                 <main className="mapContainer">
                     <MapContainer
@@ -280,13 +298,6 @@ function Mobile3() {
                 <div className="legendAndForm">
 
 
-                    <section className="legendMap">
-                        <p className="legend">
-                            Entrez votre <em className="birthday">date de naissance </em>et la{" "}
-                            <em className="ranked"> compétition </em> souhaitée pour découvrir
-                            les clubs à proximité !{" "}
-                        </p>
-                    </section>
 
                     <div className="filtrations">
                         <form className="filtrationsWrapper" onSubmit={(e) => filterSearch(e)}>
@@ -435,7 +446,7 @@ function Mobile3() {
                                 return (
 
                                     <div className="cardResult" key={Uniqueindex}>
-                                        <div className="titleContainer">
+                                        <div className="titleCardContainer">
                                             <span className="titleCard">
                                                 {clubSelected.Club}
                                             </span>

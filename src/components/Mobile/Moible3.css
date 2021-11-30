@@ -22,7 +22,6 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    overflow-x:auto;
 }
 
 
@@ -31,22 +30,23 @@ html, body {
     width: 80vw;
 }
 
+
+.mobiletitleContainer {
+    margin-top:16px;
+    margin-bottom: 16px;
+}
 .titlePart1, .titlePart2 {
     font-size: 24px;
     color: #3586c2;
     margin: 4px 4px;
     font-family: 'Nuvel';
     text-transform: uppercase;
-    text-align: center;    
+    text-align: center;
 }
 
-.titlePart1 {
-    padding-top: 32px;
-}
 
-.titlePart2 {
-    padding-bottom: 16px;
-}
+
+
 .mapContainer {
     display: block;
 }
@@ -61,7 +61,7 @@ html, body {
 
 .legendMap {
     text-align: center;
-    padding: 12px 12px 12px 12px;
+    padding:  4px 4px 4px 4px;
     margin-left: auto;
     margin-right: auto;
 
@@ -106,7 +106,6 @@ html, body {
     justify-content: flex-start;
     align-items: flex-start;
     margin-top: 18px;
-    margin-bottom: 18px;
 }
 .filterTitle2 {
     font-family: 'Nuvel';
@@ -141,10 +140,10 @@ html, body {
 }
 
 .findclubBtn {
-    margin-top: 36px;
+    margin-top: 24px;
     height: 100px;
     width: 150px;
-    margin-bottom: 36px;
+    margin-bottom: 24px;
 }
 
 .btnBackground {
@@ -262,6 +261,11 @@ html, body {
     display: none;
 }
 
+.titleContainerDesktop {
+    display: none;
+
+}
+
 
 
 .cardResult:nth-child(1n) .logo1:nth-child(1n) {
@@ -345,8 +349,8 @@ html, body {
 
 
 .filtre4 {
-    margin-top:16px;
-    margin-bottom: 16px;
+    margin-top:4px;
+    margin-bottom: 4px;
 }
 
 .filterTitle4 {
@@ -355,8 +359,7 @@ html, body {
 }
 
 
-
-.titleContainer {
+.titleCardContainer {
     height: 64px;
     width: 305px;
     display: flex;
@@ -365,6 +368,17 @@ html, body {
     margin-left: 8px;
     font-family: 'Nuvel';
 }
+
+.titleCard {
+    height: 64px;
+    width: 305px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 8px;
+    font-family: 'Nuvel';
+}
+
 .columnContainer {
     display: flex;
 
@@ -391,11 +405,6 @@ html, body {
     width: 32px;
 }
 
-/* .logo1 {
-    background-image: url('../../assets/Logos/Mail-bleu.png');
-    background-position: center;
-    background-size: cover;
-} */
 
 .logo2 {
     background-image: url('../../assets/Logos/Localisation-bleu.png');
@@ -472,17 +481,14 @@ html, body {
 .mapLeaflet {
     height: 60vh;
     width: 25vw;
-    margin-top: 2.5vh;
+    margin-top: 0vh;
 }
 
-.legendMap {
-    width: 350px;
-    border: 1px solid pink;
-}
+
 
 .filtrations {
     width: 40vw;
-    margin-top:2.5vh;
+    margin-top:1.5vh;
     max-width: fit-content;
     margin-left: 128px;
     
@@ -494,17 +500,11 @@ html, body {
     flex-direction: row;
 }
 
-.titlePart1, .titlePart2 {
-    display: none;
-}
 
 .legendAndForm {
     margin-top: 0vh;
 }
 
-.legendMap {
-    display: none;
-}
 
 .resul {
     display: none;
@@ -533,6 +533,40 @@ html, body {
     margin-top:-85px;
 }
 
+.mobiletitleContainer {
+    display: none;
+}
+
+.titleContainerDesktop {
+    display: flex;
+    flex-direction: column;
+    padding:  4px 4px 4px 4px;
+    margin-top:12px;
+}
+
+.titlePart1 {
+    color:#293D6B;
+    font-size: 32px;
+}
+
+.blue {
+    color:#3586c2;
+}
+
+.strong {
+    color: #c1272d;
+}
+
+
+.titleCardContainer {
+    height: 64px;
+    width: 305px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 8px;
+    font-family: 'Nuvel';
+}
 
 
 
