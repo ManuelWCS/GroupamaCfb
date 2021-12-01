@@ -34,7 +34,7 @@ const logoStyle = {
 export default function Footer({children}) {
     return (
         <div>
-            <div style={phantomStyle}></div>
+            <div style={phantomStyle}> <p>whes pelo</p></div>
 
 
             <div style={footerStyle}>     

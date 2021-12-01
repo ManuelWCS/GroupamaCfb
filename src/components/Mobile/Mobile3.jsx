@@ -12,7 +12,6 @@ import btnPicture from "../../assets/Boutons/buttontransparent.png";
 import axios from "axios";
 import Geolocalisation from "../Hook/Geolocalisation";
 import MarkerClusterGroup from "react-leaflet-markercluster";
-import Footer from "../../components/Footer/Footer.jsx";
 import L, { marker } from "leaflet";
 import clubMarker from "../../assets/Marqueurs/LogoClub.png";
 import indreMarker from "../../assets/Marqueurs/MarqueurIndre.png";
@@ -23,6 +22,10 @@ import loiretMarker from "../../assets/Marqueurs/Marqueurloiret.png";
 import eureEtLoireMarker from "../../assets/Marqueurs/MarqueurEureEtLoire.png";
 import ligueMarker from "../../assets/Marqueurs/MarqueurLigue.png";
 import "../Mobile/Mobile3Responsive.css";
+import fb from "../../assets/footer/fb.png";
+import yt from "../../assets/footer/youtube.png";
+import web from "../../assets/footer/web.png";
+import CM from '../../assets/Logos/CM.png'
 
 function Mobile3() {
   const [allcities, setallcities] = useState([]);
@@ -87,7 +90,7 @@ function Mobile3() {
   const normalMarker = L.icon({
     iconSize: [50, 50],
     iconAnchor: [13.5, 47],
-  })
+  });
   console.log(formData);
 
   const filterSearch = (e) => {
@@ -111,16 +114,14 @@ function Mobile3() {
       setclubSearch(resultofSearch);
 
       var result = resultofSearch.reduceRight((unique, o) => {
-        if (!unique.some(obj => obj.Adresse === o.Adresse)) {
-          unique.push(o)
+        if (!unique.some((obj) => obj.Adresse === o.Adresse)) {
+          unique.push(o);
         }
-        return unique 
-      }, [])
-      console.log(result)
-      setclubSearch(result)
+        return unique;
+      }, []);
+      console.log(result);
+      setclubSearch(result);
 
-
-  
       if (resultofSearch.length === 0)
         console.log("There are no available locations");
       console.log(clubSearch);
@@ -139,8 +140,6 @@ function Mobile3() {
   function scrollTop() {
     window.location.href = "#map";
   }
-
-  
 
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.name]: e.target.value });
@@ -183,14 +182,15 @@ function Mobile3() {
 
       <div className="titleContainerDesktop">
         <h1 className="titlePart1">
-          Trouvez un <em className="blue"> club </em> près de chez{" "}
+          Trouvez un <strong className="blue"> club </strong> près de chez{" "}
           <strong className="strong"> vous !</strong>{" "}
         </h1>
         <section className="legendMap">
           <p className="legend">
-            Entrez votre <em className="birthday">date de naissance </em>et la{" "}
-            <em className="ranked"> compétition </em> souhaitée pour découvrir
-            les clubs à proximité !{" "}
+            Entrez votre{" "}
+            <strong className="birthday">date de naissance </strong>et la{" "}
+            <strong className="ranked"> compétition </strong> souhaitée pour
+            découvrir les clubs à proximité !{" "}
           </p>
         </section>
       </div>
@@ -296,11 +296,9 @@ function Mobile3() {
             </Marker>
           </MapContainer>
           <div className="markerLegend">
-
             <div className="marker1">
-              <img src={normalMarker}/>
+              <img src={normalMarker} />
             </div>
-          
           </div>
         </main>
         <div className="legendAndForm">
@@ -377,21 +375,21 @@ function Mobile3() {
                     required={true}
                   >
                     <FormControlLabel
-                    row
+                      row
                       value="Libre"
                       className="radio1"
                       control={<Radio />}
                       label="Libre"
                     />
                     <FormControlLabel
-                    row
+                      row
                       className="radio1"
                       value="Loisir"
                       control={<Radio />}
                       label="Loisir"
                     />
                     <FormControlLabel
-                    row
+                      row
                       className="radio1"
                       value="Futsal"
                       control={<Radio />}
@@ -408,7 +406,7 @@ function Mobile3() {
                   id="combo-box-demo"
                   inputValue={formData.city}
                   options={allcities}
-                  noOptionsText="Pas de résultats correspondants à votre recherche"
+                  noOptionsText="Pas de club disponible dans cette commune"
                   onInputChange={(event, newInputValue) => {
                     setformData({ ...formData, city: newInputValue });
                   }}
@@ -418,7 +416,10 @@ function Mobile3() {
                   )}
                 />
                 <div className="linkTo" id="linkTo">
-                  <p>Si votre ville n'apparaît pas, <a href='/clubs'> essayez d'afficher tous les clubs </a> </p>
+                  <p>
+                    Si votre ville n'apparaît pas,{" "}
+                    <a href="/clubs"> essayez d'afficher tous les clubs </a>{" "}
+                  </p>
                 </div>
               </div>
 
@@ -465,11 +466,14 @@ function Mobile3() {
                           <div className="logo3"></div>
                         </div>
                         <div className="column2">
-
-
-                          <div className="info1"> <a className="mail" href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}>{clubSelected.Mail} </a>
-                          
-                          
+                          <div className="info1">
+                            {" "}
+                            <a
+                              className="mail"
+                              href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}
+                            >
+                              {clubSelected.Mail}{" "}
+                            </a>
                           </div>
                           <div className="info2">{clubSelected.Adresse}</div>
                           <div className="info3">Voir plus d'infos</div>
@@ -500,20 +504,52 @@ function Mobile3() {
                         <div className="info1"> {clubSelected.Mail}</div>
                         <div className="info2">{clubSelected.Adresse}</div>
                         <div className="info3">
-                          <a href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}>
-                          
-                          
-                          Voir plus d'infos </a> </div>
+                          <a
+                            target="_blank"
+                            href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite} `}
+                          >
+                            Voir plus d'infos{" "}
+                          </a>{" "}
+                        </div>
                       </div>
                     </div>
-                   
                   </div>
                 );
               })
             : null}
         </div>
 
-        <Footer />
+
+        
+      </div>
+        <div className="creditMutuel">
+          <img className="creditLogo" src={CM} /> 
+          
+         <p className="logoDescription"> Merci le crédit  tu m'as bien khalass</p>
+          
+          </div>
+      <div className="footHeure">
+        <div className="logos">
+          <a
+            href="https://www.facebook.com/LCFofficiel/?ref=bookmarks"
+            target="_blank"
+          >
+            <img className="logos" src={fb} />
+          </a>
+        </div>
+
+        <div className="logos">
+           <a href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html" target="_blank">
+            <img className="logos" src={web} />
+          </a>
+        </div>
+
+        <div className="logos">
+           <a href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q" target="_blank">
+            <img className="logos" src={yt} />
+          </a>
+        </div>
+
       </div>
     </div>
   );

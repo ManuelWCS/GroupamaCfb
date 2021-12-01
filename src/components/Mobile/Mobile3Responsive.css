@@ -16,6 +16,7 @@ html, body {
 
     .fullPage {
         display: flex;
+        flex-direction: column;
     }
 
 .subContainer{
@@ -61,7 +62,7 @@ html, body {
     display: flex;
     order:1;
     width: 400px;
-    height:450px;
+    height:80vh;
     margin-top:5vh;
     overflow-x: hidden;
     overflow-y: auto;
@@ -119,6 +120,28 @@ html, body {
 .legendMapMobile {
     display: none;
 }
+
+
+.creditMutuel {
+    left: 0;
+    right: 0;
+    top:0;
+    bottom:0;
+    position: relative;
+    margin-top:68vh;
+    font-family: 'Century Gothic';
+    color:#3586c2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 64px;;
+}
+.creditLogo {
+    height: 28px;
+    width: 250px;
+    margin-bottom: px;
+}
+
 
 
 
