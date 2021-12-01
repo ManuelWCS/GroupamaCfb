@@ -144,6 +144,19 @@ html, body {
     
 }
 
+.banquePopUp h3{
+    color:#293D6B
+}
+
+.banquePopUp a:visited {
+    text-decoration: none;
+}
+.banquePopUp a {
+    text-decoration: none;
+}
+
+
+
 .filterTitle1 {
     font-family: 'Nuvel';
     color:#3586c2;
