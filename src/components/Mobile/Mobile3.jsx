@@ -110,9 +110,20 @@ function Mobile3() {
 
       setclubSearch(resultofSearch);
 
+      var result = resultofSearch.reduceRight((unique, o) => {
+        if (!unique.some(obj => obj.Adresse === o.Adresse)) {
+          unique.push(o)
+        }
+        return unique 
+      }, [])
+      console.log(result)
+      setclubSearch(result)
+
+
+  
       if (resultofSearch.length === 0)
         console.log("There are no available locations");
-      console.log(resultofSearch);
+      console.log(clubSearch);
 
       const arrayOfLatLngs = resultofSearch.map(({ Latitude, Longitude }) => [
         Latitude,
@@ -471,7 +482,7 @@ function Mobile3() {
                 return (
                   <div className="cardResult" key={Uniqueindex}>
                     <div className="titleContainer">
-                      <span className="titleCard">{clubSelected.name}</span>
+                      <span className="titleCard">{clubSelected.Club}</span>
                     </div>
 
                     <div className="columnContainer">
