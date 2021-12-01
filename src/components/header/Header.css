@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  background-image: url("../../assets/Header/grandCM.png");
+  background-image: url("../../assets/Header/CMfinal.png");
   background-size: cover;
   background-position: center;
   margin:0px;
@@ -45,7 +45,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: url("../../assets/Header/grandCM.png");
+    background-image: url("../../assets/Header/CMfinal.png");
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -65,7 +65,7 @@
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  background-image: url("../../assets/Header/grandCM.png");
+  background-image: url("../../assets/Header/CMfinal.png");
   background-size: cover;
   background-position: center;
   margin:0px;

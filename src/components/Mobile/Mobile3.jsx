@@ -501,6 +501,7 @@ function Mobile3() {
                           Voir plus d'infos </a> </div>
                       </div>
                     </div>
+                   
                   </div>
                 );
               })
