@@ -114,6 +114,8 @@ html, body {
 
 .css-p58oka {
     flex-wrap: nowrap;
+    display: row;
+    flex-direction: row;
 }
 .css-9l3uo3 {
     font-family: 'Century Gothic';

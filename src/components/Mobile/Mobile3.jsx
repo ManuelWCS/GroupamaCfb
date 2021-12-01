@@ -377,18 +377,21 @@ function Mobile3() {
                     required={true}
                   >
                     <FormControlLabel
+                    row
                       value="Libre"
                       className="radio1"
                       control={<Radio />}
                       label="Libre"
                     />
                     <FormControlLabel
+                    row
                       className="radio1"
                       value="Loisir"
                       control={<Radio />}
                       label="Loisir"
                     />
                     <FormControlLabel
+                    row
                       className="radio1"
                       value="Futsal"
                       control={<Radio />}
