@@ -525,7 +525,7 @@ function Mobile3() {
         <div className="creditMutuel">
           <img className="creditLogo" src={CM} /> 
           
-         <p className="logoDescription"> Merci le crédit  tu m'as bien khalass</p>
+         <p className="logoDescription"> plateforme soutenue par le crédit mutuel</p>
           
           </div>
       <div className="footHeure">
