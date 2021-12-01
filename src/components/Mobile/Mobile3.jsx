@@ -25,7 +25,9 @@ import "../Mobile/Mobile3Responsive.css";
 import fb from "../../assets/footer/fb.png";
 import yt from "../../assets/footer/youtube.png";
 import web from "../../assets/footer/web.png";
-import CM from '../../assets/Logos/CM.png'
+import CM from '../../assets/Logos/CM.png';
+import defaultMaker from '../../assets/Marqueurs/defaultMarker.png';
+import label from '../../assets/Marqueurs/label.png';
 
 function Mobile3() {
   const [allcities, setallcities] = useState([]);
@@ -227,18 +229,18 @@ function Mobile3() {
             >
               {clubSearch.length !== 0
                 ? clubSearch.slice(0, 100).map((res, index2) => {
-                    return (
-                      <Marker
-                        icon={clubMarqueur}
-                        key={index2}
-                        position={[res.Latitude, res.Longitude]}
-                      >
-                        <Popup key={index2} className="markersPopUp">
-                          <p> {res.Club}</p>
-                        </Popup>
-                      </Marker>
-                    );
-                  })
+                  return (
+                    <Marker
+                      icon={clubMarqueur}
+                      key={index2}
+                      position={[res.Latitude, res.Longitude]}
+                    >
+                      <Popup key={index2} className="markersPopUp">
+                        <p> {res.Club}</p>
+                      </Popup>
+                    </Marker>
+                  );
+                })
                 : null}
             </MarkerClusterGroup>
             <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
@@ -295,11 +297,31 @@ function Mobile3() {
               </Popup>
             </Marker>
           </MapContainer>
+
+
           <div className="markerLegend">
             <div className="marker1">
-              <img src={normalMarker} />
+              <img src={defaultMaker} />
+              <p className="markerDescription"> Votre position</p>
             </div>
+
+            <div className="marker2">
+              <img className="markerPicture" src={clubMarker} />
+              <p className="markerDescription"> Club de foot</p>
+            </div>
+
+            <div className="marker3">
+              <img className="markerPicture2" src={label} />
+              <p className="markerDescription"> Club labelisé</p>
+            </div>
+
+
+
+          
           </div>
+
+          
+
         </main>
         <div className="legendAndForm">
           <section className="legendMapMobile">
@@ -415,12 +437,7 @@ function Mobile3() {
                     <TextField {...params} label="Rechercher" />
                   )}
                 />
-                <div className="linkTo" id="linkTo">
-                  <p>
-                    Si votre ville n'apparaît pas,{" "}
-                    <a href="/clubs"> essayez d'afficher tous les clubs </a>{" "}
-                  </p>
-                </div>
+
               </div>
 
               <div className="btnContainer" id="test">
@@ -453,44 +470,9 @@ function Mobile3() {
           <div className="resultats">
             {clubSearch.length !== 0
               ? clubSearch.map((clubSelected, Uniqueindex) => {
-                  return (
-                    <div className="cardResult" key={Uniqueindex}>
-                      <div className="titleCardContainer">
-                        <span className="titleCard">{clubSelected.Club}</span>
-                      </div>
-
-                      <div className="columnContainer">
-                        <div className="column1">
-                          <div className="logo1"></div>
-                          <div className="logo2"></div>
-                          <div className="logo3"></div>
-                        </div>
-                        <div className="column2">
-                          <div className="info1">
-                            {" "}
-                            <a
-                              className="mail"
-                              href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}
-                            >
-                              {clubSelected.Mail}{" "}
-                            </a>
-                          </div>
-                          <div className="info2">{clubSelected.Adresse}</div>
-                          <div className="info3">Voir plus d'infos</div>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })
-              : null}
-          </div>
-        </div>
-        <div className="resultatsDesktop">
-          {clubSearch.length !== 0
-            ? clubSearch.map((clubSelected, Uniqueindex) => {
                 return (
                   <div className="cardResult" key={Uniqueindex}>
-                    <div className="titleContainer">
+                    <div className="titleCardContainer">
                       <span className="titleCard">{clubSelected.Club}</span>
                     </div>
 
@@ -501,33 +483,69 @@ function Mobile3() {
                         <div className="logo3"></div>
                       </div>
                       <div className="column2">
-                        <div className="info1"> {clubSelected.Mail}</div>
-                        <div className="info2">{clubSelected.Adresse}</div>
-                        <div className="info3">
+                        <div className="info1">
+                          {" "}
                           <a
-                            target="_blank"
-                            href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite} `}
+                            className="mail"
+                            href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}
                           >
-                            Voir plus d'infos{" "}
-                          </a>{" "}
+                            {clubSelected.Mail}{" "}
+                          </a>
                         </div>
+                        <div className="info2">{clubSelected.Adresse}</div>
+                        <div className="info3">Voir plus d'infos</div>
                       </div>
                     </div>
                   </div>
                 );
               })
+              : null}
+          </div>
+        </div>
+        <div className="resultatsDesktop">
+          {clubSearch.length !== 0
+            ? clubSearch.map((clubSelected, Uniqueindex) => {
+              return (
+                <div className="cardResult" key={Uniqueindex}>
+                  <div className="titleContainer">
+                    <span className="titleCard">{clubSelected.Club}</span>
+                  </div>
+
+                  <div className="columnContainer">
+                    <div className="column1">
+                      <div className="logo1"></div>
+                      <div className="logo2"></div>
+                      <div className="logo3"></div>
+                    </div>
+                    <div className="column2">
+                      <div className="info1"> {clubSelected.Mail}</div>
+                      <div className="info2">{clubSelected.Adresse}</div>
+                      <div className="info3">
+                        <a
+                          target="_blank"
+                          href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite} `}
+                        >
+                          Voir plus d'infos{" "}
+                        </a>{" "}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })
             : null}
         </div>
 
 
-        
+
       </div>
-        <div className="creditMutuel">
-          <img className="creditLogo" src={CM} /> 
-          
-         <p className="logoDescription"> plateforme soutenue par le crédit mutuel</p>
-          
-          </div>
+      <div className="creditMutuel">
+        <a href="https://www.creditmutuel.fr/home/index.html" target="_blank">
+          <img className="creditLogo" src={CM} />
+
+          <p className="logoDescription"> Plateforme soutenue par le Crédit Mutuel</p>
+        </a>
+      </div>
       <div className="footHeure">
         <div className="logos">
           <a
@@ -539,13 +557,13 @@ function Mobile3() {
         </div>
 
         <div className="logos">
-           <a href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html" target="_blank">
+          <a href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html" target="_blank">
             <img className="logos" src={web} />
           </a>
         </div>
 
         <div className="logos">
-           <a href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q" target="_blank">
+          <a href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q" target="_blank">
             <img className="logos" src={yt} />
           </a>
         </div>

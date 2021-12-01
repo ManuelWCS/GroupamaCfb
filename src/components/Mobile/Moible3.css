@@ -112,7 +112,7 @@ html, body {
 }
  
 .markerLegend {
-    margin-top: 48px;
+    margin-top: 24px;
     display: flex;
     flex-direction: row;
 }
@@ -545,4 +545,35 @@ html, body {
 
 .creditMutuel {
 display: none;
+}
+
+.marker1, .marker2, .marker3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.markerDescription {
+    font-family: 'Century Gothic';
+    font-size: 10px;
+    padding-right: 6px;
+    padding-left: 6px;
+}
+
+
+.markerPicture {
+height: 45px;
+width: 48px;
+}
+
+.markerPicture2 {
+    height: 41px;
+    width: 32px;
+}
+
+.markerLegend {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
