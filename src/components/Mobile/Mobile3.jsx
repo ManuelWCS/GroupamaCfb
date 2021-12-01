@@ -30,7 +30,7 @@ import defaultMaker from '../../assets/Marqueurs/defaultMarker.png';
 import label from '../../assets/Marqueurs/label.png';
 import fbCM from '../../assets/CM/fbCM.png';
 import webCM from '../../assets/CM/webCM.png';
-import markerCM from '../../assets/Marqueurs/MarqueurCM.png'
+import markerCM2 from '../../assets/Marqueurs/CM2.png'
 
 function Mobile3() {
   const [allcities, setallcities] = useState([]);
@@ -98,9 +98,9 @@ function Mobile3() {
   });
 
   const marqueurBanque = L.icon({
-    iconSize: [50, 58],
+    iconSize: [45, 58],
     iconAnchor:[13.5, 47],
-    iconUrl: markerCM,
+    iconUrl: markerCM2,
   })
   console.log(formData);
 
@@ -333,7 +333,7 @@ function Mobile3() {
             </div>
 
             <div className="marker4">
-              <img className="markerPicture2" src={markerCM} />
+              <img className="markerPicture2" src={markerCM2} />
               <p className="markerDescription"> Crédit Mutuel</p>
             </div>
 
