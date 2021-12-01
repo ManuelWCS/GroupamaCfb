@@ -200,7 +200,7 @@
 
 
 
-.marker1, .marker2, .marker3 {
+.marker1, .marker2, .marker3, .marker4 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;

@@ -332,6 +332,12 @@ function Mobile3() {
               <p className="markerDescription"> Club labelisé</p>
             </div>
 
+            <div className="marker4">
+              <img className="markerPicture2" src={markerCM} />
+              <p className="markerDescription"> Crédit Mutuel</p>
+            </div>
+
+
 
 
           
