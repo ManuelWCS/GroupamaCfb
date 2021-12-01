@@ -28,6 +28,8 @@ import web from "../../assets/footer/web.png";
 import CM from '../../assets/Logos/CM.png';
 import defaultMaker from '../../assets/Marqueurs/defaultMarker.png';
 import label from '../../assets/Marqueurs/label.png';
+import fbCM from '../../assets/CM/fbCM.png';
+import webCM from '../../assets/CM/webCM.png';
 
 function Mobile3() {
   const [allcities, setallcities] = useState([]);
@@ -541,10 +543,23 @@ function Mobile3() {
       </div>
       <div className="creditMutuel">
         <a href="https://www.creditmutuel.fr/home/index.html" target="_blank">
-          <img className="creditLogo" src={CM} />
-
           <p className="logoDescription"> Plateforme soutenue par le Crédit Mutuel</p>
-        </a>
+          <img className="creditLogo" src={CM} /></a>
+          <div className="linksCM">
+            <div className="linklogoCM1">
+              <a href="https://www.creditmutuel.fr/home/index.html" target="_blank">
+              <img src={webCM} className="logowebCM"/>
+
+              </a>
+              </div>
+            
+            <div className="linklogoCM2">
+              <a href="https://www.facebook.com/creditmutuel" target="_blank">
+              <img src={fbCM} className="logowebCM"/></a>
+
+
+            </div>
+          </div>
       </div>
       <div className="footHeure">
         <div className="logos">

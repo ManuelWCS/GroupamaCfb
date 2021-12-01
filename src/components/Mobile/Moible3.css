@@ -11,6 +11,8 @@ html, body {
     background-repeat: no-repeat;
     /* margin-bottom: 36px; */
     max-height: fit-content;
+    overflow: auto;
+
 
 }
 }
@@ -22,6 +24,7 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
 }
 
 .legendMap {
@@ -137,6 +140,7 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+   
     
 }
 

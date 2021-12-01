@@ -2,6 +2,7 @@
   html,
   body {
     max-width: 100%;
+    height: 1200px;
     overflow-x: hidden;
     background-size: cover;
     background-attachment: fixed;
@@ -62,6 +63,8 @@
     margin-top: 1.5vh;
     max-width: fit-content;
     margin-left: 128px;
+    margin-bottom: 12vh;
+  
   }
 
   .filtrations {
@@ -147,11 +150,17 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 64px;
     align-items: center;
     text-align: center;
-    
-  }
+}
+
+.logoDescription {
+    padding: 16px 16px;
+}
+
+  /* .logoDescription {
+      padding: 8px 8px;
+  } */
   .creditLogo {
     height: 28px;
     width: 250px;
@@ -164,6 +173,27 @@
   .creditMutuel a:visited {
     text-decoration: none;
     color: #293d6b;}
+
+    .linksCM {
+        display: flex;
+        justify-content: space-around;
+        padding: 16px 16px 16px 16px;
+    }
+
+    .linklogoCM1, .linklogoCM2 {
+        height: 32px;
+        width: 32px;
+        padding-right: 8px;
+        padding-left: 8px;
+        margin-right: 4px;
+        margin-left:4px;
+    }
+
+    .logowebCM {
+        height: 24px;
+        width: 24px;
+        padding:4px 4px 4px 4px;
+    }
 
 
 
@@ -192,6 +222,9 @@ width: 48px;
 }
 
 .markerLegend {
-    margin-top:48px
+    margin-top:48px;
+    height: 64px;
+    border-radius: 20px;
+    padding:8px 8px 8px 8px;
 }
 }
