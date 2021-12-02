@@ -49,7 +49,7 @@ html {
     margin-bottom: 16px;
 }
 .titlePart1, .titlePart2 {
-    font-size: 32px;
+    font-size: 24px;
     margin: 4px 4px;
     font-family: 'Nuvel';
     text-transform: uppercase;
@@ -602,7 +602,7 @@ margin-top: 2vh;
     top: 0;
     bottom: 0;
     position: relative;
-    margin-top: 135vh;
+    margin-top: 195vh;
     font-family: "Century Gothic";
     display: flex;
     flex-direction: column;
