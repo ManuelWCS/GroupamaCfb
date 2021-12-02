@@ -191,6 +191,11 @@
     text-align: center;
     margin-bottom: 28px;
   }
+  .logos {
+    height: 18px;
+    width: 18px;
+}
+
 
   .logoDescription {
     padding: 16px 16px;

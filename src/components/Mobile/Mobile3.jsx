@@ -147,6 +147,15 @@ function Mobile3() {
 
   function scrollTop() {
     window.location.href = "#top";
+    let logo = document.getElementById('logo');
+      logo.style.display="none"
+    
+  
+  }
+
+  function hideLogo() {
+    let logo = document.getElementById('#logo');
+    logo.style.display="none"
   }
 
   const handleChange = (e) => {
@@ -356,7 +365,7 @@ function Mobile3() {
 
           <div className="filtrations">
 
-            <h3 className="formTitle">  A VOUS DE JOUER ! </h3>
+            <h3 className="formTitle">  À VOUS DE JOUER ! </h3>
             <form
               className="filtrationsWrapper"
               onSubmit={(e) => filterSearch(e)}
@@ -571,7 +580,8 @@ function Mobile3() {
 
 
       </div>
-      <div className="creditMutuel">
+     
+      <div className="creditMutuel" id="logo">
         <a href="https://www.creditmutuel.fr/home/index.html" target="_blank" rel="noreferrer">
           <p className="logoDescription"> Plateforme soutenue par le Crédit Mutuel</p>
           <img className="creditLogo" alt="logo CréditMutuel" src={CM} /></a>
