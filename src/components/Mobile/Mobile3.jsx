@@ -12,7 +12,7 @@ import btnPicture from "../../assets/Boutons/buttontransparent.png";
 import axios from "axios";
 import Geolocalisation from "../Hook/Geolocalisation";
 import MarkerClusterGroup from "react-leaflet-markercluster";
-import L, { marker } from "leaflet";
+import L from "leaflet";
 import clubMarker from "../../assets/Marqueurs/LogoClub.png";
 import indreMarker from "../../assets/Marqueurs/MarqueurIndre.png";
 import indreEtLoireMarker from "../../assets/Marqueurs/IndreEtLoire.png";
@@ -92,10 +92,7 @@ function Mobile3() {
     iconUrl: clubMarker,
   });
 
-  const normalMarker = L.icon({
-    iconSize: [50, 50],
-    iconAnchor: [13.5, 47],
-  });
+  
 
   const marqueurBanque = L.icon({
     iconSize: [45, 58],
@@ -149,7 +146,7 @@ function Mobile3() {
   };
 
   function scrollTop() {
-    window.location.href = "#map";
+    window.location.href = "#top";
   }
 
   const handleChange = (e) => {
@@ -179,12 +176,12 @@ function Mobile3() {
   }, []);
 
   return (
-    <div className="fullPage">
-      <Header />
+    <div className="fullPage" id="top">
+      <Header id='header'/>
 
       <div className="mobiletitleContainer">
         <h1 className="titlePart1">
-          Trouvez un <em className="blue"> club </em> près{" "}
+          Trouvez un club près
         </h1>
         <h1 className="titlePart2">
           de chez <strong className="strong"> vous !</strong>{" "}
@@ -193,14 +190,14 @@ function Mobile3() {
 
       <div className="titleContainerDesktop">
         <h1 className="titlePart1">
-          Trouvez un <strong className="blue"> club </strong> près de chez{" "}
+          Trouvez un club près de chez{" "}
           <strong className="strong"> vous !</strong>{" "}
         </h1>
         <section className="legendMap">
           <p className="legend">
             Entrez votre{" "}
-            <strong className="birthday">date de naissance </strong>et la{" "}
-            <strong className="ranked"> compétition </strong> souhaitée pour
+            date de naissance et la{" "}
+             compétition souhaitée pour
             découvrir les clubs à proximité !{" "}
           </p>
         </section>
@@ -208,6 +205,8 @@ function Mobile3() {
 
       <div className="subContainer">
         <main className="mapContainer">
+          <div className="maplegendWrapper">
+
           <MapContainer
             className="mapLeaflet"
             id="map"
@@ -218,7 +217,7 @@ function Mobile3() {
             doubleClickZoom={true}
             zoomControl={true}
             whenCreated={setMap}
-          >
+            >
             <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -240,9 +239,9 @@ function Mobile3() {
                 ? clubSearch.slice(0, 100).map((res, index2) => {
                   return (
                     <Marker
-                      icon={clubMarqueur}
-                      key={index2}
-                      position={[res.Latitude, res.Longitude]}
+                    icon={clubMarqueur}
+                    key={index2}
+                    position={[res.Latitude, res.Longitude]}
                     >
                       <Popup key={index2} className="markersPopUp">
                         <p> {res.Club}</p>
@@ -290,7 +289,7 @@ function Mobile3() {
             <Marker
               position={[47.5766331, 1.3026806]}
               icon={loireEtcherMarqueur}
-            >
+              >
               <Popup className="InstancePopUp">
                 <a href="https://loir-et-cher.fff.fr/">
                   <h3>District de Football du Loir-et-Cher</h3>
@@ -318,24 +317,25 @@ function Mobile3() {
 
           <div className="markerLegend">
             <div className="marker1">
-              <img src={defaultMaker} />
+              <img src={defaultMaker} alt="Marqueur par défaut"/>
               <p className="markerDescription"> Votre position</p>
             </div>
 
             <div className="marker2">
-              <img className="markerPicture" src={clubMarker} />
+              <img className="markerPicture"alt="Marqueur Club"src={clubMarker} />
               <p className="markerDescription"> Club de foot</p>
             </div>
 
             <div className="marker3">
-              <img className="markerPicture2" src={label} />
+              <img className="markerPicture2" alt="Marqueur Club labélisé" src={label} />
               <p className="markerDescription"> Club labelisé</p>
             </div>
 
             <div className="marker4">
-              <img className="markerPicture2" src={markerCM2} />
+              <img className="markerPicture2" alt="Marqueur Crédit Mutuel" src={markerCM2} />
               <p className="markerDescription"> Crédit Mutuel</p>
             </div>
+              </div>
 
 
 
@@ -349,13 +349,14 @@ function Mobile3() {
         <div className="legendAndForm">
           <section className="legendMapMobile">
             <p className="legend">
-              Entrez votre <em className="birthday">date de naissance </em>et la{" "}
-              <em className="ranked"> compétition </em> souhaitée pour découvrir
+              Entrez votre date de naissance et la compétition souhaitée pour découvrir
               les clubs à proximité !{" "}
             </p>
           </section>
 
           <div className="filtrations">
+
+            <h3 className="formTitle">  A VOUS DE JOUER ! </h3>
             <form
               className="filtrationsWrapper"
               onSubmit={(e) => filterSearch(e)}
@@ -384,8 +385,8 @@ function Mobile3() {
                 <FormControl component="fieldset">
                   <span className="filterTitle2">COMPETITION :</span>
                   <RadioGroup
-                    row
-                    aria-label="gender"
+                  row
+                  aria-label="gender"
                     defaultValue="female"
                     name="gender2"
                     error="Vous devez renseigner une compétition"
@@ -412,7 +413,7 @@ function Mobile3() {
                 <FormControl component="fieldset" required={true}>
                   <span className="filterTitle4">PRATIQUE SOUHAITEE :</span>
                   <RadioGroup
-                    row
+                  row
                     aria-label="type"
                     name="type"
                     error="Vous devez renseigner une compétition"
@@ -420,21 +421,21 @@ function Mobile3() {
                     required={true}
                   >
                     <FormControlLabel
-                      row
+                      
                       value="Libre"
                       className="radio1"
                       control={<Radio />}
                       label="Libre"
                     />
                     <FormControlLabel
-                      row
+                      
                       className="radio1"
                       value="Loisir"
                       control={<Radio />}
                       label="Loisir"
                     />
                     <FormControlLabel
-                      row
+                      
                       className="radio1"
                       value="Futsal"
                       control={<Radio />}
@@ -516,7 +517,11 @@ function Mobile3() {
                           </a>
                         </div>
                         <div className="info2">{clubSelected.Adresse}</div>
-                        <div className="info3">Voir plus d'infos</div>
+                        <div className="info3">
+                        <a href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}> 
+                        Voir plus d'infos
+                        </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -541,11 +546,15 @@ function Mobile3() {
                       <div className="logo3"></div>
                     </div>
                     <div className="column2">
-                      <div className="info1"> {clubSelected.Mail}</div>
+                      <div className="info1">  
+                      <a
+                            className="mail"
+                            href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}
+                          > {clubSelected.Mail} </a> </div>
                       <div className="info2">{clubSelected.Adresse}</div>
                       <div className="info3">
                         <a
-                          target="_blank"
+                          target="_blank" rel="noreferrer"
                           href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite} `}
                         >
                           Voir plus d'infos{" "}
@@ -563,20 +572,20 @@ function Mobile3() {
 
       </div>
       <div className="creditMutuel">
-        <a href="https://www.creditmutuel.fr/home/index.html" target="_blank">
+        <a href="https://www.creditmutuel.fr/home/index.html" target="_blank" rel="noreferrer">
           <p className="logoDescription"> Plateforme soutenue par le Crédit Mutuel</p>
-          <img className="creditLogo" src={CM} /></a>
+          <img className="creditLogo" alt="logo CréditMutuel" src={CM} /></a>
           <div className="linksCM">
             <div className="linklogoCM1">
-              <a href="https://www.creditmutuel.fr/home/index.html" target="_blank">
-              <img src={webCM} className="logowebCM"/>
+              <a href="https://www.creditmutuel.fr/home/index.html" target="_blank " rel="noreferrer">
+              <img src={webCM} alt="logo site web Crédit Mutuel" className="logowebCM"/>
 
               </a>
               </div>
             
             <div className="linklogoCM2">
-              <a href="https://www.facebook.com/creditmutuel" target="_blank">
-              <img src={fbCM} className="logowebCM"/></a>
+              <a href="https://www.facebook.com/creditmutuel" target="_blank" rel="noreferrer">
+              <img src={fbCM} alt="logo Facebook Crédit Mutuel" className="logowebCM"/></a>
 
 
             </div>
@@ -586,21 +595,21 @@ function Mobile3() {
         <div className="logos">
           <a
             href="https://www.facebook.com/LCFofficiel/?ref=bookmarks"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
-            <img className="logos" src={fb} />
+            <img className="logos" alt="logo Facebook" src={fb} />
           </a>
         </div>
 
         <div className="logos">
-          <a href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html" target="_blank">
-            <img className="logos" src={web} />
+          <a href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html" target="_blank" rel="noreferrer">
+            <img className="logos" alt="logo site Ligue Centre Val de Loire" src={web} />
           </a>
         </div>
 
         <div className="logos">
-          <a href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q" target="_blank">
-            <img className="logos" src={yt} />
+          <a href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q" target="_blank" rel="noreferrer">
+            <img className="logos" alt="logo Youtube Ligue Centre-Val de Loire" src={yt} />
           </a>
         </div>
 

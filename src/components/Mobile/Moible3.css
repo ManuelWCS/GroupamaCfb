@@ -9,16 +9,19 @@ html, body {
     background-attachment: fixed;
     background-image: url('./Fond2.svg');
     background-repeat: no-repeat;
-    /* margin-bottom: 36px; */
-    max-height: fit-content;
-    overflow: auto;
-
+  
 
 }
 }
+
+html {
+    height: 100%;
+  }
+  body {
+    min-height: 100%;
+  }
 
 .fullPage {
-    height: 800px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -71,13 +74,13 @@ html, body {
 
 .mapContainer {
     display: block;
+  
 }
 
 .mapLeaflet {
     height: 50vh;
     width: 80vw;
     top: 50%;
-    margin-right:auto;
     margin-left: auto;
     z-index: 0;
 }
@@ -85,23 +88,41 @@ html, body {
 .legendMap {
     text-align: center;
     padding:  4px 4px 4px 4px;
-    margin-left: auto;
-    margin-right: auto;
-
+    margin-left: 0;
 }
+
+
+
+.maplegendWrapper {
+    display: flex;
+flex-direction: column;
+justify-content: center;
+padding-top: 46px;
+padding-bottom: 18px;
+margin-top: 2vh;
+}
+.formTitle {
+    text-align: center;
+    font-family: 'Nuvel';
+    font-size: 21px;
+    color :#293D6B;
+}
+
 
 .legend {
     color :black;
     font-family: 'Century Gothic';
+    font-weight: bold;
+    text-align: center;
 }
 
 .blue {
     color: #293D6B;
 }
 
-
-.strong {
-    color: #c1272d;
+.info1 a {
+    text-decoration: none;
+    color:black;
 }
 
 
@@ -134,13 +155,18 @@ html, body {
 .filtrations {
     
     border-radius: 12px;;
-    width: 75vw;
     padding: 8px 8px 8px 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 64px 64px 64px 64px;
     justify-content: space-around;
-   
+    border-radius: 50px;
+ background: #ffffff;
+box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff; 
+             margin-bottom:4vh; ;
+    
     
 }
 
@@ -197,7 +223,9 @@ html, body {
     width: 170px;
     height: 25px;
     margin:auto;
-    padding-bottom: 12px;
+    padding-bottom: 28px;
+    margin-top:36px;
+    padding-top: 18px;
 }
 
 .findclubBtn {
@@ -564,7 +592,7 @@ html, body {
 display: none;
 }
 
-.marker1, .marker2, .marker3 {
+.marker1, .marker2, .marker3, .marker4 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
