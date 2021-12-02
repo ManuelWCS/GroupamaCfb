@@ -153,10 +153,6 @@ function Mobile3() {
   
   }
 
-  function hideLogo() {
-    let logo = document.getElementById('#logo');
-    logo.style.display="none"
-  }
 
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.name]: e.target.value });
