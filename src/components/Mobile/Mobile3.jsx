@@ -131,6 +131,7 @@ function Mobile3() {
       setclubSearch(result);
 
       if (resultofSearch.length === 0)
+      hideMessage()
         console.log("There are no available locations");
       console.log(clubSearch);
 
@@ -149,8 +150,20 @@ function Mobile3() {
     window.location.href = "#top";
     let logo = document.getElementById('logo');
       logo.style.display="none"
-    
-  
+    }
+
+  function hide() {
+    let logo = document.getElementById('logo');
+      logo.style.display="none"
+    }
+
+    function hideMessage(){
+      let message = document.getElementById('messageHide');
+      message.style.display="block"
+    }
+
+  function scrollCard() {
+    window.location.href="#cardresult"
   }
 
 
@@ -211,6 +224,7 @@ function Mobile3() {
       <div className="subContainer">
         <main className="mapContainer">
           <div className="maplegendWrapper">
+            <h2 className="titleMapContainer">CARTE </h2>
 
           <MapContainer
             className="mapLeaflet"
@@ -247,9 +261,10 @@ function Mobile3() {
                     icon={clubMarqueur}
                     key={index2}
                     position={[res.Latitude, res.Longitude]}
+                    
                     >
                       <Popup key={index2} className="markersPopUp">
-                        <p> {res.Club}</p>
+                        <p onClick={scrollCard}> {res.Club}</p>
                       </Popup>
                     </Marker>
                   );
@@ -455,6 +470,7 @@ function Mobile3() {
                 <Autocomplete
                   disablePortal
                   id="combo-box-demo"
+                  onClick={hide}
                   inputValue={formData.city}
                   options={allcities}
                   noOptionsText="Pas de club disponible dans cette commune"
@@ -467,6 +483,7 @@ function Mobile3() {
                   )}
                 />
 
+           
               </div>
 
               <div className="btnContainer" id="test">
@@ -500,7 +517,7 @@ function Mobile3() {
             {clubSearch.length !== 0
               ? clubSearch.map((clubSelected, Uniqueindex) => {
                 return (
-                  <div className="cardResult" key={Uniqueindex}>
+                  <div className="cardResult" key={Uniqueindex} id="cardresult" >
                     <div className="titleCardContainer">
                       <span className="titleCard">{clubSelected.Club}</span>
                     </div>

@@ -16,6 +16,7 @@ html, body {
 
 html {
     height: 100%;
+    scroll-behavior: smooth;
   }
   body {
     min-height: 100%;
@@ -48,7 +49,7 @@ html {
     margin-bottom: 16px;
 }
 .titlePart1, .titlePart2 {
-    font-size: 24px;
+    font-size: 32px;
     margin: 4px 4px;
     font-family: 'Nuvel';
     text-transform: uppercase;
@@ -107,6 +108,7 @@ margin-top: 2vh;
     font-family: 'Nuvel';
     font-size: 21px;
     color :#293D6B;
+    padding-bottom: 16px;
 }
 
 
@@ -115,6 +117,7 @@ margin-top: 2vh;
     font-family: 'Century Gothic';
     font-weight: bold;
     text-align: center;
+    font-size: 20px;
 }
 
 .blue {
@@ -167,8 +170,8 @@ margin-top: 2vh;
     justify-content: space-around;
     border-radius: 50px;
  background: #ffffff;
-box-shadow:  20px 20px 60px #d9d9d9,
-             -20px -20px 60px #ffffff; 
+/* box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;  */
              margin-bottom:4vh; ;
     
     
@@ -216,7 +219,7 @@ box-shadow:  20px 20px 60px #d9d9d9,
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    margin-bottom:48px;
+    margin-bottom:12px;
 } 
 
 .btnContainer {
@@ -559,6 +562,7 @@ box-shadow:  20px 20px 60px #d9d9d9,
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 64px;
 }
 
 .linkTo {
@@ -598,7 +602,7 @@ box-shadow:  20px 20px 60px #d9d9d9,
     top: 0;
     bottom: 0;
     position: relative;
-    margin-top: 145vh;
+    margin-top: 135vh;
     font-family: "Century Gothic";
     display: flex;
     flex-direction: column;
@@ -677,3 +681,8 @@ width: 48px;
     align-items: flex-end;
     justify-content: center;
 }
+
+.titleMapContainer {
+    display: none;
+}
+

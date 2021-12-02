@@ -51,15 +51,16 @@
   }
 
   .mapLeaflet {
-    height: 60vh;
+    height: 50vh;
     width: 25vw;
     margin-top: 0vh;
   }
 
   .filtrations {
-    width: 40vw;
+    width: 20vw;
     margin-top: 1.5vh;
     max-width: fit-content;
+    padding-bottom: 56px;
     /* margin-left: 76px; */
     margin-bottom: 12vh;
     margin-right: 2vw;
@@ -79,7 +80,7 @@
     padding-left: 38px;
     align-items: center;
     margin-top:2vh;
-    margin-right: 6vw;
+    margin-right: 3vw;
     border-radius: 50px;
     background: #ffffff;
    box-shadow:  18px 18px 50px #d9d9d9,
@@ -89,15 +90,15 @@
 }
 
   .filtre1 {
-    margin-bottom: 24px;
+    margin-bottom: 12px;
   }
 
   .filtre2 {
-    margin-bottom: 24px;
+    margin-bottom: 12px;
   }
 
   .filtre4 {
-    margin-bottom: 24px;
+    margin-bottom: 12px;
   }
 
   .filtre3 {
@@ -162,6 +163,14 @@
     color: #c1272d;
   }
 
+  .titleMapContainer {
+    display:flex;
+    color: #293d6b;
+    font-family: 'Nuvel';
+    padding-bottom: 24px;
+ 
+}
+
   .titleCardContainer {
     height: 64px;
     width: 305px;
@@ -207,10 +216,13 @@
   .creditLogo {
     height: 28px;
     width: 250px;
+    margin-top: 24px;;
+    
   }
 
   .creditMutuel a {
     text-decoration: none;
+  
   }
 
   .creditMutuel a:visited {
@@ -264,7 +276,7 @@
   }
 
   .markerLegend {
-    margin-top: 86px;
+    margin-top: 32px;
     height: 64px;
     border-radius: 20px;
     padding: 8px 8px 8px 8px;
