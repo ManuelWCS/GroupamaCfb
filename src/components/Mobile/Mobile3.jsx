@@ -594,7 +594,7 @@ function Mobile3() {
 
       </div>
      
-      <div className="creditMutuel" id="logo">
+      {/* <div className="creditMutuel" id="logo">
         <a href="https://www.creditmutuel.fr/home/index.html" target="_blank" rel="noreferrer">
           <p className="logoDescription"> Plateforme soutenue par le Crédit Mutuel</p>
           <img className="creditLogo" alt="logo CréditMutuel" src={CM} /></a>
@@ -613,7 +613,7 @@ function Mobile3() {
 
             </div>
           </div>
-      </div>
+      </div> */}
       <div className="footHeure">
         <div className="logos">
           <a
