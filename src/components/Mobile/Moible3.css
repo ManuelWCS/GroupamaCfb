@@ -563,6 +563,13 @@ margin-top: 2vh;
     justify-content: center;
     align-items: center;
     margin-bottom: 64px;
+    padding-bottom: 64px;
+}
+
+.resultSentence {
+    color: black;
+    font-family: 'Century Gothic';
+    text-align: center;
 }
 
 .linkTo {
@@ -597,19 +604,19 @@ margin-top: 2vh;
 
 
 .creditMutuel {
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    position: relative;
-    margin-top: 155vh;
-    font-family: "Century Gothic";
+ 
+    /* font-family: "Century Gothic";
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-bottom: 28px;
+    margin-top: 200vh;
+    margin-bottom: 36px;
+    padding-bottom: 32px;
+    position: sticky;
+    bottom: 0;; */
+    display: none;
 
 }
 

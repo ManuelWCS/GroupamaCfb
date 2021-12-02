@@ -131,7 +131,6 @@ function Mobile3() {
       setclubSearch(result);
 
       if (resultofSearch.length === 0)
-      hideMessage()
         console.log("There are no available locations");
       console.log(clubSearch);
 
@@ -148,8 +147,8 @@ function Mobile3() {
 
   function scrollTop() {
     window.location.href = "#top";
-    let logo = document.getElementById('logo');
-      logo.style.display="none"
+    // let logo = document.getElementById('logo');
+    //   logo.style.display="none"
     }
 
   function hide() {
@@ -157,10 +156,7 @@ function Mobile3() {
       logo.style.display="none"
     }
 
-    function hideMessage(){
-      let message = document.getElementById('messageHide');
-      message.style.display="block"
-    }
+  
 
   function scrollCard() {
     window.location.href="#cardresult"
@@ -514,12 +510,17 @@ function Mobile3() {
           </div>
 
           <div className="resultats">
+            { formData && clubSearch.length > 0 ? 
+              <p className="resultSentence"> Il y a {clubSearch.length} résultats correspondant à votre recherche : </p>
+
+           : <p  className="resultSentence" > Pas de résultats</p> } 
+           
             {clubSearch.length !== 0
               ? clubSearch.map((clubSelected, Uniqueindex) => {
                 return (
                   <div className="cardResult" key={Uniqueindex} id="cardresult" >
                     <div className="titleCardContainer">
-                      <span className="titleCard">{clubSelected.Club}</span>
+                      <span className="titleCard" onClick={scrollTop}>{clubSelected.Club}</span>
                     </div>
 
                     <div className="columnContainer">
@@ -594,7 +595,7 @@ function Mobile3() {
 
       </div>
      
-      {/* <div className="creditMutuel" id="logo">
+      <div className="creditMutuel" id="logo">
         <a href="https://www.creditmutuel.fr/home/index.html" target="_blank" rel="noreferrer">
           <p className="logoDescription"> Plateforme soutenue par le Crédit Mutuel</p>
           <img className="creditLogo" alt="logo CréditMutuel" src={CM} /></a>
@@ -613,7 +614,7 @@ function Mobile3() {
 
             </div>
           </div>
-      </div> */}
+      </div> 
       <div className="footHeure">
         <div className="logos">
           <a
