@@ -110,9 +110,6 @@
     flex-direction: column;
   } */
 
-  .legendAndForm {
-    margin-top: 0vh;
-  }
 
   .resultats {
     display: none;
@@ -189,7 +186,6 @@
     top: 0;
     bottom: 0;
     position: relative;
-    margin-top: 115vh;
     font-family: "Century Gothic";
     display: flex;
     flex-direction: column;
@@ -197,6 +193,7 @@
     align-items: center;
     text-align: center;
     margin-bottom: 28px;
+    margin-top:32px;
   }
   .logos {
     height: 18px;

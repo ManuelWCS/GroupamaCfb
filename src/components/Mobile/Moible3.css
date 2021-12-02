@@ -1,524 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
-@import url('../Mobile/fonts.css');
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+@import url("../Mobile/fonts.css");
 
-@media screen and (min-width: 320px) and (max-width:1023px) {
-html, body {
+/* Media queries  */
+
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+  html,
+  body {
     max-width: 100%;
     overflow-x: hidden;
     background-size: cover;
     background-attachment: fixed;
-    background-image: url('./Fond2.svg');
+    background-image: url("./Fond2.svg");
     background-repeat: no-repeat;
-  
-
-}
+  }
 }
 
 html {
-    height: 100%;
-    scroll-behavior: smooth;
-  }
-  body {
-    min-height: 100%;
-  }
+  height: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100%;
+}
+
+/* fullPage engloble tout le contenu  */
 
 .fullPage {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.legendMap {
-    margin-top:8px;
-    margin-bottom: 8px;
-
-}
-
-
-.subContainer {
-    height: 82px;
-    width: 80vw;
-}
-
+/* Titre de la page format MOBILE */
 
 .mobiletitleContainer {
-    margin-top:16px;
-    margin-bottom: 16px;
-}
-.titlePart1, .titlePart2 {
-    font-size: 24px;
-    margin: 4px 4px;
-    font-family: 'Nuvel';
-    text-transform: uppercase;
-    text-align: center;
-    color: #3586c2;
-}
-
-.legendMapMobile {
     margin-top: 16px;
-    margin-bottom: 16px;;
+    margin-bottom: 16px;
+  }
+
+.titlePart1,
+.titlePart2 {
+  font-size: 24px;
+  margin: 4px 4px;
+  font-family: "Nuvel";
+  text-transform: uppercase;
+  text-align: center;
+  color: #3586c2;
 }
 
-.css-p58oka {
-    flex-wrap: nowrap;
-    display: row;
-    flex-direction: row;
+/* Texte expliquant le processus version DESKTOP  */
+
+.legendMap {
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
-.css-9l3uo3 {
-    font-family: 'Century Gothic';
-    flex-wrap: nowrap;
+
+/* Subcontainer est une div qui entoure la carte, le form jusqu'au résultats  */
+
+.subContainer {
+  height:100vh;
+  width: 80vw;
+  /* background-color: #3586c2; */
 
 }
+
+/* Partie styles de la carte Leafet */
+
 
 .mapContainer {
     display: block;
-  
-}
+  }
 
-.mapLeaflet {
-    height: 50vh;
+  .mapLeaflet {
+    height: 500px;
     width: 80vw;
     top: 50%;
     margin-left: auto;
     z-index: 0;
-}
-
-.legendMap {
-    text-align: center;
-    padding:  4px 4px 4px 4px;
-    margin-left: 0;
-}
-
-
-.hide {
-    display: none;
-}
-.maplegendWrapper {
-    display: flex;
-flex-direction: column;
-justify-content: center;
-padding-bottom: 18px;
-margin-top: 2vh;
-}
-.formTitle {
-    text-align: center;
-    font-family: 'Nuvel';
-    font-size: 19px;
-    color :#293D6B;
-    padding-bottom: 16px;
-}
-
-
-.legend {
-    color :black;
-    font-family: 'Century Gothic';
-    font-weight: bold;
-    text-align: center;
-    font-size: 20px;
-}
-
-.blue {
-    color: #293D6B;
-}
-
-.info1 a {
-    text-decoration: none;
-    color:black;
-}
-
-
-.info3 a {
-    text-decoration: none;
-    color: black;
-}
-
-.info3 a:visited {
-    text-decoration: none;
-}
- 
-.markerLegend {
-    margin-top: 24px;
-    display: flex;
-    flex-direction: row;
-}
-    
-
-.birthday {
-    color : #3586c2;
-    font-weight: 700;
-}
-
-.ranked {
-    color : #c1272d;
-    font-weight: 700;
-}
-
-.filtrations {
-    
-    border-radius: 12px;;
-    padding: 8px 8px 8px 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    padding-right: 64px;
-    padding-left: 64px;
-    padding-top:64px;
-    justify-content: space-around;
-    border-radius: 50px;
- background: #ffffff;
-/* box-shadow:  20px 20px 60px #d9d9d9,
-             -20px -20px 60px #ffffff;  */
-             margin-bottom:4vh; ;
-    
-    
-}
-
-.banquePopUp h3{
-    color:#293D6B
-}
-
-.banquePopUp a:visited {
-    text-decoration: none;
-}
-.banquePopUp a {
-    text-decoration: none;
-}
-
-
-
-.filterTitle1 {
-    font-family: 'Nuvel';
-    color:#3586c2;
-}
-.filtre1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-top: 18px;
-}
-.filterTitle2 {
-    font-family: 'Nuvel';
-    color:#c1272d;
-    margin-top:8px;
-}
-
-.filterTitle3 {
-    font-family: 'Nuvel';
-    color: #293D6B;
-    margin-top: 14px;
-    margin-bottom: 14px;
-}
-
-.filtre3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-bottom:12px;
-} 
-
-.btnContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 170px;
-    height: 25px;
-    margin:auto;
-    padding-bottom: 28px;
-    margin-top:36px;
-    padding-top: 18px;
-}
-
-.findclubBtn {
-    margin-top: 24px;
-    height: 100px;
-    width: 150px;
-    margin-bottom: 24px;
-}
-
-.btnBackground {
-    background-color: transparent;
-    border: none;
-}
-
-
-
-.marker-cluster-small div {
-    background-color: #1692eb;
-}
-
-.marker-cluster-medium {
-    background-color: rgb(255, 255, 255);
-    border: 1 px solid black;
-}
-
-.marker-cluster-small {
-    background-color: rgb(255, 255, 255);
-    border: 1 px solid black;
-}
-
-.marker-cluster-big {
-    background-color: rgb(255, 255, 255);
-    border: 1 px solid black;
-}
-
-.marker-cluster span  {
-    color:#fcfcfc;
-    font-size: 20px;
-    font-weight: bold;
-}
-.leaflet-marker-icon :not(.MyPosition){
-    background-color: #293D6B;
-}
-
-.test {
-    background-color: #293D6B;
-    height: 32px;
-    width: 100%;
-    position: fixed;
-    bottom: 0%;
-    left: 0 ; right: 0; bottom: 0; 
-    height:[footer-height];
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
-}
-
-.logoFooter {
-    height: 16px;
-    width: 16px;
-}
-
-.searchresultsContainer {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 24px;
-    margin-bottom: 24px;
-
-    
-}
-
-.cardResult {
-    height: 220px;
-    width: 305px;
-    background-image: url('../../assets/Cartes/Carte-bleu.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat : no-repeat;
-    border-radius: 12px;
-    margin-top:16px;
-    margin-bottom: 16px;
-}
-
-
-.cardResult:nth-child(2n) {
-    height: 220px;
-    width: 305px;
-    background-image: url('../../assets/Cartes/Carte-rouge.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat : no-repeat;
-    border-radius: 12px;
-}
-
-.cardResult:nth-child(3n) {
-    height: 220px;
-    width: 305px;
-    background-image: url('../../assets/Cartes/Carte-grise.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat : no-repeat;
-    border-radius: 12px;
-}
-.cardResult:nth-child(4n) {
-    height: 220px;
-    width: 305px;
-    background-image: url('../../assets/Cartes/Carte-turquoise.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat : no-repeat;
-    border-radius: 12px;
-    margin-top:16px;
-    margin-bottom: 16px;
-}
-
-.resultatsDesktop {
-    display: none;
-}
-
-.titleContainerDesktop {
-    display: none;
-
-}
-
-
-
-.cardResult:nth-child(1n) .logo1:nth-child(1n) {
-    background-image: url('../../assets/Logos/Mail-bleu.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.cardResult:nth-child(2n) .logo1:nth-child(1n) {
-    background-image: url('../../assets/Logos/Mail-rouge.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.cardResult:nth-child(2n) .logo2:nth-child(2n) {
-    background-image: url('../../assets/Logos/Localisation-rouge.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.cardResult:nth-child(2n) .logo3:nth-child(3n) {
-    background-image: url('../../assets/Logos/Info-rouge.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.cardResult:nth-child(3n) .logo1:nth-child(1n) {
-    background-image: url('../../assets/Logos/Mail-gris.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.cardResult:nth-child(3n) .logo2:nth-child(2n) {
-    background-image: url('../../assets/Logos/Localisation-gris.png');
-    background-position: center;
-    background-size: cover;
-}
-
-
-.cardResult:nth-child(3n) .logo3:nth-child(3n) {
-    background-image: url('../../assets/Logos/Info-gris.png');
-    background-position: center;
-    background-size: cover;
-}
-
-
-.cardResult:nth-child(4n) .logo1:nth-child(1n) {
-    background-image: url('../../assets/Logos/Mail-turquoise.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.cardResult:nth-child(4n) .logo2:nth-child(2n) {
-    background-image: url('../../assets/Logos/Localisation-turquoise.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.cardResult:nth-child(4n) .logo3:nth-child(3n) {
-    background-image: url('../../assets/Logos/Info-turquoise.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label {
-    font-family: 'Century Gothic';
+  }
+  
+.markersPopUp p {
+    font-weight: "Century Gothic";
+    color: #293d6b;
     font-size: 14px;
-}
-
-.css-y3ahi9-MuiAutocomplete-root .MuiOutlinedInput-root .MuiAutocomplete-input {
-    font-family: 'Century Gothic';
-    font-size: 14px;
-}
-
-#test2 {
-    display: none;
-}
-
-
-
-
-
-.filtre4 {
-    margin-top:4px;
-    margin-bottom: 4px;
-}
-
-.filterTitle4 {
-    font-family: 'Nuvel';
-    color: #3586c2;
-}
-
-
-.titleCardContainer {
-    height: 64px;
-    width: 305px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 8px;
-    font-family: 'Nuvel';
-}
-
-.titleCard {
-    height: 64px;
-    width: 305px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 8px;
-    font-family: 'Nuvel';
-}
-
-.columnContainer {
-    display: flex;
-
-}
-
-.column1 {
-    height: 146px;
-    width: 44px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding-left: 16px;}
-
-.column2 {
-    height: 146px;
-    width: 230px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.logo1, .logo2, .logo3 {
-    height: 32px;
-    width: 32px;
-}
-
-
-.logo2 {
-    background-image: url('../../assets/Logos/Localisation-bleu.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.logo3 {
-    background-image: url('../../assets/Logos/Info-bleu.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.info1, .info2 , .info3 {
-    font-family: 'Century Gothic';
-}
+  }
 
 
 .InstancePopUp h3 {
-    font-family: 'Century Gothic';
-    color: #293D6B;
+    font-family: "Century Gothic";
+    color: #293d6b;
     text-decoration: none;
     outline: none;
   }
@@ -526,36 +98,260 @@ margin-top: 2vh;
   .InstancePopUp a {
     text-decoration: none;
   }
-
+  
   .InstancePopUp a:visited {
     text-decoration: none;
   }
-
-  .InstanceLigue h3{
-    font-family: 'Century Gothic';
-    color:#c1272d;
+  
+  .InstanceLigue h3 {
+    font-family: "Century Gothic";
+    color: #c1272d;
   }
-
-    
+  
   .InstanceLigue a {
     text-decoration: none;
   }
-
+  
   .InstanceLigue a:visited {
     text-decoration: none;
   }
-
-  .userPopUp h3{
-      font-family: 'Century Gothic';
-      color: #3586c2;
-
+  
+  .userPopUp h3 {
+    font-family: "Century Gothic";
+    color: #3586c2;
   }
 
-  .markersPopUp p {
-      font-weight: 'Century Gothic';
-      color: #293D6B;
-      font-size: 14px;
+
+.banquePopUp h3 {
+    color: #293d6b;
   }
+  
+  .banquePopUp a:visited {
+    text-decoration: none;
+  }
+  .banquePopUp a {
+    text-decoration: none;
+  }
+
+
+
+.marker-cluster-small div {
+    background-color: #1692eb;
+  }
+  
+  .marker-cluster-medium {
+    background-color: rgb(255, 255, 255);
+    border: 1 px solid black;
+  }
+  
+  .marker-cluster-small {
+    background-color: rgb(255, 255, 255);
+    border: 1 px solid black;
+  }
+  
+  .marker-cluster-big {
+    background-color: rgb(255, 255, 255);
+    border: 1 px solid black;
+  }
+  
+  .marker-cluster span {
+    color: #fcfcfc;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .leaflet-marker-icon :not(.MyPosition) {
+    background-color: #293d6b;
+  }
+  
+
+
+/* MapLegendWrapper est une div qui entoure la carte et la légende  */
+
+.maplegendWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 18px;
+    margin-top: 16px;
+  }
+
+.titleMapContainer {
+    display: none;
+  }
+
+
+/* Legende et container de la légende des markers  */
+
+.markerLegend {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+  }
+
+
+.marker1,
+.marker2,
+.marker3,
+.marker4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.markerDescription {
+    font-family: "Century Gothic";
+    font-size: 10px;
+    padding-right: 6px;
+    padding-left: 6px;
+  }
+  
+  .markerPicture {
+    height: 45px;
+    width: 48px;
+  }
+  
+  .markerPicture2 {
+    height: 41px;
+    width: 32px;
+  }
+  
+  .markerLegend {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  
+
+  /* La Div legendAndForm inclut le formulaire et la légende en format Mobile  */
+
+
+  .legendMapMobile {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+
+  .legendAndForm {
+    margin-top: 0vh;
+  }
+
+  /* Legend est le texte explicatif  */
+
+  .legend {
+    color: black;
+    font-family: "Century Gothic";
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  /* FILTRATIONS est la div engloblant le formulaire  */
+
+
+  .filtrations {
+    border-radius: 12px;
+    padding: 8px 8px 8px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    padding-right: 64px;
+    padding-left: 64px;
+    padding-top: 64px;
+    justify-content: space-around;
+    border-radius: 50px;
+    background: #ffffff;  
+    margin-bottom: 4vh;
+  }
+
+  /* formTitle est le titre au dessus du form  */
+
+
+.formTitle {
+    text-align: center;
+    font-family: "Nuvel";
+    font-size: 19px;
+    color: #293d6b;
+    padding-bottom: 16px;
+  }
+
+
+  /* filtrations wrapper est le conteneur de tout le FORM  */
+
+  .filterTitle1 {
+    font-family: "Nuvel";
+    color: #3586c2;
+  }
+  .filtre1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 18px;
+  }
+  .filterTitle2 {
+    font-family: "Nuvel";
+    color: #c1272d;
+    margin-top: 8px;
+  }
+  
+  .filterTitle3 {
+    font-family: "Nuvel";
+    color: #293d6b;
+    margin-top: 14px;
+    margin-bottom: 14px;
+  }
+  
+  .filtre3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+.filtre4 {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+
+.filterTitle4 {
+    font-family: "Nuvel";
+    color: #3586c2;
+  }
+  
+
+  /* BOUTON du FORM  */
+  
+
+  .btnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 25px;
+    margin: auto;
+    padding-bottom: 28px;
+    margin-top: 36px;
+    padding-top: 18px;
+  }
+  
+  .findclubBtn {
+    margin-top: 24px;
+    height: 100px;
+    width: 150px;
+    margin-bottom: 24px;
+  }
+  
+  .btnBackground {
+    background-color: transparent;
+    border: none;
+  }
+
+/* RESULTATS EST LA DIV A DROITE QUI AFFICHE LES RESULTATS DE LA RECHERCHE */
 
 .resultats {
     display: flex;
@@ -564,77 +360,35 @@ margin-top: 2vh;
     align-items: center;
     margin-bottom: 64px;
     padding-bottom: 64px;
-}
+  }
+
 
 .resultSentence {
     color: black;
-    font-family: 'Century Gothic';
+    font-family: "Century Gothic";
     text-align: center;
-}
+  }
+  
 
-.linkTo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin-top:16px;
-    margin-bottom: 16px;
-    font-family: 'Century Gothic';
-    font-size: 12px;
-}
-
-.footHeure {
-    position:fixed;
-    left:0;
-    right:0;
-    bottom:0;
-    height: 28px;
-    background-color: #293D6B;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-}
-
-.logos {
-    height: 18px;
-    width: 18px;
-}
+  /* CREDIT MUTUEL STYLES  */
 
 
-.creditMutuel {
- 
-    /* font-family: "Century Gothic";
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 200vh;
-    margin-bottom: 36px;
-    padding-bottom: 32px;
-    position: sticky;
-    bottom: 0;; */
-    display: none;
 
-}
-
-.creditMutuel a {
+  .creditMutuel a {
     text-decoration: none;
   }
-
+  
   .creditMutuel a:visited {
     text-decoration: none;
     color: #293d6b;
   }
-
-.linksCM {
+  
+  .linksCM {
     display: flex;
     justify-content: space-around;
     padding: 16px 16px 16px 16px;
   }
-
+  
   .linklogoCM1,
   .linklogoCM2 {
     height: 32px;
@@ -644,52 +398,331 @@ margin-top: 2vh;
     margin-right: 4px;
     margin-left: 4px;
   }
-
+  
   .logowebCM {
     height: 24px;
     width: 24px;
     padding: 4px 4px 4px 4px;
   }
-
+  
   .creditLogo {
     height: 28px;
     width: 250px;
   }
 
 
+.creditMutuel {  
+    display: none;
+  }
+  
+/* FOOTER AND STYLES  */
 
-.marker1, .marker2, .marker3, .marker4 {
+.footHeure {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 28px;
+    background-color: #293d6b;
+    width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-}
-
-.markerDescription {
-    font-family: 'Century Gothic';
-    font-size: 10px;
-    padding-right: 6px;
-    padding-left: 6px;
-}
+  }
+  
+  .logos {
+    height: 18px;
+    width: 18px;
+  }
 
 
-.markerPicture {
-height: 45px;
-width: 48px;
+  /* CARDS DES CLUBS ET STYLES  */
+
+
+  
+.css-p58oka {
+  flex-wrap: nowrap;
+  display: row;
+  flex-direction: row;
+}
+.css-9l3uo3 {
+  font-family: "Century Gothic";
+  flex-wrap: nowrap;
 }
 
-.markerPicture2 {
-    height: 41px;
-    width: 32px;
+
+
+
+.legendMap {
+  text-align: center;
+  padding: 4px 4px 4px 4px;
+  margin-left: 0;
 }
 
-.markerLegend {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+.hide {
+  display: none;
 }
 
-.titleMapContainer {
-    display: none;
+
+
+
+.blue {
+  color: #293d6b;
 }
+
+.info1 a {
+  text-decoration: none;
+  color: black;
+}
+
+.info3 a {
+  text-decoration: none;
+  color: black;
+}
+
+.info3 a:visited {
+  text-decoration: none;
+}
+
+
+
+.birthday {
+  color: #3586c2;
+  font-weight: 700;
+}
+
+.ranked {
+  color: #c1272d;
+  font-weight: 700;
+}
+
+
+
+
+.test {
+  background-color: #293d6b;
+  height: 32px;
+  width: 100%;
+  position: fixed;
+  bottom: 0%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: [footer-height];
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logoFooter {
+  height: 16px;
+  width: 16px;
+}
+
+.searchresultsContainer {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.cardResult {
+  height: 220px;
+  width: 305px;
+  background-image: url("../../assets/Cartes/Carte-bleu.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.cardResult:nth-child(2n) {
+  height: 220px;
+  width: 305px;
+  background-image: url("../../assets/Cartes/Carte-rouge.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+
+.cardResult:nth-child(3n) {
+  height: 220px;
+  width: 305px;
+  background-image: url("../../assets/Cartes/Carte-grise.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+.cardResult:nth-child(4n) {
+  height: 220px;
+  width: 305px;
+  background-image: url("../../assets/Cartes/Carte-turquoise.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.resultatsDesktop {
+  display: none;
+}
+
+.titleContainerDesktop {
+  display: none;
+}
+
+.cardResult:nth-child(1n) .logo1:nth-child(1n) {
+  background-image: url("../../assets/Logos/Mail-bleu.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(2n) .logo1:nth-child(1n) {
+  background-image: url("../../assets/Logos/Mail-rouge.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(2n) .logo2:nth-child(2n) {
+  background-image: url("../../assets/Logos/Localisation-rouge.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(2n) .logo3:nth-child(3n) {
+  background-image: url("../../assets/Logos/Info-rouge.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(3n) .logo1:nth-child(1n) {
+  background-image: url("../../assets/Logos/Mail-gris.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(3n) .logo2:nth-child(2n) {
+  background-image: url("../../assets/Logos/Localisation-gris.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(3n) .logo3:nth-child(3n) {
+  background-image: url("../../assets/Logos/Info-gris.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(4n) .logo1:nth-child(1n) {
+  background-image: url("../../assets/Logos/Mail-turquoise.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(4n) .logo2:nth-child(2n) {
+  background-image: url("../../assets/Logos/Localisation-turquoise.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(4n) .logo3:nth-child(3n) {
+  background-image: url("../../assets/Logos/Info-turquoise.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label {
+  font-family: "Century Gothic";
+  font-size: 14px;
+}
+
+.css-y3ahi9-MuiAutocomplete-root .MuiOutlinedInput-root .MuiAutocomplete-input {
+  font-family: "Century Gothic";
+  font-size: 14px;
+}
+
+#test2 {
+  display: none;
+}
+
+
+.titleCardContainer {
+  height: 64px;
+  width: 305px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 8px;
+  font-family: "Nuvel";
+}
+
+.titleCard {
+  height: 64px;
+  width: 305px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 8px;
+  font-family: "Nuvel";
+}
+
+.columnContainer {
+  display: flex;
+}
+
+.column1 {
+  height: 146px;
+  width: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 16px;
+}
+
+.column2 {
+  height: 146px;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.logo1,
+.logo2,
+.logo3 {
+  height: 32px;
+  width: 32px;
+}
+
+.logo2 {
+  background-image: url("../../assets/Logos/Localisation-bleu.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.logo3 {
+  background-image: url("../../assets/Logos/Info-bleu.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.info1,
+.info2,
+.info3 {
+  font-family: "Century Gothic";
+}
+
+
+
+
+
+
+
 
