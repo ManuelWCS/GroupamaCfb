@@ -147,13 +147,7 @@ function Mobile3() {
 
   function scrollTop() {
     window.location.href = "#top";
-    // let logo = document.getElementById('logo');
-    //   logo.style.display="none"
-    }
 
-  function hide() {
-    let logo = document.getElementById('logo');
-      logo.style.display="none"
     }
 
   
@@ -466,7 +460,7 @@ function Mobile3() {
                 <Autocomplete
                   disablePortal
                   id="combo-box-demo"
-                  onClick={hide}
+                 
                   inputValue={formData.city}
                   options={allcities}
                   noOptionsText="Pas de club disponible dans cette commune"

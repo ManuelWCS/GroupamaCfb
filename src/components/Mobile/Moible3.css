@@ -3,7 +3,7 @@
 
 /* Media queries  */
 
-@media screen and (min-width: 320px) and (max-width: 1023px) {
+@media screen and (min-width: 319px) and (max-width: 1023px) {
   html,
   body {
     max-width: 100%;
@@ -133,7 +133,7 @@ body {
     text-decoration: none;
   }
 
-
+/* STYLES DES CLUSTERS  */
 
 .marker-cluster-small div {
     background-color: #1692eb;
@@ -351,6 +351,23 @@ body {
     border: none;
   }
 
+  .test {
+    background-color: #293d6b;
+    height: 32px;
+    width: 100%;
+    position: fixed;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: [footer-height];
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+
 /* RESULTATS EST LA DIV A DROITE QUI AFFICHE LES RESULTATS DE LA RECHERCHE */
 
 .resultats {
@@ -368,6 +385,20 @@ body {
     font-family: "Century Gothic";
     text-align: center;
   }
+
+
+  .searchresultsContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .resultatsDesktop {
+    display: none;
+  }
+  
+  
   
 
   /* CREDIT MUTUEL STYLES  */
@@ -436,10 +467,23 @@ body {
   }
 
 
+.logoFooter {
+  height: 16px;
+  width: 16px;
+}
+
+
+
+
+
   /* CARDS DES CLUBS ET STYLES  */
 
 
-  
+
+
+
+
+  /* STYLES DE MATERIAL UI QUI NE S'APPLIQUENT PAS QUAND DEPLOYE */
 .css-p58oka {
   flex-wrap: nowrap;
   display: row;
@@ -451,7 +495,7 @@ body {
 }
 
 
-
+/* <------------ Petit texte d'explication version desktop ----->  */
 
 .legendMap {
   text-align: center;
@@ -465,68 +509,7 @@ body {
 
 
 
-
-.blue {
-  color: #293d6b;
-}
-
-.info1 a {
-  text-decoration: none;
-  color: black;
-}
-
-.info3 a {
-  text-decoration: none;
-  color: black;
-}
-
-.info3 a:visited {
-  text-decoration: none;
-}
-
-
-
-.birthday {
-  color: #3586c2;
-  font-weight: 700;
-}
-
-.ranked {
-  color: #c1272d;
-  font-weight: 700;
-}
-
-
-
-
-.test {
-  background-color: #293d6b;
-  height: 32px;
-  width: 100%;
-  position: fixed;
-  bottom: 0%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: [footer-height];
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.logoFooter {
-  height: 16px;
-  width: 16px;
-}
-
-.searchresultsContainer {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 24px;
-  margin-bottom: 24px;
-}
-
+/* <<<<<<<<<<<<<<< Styles des cartes générées pour les résultats >>>>>>>>>>>> */
 .cardResult {
   height: 220px;
   width: 305px;
@@ -570,13 +553,7 @@ body {
   margin-bottom: 16px;
 }
 
-.resultatsDesktop {
-  display: none;
-}
 
-.titleContainerDesktop {
-  display: none;
-}
 
 .cardResult:nth-child(1n) .logo1:nth-child(1n) {
   background-image: url("../../assets/Logos/Mail-bleu.png");
@@ -638,19 +615,12 @@ body {
   background-size: cover;
 }
 
-.css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label {
-  font-family: "Century Gothic";
-  font-size: 14px;
-}
 
-.css-y3ahi9-MuiAutocomplete-root .MuiOutlinedInput-root .MuiAutocomplete-input {
-  font-family: "Century Gothic";
-  font-size: 14px;
-}
+/* <<<<<<<<<<<< Fin des 4 cartes générées par résultats >>>>>>>>>>>>>>> */
 
-#test2 {
-  display: none;
-}
+
+/* <---------- Styles des informations des Cartes Clubs ----------> */
+
 
 
 .titleCardContainer {
@@ -719,6 +689,45 @@ body {
   font-family: "Century Gothic";
 }
 
+
+.info1 a {
+  text-decoration: none;
+  color: black;
+}
+
+.info3 a {
+  text-decoration: none;
+  color: black;
+}
+
+.info3 a:visited {
+  text-decoration: none;
+}
+
+
+
+
+
+/* <<<<<< A TRIER <<<<<<<<<<<<<<<< */
+
+
+.titleContainerDesktop {
+  display: none;
+}
+
+.css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label {
+  font-family: "Century Gothic";
+  font-size: 14px;
+}
+
+.css-y3ahi9-MuiAutocomplete-root .MuiOutlinedInput-root .MuiAutocomplete-input {
+  font-family: "Century Gothic";
+  font-size: 14px;
+}
+
+#test2 {
+  display: none;
+}
 
 
 
