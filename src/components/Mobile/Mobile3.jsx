@@ -25,11 +25,9 @@ import "../Mobile/Mobile3Responsive.css";
 import fb from "../../assets/footer/fb.png";
 import yt from "../../assets/footer/youtube.png";
 import web from "../../assets/footer/web.png";
-import CM from '../../assets/Logos/CM.png';
 import defaultMaker from '../../assets/Marqueurs/defaultMarker.png';
 import label from '../../assets/Marqueurs/label.png';
-import fbCM from '../../assets/CM/fbCM.png';
-import webCM from '../../assets/CM/webCM.png';
+
 import markerCM2 from '../../assets/Marqueurs/CM2.png'
 
 function Mobile3() {
@@ -130,9 +128,12 @@ function Mobile3() {
       console.log(result);
       setclubSearch(result);
 
-      if (resultofSearch.length === 0)
+      if (resultofSearch.length === 0) {
         console.log("There are no available locations");
       console.log(clubSearch);
+       
+
+      } else {
 
       const arrayOfLatLngs = resultofSearch.map(({ Latitude, Longitude }) => [
         Latitude,
@@ -140,9 +141,7 @@ function Mobile3() {
       ]);
       const bounds = L.latLngBounds(arrayOfLatLngs);
       if (map) map.flyToBounds(bounds);
-    } else {
-      console.log("test");
-    }
+    } }
   };
 
   function scrollTop() {
@@ -546,7 +545,7 @@ function Mobile3() {
           </div>
         </div>
         <div className={ clubSearch.length === 0 ? "hide" : "resultatsDesktop"}>
-        <p>Il y a {clubSearch.length} résultats correspondant à votre recherche </p> 
+        <p className="resultText">Il y a {clubSearch.length} résultats correspondant à votre recherche </p> 
 
           {clubSearch.length !== 0
             ? clubSearch.map((clubSelected, Uniqueindex) => {

@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router';
 // import Mobile2 from './components/Mobile/Mobile2.jsx'
 // import Mobile from './components/Mobile/Mobile.jsx'
 import Mobile3 from './components/Mobile/Mobile3.jsx';
-import Allclubs from './components/Allclubs/Allclubs.jsx'
 
 
 
@@ -14,7 +13,7 @@ function App() {
             {/* <Route exact path="/" component={Mobile}/>  */}
              {/* <Route exact path="/" component={Mobile2}/>  */}
              <Route exact path="/" component={Mobile3}/>
-             <Route path ="/clubs" component={Allclubs}/>
+             {/* <Route path ="/clubs" component={Allclubs}/> */}
        </Switch>
     </div>
   );

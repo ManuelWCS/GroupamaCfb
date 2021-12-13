@@ -1,6 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 @import url("../Mobile/fonts.css");
 
+/* VARIABLES CSS CHARTE GRAPHIQUE  */
+
+:root {
+  --main-color : #3586c2;
+  --secondary-color: #293d6b;
+  --red-color: #c1272d;
+}
+
 /* Media queries  */
 
 @media screen and (min-width: 319px) and (max-width: 1023px) {
@@ -55,7 +63,7 @@ body {
   font-family: "Nuvel";
   text-transform: uppercase;
   text-align: center;
-  color: #3586c2;
+  color: var(--main-color);
 }
 
 /* Texte expliquant le processus version DESKTOP  */
@@ -83,7 +91,7 @@ body {
   }
 
   .mapLeaflet {
-    height: 500px;
+    height: 250px;
     width: 80vw;
     top: 50%;
     z-index: 0;
@@ -91,14 +99,14 @@ body {
   
 .markersPopUp p {
     font-weight: "Century Gothic";
-    color: #293d6b;
+    color: var(--secondary-color);
     font-size: 14px;
   }
 
 
 .InstancePopUp h3 {
     font-family: "Century Gothic";
-    color: #293d6b;
+    color: var(--secondary-color);
     text-decoration: none;
     outline: none;
   }
@@ -113,7 +121,7 @@ body {
   
   .InstanceLigue h3 {
     font-family: "Century Gothic";
-    color: #c1272d;
+    color: var(--red-color);
   }
   
   .InstanceLigue a {
@@ -126,12 +134,12 @@ body {
   
   .userPopUp h3 {
     font-family: "Century Gothic";
-    color: #3586c2;
+    color: var(--main-color);
   }
 
 
 .banquePopUp h3 {
-    color: #293d6b;
+    color: var(--secondary-color);
   }
   
   .banquePopUp a:visited {
@@ -168,7 +176,7 @@ body {
     font-weight: bold;
   }
   .leaflet-marker-icon :not(.MyPosition) {
-    background-color: #293d6b;
+    background-color: var(--secondary-color);
   }
   
 
@@ -297,7 +305,7 @@ body {
     text-align: center;
     font-family: "Nuvel";
     font-size: 19px;
-    color: #293d6b;
+    color: var(--secondary-color);
     padding-bottom: 16px;
     padding-top: 16px;
   }
@@ -307,7 +315,7 @@ body {
 
   .filterTitle1 {
     font-family: "Nuvel";
-    color: #3586c2;
+    color: var(--main-color);
   }
   .filtre1 {
     display: flex;
@@ -318,13 +326,13 @@ body {
   }
   .filterTitle2 {
     font-family: "Nuvel";
-    color: #c1272d;
+    color: var(--red-color);
     margin-top: 8px;
   }
   
   .filterTitle3 {
     font-family: "Nuvel";
-    color: #293d6b;
+    color: var(--main-color);
     margin-top: 14px;
     margin-bottom: 14px;
   }
@@ -345,7 +353,7 @@ body {
 
 .filterTitle4 {
     font-family: "Nuvel";
-    color: #3586c2;
+    color: var(--main-color);
   }
   
 
@@ -378,7 +386,7 @@ body {
   }
 
   .test {
-    background-color: #293d6b;
+    background-color: var(--main-color);
     height: 32px;
     width: 100%;
     position: fixed;
@@ -437,7 +445,7 @@ body {
   
   .creditMutuel a:visited {
     text-decoration: none;
-    color: #293d6b;
+    color: var(--main-color);
   }
   
   .linksCM {
@@ -480,7 +488,7 @@ body {
     right: 0;
     bottom: 0;
     height: 28px;
-    background-color: #293d6b;
+    background-color: var(--secondary-color);
     width: 100%;
     display: flex;
     justify-content: space-around;
