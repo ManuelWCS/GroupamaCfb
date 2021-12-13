@@ -141,7 +141,7 @@ function Mobile3() {
       const bounds = L.latLngBounds(arrayOfLatLngs);
       if (map) map.flyToBounds(bounds);
     } else {
-      console.log("tg");
+      console.log("test");
     }
   };
 
@@ -213,7 +213,7 @@ function Mobile3() {
 
       <div className="subContainer">
         <main className="mapContainer">
-          <div className="maplegendWrapper">
+          <div className={ clubSearch.length === 0 ? "mapNoSearch" : "maplegendWrapper"}>
             <h2 className="titleMapContainer">CARTE </h2>
 
           <MapContainer
@@ -364,7 +364,7 @@ function Mobile3() {
             </p>
           </section>
 
-          <div className="filtrations">
+          <div className={ clubSearch.length === 0 ? "filtersNoSearch" : "filtrations"}>
 
             <h3 className="formTitle">  À VOUS DE JOUER ! </h3>
             <form
@@ -503,11 +503,9 @@ function Mobile3() {
             </form>
           </div>
 
-          <div className="resultats">
-            { formData && clubSearch.length > 0 ? 
-              <p className="resultSentence"> Il y a {clubSearch.length} résultats correspondant à votre recherche : </p>
+          <div className={ clubSearch.length === 0 ? "hide" : "resultats"}>
+          <p className="resultText">Il y a {clubSearch.length} résultat(s) correspondant à votre recherche </p> 
 
-           : <p  className="resultSentence" > Pas de résultats</p> } 
            
             {clubSearch.length !== 0
               ? clubSearch.map((clubSelected, Uniqueindex) => {
@@ -547,7 +545,9 @@ function Mobile3() {
               : null}
           </div>
         </div>
-        <div className="resultatsDesktop">
+        <div className={ clubSearch.length === 0 ? "hide" : "resultatsDesktop"}>
+        <p>Il y a {clubSearch.length} résultats correspondant à votre recherche </p> 
+
           {clubSearch.length !== 0
             ? clubSearch.map((clubSelected, Uniqueindex) => {
               return (
@@ -589,7 +589,7 @@ function Mobile3() {
 
       </div>
      
-      <div className="creditMutuel" id="logo">
+      {/* <div className="creditMutuel" id="logo">
         <a href="https://www.creditmutuel.fr/home/index.html" target="_blank" rel="noreferrer">
           <p className="logoDescription"> Plateforme soutenue par le Crédit Mutuel</p>
           <img className="creditLogo" alt="logo CréditMutuel" src={CM} /></a>
@@ -608,7 +608,7 @@ function Mobile3() {
 
             </div>
           </div>
-      </div> 
+      </div>  */}
       <div className="footHeure">
         <div className="logos">
           <a
