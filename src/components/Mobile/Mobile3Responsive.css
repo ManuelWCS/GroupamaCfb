@@ -53,33 +53,36 @@
   }
 
   .mapLeaflet {
-    height: 38vh;
+    height: 45vh;
     width: 25vw;
     margin-top: 0vh;
   }
 
   .filtrations {
-    width: 13vw;
+    /* width: 13vw; */
+    width: 150px;
     margin-top: 1.5vh;
     padding-bottom: 56px;
     margin-bottom: 12vh;
     margin-right: 32px;
     margin-left: 26px;
-    -webkit-box-shadow: 3px 3px 10px 3px #ddd;
-    -moz-box-shadow: 3px 3px 10px 3px #ddd;
-    box-shadow: 3px 3px 10px 3px #ddd;
     display: flex;
     flex-direction: column;
-  }
+    border-radius: 54px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow:  13px 13px 49px #cec2c2,
+                 -13px -13px 49px #ffffff;
+    }
 
   .filtersNoSearch {
-    width: 30vw;
+    width: 350px;
     margin-top:2vh;
-    -webkit-box-shadow: 3px 3px 10px 3px #ddd;
-    -moz-box-shadow: 3px 3px 10px 3px #ddd;
-    box-shadow: 3px 3px 10px 3px #ddd;
     display: flex;
     flex-direction: column;
+    border-radius: 84px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow:  13px 13px 49px #cec2c2,
+                 -13px -13px 49px #ffffff;
 
   }
   .maplegendWrapper {
@@ -94,8 +97,10 @@
     margin-top: 2vh;
     margin-right: 32px;
     border-radius: 50px;
-    background: #ffffff;
-    box-shadow: 18px 18px 50px #d9d9d9, -20px -20px 60px #ffffff;
+    border-radius: 84px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow:  13px 13px 49px #cec2c2,
+                 -13px -13px 49px #ffffff;
   }
 
   .mapNoSearch {
@@ -108,8 +113,14 @@
     border-radius: 50px;
     padding-top: 46px;
     padding-bottom: 58px;
-    background: #ffffff;
-    box-shadow: 18px 18px 50px #d9d9d9, -20px -20px 60px #ffffff;
+    /* background: #ffffff;
+    box-shadow: 18px 18px 50px #d9d9d9, -20px -20px 60px #ffffff; */
+    border-radius: 84px;
+background: linear-gradient(145deg, #ffffff, #e6e6e6);
+box-shadow:  13px 13px 49px #cec2c2,
+             -13px -13px 49px #ffffff;
+
+    
 
 
   }
