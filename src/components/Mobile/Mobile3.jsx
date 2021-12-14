@@ -56,7 +56,7 @@ function Mobile3() {
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
-    borderRadius:12,
+    borderRadius:20,
     p: 4,
   };
   const [open, setOpen] = useState(false);
@@ -447,7 +447,6 @@ function Mobile3() {
                     error="Vous devez renseigner une compétition"
                     onChange={(e) => handleChange(e)}
                     required={true}
-                    defaultValue={"Libre"}
                   >
                     <FormControlLabel
                       value="Libre"
