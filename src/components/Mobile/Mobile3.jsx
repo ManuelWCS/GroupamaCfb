@@ -56,6 +56,7 @@ function Mobile3() {
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
+    borderRadius:12,
     p: 4,
   };
   const [open, setOpen] = useState(false);
@@ -487,7 +488,7 @@ function Mobile3() {
                           variant="h6"
                           component="h2"
                         >
-                          Informations complémentaires sur les catégories :
+                          <p className="popupText"> Informations complémentaires sur les catégories :</p>
                         </Typography>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }} >
                          <p className="popupText">Libre : Football en compétiton à 11 joueurs</p>
