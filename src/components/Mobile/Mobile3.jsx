@@ -27,8 +27,12 @@ import yt from "../../assets/footer/youtube.png";
 import web from "../../assets/footer/web.png";
 import defaultMaker from "../../assets/Marqueurs/defaultMarker.png";
 import label from "../../assets/Marqueurs/label.png";
-
+import FormHelperText from "@mui/material/FormHelperText";
 import markerCM2 from "../../assets/Marqueurs/CM2.png";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
 
 function Mobile3() {
   const [allcities, setallcities] = useState([]);
@@ -43,6 +47,24 @@ function Mobile3() {
     gender2: "",
     category: "",
   });
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 300,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const [helperText, setHelperText] = useState(
+    "Informations sur les catégories"
+  );
 
   const LigueMarqueur = L.icon({
     iconSize: [40, 50],
@@ -389,7 +411,7 @@ function Mobile3() {
 
               <div className="filtre2">
                 <FormControl component="fieldset" required={true}>
-                  <span className="filterTitle2">COMPETITION :</span>
+                  <span className="filterTitle2">GENRE :</span>
                   <RadioGroup
                     row
                     aria-label="gender"
@@ -402,13 +424,13 @@ function Mobile3() {
                       value="Male"
                       className="radio1"
                       control={<Radio />}
-                      label="Masculine"
+                      label="Masculin"
                     />
                     <FormControlLabel
                       className="radio1"
                       value="Female"
                       control={<Radio />}
-                      label="Feminine"
+                      label="Féminin"
                     />
                   </RadioGroup>
                 </FormControl>
@@ -424,26 +446,59 @@ function Mobile3() {
                     error="Vous devez renseigner une compétition"
                     onChange={(e) => handleChange(e)}
                     required={true}
+                    defaultValue={"Libre"}
                   >
                     <FormControlLabel
                       value="Libre"
                       className="radio1"
                       control={<Radio />}
                       label="Libre"
+                      title="Football en compétition à 11 joueurs"
                     />
                     <FormControlLabel
                       className="radio1"
                       value="Loisir"
                       control={<Radio />}
                       label="Loisir"
+                      title="Pratique proposée aux seniors exclusivement"
                     />
                     <FormControlLabel
                       className="radio1"
                       value="Futsal"
                       control={<Radio />}
                       label="Futsal"
+                      title="Pratique proposée aux séniors homme et aux 17-18 masculins"
                     />
                   </RadioGroup>
+                  {/* <FormHelperText id="textHelper"className="helperText">
+                    {helperText}
+                  </FormHelperText> */}
+                  <div>
+                    <Button onClick={handleOpen}>Détails sur les catégoriess</Button>
+                    <Modal
+                      open={open}
+                      onClose={handleClose}
+                      aria-labelledby="modal-modal-title"
+                      aria-describedby="modal-modal-description"
+                    >
+                      <Box sx={style}>
+                        <Typography
+                          id="modal-modal-title"
+                          variant="h6"
+                          component="h2"
+                        >
+                          Informations complémentaires sur les catégories :
+                        </Typography>
+                        <Typography id="modal-modal-description" sx={{ mt: 2 }} >
+                         <p className="popupText">Libre : Football en compétiton à 11 joueurs</p>
+                         <p className="popupText"> Loisir : Pratique proposée aux seniors exclusivement</p>
+
+                         <p className="popupText"> Futsal : Pratique proposée aux seniors Homme et aux 17-18 ans Hommes</p>
+
+                        </Typography>
+                      </Box>
+                    </Modal>
+                  </div>
                 </FormControl>
               </div>
 

@@ -76,10 +76,10 @@ body {
 /* Subcontainer est une div qui entoure la carte, le form jusqu'au résultats  */
 
 .subContainer {
-  height:100vh;
-  width: 80vw;
-  
-  /* background-color: #3586c2; */
+  width: 80vw; 
+  height: fit-content;
+  max-height: max-content;
+  max-width: max-content; 
 
 }
 
@@ -189,6 +189,8 @@ body {
     justify-content: center;
     padding-bottom: 18px;
     margin-top: 16px;
+    margin-bottom: 32px;
+
   }
 
   .mapNoSearch {
@@ -197,8 +199,7 @@ body {
     justify-content: center;
     padding-bottom: 18px;
     padding-top:18px;
-    /* padding-right: 18px;
-    padding-left: 18px; */
+    margin-bottom: 32px;
   }
 
 .titleMapContainer {
@@ -287,7 +288,6 @@ body {
     padding-top: 36px;
     border-radius: 50px;
     background: #ffffff;  
-    margin-bottom: 4vh;
   }
 
   .filtersNoSearch {
@@ -298,6 +298,7 @@ body {
     padding: 12px 12px 12px 12px ;
     border-radius: 50px;
     padding-bottom: 64px;
+
   }
 
   /* formTitle est le titre au dessus du form  */
@@ -754,6 +755,14 @@ body {
 }
 
 
+/* TEXTE DU POP UP CONCERNANT LES CATEGORIES :  */
+
+.popupText {
+font-family: 'Century';
+padding-top:4px;
+padding-bottom: 4px;
+}
+
 /* <<<<<< A TRIER <<<<<<<<<<<<<<<< */
 
 
@@ -778,6 +787,10 @@ body {
 
 .wowo {
   width: 1px;
+}
+
+.helperText {
+  text-align: center;
 }
 
 

@@ -56,16 +56,20 @@
     height: 45vh;
     width: 25vw;
     margin-top: 0vh;
+    padding : 4px 4px 4px 4px;
+    
+
   }
 
   .filtrations {
-    /* width: 13vw; */
-    width: 150px;
+    
+
+    width: 180px;
     margin-top: 1.5vh;
     padding-bottom: 56px;
     margin-bottom: 12vh;
     margin-right: 32px;
-    margin-left: 26px;
+    margin-left: 16px;
     display: flex;
     flex-direction: column;
     border-radius: 54px;
