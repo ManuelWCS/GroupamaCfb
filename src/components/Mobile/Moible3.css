@@ -755,12 +755,38 @@ body {
 }
 
 
+/* DIV QUI ENTOURE LA POP UP DES CATEGORIES  */
+
+.modalDiv {
+  height: 32px;
+  border: 1px solid var(--main-color);
+  border-radius: 12px;
+  font-family: 'Century';
+}
+
+
+/* Non pris en compte car déjà défini par le inline  */
+.modalTitle {
+  font-family: 'Century';
+  text-align: center;
+  font-weight: bold;
+  color: var(--secondary-color);
+  font-size: 18px;
+}
+
 /* TEXTE DU POP UP CONCERNANT LES CATEGORIES :  */
 
 .popupText {
 font-family: 'Century';
 padding-top:4px;
 padding-bottom: 4px;
+font-size: 14px;
+
+}
+
+
+.boldText {
+  font-weight: bold;
 }
 
 /* <<<<<< A TRIER <<<<<<<<<<<<<<<< */

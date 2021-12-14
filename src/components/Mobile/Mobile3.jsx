@@ -27,7 +27,6 @@ import yt from "../../assets/footer/youtube.png";
 import web from "../../assets/footer/web.png";
 import defaultMaker from "../../assets/Marqueurs/defaultMarker.png";
 import label from "../../assets/Marqueurs/label.png";
-import FormHelperText from "@mui/material/FormHelperText";
 import markerCM2 from "../../assets/Marqueurs/CM2.png";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -53,19 +52,18 @@ function Mobile3() {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 300,
+    fontFamily: 'Century',
     bgcolor: "background.paper",
-    border: "2px solid #000",
+    border: "2px solid #3586c2 ",
     boxShadow: 24,
-    borderRadius:20,
+    borderRadius:12,
     p: 4,
   };
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [helperText, setHelperText] = useState(
-    "Informations sur les catégories"
-  );
+ 
 
   const LigueMarqueur = L.icon({
     iconSize: [40, 50],
@@ -470,11 +468,10 @@ function Mobile3() {
                       title="Pratique proposée aux séniors homme et aux 17-18 masculins"
                     />
                   </RadioGroup>
-                  {/* <FormHelperText id="textHelper"className="helperText">
-                    {helperText}
-                  </FormHelperText> */}
-                  <div>
-                    <Button onClick={handleOpen}>Détails sur les catégoriess</Button>
+                
+                  <div className="modalDiv">
+
+                    <Button className="modalTitle" onClick={handleOpen}>Détails sur les catégories</Button>
                     <Modal
                       open={open}
                       onClose={handleClose}
@@ -487,13 +484,13 @@ function Mobile3() {
                           variant="h6"
                           component="h2"
                         >
-                          <p className="popupText"> Informations complémentaires sur les catégories :</p>
+                          <p className="modalTitle"> Informations complémentaires sur les catégories :</p>
                         </Typography>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }} >
-                         <p className="popupText">Libre : Football en compétiton à 11 joueurs</p>
-                         <p className="popupText"> Loisir : Pratique proposée aux seniors exclusivement</p>
+                         <p className="boldText">Libre : </p><p className="popupText">Football en compétiton à 11 joueurs</p>
+                         <p className="boldText"> Loisir :</p><p className="popupText"> Pratique proposée aux seniors exclusivement</p>
 
-                         <p className="popupText"> Futsal : Pratique proposée aux seniors Homme et aux 17-18 ans Hommes</p>
+                         <p className="boldText">Futsal : </p><p className="popupText"> Pratique proposée aux seniors Homme et aux 17-18 ans Hommes</p>
 
                         </Typography>
                       </Box>
