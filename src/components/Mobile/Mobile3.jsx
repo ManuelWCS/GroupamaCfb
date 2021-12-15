@@ -138,14 +138,14 @@ function Mobile3() {
 
       setclubSearch(resultofSearch);
 
-      var result = resultofSearch.reduceRight((unique, o) => {
-        if (!unique.some((obj) => obj.AdressePostale === o.AdressePostale)) {
-          unique.push(o);
-        }
-        return unique;
-      }, []);
-      console.log(result);
-      setclubSearch(result);
+      // var result = resultofSearch.reduceRight((unique, o) => {
+      //   if (!unique.some((obj) => obj.AdressePostale === o.AdressePostale)) {
+      //     unique.push(o);
+      //   }
+      //   return unique;
+      // }, []);
+      // console.log(result);
+      // setclubSearch(result);
 
       if (resultofSearch.length === 0) {
         console.log("There are no available locations");
