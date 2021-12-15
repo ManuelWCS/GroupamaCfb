@@ -132,14 +132,14 @@ function Mobile3() {
 
       const resultofSearch = allteams.filter(
         (clubWanted) =>
-          clubWanted.Category === categorieWanted[0].name &&
+          clubWanted.Categorie === categorieWanted[0].name &&
           clubWanted.Localite === formData.city
       );
 
       setclubSearch(resultofSearch);
 
       var result = resultofSearch.reduceRight((unique, o) => {
-        if (!unique.some((obj) => obj.Adresse === o.Adresse)) {
+        if (!unique.some((obj) => obj.AdressePostale === o.AdressePostale)) {
           unique.push(o);
         }
         return unique;
@@ -193,7 +193,8 @@ function Mobile3() {
     axios
       .get("https://api-clubs-cvl.herokuapp.com/allteams")
       .then((res) => setallTeams(res.data));
-  }, []);
+    }, []);
+    console.log(allteams)
 
   return (
     <div className="fullPage" id="top">
@@ -265,7 +266,7 @@ function Mobile3() {
                           position={[res.Latitude, res.Longitude]}
                         >
                           <Popup key={index2} className="markersPopUp">
-                            <p onClick={scrollCard}> {res.Club}</p>
+                            <p onClick={scrollCard}> {res.NomClub}</p>
                           </Popup>
                         </Marker>
                       );
@@ -560,7 +561,7 @@ function Mobile3() {
                     >
                       <div className="titleCardContainer">
                         <span className="titleCard" onClick={scrollTop}>
-                          {clubSelected.Club}
+                          {clubSelected.NomClub}
                         </span>
                       </div>
 
@@ -580,7 +581,7 @@ function Mobile3() {
                               {clubSelected.Mail}{" "}
                             </a>
                           </div>
-                          <div className="info2">{clubSelected.Adresse}</div>
+                          <div className="info2">{clubSelected.AdressePostale}</div>
                           <div className="info3">
                             <a
                               href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}
@@ -606,7 +607,7 @@ function Mobile3() {
                 return (
                   <div className="cardResult" key={Uniqueindex}>
                     <div className="titleContainer">
-                      <span className="titleCard">{clubSelected.Club}</span>
+                      <span className="titleCard">{clubSelected.NomClub}</span>
                     </div>
 
                     <div className="columnContainer">
@@ -625,7 +626,7 @@ function Mobile3() {
                             {clubSelected.Mail}{" "}
                           </a>{" "}
                         </div>
-                        <div className="info2">{clubSelected.Adresse}</div>
+                        <div className="info2">{clubSelected.AdressePostale}</div>
                         <div className="info3">
                           <a
                             target="_blank"
