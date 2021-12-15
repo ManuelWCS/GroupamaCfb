@@ -196,6 +196,7 @@ body {
   padding-bottom: 18px;
   padding-top: 18px;
   margin-bottom: 32px;
+  border-radius: 4px;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
   box-shadow:  13px 13px 49px #cec2c2,
                -13px -13px 49px #ffffff;
@@ -280,7 +281,9 @@ body {
   padding-left: 64px;
   padding-top: 36px;
   border-radius: 50px;
-  background: #ffffff;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow:  13px 13px 49px #cec2c2,
+               -13px -13px 49px #ffffff;
 }
 
 .filtersNoSearch {
@@ -291,6 +294,9 @@ body {
   padding: 12px 12px 12px 12px;
   border-radius: 50px;
   padding-bottom: 64px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow:  13px 13px 49px #cec2c2,
+               -13px -13px 49px #ffffff;
 }
 
 /* formTitle est le titre au dessus du form  */
