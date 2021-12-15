@@ -52,18 +52,22 @@ function Mobile3() {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 300,
-    fontFamily: 'Century',
+    fontFamily: "Century",
     bgcolor: "background.paper",
     border: "2px solid #3586c2 ",
     boxShadow: 24,
-    borderRadius:12,
+    borderRadius: 12,
     p: 4,
   };
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
- 
+  const [openmyModal, setOpenMyModal] = useState(false)
+  const openModalito = () => setOpenMyModal(true)
+  const closeModalito = () => setOpenMyModal(false)
+
+
 
   const LigueMarqueur = L.icon({
     iconSize: [40, 50],
@@ -138,14 +142,14 @@ function Mobile3() {
 
       setclubSearch(resultofSearch);
 
-      // var result = resultofSearch.reduceRight((unique, o) => {
-      //   if (!unique.some((obj) => obj.AdressePostale === o.AdressePostale)) {
-      //     unique.push(o);
-      //   }
-      //   return unique;
-      // }, []);
-      // console.log(result);
-      // setclubSearch(result);
+      var result = resultofSearch.reduceRight((unique, o) => {
+        if (!unique.some((obj) => obj.AdressePostale === o.AdressePostale)) {
+          unique.push(o);
+        }
+        return unique;
+      }, []);
+      console.log(result);
+      setclubSearch(result);
 
       if (resultofSearch.length === 0) {
         console.log("There are no available locations");
@@ -193,8 +197,7 @@ function Mobile3() {
     axios
       .get("https://api-clubs-cvl.herokuapp.com/allteams")
       .then((res) => setallTeams(res.data));
-    }, []);
-    console.log(allteams)
+  }, []);
 
   return (
     <div className="fullPage" id="top">
@@ -469,30 +472,48 @@ function Mobile3() {
                       title="Pratique proposée aux séniors homme et aux 17-18 masculins"
                     />
                   </RadioGroup>
-                
-                  <div className="modalDiv">
 
-                    <Button className="modalTitle" onClick={handleOpen}>Détails sur les catégories</Button>
+                  <div className="modalDiv">
+                    <Button className="modalTitle" onClick={handleOpen}>
+                      Détails sur les catégories
+                    </Button>
                     <Modal
                       open={open}
                       onClose={handleClose}
                       aria-labelledby="modal-modal-title"
                       aria-describedby="modal-modal-description"
                     >
-                      <Box sx={style}>
+                      <Box id="box" sx={style}>
                         <Typography
                           id="modal-modal-title"
                           variant="h6"
                           component="h2"
                         >
-                          <p className="modalTitle"> Informations complémentaires sur les catégories :</p>
+                          <p className="modalTitle">
+                            {" "}
+                            Informations complémentaires sur les catégories :
+                          </p>
                         </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }} >
-                         <p className="boldText">Libre : </p><p className="popupText">Football en compétiton à 11 joueurs</p>
-                         <p className="boldText"> Loisir :</p><p className="popupText"> Pratique proposée aux seniors exclusivement</p>
+                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                          <p className="boldText">Libre : </p>
+                          <p className="popupText">
+                            Football en compétiton à 11 joueurs
+                          </p>
+                          <p className="boldText"> Loisir :</p>
+                          <p className="popupText">
+                            {" "}
+                            Pratique proposée aux seniors exclusivement
+                          </p>
 
-                         <p className="boldText">Futsal : </p><p className="popupText"> Pratique proposée aux seniors Homme et aux 17-18 ans Hommes</p>
-
+                          <p className="boldText">Futsal : </p>
+                          <p className="popupText">
+                            {" "}
+                            Pratique proposée aux seniors Homme et aux 17-18 ans
+                            Hommes
+                          </p>
+                          <div onClick={handleClose} className="btnClosePopUp">
+                            <p onClick={handleClose}>FERMER</p>
+                          </div>
                         </Typography>
                       </Box>
                     </Modal>
@@ -581,7 +602,9 @@ function Mobile3() {
                               {clubSelected.Mail}{" "}
                             </a>
                           </div>
-                          <div className="info2">{clubSelected.AdressePostale}</div>
+                          <div className="info2">
+                            {clubSelected.AdressePostale}
+                          </div>
                           <div className="info3">
                             <a
                               href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}
@@ -626,7 +649,9 @@ function Mobile3() {
                             {clubSelected.Mail}{" "}
                           </a>{" "}
                         </div>
-                        <div className="info2">{clubSelected.AdressePostale}</div>
+                        <div className="info2">
+                          {clubSelected.AdressePostale}
+                        </div>
                         <div className="info3">
                           <a
                             target="_blank"
