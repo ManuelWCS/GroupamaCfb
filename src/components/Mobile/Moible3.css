@@ -284,6 +284,7 @@ body {
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
   box-shadow:  13px 13px 49px #cec2c2,
                -13px -13px 49px #ffffff;
+  margin-bottom: 60px;
 }
 
 .filtersNoSearch {
@@ -297,6 +298,8 @@ body {
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
   box-shadow:  13px 13px 49px #cec2c2,
                -13px -13px 49px #ffffff;
+margin-bottom: 60px;
+
 }
 
 /* formTitle est le titre au dessus du form  */
@@ -718,10 +721,12 @@ body {
 /* DIV QUI ENTOURE LA POP UP DES CATEGORIES  */
 
 .modalDiv {
-  height: 32px;
+  height: 38px;
   border: 1px solid var(--main-color);
   border-radius: 12px;
   font-family: "Century";
+  background-color: var(--secondary-color);
+  
 }
 
 /* Non pris en compte car déjà défini par le inline  */
@@ -863,6 +868,18 @@ body {
 
 .boldText {
   font-weight: bold;
+}
+
+.btnOpenPopup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 235px;
+  color: white;
+  font-family: 'Century';
+
 }
 
 /* <<<<<< A TRIER <<<<<<<<<<<<<<<< */

@@ -475,7 +475,7 @@ function Mobile3() {
 
                   <div className="modalDiv">
                     <Button className="modalTitle" onClick={handleOpen}>
-                      Détails sur les catégories
+                      <div className="btnOpenPopup">Détails sur les catégories</div>
                     </Button>
                     <Modal
                       open={open}
