@@ -363,12 +363,25 @@ box-shadow:  13px 13px 49px #cec2c2,
 
   .btnOpenPopup {
     width: 225px;
+    
   }
 
-  .inputCity {
-    width: 15px;
+  .filtersNoSearch {
+    width: 240px;
+    
   }
 
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url("./Fond2.svg");
+    background-repeat: no-repeat;
+  }
+
+ 
 
   
   

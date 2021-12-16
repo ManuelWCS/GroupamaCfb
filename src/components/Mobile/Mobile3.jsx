@@ -534,7 +534,7 @@ function Mobile3() {
                   onInputChange={(event, newInputValue) => {
                     setformData({ ...formData, city: newInputValue });
                   }}
-                  sx={{ width: 250 }}
+                  sx={{ width: 245 }}
                   renderInput={(params) => (
                     <TextField {...params} label="Rechercher" />
                   )}
