@@ -475,7 +475,8 @@ function Mobile3() {
 
                   <div className="modalDiv">
                     <Button className="modalTitle" onClick={handleOpen}>
-                      <div className="btnOpenPopup">Détails sur les catégories</div>
+                      <div className="btnOpenPopup">
+                        <p className="btnTextPopUp">Détails sur les catégories</p></div>
                     </Button>
                     <Modal
                       open={open}
@@ -525,6 +526,7 @@ function Mobile3() {
                 <span className="filterTitle3"> VOTRE VILLE </span>
                 <Autocomplete
                   disablePortal
+                  className="inputCity"
                   id="combo-box-demo"
                   inputValue={formData.city}
                   options={allcities}

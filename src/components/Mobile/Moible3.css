@@ -184,9 +184,8 @@ body {
   margin-top: 16px;
   margin-bottom: 32px;
   border-radius: 4px;
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
-    box-shadow:  13px 13px 49px #cec2c2,
-                 -13px -13px 49px #ffffff;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 13px 13px 49px #cec2c2, -13px -13px 49px #ffffff;
 }
 
 .mapNoSearch {
@@ -198,9 +197,7 @@ body {
   margin-bottom: 32px;
   border-radius: 4px;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow:  13px 13px 49px #cec2c2,
-               -13px -13px 49px #ffffff;
-  
+  box-shadow: 13px 13px 49px #cec2c2, -13px -13px 49px #ffffff;
 }
 
 .titleMapContainer {
@@ -282,8 +279,7 @@ body {
   padding-top: 36px;
   border-radius: 50px;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow:  13px 13px 49px #cec2c2,
-               -13px -13px 49px #ffffff;
+  box-shadow: 13px 13px 49px #cec2c2, -13px -13px 49px #ffffff;
   margin-bottom: 60px;
 }
 
@@ -296,10 +292,8 @@ body {
   border-radius: 50px;
   padding-bottom: 64px;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow:  13px 13px 49px #cec2c2,
-               -13px -13px 49px #ffffff;
-margin-bottom: 60px;
-
+  box-shadow: 13px 13px 49px #cec2c2, -13px -13px 49px #ffffff;
+  margin-bottom: 60px;
 }
 
 /* formTitle est le titre au dessus du form  */
@@ -726,7 +720,6 @@ margin-bottom: 60px;
   border-radius: 12px;
   font-family: "Century";
   background-color: var(--secondary-color);
-  
 }
 
 /* Non pris en compte car déjà défini par le inline  */
@@ -766,7 +759,7 @@ margin-bottom: 60px;
   margin-left: 64px;
 }
 
-.btnClosePopUp:hover {
+.btnClosePopUp:active {
   border: 2px solid var(--main-color);
   text-align: center;
   padding: 4px 4px 4px 4px;
@@ -784,7 +777,7 @@ margin-bottom: 60px;
 
   animation-name: transitionColor;
   animation-iteration-count: 1;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
 }
 
 @keyframes transitionColor {
@@ -820,7 +813,6 @@ margin-bottom: 60px;
     opacity: 50%;
     margin-right: 63px;
     margin-left: 63px;
-    
   }
 
   60% {
@@ -874,12 +866,19 @@ margin-bottom: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
   align-items: center;
   width: 235px;
   color: white;
-  font-family: 'Century';
+  font-family: "Century";
+  font-size: 12px;
+  padding-top: 2px;
+}
 
+.btnTextPopUp {
+  font-weight: lighter;
+
+  text-align: center;
+  color: white;
 }
 
 /* <<<<<< A TRIER <<<<<<<<<<<<<<<< */

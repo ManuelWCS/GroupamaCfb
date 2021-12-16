@@ -337,3 +337,39 @@ box-shadow:  13px 13px 49px #cec2c2,
     text-align: center;
   }
 }
+
+
+/* Medias queries pour petits téléphones  */
+
+@media screen and (min-width : 315px ) and (max-width: 380px) {
+
+  .markerDescription {
+    font-size: 10px;
+    text-align: center;
+    padding-top:6px;
+  }
+
+  .filtre1, .filtre2, .filtre3, .filtre4 {
+    margin-left: 12px;
+  }
+  .filtre1 input {
+    width: 195px;  
+  }
+
+  .modalDiv {
+    width: 225px;
+    text-align: center;
+  }
+
+  .btnOpenPopup {
+    width: 225px;
+  }
+
+  .inputCity {
+    width: 15px;
+  }
+
+
+  
+  
+}
