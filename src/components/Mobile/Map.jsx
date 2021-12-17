@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "../header/Header";
-import "./Moible3.css";
+import "./Map.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
@@ -21,7 +21,7 @@ import cherMarker from "../../assets/Marqueurs/MarqueurCher.png";
 import loiretMarker from "../../assets/Marqueurs/Marqueurloiret.png";
 import eureEtLoireMarker from "../../assets/Marqueurs/MarqueurEureEtLoire.png";
 import ligueMarker from "../../assets/Marqueurs/MarqueurLigue.png";
-import "../Mobile/Mobile3Responsive.css";
+import "../Mobile/Responsive.css";
 import fb from "../../assets/footer/fb.png";
 import yt from "../../assets/footer/youtube.png";
 import web from "../../assets/footer/web.png";
@@ -62,10 +62,9 @@ function Mobile3() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [clubs, setClubs]=useState([])
 
-  const [openmyModal, setOpenMyModal] = useState(false)
-  const openModalito = () => setOpenMyModal(true)
-  const closeModalito = () => setOpenMyModal(false)
+
 
 
 
@@ -198,6 +197,13 @@ function Mobile3() {
       .get("https://api-clubs-cvl.herokuapp.com/allteams")
       .then((res) => setallTeams(res.data));
   }, []);
+
+  useEffect(() => {
+    axios
+    .get("https://api-clubs-cvl.herokuapp.com/data")
+    .then((res) => setClubs(res.data));
+  }, [])
+  console.log(clubs)
 
   return (
     <div className="fullPage" id="top">

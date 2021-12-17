@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react';
 import {Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
-import '../Mobile/Moible3.css'
+import '../Mobile/Map.css'
 
 
 
