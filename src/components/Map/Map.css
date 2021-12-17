@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
-@import url("../Mobile/fonts.css");
+@import url("../Map/fonts.css");
 
 /* VARIABLES CSS CHARTE GRAPHIQUE  */
 
@@ -197,7 +197,7 @@ body {
   margin-bottom: 32px;
   border-radius: 4px;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow: 13px 13px 49px #cec2c2, -13px -13px 49px #ffffff;
+  /* box-shadow: 13px 13px 49px #cec2c2, -13px -13px 49px #ffffff; */
 }
 
 .titleMapContainer {
@@ -292,7 +292,7 @@ body {
   border-radius: 50px;
   padding-bottom: 64px;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow: 13px 13px 49px #cec2c2, -13px -13px 49px #ffffff;
+  /* box-shadow: 13px 13px 49px #cec2c2, -13px -13px 49px #ffffff; */
   margin-bottom: 60px;
 }
 
@@ -880,6 +880,34 @@ body {
   text-align: center;
   color: white;
 }
+
+
+
+/* Gestion d'erreur de la recherche  */
+
+/* Popup qui affiche l'erreur */
+
+.hiddenSearch {
+  display: none;
+}
+
+.searchNoHide {
+  position: "absolute";
+  top: "50%";
+  left: "50%";
+  transform: "translate(-50%, -50%)";
+  width: 300;
+  font-family: "Century";
+  background-color: #ffffff;
+  border: 2px solid #3586c2;
+  box-shadow: 24px;
+  border-radius: 12px;
+  /* p: 4, */
+}
+
+
+
+
 
 /* <<<<<< A TRIER <<<<<<<<<<<<<<<< */
 

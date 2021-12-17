@@ -32,6 +32,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import data from './data/data.json';
 
 function Mobile3() {
   const [allcities, setallcities] = useState([]);
@@ -62,7 +63,8 @@ function Mobile3() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [clubs, setClubs]=useState([])
+  const [clubs, setClubs]=useState([]);
+  const [recherche, setRecherche]=useState([]);
 
   const LigueMarqueur = L.icon({
     iconSize: [40, 50],
@@ -116,6 +118,7 @@ function Mobile3() {
     iconUrl: markerCM2,
   });
   console.log(formData);
+  console.log(data)
 
   const filterSearch = (e) => {
     e.preventDefault();
@@ -165,8 +168,39 @@ function Mobile3() {
     console.log("Lancement de la recherche.")
 
     if (formData.age && formData.gender2 && formData.type && formData.city) {
+      let categoryWanted = categories.filter(
+        (selectedCategory)=>
+        formData.gender2 === selectedCategory.gender &&
+        formData.age >= selectedCategory.minAge && formData.age <= selectedCategory.maxAge && formData.type === selectedCategory.type
+      );
+      console.log(categoryWanted[0])
+
+      if (categoryWanted[0] === undefined) {
+        console.log("wesh alors")
+        alert('impossible mon pote')
+
+      } else {
+        console.log('cela fonctionne')
+
+        const recherche = clubs.filter(
+          (clubVoulu) => 
+          clubVoulu.Categorie === categoryWanted[0].name &&
+          clubVoulu.Localite === formData.city
+        );
+
+        setRecherche(recherche)
+        console.log(recherche)
+      }
+      //Donne la catégorie en fonction des inputProps
+
 
     }
+
+
+
+
+    
+
 
   }
 
@@ -209,7 +243,6 @@ function Mobile3() {
     .get("https://api-clubs-cvl.herokuapp.com/data")
     .then((res) => setClubs(res.data));
   }, [])
-  console.log(clubs)
 
   return (
     <div className="fullPage" id="top">
