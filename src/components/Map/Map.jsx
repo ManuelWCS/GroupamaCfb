@@ -435,7 +435,7 @@ function Mobile3() {
             <h3 className="formTitle"> À VOUS DE JOUER ! </h3>
             <form
               className="filtrationsWrapper"
-              onSubmit={(e) => searchClub(e)}
+              onSubmit={(e) => filterSearch(e)}
             >
               <div className="filtre1">
                 <span className="filterTitle1">VOTRE ÂGE </span>

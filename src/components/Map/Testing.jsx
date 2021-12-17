@@ -37,7 +37,6 @@ import data from './data/data.json';
 function Mobile3() {
   const [allcities, setallcities] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [allteams, setallTeams] = useState([]);
   const [clubSearch, setclubSearch] = useState([]);
   const [map, setMap] = useState(null);
   const [formData, setformData] = useState({
@@ -64,7 +63,6 @@ function Mobile3() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [clubs, setClubs]=useState([]);
-  const [recherche, setRecherche]=useState([]);
 
   const LigueMarqueur = L.icon({
     iconSize: [40, 50],
@@ -119,90 +117,32 @@ function Mobile3() {
   });
   console.log(formData);
   console.log(data)
+  const [recherche, setRecherche] = useState([])
 
-  const filterSearch = (e) => {
+  function searchClub(e) {
     e.preventDefault();
-
-    if (formData.age && formData.gender2 && formData.type && formData.city) {
-      let categorieWanted = categories.filter(
-        (categorySelected) =>
-          formData.gender2 === categorySelected.gender &&
-          formData.age >= categorySelected.minAge &&
-          formData.age <= categorySelected.maxAge &&
-          formData.type === categorySelected.type
+    
+    
+    if (formData.age && formData.gender2 && formData.type && formData.city){
+      let categorieUtilisateur = categories.filter(
+        (categorieAttribue) =>
+        formData.gender2 === categorieAttribue.gender && formData.age >= categorieAttribue.minAge && formData.age <= categorieAttribue.maxAge && formData.type === categorieAttribue.type
       );
 
-      const resultofSearch = allteams.filter(
-        (clubWanted) =>
-          clubWanted.Categorie === categorieWanted[0].name &&
-          clubWanted.Localite === formData.city
-      );
-
-      setclubSearch(resultofSearch);
-
-      var result = resultofSearch.reduceRight((unique, o) => {
-        if (!unique.some((obj) => obj.AdressePostale === o.AdressePostale)) {
-          unique.push(o);
-        }
-        return unique;
-      }, []);
-      console.log(result);
-      setclubSearch(result);
-
-      if (resultofSearch.length === 0) {
-        console.log("There are no available locations");
-        console.log(clubSearch);
-      } else {
-        const arrayOfLatLngs = resultofSearch.map(({ Latitude, Longitude }) => [
-          Latitude,
-          Longitude,
-        ]);
-        const bounds = L.latLngBounds(arrayOfLatLngs);
-        if (map) map.flyToBounds(bounds);
-      }
-    }
-  };
-
-  const searchClub = (e) => {
-    e.preventDefault()
-    console.log("Lancement de la recherche.")
-
-    if (formData.age && formData.gender2 && formData.type && formData.city) {
-      let categoryWanted = categories.filter(
-        (selectedCategory)=>
-        formData.gender2 === selectedCategory.gender &&
-        formData.age >= selectedCategory.minAge && formData.age <= selectedCategory.maxAge && formData.type === selectedCategory.type
-      );
-      console.log(categoryWanted[0])
-
-      if (categoryWanted[0] === undefined) {
-        console.log("wesh alors")
-        alert('impossible mon pote')
-
-      } else {
-        console.log('cela fonctionne')
-
-        const recherche = clubs.filter(
-          (clubVoulu) => 
-          clubVoulu.Categorie === categoryWanted[0].name &&
-          clubVoulu.Localite === formData.city
-        );
-
-        setRecherche(recherche)
-        console.log(recherche)
-      }
-      //Donne la catégorie en fonction des inputProps
-
+      const clubCorrespondant = data.filter(
+        (clubCible) => 
+        clubCible.categories === categorieUtilisateur[0].name &&
+        clubCible.Localite === formData.city
+      )
 
     }
-
-
-
 
     
 
 
   }
+
+  
 
   function scrollTop() {
     window.location.href = "#top";
@@ -230,12 +170,6 @@ function Mobile3() {
     axios
       .get("https://api-clubs-cvl.herokuapp.com/categories")
       .then((res) => setCategories(res.data));
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get("https://api-clubs-cvl.herokuapp.com/allteams")
-      .then((res) => setallTeams(res.data));
   }, []);
 
   useEffect(() => {
