@@ -116,46 +116,7 @@ function Mobile3() {
     iconUrl: markerCM2,
   });
   console.log(formData);
-  console.log(data)
-  const [recherche, setRecherche] = useState([])
-
-  // function searchClub(e) {
-  //   e.preventDefault();
-  //   let filtersOptions = [];
-
-  //   // Si le genre est entré
-  //       if (formData.gender !== null) {
-  //         if (formData.gender.length > 0) {
-  //   // je pousse le filtre dans un tableau
-  //           filtersOptions.push((item) => item.gender.includes(formData.gender));
-  //         }
-  //       }
-
-  //       if (formData.city !== null) {
-  //         if (formData.city.length > 0){
-  //           filtersOptions.push((item) => item.Localite.includes(formData.city))
-  //         }
-  //       }
-  //       if (formData.age !== null) 
-  //       if (formData.age >0  ) {
-  //         filtersOptions.push((item) => item.minAgeInClub.includes(formData.age) && item.maxAgeInClub.includes(formData.age)) 
-        
-  //       }
-
-
-    
-  //       const resultofSearch = clubs.filter((clubWanted) =>
-  //       // j'execute les filtezs de mon tableau
-    
-  //         filtersOptions.every((f) => f(clubWanted))
-      
-  //         );
-          
-          
-  //         console.log(resultofSearch)
-  //         console.log(filtersOptions)
-      
-  // }
+ 
 
   const searchClub = (e) =>  {
     e.preventDefault();
@@ -189,7 +150,7 @@ function Mobile3() {
     }
         
         if (formData.type !==null)
-        if (formData.type >0) {
+        if (formData.type.length >0) {
           filtersOptions.push(
             (item) => item.categories.includes(formData.type)
           )
@@ -208,6 +169,9 @@ function Mobile3() {
 
           console.log(resultofSearch)
           console.log(filtersOptions)
+          setclubSearch(resultofSearch)
+          console.log(clubSearch)
+
 
   }
 
