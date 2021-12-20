@@ -43,7 +43,7 @@ function Mobile3() {
     age: null,
     city: "",
     type: "",
-    gender2: "",
+    gender: "",
     category: "",
   });
   const style = {
@@ -119,28 +119,106 @@ function Mobile3() {
   console.log(data)
   const [recherche, setRecherche] = useState([])
 
-  function searchClub(e) {
+  // function searchClub(e) {
+  //   e.preventDefault();
+  //   let filtersOptions = [];
+
+  //   // Si le genre est entré
+  //       if (formData.gender !== null) {
+  //         if (formData.gender.length > 0) {
+  //   // je pousse le filtre dans un tableau
+  //           filtersOptions.push((item) => item.gender.includes(formData.gender));
+  //         }
+  //       }
+
+  //       if (formData.city !== null) {
+  //         if (formData.city.length > 0){
+  //           filtersOptions.push((item) => item.Localite.includes(formData.city))
+  //         }
+  //       }
+  //       if (formData.age !== null) 
+  //       if (formData.age >0  ) {
+  //         filtersOptions.push((item) => item.minAgeInClub.includes(formData.age) && item.maxAgeInClub.includes(formData.age)) 
+        
+  //       }
+
+
+    
+  //       const resultofSearch = clubs.filter((clubWanted) =>
+  //       // j'execute les filtezs de mon tableau
+    
+  //         filtersOptions.every((f) => f(clubWanted))
+      
+  //         );
+          
+          
+  //         console.log(resultofSearch)
+  //         console.log(filtersOptions)
+      
+  // }
+
+  const searchClub = (e) =>  {
     e.preventDefault();
-    
-    
-    if (formData.age && formData.gender2 && formData.type && formData.city){
-      let categorieUtilisateur = categories.filter(
-        (categorieAttribue) =>
-        formData.gender2 === categorieAttribue.gender && formData.age >= categorieAttribue.minAge && formData.age <= categorieAttribue.maxAge && formData.type === categorieAttribue.type
-      );
+    let filtersOptions = [];
 
-      const clubCorrespondant = data.filter(
-        (clubCible) => 
-        clubCible.categories === categorieUtilisateur[0].name &&
-        clubCible.Localite === formData.city
-      )
-
+    // Si le genre est renseigné
+        if (formData.gender !== null) {
+          if (formData.gender.length > 0) {
+            // je pousse le filtre dans un tableau
+            filtersOptions.push(
+                // ici on fais un includes car on la data avec laquelles on compare c'est un array 
+                // item.gender: ["male","female]
+                (item) => item.gender.includes(formData.gender)
+            );
+          }
+        }
+        if(formData.city !==null){
+          if(formData.city.length>0){
+            filtersOptions.push((item) => formData.city === item.Localite);
+          }
+        }
+        if (formData.age !== null) {
+          if (formData.age.length > 0) {
+            if (parseInt(formData.age) !== 0) {
+              const age = parseInt(formData.age);
+              filtersOptions.push(
+                (item) => age >= item.minAgeInClub && age <= item.maxAgeInClub
+              );
+            }
+          }
     }
+        
+        if (formData.type !==null)
+        if (formData.type >0) {
+          filtersOptions.push(
+            (item) => item.categories.includes(formData.type)
+          )
+        }
+        
+        
 
-    
 
+
+        const resultofSearch = clubs.filter((clubWanted) =>
+        // j'execute les filtezs de mon tableau
+
+          filtersOptions.every((f) => f(clubWanted))
+
+          );
+
+          console.log(resultofSearch)
+          console.log(filtersOptions)
 
   }
+
+
+
+  
+
+  
+
+
+
 
   
 
@@ -398,7 +476,7 @@ function Mobile3() {
                     row
                     aria-label="gender"
                     defaultValue="female"
-                    name="gender2"
+                    name="gender"
                     error="Vous devez renseigner une compétition"
                     onChange={(e) => handleChange(e)}
                   >
