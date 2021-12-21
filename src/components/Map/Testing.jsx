@@ -32,7 +32,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import data from './data/data.json';
+import data from "./data/data.json";
 
 function Mobile3() {
   const [allcities, setallcities] = useState([]);
@@ -62,7 +62,7 @@ function Mobile3() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [clubs, setClubs]=useState([]);
+  const [clubs, setClubs] = useState([]);
 
   const LigueMarqueur = L.icon({
     iconSize: [40, 50],
@@ -115,76 +115,107 @@ function Mobile3() {
     iconAnchor: [13.5, 47],
     iconUrl: markerCM2,
   });
-  console.log(formData);
- 
+  // console.log(formData);
+  // console.log(data);
 
-  const searchClub = (e) =>  {
+  const searchClub = (e) => {
     e.preventDefault();
     let filtersOptions = [];
 
-    // Si le genre est renseigné
-        if (formData.gender !== null) {
-          if (formData.gender.length > 0) {
-            // je pousse le filtre dans un tableau
-            filtersOptions.push(
-                // ici on fais un includes car on la data avec laquelles on compare c'est un array 
-                // item.gender: ["male","female]
-                (item) => item.gender.includes(formData.gender)
-            );
-          }
-        }
-        if(formData.city !==null){
-          if(formData.city.length>0){
-            filtersOptions.push((item) => formData.city === item.Localite);
-          }
-        }
-        if (formData.age !== null) {
-          if (formData.age.length > 0) {
-            if (parseInt(formData.age) !== 0) {
-              const age = parseInt(formData.age);
-              filtersOptions.push(
-                (item) => age >= item.minAgeInClub && age <= item.maxAgeInClub
-              );
-            }
-          }
+    // Si le genre est renseigné, filtre fonctionnel
+    if (formData.gender !== null) {
+      if (formData.gender.length > 0) {
+        // je pousse le filtre dans un tableau
+        filtersOptions.push(
+          // ici on fais un includes car on la data avec laquelles on compare c'est un array
+          // item.gender: ["male","female]
+          (item) => item.gender.includes(formData.gender)
+        );
+      }
     }
-        
-        if (formData.type !==null)
-        if (formData.type.length >0) {
+
+    if (formData.city !== null) {
+      if (formData.city.length > 0) {
+        filtersOptions.push((item) => item.Localite === formData.city);
+      }
+    }
+
+    if (formData.age !== null) {
+      if (formData.age.length > 0) {
+        if (parseInt(formData.age) !== 0) {
+          const age = parseInt(formData.age);
           filtersOptions.push(
-            (item) => item.categories.includes(formData.type)
-          )
-        }
-        
-        
-
-
-
-        const resultofSearch = clubs.filter((clubWanted) =>
-        // j'execute les filtezs de mon tableau
-
-          filtersOptions.every((f) => f(clubWanted))
-
+            (item) => age >= item.minAgeInClub && age <= item.maxAgeInClub
           );
+        }
+      }
+    }
 
-          console.log(resultofSearch)
-          console.log(filtersOptions)
-          setclubSearch(resultofSearch)
-          console.log(clubSearch)
+    // if (formData.type !== null)
+    //   if (formData.type > 0) {
+    //     // forData.type = Libre || Loisir || Futsal
+    //     // item.categories = [""Libre / Senior",
+    //     // "Libre / U17 - U16",
+    //     // "Libre / U15 - U14",
+    //     // "Libre / U13 - U12", ... ]
+    //     // du coup ca peut pas fonctionne
+    //     filtersOptions.push((item) => item.categories.includes(formData.type));
+    //   }
 
+    // Pour les type il faut que tu creer un tableau dans une variable
+    let categorieType = [];
+    // aprés tu check si type n'est pas null
+    if (formData.type !== null) {
+      // qu'il a une lingueur supérieur a 0
+      if (formData.type.length > 0) {
+        categories.forEach((element) => {
+          // pour chaque catégories tu vérifie si sont element.type  === formData.type
+          // si oui tu pousse element.name dans ton tableau
+          if (element.type === formData.type) {
+            categorieType.push(element.name);
+          }
 
-  }
+        });
 
-
-
+        filtersOptions.push((item) => categorieType.some((e) => item.categories.includes(e)));
+        // Me regarder coder je pense c'est dans le top 10 des pires expériences ever
+        // Mdrr Ca marche la normalement! le .some je vais pas te l'expliquer à l'écrit car je vais me perdre dans mes explications! 
+        // En vrai toutes les méthodes que j'ai utilisé google les!
   
+         
+        // Gros pourquoi ça affiche le résultat sur la carte ? J'ai même pas rentré la fonction mdr
+        // mdr je sait pas
+        // la carte c'est ton domaine =D
+        // je comprends ap 
+        // en fait ça s'affiche sur la carte car le résultat de ma recher est resultofSearch et je le mappe plus bas
+        // du coup ca se met a jour tout seul sans avoir besoin de remettre a jour la carte dans la fonction ?!
+        // Ca affiche les points mais ça ne change pas la vue de la carte mais techniquement je vais la remettre la 
+        // Mec c'est parfait merci!!!!!!!!!!!!!
+      }
+    }
 
-  
+   
 
+    const resultofSearch = clubs.filter((clubWanted) =>
+      // j'execute les filtezs de mon tableau
+      filtersOptions.every((f) => f(clubWanted))
+    );
 
+    if (resultofSearch.length === 0) {
+      console.log("There are no available locations");
+    } else {
+      const arrayOfLatLngs = resultofSearch.map(({ Latitude, Longitude }) => [
+        Latitude,
+        Longitude,
+      ]);
+      const bounds = L.latLngBounds(arrayOfLatLngs);
+      if (map) map.flyToBounds(bounds);
+    }
 
-
-  
+    setclubSearch(resultofSearch);
+    console.log(resultofSearch, "resultat");
+    console.log(categorieType);
+  };
 
   function scrollTop() {
     window.location.href = "#top";
@@ -199,6 +230,7 @@ function Mobile3() {
   };
 
   useEffect(() => {
+    //à mettre en dur aussi
     axios.get("https://api-clubs-cvl.herokuapp.com/cities").then((res) => {
       let result = [];
       res.data.forEach((element) => {
@@ -209,16 +241,15 @@ function Mobile3() {
   }, []);
 
   useEffect(() => {
+    //à mettre en dur aussi
     axios
       .get("https://api-clubs-cvl.herokuapp.com/categories")
       .then((res) => setCategories(res.data));
   }, []);
 
   useEffect(() => {
-    axios
-    .get("https://api-clubs-cvl.herokuapp.com/data")
-    .then((res) => setClubs(res.data));
-  }, [])
+    setClubs(data);
+  }, []);
 
   return (
     <div className="fullPage" id="top">
@@ -497,7 +528,10 @@ function Mobile3() {
                   <div className="modalDiv">
                     <Button className="modalTitle" onClick={handleOpen}>
                       <div className="btnOpenPopup">
-                        <p className="btnTextPopUp">Détails sur les catégories</p></div>
+                        <p className="btnTextPopUp">
+                          Détails sur les catégories
+                        </p>
+                      </div>
                     </Button>
                     <Modal
                       open={open}
@@ -713,7 +747,6 @@ function Mobile3() {
             </div>
           </div>
       </div>  */}
-
 
       <div className="footHeure">
         <div className="logos">
