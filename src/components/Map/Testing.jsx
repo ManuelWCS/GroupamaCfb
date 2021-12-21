@@ -33,6 +33,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import data from "./data/data.json";
+import categories from "./data/categories.json";
 
 function Mobile3() {
   const [allcities, setallcities] = useState([]);
@@ -46,6 +47,12 @@ function Mobile3() {
     gender: "",
     category: "",
   });
+
+  // POP UP DETAILS DES CATEGORIES
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const style = {
     position: "absolute",
     top: "50%",
@@ -59,10 +66,34 @@ function Mobile3() {
     borderRadius: 12,
     p: 4,
   };
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+
+  // POP UP QUI S'AFFICHE QUAND PAS DE RESULTATS
+  const [open2, setOpen2] = useState(false);
+  const handleOpen2 = () => setOpen(true);
+  const handleClose2 = () => setOpen(false);
+
+  const style2 = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 300,
+    fontFamily: "Century",
+    bgcolor: "background.paper",
+    border: "2px solid #3586c2 ",
+    boxShadow: 24,
+    borderRadius: 12,
+    p: 4,
+  };
+
   const [clubs, setClubs] = useState([]);
+
+  // Paramétrage des inputs radio lors de la sélection
+
+  const [inputLoisir, setinputLoisir] = useState(false);
+  const [inputFutsal, setinputFutsal] = useState(false);
+  const [inputFutsal18, setinputFutsal18] = useState(false);
+
 
   const LigueMarqueur = L.icon({
     iconSize: [40, 50],
@@ -116,7 +147,7 @@ function Mobile3() {
     iconUrl: markerCM2,
   });
   // console.log(formData);
-  // console.log(data);
+  // console.log(data);$
 
   const searchClub = (e) => {
     e.preventDefault();
@@ -151,17 +182,6 @@ function Mobile3() {
       }
     }
 
-    // if (formData.type !== null)
-    //   if (formData.type > 0) {
-    //     // forData.type = Libre || Loisir || Futsal
-    //     // item.categories = [""Libre / Senior",
-    //     // "Libre / U17 - U16",
-    //     // "Libre / U15 - U14",
-    //     // "Libre / U13 - U12", ... ]
-    //     // du coup ca peut pas fonctionne
-    //     filtersOptions.push((item) => item.categories.includes(formData.type));
-    //   }
-
     // Pour les type il faut que tu creer un tableau dans une variable
     let categorieType = [];
     // aprés tu check si type n'est pas null
@@ -171,30 +191,16 @@ function Mobile3() {
         categories.forEach((element) => {
           // pour chaque catégories tu vérifie si sont element.type  === formData.type
           // si oui tu pousse element.name dans ton tableau
-          if (element.type === formData.type) {
+          if (element.type === formData.type && formData.gender === "Male") {
             categorieType.push(element.name);
           }
-
         });
 
-        filtersOptions.push((item) => categorieType.some((e) => item.categories.includes(e)));
-        // Me regarder coder je pense c'est dans le top 10 des pires expériences ever
-        // Mdrr Ca marche la normalement! le .some je vais pas te l'expliquer à l'écrit car je vais me perdre dans mes explications! 
-        // En vrai toutes les méthodes que j'ai utilisé google les!
-  
-         
-        // Gros pourquoi ça affiche le résultat sur la carte ? J'ai même pas rentré la fonction mdr
-        // mdr je sait pas
-        // la carte c'est ton domaine =D
-        // je comprends ap 
-        // en fait ça s'affiche sur la carte car le résultat de ma recher est resultofSearch et je le mappe plus bas
-        // du coup ca se met a jour tout seul sans avoir besoin de remettre a jour la carte dans la fonction ?!
-        // Ca affiche les points mais ça ne change pas la vue de la carte mais techniquement je vais la remettre la 
-        // Mec c'est parfait merci!!!!!!!!!!!!!
+        filtersOptions.push((item) =>
+          categorieType.some((e) => item.categories.includes(e))
+        );
       }
     }
-
-   
 
     const resultofSearch = clubs.filter((clubWanted) =>
       // j'execute les filtezs de mon tableau
@@ -215,6 +221,7 @@ function Mobile3() {
     setclubSearch(resultofSearch);
     console.log(resultofSearch, "resultat");
     console.log(categorieType);
+    console.log(formData);
   };
 
   function scrollTop() {
@@ -250,6 +257,48 @@ function Mobile3() {
   useEffect(() => {
     setClubs(data);
   }, []);
+
+
+  useEffect(() => {
+    if (
+      parseInt(formData.age) < 18 &&
+      (formData.gender !== null || formData.gender.length !== 0)
+    ) {
+      setinputLoisir(true);
+    } else {
+      setinputLoisir(false);
+    }
+  }, [formData]);
+
+  // useEffect(() => {
+  //   if (
+  //     formData.gender !== null &&
+  //     formData.gender === "Female" &&
+  //     formData.gender.length !== 0
+  //   ) {
+  //     setinputFutsal(true);
+  //   } else {
+  //   setinputFutsal(false)};
+  // }, [formData]);
+
+  useEffect(()=> {
+    // si la condition est remplie tu set à true
+    if(formData.gender !== null && formData.gender === 'Female' && formData.gender.length !==0){
+      setinputFutsal(true)
+    }
+    // tu set a false
+    setinputFutsal(false)
+    // du coup quoi qu'il arrive tu set toujour false à la fin de ton use effect
+
+  }, [formData])
+
+  useEffect(() => {
+    if (parseInt(formData.age) < 17 && formData.gender === "Male") {
+      setinputFutsal18(true);
+    } else {
+      setinputFutsal18(false);
+    }
+  },[formData]);
 
   return (
     <div className="fullPage" id="top">
@@ -387,6 +436,7 @@ function Mobile3() {
                   <a href="https://www.creditmutuel.fr/fr/particuliers.html">
                     <h3>Banque du Crédit Mutuel</h3>
                   </a>
+                  ça m
                 </Popup>
               </Marker>
             </MapContainer>
@@ -470,7 +520,7 @@ function Mobile3() {
                   <RadioGroup
                     row
                     aria-label="gender"
-                    defaultValue="female"
+                    // defaultValue="female"
                     name="gender"
                     error="Vous devez renseigner une compétition"
                     onChange={(e) => handleChange(e)}
@@ -522,6 +572,7 @@ function Mobile3() {
                       control={<Radio />}
                       label="Futsal"
                       title="Pratique proposée aux séniors homme et aux 17-18 masculins"
+                      disable={inputFutsal}
                     />
                   </RadioGroup>
 
@@ -569,6 +620,27 @@ function Mobile3() {
                           </p>
                           <div onClick={handleClose} className="btnClosePopUp">
                             <p onClick={handleClose}>FERMER</p>
+                          </div>
+                        </Typography>
+                      </Box>
+                    </Modal>
+
+                    {/* Fin du premier pop up  */}
+                    <Modal
+                      open={open2}
+                      onClose={handleClose2}
+                      aria-labelledby="modal-modal-title"
+                      aria-describedby="modal-modal-description"
+                    >
+                      <Box id="box" sx={style2}>
+                        <Typography
+                          id="modal-modal-title"
+                          variant="h6"
+                          component="h2"
+                        >
+                          <p className="modalTitle"> Ta gueule mdr</p>
+                          <div onClick={handleClose2} className="btnClosePopUp">
+                            <p onClick={handleClose2}>FERMER</p>
                           </div>
                         </Typography>
                       </Box>
