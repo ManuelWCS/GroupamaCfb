@@ -92,8 +92,7 @@ function Mobile3() {
 
   const [inputLoisir, setinputLoisir] = useState(false);
   const [inputFutsal, setinputFutsal] = useState(false);
-  const [inputFutsal18, setinputFutsal18] = useState(false);
-
+  // const [inputFutsal18, setinputFutsal18] = useState(false);
 
   const LigueMarqueur = L.icon({
     iconSize: [40, 50],
@@ -146,8 +145,6 @@ function Mobile3() {
     iconAnchor: [13.5, 47],
     iconUrl: markerCM2,
   });
-  // console.log(formData);
-  // console.log(data);$
 
   const searchClub = (e) => {
     e.preventDefault();
@@ -219,9 +216,6 @@ function Mobile3() {
     }
 
     setclubSearch(resultofSearch);
-    console.log(resultofSearch, "resultat");
-    console.log(categorieType);
-    console.log(formData);
   };
 
   function scrollTop() {
@@ -257,8 +251,7 @@ function Mobile3() {
   useEffect(() => {
     setClubs(data);
   }, []);
-
-
+  // UseEffect qui gere le changement d'etat en fonction de l'age
   useEffect(() => {
     if (
       parseInt(formData.age) < 18 &&
@@ -270,35 +263,26 @@ function Mobile3() {
     }
   }, [formData]);
 
-  // useEffect(() => {
-  //   if (
-  //     formData.gender !== null &&
-  //     formData.gender === "Female" &&
-  //     formData.gender.length !== 0
-  //   ) {
-  //     setinputFutsal(true);
-  //   } else {
-  //   setinputFutsal(false)};
-  // }, [formData]);
-
-  useEffect(()=> {
-    // si la condition est remplie tu set à true
-    if(formData.gender !== null && formData.gender === 'Female' && formData.gender.length !==0){
-      setinputFutsal(true)
-    }
-    // tu set a false
-    setinputFutsal(false)
-    // du coup quoi qu'il arrive tu set toujour false à la fin de ton use effect
-
-  }, [formData])
-
   useEffect(() => {
     if (parseInt(formData.age) < 17 && formData.gender === "Male") {
-      setinputFutsal18(true);
+      setinputFutsal(true);
     } else {
-      setinputFutsal18(false);
+      setinputFutsal(false);
     }
-  },[formData]);
+  }, [formData]);
+
+  useEffect(() => {
+    if (formData.gender === "Female") {
+      setinputFutsal(true);
+    } else if (parseInt(formData.age) < 17 && formData.gender === "Male") {
+      setinputFutsal(true);
+      if(formData.type === "Futsal"){
+        setformData(state =>({...state, type: ""}))
+      }
+    } else {
+      setinputFutsal(false);
+    }
+  }, [formData]);
 
   return (
     <div className="fullPage" id="top">
@@ -503,7 +487,19 @@ function Mobile3() {
                   margin="normal"
                   name="age"
                   onChange={(e) => {
-                    handleChange(e);
+                    if (e.target.value < 18) {
+                      if (formData.type === "Loisir") {
+                        setformData({
+                          ...formData,
+                          type: "",
+                          age: e.target.value,
+                        });
+                      } else {
+                        setformData({ ...formData, age: e.target.value });
+                      }
+                    } else {
+                      setformData({ ...formData, age: e.target.value });
+                    }
                   }}
                   focused
                   inputProps={{
@@ -520,10 +516,25 @@ function Mobile3() {
                   <RadioGroup
                     row
                     aria-label="gender"
-                    // defaultValue="female"
                     name="gender"
                     error="Vous devez renseigner une compétition"
-                    onChange={(e) => handleChange(e)}
+                    onChange={(e) => {
+                      handleChange(e);
+                      if (e.target.value === "Male") {
+                        setformData({ ...formData, gender: e.target.value });
+                      } else {
+                        formData.type === "Futsal"
+                          ? setformData({
+                              ...formData,
+                              gender: e.target.value,
+                              type: "",
+                            })
+                          : setformData({
+                              ...formData,
+                              gender: e.target.value,
+                            });
+                      }
+                    }}
                   >
                     <FormControlLabel
                       value="Male"
@@ -545,6 +556,7 @@ function Mobile3() {
                 <FormControl component="fieldset" required={true}>
                   <span className="filterTitle4">PRATIQUE SOUHAITEE :</span>
                   <RadioGroup
+                    value={formData.type}
                     row
                     aria-label="type"
                     name="type"
@@ -560,6 +572,7 @@ function Mobile3() {
                       title="Football en compétition à 11 joueurs"
                     />
                     <FormControlLabel
+                      disabled={inputLoisir}
                       className="radio1"
                       value="Loisir"
                       control={<Radio />}
@@ -567,12 +580,13 @@ function Mobile3() {
                       title="Pratique proposée aux seniors exclusivement"
                     />
                     <FormControlLabel
+                      disabled={inputFutsal}
                       className="radio1"
                       value="Futsal"
                       control={<Radio />}
                       label="Futsal"
                       title="Pratique proposée aux séniors homme et aux 17-18 masculins"
-                      disable={inputFutsal}
+                      // disable={inputFutsal}
                     />
                   </RadioGroup>
 
@@ -626,7 +640,7 @@ function Mobile3() {
                     </Modal>
 
                     {/* Fin du premier pop up  */}
-                    <Modal
+                    {/* <Modal
                       open={open2}
                       onClose={handleClose2}
                       aria-labelledby="modal-modal-title"
@@ -644,7 +658,7 @@ function Mobile3() {
                           </div>
                         </Typography>
                       </Box>
-                    </Modal>
+                    </Modal> */}
                   </div>
                 </FormControl>
               </div>
