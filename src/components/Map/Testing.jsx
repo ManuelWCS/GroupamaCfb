@@ -252,6 +252,7 @@ function Mobile3() {
     setClubs(data);
   }, []);
   // UseEffect qui gere le changement d'etat en fonction de l'age
+  //Règle numéro 1: Si ageUtilisateur inférieur a 18, il faut désactiver la catégorie Loisir
   useEffect(() => {
     if (
       parseInt(formData.age) < 18 &&
