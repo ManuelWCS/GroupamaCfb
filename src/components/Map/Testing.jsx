@@ -33,7 +33,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import data from "./data/data.json";
-import categories from "./data/categories.json";
+import LabelMarker from '../../assets/Marqueurs/label.png';
 
 function Mobile3() {
   const [allcities, setallcities] = useState([]);
@@ -140,6 +140,12 @@ function Mobile3() {
     iconUrl: clubMarker,
   });
 
+  const clubMarqueurLabel = L.icon({
+    iconSize:[50,50],
+    iconAnchor: [13.5, 47],
+    iconUrl: LabelMarker
+  })
+
   const marqueurBanque = L.icon({
     iconSize: [45, 58],
     iconAnchor: [13.5, 47],
@@ -203,7 +209,8 @@ function Mobile3() {
       // j'execute les filtezs de mon tableau
       filtersOptions.every((f) => f(clubWanted))
     );
-
+    // Gestion d'erreurs, s'il n'y a pas de résultats un message est affiché dans la console
+    // S'il y a des résultats, ils seront stockées dans une variable qui permettra de recentrer la vue de la carte
     if (resultofSearch.length === 0) {
       console.log("There are no available locations");
     } else {
@@ -215,20 +222,32 @@ function Mobile3() {
       if (map) map.flyToBounds(bounds);
     }
 
+    if (resultofSearch.Label !== null) {
+      console.log('je suis un club labelisé ')
+    } else {
+      console.log('pas de clubs labéliseys bro')
+      
+    }
+
     setclubSearch(resultofSearch);
+    console.log(resultofSearch)
   };
 
   function scrollTop() {
     window.location.href = "#top";
-  }
-
+  } 
+  // Fonction permettant de scroller vers la carte en question
   function scrollCard() {
     window.location.href = "#cardresult";
   }
-
+  // Fonction handle qui va gérer les changements des inputs 
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  // Fonction qui changera le marqueur en fonction de s'il est labélisé ou pas 
+
+  
 
   useEffect(() => {
     //à mettre en dur aussi
@@ -236,6 +255,8 @@ function Mobile3() {
       let result = [];
       res.data.forEach((element) => {
         result.push({ label: element.name });
+
+        
       });
       setallcities(result);
     });
@@ -347,10 +368,11 @@ function Mobile3() {
                 }
               >
                 {clubSearch.length !== 0
-                  ? clubSearch.slice(0, 100).map((res, index2) => {
+                  ? clubSearch.slice(0, 150).map((res, index2) => {
+                    console.log(res)
                       return (
                         <Marker
-                          icon={clubMarqueur}
+                          icon={res.label.length  >0 ? clubMarqueurLabel : clubMarqueur}
                           key={index2}
                           position={[res.Latitude, res.Longitude]}
                         >
