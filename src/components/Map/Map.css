@@ -703,6 +703,35 @@ body {
   text-decoration: none;
 }
 
+.info3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+}
+
+/* Image affichée si le club est labélisé */
+
+.labelClub {
+  height: 41px;
+  width: 31px;
+  margin-left: 78px;
+  background: transparent;
+  background-color: transparent;
+}
+
+.labelHide {
+  display: none;
+}
+
+.labelClubDesktop {
+  height: 41px;
+  width: 31px;
+  margin-left: 68px;
+  background: transparent;
+  background-color: transparent;
+}
+
 /* ResultText est la phrase qui s'affiche en fonction des résultats  */
 
 .resultText {
@@ -780,77 +809,6 @@ body {
   animation-duration: 0.5s;
 }
 
-@keyframes transitionColor {
-  0% {
-    background-color: #1692eb;
-    color: black;
-    opacity: 100%;
-  }
-
-  10% {
-    background-color: #289bee;
-
-    opacity: 90%;
-  }
-
-  20% {
-    background-color: #47adf7;
-    opacity: 80%;
-  }
-
-  30% {
-    background-color: #61b1eb;
-    opacity: 70%;
-  }
-
-  40% {
-    background-color: #65b7f1;
-    opacity: 60%;
-  }
-
-  50% {
-    background-color: #86cbfc;
-    opacity: 50%;
-    margin-right: 63px;
-    margin-left: 63px;
-  }
-
-  60% {
-    background-color: #89c8f5;
-    opacity: 40%;
-    margin-right: 62px;
-    margin-left: 62px;
-  }
-
-  70% {
-    background-color: #9fcef0;
-    opacity: 30%;
-    margin-right: 61px;
-    margin-left: 61px;
-  }
-
-  80% {
-    background-color: #b8d6ec;
-    opacity: 20%;
-    margin-right: 60px;
-    margin-left: 60px;
-  }
-
-  90% {
-    background-color: #cfdfeb;
-    opacity: 10%;
-    margin-right: 59px;
-    margin-left: 59px;
-  }
-
-  100% {
-    background-color: #f8f9fa;
-    opacity: 0%;
-    margin-right: 58px;
-    margin-left: 58px;
-  }
-}
-
 #box {
   display: flex;
   flex-direction: column;
@@ -881,8 +839,6 @@ body {
   color: white;
 }
 
-
-
 /* Gestion d'erreur de la recherche  */
 
 /* Popup qui affiche l'erreur */
@@ -904,10 +860,6 @@ body {
   border-radius: 12px;
   /* p: 4, */
 }
-
-
-
-
 
 /* <<<<<< A TRIER <<<<<<<<<<<<<<<< */
 

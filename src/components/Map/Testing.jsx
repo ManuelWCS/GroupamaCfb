@@ -66,26 +66,6 @@ function Mobile3() {
     borderRadius: 12,
     p: 4,
   };
-
-  // POP UP QUI S'AFFICHE QUAND PAS DE RESULTATS
-  const [open2, setOpen2] = useState(false);
-  const handleOpen2 = () => setOpen(true);
-  const handleClose2 = () => setOpen(false);
-
-  const style2 = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 300,
-    fontFamily: "Century",
-    bgcolor: "background.paper",
-    border: "2px solid #3586c2 ",
-    boxShadow: 24,
-    borderRadius: 12,
-    p: 4,
-  };
-
   const [clubs, setClubs] = useState([]);
 
   // Paramétrage des inputs radio lors de la sélection
@@ -141,7 +121,7 @@ function Mobile3() {
   });
 
   const clubMarqueurLabel = L.icon({
-    iconSize:[50,50],
+    iconSize:[40,50],
     iconAnchor: [13.5, 47],
     iconUrl: LabelMarker
   })
@@ -246,6 +226,7 @@ function Mobile3() {
   };
 
   // Fonction qui changera le marqueur en fonction de s'il est labélisé ou pas 
+  
 
   
 
@@ -284,7 +265,7 @@ function Mobile3() {
       setinputLoisir(false);
     }
   }, [formData]);
-
+// Règle numéro 2 : Si je suis un homme avec moins de 17 ans je n'ai pas accès au Futsal 
   useEffect(() => {
     if (parseInt(formData.age) < 17 && formData.gender === "Male") {
       setinputFutsal(true);
@@ -292,7 +273,8 @@ function Mobile3() {
       setinputFutsal(false);
     }
   }, [formData]);
-
+// Règle 3 : Si je suis une femme le futsal est désactivé, si je suis un homme de moins de 17 ans 
+// Si j'ai moins de 17 ans et je suis un homme le futsal est désactivé
   useEffect(() => {
     if (formData.gender === "Female") {
       setinputFutsal(true);
@@ -661,27 +643,6 @@ function Mobile3() {
                         </Typography>
                       </Box>
                     </Modal>
-
-                    {/* Fin du premier pop up  */}
-                    {/* <Modal
-                      open={open2}
-                      onClose={handleClose2}
-                      aria-labelledby="modal-modal-title"
-                      aria-describedby="modal-modal-description"
-                    >
-                      <Box id="box" sx={style2}>
-                        <Typography
-                          id="modal-modal-title"
-                          variant="h6"
-                          component="h2"
-                        >
-                          <p className="modalTitle"> Ta gueule mdr</p>
-                          <div onClick={handleClose2} className="btnClosePopUp">
-                            <p onClick={handleClose2}>FERMER</p>
-                          </div>
-                        </Typography>
-                      </Box>
-                    </Modal> */}
                   </div>
                 </FormControl>
               </div>
@@ -776,7 +737,8 @@ function Mobile3() {
                               href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}
                             >
                               Voir plus d'infos
-                            </a>
+                            </a> 
+                            <img className={clubSelected.label.length >0 ? "labelClub" : "labelHide" }src={clubSelected.label.length >0 ? LabelMarker : null} />
                           </div>
                         </div>
                       </div>
@@ -825,7 +787,7 @@ function Mobile3() {
                             href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite} `}
                           >
                             Voir plus d'infos{" "}
-                          </a>{" "}
+                          </a>   <img className={clubSelected.label.length >0 ? "labelClubDesktop" : "labelHide" }src={clubSelected.label.length >0 ? LabelMarker : null} />{" "}
                         </div>
                       </div>
                     </div>
