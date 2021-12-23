@@ -33,7 +33,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import data from "./data/data.json";
-import LabelMarker from '../../assets/Marqueurs/label.png';
+import LabelMarker from "../../assets/Marqueurs/label.png";
 
 function Mobile3() {
   const [allcities, setallcities] = useState([]);
@@ -53,6 +53,8 @@ function Mobile3() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+ 
+
   const style = {
     position: "absolute",
     top: "50%",
@@ -66,13 +68,38 @@ function Mobile3() {
     borderRadius: 12,
     p: 4,
   };
+
+  const style2 = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 250,
+    fontFamily: "Century",
+    bgcolor: "background.paper",
+    border: "2px solid #3586c2 ",
+    boxShadow: 24,
+    borderRadius: 12,
+    p: 4,
+
+  }
   const [clubs, setClubs] = useState([]);
+
+  // PopUp en cas d'erreur
+
+  const [openPop, setopenPop] = useState(false);
+  const handleOpenPop = () => setopenPop(true);
+  const handleClosePop = () => {
+    setopenPop(false);
+    setDeclenche(false);
+  };
+  const [Declenche, setDeclenche] = useState(false);
 
   // Paramétrage des inputs radio lors de la sélection
 
   const [inputLoisir, setinputLoisir] = useState(false);
   const [inputFutsal, setinputFutsal] = useState(false);
-  // const [inputFutsal18, setinputFutsal18] = useState(false);
+  // Hook qui permets de charger le loader :
 
   const LigueMarqueur = L.icon({
     iconSize: [40, 50],
@@ -121,10 +148,10 @@ function Mobile3() {
   });
 
   const clubMarqueurLabel = L.icon({
-    iconSize:[40,50],
+    iconSize: [40, 50],
     iconAnchor: [13.5, 47],
-    iconUrl: LabelMarker
-  })
+    iconUrl: LabelMarker,
+  });
 
   const marqueurBanque = L.icon({
     iconSize: [45, 58],
@@ -192,7 +219,7 @@ function Mobile3() {
     // Gestion d'erreurs, s'il n'y a pas de résultats un message est affiché dans la console
     // S'il y a des résultats, ils seront stockées dans une variable qui permettra de recentrer la vue de la carte
     if (resultofSearch.length === 0) {
-      console.log("There are no available locations");
+      console.warn("Aucun résultat ne correspond à votre recherche");
     } else {
       const arrayOfLatLngs = resultofSearch.map(({ Latitude, Longitude }) => [
         Latitude,
@@ -202,33 +229,30 @@ function Mobile3() {
       if (map) map.flyToBounds(bounds);
     }
 
-    if (resultofSearch.Label !== null) {
-      console.log('je suis un club labelisé ')
+    if (resultofSearch.label !== null) {
+      console.log("il y a un club labelLisé ");
     } else {
-      console.log('pas de clubs labéliseys bro')
-      
+      console.log("pas de clubs labéliseys bro");
     }
 
     setclubSearch(resultofSearch);
-    console.log(resultofSearch)
+    console.log(resultofSearch);
+    setDeclenche(true);
   };
 
   function scrollTop() {
     window.location.href = "#top";
-  } 
+  }
   // Fonction permettant de scroller vers la carte en question
   function scrollCard() {
     window.location.href = "#cardresult";
   }
-  // Fonction handle qui va gérer les changements des inputs 
+  // Fonction handle qui va gérer les changements des inputs
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Fonction qui changera le marqueur en fonction de s'il est labélisé ou pas 
-  
-
-  
+  // Fonction qui changera le marqueur en fonction de s'il est labélisé ou pas
 
   useEffect(() => {
     //à mettre en dur aussi
@@ -236,8 +260,6 @@ function Mobile3() {
       let result = [];
       res.data.forEach((element) => {
         result.push({ label: element.name });
-
-        
       });
       setallcities(result);
     });
@@ -253,6 +275,7 @@ function Mobile3() {
   useEffect(() => {
     setClubs(data);
   }, []);
+
   // UseEffect qui gere le changement d'etat en fonction de l'age
   //Règle numéro 1: Si ageUtilisateur inférieur a 18, il faut désactiver la catégorie Loisir
   useEffect(() => {
@@ -265,7 +288,7 @@ function Mobile3() {
       setinputLoisir(false);
     }
   }, [formData]);
-// Règle numéro 2 : Si je suis un homme avec moins de 17 ans je n'ai pas accès au Futsal 
+  // Règle numéro 2 : Si je suis un homme avec moins de 17 ans je n'ai pas accès au Futsal
   useEffect(() => {
     if (parseInt(formData.age) < 17 && formData.gender === "Male") {
       setinputFutsal(true);
@@ -273,15 +296,15 @@ function Mobile3() {
       setinputFutsal(false);
     }
   }, [formData]);
-// Règle 3 : Si je suis une femme le futsal est désactivé, si je suis un homme de moins de 17 ans 
-// Si j'ai moins de 17 ans et je suis un homme le futsal est désactivé
+  // Règle 3 : Si je suis une femme le futsal est désactivé, si je suis un homme de moins de 17 ans
+  // Si j'ai moins de 17 ans et je suis un homme le futsal est désactivé
   useEffect(() => {
     if (formData.gender === "Female") {
       setinputFutsal(true);
     } else if (parseInt(formData.age) < 17 && formData.gender === "Male") {
       setinputFutsal(true);
-      if(formData.type === "Futsal"){
-        setformData(state =>({...state, type: ""}))
+      if (formData.type === "Futsal") {
+        setformData((state) => ({ ...state, type: "" }));
       }
     } else {
       setinputFutsal(false);
@@ -306,8 +329,8 @@ function Mobile3() {
         </h1>
         <section className="legendMap">
           <p className="legend">
-            Entrez votre date de naissance et la compétition souhaitée pour
-            découvrir les clubs à proximité !{" "}
+            Entrez votre âge et la compétition souhaitée pour découvrir les
+            clubs à proximité !{" "}
           </p>
         </section>
       </div>
@@ -351,10 +374,14 @@ function Mobile3() {
               >
                 {clubSearch.length !== 0
                   ? clubSearch.slice(0, 150).map((res, index2) => {
-                    console.log(res)
+                      console.log(res);
                       return (
                         <Marker
-                          icon={res.label.length  >0 ? clubMarqueurLabel : clubMarqueur}
+                          icon={
+                            res.label.length > 0
+                              ? clubMarqueurLabel
+                              : clubMarqueur
+                          }
                           key={index2}
                           position={[res.Latitude, res.Longitude]}
                         >
@@ -425,7 +452,6 @@ function Mobile3() {
                   <a href="https://www.creditmutuel.fr/fr/particuliers.html">
                     <h3>Banque du Crédit Mutuel</h3>
                   </a>
-                  
                 </Popup>
               </Marker>
             </MapContainer>
@@ -451,7 +477,7 @@ function Mobile3() {
                   alt="Marqueur Club labélisé"
                   src={label}
                 />
-                <p className="markerDescription"> Club labelisé</p>
+                <p className="markerDescription"> Club labellisé</p>
               </div>
 
               <div className="marker4">
@@ -468,8 +494,8 @@ function Mobile3() {
         <div className="legendAndForm">
           <section className="legendMapMobile">
             <p className="legend">
-              Entrez votre date de naissance et la compétition souhaitée pour
-              découvrir les clubs à proximité !{" "}
+              Entrez votre âge et la compétition souhaitée pour découvrir les
+              clubs à proximité !{" "}
             </p>
           </section>
 
@@ -559,7 +585,7 @@ function Mobile3() {
 
               <div className="filtre4">
                 <FormControl component="fieldset" required={true}>
-                  <span className="filterTitle4">PRATIQUE SOUHAITEE :</span>
+                  <span className="filterTitle4">PRATIQUE SOUHAITÉE :</span>
                   <RadioGroup
                     value={formData.type}
                     row
@@ -582,7 +608,7 @@ function Mobile3() {
                       value="Loisir"
                       control={<Radio />}
                       label="Loisir"
-                      title="Pratique proposée aux seniors exclusivement"
+                      title="Pratique proposée aux seniors Hommes exclusivement"
                     />
                     <FormControlLabel
                       disabled={inputFutsal}
@@ -590,7 +616,7 @@ function Mobile3() {
                       value="Futsal"
                       control={<Radio />}
                       label="Futsal"
-                      title="Pratique proposée aux séniors homme et aux 17-18 masculins"
+                      title="Pratique proposée aux séniors Hommes et aux 17-18 masculins"
                       // disable={inputFutsal}
                     />
                   </RadioGroup>
@@ -622,20 +648,18 @@ function Mobile3() {
                         </Typography>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                           <p className="boldText">Libre : </p>
-                          <p className="popupText">
-                            Football en compétiton à 11 joueurs
-                          </p>
+                          <p className="popupText">Football en compétiton</p>
                           <p className="boldText"> Loisir :</p>
                           <p className="popupText">
                             {" "}
-                            Pratique proposée aux seniors exclusivement
+                            Pratique proposée aux seniors Hommes exclusivement
                           </p>
 
                           <p className="boldText">Futsal : </p>
                           <p className="popupText">
                             {" "}
-                            Pratique proposée aux seniors Homme et aux 17-18 ans
-                            Hommes
+                            Pratique proposée aux seniors Hommes et aux 17-18
+                            ans Hommes
                           </p>
                           <div onClick={handleClose} className="btnClosePopUp">
                             <p onClick={handleClose}>FERMER</p>
@@ -693,10 +717,40 @@ function Mobile3() {
             </form>
           </div>
 
-          <div className={clubSearch.length === 0 ? "hide" : "resultats"}>
+          <Modal
+            open={clubSearch.length === 0 && Declenche ? true : false}
+            onClose={handleClosePop}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box id="box" sx={style2}>
+              {!formData.age || !formData.type || !formData.city ? (
+                <div>
+                  <p className="textNoResults"> Aucun résultat pour votre recherhe !</p>
+                  <p className="btnNoResults" onClick={handleClosePop}>
+                    FERMER
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <p>
+                    Pas de résultats trouvés pour la catégorie : {formData.type}{" "}
+                    à {formData.city}
+                  </p>
+
+                  <p className="btnNoResults" onClick={handleClosePop}>
+                    FERMER
+                  </p>
+                </div>
+              )}
+            </Box>
+          </Modal>
+
+          <div className={clubSearch.length < 1 ? "hide" : "resultats"}>
             <p className="resultText">
-              Il y a {clubSearch.length} résultat(s) correspondant à votre
-              recherche{" "}
+              {clubSearch.length > 0
+                ? `Il y a ${clubSearch.length} resultat(s) correspondant à votre recherche :`
+                : "Il n'y a pas correspondant à votre recherche"}
             </p>
 
             {clubSearch.length !== 0
@@ -737,8 +791,20 @@ function Mobile3() {
                               href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}
                             >
                               Voir plus d'infos
-                            </a> 
-                            <img className={clubSelected.label.length >0 ? "labelClub" : "labelHide" }src={clubSelected.label.length >0 ? LabelMarker : null} />
+                            </a>
+                            <img
+                              className={
+                                clubSelected.label.length > 0
+                                  ? "labelClub"
+                                  : "labelHide"
+                              }
+                              src={
+                                clubSelected.label.length > 0
+                                  ? LabelMarker
+                                  : null
+                              }
+                              alt="Marqueur Club labellisé"
+                            />
                           </div>
                         </div>
                       </div>
@@ -787,7 +853,18 @@ function Mobile3() {
                             href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite} `}
                           >
                             Voir plus d'infos{" "}
-                          </a>   <img className={clubSelected.label.length >0 ? "labelClubDesktop" : "labelHide" }src={clubSelected.label.length >0 ? LabelMarker : null} />{" "}
+                          </a>{" "}
+                          <img
+                            className={
+                              clubSelected.label.length > 0
+                                ? "labelClubDesktop"
+                                : "labelHide"
+                            }
+                            src={
+                              clubSelected.label.length > 0 ? LabelMarker : null
+                            }
+                            alt="Marqueur club labellisé"
+                          />{" "}
                         </div>
                       </div>
                     </div>
@@ -797,27 +874,6 @@ function Mobile3() {
             : null}
         </div>
       </div>
-
-      {/* <div className="creditMutuel" id="logo">
-        <a href="https://www.creditmutuel.fr/home/index.html" target="_blank" rel="noreferrer">
-          <p className="logoDescription"> Plateforme soutenue par le Crédit Mutuel</p>
-          <img className="creditLogo" alt="logo CréditMutuel" src={CM} /></a>
-          <div className="linksCM">
-            <div className="linklogoCM1">
-              <a href="https://www.creditmutuel.fr/home/index.html" target="_blank " rel="noreferrer">
-              <img src={webCM} alt="logo site web Crédit Mutuel" className="logowebCM"/>
-
-              </a>
-              </div>
-            
-            <div className="linklogoCM2">
-              <a href="https://www.facebook.com/creditmutuel" target="_blank" rel="noreferrer">
-              <img src={fbCM} alt="logo Facebook Crédit Mutuel" className="logowebCM"/></a>
-
-
-            </div>
-          </div>
-      </div>  */}
 
       <div className="footHeure">
         <div className="logos">

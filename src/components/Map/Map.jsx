@@ -717,28 +717,6 @@ function Mobile3() {
         </div>
       </div>
 
-      {/* <div className="creditMutuel" id="logo">
-        <a href="https://www.creditmutuel.fr/home/index.html" target="_blank" rel="noreferrer">
-          <p className="logoDescription"> Plateforme soutenue par le Crédit Mutuel</p>
-          <img className="creditLogo" alt="logo CréditMutuel" src={CM} /></a>
-          <div className="linksCM">
-            <div className="linklogoCM1">
-              <a href="https://www.creditmutuel.fr/home/index.html" target="_blank " rel="noreferrer">
-              <img src={webCM} alt="logo site web Crédit Mutuel" className="logowebCM"/>
-
-              </a>
-              </div>
-            
-            <div className="linklogoCM2">
-              <a href="https://www.facebook.com/creditmutuel" target="_blank" rel="noreferrer">
-              <img src={fbCM} alt="logo Facebook Crédit Mutuel" className="logowebCM"/></a>
-
-
-            </div>
-          </div>
-      </div>  */}
-
-
       <div className="footHeure">
         <div className="logos">
           <a

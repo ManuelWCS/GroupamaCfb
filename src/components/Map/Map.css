@@ -707,7 +707,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 /* Image affichée si le club est labélisé */
@@ -843,23 +843,23 @@ body {
 
 /* Popup qui affiche l'erreur */
 
-.hiddenSearch {
-  display: none;
+
+
+.btnNoResults {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:8px 8px 8px 8px;
+  margin-top:12px;
+  background-color: var(--main-color);
+  border-radius:12px;
 }
 
-.searchNoHide {
-  position: "absolute";
-  top: "50%";
-  left: "50%";
-  transform: "translate(-50%, -50%)";
-  width: 300;
-  font-family: "Century";
-  background-color: #ffffff;
-  border: 2px solid #3586c2;
-  box-shadow: 24px;
-  border-radius: 12px;
-  /* p: 4, */
+.textNoResults {
+  font-family: 'Century';
 }
+
 
 /* <<<<<< A TRIER <<<<<<<<<<<<<<<< */
 
