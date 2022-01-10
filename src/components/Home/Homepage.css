@@ -1,21 +1,22 @@
 .hero {
   display: block;
-  height:315px;
-  clip-path: ellipse(75% 100% at 65% 0%); 
+  height: 255px;
   margin: 0;
   padding:0 ;
+  -webkit-clip-path: ellipse(174% 100% at 105.8% 0%);
+  clip-path: ellipse(174% 100% at 105.8% 0%);
 
  
 }
 
 .photo {
-  height: 315px;
+  height: 255px;
   width: 100%;
   filter: contrast(100%);
-  background: url("../../assets/img/accueil2.png");
+  background: url("../../assets/img/acc3.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center 0px;
+  background-position: top 15px;
   position:fixed;
   z-index:-1;
 

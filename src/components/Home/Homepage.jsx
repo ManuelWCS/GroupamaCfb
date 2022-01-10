@@ -12,6 +12,7 @@ function Homepage() {
         <div className="content">
           <h1 className="wow">BIENVENUE</h1>
           <h2 className="wow2">TROUVEZ UN CLUB PRES DE CHEZ VOUS !</h2>
+          
         </div>
       </div>
     </div>
