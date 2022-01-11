@@ -3,7 +3,6 @@
 }
 
 .mainContent {
-  display: block;
   height: 80vh;
   margin: 0;
   padding: 0;
@@ -22,9 +21,8 @@
   position: absolute;
   z-index: -1;
   box-sizing: border-box;
-  margin: -4px;
-  display: block;
- 
+  border: none !important;
+  margin-top:-55px;
 }
 .contentWrapper {
   box-sizing: border-box;
@@ -67,14 +65,16 @@
   width: 90vw;
   height: 130px;
   box-sizing: border-box;
-  margin-top:-116px;
+  margin-top:-80px;
+  position: absolute;
+
 } 
 
 .secondTitle {
   font-family: 'Nuvel';
   padding-left: 64px;
   padding-top:18px;
-  font-size:24px;
+  font-size:20px;
   color:var(--main-color);
 }
 
@@ -82,39 +82,25 @@
 font-family: 'Century Gothic';  
 padding-left: 64px;
 padding-right: 64px;
-font-size: 18px;
+font-size: 16px;
 color: gray;
 font-weight: bolder;
 
 }
-.arrowContainer {
-  display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: flex-end;
-	align-content: space-between;
 
-}
-
-.arrow {
-  width: 48px;
-  height: 48px;
-  position:absolute bottom;
-  float: bottom;
-  margin-top:48vh;
-}
 
 .yo {
   display: block;
   margin:auto;
   height: 120px;
-  width: 92.5%;
+  width: 100%;
   background-image: url('../../assets/img/banner.png');
   background-position: 55% 60%;
   background-size: cover;
   z-index: -5;
-  margin-top:16px;
+  margin-top:88px;
+  position: absolute;
+
 }
 
 .titleBanner {
@@ -122,5 +108,11 @@ font-weight: bolder;
   font-size: 32px;
   color: white;
   padding-top:54px;
-  padding-left: 32px;
+  padding-left: 116px;
+  position: absolute;
+
+}
+
+.formContent {
+  margin-top: 250px;
 }

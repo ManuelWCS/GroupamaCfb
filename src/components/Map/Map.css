@@ -77,7 +77,7 @@ body {
 /* Subcontainer est une div qui entoure la carte, le form jusqu'au résultats  */
 
 .subContainer {
-  width: 80vw;
+  width: 40vw;
   height: fit-content;
   max-height: max-content;
   max-width: max-content;
@@ -202,6 +202,7 @@ body {
   margin-bottom: 32px;
   border-radius: 4px;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  width: 350px;
   /* box-shadow: 13px 13px 49px #cec2c2, -13px -13px 49px #ffffff; */
 }
 
@@ -301,7 +302,10 @@ body {
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
   /* box-shadow: 13px 13px 49px #cec2c2, -13px -13px 49px #ffffff; */
   margin-bottom: 60px;
+  width: 200px;
 }
+
+
 
 /* formTitle est le titre au dessus du form  */
 

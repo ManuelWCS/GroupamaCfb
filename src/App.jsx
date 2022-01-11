@@ -10,6 +10,7 @@ function App() {
         <Route path="/home" component={Testing} />
         <Route   exact path="/"component={newHome}/>
       </Switch>
+      
     </div>
   );
 }

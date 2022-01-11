@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Header from "../header/Header";
 import "./Map.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import TextField from "@mui/material/TextField";
@@ -22,9 +21,6 @@ import loiretMarker from "../../assets/Marqueurs/Marqueurloiret.png";
 import eureEtLoireMarker from "../../assets/Marqueurs/MarqueurEureEtLoire.png";
 import ligueMarker from "../../assets/Marqueurs/MarqueurLigue.png";
 import "./Responsive.css";
-import fb from "../../assets/footer/fb.png";
-import yt from "../../assets/footer/youtube.png";
-import web from "../../assets/footer/web.png";
 import defaultMaker from "../../assets/Marqueurs/defaultMarker.png";
 import label from "../../assets/Marqueurs/label.png";
 import markerCM2 from "../../assets/Marqueurs/CM2.png";
@@ -87,8 +83,8 @@ function Mobile3() {
 
   // PopUp en cas d'erreur
 
-  const [openPop, setopenPop] = useState(false);
-  const handleOpenPop = () => setopenPop(true);
+  let setopenPop = false
+  // const [openPop, setopenPop] = useState(false);
   const handleClosePop = () => {
     setopenPop(false);
     setDeclenche(false);
@@ -174,13 +170,13 @@ function Mobile3() {
         );
       }
     }
-
+    // Si la ville est renseignée
     if (formData.city !== null) {
       if (formData.city.length > 0) {
         filtersOptions.push((item) => item.Localite === formData.city);
       }
     }
-
+    // Si l'âge de la personne est renseignée
     if (formData.age !== null) {
       if (formData.age.length > 0) {
         if (parseInt(formData.age) !== 0) {
@@ -192,9 +188,9 @@ function Mobile3() {
       }
     }
 
-    // Pour les type il faut que tu creer un tableau dans une variable
+    // PInitiliasation d'une variable pour la pratique souhaitée
     let categorieType = [];
-    // aprés tu check si type n'est pas null
+    // Vérifier si c'est rempli
     if (formData.type !== null) {
       // qu'il a une lingueur supérieur a 0
       if (formData.type.length > 0) {
@@ -313,7 +309,6 @@ function Mobile3() {
 
   return (
     <div className="fullPage" id="top">
-      <Header id="header" />
 
       <div className="mobiletitleContainer">
         <h1 className="titlePart1">Trouvez un club près</h1>
@@ -323,10 +318,7 @@ function Mobile3() {
       </div>
 
       <div className="titleContainerDesktop">
-        <h1 className="titlePart1">
-          Trouvez un club près de chez{" "}
-          <strong className="strong"> vous !</strong>{" "}
-        </h1>
+     
         <section className="legendMap">
           <p className="legend">
             Entrez votre âge et la compétition souhaitée pour découvrir les
@@ -875,45 +867,6 @@ function Mobile3() {
         </div>
       </div>
 
-      <div className="footHeure">
-        <div className="logos">
-          <a
-            href="https://www.facebook.com/LCFofficiel/?ref=bookmarks"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img className="logos" alt="logo Facebook" src={fb} />
-          </a>
-        </div>
-
-        <div className="logos">
-          <a
-            href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              className="logos"
-              alt="logo site Ligue Centre Val de Loire"
-              src={web}
-            />
-          </a>
-        </div>
-
-        <div className="logos">
-          <a
-            href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              className="logos"
-              alt="logo Youtube Ligue Centre-Val de Loire"
-              src={yt}
-            />
-          </a>
-        </div>
-      </div>
     </div>
   );
 }
