@@ -1,24 +1,30 @@
-
+.homepage {
+  height: 1500px;
+}
 
 .mainContent {
   display: block;
   height: 80vh;
   margin: 0;
   padding: 0;
-  /* -webkit-clip-path: ellipse(174% 100% at 105.8% 0%); */
-  /*clip-path: ellipse(174% 100% at 105.8% 0%);*/
+  font-size: 0;
+  
 }
 
 .photo {
-  height: 90vh;
+  height: 80vh;
   width: 100vw;
   filter: contrast(100%);
   background: url("../../assets/img/final2.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top 15px;
+  background-position: bottom 15px;
   position: absolute;
   z-index: -1;
+  box-sizing: border-box;
+  margin: -4px;
+  display: block;
+ 
 }
 .contentWrapper {
   box-sizing: border-box;
@@ -26,16 +32,16 @@
 
 .mainTitle {
   font-family: var(--main-font);
-  padding-top: 36px;
+  padding-top: 64px;
   padding-left: 64px;
   color: var(--red-color);
-  font-size: 88px;
+  font-size: 48px;
 }
 
 .mainDescription {
   padding-left: 64px;
   font-family: var(--main-font);
-  font-size: 38px;
+  font-size: 18px;
   color: white;
 }
 
@@ -57,18 +63,18 @@
   position: absolute;
 }
 
-.textContainer {
-  width: 100vw;
+.textContainer {  
+  width: 90vw;
   height: 130px;
-  margin-top: -15vh;
-  padding-bottom: 32px;
+  box-sizing: border-box;
+  margin-top:-116px;
 } 
 
 .secondTitle {
   font-family: 'Nuvel';
   padding-left: 64px;
   padding-top:18px;
-  font-size:20px;
+  font-size:24px;
   color:var(--main-color);
 }
 
@@ -76,9 +82,9 @@
 font-family: 'Century Gothic';  
 padding-left: 64px;
 padding-right: 64px;
-font-size: 21px;
+font-size: 18px;
 color: gray;
-font-weight: bolder;;
+font-weight: bolder;
 
 }
 .arrowContainer {
@@ -94,7 +100,27 @@ font-weight: bolder;;
 .arrow {
   width: 48px;
   height: 48px;
-  position:fixed bottom;
+  position:absolute bottom;
   float: bottom;
-  margin-top:57vh;
+  margin-top:48vh;
+}
+
+.yo {
+  display: block;
+  margin:auto;
+  height: 120px;
+  width: 92.5%;
+  background-image: url('../../assets/img/banner.png');
+  background-position: 55% 60%;
+  background-size: cover;
+  z-index: -5;
+  margin-top:16px;
+}
+
+.titleBanner {
+  font-family: 'Nuvel';
+  font-size: 32px;
+  color: white;
+  padding-top:54px;
+  padding-left: 32px;
 }

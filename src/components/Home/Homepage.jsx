@@ -1,7 +1,7 @@
 import React from "react";
 import "./Homepage.css";
 import Header from "../header/Header.jsx";
-import arrows from '../../assets/img/arrows.png'
+import arrows from '../../assets/img/arrows.png';
 
 function Homepage() {
   return (
@@ -21,17 +21,19 @@ function Homepage() {
 
           </div>
       </div>{/* fin mainContent */}
-      <div className="imageWrapper">
-          {/* <img className="regionPicture" src={regionPicture} /> */}
-          </div> {/* fin imageWrapper */}
+   
 
           <div className="textContainer">
-            <h2 className="secondTitle"> 639 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE</h2>
+            <h2 className="secondTitle"> 541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE</h2>
             <h4 className="descriptionText">
               La Ligue Centre-Val de Loire de Football et son partenaire Crédit Mutuel vous propose cette plateforme pour vous donner accès aux nombreux clubs de football implantés dans notre région
-            </h4>
-
+            </h4> 
           </div> { /* Fin div textes*/}
+
+          <div className="yo">
+            <h4 className="titleBanner"> A VOUS DE JOUER </h4>
+
+          </div>
     </div> // fin homepage
   );
 }
