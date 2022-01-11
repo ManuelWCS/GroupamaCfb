@@ -13,7 +13,7 @@
 
 /* Media queries  */
 
-@media screen and (min-width: 319px) and (max-width: 1023px) {
+@media screen and (min-width: 319px) and (max-width: 1024px) {
   html,
   body {
     max-width: 100%;
