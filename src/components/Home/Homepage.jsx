@@ -2,11 +2,13 @@ import React from "react";
 import "./Homepage.css";
 import Header from "../header/Header.jsx";
 import Main from "../../components/Map/Testing.jsx";
+import fb from '../../assets/footer/fb.png';
+import web from '../../assets/footer/web.png';
+import yt from '../../assets/footer/youtube.png'
 
 function Homepage() {
   return (
     <div className="homepage">
-      <Header />
       <div className="mainContent">
         <div className="photo"></div>
         <div className="contentWrapper">
@@ -16,8 +18,8 @@ function Homepage() {
           </h3>
         </div>{" "}
         {/* fin contentWrapper */}
-      </div>
-      {/* fin mainContent */}
+      </div>  {/* fin mainContent */}
+     
       <div className="textContainer">
         <h2 className="secondTitle">
           {" "}
@@ -28,13 +30,60 @@ function Homepage() {
           Mutuel vous proposent cette plateforme pour vous donner accès aux
           nombreux clubs de football implantés dans notre région
         </h4>
-      </div>{" "}
-      {/* Fin div textes*/}
+      </div>{/* Fin div textes*/}
       <div className="yo">
         <h4 className="titleBanner"> A VOUS DE JOUER </h4>
 
-        <a href="https://relaxed-banach-2aac18.netlify.app/"> LIEN</a>
+
+     
       </div>
+        <Main className="mapAndForm"/>
+
+        <div className="footer">  
+
+        </div>
+
+        <div className="footHeure">
+        <div className="logos">
+          <a
+            href="https://www.facebook.com/LCFofficiel/?ref=bookmarks"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img className="logos" alt="logo Facebook" src={fb} />
+          </a>
+        </div>
+
+        <div className="logos">
+          <a
+            href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              className="logos"
+              alt="logo site Ligue Centre Val de Loire"
+              src={web}
+            />
+          </a>
+        </div>
+
+        <div className="logos">
+          <a
+            href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              className="logos"
+              alt="logo Youtube Ligue Centre-Val de Loire"
+              src={yt}
+            />
+          </a>
+        </div>
+      </div>
+
+        
     </div> // fin homepage
   );
 }

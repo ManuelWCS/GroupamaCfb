@@ -1,5 +1,6 @@
 .homepage {
-  height: 1500px;
+  height: 300vh;
+  position:relative;
 }
 
 .mainContent {
@@ -98,7 +99,7 @@ font-weight: bolder;
   background-position: 55% 60%;
   background-size: cover;
   z-index: -5;
-  margin-top:88px;
+  margin-top:44px;
   position: absolute;
 
 }
@@ -115,4 +116,67 @@ font-weight: bolder;
 
 .formContent {
   margin-top: 250px;
+}
+
+.footer {
+  display: flex;
+box-sizing: border-box;
+height: 350px;
+background-color: #bebebe;
+clip-path: ellipse(159% 100% at -37.2% 100%);
+position:absolute;
+width: 100%;
+bottom: 0;
+z-index: -4;
+
+;}
+
+.mapAndForm {
+  margin-bottom: 10vh;
+}
+
+.markerLegend2 {
+  display: flex;
+  padding: 0;
+  margin:0;
+  left: 0;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.legendMarker {
+  width: 45px;
+  height: 58px;
+  padding-bottom: 8px;
+}
+.legendMarker1 {
+  width: 58px;
+  height: 58px;
+  padding-bottom: 8px;
+
+}
+.legendMarker2 {
+  width: 64px;
+  height: 58px;
+  padding-bottom: 8px;
+
+}
+
+.markerContainer {
+  height: 100px;
+  width: 135px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-top:8px;
+}
+.instructions {
+  font-family: var(--secondary-font);
+  color:gray;
+  font-size: 18px;
+  width: 500px;
+  padding:8px 8px;
+  text-align: center;
 }

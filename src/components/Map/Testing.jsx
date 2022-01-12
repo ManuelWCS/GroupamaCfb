@@ -30,6 +30,9 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import data from "./data/data.json";
 import LabelMarker from "../../assets/Marqueurs/label.png";
+import marqueurG from '../../assets/Marqueurs/MarqueurG.png'
+import marqueurF from '../../assets/Marqueurs/MarqueurF.png'
+
 
 function Mobile3() {
   const [allcities, setallcities] = useState([]);
@@ -43,14 +46,12 @@ function Mobile3() {
     gender: "",
     category: "",
   });
+  console.log(formData)
 
   // POP UP DETAILS DES CATEGORIES
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
- 
-
   const style = {
     position: "absolute",
     top: "50%",
@@ -64,7 +65,6 @@ function Mobile3() {
     borderRadius: 12,
     p: 4,
   };
-
   const style2 = {
     position: "absolute",
     top: "50%",
@@ -83,8 +83,7 @@ function Mobile3() {
 
   // PopUp en cas d'erreur
 
-  let setopenPop = false
-  // const [openPop, setopenPop] = useState(false);
+  const [openPop, setopenPop] = useState(false);
   const handleClosePop = () => {
     setopenPop(false);
     setDeclenche(false);
@@ -316,17 +315,6 @@ function Mobile3() {
           de chez <strong className="strong"> vous !</strong>{" "}
         </h1>
       </div>
-
-      <div className="titleContainerDesktop">
-     
-        <section className="legendMap">
-          <p className="legend">
-            Entrez votre âge et la compétition souhaitée pour découvrir les
-            clubs à proximité !{" "}
-          </p>
-        </section>
-      </div>
-
       <div className="subContainer">
         <main className="mapContainer">
           <div
@@ -334,7 +322,6 @@ function Mobile3() {
               clubSearch.length === 0 ? "mapNoSearch" : "maplegendWrapper"
             }
           >
-            <h2 className="titleMapContainer">CARTE </h2>
 
             <MapContainer
               className="mapLeaflet"
@@ -366,28 +353,28 @@ function Mobile3() {
               >
                 {clubSearch.length !== 0
                   ? clubSearch.slice(0, 150).map((res, index2) => {
-                      console.log(res);
-                      return (
-                        <Marker
-                          icon={
-                            res.label.length > 0
-                              ? clubMarqueurLabel
-                              : clubMarqueur
-                          }
-                          key={index2}
-                          position={[res.Latitude, res.Longitude]}
-                        >
-                          <Popup key={index2} className="markersPopUp">
-                            <p onClick={scrollCard}> {res.NomClub}</p>
-                          </Popup>
-                        </Marker>
-                      );
-                    })
+                    console.log(res);
+                    return (
+                      <Marker
+                        icon={
+                          res.label.length > 0
+                            ? clubMarqueurLabel
+                            : clubMarqueur
+                        }
+                        key={index2}
+                        position={[res.Latitude, res.Longitude]}
+                      >
+                        <Popup key={index2} className="markersPopUp">
+                          <p onClick={scrollCard}> {res.NomClub}</p>
+                        </Popup>
+                      </Marker>
+                    );
+                  })
                   : null}
               </MarkerClusterGroup>
               <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
                 <Popup className="InstanceLigue">
-                  <a href="https://foot-centre.fff.fr//">
+                  <a href="https://foot-centre.fff.fr/">
                     <h3>Ligue Centre-Val de Loire </h3>
                   </a>
                 </Popup>
@@ -448,41 +435,37 @@ function Mobile3() {
               </Marker>
             </MapContainer>
 
-            <div className="markerLegend">
-              <div className="marker1">
-                <img src={defaultMaker} alt="Marqueur par défaut" />
-                <p className="markerDescription"> Votre position</p>
+            <div className="markerLegend2">
+              <div className="markerContainer">
+                <img className="legendMarker1" src={marqueurG}></img>
+                <span className="markerDescription">Votre position</span>
+              </div>
+              <div className="markerContainer">
+                <img className="legendMarker2" src={clubMarker}></img>
+                <span className="markerDescription">Club de football</span>
+
               </div>
 
-              <div className="marker2">
-                <img
-                  className="markerPicture"
-                  alt="Marqueur Club"
-                  src={clubMarker}
-                />
-                <p className="markerDescription"> Club de foot</p>
+              <div className="markerContainer">
+                <img className="legendMarker" src={label}></img>
+                <span className="markerDescription">Club labélllisé</span>
+
+              </div>
+              <div className="markerContainer">
+                <img className="legendMarker" src={markerCM2}></img>
+                <span className="markerDescription">Crédit Mutuel</span>
+
               </div>
 
-              <div className="marker3">
-                <img
-                  className="markerPicture2"
-                  alt="Marqueur Club labélisé"
-                  src={label}
-                />
-                <p className="markerDescription"> Club labellisé</p>
-              </div>
 
-              <div className="marker4">
-                <img
-                  className="markerPicture2"
-                  alt="Marqueur Crédit Mutuel"
-                  src={markerCM2}
-                />
-                <p className="markerDescription"> Crédit Mutuel</p>
-              </div>
             </div>
           </div>
         </main>
+
+
+
+
+
         <div className="legendAndForm">
           <section className="legendMapMobile">
             <p className="legend">
@@ -496,13 +479,18 @@ function Mobile3() {
               clubSearch.length === 0 ? "filtersNoSearch" : "filtrations"
             }
           >
-            <h3 className="formTitle"> À VOUS DE JOUER ! </h3>
+            <div className="instructions">
+              Entre votre âge et la compétition souhaitée pour découvrir les clubs à proximité
+            </div>
             <form
               className="filtrationsWrapper"
               onSubmit={(e) => searchClub(e)}
             >
-              <div className="filtre1">
-                <span className="filterTitle1">VOTRE ÂGE </span>
+              <div className="filter">
+                <div className="inputBox">
+                  <span className="inputTitle">VOTRE ÂGE </span>
+                </div>
+
                 <TextField
                   variant="outlined"
                   label="Âge"
@@ -533,9 +521,11 @@ function Mobile3() {
                 />
               </div>
 
-              <div className="filtre2">
+              <div className="filter">
                 <FormControl component="fieldset" required={true}>
-                  <span className="filterTitle2">GENRE :</span>
+                  <div className="inputBox">
+                    <span className="inputTitle">GENRE </span>
+                  </div>
                   <RadioGroup
                     row
                     aria-label="gender"
@@ -548,14 +538,14 @@ function Mobile3() {
                       } else {
                         formData.type === "Futsal"
                           ? setformData({
-                              ...formData,
-                              gender: e.target.value,
-                              type: "",
-                            })
+                            ...formData,
+                            gender: e.target.value,
+                            type: "",
+                          })
                           : setformData({
-                              ...formData,
-                              gender: e.target.value,
-                            });
+                            ...formData,
+                            gender: e.target.value,
+                          });
                       }
                     }}
                   >
@@ -575,9 +565,11 @@ function Mobile3() {
                 </FormControl>
               </div>
 
-              <div className="filtre4">
+              <div className="filter">
                 <FormControl component="fieldset" required={true}>
-                  <span className="filterTitle4">PRATIQUE SOUHAITÉE :</span>
+                  <div className="inputBox">
+                    <span className="inputTitle">PRATIQUE SOUHAITÉE  </span>
+                  </div>
                   <RadioGroup
                     value={formData.type}
                     row
@@ -609,7 +601,7 @@ function Mobile3() {
                       control={<Radio />}
                       label="Futsal"
                       title="Pratique proposée aux séniors Hommes et aux 17-18 masculins"
-                      // disable={inputFutsal}
+                    // disable={inputFutsal}
                     />
                   </RadioGroup>
 
@@ -663,8 +655,11 @@ function Mobile3() {
                 </FormControl>
               </div>
 
-              <div className="filtre3">
-                <span className="filterTitle3"> VOTRE VILLE </span>
+              <div className="filter">
+                <div className="inputBox2">
+                  <span className="inputTitle">VILLE  </span>
+                </div>
+
                 <Autocomplete
                   disablePortal
                   className="inputCity"
@@ -675,14 +670,14 @@ function Mobile3() {
                   onInputChange={(event, newInputValue) => {
                     setformData({ ...formData, city: newInputValue });
                   }}
-                  sx={{ width: 245 }}
+                  sx={{ width: 230 }}
                   renderInput={(params) => (
                     <TextField {...params} label="Rechercher" />
                   )}
                 />
               </div>
 
-              <div className="btnContainer" id="test">
+              {/* <div className="btnContainer" id="test">
                 <button
                   className="btnBackground"
                   id="scrollBtn"
@@ -695,7 +690,7 @@ function Mobile3() {
                     src={btnPicture}
                   />
                 </button>
-              </div>
+              </div> */}
 
               <div className="btnContainer" id="test2">
                 <button className="btnBackground" id="scrollBtn" type="submit">
@@ -742,81 +737,21 @@ function Mobile3() {
             <p className="resultText">
               {clubSearch.length > 0
                 ? `Il y a ${clubSearch.length} resultat(s) correspondant à votre recherche :`
-                : "Il n'y a pas correspondant à votre recherche"}
+                : "Il n'y a pas correspondant à votre recherche :"}
             </p>
 
             {clubSearch.length !== 0
               ? clubSearch.map((clubSelected, Uniqueindex) => {
-                  return (
-                    <div
-                      className="cardResult"
-                      key={Uniqueindex}
-                      id="cardresult"
-                    >
-                      <div className="titleCardContainer">
-                        <span className="titleCard" onClick={scrollTop}>
-                          {clubSelected.NomClub}
-                        </span>
-                      </div>
-
-                      <div className="columnContainer">
-                        <div className="column1">
-                          <div className="logo1"></div>
-                          <div className="logo2"></div>
-                          <div className="logo3"></div>
-                        </div>
-                        <div className="column2">
-                          <div className="info1">
-                            {" "}
-                            <a
-                              className="mail"
-                              href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}
-                            >
-                              {clubSelected.Mail}{" "}
-                            </a>
-                          </div>
-                          <div className="info2">
-                            {clubSelected.AdressePostale}
-                          </div>
-                          <div className="info3">
-                            <a
-                              href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}
-                            >
-                              Voir plus d'infos
-                            </a>
-                            <img
-                              className={
-                                clubSelected.label.length > 0
-                                  ? "labelClub"
-                                  : "labelHide"
-                              }
-                              src={
-                                clubSelected.label.length > 0
-                                  ? LabelMarker
-                                  : null
-                              }
-                              alt="Marqueur Club labellisé"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })
-              : null}
-          </div>
-        </div>
-        <div className={clubSearch.length === 0 ? "hide" : "resultatsDesktop"}>
-          <p className="resultText">
-            Il y a {clubSearch.length} résultats correspondant à votre recherche{" "}
-          </p>
-
-          {clubSearch.length !== 0
-            ? clubSearch.map((clubSelected, Uniqueindex) => {
                 return (
-                  <div className="cardResult" key={Uniqueindex}>
-                    <div className="titleContainer">
-                      <span className="titleCard">{clubSelected.NomClub}</span>
+                  <div
+                    className="cardResult"
+                    key={Uniqueindex}
+                    id="cardresult"
+                  >
+                    <div className="titleCardContainer">
+                      <span className="titleCard" onClick={scrollTop}>
+                        {clubSelected.NomClub}
+                      </span>
                     </div>
 
                     <div className="columnContainer">
@@ -827,42 +762,102 @@ function Mobile3() {
                       </div>
                       <div className="column2">
                         <div className="info1">
+                          {" "}
                           <a
                             className="mail"
                             href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}
                           >
-                            {" "}
                             {clubSelected.Mail}{" "}
-                          </a>{" "}
+                          </a>
                         </div>
                         <div className="info2">
                           {clubSelected.AdressePostale}
                         </div>
                         <div className="info3">
                           <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite} `}
+                            href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}
                           >
-                            Voir plus d'infos{" "}
-                          </a>{" "}
+                            Voir plus d'infos
+                          </a>
                           <img
                             className={
                               clubSelected.label.length > 0
-                                ? "labelClubDesktop"
+                                ? "labelClub"
                                 : "labelHide"
                             }
                             src={
-                              clubSelected.label.length > 0 ? LabelMarker : null
+                              clubSelected.label.length > 0
+                                ? LabelMarker
+                                : null
                             }
-                            alt="Marqueur club labellisé"
-                          />{" "}
+                            alt="Marqueur Club labellisé"
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
                 );
               })
+              : null}
+          </div>
+        </div>
+        <div className={clubSearch.length === 0 ? "hide" : "resultatsDesktop"}>
+          <p className="resultText">
+            Il y a {clubSearch.length} résultats correspondant à votre recherche : {" "}
+          </p>
+
+          {clubSearch.length !== 0
+            ? clubSearch.map((clubSelected, Uniqueindex) => {
+              return (
+                <div className="cardResult" key={Uniqueindex}>
+                  <div className="titleContainer">
+                    <span className="titleCard">{clubSelected.NomClub}</span>
+                  </div>
+
+                  <div className="columnContainer">
+                    <div className="column1">
+                      <div className="logo1"></div>
+                      <div className="logo2"></div>
+                      <div className="logo3"></div>
+                    </div>
+                    <div className="column2">
+                      <div className="info1">
+                        <a
+                          className="mail"
+                          href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}
+                        >
+                          {" "}
+                          {clubSelected.Mail}{" "}
+                        </a>{" "}
+                      </div>
+                      <div className="info2">
+                        {clubSelected.AdressePostale}
+                      </div>
+                      <div className="info3">
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite} `}
+                        >
+                          Voir plus d'infos{" "}
+                        </a>{" "}
+                        <img
+                          className={
+                            clubSelected.label.length > 0
+                              ? "labelClubDesktop"
+                              : "labelHide"
+                          }
+                          src={
+                            clubSelected.label.length > 0 ? LabelMarker : null
+                          }
+                          alt="Marqueur club labellisé"
+                        />{" "}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })
             : null}
         </div>
       </div>

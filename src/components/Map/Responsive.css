@@ -53,133 +53,75 @@
   }
 
   .mapLeaflet {
-    height: 45vh;
-    width: 25vw;
-    margin-top: 0vh;
-    padding : 4px 4px 4px 4px;
-    
-
+    height: 65vh;
+    width:45vw;   
   }
 
   .filtrations {
-    
-
-    width: 110px;
-    margin-top: 1.5vh;
-    padding-bottom: 56px;
-    margin-bottom: 12vh;
-    margin-right: 32px;
-    margin-left: 16px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 54px;
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
-    box-shadow:  13px 13px 49px #cec2c2,
-                 -13px -13px 49px #ffffff;
+     display: none;
     }
 
   .filtersNoSearch {
     width: 350px;
-    margin-top:2vh;
+    margin-top: 2vh;
     display: flex;
     flex-direction: column;
-    border-radius: 84px;
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
-    box-shadow:  13px 13px 49px #cec2c2,
-                 -13px -13px 49px #ffffff;
+    position: absolute;
+    margin-left: 10vw;
+    justify-content: center;
+    align-items: center;
 
+   
   }
   .maplegendWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 46px;
-    padding-bottom: 58px;
-    padding-right: 38px;
-    padding-left: 38px;
     align-items: center;
-    margin-top: 2vh;
-    margin-right: 32px;
-    border-radius: 84px;
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
-    box-shadow:  13px 13px 49px #cec2c2,
-                 -13px -13px 49px #ffffff;
+   
   }
 
   .mapNoSearch {
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    margin-right: 5vw;
-    margin-top:2vh;
-    border-radius: 50px;
-    padding-top: 46px;
-    padding-bottom: 58px;
-    /* background: #ffffff;
-    box-shadow: 18px 18px 50px #d9d9d9, -20px -20px 60px #ffffff; */
-    border-radius: 84px;
-background: linear-gradient(145deg, #ffffff, #e6e6e6);
-box-shadow:  13px 13px 49px #cec2c2,
-             -13px -13px 49px #ffffff;
-
-    
-
+    align-content: center;
+    top: 8vh;
+    right: 25vw;
+    position: absolute;
+    width: 60vw;
+    max-width: max-content;
 
   }
-
-  .filtre1 {
-    margin-bottom: 8px;
-  }
-
-  .filtre2 {
-    margin-bottom: 8px;
-  }
-
-  .filtre4 {
-    margin-bottom: 8px;
-  }
-
-  .filtre3 {
-    margin-bottom: 64px;
-  }
-  /* 
-  .filtrations {
-    display: flex;
-    flex-direction: column;
-  } */
-
+ 
   .resultats {
     display: none;
   }
 
   .resultatsDesktop {
     display: flex;
-    order: 1;
-    width: 550px;
+    width: 45vw;
     height: 80vh;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: absolute;
+    margin-top:7.8vh;
+    margin-left: 45vw;
   }
 
   .resultText {
-    color:var(--secondary-color);
+    color: var(--secondary-color);
     font-size: 16px;
-    font-family: 'Nuvel';
+    font-family: "Nuvel";
     text-align: center;
-  }
-  
-
-  #test {
-    display: none;
+    margin-left: 8vw;
   }
 
-  #test2 {
-    display: block;
-    margin-top: -85px;
-  }
+ 
 
   .mobiletitleContainer {
     display: none;
@@ -316,45 +258,30 @@ box-shadow:  13px 13px 49px #cec2c2,
   .markerLegend {
     margin-top: 32px;
     height: 64px;
-    border-radius: 20px;
     padding: 8px 8px 8px 8px;
   }
 }
 
 @media screen and (min-width: 1240px) {
-  .filtre1,
-  .filtre2,
-  .filtre3,
-  .filtre4 {
-    margin-bottom: 36px;
-    margin-top: 36px;
-  }
+  
 
   .resultText {
-    color:black;
+    color: black;
     font-size: 16px;
-    font-family: 'Nuvel';
+    font-family: "Nuvel";
     text-align: center;
   }
 }
 
-
 /* Medias queries pour petits téléphones  */
 
-@media screen and (min-width : 315px ) and (max-width: 380px) {
-
+@media screen and (min-width: 315px) and (max-width: 380px) {
   .markerDescription {
     font-size: 10px;
     text-align: center;
-    padding-top:6px;
+    padding-top: 6px;
   }
 
-  .filtre1, .filtre2, .filtre3, .filtre4 {
-    margin-left: 12px;
-  }
-  .filtre1 input {
-    width: 195px;  
-  }
 
   .modalDiv {
     width: 225px;
@@ -363,12 +290,10 @@ box-shadow:  13px 13px 49px #cec2c2,
 
   .btnOpenPopup {
     width: 225px;
-    
   }
 
   .filtersNoSearch {
     width: 240px;
-    
   }
 
   html,
@@ -382,117 +307,110 @@ box-shadow:  13px 13px 49px #cec2c2,
   }
 
   .cardResult {
-  height: 220px;
-  width: 255px;
-  background-image: url("../../assets/Cartes/Carte-bleu.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 12px;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  padding: 8px 8px 8px 8px;
-}
+    height: 220px;
+    width: 255px;
+    background-image: url("../../assets/Cartes/Carte-bleu.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 8px 8px 8px 8px;
+  }
 
-.cardResult:nth-child(2n) {
-  height: 220px;
-  width: 255px;
-  background-image: url("../../assets/Cartes/Carte-rouge.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 12px;
-}
+  .cardResult:nth-child(2n) {
+    height: 220px;
+    width: 255px;
+    background-image: url("../../assets/Cartes/Carte-rouge.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+  }
 
-.cardResult:nth-child(3n) {
-  height: 220px;
-  width: 255px;
-  background-image: url("../../assets/Cartes/Carte-grise.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 12px;
-}
-.cardResult:nth-child(4n) {
-  height: 220px;
-  width: 255px;
-  background-image: url("../../assets/Cartes/Carte-turquoise.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 12px;
-  margin-top: 16px;
-  margin-bottom: 16px;
-}
+  .cardResult:nth-child(3n) {
+    height: 220px;
+    width: 255px;
+    background-image: url("../../assets/Cartes/Carte-grise.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+  }
+  .cardResult:nth-child(4n) {
+    height: 220px;
+    width: 255px;
+    background-image: url("../../assets/Cartes/Carte-turquoise.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
 
-.cardResult:nth-child(1n) .logo1:nth-child(1n) {
-  background-image: url("../../assets/Logos/Mail-bleu.png");
-  background-position: center;
-  background-size: cover;
-}
+  .cardResult:nth-child(1n) .logo1:nth-child(1n) {
+    background-image: url("../../assets/Logos/Mail-bleu.png");
+    background-position: center;
+    background-size: cover;
+  }
 
-.cardResult:nth-child(2n) .logo1:nth-child(1n) {
-  background-image: url("../../assets/Logos/Mail-rouge.png");
-  background-position: center;
-  background-size: cover;
-}
+  .cardResult:nth-child(2n) .logo1:nth-child(1n) {
+    background-image: url("../../assets/Logos/Mail-rouge.png");
+    background-position: center;
+    background-size: cover;
+  }
 
-.cardResult:nth-child(2n) .logo2:nth-child(2n) {
-  background-image: url("../../assets/Logos/Localisation-rouge.png");
-  background-position: center;
-  background-size: cover;
-}
+  .cardResult:nth-child(2n) .logo2:nth-child(2n) {
+    background-image: url("../../assets/Logos/Localisation-rouge.png");
+    background-position: center;
+    background-size: cover;
+  }
 
-.cardResult:nth-child(2n) .logo3:nth-child(3n) {
-  background-image: url("../../assets/Logos/Info-rouge.png");
-  background-position: center;
-  background-size: cover;
-}
+  .cardResult:nth-child(2n) .logo3:nth-child(3n) {
+    background-image: url("../../assets/Logos/Info-rouge.png");
+    background-position: center;
+    background-size: cover;
+  }
 
-.cardResult:nth-child(3n) .logo1:nth-child(1n) {
-  background-image: url("../../assets/Logos/Mail-gris.png");
-  background-position: center;
-  background-size: cover;
-}
+  .cardResult:nth-child(3n) .logo1:nth-child(1n) {
+    background-image: url("../../assets/Logos/Mail-gris.png");
+    background-position: center;
+    background-size: cover;
+  }
 
-.cardResult:nth-child(3n) .logo2:nth-child(2n) {
-  background-image: url("../../assets/Logos/Localisation-gris.png");
-  background-position: center;
-  background-size: cover;
-}
+  .cardResult:nth-child(3n) .logo2:nth-child(2n) {
+    background-image: url("../../assets/Logos/Localisation-gris.png");
+    background-position: center;
+    background-size: cover;
+  }
 
-.cardResult:nth-child(3n) .logo3:nth-child(3n) {
-  background-image: url("../../assets/Logos/Info-gris.png");
-  background-position: center;
-  background-size: cover;
-}
+  .cardResult:nth-child(3n) .logo3:nth-child(3n) {
+    background-image: url("../../assets/Logos/Info-gris.png");
+    background-position: center;
+    background-size: cover;
+  }
 
-.cardResult:nth-child(4n) .logo1:nth-child(1n) {
-  background-image: url("../../assets/Logos/Mail-turquoise.png");
-  background-position: center;
-  background-size: cover;
-}
+  .cardResult:nth-child(4n) .logo1:nth-child(1n) {
+    background-image: url("../../assets/Logos/Mail-turquoise.png");
+    background-position: center;
+    background-size: cover;
+  }
 
-.cardResult:nth-child(4n) .logo2:nth-child(2n) {
-  background-image: url("../../assets/Logos/Localisation-turquoise.png");
-  background-position: center;
-  background-size: cover;
-}
+  .cardResult:nth-child(4n) .logo2:nth-child(2n) {
+    background-image: url("../../assets/Logos/Localisation-turquoise.png");
+    background-position: center;
+    background-size: cover;
+  }
 
-.cardResult:nth-child(4n) .logo3:nth-child(3n) {
-  background-image: url("../../assets/Logos/Info-turquoise.png");
-  background-position: center;
-  background-size: cover;
-}
+  .cardResult:nth-child(4n) .logo3:nth-child(3n) {
+    background-image: url("../../assets/Logos/Info-turquoise.png");
+    background-position: center;
+    background-size: cover;
+  }
 
-.titleCard {
-  font-size: 14px;
-}
-
-  
-
- 
-
-  
-  
+  .titleCard {
+    font-size: 14px;
+  }
 }
