@@ -107,7 +107,7 @@
   .resultatsDesktop {
     display: flex;
     width: 45vw;
-    height: 50vh;
+    height: 75vh;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -115,10 +115,10 @@
     position: absolute;
     margin-top:1.5vh;
     left:-5vw;
-
-    
-  
   }
+
+
+
 
   .resultText {
     color: var(--secondary-color);

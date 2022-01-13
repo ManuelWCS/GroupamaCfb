@@ -307,6 +307,14 @@ function Mobile3() {
     }
   }, [formData]);
 
+
+
+  // Bouton qui affiche une nouvelle recherche 
+
+  function nouvelleRecherche(e) {
+    console.log('cliqué')
+  }
+
   return (
     <div className="fullPage" id="top">
 
@@ -802,10 +810,13 @@ function Mobile3() {
               : null}
           </div>
         </div>
+
+     
+
         <div className={clubSearch.length === 0 ? "hide" : "resultatsDesktop"}>
           <p className="resultText">
             Il y a {clubSearch.length} résultats correspondant à votre recherche : {" "}
-          </p>
+          </p>     
 
           {clubSearch.length !== 0
             ? clubSearch.map((clubSelected, Uniqueindex) => {
@@ -862,7 +873,19 @@ function Mobile3() {
             : null}
 
 
+         
         </div>
+        
+            <div className={clubSearch.length === 0 ? "hide" : "newSearch"}>
+
+              <Button className="newSearchBtn" onClick={nouvelleRecherche}>
+                <p className="textNewSearch">
+                  
+                  NOUVELLE RECHERCHE
+                  </p>
+              </Button>
+            </div>
+
 
       </div>
   
