@@ -27,10 +27,7 @@ function Homepage() {
           541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
         </h2>
         <h4 className="descriptionText">
-          La Ligue Centre-Val de Loire de Football et son partenaire Crédit
-          Mutuel vous proposent cette plateforme pour vous donner accès aux
-          nombreux clubs de football implantés dans notre région
-        </h4>
+          La Ligue Centre-Val de Loire de Football et son partenaire Crédit Agricole vous proposent cette plateforme afin de découvrir l'ensemble des clubs de notre Région !</h4>
       </div>{/* Fin div textes*/}
       <div className="yo">
         <h4 className="titleBanner"> À VOUS DE JOUER </h4>
@@ -43,6 +40,36 @@ function Homepage() {
         <div className="sponso">
           <p className="sponsoText">Cette plateforme est soutenue par le Crédit Agricole</p>
             <img className="logoCA" src={logoCA} alt="" />
+          <div className="sponsoLinks">
+          <a
+            href="https://www.facebook.com/CreditAgricole"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={fb} alt="" className="LinkCA" />
+            </a>
+
+            <a
+            href="https://www.youtube.com/c/Cr%C3%A9ditAgricoleM%C3%A9dia"
+            target="_blank"
+            rel="noreferrer"
+          >
+              <img src={yt} alt="" className="LinkCA" />
+          
+            </a>
+
+
+            <a
+            href="https://www.credit-agricole.fr/"
+            target="_blank"
+            rel="noreferrer"
+          >           
+            
+             
+              <img src={web} alt="" className="LinkCA" />
+
+              </a>
+            </div>
             
             </div>
 

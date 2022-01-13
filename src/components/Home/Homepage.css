@@ -1,5 +1,5 @@
 .homepage {
-  height: 300vh;
+  height: 280vh;
   position:relative;
 }
 
@@ -185,8 +185,9 @@ z-index: -4;
 /*<<<<<<<<<<<<<<<<<<<<< SPONSOR>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 .sponso {
-  bottom:20vh;
-  right: 38vw;
+  bottom:16vh;
+  right: 30vw;
+  left: 30vw;
   position: absolute;
   z-index: 2;
   height: 35px;
@@ -197,10 +198,25 @@ z-index: -4;
 }
 
 .logoCA {
-  height: 100px;
-  width: 170px;
+  height: 90px;
+  width: 150px;
 }
 
 .sponsoText {
   font-family: var(--secondary-font);
+  padding-bottom: 16px;
+}
+.sponsoLinks {
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
+
+
+}
+
+.LinkCA {
+  height: 20px;
+  width: 20px;
+  padding-top: 16px;
+
 }

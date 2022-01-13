@@ -78,6 +78,14 @@ body {
   margin-bottom: 8px;
 }
 
+.legendMarker {
+  width: 50px;
+}
+
+.legendMarker3 {
+  width: 65px;
+}
+
 /* Subcontainer est une div qui entoure la carte, le form jusqu'au résultats  */
 
 .subContainer {

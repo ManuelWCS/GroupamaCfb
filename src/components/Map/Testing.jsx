@@ -33,6 +33,8 @@ import LabelMarker from "../../assets/Marqueurs/label.png";
 import marqueurG from '../../assets/Marqueurs/MarqueurG.png'
 import marqueurF from '../../assets/Marqueurs/MarqueurF.png'
 import Button from 'react-bootstrap/Button'
+import agence from '../../assets/CA/agence.png'
+import labelCA from '../../assets/CA/labelCA.png'
 
 
 function Mobile3() {
@@ -150,10 +152,11 @@ function Mobile3() {
   });
 
   const marqueurBanque = L.icon({
-    iconSize: [45, 58],
+    iconSize: [57, 58],
     iconAnchor: [13.5, 47],
-    iconUrl: markerCM2,
+    iconUrl: agence,
   });
+
 
   const searchClub = (e) => {
     e.preventDefault();
@@ -435,10 +438,10 @@ function Mobile3() {
                 </Popup>
               </Marker>
 
-              <Marker position={[47.899658, 1.87928]} icon={marqueurBanque}>
+              <Marker position={[47.911640, 1.969530]} icon={marqueurBanque}>
                 <Popup className="banquePopUp">
-                  <a href="https://www.creditmutuel.fr/fr/particuliers.html">
-                    <h3>Banque du Crédit Mutuel</h3>
+                  <a href="https://www.credit-agricole.fr/">
+                    <h3>Banque du Crédit Agricole</h3>
                   </a>
                 </Popup>
               </Marker>
@@ -456,13 +459,13 @@ function Mobile3() {
               </div>
 
               <div className="markerContainer">
-                <img className="legendMarker" src={label}></img>
+                <img className="legendMarker3" src={labelCA}></img>
                 <span className="markerDescription">Club labélllisé</span>
 
               </div>
               <div className="markerContainer">
-                <img className="legendMarker" src={markerCM2}></img>
-                <span className="markerDescription">Crédit Mutuel</span>
+                <img className="legendMarker1" src={agence}></img>
+                <span className="markerDescription">Crédit Agricole</span>
 
               </div>
 
