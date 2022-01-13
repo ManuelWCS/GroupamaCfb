@@ -5,7 +5,9 @@
     overflow-x: hidden;
     background-size: cover;
     background-attachment: fixed;
-    background-image: url("../../assets/Habillage/nouveauFond.png");
+    /* background-image: url("../../assets/Habillage/nouveauFond.png"); */
+    background-image: url("../../assets/FONDS/FondBlanc.png");
+
     background-repeat: no-repeat;
 
     scrollbar-color: #293d6b;
