@@ -32,15 +32,20 @@ function Homepage() {
         </h4>
       </div>{/* Fin div textes*/}
       <div className="yo">
-        <h4 className="titleBanner"> A VOUS DE JOUER </h4>
+        <h4 className="titleBanner"> À VOUS DE JOUER </h4>
 
 
      
       </div>
         <Main className="mapAndForm"/>
 
-        <div className="footer">  
+        <div className="xx">
+            YO je suis le sponsorman
+            
+            </div>
 
+        <div className="footer">  
+       
         </div>
 
         <div className="footHeure">

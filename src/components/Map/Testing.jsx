@@ -489,7 +489,9 @@ function Mobile3() {
             }
           >
             <div className="instructions">
-              Entre votre âge et la compétition souhaitée pour découvrir les clubs à proximité
+              Entrez votre âge et la compétition souhaitée <br></br>
+              
+              pour découvrir les clubs à proximité
             </div>
             <form
               className="filtrationsWrapper"
@@ -533,7 +535,7 @@ function Mobile3() {
               <div className="filter">
                 <FormControl component="fieldset" required={true}>
                   <div className="inputBox">
-                    <span className="inputTitle">GENRE </span>
+                    <span className="inputTitle">VOTRE GENRE </span>
                   </div>
                   <RadioGroup
                     row
@@ -666,7 +668,7 @@ function Mobile3() {
 
               <div className="filter">
                 <div className="inputBox2">
-                  <span className="inputTitle">VILLE  </span>
+                  <span className="inputTitle">VOTRE VILLE  </span>
                 </div>
 
                 <Autocomplete
@@ -686,21 +688,7 @@ function Mobile3() {
                 />
               </div>
 
-              {/* <div className="btnContainer" id="test">
-                <button
-                  className="btnBackground"
-                  id="scrollBtn"
-                  type="submit"
-                  onClick={scrollTop}
-                >
-                  <img
-                    className="findclubBtn"
-                    alt="trouvez votre club"
-                    src={btnPicture}
-                  />
-                </button>
-              </div> */}
-
+        
               <div className="btnContainer" id="test2">
                 <button className="btnBackground" id="scrollBtn" type="submit">
                   <img
@@ -814,9 +802,11 @@ function Mobile3() {
      
 
         <div className={clubSearch.length === 0 ? "hide" : "resultatsDesktop"}>
-          <p className="resultText">
-            Il y a {clubSearch.length} résultats correspondant à votre recherche : {" "}
-          </p>     
+        <p className="resultText">
+              {clubSearch.length > 0
+                ? `Il y a ${clubSearch.length} resultat(s) correspondant à votre recherche :`
+                : "Il n'y a pas correspondant à votre recherche :"}
+            </p>
 
           {clubSearch.length !== 0
             ? clubSearch.map((clubSelected, Uniqueindex) => {

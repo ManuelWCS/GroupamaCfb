@@ -180,3 +180,14 @@ z-index: -4;
   padding:8px 8px;
   text-align: center;
 }
+
+
+/*<<<<<<<<<<<<<<<<<<<<< SPONSOR>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.xx {
+  bottom:20vh;
+  right: 43vw;
+  position: absolute;
+  z-index: 2;
+  height: 35px;
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from "react-bootstrap/Navbar";
-import headerImg from "../../assets/Header/CMfinal.png";
+import headerImg from "../../assets/Header/bandeBlanche.png";
 import miniHeader from '../../assets/Header/headerCM2.png'
 import './Header2.css'
 
