@@ -25,13 +25,14 @@ import defaultMaker from "../../assets/Marqueurs/defaultMarker.png";
 import label from "../../assets/Marqueurs/label.png";
 import markerCM2 from "../../assets/Marqueurs/CM2.png";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+import Button2 from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import data from "./data/data.json";
 import LabelMarker from "../../assets/Marqueurs/label.png";
 import marqueurG from '../../assets/Marqueurs/MarqueurG.png'
 import marqueurF from '../../assets/Marqueurs/MarqueurF.png'
+import Button from 'react-bootstrap/Button'
 
 
 function Mobile3() {
@@ -606,13 +607,13 @@ function Mobile3() {
                   </RadioGroup>
 
                   <div className="modalDiv">
-                    <Button className="modalTitle" onClick={handleOpen}>
+                    <Button2 className="modalTitle" onClick={handleOpen}>
                       <div className="btnOpenPopup">
                         <p className="btnTextPopUp">
                           Détails sur les catégories
                         </p>
                       </div>
-                    </Button>
+                    </Button2>
                     <Modal
                       open={open}
                       onClose={handleClose}
@@ -859,8 +860,12 @@ function Mobile3() {
               );
             })
             : null}
+
+
         </div>
+
       </div>
+  
 
     </div>
   );

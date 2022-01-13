@@ -842,6 +842,22 @@ body {
   font-family: var(--secondary-font);
 }
 
+/*>>>>>>>>>>>>>>>>> Container de la nouvelle recherche <<<<<<<<<<<<<<<<<<<< */*
+
+.newSearchContainer {
+  width: 150px;
+  height: 150px;
+  border:10px solid lemonchiffon;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom:110vh;
+  right: 20vw;
+}
+
+/*>>>>>>>>>>>>>>>>> BOUTON NOUVELLE RECHERCHE <<<<<<<<<<<<<<<<<<<< */
+
 
 /* <<<<<< A TRIER <<<<<<<<<<<<<<<< */
 
