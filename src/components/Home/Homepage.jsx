@@ -5,6 +5,7 @@ import Main from "../../components/Map/Testing.jsx";
 import fb from '../../assets/footer/fb.png';
 import web from '../../assets/footer/web.png';
 import yt from '../../assets/footer/youtube.png'
+import logoCA from '../../assets/CA/logobigt.png'
 
 function Homepage() {
   return (
@@ -39,8 +40,9 @@ function Homepage() {
       </div>
         <Main className="mapAndForm"/>
 
-        <div className="xx">
-            YO je suis le sponsorman
+        <div className="sponso">
+          <p className="sponsoText">Cette plateforme est soutenue par mes yekou</p>
+            <img className="logoCA" src={logoCA} alt="" />
             
             </div>
 

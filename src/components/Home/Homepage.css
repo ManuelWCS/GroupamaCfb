@@ -184,10 +184,23 @@ z-index: -4;
 
 /*<<<<<<<<<<<<<<<<<<<<< SPONSOR>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
-.xx {
+.sponso {
   bottom:20vh;
-  right: 43vw;
+  right: 38vw;
   position: absolute;
   z-index: 2;
   height: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoCA {
+  height: 100px;
+  width: 170px;
+}
+
+.sponsoText {
+  font-family: var(--secondary-font);
 }
