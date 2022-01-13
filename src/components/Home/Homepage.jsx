@@ -41,7 +41,7 @@ function Homepage() {
         <Main className="mapAndForm"/>
 
         <div className="sponso">
-          <p className="sponsoText">Cette plateforme est soutenue par mes yekou</p>
+          <p className="sponsoText">Cette plateforme est soutenue par le Crédit Agricole</p>
             <img className="logoCA" src={logoCA} alt="" />
             
             </div>
