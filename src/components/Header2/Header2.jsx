@@ -4,7 +4,8 @@ import headerImg from "../../assets/Header/bandeBlanche.png";
 import miniHeader from '../../assets/Header/headerCM2.png'
 import './Header2.css'
 // import marine from '../../assets/TEST/lui.png'
-import CA from '../../assets/TEST/CA.png'
+import CA from '../../assets/TEST/CA.png';
+import CAMobile from '../../assets/Header/CAMobile.png'
 
 function Header2() {
     return (
@@ -22,7 +23,7 @@ function Header2() {
 
         <img
             alt=""
-            src={miniHeader}
+            src={CAMobile}
             width="100%"
             height="5%"
             className="d-inline-block align-top"

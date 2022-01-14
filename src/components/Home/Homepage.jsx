@@ -11,7 +11,9 @@ function Homepage() {
   return (
     <div className="homepage">
       <div className="mainContent">
-        <div className="photo"></div>
+        <div className="photo" ></div>
+        <div className="photo2" ></div>
+
         <div className="contentWrapper">
           <h1 className="mainTitle">BIENVENUE</h1>
           <h3 className="mainDescription">

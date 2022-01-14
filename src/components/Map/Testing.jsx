@@ -493,7 +493,7 @@ function Mobile3() {
           >
             <div className="instructions">
               Entrez votre âge et la compétition souhaitée <br></br>
-              
+
               pour découvrir les clubs à proximité
             </div>
             <form
@@ -691,7 +691,7 @@ function Mobile3() {
                 />
               </div>
 
-        
+
               <div className="btnContainer" id="test2">
                 <button className="btnBackground" id="scrollBtn" type="submit">
                   <img
@@ -802,14 +802,14 @@ function Mobile3() {
           </div>
         </div>
 
-     
+
 
         <div className={clubSearch.length === 0 ? "hide" : "resultatsDesktop"}>
-        <p className="resultText">
-              {clubSearch.length > 0
-                ? `Il y a ${clubSearch.length} resultat(s) correspondant à votre recherche :`
-                : "Il n'y a pas correspondant à votre recherche :"}
-            </p>
+          <p className="resultText">
+            {clubSearch.length > 0
+              ? `Il y a ${clubSearch.length} resultat(s) correspondant à votre recherche :`
+              : "Il n'y a pas correspondant à votre recherche :"}
+          </p>
 
           {clubSearch.length !== 0
             ? clubSearch.map((clubSelected, Uniqueindex) => {
@@ -866,22 +866,22 @@ function Mobile3() {
             : null}
 
 
-         
-        </div>
-        
-            <div className={clubSearch.length === 0 ? "hide" : "newSearch"}>
 
-              <Button className="newSearchBtn" onClick={nouvelleRecherche}>
-                <p className="textNewSearch">
-                  
-                  NOUVELLE RECHERCHE
-                  </p>
-              </Button>
-            </div>
+        </div>
+
+        <div className={clubSearch.length === 0 ? "hide" : "newSearch"}>
+
+          <Button className="newSearchBtn" onClick={nouvelleRecherche}>
+            <p className="textNewSearch">
+
+              NOUVELLE RECHERCHE
+            </p>
+          </Button>
+        </div>
 
 
       </div>
-  
+
 
     </div>
   );

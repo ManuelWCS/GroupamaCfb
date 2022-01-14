@@ -25,6 +25,12 @@
   border: none !important;
   margin-top:-55px;
 }
+
+
+.photo2 {
+  display: none;
+}
+
 .contentWrapper {
   box-sizing: border-box;
 }
@@ -220,3 +226,109 @@ z-index: -4;
   padding-top: 16px;
 
 }
+
+
+
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< RESPONSIVE NOUVELLE VERSION >>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* AFFICHAGE MODE TELEPHONE */
+
+@media screen and (min-width: 315px) and (max-width: 765px) {
+
+
+  .homepage {
+    height: 280vh;
+    width: 100vw;
+    position: relative;
+  }
+  
+  .mainContent {
+    height: 55vh;
+    width: 100vw;
+    margin:0;
+    padding: 0;
+  }
+  
+  .photo {
+    display: none;
+  }
+  
+  .photo2 {
+    display: block;
+    background-color:brown;
+    height: 50vh;
+    width: 100vw;
+    background-image: url('../../assets/img/final2.png');
+    background-size: cover;
+    top:0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position: relative;
+    z-index: -1;
+    margin-top: -1px;
+  }
+  
+  .mainTitle {
+    padding-top: 0px;
+    padding-left: 0px;
+    font-size: 28px;
+    top:0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position:absolute;
+    margin-left: 24px;
+    margin-top:42px;
+  }
+/* CACHER LE TEXTE .titlePart  */
+
+  .titlePart1, .titlePart2 {
+    display: none;
+  }
+  /* .mainDescription {
+    padding-left: 0px;
+    position:absolute;
+    top:64px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    font-size: 10px;
+    margin-left: 24px;
+  } */
+  .textContainer {
+    width: 100vw;
+    height: 10vh;
+    position:absolute;
+    left: 0px;
+    right: 0px;
+    top:40vh;
+    margin-top:0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .secondTitle {
+    padding-left: 28px;
+    padding-right: 28px;
+    font-size: 14px;
+    padding-bottom: 16px;
+  }
+
+  .descriptionText {
+    padding-left: 28px;
+    padding-right: 28px;
+    font-size: 12px;
+  }
+
+
+
+
+
+  
+  }
