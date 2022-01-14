@@ -5,7 +5,7 @@ import miniHeader from '../../assets/Header/headerCM2.png'
 import './Header2.css'
 // import marine from '../../assets/TEST/lui.png'
 import CA from '../../assets/TEST/CA.png';
-import CAMobile from '../../assets/Header/CAMobile.png'
+import CAMobile from '../../assets/Header/MobileVendredi.png'
 
 function Header2() {
     return (

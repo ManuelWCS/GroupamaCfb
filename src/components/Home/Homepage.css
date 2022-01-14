@@ -4,7 +4,7 @@
 }
 
 .mainContent {
-  height: 80vh;
+  height: 250px;
   margin: 0;
   padding: 0;
   font-size: 0;
@@ -238,13 +238,13 @@ z-index: -4;
 
 
   .homepage {
-    height: 280vh;
+    height: 1500px;
     width: 100vw;
     position: relative;
   }
   
   .mainContent {
-    height: 55vh;
+    height: 235px;   
     width: 100vw;
     margin:0;
     padding: 0;
@@ -256,31 +256,36 @@ z-index: -4;
   
   .photo2 {
     display: block;
-    height: 50vh;
+    height: 250px;
     width: 100vw;
-    background-image: url('../../assets/img/final2.png');
+    background-image: url('../../assets/img/bannerMobileFinal.png');
     background-size: cover;
     top:0px;
     bottom: 0px;
     left: 0px;
     right: 0px;
     position: relative;
-    z-index: -1;
+    z-index: -5;
     margin-top: -1px;
     background-position:  center;
+  }
+
+  .contentWrapper {
+    width: 100vw;
+    height: 250px;
   }
   
   .mainTitle {
     padding-top: 0px;
     padding-left: 0px;
-    font-size: 28px;
+    font-size: 18px;
     top:0px;
     bottom: 0px;
     left: 0px;
     right: 0px;
     position:absolute;
     margin-left: 24px;
-    margin-top:42px;
+    margin-top:12px;
   }
 /* CACHER LE TEXTE .titlePart  */
 
@@ -290,20 +295,21 @@ z-index: -4;
   .mainDescription {
     padding-left: 0px;
     position:absolute;
-    top:64px;
+    top:28px;
     bottom: 0px;
     left: 0px;
     right: 0px;
     font-size: 10px;
     margin-left: 24px;
+    color: white;
   }
   .textContainer {
     width: 100vw;
-    height: 10vh;
+    height: 200px;
     position:absolute;
     left: 0px;
     right: 0px;
-    top:40vh;
+    top: 90px;
     margin-top:0px;
     margin-right: 0px;
     margin-left: 0px;
@@ -318,14 +324,120 @@ z-index: -4;
     padding-right: 28px;
     font-size: 14px;
     padding-bottom: 16px;
+    top:10px;
   }
 
   .descriptionText {
     padding-left: 28px;
     padding-right: 28px;
     font-size: 12px;
+    top:10px;
     
   }
+  
+  .yo {
+    display: block;
+    width: 100vw;
+    margin-top: 32px;
+    height: 75px;
+    position:absolute;
+  
+  }
+
+  .titleBanner {
+    position: absolute;
+    padding-top: 0px;
+    padding-left: 0px;
+    font-size:16px;
+    top:8%;
+    right: 0%;
+    left: 30%;
+    bottom: 20px;
+    padding-bottom: 16px;
+  }
+
+  .fullPage {
+    width: 100vw;
+    height: 2500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .mobiletitleContainer {
+    display: none;
+  }
+
+/* Container qui engloble tout */
+  .subContainer {
+    width: 90vw;
+    height: 500px;
+    max-width: max-content;
+    position:absolute;
+    padding-top:120px;
+    margin-top:0px;
+  }
+
+/* Englobe la carte  */
+.mapContainer {
+  display: block;
+  position:absolute;
+  width: 100vw;
+  height: 50px;
+}
+
+/* Style quand il n'y a pas de recherche */
+
+.mapNoSearch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 500px;
+}
+/* Carte leaflet  */
+#map {
+  height: 350px;
+  width: 90vw;
+  margin-right:16px;
+  display: none;
+}
+
+.markerLegend2 {
+  width: 90vw;
+  height: 150px;
+  padding-right: 1vw;
+  padding-left: 1vw;
+  display: none;
+
+}
+
+/* Ancienne légende à cacher */
+.legendMapMobile {
+  display: none;
+}
+
+.filtersNoSearch {
+  width: 90vw;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 95vw;
+}
+
+.instructions {
+  width: 90vw;
+  height: 175px;
+  padding-top:86px;
+  font-size:18px;
+  margin-bottom:2vh;
+}
+
+
+  
 
 
 

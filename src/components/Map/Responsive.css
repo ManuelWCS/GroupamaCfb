@@ -302,9 +302,9 @@
     width: 225px;
   }
 
-  .filtersNoSearch {
+  /* .filtersNoSearch {
     width: 240px;
-  }
+  } */
 
   html,
   body {
@@ -315,6 +315,7 @@
      /* background-image: url("../../assets/Habillage/Fond2.svg");  */
      background-image: url('../../assets/FONDS/Mobile.svg');
     background-repeat: no-repeat;
+    z-index:1;
   }
 
   .cardResult {
