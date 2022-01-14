@@ -328,6 +328,11 @@ function Mobile3() {
         </h1>
       </div>
       <div className="subContainer">
+      <div className="instructions">
+              Entrez votre âge et la compétition souhaitée <br></br>
+
+              pour découvrir les clubs à proximité
+            </div>
         <main className="mapContainer">
           <div
             className={
@@ -479,23 +484,14 @@ function Mobile3() {
 
 
         <div className="legendAndForm">
-          <section className="legendMapMobile">
-            <p className="legend">
-              Entrez votre âge et la compétition souhaitée pour découvrir les
-              clubs à proximité !{" "}
-            </p>
-          </section>
+          
 
           <div
             className={
               clubSearch.length === 0 ? "filtersNoSearch" : "filtrations"
             }
           >
-            <div className="instructions">
-              Entrez votre âge et la compétition souhaitée <br></br>
-
-              pour découvrir les clubs à proximité
-            </div>
+           
             <form
               className="filtrationsWrapper"
               onSubmit={(e) => searchClub(e)}

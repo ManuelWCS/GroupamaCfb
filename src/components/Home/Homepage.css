@@ -104,9 +104,9 @@ font-weight: bolder;
   background-image: url('../../assets/img/banner.png');
   background-position: 55% 60%;
   background-size: cover;
-  z-index: -5;
+  z-index: -8;
   margin-top:44px;
-  position: absolute;
+  position:absolute;
 
 }
 
@@ -238,7 +238,8 @@ z-index: -4;
 
 
   .homepage {
-    height: 1500px;
+    height: 1900px;
+    max-height: max-content;
     width: 100vw;
     position: relative;
   }
@@ -332,6 +333,7 @@ z-index: -4;
     padding-right: 28px;
     font-size: 12px;
     top:10px;
+    line-height: 1.6;
     
   }
   
@@ -358,7 +360,7 @@ z-index: -4;
 
   .fullPage {
     width: 100vw;
-    height: 2500px;
+    height: max-content;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -400,9 +402,9 @@ z-index: -4;
 /* Carte leaflet  */
 #map {
   height: 350px;
-  width: 90vw;
-  margin-right:16px;
-  display: none;
+  width: 80vw;
+  margin-right:48px;
+  margin-left:16px;
 }
 
 .markerLegend2 {
@@ -410,8 +412,17 @@ z-index: -4;
   height: 150px;
   padding-right: 1vw;
   padding-left: 1vw;
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 48px;
 
+
+}
+
+/* On va volontairement descendre l'élément pour laisser la place à la carte  */
+.legendAndForm {
+  margin-top:500px;
 }
 
 /* Ancienne légende à cacher */
@@ -430,11 +441,28 @@ z-index: -4;
 
 .instructions {
   width: 90vw;
-  height: 175px;
-  padding-top:86px;
-  font-size:18px;
-  margin-bottom:2vh;
+  height: 48px;
+  font-size:14px;
 }
+
+
+/* Gerer l'affichage des résultats une fois qu'on a rentré les inputs */
+.filtrations{}
+
+.resultats {
+
+}
+
+
+/* FOOTER */
+
+.sponso {
+  bottom: 116px;
+}
+.sponsoText {
+  font-size:12px;
+}
+
 
 
   
