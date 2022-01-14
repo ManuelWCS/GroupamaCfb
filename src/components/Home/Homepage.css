@@ -310,7 +310,7 @@ z-index: -4;
     position:absolute;
     left: 0px;
     right: 0px;
-    top: 90px;
+    top: 110px;
     margin-top:0px;
     margin-right: 0px;
     margin-left: 0px;
@@ -340,7 +340,7 @@ z-index: -4;
   .yo {
     display: block;
     width: 100vw;
-    margin-top: 32px;
+    margin-top: 62px;
     height: 75px;
     position:absolute;
   
@@ -443,15 +443,16 @@ z-index: -4;
   width: 90vw;
   height: 48px;
   font-size:14px;
+  margin-top: 16px;
 }
 
 
 /* Gerer l'affichage des résultats une fois qu'on a rentré les inputs */
-.filtrations{}
+/* .filtrations{}
 
 .resultats {
 
-}
+} */
 
 
 /* FOOTER */
