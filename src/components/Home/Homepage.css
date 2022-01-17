@@ -72,8 +72,8 @@
   width: 90vw;
   height: 130px;
   box-sizing: border-box;
-  margin-top:-80px;
   position: absolute;
+  top: 69.5vh;
 
 } 
 
@@ -98,15 +98,14 @@ font-weight: bolder;
 
 .yo {
   display: block;
-  margin:auto;
   height: 120px;
   width: 100%;
   background-image: url('../../assets/img/banner.png');
   background-position: 55% 60%;
   background-size: cover;
-  z-index: -8;
-  margin-top:44px;
+  z-index: -1;
   position:absolute;
+  top:85vh;
 
 }
 
@@ -183,8 +182,10 @@ z-index: -4;
   color:gray;
   font-size: 18px;
   width: 500px;
-  padding:8px 8px;
   text-align: center;
+  margin-top:-48px;
+  margin-left: -48px;
+
 }
 
 
@@ -377,8 +378,7 @@ z-index: -4;
     height: 500px;
     max-width: max-content;
     position:absolute;
-    padding-top:120px;
-    margin-top:0px;
+    top: 100vh;
   }
 
 /* Englobe la carte  */
