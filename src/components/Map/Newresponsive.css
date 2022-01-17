@@ -210,7 +210,7 @@
 
 }
 
-@media screen and (min-width: 1366px) and (min-height: 768px) {
+@media screen and (min-width: 1366px) {
   .mainTitle {
     font-size: 5rem;
     color: var(--red-color);
@@ -412,5 +412,132 @@
   
 
   
+
+}
+
+
+
+
+
+
+
+
+
+/* VERSION MOBILE  */
+
+
+@media screen and (max-width:767px) {
+
+    html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-size: cover;
+    background-attachment: fixed;
+    /* background-image: url("../../assets/Habillage/Fond2.svg"); */
+    /* background-image: url("../../assets/FONDS/fondBlanc.png"); */
+    z-index:1;  
+    background-repeat: no-repeat;
+  }
+    .mainTitle {
+        font-family: var(--main-font);
+        padding-top: 64px;
+        padding-left: 64px;
+        color: var(--red-color);
+        font-size: 48px;
+        height: 50px;
+      }
+
+      .mainDescription {
+        padding-left: 64px;
+        font-family: var(--main-font);
+        font-size: 18px;
+        color: white;
+        height: 50px;
+      }
+
+      .photo {
+          display: none;
+      }
+
+
+  .photo2 {
+    display: block;
+    height: 250px;
+    width: 100vw;
+    background-image: url('../../assets/img/bannerMobileFinal.png');
+    background-size: cover;
+    top:0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position: relative;
+    z-index: -5;
+    margin-top: -1px;
+    background-position:  center;
+  }
+
+      .textContainer {
+        width: 90vw;
+        height: 130px;
+        box-sizing: border-box;
+        position: absolute;
+        top: 69.5vh;
+      }
+      .secondTitle {
+        font-family: "Nuvel";
+        padding-left: 64px;
+        padding-top: 18px;
+        font-size: 20px;
+        color: var(--main-color);
+      }
+      .descriptionText {
+        font-family: "Century Gothic";
+        padding-left: 64px;
+        padding-right: 64px;
+        font-size: 16px;
+        color: gray;
+        font-weight: bolder;
+      }
+
+      .contentWrapper {
+        width: 100vw;
+        height: 100px;
+      }
+      
+
+      .yo {
+        display: block;
+        height: 80px;
+        width: 100%;
+        background-image: url("../../assets/img/banner.png");
+        background-position: 55% 60%;
+        background-size: cover;
+        z-index: -1;
+        position: absolute;
+        top: 35vh;
+      }
+
+      /* .yo {
+        display: block;
+        width: 100vw;
+        margin-top: 62px;
+        height: 75px;
+        position:absolute;
+      
+      } */
+      .titleBanner {
+        position: absolute;
+        padding-top: 0px;
+        padding-left: 0px;
+        font-family: 'Nuvel';
+        font-size:16px;
+        top:8%;
+        right: 0%;
+        left: 30%;
+        bottom: 20px;
+        padding-bottom: 16px;
+        color:white;
+      }
 
 }

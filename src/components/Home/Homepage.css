@@ -216,10 +216,6 @@ z-index: -4;
     background-position:  center;
   }
 
-  .contentWrapper {
-    width: 100vw;
-    height: 250px;
-  }
   
   .mainTitle {
     padding-top: 0px;
@@ -282,14 +278,7 @@ z-index: -4;
     
   }
   
-  .yo {
-    display: block;
-    width: 100vw;
-    margin-top: 62px;
-    height: 75px;
-    position:absolute;
   
-  }
 
   .titleBanner {
     position: absolute;
