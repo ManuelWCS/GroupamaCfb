@@ -100,12 +100,6 @@ body {
 
 /* Partie styles de la carte Leafet */
 
-.mapContainer {
-  display: block;
-  position: absolute;
-  width: 55vw;
-
-}
 
 
 
@@ -201,13 +195,13 @@ body {
 
 }
 
-.mapNoSearch {
+/* .mapNoSearch {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 55vw;
 
-}
+} */
 
 .titleMapContainer {
   display: none;

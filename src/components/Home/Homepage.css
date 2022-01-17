@@ -1,5 +1,5 @@
 .homepage {
-  height: 250vh;
+  height: 280vh;
   position:relative;
 }
 
@@ -136,7 +136,7 @@ z-index: -4;
 /*<<<<<<<<<<<<<<<<<<<<< SPONSOR>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 .sponso {
-  bottom:13vh;
+  bottom:17vh;
   right: 30vw;
   left: 30vw;
   position: absolute;

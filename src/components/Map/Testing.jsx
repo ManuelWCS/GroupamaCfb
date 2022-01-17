@@ -324,11 +324,10 @@ function Mobile3() {
 
       
       <div className="subContainer">
-      <div className="instructions">
-              Entrez votre âge et la compétition souhaitée <br></br>
-
-              pour découvrir les clubs à proximité
-            </div>
+      <span className={clubSearch > 0 ? "hide" : "instructions"}>
+              Entrez votre âge et la compétition souhaitée pour découvrir les clubs à proximité
+            </span>
+  
         <main className="mapContainer">
           <div
             className={
@@ -446,6 +445,32 @@ function Mobile3() {
                   </a>
                 </Popup>
               </Marker>
+
+              <Marker position={[47.366380, 0.679130]} icon={marqueurBanque}>
+                <Popup className="banquePopUp">
+                  <a href="https://www.credit-agricole.fr/">
+                    <h3>Banque du Crédit Agricole</h3>
+                  </a>
+                </Popup>
+              </Marker>
+
+              <Marker position={[47.600590, 1.320090]} icon={marqueurBanque}>
+                <Popup className="banquePopUp">
+                  <a href="https://www.credit-agricole.fr/">
+                    <h3>Banque du Crédit Agricole</h3>
+                  </a>
+                </Popup>
+              </Marker>
+
+              <Marker position={[50.321560, 3.380480]} icon={marqueurBanque}>
+                <Popup className="banquePopUp">
+                  <a href="https://www.credit-agricole.fr/">
+                    <h3>Banque du Crédit Agricole</h3>
+                  </a>
+                </Popup>
+              </Marker>
+
+
             </MapContainer>
 
             <div className="markerLegend2">
@@ -705,7 +730,7 @@ function Mobile3() {
             <Box id="box" sx={style2}>
               {!formData.age || !formData.type || !formData.city ? (
                 <div>
-                  <p className="textNoResults"> Aucun résultat pour votre recherhe !</p>
+                  <p className="textNoResults"> Aucun résultat pour votre recherche !</p>
                   <p className="btnNoResults" onClick={handleClosePop}>
                     FERMER
                   </p>

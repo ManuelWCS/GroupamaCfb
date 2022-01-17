@@ -16,7 +16,7 @@ function Homepage() {
         <div className="contentWrapper">
           <h1 className="mainTitle">BIENVENUE</h1>
           <h3 className="mainDescription">
-            TROUVEZ UN CLUB PRES DE CHEZ VOUS !
+            TROUVEZ UN CLUB PRÈS DE CHEZ VOUS !
           </h3>
         </div>{" "}
         {/* fin contentWrapper */}

@@ -1,4 +1,4 @@
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 1024px) {
   .mainTitle {
     font-family: var(--main-font);
     padding-top: 64px;
@@ -66,8 +66,9 @@
     font-size: 18px;
     width: 500px;
     text-align: center;
-    margin-top:-48px;
+    margin-top:-68px;
     margin-left: -48px;
+    
   
   }
 
@@ -141,6 +142,68 @@
     bottom: 5vh;
     right: -42.8vw;
   }
+
+  .resultatsDesktop {
+    display: flex;
+    width: 45vw;
+    height: 75vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* position: absolute; */
+    margin-top:-5vh;
+    left:-15vw;
+  }
+
+  .filtersNoSearch {
+    width: 350px;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-left: 10vw;
+    justify-content: center;
+    align-items: center;  
+    right: -20vw;
+  }
+
+
+  /* .mapContainer {
+    display: block;
+    position: absolute;
+    width: 5vw;
+  
+  
+  } */
+  .mapNoSearch {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    top: 8vh;
+    right: 15vw;
+    position: absolute;
+    width: 60vw;
+    max-width: max-content;
+
+  }
+
+  .maplegendWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: -3vw;
+    margin-top:16px;
+
+   
+  }
+
+
   
 
 
@@ -163,6 +226,7 @@
     font-size: 1.5rem;
     font-family: "Nuvel";
     color: white;
+    padding-right: 32px;
   }
 
   .textContainer {
@@ -224,10 +288,15 @@
     font-family: var(--secondary-font);
     color:gray;
     font-size: 1.5rem;
-    width: 600px;
-    margin-top:-58px;
-    text-align:left;
-    height: fit-content;
+    margin-top:-88px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    left: 0vw;
+    right: 0vw;
+    padding-bottom: 32px;
+    margin-bottom: 32px;
   }
 
   .filtersNoSearch {
@@ -238,7 +307,7 @@
     width: 250px;
     position:absolute;
     top:7vh;
-    right: -15vw;
+    right: -22vw;
   }
   .inputBox {
     font-family: var(--main-font);
@@ -265,6 +334,7 @@
     font-size: 1.2rem;
     font-family: "Nuvel";
     text-align: center;
+    top: -1vh;
   }
   .newSearch {
     width: 250px;
@@ -273,8 +343,8 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom:-48vh;
-    left: 10vw;
+    bottom:-52vh;
+    left: -3vw;
   
   }
   
@@ -286,8 +356,38 @@
     border-radius: 12px;
     position: absolute;
     bottom: 5vh;
-    right: -42.8vw;
+    right: 3vw;
   }
+
+  .resultatsDesktop {
+    display: flex;
+    width: 45vw;
+    height: 80vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    margin-top:5vh;
+    left: 2vw;
+    margin-left:3vw;
+  }
+
+  .mapContainer {
+    display: block;
+    position: absolute;
+    width: 55vw;
+    margin-right: 5vw;
+    margin-left: 2vw;
+  
+  }
+
+  .mapNoSearch {
+
+  }
+
+  
+
   
 
 }
