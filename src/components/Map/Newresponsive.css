@@ -307,7 +307,7 @@
     width: 250px;
     position:absolute;
     top:7vh;
-    right: -22vw;
+    right: -15vw;
   }
   .inputBox {
     font-family: var(--main-font);
@@ -356,7 +356,7 @@
     border-radius: 12px;
     position: absolute;
     bottom: 5vh;
-    right: 3vw;
+    right: -30vw;
   }
 
   .resultatsDesktop {
@@ -383,7 +383,30 @@
   }
 
   .mapNoSearch {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    top: 8vh;
+    right: 25vw;
+    position: absolute;
+    width: 60vw;
+    max-width: max-content;
 
+  }
+
+  .maplegendWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: -15vw;
+    margin-top:6rem;
+
+   
   }
 
   
