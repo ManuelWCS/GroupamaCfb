@@ -1,5 +1,5 @@
 .homepage {
-  height: 280vh;
+  height: 250vh;
   position:relative;
 }
 
@@ -35,20 +35,15 @@
   box-sizing: border-box;
 }
 
-.mainTitle {
+/* .mainTitle {
   font-family: var(--main-font);
   padding-top: 64px;
   padding-left: 64px;
   color: var(--red-color);
   font-size: 48px;
-}
+} */
 
-.mainDescription {
-  padding-left: 64px;
-  font-family: var(--main-font);
-  font-size: 18px;
-  color: white;
-}
+
 
 .imageWrapper {
   display: flex;
@@ -68,56 +63,14 @@
   position: absolute;
 }
 
-.textContainer {  
-  width: 90vw;
-  height: 130px;
-  box-sizing: border-box;
-  position: absolute;
-  top: 69.5vh;
-
-} 
-
-.secondTitle {
-  font-family: 'Nuvel';
-  padding-left: 64px;
-  padding-top:18px;
-  font-size:20px;
-  color:var(--main-color);
-}
-
-.descriptionText {
-font-family: 'Century Gothic';  
-padding-left: 64px;
-padding-right: 64px;
-font-size: 16px;
-color: gray;
-font-weight: bolder;
-
-}
 
 
-.yo {
-  display: block;
-  height: 120px;
-  width: 100%;
-  background-image: url('../../assets/img/banner.png');
-  background-position: 55% 60%;
-  background-size: cover;
-  z-index: -1;
-  position:absolute;
-  top:85vh;
 
-}
 
-.titleBanner {
-  font-family: 'Nuvel';
-  font-size: 32px;
-  color: white;
-  padding-top:54px;
-  padding-left: 116px;
-  position: absolute;
 
-}
+
+
+
 
 .formContent {
   margin-top: 250px;
@@ -177,22 +130,13 @@ z-index: -4;
   align-content: center;
   padding-top:8px;
 }
-.instructions {
-  font-family: var(--secondary-font);
-  color:gray;
-  font-size: 18px;
-  width: 500px;
-  text-align: center;
-  margin-top:-48px;
-  margin-left: -48px;
 
-}
 
 
 /*<<<<<<<<<<<<<<<<<<<<< SPONSOR>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 .sponso {
-  bottom:16vh;
+  bottom:13vh;
   right: 30vw;
   left: 30vw;
   position: absolute;

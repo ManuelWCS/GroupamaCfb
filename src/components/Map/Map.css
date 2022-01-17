@@ -290,18 +290,8 @@ body {
   
 }
 
-.filtersNoSearch {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 250px;
-  position:absolute;
-}
 
-.filter {
-  padding: 4px 4px 4px 4px;
-}
+
 
 
 
@@ -318,22 +308,7 @@ body {
 
 /* filtrations wrapper est le conteneur de tout le FORM  */
 
-.inputBox {
-  font-family: var(--main-font);
-  height: 35px;
-  border-radius: 22px;
-  width: 255px;
-  left:0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: var(--main-color);
-  margin-left: -1vw;
-  margin-top:4px;
-  margin-bottom: 4px;
-  padding-top:2px;
-}
+
 
 .inputBox2 {
   font-family: var(--main-font);
@@ -859,28 +834,7 @@ body {
 
 /*>>>>>>>>>>>>>>>>> Container de la nouvelle recherche <<<<<<<<<<<<<<<<<<<< */*
 
-.newSearch {
-  width: 250px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  bottom:-48vh;
-  left: 10vw;
 
-}
-
-.newSearchBtn {
-  height: 50px;
-  width: 250px;
-  border:4px solid rgba(46, 46, 46, 0.151);
-  background-color:rgba(128, 128, 128, 0.596);
-  border-radius: 12px;
-  position: absolute;
-  bottom: 5vh;
-  right: -42.8vw;
-}
 
 .textNewSearch {
   font-family: var(--secondary-font);

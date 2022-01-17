@@ -33,8 +33,9 @@ import LabelMarker from "../../assets/Marqueurs/label.png";
 import marqueurG from '../../assets/Marqueurs/MarqueurG.png'
 import marqueurF from '../../assets/Marqueurs/MarqueurF.png'
 import Button from 'react-bootstrap/Button'
-import agence from '../../assets/CA/agence.png'
-import labelCA from '../../assets/CA/labelCA.png'
+import agence from '../../assets/CA/agence.png';
+import labelCA from '../../assets/CA/labelCA.png';
+import '../Map/Newresponsive.css'
 
 
 function Mobile3() {
@@ -321,12 +322,7 @@ function Mobile3() {
   return (
     <div className="fullPage" id="top">
 
-      <div className="mobiletitleContainer">
-        <h1 className="titlePart1">Trouvez un club près</h1>
-        <h1 className="titlePart2">
-          de chez <strong className="strong"> vous !</strong>{" "}
-        </h1>
-      </div>
+      
       <div className="subContainer">
       <div className="instructions">
               Entrez votre âge et la compétition souhaitée <br></br>
@@ -815,7 +811,7 @@ function Mobile3() {
                     <span className="titleCard">{clubSelected.NomClub}</span>
                   </div>
 
-                  <div className="columnContainer">
+                  <div className="columnContainer"> 
                     <div className="column1">
                       <div className="logo1"></div>
                       <div className="logo2"></div>

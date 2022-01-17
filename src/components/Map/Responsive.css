@@ -47,15 +47,6 @@
     flex-direction: column;
   }
 
-  .subContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    /* align-items: stretch; */
-    width: 85vw;
-    height: 50vh;
-    top: 50vh;
-  }
 
   .mapLeaflet {
     height: 75vh;
@@ -282,12 +273,7 @@
 @media screen and (min-width: 1240px) {
   
 
-  .resultText {
-    color: var(--main-color);
-    font-size: 16px;
-    font-family: "Nuvel";
-    text-align: center;
-  }
+
 }
 
 /* Medias queries pour petits téléphones  */
