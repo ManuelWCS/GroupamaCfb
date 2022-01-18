@@ -29,7 +29,7 @@ import Button2 from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import data from "./data/data.json";
-import LabelMarker from "../../assets/Marqueurs/label.png";
+import LabelMarker from "../../assets/CA/labelCA.png";
 import marqueurG from '../../assets/Marqueurs/MarqueurG.png'
 import marqueurF from '../../assets/Marqueurs/MarqueurF.png'
 import Button from 'react-bootstrap/Button'
@@ -147,7 +147,7 @@ function Mobile3() {
   });
 
   const clubMarqueurLabel = L.icon({
-    iconSize: [40, 50],
+    iconSize: [57, 58],
     iconAnchor: [13.5, 47],
     iconUrl: LabelMarker,
   });
