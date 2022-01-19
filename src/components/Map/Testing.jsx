@@ -153,7 +153,7 @@ function Mobile3() {
   });
 
   const marqueurBanque = L.icon({
-    iconSize: [57, 70],
+    iconSize: [38, 53],
     iconAnchor: [13.5, 47],
     iconUrl: agenceGroupama,
   });
