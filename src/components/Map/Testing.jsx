@@ -35,7 +35,8 @@ import marqueurF from '../../assets/Marqueurs/MarqueurF.png'
 import Button from 'react-bootstrap/Button'
 import agence from '../../assets/CA/agence.png';
 import labelCA from '../../assets/CA/labelCA.png';
-import '../Map/Newresponsive.css'
+import '../Map/Newresponsive.css';
+import agenceGroupama from '../../assets/img/agenceGroupama.png'
 
 
 function Mobile3() {
@@ -490,8 +491,8 @@ function Mobile3() {
 
               </div>
               <div className="markerContainer">
-                <img className="legendMarker1" src={agence}></img>
-                <span className="markerDescription">Crédit Agricole</span>
+                <img className="legendMarkerG" src={agenceGroupama}></img>
+                <span className="markerDescription"> Groupama</span>
 
               </div>
 

@@ -5,6 +5,7 @@ import fb from "../../assets/footer/fb.png";
 import web from "../../assets/footer/web.png";
 import yt from "../../assets/footer/youtube.png";
 import Logo from '../../assets/img/GroupamaLogo.png'
+import twi from '../../assets/img/twitter.png'
 function Homepage() {
   return (
     <div className="homepage">
@@ -42,7 +43,7 @@ function Homepage() {
         <img className="logoGroupama" src={Logo} alt="" />
         <div className="sponsoLinks">
           <a
-            href="https://www.facebook.com/CreditAgricole"
+            href="https://www.facebook.com/groupama"
             target="_blank"
             rel="noreferrer"
           >
@@ -50,7 +51,7 @@ function Homepage() {
           </a>
 
           <a
-            href="https://www.youtube.com/c/Cr%C3%A9ditAgricoleM%C3%A9dia"
+            href="https://www.youtube.com/channel/UCcVU-JnuCbANGOl4vGcGpEg"
             target="_blank"
             rel="noreferrer"
           >
@@ -58,11 +59,19 @@ function Homepage() {
           </a>
 
           <a
-            href="https://www.credit-agricole.fr/"
+            href="https://www.groupama.fr/"
             target="_blank"
             rel="noreferrer"
           >
             <img src={web} alt="" className="LinkCA" />
+          </a>
+
+          <a
+            href="https://twitter.com/GroupeGroupama"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={twi} alt="" className="LinkCA" />
           </a>
         </div>
       </div>
@@ -70,7 +79,7 @@ function Homepage() {
       <div className="footHeure">
         <div className="logos">
           <a
-            href="https://www.facebook.com/LCFofficiel/?ref=bookmarks"
+            href="https://www.facebook.com/groupama"
             target="_blank"
             rel="noreferrer"
           >
