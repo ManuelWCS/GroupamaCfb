@@ -3,28 +3,6 @@
 }
 
 
-
-.header {
-    position:relative;
-    top:0vh;
-    right: 0vw;
-    left: 0vw;
-    bottom: 0vw;
-    z-index: 1;
-}
-.bigHeader {
-    height: 18vh;
-    position:relative;
-    top: 0vh;
-    right: 3.5vw;
-    left: 3.5vw;
-    bottom: 0vw;
-    width: 92.6vw;
-    z-index:1;
-}
-
-
-
 @media screen and (max-width:672px) {
     .bigHeader {
         display: none;
