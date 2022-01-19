@@ -1,12 +1,10 @@
 import React from "react";
 import "./Homepage.css";
-import Header from "../header/Header.jsx";
 import Main from "../../components/Map/Testing.jsx";
 import fb from "../../assets/footer/fb.png";
 import web from "../../assets/footer/web.png";
 import yt from "../../assets/footer/youtube.png";
-import logoCA from "../../assets/CA/logobigt.png";
-
+import Logo from '../../assets/img/GroupamaLogo.png'
 function Homepage() {
   return (
     <div className="homepage">
@@ -28,8 +26,7 @@ function Homepage() {
           541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
         </h2>
         <h4 className="descriptionText">
-          La Ligue Centre-Val de Loire de Football et son partenaire Crédit
-          Agricole vous proposent cette plateforme afin de découvrir l'ensemble
+          La Ligue Centre-Val de Loire de Football et son partenaire Groupama vous proposent cette plateforme afin de découvrir l'ensemble
           des clubs de notre Région !
         </h4>
       </div>
@@ -40,9 +37,9 @@ function Homepage() {
       <Main className="mapAndForm" />
       <div className="sponso">
         <p className="sponsoText">
-          Cette plateforme est soutenue par le Crédit Agricole
+          Cette plateforme est soutenue par Groupama
         </p>
-        <img className="logoCA" src={logoCA} alt="" />
+        <img className="logoGroupama" src={Logo} alt="" />
         <div className="sponsoLinks">
           <a
             href="https://www.facebook.com/CreditAgricole"

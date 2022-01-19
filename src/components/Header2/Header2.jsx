@@ -1,11 +1,9 @@
 import React from 'react'
 import Navbar from "react-bootstrap/Navbar";
-import headerImg from "../../assets/Header/bandeBlanche.png";
-import miniHeader from '../../assets/Header/headerCM2.png'
-import './Header2.css'
-// import marine from '../../assets/TEST/lui.png'
-import CA from '../../assets/TEST/CA.png';
-import CAMobile from '../../assets/Header/MobileVendredi.png'
+import './Header2.css';
+import LargeGroupama from '../../assets/Header/HeaderGroupama.png';
+import SmallGroupama from '../../assets/Header/mobileGroupama.png';
+
 
 function Header2() {
     return (
@@ -14,7 +12,7 @@ function Header2() {
         <Navbar.Brand href="./">
           <img
             alt=""
-            src={CA}
+            src={LargeGroupama}
             width="100%"
             height="100%"
             className="d-inline-block align-top"
@@ -23,7 +21,7 @@ function Header2() {
 
         <img
             alt=""
-            src={CAMobile}
+            src={SmallGroupama}
             width="100%"
             height="5%"
             className="d-inline-block align-top"
