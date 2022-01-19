@@ -33,7 +33,6 @@ import LabelMarker from "../../assets/CA/labelCA.png";
 import marqueurG from '../../assets/Marqueurs/MarqueurG.png'
 import marqueurF from '../../assets/Marqueurs/MarqueurF.png'
 import Button from 'react-bootstrap/Button'
-import agence from '../../assets/CA/agence.png';
 import labelCA from '../../assets/CA/labelCA.png';
 import '../Map/Newresponsive.css';
 import agenceGroupama from '../../assets/img/agenceGroupama.png'
@@ -154,9 +153,9 @@ function Mobile3() {
   });
 
   const marqueurBanque = L.icon({
-    iconSize: [57, 58],
+    iconSize: [57, 70],
     iconAnchor: [13.5, 47],
-    iconUrl: agence,
+    iconUrl: agenceGroupama,
   });
 
 
@@ -439,38 +438,13 @@ function Mobile3() {
                 </Popup>
               </Marker>
 
-              <Marker position={[47.911640, 1.969530]} icon={marqueurBanque}>
+              <Marker position={[47.845240, 1.924700]} icon={marqueurBanque}>
                 <Popup className="banquePopUp">
-                  <a href="https://www.credit-agricole.fr/">
-                    <h3>Banque du Crédit Agricole</h3>
+                  <a href="https://groupama.fr/">
+                    <h3>Groupama</h3>
                   </a>
                 </Popup>
               </Marker>
-
-              <Marker position={[47.366380, 0.679130]} icon={marqueurBanque}>
-                <Popup className="banquePopUp">
-                  <a href="https://www.credit-agricole.fr/">
-                    <h3>Banque du Crédit Agricole</h3>
-                  </a>
-                </Popup>
-              </Marker>
-
-              <Marker position={[47.600590, 1.320090]} icon={marqueurBanque}>
-                <Popup className="banquePopUp">
-                  <a href="https://www.credit-agricole.fr/">
-                    <h3>Banque du Crédit Agricole</h3>
-                  </a>
-                </Popup>
-              </Marker>
-
-              <Marker position={[50.321560, 3.380480]} icon={marqueurBanque}>
-                <Popup className="banquePopUp">
-                  <a href="https://www.credit-agricole.fr/">
-                    <h3>Banque du Crédit Agricole</h3>
-                  </a>
-                </Popup>
-              </Marker>
-
 
             </MapContainer>
 
