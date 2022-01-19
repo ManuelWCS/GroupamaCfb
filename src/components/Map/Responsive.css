@@ -13,7 +13,7 @@
 
     scrollbar-color: #293d6b;
     scrollbar-width: 8px;
-    z-index: 1;
+    z-index: 3;
   }
 
   body::-webkit-scrollbar {

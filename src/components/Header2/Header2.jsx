@@ -14,7 +14,7 @@ function Header2() {
             alt=""
             src={LargeGroupama}
             width="100%"
-            height="100%"
+            height="50%"
             className="d-inline-block align-top"
             className="bigHeader"
           />
