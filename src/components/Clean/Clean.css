@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+@import url("../Map/fonts.css");
+
+/* VARIABLES CSS CHARTE GRAPHIQUE  */
+
+:root {
+  --main-color: #3586c2;
+  --secondary-color: #293d6b;
+  --red-color: #c1272d;
+  --main-font: 'Nuvel';
+  --secondary-font:'Century Gothic';
+}
+
+
+@media screen and (max-width: 767px) {
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+      background-size: cover;
+      background-attachment: fixed;
+      z-index: 1;
+      background-repeat: no-repeat;
+      background-image: url('../../assets/FONDS/Mobile.svg')
+    }
+
+    .BlocTel {
+        display: block;
+        height: max-content;        
+    }
+
+    .BlocPresentation {
+        display: block;
+        height: 150px;
+        width: 100vw;
+        margin:auto;
+        margin-top:-1px;      
+        position: relative;
+        z-index: -5;
+        background-color: chocolate;
+    }
+
+    .mainPicture {
+        background-size: cover;
+        background-position: center;
+        background-image: url('../../assets/img/bannerMobileFinal.png');
+        height: 250px;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background-color:coral ;
+    }
+
+    .mainTitle {
+        font-family: var(--main-font); 
+        color: var(--red-color);
+        font-size: 24px;
+        height: max-content;
+        padding-left: 24px;
+        padding-top:8px;
+        margin-top:-250px;
+      }
+      
+    /* Titre "Trouvez un club près de chez vous*/
+      .mainDescription {
+        padding-left: 24px;
+        font-family: var(--main-font);
+        font-size: 10px;
+        color: white;
+        height: max-content;
+      }
+
+      .BlocTexte {
+          display: block;
+          height: max-content;
+          width: 90vw;
+          margin-left: 16px;
+          margin-right: 16px;
+      }
+
+      .textContainer {
+        width: 90vw;
+        height: max-content;
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+	    flex-direction: column;
+	    flex-wrap: nowrap;
+	    justify-content: center;
+	    align-items: stretch;
+	    align-content: stretch;
+        padding-top: 8px;
+        padding-left: 8px;
+        margin-top:-16px;
+        padding-bottom: 8px;
+      }
+
+      .secondTitle {
+        font-family: "Nuvel";
+        font-size: 16px;
+        color: var(--main-color);
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    
+      .descriptionText {
+        font-family: "Century Gothic";        
+        font-size: 12px;
+        color: gray;
+        font-weight: bolder;        
+        line-height: 1.6;
+      }
+
+      .BlocBanniere {
+          height: 80px;
+          width: 90vw;
+          margin:auto;
+          background-image: url('../../assets/img/banner.png');
+          background-size: cover;
+          background-position: center;
+      }
+
+      .titleBanner {
+        position: absolute;
+        padding-top: 38px;
+        padding-left: 8px;
+        font-family: "Nuvel";
+        font-size: 14px;
+        padding-bottom: 16px;
+        color: white;
+      }
+    
+
+      
+      
+    
+}
