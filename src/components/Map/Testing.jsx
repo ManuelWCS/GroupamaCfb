@@ -21,9 +21,6 @@ import loiretMarker from "../../assets/Marqueurs/Marqueurloiret.png";
 import eureEtLoireMarker from "../../assets/Marqueurs/MarqueurEureEtLoire.png";
 import ligueMarker from "../../assets/Marqueurs/MarqueurLigue.png";
 import "./Responsive.css";
-import defaultMaker from "../../assets/Marqueurs/defaultMarker.png";
-import label from "../../assets/Marqueurs/label.png";
-import markerCM2 from "../../assets/Marqueurs/CM2.png";
 import Box from "@mui/material/Box";
 import Button2 from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -36,6 +33,8 @@ import Button from 'react-bootstrap/Button'
 import labelCA from '../../assets/CA/labelCA.png';
 import '../Map/Newresponsive.css';
 import agenceGroupama from '../../assets/img/agenceGroupama.png'
+import Footer from '../../components/Footer/Footer'
+
 
 
 function Mobile3() {
@@ -324,9 +323,9 @@ function Mobile3() {
 
       
       <div className="subContainer">
-      <span className={clubSearch > 0 ? "hide" : "instructions"}>
+      <p className= "instructions">
               Entrez votre âge et la compétition souhaitée pour découvrir les clubs à proximité
-            </span>
+            </p>
   
         <main className="mapContainer">
           <div
@@ -339,7 +338,7 @@ function Mobile3() {
               className="mapLeaflet"
               id="map"
               center={[48.856614, 2.3522219]}
-              zoom={13}
+              zoom={13} 
               scrollWheelZoom={true}
               minZoo={6}
               doubleClickZoom={true}
@@ -450,22 +449,22 @@ function Mobile3() {
 
             <div className="markerLegend2">
               <div className="markerContainer">
-                <img className="legendMarker1" src={marqueurG}></img>
+                <img className="legendMarker1" alt="marqueur Groupama" src={marqueurG}></img>
                 <span className="markerDescription">Votre position</span>
               </div>
               <div className="markerContainer">
-                <img className="legendMarker2" src={clubMarker}></img>
+                <img className="legendMarker2" alt="marqueur club" src={clubMarker}></img>
                 <span className="markerDescription">Club de football</span>
 
               </div>
 
               <div className="markerContainer">
-                <img className="legendMarker3" src={labelCA}></img>
+                <img className="legendMarker3" alt="club labéllisé Grouapama"src={labelCA}></img>
                 <span className="markerDescription">Club labélllisé</span>
 
               </div>
               <div className="markerContainer">
-                <img className="legendMarkerG" src={agenceGroupama}></img>
+                <img className="legendMarkerG" alt="Logo Groupama" src={agenceGroupama}></img>
                 <span className="markerDescription"> Groupama</span>
 
               </div>
@@ -853,8 +852,12 @@ function Mobile3() {
                     </div>
                   </div>
                 </div>
+
+                
               );
             })
+            
+
             : null}
 
 
@@ -869,10 +872,17 @@ function Mobile3() {
               NOUVELLE RECHERCHE
             </p>
           </Button>
+      <Footer/>
         </div>
 
 
       </div>
+      
+<div className={clubSearch.length > 0 ? "hide" : "newSearch"} >
+
+        <Footer /> 
+</div>
+      
 
 
     </div>

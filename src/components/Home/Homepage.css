@@ -76,31 +76,16 @@
   margin-top: 250px;
 }
 
-.footer {
-  display: flex;
-box-sizing: border-box;
-height: 350px;
-background-color: #bebebe;
-clip-path: ellipse(159% 100% at -37.2% 100%);
-position:absolute;
-width: 100%;
-bottom: 0;
-z-index: -4;
 
-;}
+
+
+
 
 .mapAndForm {
   margin-bottom: 10vh;
 }
 
-.markerLegend2 {
-  display: flex;
-  padding: 0;
-  margin:0;
-  left: 0;
-  width: 100%;
-  justify-content: space-around;
-}
+
 
 .legendMarker {
   width: 45px;
@@ -147,28 +132,14 @@ z-index: -4;
 
 /*<<<<<<<<<<<<<<<<<<<<< SPONSOR>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
-.sponso {
-  bottom:17vh;
-  right: 30vw;
-  left: 30vw;
-  position: absolute;
-  z-index: 2;
-  height: 35px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .logoCA {
   height: 90px;
   width: 150px;
 }
 
-.sponsoText {
-  font-family: var(--secondary-font);
-  margin-top:64px;
-}
+
 .sponsoLinks {
   width: 150px;
   display: flex;
@@ -183,10 +154,6 @@ z-index: -4;
   width: 20px;
   padding-top: 16px;
 
-}
-
-.logoGroupama {
-  height: 150px;
 }
 
 
@@ -262,118 +229,25 @@ z-index: -4;
     margin-left: 24px;
     color: white;
   }
-  .textContainer {
-    width: 100vw;
-    height: 200px;
-    position:absolute;
-    left: 0px;
-    right: 0px;
-    top: 110px;
-    margin-top:0px;
-    margin-right: 0px;
-    margin-left: 0px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .secondTitle {
-    padding-left: 28px;
-    padding-right: 28px;
-    font-size: 14px;
-    padding-bottom: 16px;
-    top:10px;
-  }
-
-  .descriptionText {
-    padding-left: 28px;
-    padding-right: 28px;
-    font-size: 12px;
-    top:10px;
-    line-height: 1.6;
-    
-  }
   
-  
-
-  .titleBanner {
-    position: absolute;
-    padding-top: 0px;
-    padding-left: 0px;
-    font-size:16px;
-    top:8%;
-    right: 0%;
-    left: 30%;
-    bottom: 20px;
-    padding-bottom: 16px;
-  }
-
-  .fullPage {
-    width: 100vw;
-    height: max-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
   .mobiletitleContainer {
     display: none;
   }
 
 /* Container qui engloble tout */
-  .subContainer {
-    width: 90vw;
-    height: 500px;
-    max-width: max-content;
-    position:absolute;
-    top: 100vh;
-  }
+
 
 /* Englobe la carte  */
-.mapContainer {
-  display: block;
-  position:absolute;
-  width: 100vw;
-  height: 50px;
-}
+
 
 /* Style quand il n'y a pas de recherche */
 
-.mapNoSearch {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 500px;
-}
 /* Carte leaflet  */
-#map {
-  height: 350px;
-  width: 80vw;
-  margin-right:48px;
-  margin-left:16px;
-}
-
-.markerLegend2 {
-  width: 90vw;
-  height: 150px;
-  padding-right: 1vw;
-  padding-left: 1vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 48px;
 
 
-}
 
 /* On va volontairement descendre l'élément pour laisser la place à la carte  */
-.legendAndForm {
-  margin-top:500px;
-}
+
 
 /* Ancienne légende à cacher */
 .legendMapMobile {
@@ -389,12 +263,7 @@ z-index: -4;
   max-width: 95vw;
 }
 
-.instructions {
-  width: 90vw;
-  height: 48px;
-  font-size:14px;
-  margin-top: 16px;
-}
+
 
 
 /* Gerer l'affichage des résultats une fois qu'on a rentré les inputs */
@@ -406,21 +275,6 @@ z-index: -4;
 
 
 /* FOOTER */
-
-.sponso {
-  bottom: 116px;
-}
-.sponsoText {
-  font-size:12px;
-}
-
-
-
-  
-
-
-
-
 
   
   }

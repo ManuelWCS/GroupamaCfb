@@ -57,23 +57,19 @@
     padding-top: 54px;
     padding-left: 116px;
     position: absolute;
-  
-}
+  }
 
-.instructions {
+  .instructions {
     font-family: var(--secondary-font);
-    color:gray;
+    color: gray;
     font-size: 18px;
     width: 500px;
     text-align: center;
-    margin-top:-68px;
+    margin-top: -68px;
     margin-left: -48px;
-    
-  
   }
 
-
-.subContainer {
+  .subContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -89,7 +85,7 @@
     justify-content: center;
     align-items: center;
     width: 250px;
-    position:absolute;
+    position: absolute;
   }
 
   .inputBox {
@@ -97,16 +93,16 @@
     height: 35px;
     border-radius: 22px;
     width: 255px;
-    left:0;
+    left: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     background-color: var(--main-color);
     margin-left: -1vw;
-    margin-top:4px;
+    margin-top: 4px;
     margin-bottom: 4px;
-    padding-top:2px;
+    padding-top: 2px;
   }
 
   .filter {
@@ -127,16 +123,15 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom:-48vh;
+    bottom: -48vh;
     left: 10vw;
-  
   }
-  
+
   .newSearchBtn {
     height: 50px;
     width: 250px;
-    border:4px solid rgba(46, 46, 46, 0.151);
-    background-color:rgba(128, 128, 128, 0.596);
+    border: 4px solid rgba(46, 46, 46, 0.151);
+    background-color: rgba(128, 128, 128, 0.596);
     border-radius: 12px;
     position: absolute;
     bottom: 5vh;
@@ -152,8 +147,8 @@
     flex-direction: column;
     align-items: center;
     /* position: absolute; */
-    margin-top:-5vh;
-    left:-15vw;
+    margin-top: -5vh;
+    left: -15vw;
   }
 
   .filtersNoSearch {
@@ -164,10 +159,9 @@
     position: absolute;
     margin-left: 10vw;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
     right: -20vw;
   }
-
 
   /* .mapContainer {
     display: block;
@@ -188,7 +182,6 @@
     position: absolute;
     width: 60vw;
     max-width: max-content;
-
   }
 
   .maplegendWrapper {
@@ -198,16 +191,8 @@
     align-items: center;
     position: absolute;
     left: -3vw;
-    margin-top:16px;
-
-   
+    margin-top: 16px;
   }
-
-
-  
-
-
-
 }
 
 @media screen and (min-width: 1366px) {
@@ -264,7 +249,6 @@
     top: 82vh;
   }
 
-
   .titleBanner {
     font-family: "Nuvel";
     font-size: 4rem;
@@ -273,7 +257,6 @@
     padding-left: 116px;
     position: absolute;
   }
-
 
   .subContainer {
     display: flex;
@@ -286,9 +269,9 @@
 
   .instructions {
     font-family: var(--secondary-font);
-    color:gray;
+    color: gray;
     font-size: 1.5rem;
-    margin-top:-88px;
+    margin-top: -88px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -305,8 +288,8 @@
     justify-content: center;
     align-items: center;
     width: 250px;
-    position:absolute;
-    top:7vh;
+    position: absolute;
+    top: 7vh;
     right: -15vw;
   }
   .inputBox {
@@ -314,16 +297,16 @@
     height: 35px;
     border-radius: 22px;
     width: 255px;
-    left:0;
+    left: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     background-color: var(--main-color);
     margin-left: -1vw;
-    margin-top:4px;
+    margin-top: 4px;
     margin-bottom: 4px;
-    padding-top:2px;
+    padding-top: 2px;
   }
   .filter {
     padding-bottom: 56px;
@@ -343,16 +326,15 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom:-52vh;
+    bottom: -52vh;
     left: -3vw;
-  
   }
-  
+
   .newSearchBtn {
     height: 50px;
     width: 250px;
-    border:4px solid rgba(46, 46, 46, 0.151);
-    background-color:rgba(128, 128, 128, 0.596);
+    border: 4px solid rgba(46, 46, 46, 0.151);
+    background-color: rgba(128, 128, 128, 0.596);
     border-radius: 12px;
     position: absolute;
     bottom: 5vh;
@@ -368,9 +350,9 @@
     flex-direction: column;
     align-items: center;
     position: absolute;
-    margin-top:5vh;
+    margin-top: 5vh;
     left: 2vw;
-    margin-left:3vw;
+    margin-left: 3vw;
   }
 
   .mapContainer {
@@ -379,7 +361,6 @@
     width: 55vw;
     margin-right: 5vw;
     margin-left: 2vw;
-  
   }
 
   .mapNoSearch {
@@ -394,7 +375,6 @@
     position: absolute;
     width: 60vw;
     max-width: max-content;
-
   }
 
   .maplegendWrapper {
@@ -404,140 +384,456 @@
     align-items: center;
     position: absolute;
     left: -15vw;
-    margin-top:6rem;
-
-   
+    margin-top: 6rem;
   }
-
-  
-
-  
-
 }
-
-
-
-
-
-
-
-
 
 /* VERSION MOBILE  */
 
-
-@media screen and (max-width:767px) {
-
-    html,
+@media screen and (max-width: 767px) {
+  html,
   body {
     max-width: 100%;
     overflow-x: hidden;
     background-size: cover;
     background-attachment: fixed;
-    /* background-image: url("../../assets/Habillage/Fond2.svg"); */
-    /* background-image: url("../../assets/FONDS/fondBlanc.png"); */
-    z-index:1;  
+
+    z-index: 1;
     background-repeat: no-repeat;
   }
-    .mainTitle {
-        font-family: var(--main-font);
-        padding-top: 64px;
-        padding-left: 64px;
-        color: var(--red-color);
-        font-size: 48px;
-        height: 50px;
-      }
 
-      .mainDescription {
-        padding-left: 64px;
-        font-family: var(--main-font);
-        font-size: 18px;
-        color: white;
-        height: 50px;
-      }
-
-      .photo {
-          display: none;
-      }
-
-
+  /* Titre "Bienvenue" */
+  .mainTitle {
+    font-family: var(--main-font);
+    padding-top: 64px;
+    padding-left: 64px;
+    color: var(--red-color);
+    font-size: 48px;
+    height: 50px;
+  }
+/* Titre "Trouvez un club près de chez vous*/
+  .mainDescription {
+    padding-left: 64px;
+    font-family: var(--main-font);
+    font-size: 18px;
+    color: white;
+    height: 50px;
+  }
+/* Photo de la bannière large, désactivée sur mobile*/
+  .photo {
+    display: none;
+  }
+/* Photo format mobile*/
   .photo2 {
     display: block;
     height: 250px;
     width: 100vw;
-    background-image: url('../../assets/img/bannerMobileFinal.png');
+    background-image: url("../../assets/img/bannerMobileFinal.png");
     background-size: cover;
-    top:0px;
+    top: 0px;
     bottom: 0px;
     left: 0px;
     right: 0px;
     position: relative;
     z-index: -5;
     margin-top: -1px;
-    background-position:  center;
+    background-position: center;
   }
 
-      .textContainer {
-        width: 90vw;
-        height: 130px;
-        box-sizing: border-box;
-        position: absolute;
-        top: 69.5vh;
-      }
-      .secondTitle {
-        font-family: "Nuvel";
-        padding-left: 64px;
-        padding-top: 18px;
-        font-size: 20px;
-        color: var(--main-color);
-      }
-      .descriptionText {
-        font-family: "Century Gothic";
-        padding-left: 64px;
-        padding-right: 64px;
-        font-size: 16px;
-        color: gray;
-        font-weight: bolder;
-      }
+  /* Container avec la description du site, contient un titre et une légende*/
+  .textContainer {
+    width: 100vw;
+    height: 200px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 120px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3vh;
+  }
+ 
+  /* Titre "541 clubs" */
+  .secondTitle {
+    padding-left: 28px;
+    padding-right: 28px;
+    font-size: 14px;
+    padding-bottom: 16px;
+    top:0px;
+    font-family: "Nuvel";
+    color: var(--main-color);
+  }
+/* Description en gris */
+  .descriptionText {
+    font-family: "Century Gothic";
+    padding-left: 32px;
+    padding-right: 32px;
+    font-size: 12px;
+    color: gray;
+    font-weight: bolder;
+    line-height: 1.6;
+    
+  }
 
-      .contentWrapper {
-        width: 100vw;
-        height: 100px;
-      }
-      
+/*Bannière avec l'image et le titre "A vous de jouer */
+  .yo {
+    display: block;
+    height: 80px;
+    width: 95%;
+    background-image: url("../../assets/img/banner.png");
+    background-position: 55% 60%;
+    background-size: cover;
+    z-index: -6;
+    position: absolute;
+    margin-top:64px;
+    margin-left: 2.5vw;
 
-      .yo {
-        display: block;
-        height: 80px;
-        width: 100%;
-        background-image: url("../../assets/img/banner.png");
-        background-position: 55% 60%;
-        background-size: cover;
-        z-index: -1;
-        position: absolute;
-        top: 35vh;
-      }
+  }
 
-      /* .yo {
-        display: block;
-        width: 100vw;
-        margin-top: 62px;
-        height: 75px;
-        position:absolute;
-      
-      } */
-      .titleBanner {
-        position: absolute;
-        padding-top: 0px;
-        padding-left: 0px;
-        font-family: 'Nuvel';
-        font-size:16px;
-        top:8%;
-        right: 0%;
-        left: 30%;
-        bottom: 20px;
-        padding-bottom: 16px;
-        color:white;
-      }
+  /* Titre " A vous de jouer" sur la bannière */
+
+  .titleBanner {
+    position: absolute;
+    padding-top: 0px;
+    padding-left: 0px;
+    font-family: "Nuvel";
+    font-size: 14px;
+    top: 50%;
+    right: 0%;
+    left: 5%;
+    padding-bottom: 16px;
+    color: white;
+  }
+
+
+  .fullPage {
+    width: 100vw;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .subContainer {
+    width: 90vw;
+    height: fit-content;
+    max-height: max-content;
+    max-width: max-content;
+    position :absolute;
+    right:5vw;
+    left: 5vw;
+    top:80vh;
+
+  }
+
+  .instructions {
+    display: block;
+    width: 90vw;
+    height: 48px;
+    font-size:12px;
+    margin:auto;
+    font-family: 'Century Gothic';
+    color: gray;
+    font-weight: bolder; 
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .mapContainer {
+    display: block;
+    position:absolute;
+    width: 100vw;
+    height: 550px;
+
+  }
+
+/* Initialisé sur le style ou il n'y a pas de recherche*/
+
+.mapNoSearch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 500px;
+}
+
+#map {
+  height: 350px;
+  width: 80vw;
+  margin-right:48px;
+  margin-left:16px;
+}
+
+.markerLegend2 {
+  width: 90vw;
+  height: 150px;
+  padding-right: 1vw;
+  padding-left: 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 48px;
+}
+
+.legendAndForm {
+  margin-top: 100vh;
+}
+
+.inputBox {
+  font-family: var(--main-font);
+  height: 35px;
+  border-radius: 22px;
+  width: 250px;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--main-color);
+  margin-left: -1vw;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 2px;
+}
+.inputBox2 {
+  font-family: var(--main-font);
+  height: 35px;
+  border-radius: 22px;
+  width: 250px;
+  left:0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--main-color);
+  margin-top:4px;
+  margin-bottom: 16px;
+  margin-left: -1vw;
+
+}
+
+
+.inputTitle {
+  color: white;
+  font-family: var(--main-color);
+  padding-left: 8px;
+}
+
+
+/* Lorsque le bouton a été cliqué des cartes de clubs apparaissent*/
+.resultats {
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  height: max-content;
+  margin-top:88px;
+  margin-bottom: 180px;
+  border:1px solid salmon;
+  padding-bottom: 64px;
+}
+
+/* Texte indiquant le nombre de résultats */
+
+.resultText {
+  color: var(--main-color);
+  font-size: 16px;
+  text-align: center;
+  font-family: var(--main-font);
+  padding:8px 8px 8px 8px;
+
+}
+
+/* Styles des cartes affichées lors des résultats */
+
+.cardResult {
+  height: 220px;
+  width: 305px;
+  background-image: url("../../assets/Cartes/Carte-bleu.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 8px 8px 8px 8px;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+.cardResult:nth-child(2n) {
+  height: 220px;
+  width: 305px;
+  background-image: url("../../assets/Cartes/Carte-rouge.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+
+.cardResult:nth-child(3n) {
+  height: 220px;
+  width: 305px;
+  background-image: url("../../assets/Cartes/Carte-grise.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+.cardResult:nth-child(4n) {
+  height: 220px;
+  width: 305px;
+  background-image: url("../../assets/Cartes/Carte-turquoise.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.cardResult:nth-child(1n) .logo1:nth-child(1n) {
+  background-image: url("../../assets/Logos/Mail-bleu.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(2n) .logo1:nth-child(1n) {
+  background-image: url("../../assets/Logos/Mail-rouge.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(2n) .logo2:nth-child(2n) {
+  background-image: url("../../assets/Logos/Localisation-rouge.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(2n) .logo3:nth-child(3n) {
+  background-image: url("../../assets/Logos/Info-rouge.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(3n) .logo1:nth-child(1n) {
+  background-image: url("../../assets/Logos/Mail-gris.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(3n) .logo2:nth-child(2n) {
+  background-image: url("../../assets/Logos/Localisation-gris.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(3n) .logo3:nth-child(3n) {
+  background-image: url("../../assets/Logos/Info-gris.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(4n) .logo1:nth-child(1n) {
+  background-image: url("../../assets/Logos/Mail-turquoise.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(4n) .logo2:nth-child(2n) {
+  background-image: url("../../assets/Logos/Localisation-turquoise.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(4n) .logo3:nth-child(3n) {
+  background-image: url("../../assets/Logos/Info-turquoise.png");
+  background-position: center;
+  background-size: cover;
+}
+
+/* Affichage du club labélisé*/
+.labelClub {
+  height: 41px;
+  width: 41px;
+  margin-left: 78px;
+  background: transparent;
+  background-color: transparent;
+}
+
+.labelHide {
+  display: none;
+}
+
+/* <<<<<<<<<<<< Fin des 4 cartes générées par résultats >>>>>>>>>>>>>>> */
+
+/* Formulaire quand les résultats sont affichés*/
+
+.filtrations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 250px;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+/* sponso est la partie ou il y a le logo et les redirections*/
+.sponso {
+ 
+    bottom:10vh;
+    right: 0vw;
+    left: 0vw;
+    margin-right: auto;
+    margin-left: auto;
+    position: absolute;
+    z-index: 2;
+    height: 135px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Texte au dessus du logo */
+
+.sponsoText {
+  font-family: var(--secondary-font);
+  font-size:12px;
+  bottom: 0vh;
+}
+
+.logoGroupama {
+  height: 100px;
+}
+
+
+/* Footer est le nom de la div avec le background gris */
+
+.footer {
+  display: flex;
+box-sizing: border-box;
+height: 350px;
+background-color: #bebebe;
+clip-path: ellipse(159% 100% at -37.2% 100%);
+position:absolute;
+width: 100%;
+bottom: 0vh;
+left:0vw;
+z-index: -4;}
+
 
 }
