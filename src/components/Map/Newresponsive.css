@@ -388,7 +388,7 @@
   }
 }
 
-/* VERSION MOBILE  */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<< VERSION MOBILE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 @media screen and (max-width: 767px) {
   html,
@@ -455,7 +455,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 3vh;
+    padding-bottom: 32px;
   }
  
   /* Titre "541 clubs" */
@@ -528,7 +528,7 @@
     position :absolute;
     right:5vw;
     left: 5vw;
-    top:80vh;
+    /* top:80vh; */
 
   }
 
@@ -583,7 +583,7 @@
 }
 
 .legendAndForm {
-  margin-top: 100vh;
+  /* margin-top: 100vh; */
 }
 
 .inputBox {
@@ -641,7 +641,6 @@
   height: max-content;
   margin-top:88px;
   margin-bottom: 180px;
-  border:1px solid salmon;
   padding-bottom: 64px;
 }
 
