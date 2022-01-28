@@ -46,6 +46,8 @@ import Autocomplete from "@mui/material/Autocomplete";
 import btnPicture from "../../assets/Boutons/buttontransparent.png";
 import Button2 from "@mui/material/Button";
 
+/* import du Footer */
+
 
 
 
@@ -777,9 +779,108 @@ function Clean() {
 
       </div> {/* Fin de BlocFiltres*/}
 
+      <Modal
+            open={clubSearch.length === 0 && Declenche ? true : false}
+            onClose={handleClosePop}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box id="box" sx={style2}>
+              {!formData.age || !formData.type || !formData.city ? (
+                <div>
+                  <p className="textNoResults"> Aucun résultat pour votre recherche !</p>
+                  <p className="btnNoResults" onClick={handleClosePop}>
+                    FERMER
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <p>
+                    Pas de résultats trouvés pour la catégorie : {formData.type}{" "}
+                    à {formData.city}
+                  </p>
+
+                  <p className="btnNoResults" onClick={handleClosePop}>
+                    FERMER
+                  </p>
+                </div>
+              )}
+            </Box>
+          </Modal> {/* Fin de la popup en cas d'erreur*/}
+
+          <div className={clubSearch.length < 1 ? "hide" : "resultats"}>
+            <p className="resultText">
+              {clubSearch.length > 0
+                ? `Il y a ${clubSearch.length} resultat(s) correspondant à votre recherche :`
+                : "Il n'y a pas correspondant à votre recherche :"}
+            </p>
+
+            {clubSearch.length !== 0
+              ? clubSearch.map((clubSelected, Uniqueindex) => {
+                return (
+                  <div
+                    className="cardResult"
+                    key={Uniqueindex}
+                    id="cardresult"
+                  >
+                    <div className="titleCardContainer">
+                      <span className="titleCard" onClick={scrollTop}>
+                        {clubSelected.NomClub}
+                      </span>
+                    </div>
+
+                    <div className="columnContainer">
+                      <div className="column1">
+                        <div className="logo1"></div>
+                        <div className="logo2"></div>
+                        <div className="logo3"></div>
+                      </div>
+                      <div className="column2">
+                        <div className="info1">
+                          {" "}
+                          <a
+                            className="mail"
+                            href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}
+                          >
+                            {clubSelected.Mail}{" "}
+                          </a>
+                        </div>
+                        <div className="info2">
+                          {clubSelected.AdressePostale}
+                        </div>
+                        <div className="info3">
+                          <a
+                            href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}
+                          >
+                            Voir plus d'infos
+                          </a>
+                          <img
+                            className={
+                              clubSelected.label.length > 0
+                                ? "labelClub"
+                                : "labelHide"
+                            }
+                            src={
+                              clubSelected.label.length > 0
+                                ? LabelMarker
+                                : null
+                            }
+                            alt="Marqueur Club labellisé"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })
+              : null}
+          </div>
+
+       
+
 
     </div>
-    //  Fin de BlocTel
+    // {/*} Fin de BlocTel
   );
 }
 
