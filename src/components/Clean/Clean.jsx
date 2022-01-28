@@ -47,13 +47,11 @@ import btnPicture from "../../assets/Boutons/buttontransparent.png";
 import Button2 from "@mui/material/Button";
 
 /* import du Footer */
-
 import fb from "../../assets/footer/fb.png";
 import web from "../../assets/footer/web.png";
 import yt from "../../assets/footer/youtube.png";
 import Logo from '../../assets/img/GroupamaLogo.png'
 import twi from '../../assets/img/twitter.png'
-
 
 
 

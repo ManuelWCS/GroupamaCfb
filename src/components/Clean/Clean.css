@@ -107,6 +107,8 @@
     color: gray;
     font-weight: bolder;
     line-height: 1.6;
+    margin-top:16px;
+    margin-bottom: 16px;
   }
 
   .BlocBanniere {
@@ -154,6 +156,7 @@
     height: 250px;
     width: 77vw;
     margin:auto;
+    margin-bottom: 8px;
   }
 
 
