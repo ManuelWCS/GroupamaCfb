@@ -289,8 +289,7 @@
     align-items: center;
     width: 250px;
     position: absolute;
-    top: 7vh;
-    right: -15vw;
+
   }
   .inputBox {
     font-family: var(--main-font);

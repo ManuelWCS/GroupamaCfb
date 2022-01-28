@@ -215,13 +215,6 @@ body {
   align-items: center;
 }
 
-.markerDescription {
-  font-family: var(--secondary-font);
-
-  font-size: 10px;
-  padding-right: 6px;
-  padding-left: 6px;
-}
 
 .markerPicture {
   height: 45px;
