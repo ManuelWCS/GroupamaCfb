@@ -484,12 +484,484 @@
 }
 
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)
+{ @media screen and (max-width: 767px)  {
+  html,
   body {
-      color:green; /* on Safari and Chrome  */
-      background-color: green;
+    max-width: 100%;
+    overflow-x: hidden;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-image: url("../../assets/FONDS/Mobile.svg");
   }
+
+  .BlocTel {
+    display: block;
+    height: max-content;
+  }
+
+  .BlocPresentation {
+    display: block;
+    height: 150px;
+    width: 100vw;
+    margin: auto;
+    margin-top: -1px;
+    position: relative;
+    z-index: -5;
+  }
+
+  .mainPicture {
+    background-size: cover;
+    background-position: center;
+    background-image: url("../../assets/img/bannerMobileFinal.png");
+    height: 250px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+  }
+
+  .mainTitle {
+    font-family: var(--main-font);
+    color: var(--red-color);
+    font-size: 24px;
+    height: max-content;
+    padding-left: 24px;
+    padding-top: 8px;
+    margin-top: -250px;
+  }
+
+  /* Titre "Trouvez un club près de chez vous*/
+  .mainDescription {
+    padding-left: 24px;
+    font-family: var(--main-font);
+    font-size: 10px;
+    color: white;
+    height: max-content;
+  }
+
+  .BlocTexte {
+    display: block;
+    height: max-content;
+    width: 90vw;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .textContainer {
+    width: 90vw;
+    height: max-content;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+    padding-top: 8px;
+    padding-left: 8px;
+    margin-top: -16px;
+    padding-bottom: 8px;
+  }
+
+  .secondTitle {
+    font-family: "Nuvel";
+    font-size: 16px;
+    color: var(--main-color);
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .descriptionText {
+    font-family: "Century Gothic";
+    font-size: 12px;
+    color: gray;
+    font-weight: bolder;
+    line-height: 1.6;
+  }
+
+  .BlocBanniere {
+    height: 80px;
+    width: 90vw;
+    margin: auto;
+    background-image: url("../../assets/img/banner.png");
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 16px;
+  }
+
+  .titleBanner {
+    position: absolute;
+    padding-top: 38px;
+    padding-left: 8px;
+    font-family: "Nuvel";
+    font-size: 14px;
+    padding-bottom: 16px;
+    color: white;
+  }
+
+  .BlocCarte {
+    height: max-content;
+    width: 90vw;
+    margin: auto;
+    margin-bottom: 16px;
+  }
+
+  .instructions {
+    display: block;
+    width: 90vw;
+    height: max-content;
+    font-size: 12px;
+    margin: auto;
+    font-family: "Century Gothic";
+    color: gray;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  #map {
+    height: 250px;
+    width: 77vw;
+    margin:auto;
+  }
+
+
+  .cardLegend {
+    padding-top:16px;
+    padding-bottom: 8px;
+    text-align: start;
+  }
+
+  .cardLegendText {
+    font-family: var(--secondary-font);
+    font-size:13px;
+    padding-left:12px;
+    padding-top:16px;
+
+
+  } 
+
+.blocLegende {
+    width: 90vw;
+    height: 130px;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+
+
+  .legendMarker {
+    width: 45px;
+    height: 58px;
+    padding-bottom: 8px;
+  }
+  .legendMarker1 {
+    width: 58px;
+    height: 58px;
+    padding-bottom: 8px;  
+  }
+
+  .legendMarker2 {
+    width: 64px;
+    height: 58px;
+    padding-bottom: 8px;  
+  }
+
+  .legendMarker3 {
+    width: 64px;
+    height: 60px;
+    padding-bottom: 8px;  
+  }
+  .legendMarkerG { 
+    width: 50px;
+    height: 62px;
+    padding-bottom: 2px;  
+  }
+
+  .markerContainer {
+    height: 100px;
+    width: 135px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding-top:8px;
+  }
+
+.markerDescription {
+  font-family: var(--secondary-font);
+  font-size: 9px;  
 }
+
+.BlocFiltres {
+  height: max-content;
+  margin-bottom: 100px;;
+}
+
+
+.filtersNoSearch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+.filtrations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 250px;
+  margin:auto;
+}
+
+.inputBox {
+  font-family: var(--main-font);
+  height: 35px;
+  border-radius: 22px;
+  width: 255px;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--main-color);
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 2px;
+}
+
+.inputBox2 {
+  font-family: var(--main-font);
+  height: 35px;
+  border-radius: 22px;
+  width: 250px;
+  left:0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--main-color);
+  margin-top:4px;
+  margin-bottom: 16px;
+
+}
+
+.inputTitle {
+  color: white;
+  font-family: var(--main-color);
+  padding-left: 8px;
+}
+
+.filter {
+  margin:auto;
+}
+
+.btnContainer {
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.findclubBtn {
+  height: 100px;
+  width: 150px;
+  margin-left: 45px;
+  margin-right: 45px;
+}
+
+.btnBackground {
+  background-color: transparent;
+  border: none;
+}
+
+
+
+/* Lorsque le bouton a été cliqué des cartes de clubs apparaissent*/
+.resultats {
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  height: max-content;
+  margin-top:16px;
+  margin-bottom: 180px;
+  padding-bottom: 64px;
+}
+
+/* Texte indiquant le nombre de résultats */
+
+.resultText {
+  color: var(--main-color);
+  font-size: 16px;
+  text-align: center;
+  font-family: var(--main-font);
+  padding:8px 8px 8px 8px;
+
+}
+
+/* Styles des cartes affichées lors des résultats */
+
+.cardResult {
+  height: 220px;
+  width: 305px;
+  background-image: url("../../assets/Cartes/Carte-bleu.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 8px 8px 8px 8px;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+.cardResult:nth-child(2n) {
+  height: 220px;
+  width: 300px;
+  background-image: url("../../assets/Cartes/Carte-rouge.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+
+.cardResult:nth-child(3n) {
+  height: 220px;
+  width: 305px;
+  background-image: url("../../assets/Cartes/Carte-grise.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+.cardResult:nth-child(4n) {
+  height: 220px;
+  width: 305px;
+  background-image: url("../../assets/Cartes/Carte-turquoise.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.cardResult:nth-child(1n) .logo1:nth-child(1n) {
+  background-image: url("../../assets/Logos/Mail-bleu.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(2n) .logo1:nth-child(1n) {
+  background-image: url("../../assets/Logos/Mail-rouge.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(2n) .logo2:nth-child(2n) {
+  background-image: url("../../assets/Logos/Localisation-rouge.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(2n) .logo3:nth-child(3n) {
+  background-image: url("../../assets/Logos/Info-rouge.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(3n) .logo1:nth-child(1n) {
+  background-image: url("../../assets/Logos/Mail-gris.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(3n) .logo2:nth-child(2n) {
+  background-image: url("../../assets/Logos/Localisation-gris.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(3n) .logo3:nth-child(3n) {
+  background-image: url("../../assets/Logos/Info-gris.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(4n) .logo1:nth-child(1n) {
+  background-image: url("../../assets/Logos/Mail-turquoise.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(4n) .logo2:nth-child(2n) {
+  background-image: url("../../assets/Logos/Localisation-turquoise.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.cardResult:nth-child(4n) .logo3:nth-child(3n) {
+  background-image: url("../../assets/Logos/Info-turquoise.png");
+  background-position: center;
+  background-size: cover;
+}
+
+/* Affichage du club labélisé*/
+.labelClub {
+  height: 41px;
+  width: 41px;
+  margin-left: 78px;
+  background: transparent;
+  background-color: transparent;
+}
+
+.labelHide {
+  display: none;
+}
+
+
+
+.footerv {
+
+  height: 28px;
+  position:relative;
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+   
+ 
+
+
+
+
+
+
+}}
 
 
 
