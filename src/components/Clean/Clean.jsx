@@ -14,20 +14,25 @@ import  { useState, useEffect } from "react"
 import Geolocalisation from "../Hook/Geolocalisation";
 /* import de la librairie axios qui nous permettra de récupérer des données */
 import axios from "axios";
-/* import des différents marqueurs*/
+/* import des différents marqueurs de district*/
+
 import ligueMarker from "../../assets/Marqueurs/MarqueurLigue.png";
-import eureEtLoireMarker from "../../assets/Marqueurs/MarqueurEureEtLoire.png";
-import clubMarker from "../../assets/Marqueurs/LogoClub.png";
-import indreMarker from "../../assets/Marqueurs/MarqueurIndre.png";
-import indreEtLoireMarker from "../../assets/Marqueurs/IndreEtLoire.png";
-import loirEtcher from "../../assets/Marqueurs/LoireCher2.png";
-import cherMarker from "../../assets/Marqueurs/MarqueurCher.png";
-import loiretMarker from "../../assets/Marqueurs/Marqueurloiret.png";
+import eureEtLoireMarker from "../../assets/MarqueursDistricts/Marqueur-Eure-et-Loir.png";
+import indreMarker from "../../assets/MarqueursDistricts/Marqueur-Indre.png";
+import indreEtLoireMarker from "../../assets/MarqueursDistricts/Marqueur-Indre-et-Loire.png";
+import loirEtcher from "../../assets/MarqueursDistricts/Marqueur-Loir-et-Cher-.png";
+import cherMarker from "../../assets/MarqueursDistricts/Marqueur-Cher.png";
+import loiretMarker from "../../assets/MarqueursDistricts/Marqueur-Loiret-.png";
+
+/* import des marqueurs promotionnels*/
 import LabelMarker from "../../assets/CA/labelCA.png";
 import agenceGroupama from '../../assets/Marqueurs/MarqueurGroupama.png'
 import marqueurG from '../../assets/Marqueurs/MarqueurG.png';
 import labelCA from '../../assets/CA/labelCA.png';
 
+
+/* import des marqueurs utilisateurs*/
+import clubMarker from "../../assets/Marqueurs/LogoClub.png";
 
 /* import des données des clubs */
 import data from "../../components/Map/data/data.json"
@@ -134,47 +139,47 @@ function Clean() {
   // Hook qui permets de charger le loader :
 
   const LigueMarqueur = L.icon({
-    iconSize: [40, 50],
+    iconSize: [50, 60],
     iconAnchor: [13.5, 47],
     iconUrl: ligueMarker,
   });
   const eureEtLoirMarqueur = L.icon({
-    iconSize: [50, 50],
+    iconSize: [50, 60],
     iconAnchor: [13.5, 47],
     iconUrl: eureEtLoireMarker,
   });
 
   const loiretMarqueur = L.icon({
-    iconSize: [70, 50],
+    iconSize: [50, 60],
     iconAnchor: [13.5, 40],
     iconUrl: loiretMarker,
   });
 
   const cherMarqueur = L.icon({
-    iconSize: [60, 50],
+    iconSize: [50, 60],
     iconAnchor: [13.5, 47],
     iconUrl: cherMarker,
   });
 
   const loireEtcherMarqueur = L.icon({
-    iconSize: [40, 50],
+    iconSize: [50, 60],
     iconAnchor: [13.5, 47],
     iconUrl: loirEtcher,
   });
   const indreMarqueur = L.icon({
-    iconSize: [40, 50],
+    iconSize: [50, 60],
     iconAnchor: [13.5, 47],
     iconUrl: indreMarker,
   });
 
   const indreEtLoirMarqueur = L.icon({
-    iconSize: [55, 50],
+    iconSize: [50, 60],
     iconAnchor: [13.5, 47],
     iconUrl: indreEtLoireMarker,
   });
 
   const clubMarqueur = L.icon({
-    iconSize: [50, 50],
+    iconSize: [50, 60],
     iconAnchor: [13.5, 47],
     iconUrl: clubMarker,
   });
