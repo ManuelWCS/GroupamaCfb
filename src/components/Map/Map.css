@@ -215,6 +215,13 @@ body {
   align-items: center;
 }
 
+.markerDescription {
+  font-family: var(--secondary-font);
+
+  font-size: 10px;
+  padding-right: 6px;
+  padding-left: 6px;
+}
 
 .markerPicture {
   height: 45px;
@@ -283,7 +290,24 @@ body {
 
 /* BOUTON du FORM  */
 
+.btnContainer {
+  position:absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.findclubBtn {
+  height: 100px;
+  width: 150px;
+  margin-left: 45px;
+  margin-right: 45px;
+}
+
+.btnBackground {
+  background-color: transparent;
+  border: none;
+}
 
 
 

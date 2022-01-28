@@ -48,6 +48,12 @@ import Button2 from "@mui/material/Button";
 
 /* import du Footer */
 
+import fb from "../../assets/footer/fb.png";
+import web from "../../assets/footer/web.png";
+import yt from "../../assets/footer/youtube.png";
+import Logo from '../../assets/img/GroupamaLogo.png'
+import twi from '../../assets/img/twitter.png'
+
 
 
 
@@ -876,7 +882,47 @@ function Clean() {
               : null}
           </div>
 
-       
+          <div className="footerv">
+          <div className="logos">
+          <a
+            href="https://www.facebook.com/groupama"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img className="logos" alt="logo Facebook" src={fb} />
+          </a>
+        </div>
+
+        <div className="logos">
+          <a
+            href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              className="logos"
+              alt="logo site Ligue Centre Val de Loire"
+              src={web}
+            />
+          </a>
+        </div>
+
+        <div className="logos">
+          <a
+            href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              className="logos"
+              alt="logo Youtube Ligue Centre-Val de Loire"
+              src={yt}
+            />
+          </a>
+        </div>
+      </div>
+
+
 
 
     </div>

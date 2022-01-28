@@ -151,8 +151,8 @@
   }
 
   #map {
-    height: 350px;
-    width: 80vw;
+    height: 250px;
+    width: 77vw;
     margin:auto;
   }
 
@@ -227,6 +227,11 @@
 .markerDescription {
   font-family: var(--secondary-font);
   font-size: 9px;  
+}
+
+.BlocFiltres {
+  height: max-content;
+  margin-bottom: 100px;;
 }
 
 
@@ -323,7 +328,7 @@
   margin-left: auto;
   margin-right: auto;
   height: max-content;
-  margin-top:88px;
+  margin-top:16px;
   margin-bottom: 180px;
   padding-bottom: 64px;
 }
@@ -358,7 +363,7 @@
 
 .cardResult:nth-child(2n) {
   height: 220px;
-  width: 305px;
+  width: 300px;
   background-image: url("../../assets/Cartes/Carte-rouge.png");
   background-position: center;
   background-size: cover;
@@ -462,7 +467,29 @@
 
 
 
+.footerv {
+
+  height: 28px;
+  position:relative;
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
 
 
 
 }
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  body {
+      color:green; /* on Safari and Chrome  */
+      background-color: green;
+  }
+}
+
+
+
