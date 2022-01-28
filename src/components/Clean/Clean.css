@@ -54,14 +54,14 @@
     color: var(--red-color);
     font-size: 24px;
     height: max-content;
-    padding-left: 24px;
+    padding-left: 32px;
     padding-top: 8px;
     margin-top: -250px;
   }
 
   /* Titre "Trouvez un club près de chez vous*/
   .mainDescription {
-    padding-left: 24px;
+    padding-left: 32px;
     font-family: var(--main-font);
     font-size: 10px;
     color: white;
@@ -486,6 +486,14 @@
 
 }
 
+
+
+
+
+
+
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<< SAFARI MOBILE VERSION  >>>>>>>>>>>>>>>>>>>>>>>> */
 
 @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)
 { @media screen and (max-width: 767px)  {
@@ -955,16 +963,29 @@
 }
 
 
-
-   
- 
-
-
-
-
-
-
 }}
 
 
+/* VERSION DESKTOP */
 
+
+
+
+@media screen and (min-width: 1024px) {
+
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-image: url("../../assets/Habillage/nouveauFond.png");
+  }
+
+  .BlocTel {
+    display: none;
+}
+
+}
