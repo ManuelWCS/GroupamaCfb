@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from "react-bootstrap/Navbar";
 import './Header2.css';
 import SmallGroupama from '../../assets/CompressedPictures/mobileGroupama.webp'
-import LargeGroupama from '../../assets/CompressedPictures/HeaderGroupama-min.png'
+import LargeGroupama from '../../assets/CompressedPictures/headerGroupama.webp'
 
 
 function Header2() {
