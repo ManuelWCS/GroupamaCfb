@@ -3,28 +3,12 @@
 
 /* VARIABLES CSS CHARTE GRAPHIQUE  */
 
-:root {
-  --main-color: #3586c2;
-  --secondary-color: #293d6b;
-  --red-color: #c1272d;
-  --main-font: 'Nuvel';
-  --secondary-font:'Century Gothic';
-}
+
 
 /* Media queries  */
 
 @media screen and (min-width: 319px) and (max-width: 1024px) {
-  html,
-  body {
-    max-width: 100%;
-    overflow-x: hidden;
-    background-size: cover;
-    background-attachment: fixed;
-    /* background-image: url("../../assets/Habillage/Fond2.svg"); */
-    /* background-image: url("../../assets/FONDS/fondBlanc.png"); */
-    z-index:1;  
-    background-repeat: no-repeat;
-  }
+  
 
   .resultText {
     color: var(--secondary-color);
@@ -34,13 +18,7 @@
   }
 }
 
-html {
-  height: 100%;
-  scroll-behavior: smooth;
-}
-body {
-  min-height: 100%;
-}
+
 
 /* fullPage engloble tout le contenu  */
 
