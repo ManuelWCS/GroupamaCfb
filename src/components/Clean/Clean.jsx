@@ -16,23 +16,23 @@ import Geolocalisation from "../Hook/Geolocalisation";
 import axios from "axios";
 /* import des différents marqueurs de district*/
 
-import ligueMarker from "../../assets/Marqueurs/MarqueurLigue.png";
-import eureEtLoireMarker from "../../assets/MarqueursDistricts/Marqueur-Eure-et-Loir.png";
-import indreMarker from "../../assets/MarqueursDistricts/Marqueur-Indre.png";
-import indreEtLoireMarker from "../../assets/MarqueursDistricts/Marqueur-Indre-et-Loire.png";
-import loirEtcher from "../../assets/MarqueursDistricts/Marqueur-Loir-et-Cher-.png";
-import cherMarker from "../../assets/MarqueursDistricts/Marqueur-Cher.png";
-import loiretMarker from "../../assets/MarqueursDistricts/Marqueur-Loiret-.png";
+import ligueMarker from "../../assets/CompressedPictures/MarqueurLigue.webp";
+import eureEtLoireMarker from "../../assets/CompressedPictures/Marqueur-Eure-et-Loir.webp"
+import indreMarker from "../../assets/CompressedPictures/Marqueur-Indre.webp";
+import indreEtLoireMarker from "../../assets/CompressedPictures/Marqueur-Indre-et-Loire.webp";
+import loirEtcher from "../../assets/CompressedPictures/Marqueur-Loir-et-Cher.webp";
+import cherMarker from '../../assets/CompressedPictures/Marqueur-Cher.webp'
+import loiretMarker from "../../assets/CompressedPictures/Marqueur-Loiret.webp";
 
 /* import des marqueurs promotionnels*/
 import LabelMarker from "../../assets/CA/labelCA.png";
-import agenceGroupama from '../../assets/Marqueurs/MarqueurGroupama.png'
-import marqueurG from '../../assets/Marqueurs/MarqueurG.png';
-import labelCA from '../../assets/CA/labelCA.png';
+import agenceGroupama from '../../assets/CompressedPictures/MarqueurGroupama.webp'
+import marqueurG from '../../assets/CompressedPictures/MarqueurG.webp'
+import labelCA from '../../assets/CompressedPictures/labelCA.webp';
 
 
 /* import des marqueurs utilisateurs*/
-import clubMarker from "../../assets/Marqueurs/LogoClub.png";
+import clubMarker from "../../assets/CompressedPictures/LogoClub.webp";
 
 /* import des données des clubs */
 import data from "../../components/Map/data/data.json"

@@ -1,8 +1,8 @@
 import React from 'react'
 import Navbar from "react-bootstrap/Navbar";
 import './Header2.css';
-import LargeGroupama from '../../assets/Header/HeaderGroupama.png';
-import SmallGroupama from '../../assets/Header/mobileGroupama.png';
+import SmallGroupama from '../../assets/CompressedPictures/mobileGroupama.webp'
+import LargeGroupama from '../../assets/CompressedPictures/HeaderGroupama-min.png'
 
 
 function Header2() {
@@ -11,7 +11,7 @@ function Header2() {
                 <Navbar bg="dark" variant="dark" fixed="top">
         <Navbar.Brand href="./">
           <img
-            alt=""
+            alt=""  
             src={LargeGroupama}
             width="100%"
             height="50%"

@@ -1,10 +1,10 @@
 import React from 'react';
 import '../../components/Home/Homepage.css';
-import fb from "../../assets/footer/fb.png";
-import web from "../../assets/footer/web.png";
-import yt from "../../assets/footer/youtube.png";
-import Logo from '../../assets/img/GroupamaLogo.png'
-import twi from '../../assets/img/twitter.png'
+import fb from "../../assets/CompressedPictures/fb.webp";
+import web from "../../assets/CompressedPictures/web.webp"
+import yt from "../../assets/CompressedPictures/yt.wep"
+import Logo from "../../assets/CompressedPictures/GroupamaLogo.webp"
+import twi from '../../assets/CompressedPictures/twitter.webp'
 
 
 
