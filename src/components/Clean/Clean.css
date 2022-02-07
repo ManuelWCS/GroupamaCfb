@@ -20,7 +20,8 @@
     background-attachment: fixed;
     z-index: 1;
     background-repeat: no-repeat;
-    background-image: url("../../assets/FONDS/Mobile.svg");
+    /* background-image: url("../../assets/FONDS/Mobile.svg"); */
+    background-image: url('../../assets/CompressedPictures/Mobile.webp');
   }
 
   .BlocTel {
@@ -764,7 +765,7 @@
   .mainPicture {
     background-size: cover;
     background-position: center;
-    background-image: url("../../assets/img/bannerMobileFinal.png");
+    background-image: url("../../assets/CompressedPictures/bannerMobileFinal.webp");
     height: 250px;
     top: 0px;
     bottom: 0px;
@@ -836,7 +837,7 @@
     height: 80px;
     width: 90vw;
     margin: auto;
-    background-image: url("../../assets/img/banner.png");
+    background-image: url("../../assets/CompressedPictures/banner.webp");
     background-size: cover;
     background-position: center;
     margin-bottom: 16px;

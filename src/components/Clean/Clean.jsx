@@ -48,7 +48,7 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Autocomplete from "@mui/material/Autocomplete";
-import btnPicture from "../../assets/Boutons/buttontransparent.png";
+import btnPicture from "../../assets/CompressedPictures/buttontransparent.webp";
 import Button2 from "@mui/material/Button";
 
 /* import du Footer */
