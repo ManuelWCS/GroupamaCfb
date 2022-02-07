@@ -270,7 +270,7 @@ function Clean() {
     if (resultofSearch.label !== null) {
       console.log("il y a un club labelLisé ");
     } else {
-      console.log("pas de clubs labéliseys bro");
+      console.log("pas de clubs labéllisés");
     }
 
     setclubSearch(resultofSearch);
@@ -302,6 +302,10 @@ function Clean() {
       setallcities(result);
     });
   }, []);
+
+
+
+  
 
   useEffect(() => {
     //à mettre en dur aussi

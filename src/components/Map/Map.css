@@ -476,12 +476,7 @@ body {
   justify-content: space-around;
 }
 
-.logo1,
-.logo2,
-.logo3 {
-  height: 32px;
-  width: 32px;
-}
+
 
 .logo2 {
   background-image: url("../../assets/Logos/Localisation-bleu.png");
