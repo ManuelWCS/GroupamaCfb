@@ -59,8 +59,11 @@ import Logo from "../../assets/CompressedPictures/GroupamaLogo.webp"
 import twi from '../../assets/CompressedPictures/twitter.webp'
 
 
+/*<------------------------PARTIE DESKTOP---------------------------------> */ 
 
+import desktopImage from"../../assets/CompressedPictures/final2.webp";
 
+import {Container, Row, Col} from 'react-bootstrap'
 
 
 
@@ -360,7 +363,10 @@ function Clean() {
 
 
   return (
-    <div className="BlocTel">
+    <div className="fullApp">
+      <div className="BlocTel">
+
+      
       <div className="BlocPresentation">
         <div className="mainPicture"></div>
         <h1 className="mainTitle">BIENVENUE</h1>
@@ -889,6 +895,7 @@ function Clean() {
               })
               : null}
           </div>
+         
 
           <div className="sponso">
             <img src={Logo} className="GroupamaLogo"/>
@@ -972,10 +979,24 @@ function Clean() {
       </div>
 
 
+      </div>
+      {/* Fin de BlocTel*/}
+      <div className="mainContent">
+        <div className="titlesContainer">
+      <h1 className="mainTitle"> BIENVENUE !</h1>
+      <h3 className="secondaryTitle">TROUVEZ UN CLUB PRÈS DE CHEZ VOUS !</h3>
+        </div>
+        </div> 
+        <div className="descriptionContainer">
+          <h2 className="mainDescription">
+          541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE</h2>
+          <h4 className="secondaryDescription">La Ligue Centre-Val de Loire de Football et son partenaire Crédit Agricole vous proposent cette plateforme afin de découvrir l'ensemble des clubs de notre Région !
+</h4>
 
-
+        </div>
+      {/* Fin de desktopContainer*/}
     </div>
-    // {/*} Fin de BlocTel
+    
   );
 }
 
