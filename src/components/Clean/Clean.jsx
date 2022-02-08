@@ -7,9 +7,8 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import L from "leaflet";
 
-
 /* import du nécessaire React */
-import  { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 /* import du Hook nécessaire à la Geoloc */
 import Geolocalisation from "../Hook/Geolocalisation";
 /* import de la librairie axios qui nous permettra de récupérer des données */
@@ -17,26 +16,24 @@ import axios from "axios";
 /* import des différents marqueurs de district*/
 
 import ligueMarker from "../../assets/CompressedPictures/MarqueurLigue.webp";
-import eureEtLoireMarker from "../../assets/CompressedPictures/Marqueur-Eure-et-Loir.webp"
+import eureEtLoireMarker from "../../assets/CompressedPictures/Marqueur-Eure-et-Loir.webp";
 import indreMarker from "../../assets/CompressedPictures/Marqueur-Indre.webp";
 import indreEtLoireMarker from "../../assets/CompressedPictures/Marqueur-Indre-et-Loire.webp";
 import loirEtcher from "../../assets/CompressedPictures/Marqueur-Loir-et-Cher.webp";
-import cherMarker from '../../assets/CompressedPictures/Marqueur-Cher.webp'
+import cherMarker from "../../assets/CompressedPictures/Marqueur-Cher.webp";
 import loiretMarker from "../../assets/CompressedPictures/Marqueur-Loiret.webp";
 
 /* import des marqueurs promotionnels*/
 import LabelMarker from "../../assets/CA/labelCA.png";
-import agenceGroupama from '../../assets/CompressedPictures/MarqueurGroupama.webp'
-import marqueurG from '../../assets/CompressedPictures/MarqueurG.webp'
-import labelCA from '../../assets/CompressedPictures/labelCA.webp';
-
+import agenceGroupama from "../../assets/CompressedPictures/MarqueurGroupama.webp";
+import marqueurG from "../../assets/CompressedPictures/MarqueurG.webp";
+import labelCA from "../../assets/CompressedPictures/labelCA.webp";
 
 /* import des marqueurs utilisateurs*/
 import clubMarker from "../../assets/CompressedPictures/LogoClub.webp";
 
 /* import des données des clubs */
-import data from "../../components/Map/data/data.json"
-
+import data from "../../components/Map/data/data.json";
 
 /* import des élements nécessaires au formulaire */
 import TextField from "@mui/material/TextField";
@@ -53,34 +50,19 @@ import Button2 from "@mui/material/Button";
 
 /* import du Footer */
 import fb from "../../assets/CompressedPictures/fb.webp";
-import web from "../../assets/CompressedPictures/web.webp"
-import yt from "../../assets/CompressedPictures/youtube.webp"
-import Logo from "../../assets/CompressedPictures/GroupamaLogo.webp"
-import twi from '../../assets/CompressedPictures/twitter.webp'
+import web from "../../assets/CompressedPictures/web.webp";
+import yt from "../../assets/CompressedPictures/youtube.webp";
+import Logo from "../../assets/CompressedPictures/GroupamaLogo.webp";
+import twi from "../../assets/CompressedPictures/twitter.webp";
 
+/*<------------------------PARTIE DESKTOP---------------------------------> */
 
-/*<------------------------PARTIE DESKTOP---------------------------------> */ 
+import desktopImage from "../../assets/CompressedPictures/final2.webp";
 
-import desktopImage from"../../assets/CompressedPictures/final2.webp";
-
-import {Container, Row, Col} from 'react-bootstrap'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import { Container, Row, Col } from "react-bootstrap";
 
 function Clean() {
-    const [allcities, setallcities] = useState([]);
+  const [allcities, setallcities] = useState([]);
   const [categories, setCategories] = useState([]);
   const [clubSearch, setclubSearch] = useState([]);
   const [map, setMap] = useState(null);
@@ -91,7 +73,7 @@ function Clean() {
     gender: "",
     category: "",
   });
-  console.log(formData)
+  console.log(formData);
 
   // POP UP DETAILS DES CATEGORIES
   const [open, setOpen] = useState(false);
@@ -122,8 +104,7 @@ function Clean() {
     boxShadow: 24,
     borderRadius: 12,
     p: 4,
-
-  }
+  };
   const [clubs, setClubs] = useState([]);
 
   // PopUp en cas d'erreur
@@ -198,7 +179,6 @@ function Clean() {
     iconAnchor: [13.5, 47],
     iconUrl: agenceGroupama,
   });
-
 
   const searchClub = (e) => {
     e.preventDefault();
@@ -306,10 +286,6 @@ function Clean() {
     });
   }, []);
 
-
-
-  
-
   useEffect(() => {
     //à mettre en dur aussi
     axios
@@ -356,78 +332,71 @@ function Clean() {
     }
   }, [formData]);
 
-
-
-
-
-
-
   return (
     <div className="fullApp">
       <div className="BlocTel">
-
-      
-      <div className="BlocPresentation">
-        <div className="mainPicture"></div>
-        <h1 className="mainTitle">BIENVENUE</h1>
-        <h3 className="mainDescription">TROUVEZ UN CLUB PRÈS DE CHEZ VOUS !</h3>
-      </div>{" "}
-      {/* Fin BlocPresentation*/}
-      <div className="BlocTexte">
-        <div className="textContainer">
-          <h2 className="secondTitle">
-            {" "}
-            541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
-          </h2>
-          <h4 className="descriptionText">
-            La Ligue Centre-Val de Loire de Football et son partenaire Groupama
-            vous proposent cette plateforme afin de découvrir l'ensemble des
-            clubs de notre Région !
-          </h4>
+        <div className="BlocPresentation">
+          <div className="mainPicture"></div>
+          <h1 className="mainTitle">BIENVENUE</h1>
+          <h3 className="mainDescription">
+            TROUVEZ UN CLUB PRÈS DE CHEZ VOUS !
+          </h3>
         </div>{" "}
-        {/* Fin textContainer*/}
-      </div>
-      {/* Fin BlocPresentation*/}
-      <div className="BlocBanniere">
-        <h4 className="titleBanner"> À VOUS DE JOUER </h4>
-      </div>{" "}
-      {/* Fin BlocBanniere*/}
+        {/* Fin BlocPresentation*/}
+        <div className="BlocTexte">
+          <div className="textContainer">
+            <h2 className="secondTitle">
+              {" "}
+              541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
+            </h2>
+            <h4 className="descriptionText">
+              La Ligue Centre-Val de Loire de Football et son partenaire
+              Groupama vous proposent cette plateforme afin de découvrir
+              l'ensemble des clubs de notre Région !
+            </h4>
+          </div>{" "}
+          {/* Fin textContainer*/}
+        </div>
+        {/* Fin BlocPresentation*/}
+        <div className="BlocBanniere">
+          <h4 className="titleBanner"> À VOUS DE JOUER </h4>
+        </div>{" "}
+        {/* Fin BlocBanniere*/}
+        <div className="BlocCarte">
+          <p className="instructions">
+            Entrez votre âge et la compétition souhaitée pour découvrir les
+            clubs à proximité
+          </p>
+          <MapContainer
+            className="mapLeaflet"
+            id="map"
+            center={[48.856614, 2.3522219]}
+            zoom={13}
+            scrollWheelZoom={true}
+            minZoo={6}
+            doubleClickZoom={true}
+            zoomControl={true}
+            whenCreated={setMap}
+          >
+            <TileLayer
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
 
-      <div className="BlocCarte">
-      <p className= "instructions">
-              Entrez votre âge et la compétition souhaitée pour découvrir les clubs à proximité
-            </p>
+            <Geolocalisation />
 
-            <MapContainer
-              className="mapLeaflet"
-              id="map"
-              center={[48.856614, 2.3522219]}
-              zoom={13} 
-              scrollWheelZoom={true}
-              minZoo={6}
-              doubleClickZoom={true}
-              zoomControl={true}
-              whenCreated={setMap}
+            <MarkerClusterGroup
+              animate={true}
+              onClusterClick={(cluster) =>
+                console.warn(
+                  "cluster-click",
+                  cluster,
+                  cluster.layer.getAllChildMarkers()
+                )
+              }
             >
-              <TileLayer
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-
-              <Geolocalisation />
-
-              <MarkerClusterGroup
-                animate={true}
-                onClusterClick={(cluster) =>
-                  console.warn(
-                    "cluster-click",
-                    cluster,
-                    cluster.layer.getAllChildMarkers()
-                  )
-                }
-              >
-                {clubSearch.length !== 0
-                  ? clubSearch.slice(0, 150).map((res, index2) => {
+              {clubSearch.length !== 0
+                ? clubSearch.slice(0, 150).map((res, index2) => {
                     console.log(res);
                     return (
                       <Marker
@@ -445,118 +414,129 @@ function Clean() {
                       </Marker>
                     );
                   })
-                  : null}
-              </MarkerClusterGroup>
-              <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
-                <Popup className="InstanceLigue">
-                  <a href="https://foot-centre.fff.fr/">
-                    <h3>Ligue Centre-Val de Loire </h3>
-                  </a>
-                </Popup>
-              </Marker>
-              <Marker position={[47.11563, 2.35849]} icon={cherMarqueur}>
-                <Popup className="InstancePopUp">
-                  <a href="https://cher.fff.fr/">
-                    <h3>District de Football du Cher </h3>
-                  </a>
-                </Popup>
-              </Marker>
-              <Marker position={[48.42918, 1.46021]} icon={eureEtLoirMarqueur}>
-                <Popup className="InstancePopUp">
-                  <a href="https://eure-et-loir.fff.fr/">
-                    <h3>District de Football d'Eure Et Loire </h3>
-                  </a>
-                </Popup>
-              </Marker>
-              <Marker position={[46.79267, 1.69726]} icon={indreMarqueur}>
-                <Popup className="InstancePopUp">
-                  <a href="https://indre.fff.fr/">
-                    <h3>District de Football de l'Indre </h3>
-                  </a>
-                </Popup>
-              </Marker>
-              <Marker position={[47.9168433, 1.9246721]} icon={loiretMarqueur}>
-                <Popup className="InstancePopUp">
-                  <a href="https://foot-loiret.fff.fr/">
-                    <h3>District de Football du Loiret </h3>
-                  </a>
-                </Popup>
-              </Marker>
-              <Marker
-                position={[47.5766331, 1.3026806]}
-                icon={loireEtcherMarqueur}
-              >
-                <Popup className="InstancePopUp">
-                  <a href="https://loir-et-cher.fff.fr/">
-                    <h3>District de Football du Loir-et-Cher</h3>
-                  </a>
-                </Popup>
-              </Marker>
+                : null}
+            </MarkerClusterGroup>
+            <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
+              <Popup className="InstanceLigue">
+                <a href="https://foot-centre.fff.fr/">
+                  <h3>Ligue Centre-Val de Loire </h3>
+                </a>
+              </Popup>
+            </Marker>
+            <Marker position={[47.11563, 2.35849]} icon={cherMarqueur}>
+              <Popup className="InstancePopUp">
+                <a href="https://cher.fff.fr/">
+                  <h3>District de Football du Cher </h3>
+                </a>
+              </Popup>
+            </Marker>
+            <Marker position={[48.42918, 1.46021]} icon={eureEtLoirMarqueur}>
+              <Popup className="InstancePopUp">
+                <a href="https://eure-et-loir.fff.fr/">
+                  <h3>District de Football d'Eure Et Loire </h3>
+                </a>
+              </Popup>
+            </Marker>
+            <Marker position={[46.79267, 1.69726]} icon={indreMarqueur}>
+              <Popup className="InstancePopUp">
+                <a href="https://indre.fff.fr/">
+                  <h3>District de Football de l'Indre </h3>
+                </a>
+              </Popup>
+            </Marker>
+            <Marker position={[47.9168433, 1.9246721]} icon={loiretMarqueur}>
+              <Popup className="InstancePopUp">
+                <a href="https://foot-loiret.fff.fr/">
+                  <h3>District de Football du Loiret </h3>
+                </a>
+              </Popup>
+            </Marker>
+            <Marker
+              position={[47.5766331, 1.3026806]}
+              icon={loireEtcherMarqueur}
+            >
+              <Popup className="InstancePopUp">
+                <a href="https://loir-et-cher.fff.fr/">
+                  <h3>District de Football du Loir-et-Cher</h3>
+                </a>
+              </Popup>
+            </Marker>
 
-              <Marker position={[47.37913, 0.72672]} icon={indreEtLoirMarqueur}>
-                <Popup className="InstancePopUp">
-                  <a href="https://indre-et-loire.fff.fr/">
-                    <h3>District de Football d'Indre-Et-Loire'</h3>
-                  </a>
-                </Popup>
-              </Marker>
+            <Marker position={[47.37913, 0.72672]} icon={indreEtLoirMarqueur}>
+              <Popup className="InstancePopUp">
+                <a href="https://indre-et-loire.fff.fr/">
+                  <h3>District de Football d'Indre-Et-Loire'</h3>
+                </a>
+              </Popup>
+            </Marker>
 
-              <Marker position={[47.845240, 1.924700]} icon={marqueurBanque}>
-                <Popup className="banquePopUp">
-                  <a href="https://groupama.fr/">
-                    <h3>Groupama</h3>
-                  </a>
-                </Popup>
-              </Marker>
+            <Marker position={[47.84524, 1.9247]} icon={marqueurBanque}>
+              <Popup className="banquePopUp">
+                <a href="https://groupama.fr/">
+                  <h3>Groupama</h3>
+                </a>
+              </Popup>
+            </Marker>
+          </MapContainer>
+          <div className="cardLegend">
+            <span className="cardLegendText">Légende de la carte :</span>
+          </div>
+          <div className="blocLegende">
+            <div className="markerContainer">
+              <img
+                className="legendMarker1"
+                alt="marqueur Groupama"
+                src={marqueurG}
+              ></img>
+              <span className="markerDescription">
+                Votre <br />
+              </span>
+              <span className="markerDescription">position</span>
+            </div>
+            <div className="markerContainer">
+              <img
+                className="legendMarker2"
+                alt="marqueur club"
+                src={clubMarker}
+              ></img>
+              <span className="markerDescription">
+                Club <br />
+              </span>
+              <span className="markerDescription">de Football</span>
+            </div>
 
-            </MapContainer>
-            <div className="cardLegend">
-              <span className="cardLegendText">Légende de la carte :
-                </span></div>
-
-            <div className="blocLegende">
-            
-              <div className="markerContainer">
-                <img className="legendMarker1" alt="marqueur Groupama" src={marqueurG}></img>
-                <span className="markerDescription">Votre <br/></span>
-                <span className="markerDescription">position
-                </span>
-              </div>
-              <div className="markerContainer">
-                <img className="legendMarker2" alt="marqueur club" src={clubMarker}></img>
-                <span className="markerDescription">Club <br/></span>
-                <span className="markerDescription">de Football
-                </span>
-                
-
-              </div>
-
-              <div className="markerContainer">
-                <img className="legendMarker3" alt="club labéllisé Grouapama"src={labelCA}></img>
-                <span className="markerDescription">Club <br/></span>
-                <span className="markerDescription">labéllisé
-                </span>
-              </div>
-              <div className="markerContainer">
-                <img className="legendMarkerG" alt="Logo Groupama" src={agenceGroupama}></img>
-                <span className="markerDescription">Agence <br/></span>
-                <span className="markerDescription">Groupama
-                </span>
-              </div>
-            </div> {/* Fin de BlocLegende */}
-
-          
-      </div> {/* Fin de BlocCarte*/}
-
-      <div className="BlocFiltres">
-
-
-      <div
+            <div className="markerContainer">
+              <img
+                className="legendMarker3"
+                alt="club labéllisé Grouapama"
+                src={labelCA}
+              ></img>
+              <span className="markerDescription">
+                Club <br />
+              </span>
+              <span className="markerDescription">labéllisé</span>
+            </div>
+            <div className="markerContainer">
+              <img
+                className="legendMarkerG"
+                alt="Logo Groupama"
+                src={agenceGroupama}
+              ></img>
+              <span className="markerDescription">
+                Agence <br />
+              </span>
+              <span className="markerDescription">Groupama</span>
+            </div>
+          </div>{" "}
+          {/* Fin de BlocLegende */}
+        </div>{" "}
+        {/* Fin de BlocCarte*/}
+        <div className="BlocFiltres">
+          <div
             className={
               clubSearch.length === 0 ? "filtersNoSearch" : "filtrations"
             }
           >
-           
             <form
               className="filtrationsWrapper"
               onSubmit={(e) => searchClub(e)}
@@ -613,14 +593,14 @@ function Clean() {
                       } else {
                         formData.type === "Futsal"
                           ? setformData({
-                            ...formData,
-                            gender: e.target.value,
-                            type: "",
-                          })
+                              ...formData,
+                              gender: e.target.value,
+                              type: "",
+                            })
                           : setformData({
-                            ...formData,
-                            gender: e.target.value,
-                          });
+                              ...formData,
+                              gender: e.target.value,
+                            });
                       }
                     }}
                   >
@@ -643,7 +623,7 @@ function Clean() {
               <div className="filter">
                 <FormControl component="fieldset" required={true}>
                   <div className="inputBox">
-                    <span className="inputTitle">PRATIQUE SOUHAITÉE  </span>
+                    <span className="inputTitle">PRATIQUE SOUHAITÉE </span>
                   </div>
                   <RadioGroup
                     value={formData.type}
@@ -676,7 +656,7 @@ function Clean() {
                       control={<Radio />}
                       label="Futsal"
                       title="Pratique proposée aux séniors Hommes et aux 17-18 masculins"
-                    // disable={inputFutsal}
+                      // disable={inputFutsal}
                     />
                   </RadioGroup>
 
@@ -732,7 +712,7 @@ function Clean() {
 
               <div className="filter">
                 <div className="inputBox2">
-                  <span className="inputTitle">VOTRE VILLE  </span>
+                  <span className="inputTitle">VOTRE VILLE </span>
                 </div>
 
                 <Autocomplete
@@ -751,7 +731,6 @@ function Clean() {
                   )}
                 />
               </div>
-
 
               <div className="btnContainer" id="test2">
                 <button className="btnBackground" id="scrollBtn" type="submit">
@@ -774,7 +753,10 @@ function Clean() {
             <Box id="box" sx={style2}>
               {!formData.age || !formData.type || !formData.city ? (
                 <div>
-                  <p className="textNoResults"> Aucun résultat pour votre recherche !</p>
+                  <p className="textNoResults">
+                    {" "}
+                    Aucun résultat pour votre recherche !
+                  </p>
                   <p className="btnNoResults" onClick={handleClosePop}>
                     FERMER
                   </p>
@@ -793,56 +775,51 @@ function Clean() {
               )}
             </Box>
           </Modal>
+        </div>{" "}
+        {/* Fin de BlocFiltres*/}
+        <Modal
+          open={clubSearch.length === 0 && Declenche ? true : false}
+          onClose={handleClosePop}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box id="box" sx={style2}>
+            {!formData.age || !formData.type || !formData.city ? (
+              <div>
+                <p className="textNoResults">
+                  {" "}
+                  Aucun résultat pour votre recherche !
+                </p>
+                <p className="btnNoResults" onClick={handleClosePop}>
+                  FERMER
+                </p>
+              </div>
+            ) : (
+              <div>
+                <p>
+                  Pas de résultats trouvés pour la catégorie : {formData.type} à{" "}
+                  {formData.city}
+                </p>
 
+                <p className="btnNoResults" onClick={handleClosePop}>
+                  FERMER
+                </p>
+              </div>
+            )}
+          </Box>
+        </Modal>{" "}
+        {/* Fin de la popup en cas d'erreur*/}
+        <div className={clubSearch.length < 1 ? "hide" : "resultats"}>
+          <p className="resultText">
+            {clubSearch.length > 0
+              ? `Il y a ${clubSearch.length} resultat(s) correspondant à votre recherche :`
+              : "Il n'y a pas correspondant à votre recherche :"}
+          </p>
 
-
-
-      </div> {/* Fin de BlocFiltres*/}
-
-      <Modal
-            open={clubSearch.length === 0 && Declenche ? true : false}
-            onClose={handleClosePop}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box id="box" sx={style2}>
-              {!formData.age || !formData.type || !formData.city ? (
-                <div>
-                  <p className="textNoResults"> Aucun résultat pour votre recherche !</p>
-                  <p className="btnNoResults" onClick={handleClosePop}>
-                    FERMER
-                  </p>
-                </div>
-              ) : (
-                <div>
-                  <p>
-                    Pas de résultats trouvés pour la catégorie : {formData.type}{" "}
-                    à {formData.city}
-                  </p>
-
-                  <p className="btnNoResults" onClick={handleClosePop}>
-                    FERMER
-                  </p>
-                </div>
-              )}
-            </Box>
-          </Modal> {/* Fin de la popup en cas d'erreur*/}
-
-          <div className={clubSearch.length < 1 ? "hide" : "resultats"}>
-            <p className="resultText">
-              {clubSearch.length > 0
-                ? `Il y a ${clubSearch.length} resultat(s) correspondant à votre recherche :`
-                : "Il n'y a pas correspondant à votre recherche :"}
-            </p>
-
-            {clubSearch.length !== 0
-              ? clubSearch.map((clubSelected, Uniqueindex) => {
+          {clubSearch.length !== 0
+            ? clubSearch.map((clubSelected, Uniqueindex) => {
                 return (
-                  <div
-                    className="cardResult"
-                    key={Uniqueindex}
-                    id="cardresult"
-                  >
+                  <div className="cardResult" key={Uniqueindex} id="cardresult">
                     <div className="titleCardContainer">
                       <span className="titleCard" onClick={scrollTop}>
                         {clubSelected.NomClub}
@@ -881,9 +858,7 @@ function Clean() {
                                 : "labelHide"
                             }
                             src={
-                              clubSelected.label.length > 0
-                                ? LabelMarker
-                                : null
+                              clubSelected.label.length > 0 ? LabelMarker : null
                             }
                             alt="Marqueur Club labellisé"
                           />
@@ -893,110 +868,112 @@ function Clean() {
                   </div>
                 );
               })
-              : null}
-          </div>
-         
-
-          <div className="sponso">
-            <img src={Logo} className="GroupamaLogo"/>
-              <p className="sponsoText">  Cette plateforme est soutenue par Groupama</p>
-            <div className="sponsoLinks">
+            : null}
+        </div>
+        <div className="sponso">
+          <img src={Logo} className="GroupamaLogo" />
+          <p className="sponsoText">
+            {" "}
+            Cette plateforme est soutenue par Groupama
+          </p>
+          <div className="sponsoLinks">
             <a
-            href="https://www.facebook.com/groupama"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={fb} alt="" className="LinkGroupama" />
-          </a>
+              href="https://www.facebook.com/groupama"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={fb} alt="" className="LinkGroupama" />
+            </a>
 
-          <a
-            href="https://www.youtube.com/channel/UCcVU-JnuCbANGOl4vGcGpEg"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={yt} alt="" className="LinkGroupama" />
-          </a>
+            <a
+              href="https://www.youtube.com/channel/UCcVU-JnuCbANGOl4vGcGpEg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={yt} alt="" className="LinkGroupama" />
+            </a>
 
-          <a
-            href="https://www.groupama.fr/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={web} alt="" className="LinkGroupama" />
-          </a>
+            <a href="https://www.groupama.fr/" target="_blank" rel="noreferrer">
+              <img src={web} alt="" className="LinkGroupama" />
+            </a>
 
-          <a
-            href="https://twitter.com/GroupeGroupama"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={twi} alt="" className="LinkGroupama" />
-          </a>
-
-            </div>
-
-            
+            <a
+              href="https://twitter.com/GroupeGroupama"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={twi} alt="" className="LinkGroupama" />
+            </a>
+          </div>
+        </div>
+        <div className="footerv">
+          <div className="logos">
+            <a
+              href="https://www.facebook.com/groupama"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img className="logos" alt="logo Facebook" src={fb} />
+            </a>
           </div>
 
-          <div className="footerv">
           <div className="logos">
-          <a
-            href="https://www.facebook.com/groupama"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img className="logos" alt="logo Facebook" src={fb} />
-          </a>
+            <a
+              href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="logos"
+                alt="logo site Ligue Centre Val de Loire"
+                src={web}
+              />
+            </a>
+          </div>
+
+          <div className="logos">
+            <a
+              href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="logos"
+                alt="logo Youtube Ligue Centre-Val de Loire"
+                src={yt}
+              />
+            </a>
+          </div>
         </div>
-
-        <div className="logos">
-          <a
-            href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              className="logos"
-              alt="logo site Ligue Centre Val de Loire"
-              src={web}
-            />
-          </a>
-        </div>
-
-        <div className="logos">
-          <a
-            href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              className="logos"
-              alt="logo Youtube Ligue Centre-Val de Loire"
-              src={yt}
-            />
-          </a>
-        </div>
-      </div>
-
-
       </div>
       {/* Fin de BlocTel*/}
       <div className="mainContent">
         <div className="titlesContainer">
-      <h1 className="mainTitle"> BIENVENUE !</h1>
-      <h3 className="secondaryTitle">TROUVEZ UN CLUB PRÈS DE CHEZ VOUS !</h3>
+          <h1 className="mainTitle"> BIENVENUE !</h1>
+          <h3 className="secondaryTitle">
+            TROUVEZ UN CLUB PRÈS DE CHEZ VOUS !
+          </h3>
         </div>
-        </div> 
-        <div className="descriptionContainer">
-          <h2 className="mainDescription">
-          541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE</h2>
-          <h4 className="secondaryDescription">La Ligue Centre-Val de Loire de Football et son partenaire Crédit Agricole vous proposent cette plateforme afin de découvrir l'ensemble des clubs de notre Région !
-</h4>
+      </div>
+      <div className="descriptionContainer">
+        <h2 className="mainDescription">
+          541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
+        </h2>
+        <h4 className="secondaryDescription">
+          La Ligue Centre-Val de Loire de Football et son partenaire Crédit
+          Agricole vous proposent cette plateforme afin de découvrir l'ensemble
+          des clubs de notre Région !
+        </h4>
+      </div>
 
-        </div>
+      <div className="bannerContainer">
+        <h5 className="bannerTitle">
+        À VOUS DE JOUER
+        </h5>
+
+      </div>
       {/* Fin de desktopContainer*/}
     </div>
-    
   );
 }
 
