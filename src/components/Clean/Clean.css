@@ -528,9 +528,12 @@
       saturate(1000%) contrast(0.8);
   }
 
-  .row {
-    background-color: #293d6b;
-    width: 100vw;
+  /* .mainContent, .descriptionContainer, .bannerContainer{
+    display: none;
+  } */
+
+  .wrapper {
+    display: none;
   }
 }
 
@@ -1393,26 +1396,68 @@
   .bannerContainer {
     width: auto;
     height: 120px;
-    background-color: green;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
     align-content: center;
-    background-image: url('../../assets/CompressedPictures/banner.webp');
+    background-image: url("../../assets/CompressedPictures/banner.webp");
     background-size: cover;
     background-position: 50% 60%;
     margin-bottom: 32px;
     position: relative;
     z-index: -2;
-
   }
 
   .bannerTitle {
     padding-left: calc(var(--spacing-large) * 3);
-    font-size: calc(var(--main-fontSize)*2);
+    font-size: calc(var(--main-fontSize) * 2);
     font-family: var(--main-font);
-    color:white;
-  } 
+    color: white;
+  }
+
+  .desktopInstructions {
+    width: max-content;
+    height: max-content;
+    padding:var(--spacing-small);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+  }
+
+  .instructionsTitle {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) * 1.2);
+    padding-bottom: 16px;
+    color: rgb(51, 51, 51);
+  }
+
+  .mainContainer {
+    height: 600px;
+    width: 85vw;
+    margin-left: 7.5vw;
+    margin-right: 7.5vw;
+    background-color: skyblue;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: stretch;
+	align-content: stretch;
+  }
+  .mapContainer {
+    height: 90%;
+    width: 45%;
+    background-color: plum;
+  }
+  .formContainer {
+    height: 90%;
+    width: 45%;
+    background-color: palegreen;
+  }
 }

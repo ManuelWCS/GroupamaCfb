@@ -397,23 +397,23 @@ function Clean() {
             >
               {clubSearch.length !== 0
                 ? clubSearch.slice(0, 150).map((res, index2) => {
-                    console.log(res);
-                    return (
-                      <Marker
-                        icon={
-                          res.label.length > 0
-                            ? clubMarqueurLabel
-                            : clubMarqueur
-                        }
-                        key={index2}
-                        position={[res.Latitude, res.Longitude]}
-                      >
-                        <Popup key={index2} className="markersPopUp">
-                          <p onClick={scrollCard}> {res.NomClub}</p>
-                        </Popup>
-                      </Marker>
-                    );
-                  })
+                  console.log(res);
+                  return (
+                    <Marker
+                      icon={
+                        res.label.length > 0
+                          ? clubMarqueurLabel
+                          : clubMarqueur
+                      }
+                      key={index2}
+                      position={[res.Latitude, res.Longitude]}
+                    >
+                      <Popup key={index2} className="markersPopUp">
+                        <p onClick={scrollCard}> {res.NomClub}</p>
+                      </Popup>
+                    </Marker>
+                  );
+                })
                 : null}
             </MarkerClusterGroup>
             <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
@@ -593,14 +593,14 @@ function Clean() {
                       } else {
                         formData.type === "Futsal"
                           ? setformData({
-                              ...formData,
-                              gender: e.target.value,
-                              type: "",
-                            })
+                            ...formData,
+                            gender: e.target.value,
+                            type: "",
+                          })
                           : setformData({
-                              ...formData,
-                              gender: e.target.value,
-                            });
+                            ...formData,
+                            gender: e.target.value,
+                          });
                       }
                     }}
                   >
@@ -656,7 +656,7 @@ function Clean() {
                       control={<Radio />}
                       label="Futsal"
                       title="Pratique proposée aux séniors Hommes et aux 17-18 masculins"
-                      // disable={inputFutsal}
+                    // disable={inputFutsal}
                     />
                   </RadioGroup>
 
@@ -818,56 +818,56 @@ function Clean() {
 
           {clubSearch.length !== 0
             ? clubSearch.map((clubSelected, Uniqueindex) => {
-                return (
-                  <div className="cardResult" key={Uniqueindex} id="cardresult">
-                    <div className="titleCardContainer">
-                      <span className="titleCard" onClick={scrollTop}>
-                        {clubSelected.NomClub}
-                      </span>
-                    </div>
+              return (
+                <div className="cardResult" key={Uniqueindex} id="cardresult">
+                  <div className="titleCardContainer">
+                    <span className="titleCard" onClick={scrollTop}>
+                      {clubSelected.NomClub}
+                    </span>
+                  </div>
 
-                    <div className="columnContainer">
-                      <div className="column1">
-                        <div className="logo1"></div>
-                        <div className="logo2"></div>
-                        <div className="logo3"></div>
+                  <div className="columnContainer">
+                    <div className="column1">
+                      <div className="logo1"></div>
+                      <div className="logo2"></div>
+                      <div className="logo3"></div>
+                    </div>
+                    <div className="column2">
+                      <div className="info1">
+                        {" "}
+                        <a
+                          className="mail"
+                          href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}
+                        >
+                          {clubSelected.Mail}{" "}
+                        </a>
                       </div>
-                      <div className="column2">
-                        <div className="info1">
-                          {" "}
-                          <a
-                            className="mail"
-                            href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}
-                          >
-                            {clubSelected.Mail}{" "}
-                          </a>
-                        </div>
-                        <div className="info2">
-                          {clubSelected.AdressePostale}
-                        </div>
-                        <div className="info3">
-                          <a
-                            href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}
-                          >
-                            Voir plus d'infos
-                          </a>
-                          <img
-                            className={
-                              clubSelected.label.length > 0
-                                ? "labelClub"
-                                : "labelHide"
-                            }
-                            src={
-                              clubSelected.label.length > 0 ? LabelMarker : null
-                            }
-                            alt="Marqueur Club labellisé"
-                          />
-                        </div>
+                      <div className="info2">
+                        {clubSelected.AdressePostale}
+                      </div>
+                      <div className="info3">
+                        <a
+                          href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}
+                        >
+                          Voir plus d'infos
+                        </a>
+                        <img
+                          className={
+                            clubSelected.label.length > 0
+                              ? "labelClub"
+                              : "labelHide"
+                          }
+                          src={
+                            clubSelected.label.length > 0 ? LabelMarker : null
+                          }
+                          alt="Marqueur Club labellisé"
+                        />
                       </div>
                     </div>
                   </div>
-                );
-              })
+                </div>
+              );
+            })
             : null}
         </div>
         <div className="sponso">
@@ -947,32 +947,48 @@ function Clean() {
         </div>
       </div>
       {/* Fin de BlocTel*/}
-      <div className="mainContent">
-        <div className="titlesContainer">
-          <h1 className="mainTitle"> BIENVENUE !</h1>
-          <h3 className="secondaryTitle">
-            TROUVEZ UN CLUB PRÈS DE CHEZ VOUS !
-          </h3>
+      <div className="wrapper">
+        <div className="mainContent">
+          <div className="titlesContainer">
+            <h1 className="mainTitle"> BIENVENUE !</h1>
+            <h3 className="secondaryTitle">
+              TROUVEZ UN CLUB PRÈS DE CHEZ VOUS !
+            </h3>
+          </div>
         </div>
-      </div>
-      <div className="descriptionContainer">
-        <h2 className="mainDescription">
-          541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
-        </h2>
-        <h4 className="secondaryDescription">
-          La Ligue Centre-Val de Loire de Football et son partenaire Crédit
-          Agricole vous proposent cette plateforme afin de découvrir l'ensemble
-          des clubs de notre Région !
-        </h4>
-      </div>
+        <div className="descriptionContainer">
+          <h2 className="mainDescription">
+            541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
+          </h2>
+          <h4 className="secondaryDescription">
+            La Ligue Centre-Val de Loire de Football et son partenaire Crédit
+            Agricole vous proposent cette plateforme afin de découvrir
+            l'ensemble des clubs de notre Région !
+          </h4>
+        </div>
 
-      <div className="bannerContainer">
-        <h5 className="bannerTitle">
-        À VOUS DE JOUER
-        </h5>
+        <div className="bannerContainer">
+          <h5 className="bannerTitle">À VOUS DE JOUER</h5>
+        </div>
 
+        <div className="desktopInstructions">
+          <h6 className="instructionsTitle">
+            Entrez votre âge et la compétition souhaitée pour découvrir les
+            clubs à proximité
+          </h6>
+        </div>
+
+        <div className="mainContainer">
+          <div className="mapContainer">
+
+          </div>
+          <div className="formContainer">
+            
+          </div>
+
+        </div>
+        {/* Fin de desktopContainer*/}
       </div>
-      {/* Fin de desktopContainer*/}
     </div>
   );
 }
