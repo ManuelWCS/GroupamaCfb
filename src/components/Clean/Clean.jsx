@@ -58,8 +58,7 @@ import twi from "../../assets/CompressedPictures/twitter.webp";
 /*<------------------------PARTIE DESKTOP---------------------------------> */
 
 import desktopImage from "../../assets/CompressedPictures/final2.webp";
-
-import { Container, Row, Col } from "react-bootstrap";
+import contactImage from "../../assets/CompressedPictures/contact.webp";
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -397,23 +396,23 @@ function Clean() {
             >
               {clubSearch.length !== 0
                 ? clubSearch.slice(0, 150).map((res, index2) => {
-                  console.log(res);
-                  return (
-                    <Marker
-                      icon={
-                        res.label.length > 0
-                          ? clubMarqueurLabel
-                          : clubMarqueur
-                      }
-                      key={index2}
-                      position={[res.Latitude, res.Longitude]}
-                    >
-                      <Popup key={index2} className="markersPopUp">
-                        <p onClick={scrollCard}> {res.NomClub}</p>
-                      </Popup>
-                    </Marker>
-                  );
-                })
+                    console.log(res);
+                    return (
+                      <Marker
+                        icon={
+                          res.label.length > 0
+                            ? clubMarqueurLabel
+                            : clubMarqueur
+                        }
+                        key={index2}
+                        position={[res.Latitude, res.Longitude]}
+                      >
+                        <Popup key={index2} className="markersPopUp">
+                          <p onClick={scrollCard}> {res.NomClub}</p>
+                        </Popup>
+                      </Marker>
+                    );
+                  })
                 : null}
             </MarkerClusterGroup>
             <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
@@ -593,14 +592,14 @@ function Clean() {
                       } else {
                         formData.type === "Futsal"
                           ? setformData({
-                            ...formData,
-                            gender: e.target.value,
-                            type: "",
-                          })
+                              ...formData,
+                              gender: e.target.value,
+                              type: "",
+                            })
                           : setformData({
-                            ...formData,
-                            gender: e.target.value,
-                          });
+                              ...formData,
+                              gender: e.target.value,
+                            });
                       }
                     }}
                   >
@@ -656,7 +655,7 @@ function Clean() {
                       control={<Radio />}
                       label="Futsal"
                       title="Pratique proposée aux séniors Hommes et aux 17-18 masculins"
-                    // disable={inputFutsal}
+                      // disable={inputFutsal}
                     />
                   </RadioGroup>
 
@@ -818,56 +817,57 @@ function Clean() {
 
           {clubSearch.length !== 0
             ? clubSearch.map((clubSelected, Uniqueindex) => {
-              return (
-                <div className="cardResult" key={Uniqueindex} id="cardresult">
-                  <div className="titleCardContainer">
-                    <span className="titleCard" onClick={scrollTop}>
-                      {clubSelected.NomClub}
-                    </span>
-                  </div>
+                return (
+                  <div className="cardResult" key={Uniqueindex} id="cardresult">
+                    <div className="titleCardContainer">
+                      <span className="titleCard" onClick={scrollTop}>
+                        {clubSelected.NomClub}
+                      </span>
+                    </div>
 
-                  <div className="columnContainer">
-                    <div className="column1">
-                      <div className="logo1"></div>
-                      <div className="logo2"></div>
-                      <div className="logo3"></div>
-                    </div>
-                    <div className="column2">
-                      <div className="info1">
-                        {" "}
-                        <a
-                          className="mail"
-                          href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre demande "`}
-                        >
-                          {clubSelected.Mail}{" "}
-                        </a>
+                    <div className="columnContainer">
+                      <div className="column1">
+                        <div className="logo1"></div>
+                        <div className="logo2"></div>
+                        <div className="logo3"></div>
                       </div>
-                      <div className="info2">
-                        {clubSelected.AdressePostale}
-                      </div>
-                      <div className="info3">
-                        <a
-                          href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}
-                        >
-                          Voir plus d'infos
-                        </a>
-                        <img
-                          className={
-                            clubSelected.label.length > 0
-                              ? "labelClub"
-                              : "labelHide"
-                          }
-                          src={
-                            clubSelected.label.length > 0 ? LabelMarker : null
-                          }
-                          alt="Marqueur Club labellisé"
-                        />
+                      <div className="column2">
+                        <div className="info1">
+                          {" "}
+                          <a
+                            className="mail"
+                            href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre           <p> C4EST COMMEnt</p>
+                            demande "`}
+                          >
+                            {clubSelected.Mail}{" "}
+                          </a>
+                        </div>
+                        <div className="info2">
+                          {clubSelected.AdressePostale}
+                        </div>
+                        <div className="info3">
+                          <a
+                            href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}
+                          >
+                            Voir plus d'infos
+                          </a>
+                          <img
+                            className={
+                              clubSelected.label.length > 0
+                                ? "labelClub"
+                                : "labelHide"
+                            }
+                            src={
+                              clubSelected.label.length > 0 ? LabelMarker : null
+                            }
+                            alt="Marqueur Club labellisé"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              );
-            })
+                );
+              })
             : null}
         </div>
         <div className="sponso">
@@ -946,7 +946,7 @@ function Clean() {
           </div>
         </div>
       </div>
-      {/* Fin de BlocTel*/}
+      {/* Fin de BlocTel <<<<<<<<<<<<<VERSION DESKTOP>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/}
       <div className="wrapper">
         <div className="mainContent">
           <div className="titlesContainer">
@@ -980,14 +980,429 @@ function Clean() {
 
         <div className="mainContainer">
           <div className="mapContainer">
+          <div className="legendContainer">
+          <p className="mapTitle">
+            CARTE INTERACTIVE
+          </p>
+            </div>
 
+
+            <div className="BlocCarte">
+    
+          <MapContainer
+            className="mapLeaflet"
+            id="map"
+            center={[48.856614, 2.3522219]}
+            zoom={13}
+            scrollWheelZoom={true}
+            minZoo={6}
+            doubleClickZoom={true}
+            zoomControl={true}
+            whenCreated={setMap}
+          >
+            <TileLayer
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+
+            <Geolocalisation />
+
+            <MarkerClusterGroup
+              animate={true}
+              onClusterClick={(cluster) =>
+                console.warn(
+                  "cluster-click",
+                  cluster,
+                  cluster.layer.getAllChildMarkers()
+                )
+              }
+            >
+              {clubSearch.length !== 0
+                ? clubSearch.slice(0, 150).map((res, index2) => {
+                    console.log(res);
+                    return (
+                      <Marker
+                        icon={
+                          res.label.length > 0
+                            ? clubMarqueurLabel
+                            : clubMarqueur
+                        }
+                        key={index2}
+                        position={[res.Latitude, res.Longitude]}
+                      >
+                        <Popup key={index2} className="markersPopUp">
+                          <p onClick={scrollCard}> {res.NomClub}</p>
+                        </Popup>
+                      </Marker>
+                    );
+                  })
+                : null}
+            </MarkerClusterGroup>
+            <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
+              <Popup className="InstanceLigue">
+                <a href="https://foot-centre.fff.fr/">
+                  <h3>Ligue Centre-Val de Loire </h3>
+                </a>
+              </Popup>
+            </Marker>
+            <Marker position={[47.11563, 2.35849]} icon={cherMarqueur}>
+              <Popup className="InstancePopUp">
+                <a href="https://cher.fff.fr/">
+                  <h3>District de Football du Cher </h3>
+                </a>
+              </Popup>
+            </Marker>
+            <Marker position={[48.42918, 1.46021]} icon={eureEtLoirMarqueur}>
+              <Popup className="InstancePopUp">
+                <a href="https://eure-et-loir.fff.fr/">
+                  <h3>District de Football d'Eure Et Loire </h3>
+                </a>
+              </Popup>
+            </Marker>
+            <Marker position={[46.79267, 1.69726]} icon={indreMarqueur}>
+              <Popup className="InstancePopUp">
+                <a href="https://indre.fff.fr/">
+                  <h3>District de Football de l'Indre </h3>
+                </a>
+              </Popup>
+            </Marker>
+            <Marker position={[47.9168433, 1.9246721]} icon={loiretMarqueur}>
+              <Popup className="InstancePopUp">
+                <a href="https://foot-loiret.fff.fr/">
+                  <h3>District de Football du Loiret </h3>
+                </a>
+              </Popup>
+            </Marker>
+            <Marker
+              position={[47.5766331, 1.3026806]}
+              icon={loireEtcherMarqueur}
+            >
+              <Popup className="InstancePopUp">
+                <a href="https://loir-et-cher.fff.fr/">
+                  <h3>District de Football du Loir-et-Cher</h3>
+                </a>
+              </Popup>
+            </Marker>
+
+            <Marker position={[47.37913, 0.72672]} icon={indreEtLoirMarqueur}>
+              <Popup className="InstancePopUp">
+                <a href="https://indre-et-loire.fff.fr/">
+                  <h3>District de Football d'Indre-Et-Loire'</h3>
+                </a>
+              </Popup>
+            </Marker>
+
+            <Marker position={[47.84524, 1.9247]} icon={marqueurBanque}>
+              <Popup className="banquePopUp">
+                <a href="https://groupama.fr/">
+                  <h3>Groupama</h3>
+                </a>
+              </Popup>
+            </Marker>
+          </MapContainer>
+         
+          </div>
+
+
+            <div className="legendContainer">
+            <span className="cardLegendText">Légende de la carte :</span>
+            </div> 
           </div>
           <div className="formContainer">
-            
+
+             <div className="legendContainer">
+            <span className="cardLegendText">Légende de la carte2 :</span>
+            </div> 
+
+
+          <div className="BlocFiltres">
+
+
+
+
+          <div
+            className={
+              clubSearch.length === 0 ? "filtersNoSearch" : "filtrations"
+            }
+          >
+
+
+
+
+            <form
+              className="filtrationsWrapper"
+              onSubmit={(e) => searchClub(e)}
+            >
+
+
+
+              <div className="filter">
+                <div className="inputBox">
+                  <span className="inputTitle">VOTRE ÂGE </span>
+                </div>
+
+                <TextField
+                  variant="outlined"
+                  label="Âge"
+                  type="number"
+                  margin="normal"
+                  name="age"
+                  onChange={(e) => {
+                    if (e.target.value < 18) {
+                      if (formData.type === "Loisir") {
+                        setformData({
+                          ...formData,
+                          type: "",
+                          age: e.target.value,
+                        });
+                      } else {
+                        setformData({ ...formData, age: e.target.value });
+                      }
+                    } else {
+                      setformData({ ...formData, age: e.target.value });
+                    }
+                  }}
+                  focused
+                  inputProps={{
+                    inputMode: "numeric",
+                    pattern: "[0-9]*",
+                    placeholder: "10, 15, 30...",
+                  }}
+                />
+              </div>
+
+              <div className="filter">
+                <FormControl component="fieldset" required={true}>
+                  <div className="inputBox">
+                    <span className="inputTitle">VOTRE GENRE </span>
+                  </div>
+                  <RadioGroup
+                    row
+                    aria-label="gender"
+                    name="gender"
+                    error="Vous devez renseigner une compétition"
+                    onChange={(e) => {
+                      handleChange(e);
+                      if (e.target.value === "Male") {
+                        setformData({ ...formData, gender: e.target.value });
+                      } else {
+                        formData.type === "Futsal"
+                          ? setformData({
+                              ...formData,
+                              gender: e.target.value,
+                              type: "",
+                            })
+                          : setformData({
+                              ...formData,
+                              gender: e.target.value,
+                            });
+                      }
+                    }}
+                  >
+                    <FormControlLabel
+                      value="Male"
+                      className="radio1"
+                      control={<Radio />}
+                      label="Masculin"
+                    />
+                    <FormControlLabel
+                      className="radio1"
+                      value="Female"
+                      control={<Radio />}
+                      label="Féminin"
+                    />
+                  </RadioGroup>
+                </FormControl>
+              </div>
+
+              <div className="filter">
+                <FormControl component="fieldset" required={true}>
+                  <div className="inputBox">
+                    <span className="inputTitle">PRATIQUE SOUHAITÉE </span>
+                  </div>
+                  <RadioGroup
+                    value={formData.type}
+                    row
+                    aria-label="type"
+                    name="type"
+                    error="Vous devez renseigner une compétition"
+                    onChange={(e) => handleChange(e)}
+                    required={true}
+                  >
+                    <FormControlLabel
+                      value="Libre"
+                      className="radio1"
+                      control={<Radio />}
+                      label="Libre"
+                      title="Football en compétition à 11 joueurs"
+                    />
+                    <FormControlLabel
+                      disabled={inputLoisir}
+                      className="radio1"
+                      value="Loisir"
+                      control={<Radio />}
+                      label="Loisir"
+                      title="Pratique proposée aux seniors Hommes exclusivement"
+                    />
+                    <FormControlLabel
+                      disabled={inputFutsal}
+                      className="radio1"
+                      value="Futsal"
+                      control={<Radio />}
+                      label="Futsal"
+                      title="Pratique proposée aux séniors Hommes et aux 17-18 masculins"
+                      // disable={inputFutsal}
+                    />
+                  </RadioGroup>
+
+                  <div className="modalDiv">
+                    <Button2 className="modalTitle" onClick={handleOpen}>
+                      <div className="btnOpenPopup">
+                        <p className="btnTextPopUp">
+                          Détails sur les catégories
+                        </p>
+                      </div>
+                    </Button2>
+                    <Modal
+                      open={open}
+                      onClose={handleClose}
+                      aria-labelledby="modal-modal-title"
+                      aria-describedby="modal-modal-description"
+                    >
+                      <Box id="box" sx={style}>
+                        <Typography
+                          id="modal-modal-title"
+                          variant="h6"
+                          component="h2"
+                        >
+                          <p className="modalTitle">
+                            {" "}
+                            Informations complémentaires sur les catégories :
+                          </p>
+                        </Typography>
+                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                          <p className="boldText">Libre : </p>
+                          <p className="popupText">Football en compétiton</p>
+                          <p className="boldText"> Loisir :</p>
+                          <p className="popupText">
+                            {" "}
+                            Pratique proposée aux seniors Hommes exclusivement
+                          </p>
+
+                          <p className="boldText">Futsal : </p>
+                          <p className="popupText">
+                            {" "}
+                            Pratique proposée aux seniors Hommes et aux 17-18
+                            ans Hommes
+                          </p>
+                          <div onClick={handleClose} className="btnClosePopUp">
+                            <p onClick={handleClose}>FERMER</p>
+                          </div>
+                        </Typography>
+                      </Box>
+                    </Modal>
+                  </div>
+                </FormControl>
+              </div>
+
+              <div className="filter">
+                <div className="inputBox2">
+                  <span className="inputTitle">VOTRE VILLE </span>
+                </div>
+
+                <Autocomplete
+                  disablePortal
+                  className="inputCity"
+                  id="combo-box-demo"
+                  inputValue={formData.city}
+                  options={allcities}
+                  noOptionsText="Pas de club disponible dans cette commune"
+                  onInputChange={(event, newInputValue) => {
+                    setformData({ ...formData, city: newInputValue });
+                  }}
+                  sx={{ width: 230 }}
+                  renderInput={(params) => (
+                    <TextField {...params} label="Rechercher" />
+                  )}
+                />
+              </div>
+{/* 
+              <div className="btnContainer" id="test2">
+                <button className="btnBackground" id="scrollBtn" type="submit">
+                  <img
+                    className="findclubBtn"
+                    alt="trouvez votre club"
+                    src={btnPicture}
+                  />
+                </button>
+              </div> */}
+            </form>
+          </div>
           </div>
 
+
+            <div className="submitContainer">
+            <button className="btnBackground" id="scrollBtn" type="submit">
+                  <img
+                    className="findclubBtn"
+                    alt="trouvez votre club"
+                    src={btnPicture}
+                  />
+                </button>
+            </div>
+          </div>
+        </div>
+        <div className="faqContainer">
+          <h6 className="faqTitle">FAQ ! BESOIN D'AIDE ? </h6>
+
+          <p className="faqText">
+            Vous avez une question ? Nous avons probablement la réponse !
+          </p>
+          <p className="faqText2">Cliquez ici pour poser votre question</p>
+          <img src={contactImage} className="contactImg" />
         </div>
         {/* Fin de desktopContainer*/}
+        <div className="curved">
+          <div className="sponsorContainer">
+            <p className="sponsoText"> Cette plateforme est soutenue par le Groupama</p>
+            <img src={Logo} className="GroupamaLogo" />
+            <div className="sponsoLinks">
+              <a
+                href="https://www.facebook.com/groupama"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={fb} alt="" className="LinkGroupama" />
+              </a>
+
+              <a
+                href="https://www.youtube.com/channel/UCcVU-JnuCbANGOl4vGcGpEg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={yt} alt="" className="LinkGroupama" />
+              </a>
+
+              <a
+                href="https://www.groupama.fr/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={web} alt="" className="LinkGroupama" />
+              </a>
+
+              <a
+                href="https://twitter.com/GroupeGroupama"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={twi} alt="" className="LinkGroupama" />
+                
+              </a>
+            </div>
+            
+          </div>
+        </div>
       </div>
     </div>
   );
