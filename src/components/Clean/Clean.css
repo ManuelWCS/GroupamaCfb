@@ -195,7 +195,6 @@
     align-items: center;
     align-content: stretch;
     background-color: palegreen;
-
   }
 
   .formContainer {
@@ -205,7 +204,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     align-content: stretch;
   }
@@ -224,13 +223,36 @@
   }
 
   .BlocFiltres {
-    height: 400px;
+    max-height: 400px;
     width: 520px;
-    border:5px solid orangered;
+    border: 5px solid purple;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  .BlocFiltresEX {
+    width: 520px;
+    border: 5px solid purple;
+    background-color: indianred;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: relative;
+    height: 100%;
+  }
+
+  .BlocFiltres::-webkit-scrollbar {
+    width: 8px; /* width of the entire scrollbar */
+  }
+
+  .BlocFiltres::-webkit-scrollbar-track {
+    background-color: #f2f2f2; /* color of the scroll thumb */
+  }
+
+  .resultats::-webkit-scrollbar-thumb {
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 8px solid #293d6b; /* creates padding around scroll thumb */
   }
 
   .faqTitle {
@@ -306,11 +328,6 @@
     font-size: calc(var(--main-fontSize) / 1.1);
   }
 
-
-  .BlocFiltres {
-    height: max-content;
-  }
-
   .filtersNoSearch {
     display: flex;
     flex-direction: column;
@@ -331,7 +348,6 @@
   .hide {
     display: block;
   }
-
 
   .inputBox {
     font-family: var(--main-font);
@@ -392,6 +408,174 @@
     border: 5px solid goldenrod;
   }
 
+  .testing {
+    width: 500px;
+    height: 500px;
+    background-color: #293d6b;
+  }
+  .resultats {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    height: max-content;
+    margin-top: 16px;
+    margin-bottom: 180px;
+    padding-bottom: 64px;
+  }
 
+  /* Texte indiquant le nombre de résultats */
 
+  .resultText {
+    color: var(--main-color);
+    font-size: 16px;
+    text-align: center;
+    font-family: var(--main-font);
+    padding: 8px 8px 8px 8px;
+  }
+
+  /* Styles des cartes affichées lors des résultats */
+
+  .cardResult {
+    height: 220px;
+    width: 305px;
+    background-image: url("../../assets/Cartes/Carte-bleu.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    padding: 8px 8px 8px 8px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cardResult:nth-child(2n) {
+    height: 220px;
+    width: 300px;
+    background-image: url("../../assets/Cartes/Carte-rouge.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+  }
+
+  .cardResult:nth-child(3n) {
+    height: 220px;
+    width: 305px;
+    background-image: url("../../assets/Cartes/Carte-grise.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+  }
+  .cardResult:nth-child(4n) {
+    height: 220px;
+    width: 305px;
+    background-image: url("../../assets/Cartes/Carte-turquoise.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .cardResult:nth-child(1n) .logo1:nth-child(1n) {
+    background-image: url("../../assets/Logos/Mail-bleu.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(2n) .logo1:nth-child(1n) {
+    background-image: url("../../assets/Logos/Mail-rouge.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(2n) .logo2:nth-child(2n) {
+    background-image: url("../../assets/Logos/Localisation-rouge.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(2n) .logo3:nth-child(3n) {
+    background-image: url("../../assets/Logos/Info-rouge.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(3n) .logo1:nth-child(1n) {
+    background-image: url("../../assets/Logos/Mail-gris.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(3n) .logo2:nth-child(2n) {
+    background-image: url("../../assets/Logos/Localisation-gris.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(3n) .logo3:nth-child(3n) {
+    background-image: url("../../assets/Logos/Info-gris.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(4n) .logo1:nth-child(1n) {
+    background-image: url("../../assets/Logos/Mail-turquoise.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(4n) .logo2:nth-child(2n) {
+    background-image: url("../../assets/Logos/Localisation-turquoise.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(4n) .logo3:nth-child(3n) {
+    background-image: url("../../assets/Logos/Info-turquoise.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .logo1,
+  .logo2,
+  .logo3 {
+    height: 32px;
+    width: 32px;
+  }
+
+  /* Affichage du club labélisé*/
+  .labelClub {
+    height: 45px;
+    width: 50px;
+    margin-left: 58px;
+    background: transparent;
+    background-color: transparent;
+  }
+
+  .labelHide {
+    display: none;
+  }
+
+  .btnAfterSearch {
+    width: 120px;
+    height: 58px;
+    margin: auto;
+    border-radius: 12px;
+  }
+
+  .cardLegendText {
+    height: 50px;
+    width: 100%;
+    background-color: olivedrab;
+  }
 }

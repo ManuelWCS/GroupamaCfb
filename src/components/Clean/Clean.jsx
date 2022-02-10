@@ -274,6 +274,11 @@ function Clean() {
     setformData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const newSearch = () => {
+    setDeclenche(false);
+    setclubSearch([]);
+  };
+
   // Fonction qui changera le marqueur en fonction de s'il est labélisé ou pas
 
   useEffect(() => {
@@ -503,237 +508,300 @@ function Clean() {
             </div>
           </div>
           <div className="formContainer">
-            <div className="legendContainer">
-              <span className="cardLegendText">Légende de la carte2 :</span>
-            </div>
+            <span className="cardLegendText">COMPLETEZ VOS INFOS </span>
 
-            <div className="BlocFiltres">
-              <div
-                className={clubSearch.length === 0 ? "filtersNoSearch" : "hide"}
-              >
-                <form
-                  className="filtrationsWrapper"
-                  onSubmit={(e) => searchClub(e)}
-                >
-                  <div className="filter">
-                    <div className="inputBox">
-                      <span className="inputTitle">VOTRE ÂGE </span>
+            <div
+              className={
+                clubSearch.length !== 0 ? "BlocFiltresEX" : "BlocFiltres"
+              }
+            >
+              {clubSearch.length > 0 ? (
+                clubSearch.map((clubSelected, Uniqueindex) => {
+                  return (
+                    <div
+                      className="cardResult"
+                      key={Uniqueindex}
+                      id="cardresult"
+                    >
+                      <div className="titleCardContainer">
+                        <span className="titleCard" onClick={scrollTop}>
+                          {clubSelected.NomClub}
+                        </span>
+                      </div>
+
+                      <div className="columnContainer">
+                        <div className="column1">
+                          <div className="logo1"></div>
+                          <div className="logo2"></div>
+                          <div className="logo3"></div>
+                        </div>
+                        <div className="column2">
+                          <div className="info1">
+                            {" "}
+                            <a
+                              className="mail"
+                              href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre           <p> C4EST COMMEnt</p>
+                                demande "`}
+                            >
+                              {clubSelected.Mail}{" "}
+                            </a>
+                          </div>
+                          <div className="info2">
+                            {clubSelected.AdressePostale}
+                          </div>
+                          <div className="info3">
+                            <a
+                              href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}
+                            >
+                              Voir plus d'infos
+                            </a>
+                            <img
+                              className={
+                                clubSelected.label.length > 0
+                                  ? "labelClub"
+                                  : "labelHide"
+                              }
+                              src={
+                                clubSelected.label.length > 0
+                                  ? LabelMarker
+                                  : null
+                              }
+                              alt="Marqueur Club labellisé"
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                  );
+                })
+              ) : (
+                <div className="filtersNoSearch">
+                  <form
+                    className="filtrationsWrapper"
+                    onSubmit={(e) => searchClub(e)}
+                  >
+                    <div className="filter">
+                      <div className="inputBox">
+                        <span className="inputTitle">VOTRE ÂGE </span>
+                      </div>
 
-                    <TextField
-                      variant="outlined"
-                      label="Âge"
-                      type="number"
-                      margin="normal"
-                      name="age"
-                      onChange={(e) => {
-                        if (e.target.value < 18) {
-                          if (formData.type === "Loisir") {
-                            setformData({
-                              ...formData,
-                              type: "",
-                              age: e.target.value,
-                            });
+                      <TextField
+                        variant="outlined"
+                        label="Âge"
+                        type="number"
+                        margin="normal"
+                        name="age"
+                        onChange={(e) => {
+                          if (e.target.value < 18) {
+                            if (formData.type === "Loisir") {
+                              setformData({
+                                ...formData,
+                                type: "",
+                                age: e.target.value,
+                              });
+                            } else {
+                              setformData({ ...formData, age: e.target.value });
+                            }
                           } else {
                             setformData({ ...formData, age: e.target.value });
                           }
-                        } else {
-                          setformData({ ...formData, age: e.target.value });
-                        }
-                      }}
-                      focused
-                      inputProps={{
-                        inputMode: "numeric",
-                        pattern: "[0-9]*",
-                        placeholder: "10, 15, 30...",
-                      }}
-                    />
-                  </div>
-
-                  <div className="filter">
-                    <FormControl component="fieldset" required={true}>
-                      <div className="inputBox">
-                        <span className="inputTitle">VOTRE GENRE </span>
-                      </div>
-                      <RadioGroup
-                        row
-                        aria-label="gender"
-                        name="gender"
-                        error="Vous devez renseigner une compétition"
-                        onChange={(e) => {
-                          handleChange(e);
-                          if (e.target.value === "Male") {
-                            setformData({
-                              ...formData,
-                              gender: e.target.value,
-                            });
-                          } else {
-                            formData.type === "Futsal"
-                              ? setformData({
-                                  ...formData,
-                                  gender: e.target.value,
-                                  type: "",
-                                })
-                              : setformData({
-                                  ...formData,
-                                  gender: e.target.value,
-                                });
-                          }
                         }}
-                      >
-                        <FormControlLabel
-                          value="Male"
-                          className="radio1"
-                          control={<Radio />}
-                          label="Masculin"
-                        />
-                        <FormControlLabel
-                          className="radio1"
-                          value="Female"
-                          control={<Radio />}
-                          label="Féminin"
-                        />
-                      </RadioGroup>
-                    </FormControl>
-                  </div>
-
-                  <div className="filter">
-                    <FormControl component="fieldset" required={true}>
-                      <div className="inputBox">
-                        <span className="inputTitle">PRATIQUE SOUHAITÉE </span>
-                      </div>
-                      <RadioGroup
-                        value={formData.type}
-                        row
-                        aria-label="type"
-                        name="type"
-                        error="Vous devez renseigner une compétition"
-                        onChange={(e) => handleChange(e)}
-                        required={true}
-                      >
-                        <FormControlLabel
-                          value="Libre"
-                          className="radio1"
-                          control={<Radio />}
-                          label="Libre"
-                          title="Football en compétition à 11 joueurs"
-                        />
-                        <FormControlLabel
-                          disabled={inputLoisir}
-                          className="radio1"
-                          value="Loisir"
-                          control={<Radio />}
-                          label="Loisir"
-                          title="Pratique proposée aux seniors Hommes exclusivement"
-                        />
-                        <FormControlLabel
-                          disabled={inputFutsal}
-                          className="radio1"
-                          value="Futsal"
-                          control={<Radio />}
-                          label="Futsal"
-                          title="Pratique proposée aux séniors Hommes et aux 17-18 masculins"
-                          // disable={inputFutsal}
-                        />
-                      </RadioGroup>
-
-                      <div className="modalDiv">
-                        <Button2 className="modalTitle" onClick={handleOpen}>
-                          <div className="btnOpenPopup">
-                            <p className="btnTextPopUp">
-                              Détails sur les catégories
-                            </p>
-                          </div>
-                        </Button2>
-                        <Modal
-                          open={open}
-                          onClose={handleClose}
-                          aria-labelledby="modal-modal-title"
-                          aria-describedby="modal-modal-description"
-                        >
-                          <Box id="box" sx={style}>
-                            <Typography
-                              id="modal-modal-title"
-                              variant="h6"
-                              component="h2"
-                            >
-                              <p className="modalTitle">
-                                {" "}
-                                Informations complémentaires sur les catégories
-                                :
-                              </p>
-                            </Typography>
-                            <Typography
-                              id="modal-modal-description"
-                              sx={{ mt: 2 }}
-                            >
-                              <p className="boldText">Libre : </p>
-                              <p className="popupText">
-                                Football en compétiton
-                              </p>
-                              <p className="boldText"> Loisir :</p>
-                              <p className="popupText">
-                                {" "}
-                                Pratique proposée aux seniors Hommes
-                                exclusivement
-                              </p>
-
-                              <p className="boldText">Futsal : </p>
-                              <p className="popupText">
-                                {" "}
-                                Pratique proposée aux seniors Hommes et aux
-                                17-18 ans Hommes
-                              </p>
-                              <div
-                                onClick={handleClose}
-                                className="btnClosePopUp"
-                              >
-                                <p onClick={handleClose}>FERMER</p>
-                              </div>
-                            </Typography>
-                          </Box>
-                        </Modal>
-                      </div>
-                    </FormControl>
-                  </div>
-
-                  <div className="filter">
-                    <div className="inputBox2">
-                      <span className="inputTitle">VOTRE VILLE </span>
+                        focused
+                        inputProps={{
+                          inputMode: "numeric",
+                          pattern: "[0-9]*",
+                          placeholder: "10, 15, 30...",
+                        }}
+                      />
                     </div>
 
-                    <Autocomplete
-                      disablePortal
-                      className="inputCity"
-                      id="combo-box-demo"
-                      inputValue={formData.city}
-                      options={allcities}
-                      noOptionsText="Pas de club disponible dans cette commune"
-                      onInputChange={(event, newInputValue) => {
-                        setformData({ ...formData, city: newInputValue });
-                      }}
-                      sx={{ width: 230 }}
-                      renderInput={(params) => (
-                        <TextField {...params} label="Rechercher" />
-                      )}
-                    />
-                  </div>
+                    <div className="filter">
+                      <FormControl component="fieldset" required={true}>
+                        <div className="inputBox">
+                          <span className="inputTitle">VOTRE GENRE </span>
+                        </div>
+                        <RadioGroup
+                          row
+                          aria-label="gender"
+                          name="gender"
+                          error="Vous devez renseigner une compétition"
+                          onChange={(e) => {
+                            handleChange(e);
+                            if (e.target.value === "Male") {
+                              setformData({
+                                ...formData,
+                                gender: e.target.value,
+                              });
+                            } else {
+                              formData.type === "Futsal"
+                                ? setformData({
+                                    ...formData,
+                                    gender: e.target.value,
+                                    type: "",
+                                  })
+                                : setformData({
+                                    ...formData,
+                                    gender: e.target.value,
+                                  });
+                            }
+                          }}
+                        >
+                          <FormControlLabel
+                            value="Male"
+                            className="radio1"
+                            control={<Radio />}
+                            label="Masculin"
+                          />
+                          <FormControlLabel
+                            className="radio1"
+                            value="Female"
+                            control={<Radio />}
+                            label="Féminin"
+                          />
+                        </RadioGroup>
+                      </FormControl>
+                    </div>
 
-                  <div className="btnContainer" id="test2">
-                    <button
-                      className="btnBackground"
-                      id="scrollBtn"
-                      type="submit"
-                    >
-                      <img
-                        className="findclubBtn"
-                        alt="trouvez votre club"
-                        src={btnPicture}
+                    <div className="filter">
+                      <FormControl component="fieldset" required={true}>
+                        <div className="inputBox">
+                          <span className="inputTitle">
+                            PRATIQUE SOUHAITÉE{" "}
+                          </span>
+                        </div>
+                        <RadioGroup
+                          value={formData.type}
+                          row
+                          aria-label="type"
+                          name="type"
+                          error="Vous devez renseigner une compétition"
+                          onChange={(e) => handleChange(e)}
+                          required={true}
+                        >
+                          <FormControlLabel
+                            value="Libre"
+                            className="radio1"
+                            control={<Radio />}
+                            label="Libre"
+                            title="Football en compétition à 11 joueurs"
+                          />
+                          <FormControlLabel
+                            disabled={inputLoisir}
+                            className="radio1"
+                            value="Loisir"
+                            control={<Radio />}
+                            label="Loisir"
+                            title="Pratique proposée aux seniors Hommes exclusivement"
+                          />
+                          <FormControlLabel
+                            disabled={inputFutsal}
+                            className="radio1"
+                            value="Futsal"
+                            control={<Radio />}
+                            label="Futsal"
+                            title="Pratique proposée aux séniors Hommes et aux 17-18 masculins"
+                            // disable={inputFutsal}
+                          />
+                        </RadioGroup>
+
+                        <div className="modalDiv">
+                          <Button2 className="modalTitle" onClick={handleOpen}>
+                            <div className="btnOpenPopup">
+                              <p className="btnTextPopUp">
+                                Détails sur les catégories
+                              </p>
+                            </div>
+                          </Button2>
+                          <Modal
+                            open={open}
+                            onClose={handleClose}
+                            aria-labelledby="modal-modal-title"
+                            aria-describedby="modal-modal-description"
+                          >
+                            <Box id="box" sx={style}>
+                              <Typography
+                                id="modal-modal-title"
+                                variant="h6"
+                                component="h2"
+                              >
+                                <p className="modalTitle">
+                                  {" "}
+                                  Informations complémentaires sur les
+                                  catégories :
+                                </p>
+                              </Typography>
+                              <Typography
+                                id="modal-modal-description"
+                                sx={{ mt: 2 }}
+                              >
+                                <p className="boldText">Libre : </p>
+                                <p className="popupText">
+                                  Football en compétiton
+                                </p>
+                                <p className="boldText"> Loisir :</p>
+                                <p className="popupText">
+                                  {" "}
+                                  Pratique proposée aux seniors Hommes
+                                  exclusivement
+                                </p>
+
+                                <p className="boldText">Futsal : </p>
+                                <p className="popupText">
+                                  {" "}
+                                  Pratique proposée aux seniors Hommes et aux
+                                  17-18 ans Hommes
+                                </p>
+                                <div
+                                  onClick={handleClose}
+                                  className="btnClosePopUp"
+                                >
+                                  <p onClick={handleClose}>FERMER</p>
+                                </div>
+                              </Typography>
+                            </Box>
+                          </Modal>
+                        </div>
+                      </FormControl>
+                    </div>
+
+                    <div className="filter">
+                      <div className="inputBox2">
+                        <span className="inputTitle">VOTRE VILLE </span>
+                      </div>
+
+                      <Autocomplete
+                        disablePortal
+                        className="inputCity"
+                        id="combo-box-demo"
+                        inputValue={formData.city}
+                        options={allcities}
+                        noOptionsText="Pas de club disponible dans cette commune"
+                        onInputChange={(event, newInputValue) => {
+                          setformData({ ...formData, city: newInputValue });
+                        }}
+                        sx={{ width: 230 }}
+                        renderInput={(params) => (
+                          <TextField {...params} label="Rechercher" />
+                        )}
                       />
-                    </button>
-                  </div>
-                </form>
-              </div>
+                    </div>
+
+                    <div className="btnContainer" id="test2">
+                      <button
+                        className="btnBackground"
+                        id="scrollBtn"
+                        type="submit"
+                      >
+                        <img
+                          className="findclubBtn"
+                          alt="trouvez votre club"
+                          src={btnPicture}
+                        />
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              )}
               <Modal
                 open={clubSearch.length === 0 && Declenche ? true : false}
                 onClose={handleClosePop}
@@ -769,17 +837,15 @@ function Clean() {
             </div>
 
             {/* FIN DE LA  GESTION DES ERREURS DANS LA RECHERCHE */}
-
-            <div className="submitContainer">
-              {/* <button className="btnBackground" id="scrollBtn" type="submit">
-                  <img
-                    className="findclubBtn"
-                    alt="trouvez votre club"
-                    src={btnPicture}
-                  />
-                </button> */}
-            </div>
           </div>
+        </div>
+        <div className="submitContainer">
+          <button
+            className={clubSearch.length !== 0 ? "btnAfterSearch" : "hide"}
+            onClick={newSearch}
+          >
+            NOUVELLE RECHERCHE
+          </button>
         </div>
         <div className="faqContainer">
           <h6 className="faqTitle">FAQ ! BESOIN D'AIDE ? </h6>
