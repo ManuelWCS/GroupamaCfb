@@ -357,8 +357,7 @@ function Clean() {
             541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
           </h2>
           <h4 className="secondaryDescription">
-            La Ligue Centre-Val de Loire de Football et son partenaire Crédit
-            Agricole vous proposent cette plateforme afin de découvrir
+            La Ligue Centre-Val de Loire de Football et son partenaire Groupama Centre-Val vous proposent cette plateforme afin de découvrir
             l'ensemble des clubs de notre Région !
           </h4>
         </div>
@@ -504,7 +503,38 @@ function Clean() {
             </div>
 
             <div className="legendContainer">
-              <span className="cardLegendText">Légende de la carte :</span>
+              <div className="markerContainer">
+                <div className="markerWrapper">
+              <img src={clubMarker} className="legendMarker"/>
+              <span className="markerDescription">Club de football</span>
+
+                </div>
+                <div className="markerWrapper">
+              <img src={marqueurG}className="legendMarker"/>
+              <span className="markerDescription">Votre position</span>
+
+
+                </div>
+
+                <div className="markerWrapper">
+              <img src={agenceGroupama}className="legendMarker"/>
+              <span className="markerDescription">Groupama</span>
+
+                </div>
+
+                <div className="markerWrapper">
+              <img src={labelCA}className="legendMarker"/>
+              <span className="markerDescription">Club labéllisé</span>
+
+                </div>
+
+              </div>
+
+
+
+
+
+             
             </div>
           </div>
           <div className="formContainer">
@@ -540,7 +570,7 @@ function Clean() {
                             {" "}
                             <a
                               className="mail"
-                              href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre           <p> C4EST COMMEnt</p>
+                              href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre
                                 demande "`}
                             >
                               {clubSelected.Mail}{" "}
@@ -571,6 +601,8 @@ function Clean() {
                           </div>
                         </div>
                       </div>
+                      
+                          
                     </div>
                   );
                 })
@@ -799,7 +831,9 @@ function Clean() {
                         />
                       </button>
                     </div>
+                    
                   </form>
+                  
                 </div>
               )}
               <Modal
@@ -834,19 +868,32 @@ function Clean() {
                   )}
                 </Box>
               </Modal>
+              <div className="newSearchContainer">
+
+              <button
+            className={clubSearch.length !== 0 ? "btnAfterSearch" : "hide"}
+            onClick={newSearch}
+          >
+            NOUVELLE RECHERCHE
+          </button>
+              </div>
+              
+              
             </div>
 
             {/* FIN DE LA  GESTION DES ERREURS DANS LA RECHERCHE */}
           </div>
         </div>
-        <div className="submitContainer">
+        {/* <div className="newSearchContainer">
+          
           <button
             className={clubSearch.length !== 0 ? "btnAfterSearch" : "hide"}
             onClick={newSearch}
           >
             NOUVELLE RECHERCHE
           </button>
-        </div>
+        </div> */}
+    
         <div className="faqContainer">
           <h6 className="faqTitle">FAQ ! BESOIN D'AIDE ? </h6>
 
