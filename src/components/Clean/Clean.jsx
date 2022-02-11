@@ -357,7 +357,8 @@ function Clean() {
             541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
           </h2>
           <h4 className="secondaryDescription">
-            La Ligue Centre-Val de Loire de Football et son partenaire Groupama Centre-Val vous proposent cette plateforme afin de découvrir
+            La Ligue Centre-Val de Loire de Football et son partenaire Groupama
+            Centre-Val vous proposent cette plateforme afin de découvrir
             l'ensemble des clubs de notre Région !
           </h4>
         </div>
@@ -505,36 +506,24 @@ function Clean() {
             <div className="legendContainer">
               <div className="markerContainer">
                 <div className="markerWrapper">
-              <img src={clubMarker} className="legendMarker"/>
-              <span className="markerDescription">Club de football</span>
-
+                  <img src={marqueurG} className="legendMarker1" />
+                  <span className="markerDescription">Votre position</span>
                 </div>
                 <div className="markerWrapper">
-              <img src={marqueurG}className="legendMarker"/>
-              <span className="markerDescription">Votre position</span>
-
-
+                  <img src={clubMarker} className="legendMarker2" />
+                  <span className="markerDescription">Club de football</span>
                 </div>
 
                 <div className="markerWrapper">
-              <img src={agenceGroupama}className="legendMarker"/>
-              <span className="markerDescription">Groupama</span>
-
+                  <img src={agenceGroupama} className="legendMarker" />
+                  <span className="markerDescription">Groupama</span>
                 </div>
 
                 <div className="markerWrapper">
-              <img src={labelCA}className="legendMarker"/>
-              <span className="markerDescription">Club labéllisé</span>
-
+                  <img src={labelCA} className="legendMarker3" />
+                  <span className="markerDescription">Club labéllisé</span>
                 </div>
-
               </div>
-
-
-
-
-
-             
             </div>
           </div>
           <div className="formContainer">
@@ -601,8 +590,6 @@ function Clean() {
                           </div>
                         </div>
                       </div>
-                      
-                          
                     </div>
                   );
                 })
@@ -831,9 +818,7 @@ function Clean() {
                         />
                       </button>
                     </div>
-                    
                   </form>
-                  
                 </div>
               )}
               <Modal
@@ -869,31 +854,21 @@ function Clean() {
                 </Box>
               </Modal>
               <div className="newSearchContainer">
-
-              <button
-            className={clubSearch.length !== 0 ? "btnAfterSearch" : "hide"}
-            onClick={newSearch}
-          >
-            NOUVELLE RECHERCHE
-          </button>
+                <button
+                  className={
+                    clubSearch.length !== 0 ? "btnAfterSearch" : "hide"
+                  }
+                  onClick={newSearch}
+                >
+                  NOUVELLE RECHERCHE
+                </button>
               </div>
-              
-              
             </div>
 
             {/* FIN DE LA  GESTION DES ERREURS DANS LA RECHERCHE */}
           </div>
         </div>
-        {/* <div className="newSearchContainer">
-          
-          <button
-            className={clubSearch.length !== 0 ? "btnAfterSearch" : "hide"}
-            onClick={newSearch}
-          >
-            NOUVELLE RECHERCHE
-          </button>
-        </div> */}
-    
+
         <div className="faqContainer">
           <h6 className="faqTitle">FAQ ! BESOIN D'AIDE ? </h6>
 
@@ -945,8 +920,48 @@ function Clean() {
               </a>
             </div>
           </div>
+              <div className="foooooter">
+              <div className="logos">
+          <a
+            href="https://www.facebook.com/LCFofficiel/?ref=bookmarks"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img className="logos" alt="logo Facebook" src={fb} />
+          </a>
+        </div>
+
+        <div className="logos">
+          <a
+            href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              className="logos"
+              alt="logo site Ligue Centre Val de Loire"
+              src={web}
+            />
+          </a>
+        </div>
+
+        <div className="logos">
+          <a
+            href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              className="logos"
+              alt="logo Youtube Ligue Centre-Val de Loire"
+              src={yt}
+            />
+          </a>
+        </div>
+              </div>
         </div>
       </div>
+      
     </div>
   );
 }
