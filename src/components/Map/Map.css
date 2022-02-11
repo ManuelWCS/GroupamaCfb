@@ -258,12 +258,12 @@
 
 /* BOUTON du FORM  */
 
-.btnContainer {
+/* .btnContainer {
   position:absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .findclubBtn {
   height: 100px;
