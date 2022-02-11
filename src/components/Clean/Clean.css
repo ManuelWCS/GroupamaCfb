@@ -238,7 +238,7 @@
   }
 
   .BlocFiltres {
-    max-height: 400px;
+    max-height: 500px;
     width: 520px;
     display: flex;
     flex-direction: column;
