@@ -281,12 +281,15 @@
     padding: var(--spacing-small);
     font-size: var(--main-fontSize);
     color: var(--main-color);
+    font-family: var(--secondary-font);
   }
 
   .faqText2 {
     padding: var(--spacing-small);
     font-size: var(--main-fontSize);
     color: rgb(51, 51, 51);
+    font-family: var(--secondary-font);
+
   }
 
   .contactImg {

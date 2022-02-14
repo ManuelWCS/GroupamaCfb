@@ -45,6 +45,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("../../assets/CompressedPictures/FondBlanc.webp");
+
   }
 
 
@@ -100,7 +101,30 @@
       #map {
         height: 700px;
         width: 800px;
+        margin-bottom: calc(var(--spacing-large)*1);
       }
+
+
+      .markerContainer {
+        margin-bottom: var(--spacing-large);
+        width: 900px;
+      }
+
+      .mapTitle {
+        margin-bottom: 32px;
+      }
+
+      .cardLegendText {
+        margin-bottom: calc(var(--spacing-large)*5);
+
+      }
+
+      .mainContainer {
+        padding:var(--spacing-small);
+        margin-bottom: calc(var(--spacing-large)*10);
+      }
+      
+     
 
     
 
