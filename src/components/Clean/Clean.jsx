@@ -186,12 +186,15 @@ function Clean() {
     iconUrl: agenceGroupama,
   });
 
+  /* Fonction pour chercher un club */ 
+
   const searchClub = (e) => {
     e.preventDefault();
     let filtersOptions = [];
 
     // Si le genre est renseigné, filtre fonctionnel
     if (formData.gender !== null) {
+      console.log('sexe renseigné')
       if (formData.gender.length > 0) {
         // je pousse le filtre dans un tableau
         filtersOptions.push(
