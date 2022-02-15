@@ -413,7 +413,7 @@
     /*********** STYLES CARTES*/
     .cardResult {
       height: 220px;
-      width: 250px;
+      width: 290px;
       background-image: url("../../assets/Cartes/Carte-bleu.png");
       background-position: center;
       background-size: cover;
@@ -426,7 +426,7 @@
   
     .cardResult:nth-child(2n) {
       height: 220px;
-      width: 250px;
+      width: 290px;
       background-image: url("../../assets/Cartes/Carte-rouge.png");
       background-position: center;
       background-size: cover;
@@ -436,7 +436,7 @@
   
     .cardResult:nth-child(3n) {
       height: 220px;
-      width: 250px;
+      width: 290px;
       background-image: url("../../assets/Cartes/Carte-grise.png");
       background-position: center;
       background-size: cover;
@@ -446,7 +446,7 @@
   
     .cardResult:nth-child(4n) {
       height: 220px;
-      width: 250px;
+      width: 290px;
       background-image: url("../../assets/Cartes/Carte-turquoise.png");
       background-position: center;
       background-size: cover;
@@ -566,6 +566,28 @@
       background: transparent;
       background-color: transparent;
     }
+
+.info1,
+.info2,
+.info3 {
+  font-family: var(--secondary-font);
+  font-size: calc(var(--main-fontSize)/1.2);
+
+}
+
+.info1 a {
+  text-decoration: none;
+  color: black;
+}
+
+.info3 a {
+  text-decoration: none;
+  color: black;
+}
+
+.info3 a:visited {
+  text-decoration: none;
+}
   }
 
 
