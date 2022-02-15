@@ -201,10 +201,12 @@ function Clean() {
           // ici on fais un includes car on la data avec laquelles on compare c'est un array
           // item.gender: ["male","female]
           (item) => item.gender.includes(formData.gender)
-        );
+          );
+        }
       }
-    }
-    // Si la ville est renseignée
+
+      
+      // Si la ville est renseignée
     if (formData.city !== null) {
       if (formData.city.length > 0) {
         filtersOptions.push((item) => item.Localite === formData.city);

@@ -348,11 +348,15 @@
       padding: var(--spacing-small);
       font-size: var(--main-fontSize);
       color: var(--main-color);
+      font-family: var(--secondary-font);
+
     }
     .faqText2 {
       padding: var(--spacing-small);
       font-size: var(--main-fontSize);
       color: rgb(51, 51, 51);
+      font-family: var(--secondary-font);
+
     }
     .contactImg {
       height: 58px;
@@ -409,21 +413,20 @@
     /*********** STYLES CARTES*/
     .cardResult {
       height: 220px;
-      width: 305px;
+      width: 250px;
       background-image: url("../../assets/Cartes/Carte-bleu.png");
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
       border-radius: 12px;
       margin-bottom: 16px;
-      padding: 8px 8px 8px 8px;
       margin-left: auto;
       margin-right: auto;
     }
   
     .cardResult:nth-child(2n) {
       height: 220px;
-      width: 300px;
+      width: 250px;
       background-image: url("../../assets/Cartes/Carte-rouge.png");
       background-position: center;
       background-size: cover;
@@ -433,7 +436,7 @@
   
     .cardResult:nth-child(3n) {
       height: 220px;
-      width: 305px;
+      width: 250px;
       background-image: url("../../assets/Cartes/Carte-grise.png");
       background-position: center;
       background-size: cover;
@@ -443,7 +446,7 @@
   
     .cardResult:nth-child(4n) {
       height: 220px;
-      width: 305px;
+      width: 250px;
       background-image: url("../../assets/Cartes/Carte-turquoise.png");
       background-position: center;
       background-size: cover;
@@ -512,6 +515,22 @@
       background-position: center;
       background-size: cover;
     }
+
+  .resultats {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    height: max-content;
+    margin-top: 16px;
+    margin-bottom: 180px;
+    padding-bottom: 64px;
+  }
   
     .logo1,
     .logo2,
@@ -675,6 +694,20 @@
       justify-content: center;
       /* background-color: dodgerblue; */
       padding: var(--spacing-large);
+    }
+    .faqText {
+      padding: var(--spacing-small);
+      font-size: var(--main-fontSize);
+      color: var(--main-color);
+      font-family: var(--secondary-font);
+    }
+
+    .faqText2 {
+      padding: var(--spacing-small);
+      font-size: var(--main-fontSize);
+      color: rgb(51, 51, 51);
+      font-family: var(--secondary-font);
+
     }
   
   }

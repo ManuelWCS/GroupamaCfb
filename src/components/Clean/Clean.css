@@ -298,7 +298,7 @@
   }
 
   .curved {
-    height: 260px;
+    height: 310px;
     width: 100vw;
     margin: auto;
     display: flex;
@@ -310,7 +310,8 @@
     background-color: #bebebe;
     /* -webkit-clip-path: ellipse(57% 67% at 53% 98%); */
 
-    clip-path: ellipse(93% 100% at 31.08% 100%);
+    clip-path: ellipse(83% 100% at 31.08% 100%);
+    /* clip-path: ellipse(60% 100% at 50% 100%); */
   }
 
   .sponsorContainer {
