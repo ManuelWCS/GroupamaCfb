@@ -12,6 +12,10 @@
     background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body::-webkit-scrollbar {
     width: 8px;
   }
@@ -36,7 +40,7 @@
 }
 
 
-@media screen and (min-width:1201px) and (min-height: 800px)   {html,
+@media screen and (min-width:1401px)   {html,
   body {
     max-width: 100%;
     overflow-x: hidden;
@@ -46,6 +50,9 @@
     background-position: center;
     background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
 
+  }
+  html {
+    scroll-behavior: smooth;
   }
 
 

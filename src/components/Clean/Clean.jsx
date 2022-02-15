@@ -65,6 +65,12 @@ import twi from "../../assets/CompressedPictures/twitter.webp";
 import desktopImage from "../../assets/CompressedPictures/final2.webp";
 import contactImage from "../../assets/CompressedPictures/contact.webp";
 
+/*<------------------------IMPORT NAVIGATION---------------------------------> */
+
+import {Link} from "react-router-dom"
+
+
+
 function Clean() {
   const [allcities, setallcities] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -881,8 +887,12 @@ function Clean() {
         </div>
 
         <div className="faqContainer">
+          <Link to="/faq">
+
+
           <h6 className="faqTitle">FAQ ! BESOIN D'AIDE ? </h6>
 
+          </Link>
           <p className="faqText">
             Vous avez une question ? Nous avons probablement la réponse !
           </p>
