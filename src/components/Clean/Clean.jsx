@@ -62,7 +62,6 @@ import twi from "../../assets/CompressedPictures/twitter.webp";
 
 /*<------------------------PARTIE DESKTOP---------------------------------> */
 
-import desktopImage from "../../assets/CompressedPictures/final2.webp";
 import contactImage from "../../assets/CompressedPictures/contact.webp";
 
 /*<------------------------IMPORT NAVIGATION---------------------------------> */
@@ -544,7 +543,7 @@ function Clean() {
             </div>
           </div>
           <div className="formContainer">
-            <span className="cardLegendText">COMPLETEZ VOS INFOS </span>
+            <span className="cardLegendText">COMPLÉTEZ VOS INFOS </span>
 
             <div
               className={

@@ -1,6 +1,6 @@
 @import url("./Clean.css");
 
-@media screen and (min-width: 1025px) and (max-width: 1200px)  {
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
   html,
   body {
     max-width: 100%;
@@ -39,8 +39,8 @@
   }
 }
 
-
-@media screen and (min-width:1401px)   {html,
+@media screen and (min-width: 1401px) {
+  html,
   body {
     max-width: 100%;
     overflow-x: hidden;
@@ -49,90 +49,114 @@
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
-
   }
   html {
     scroll-behavior: smooth;
   }
 
+  .mainContent {
+    height: 680px;
+    margin-top: -32px;
+    background-image: url("../../assets/CompressedPictures/final2.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: relative;
+    margin-top: -50px;
+  }
 
-    .mainContent {
-        height: 680px;
-        margin-top: -32px;
-        background-image: url("../../assets/CompressedPictures/final2.webp");
-        background-size: cover;
-        background-repeat: no-repeat;
-        z-index: -1;
-        position: relative;
-        margin-top:-50px;
-      }
+  .titlesContainer {
+    position: relative;
+    left: 200px;
+    top: 50px;
+    width: fit-content;
+  }
+  .mainTitle {
+    font-size: calc(var(--main-fontSize) * 6);
+    font-family: var(--main-font);
+    color: var(--red-color);
+  }
 
-      .titlesContainer {
-        position: relative;
-        left: 200px;
-        top: 50px;
-        width: fit-content;
-      }
-      .mainTitle {
-        font-size: calc(var(--main-fontSize) * 6);
-        font-family: var(--main-font);
-        color: var(--red-color);
-      }
-    
-      .secondaryTitle {
-        font-size: calc(var(--main-fontSize) * 3);
-        font-family: var(--main-font);
-        color: white;
-      }
+  .secondaryTitle {
+    font-size: calc(var(--main-fontSize) * 3);
+    font-family: var(--main-font);
+    color: white;
+  }
 
-      .descriptionContainer {
-        height: max-content;
-        width: 80vw;
-        margin-right: 10vw;
-        margin-left: 10vw;
-        margin-bottom: 64px;
-      }
-      .mainDescription {
-        font-family: var(--main-font);
-        color: var(--main-color);
-        font-size: calc(var(--main-fontSize) * 3);
-        padding:var(--spacing-large)
-      }
+  .descriptionContainer {
+    height: max-content;
+    width: 80vw;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    margin-bottom: 64px;
+  }
+  .mainDescription {
+    font-family: var(--main-font);
+    color: var(--main-color);
+    font-size: calc(var(--main-fontSize) * 3);
+    padding: var(--spacing-large);
+  }
 
-      .secondaryDescription {
-        font-family: var(--secondary-font);
-        font-size: calc(var(--main-fontSize) * 2);
-        padding-bottom: 16px;
-        color: rgb(51, 51, 51);
-      }
-      #map {
-        height: 700px;
-        width: 800px;
-        margin-bottom: calc(var(--spacing-large)*1);
-      }
+  .secondaryDescription {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) * 2);
+    padding-bottom: 16px;
+    color: rgb(51, 51, 51);
+  }
+  #map {
+    height: 700px;
+    width: 800px;
+    margin-bottom: calc(var(--spacing-large) * 1);
+  }
 
+  .markerContainer {
+    margin-bottom: var(--spacing-large);
+    width: 900px;
+  }
 
-      .markerContainer {
-        margin-bottom: var(--spacing-large);
-        width: 900px;
-      }
+  .mapTitle {
+    margin-bottom: 32px;
+  }
 
-      .mapTitle {
-        margin-bottom: 32px;
-      }
+  .cardLegendText {
+    margin-bottom: calc(var(--spacing-large) * 5);
+  }
 
-      .cardLegendText {
-        margin-bottom: calc(var(--spacing-large)*5);
+  .mainContainer {
+    padding: var(--spacing-small);
+    margin-bottom: calc(var(--spacing-large) * 10);
+  }
 
-      }
+  .resultats {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    height: max-content;
+    margin-top: 16px;
+    margin-bottom: 180px;
+    padding-bottom: 64px;
+    height: 700px;
+  }
 
-      .mainContainer {
-        padding:var(--spacing-small);
-        margin-bottom: calc(var(--spacing-large)*10);
-      }
-      
-     
+  .BlocFiltresEX {
+    width: 520px;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 700px;
+  }
 
-    
-
+  .formContainer{ 
+    height: 1500px;
+    top:0vh;
+  }
 }

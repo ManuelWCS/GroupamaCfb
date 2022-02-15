@@ -26,8 +26,10 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
+    background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp"); 
+    /* background-image:url("../../assets/Habillage/nouveauFond.png") */
 
+    
     /* Garder ce fond pour que ça corresponde avec le header*/
   }
 
@@ -211,12 +213,12 @@
   .formContainer {
     height: 650px;
     width: 520px;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-    align-content: stretch;
+    align-content: stretch; */
   }
 
   .faqContainer {
