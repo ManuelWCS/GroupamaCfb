@@ -212,6 +212,8 @@ function Clean() {
         filtersOptions.push((item) => item.Localite === formData.city);
       }
     }
+
+
     // Si l'âge de la personne est renseignée
     if (formData.age !== null) {
       if (formData.age.length > 0) {
