@@ -1,9 +1,9 @@
 import React from "react";
 /* import du CSS*/
 import "./Clean.css";
-import './SmallPhone.css';
-import './Tablet.css';
-import './LargeScreen.css';
+import "./SmallPhone.css";
+import "./Tablet.css";
+import "./LargeScreen.css";
 /* Fin de l'import des différentes versions*/
 
 import "../../components/Map/fonts.css";
@@ -185,7 +185,7 @@ function Clean() {
     iconUrl: agenceGroupama,
   });
 
-  /* Fonction pour chercher un club */ 
+  /* Fonction pour chercher un club */
 
   const searchClub = (e) => {
     e.preventDefault();
@@ -193,25 +193,23 @@ function Clean() {
 
     // Si le genre est renseigné, filtre fonctionnel
     if (formData.gender !== null) {
-      console.log('sexe renseigné')
+      console.log("sexe renseigné");
       if (formData.gender.length > 0) {
         // je pousse le filtre dans un tableau
         filtersOptions.push(
           // ici on fais un includes car on la data avec laquelles on compare c'est un array
           // item.gender: ["male","female]
           (item) => item.gender.includes(formData.gender)
-          );
-        }
+        );
       }
+    }
 
-      
-      // Si la ville est renseignée
+    // Si la ville est renseignée
     if (formData.city !== null) {
       if (formData.city.length > 0) {
         filtersOptions.push((item) => item.Localite === formData.city);
       }
     }
-
 
     // Si l'âge de la personne est renseignée
     if (formData.age !== null) {
@@ -368,7 +366,8 @@ function Clean() {
             541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
           </h2>
           <h4 className="secondaryDescription">
-            La Ligue Centre-Val de Loire de Football et son partenaire Groupama Paris-Val de Loire vous proposent cette plateforme afin de découvrir
+            La Ligue Centre-Val de Loire de Football et son partenaire Groupama
+            Paris-Val de Loire vous proposent cette plateforme afin de découvrir
             l'ensemble des clubs de notre Région !
           </h4>
         </div>
@@ -536,7 +535,9 @@ function Clean() {
               </div>
             </div>
           </div>
-          <div className="formContainer">
+          <div
+            className={clubSearch.length !== 0 ? "formContainer" : "dataResult"}
+          >
             <span className="cardLegendText">COMPLÉTEZ VOS INFOS </span>
 
             <div
