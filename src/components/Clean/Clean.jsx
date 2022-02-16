@@ -62,7 +62,10 @@ import twi from "../../assets/CompressedPictures/twitter.webp";
 
 /*<------------------------PARTIE DESKTOP---------------------------------> */
 
-import contactImage from "../../assets/CompressedPictures/contact.webp";
+
+
+/*<------------------------IMPORT  FAQ---------------------------------> */
+import Faq from '../FAQ/Faq'
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -879,8 +882,9 @@ function Clean() {
             {/* FIN DE LA  GESTION DES ERREURS DANS LA RECHERCHE */}
           </div>
         </div>
+        <Faq />
 
-        <div className="faqContainer">
+        {/* <div className="faqContainer">
           <h6 className="faqTitle">FAQ ! BESOIN D'AIDE ? </h6>
 
           <p className="faqText">
@@ -888,7 +892,8 @@ function Clean() {
           </p>
           <p className="faqText2">Cliquez ici pour poser votre question</p>
           <img src={contactImage} className="contactImg" />
-        </div>
+        </div> */}
+
         {/* Fin de desktopContainer*/}
         <div className="curved">
           <div className="sponsorContainer">

@@ -1,0 +1,42 @@
+
+  .faqContainer {
+    height: 250px;
+    width: 450px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding: 12px 12px 12px 12px;
+    margin-top: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+  }
+
+
+  .faqTitle {
+    margin-bottom: calc(var(--spacing-medium) * 2);
+    font-family: var(--main-font);
+    font-size: calc(var(--main-fontSize) * 2);
+    color: var(--secondary-color);
+  }
+
+
+  .faqText {
+    padding: var(--spacing-small);
+    font-size: var(--main-fontSize);
+    color: var(--main-color);
+    font-family: var(--secondary-font);
+  }
+
+  .faqText2 {
+    padding: var(--spacing-small);
+    font-size: var(--main-fontSize);
+    color: rgb(51, 51, 51);
+    font-family: var(--secondary-font);
+  }
+
+  .contactImg {
+    height: 78px;
+    width: 78px;
+  }
