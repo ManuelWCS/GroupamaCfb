@@ -20,25 +20,20 @@ import Geolocalisation from "../Hook/Geolocalisation";
 import axios from "axios";
 /* import des différents marqueurs de district*/
 
-import ligueMarker from "../../assets/CompressedPictures/MarqueurLigue.webp";
-import eureEtLoireMarker from "../../assets/CompressedPictures/Marqueur-Eure-et-Loir.webp";
-import indreMarker from "../../assets/CompressedPictures/Marqueur-Indre.webp";
-import indreEtLoireMarker from "../../assets/CompressedPictures/Marqueur-Indre-et-Loire.webp";
-import loirEtcher from "../../assets/CompressedPictures/Marqueur-Loir-et-Cher.webp";
-import cherMarker from "../../assets/CompressedPictures/Marqueur-Cher.webp";
-import loiretMarker from "../../assets/CompressedPictures/Marqueur-Loiret.webp";
+
 
 /* import des marqueurs promotionnels*/
 import LabelMarker from "../../assets/CA/labelCA.png";
 import agenceGroupama from "../../assets/CompressedPictures/MarqueurGroupama.webp";
-import marqueurG from "../../assets/CompressedPictures/MarqueurG.webp";
+import marqueurG from "../../assets/CompressedPictures/Markers/MarqueurG.webp";
 import labelCA from "../../assets/CompressedPictures/labelCA.webp";
 
 /* import des marqueurs utilisateurs*/
-import clubMarker from "../../assets/CompressedPictures/LogoClub.webp";
+import clubMarker from "../../assets/CompressedPictures/Markers/LogoClub.webp";
 
 /* import des données des clubs */
 import data from "../../components/Map/data/data.json";
+import categoriesData from '../Map/data/categories.json'
 
 /* import des élements nécessaires au formulaire */
 import TextField from "@mui/material/TextField";
@@ -62,7 +57,7 @@ import Button2 from "@mui/material/Button";
 import Faq from '../FAQ/Faq'
 import Footer from '../Footer/Footer'
 import Sponso from '../Sponso/Sponso.jsx'
-
+import Instances from "../Instances/Instaces.jsx";
 
 
 
@@ -87,6 +82,8 @@ function Clean() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+
   const style = {
     position: "absolute",
     top: "50%",
@@ -130,46 +127,7 @@ function Clean() {
   const [inputFutsal, setinputFutsal] = useState(false);
   // Hook qui permets de charger le loader :
 
-  const LigueMarqueur = L.icon({
-    iconSize: [50, 60],
-    iconAnchor: [13.5, 47],
-    iconUrl: ligueMarker,
-  });
-  const eureEtLoirMarqueur = L.icon({
-    iconSize: [50, 60],
-    iconAnchor: [13.5, 47],
-    iconUrl: eureEtLoireMarker,
-  });
-
-  const loiretMarqueur = L.icon({
-    iconSize: [50, 60],
-    iconAnchor: [13.5, 40],
-    iconUrl: loiretMarker,
-  });
-
-  const cherMarqueur = L.icon({
-    iconSize: [50, 60],
-    iconAnchor: [13.5, 47],
-    iconUrl: cherMarker,
-  });
-
-  const loireEtcherMarqueur = L.icon({
-    iconSize: [50, 60],
-    iconAnchor: [13.5, 47],
-    iconUrl: loirEtcher,
-  });
-  const indreMarqueur = L.icon({
-    iconSize: [50, 60],
-    iconAnchor: [13.5, 47],
-    iconUrl: indreMarker,
-  });
-
-  const indreEtLoirMarqueur = L.icon({
-    iconSize: [50, 60],
-    iconAnchor: [13.5, 47],
-    iconUrl: indreEtLoireMarker,
-  });
-
+  
   const clubMarqueur = L.icon({
     iconSize: [50, 60],
     iconAnchor: [13.5, 47],
@@ -182,11 +140,6 @@ function Clean() {
     iconUrl: LabelMarker,
   });
 
-  const marqueurBanque = L.icon({
-    iconSize: [38, 53],
-    iconAnchor: [13.5, 47],
-    iconUrl: agenceGroupama,
-  });
 
   /* Fonction pour chercher un club */
 
@@ -304,11 +257,9 @@ function Clean() {
     });
   }, []);
 
-  useEffect(() => {
-    //à mettre en dur aussi
-    axios
-      .get("https://api-clubs-cvl.herokuapp.com/categories")
-      .then((res) => setCategories(res.data));
+  useEffect(() => { 
+    setCategories(categoriesData);
+    console.log(JSON.stringify(categories))
   }, []);
 
   useEffect(() => {
@@ -442,76 +393,9 @@ function Clean() {
                     })
                     : null}
                 </MarkerClusterGroup>
-                <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
-                  <Popup className="InstanceLigue">
-                    <a href="https://foot-centre.fff.fr/">
-                      <h3>Ligue Centre-Val de Loire </h3>
-                    </a>
-                  </Popup>
-                </Marker>
-                <Marker position={[47.11563, 2.35849]} icon={cherMarqueur}>
-                  <Popup className="InstancePopUp">
-                    <a href="https://cher.fff.fr/">
-                      <h3>District de Football du Cher </h3>
-                    </a>
-                  </Popup>
-                </Marker>
-                <Marker
-                  position={[48.42918, 1.46021]}
-                  icon={eureEtLoirMarqueur}
-                >
-                  <Popup className="InstancePopUp">
-                    <a href="https://eure-et-loir.fff.fr/">
-                      <h3>District de Football d'Eure Et Loire </h3>
-                    </a>
-                  </Popup>
-                </Marker>
-                <Marker position={[46.79267, 1.69726]} icon={indreMarqueur}>
-                  <Popup className="InstancePopUp">
-                    <a href="https://indre.fff.fr/">
-                      <h3>District de Football de l'Indre </h3>
-                    </a>
-                  </Popup>
-                </Marker>
-                <Marker
-                  position={[47.9168433, 1.9246721]}
-                  icon={loiretMarqueur}
-                >
-                  <Popup className="InstancePopUp">
-                    <a href="https://foot-loiret.fff.fr/">
-                      <h3>District de Football du Loiret </h3>
-                    </a>
-                  </Popup>
-                </Marker>
-                <Marker
-                  position={[47.5766331, 1.3026806]}
-                  icon={loireEtcherMarqueur}
-                >
-                  <Popup className="InstancePopUp">
-                    <a href="https://loir-et-cher.fff.fr/">
-                      <h3>District de Football du Loir-et-Cher</h3>
-                    </a>
-                  </Popup>
-                </Marker>
+                
+                <Instances/>
 
-                <Marker
-                  position={[47.37913, 0.72672]}
-                  icon={indreEtLoirMarqueur}
-                >
-                  <Popup className="InstancePopUp">
-                    <a href="https://indre-et-loire.fff.fr/">
-                      <h3>District de Football d'Indre-Et-Loire'</h3>
-                    </a>
-                  </Popup>
-                </Marker>
-
-                <Marker position={[47.84524, 1.9247]} icon={marqueurBanque}>
-                  <Popup className="banquePopUp">
-                    <a href="https://groupama.fr/">
-                      <h3>Groupama</h3>
-                    </a>
-                  </Popup>
-                </Marker>
               </MapContainer>
             </div>
 
