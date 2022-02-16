@@ -12,10 +12,6 @@
     background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
-
   body::-webkit-scrollbar {
     width: 8px;
   }
@@ -49,9 +45,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
-  }
-  html {
-    scroll-behavior: smooth;
   }
 
   .mainContent {
@@ -155,8 +148,5 @@
     height: 700px;
   }
 
-  .formContainer{ 
-    height: 1500px;
-    top:0vh;
-  }
+ 
 }

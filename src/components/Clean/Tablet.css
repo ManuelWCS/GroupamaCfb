@@ -3,9 +3,6 @@
 /* <<<<<<<<<<<<<<< VERSION TABLETTE >>>>>>>>>>>>>>>>>>*/
 
 @media screen and (min-width:480px) and (max-width:672px) {
-  html {
-    scroll-behavior: smooth;
-  }
 
 
     .contactImg, .GroupamaLogo, .LinkGroupama {
@@ -549,9 +546,6 @@
  }
  /* VERSION GRANDE TABLETTE */
 @media screen and (min-width:672px) and (max-width:1023px) {
-  html {
-    scroll-behavior: smooth;
-  }
 
     .contactImg, .GroupamaLogo, .LinkGroupama {
       height: 32px;

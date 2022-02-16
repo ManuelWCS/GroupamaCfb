@@ -64,12 +64,6 @@ import twi from "../../assets/CompressedPictures/twitter.webp";
 
 import contactImage from "../../assets/CompressedPictures/contact.webp";
 
-/*<------------------------IMPORT NAVIGATION---------------------------------> */
-
-import {Link} from "react-router-dom"
-
-
-
 function Clean() {
   const [allcities, setallcities] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -403,7 +397,7 @@ function Clean() {
                 center={[48.856614, 2.3522219]}
                 zoom={13}
                 scrollWheelZoom={true}
-                minZoo={6}
+                minZoom={6}
                 doubleClickZoom={true}
                 zoomControl={true}
                 whenCreated={setMap}
@@ -886,12 +880,8 @@ function Clean() {
         </div>
 
         <div className="faqContainer">
-          <Link to="/faq">
-
-
           <h6 className="faqTitle">FAQ ! BESOIN D'AIDE ? </h6>
 
-          </Link>
           <p className="faqText">
             Vous avez une question ? Nous avons probablement la réponse !
           </p>
