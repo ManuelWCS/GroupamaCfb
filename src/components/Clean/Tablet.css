@@ -319,38 +319,6 @@
      display: flex;
      padding: 8px 8px 8px 8px;
    }
-   .faqContainer {
-     width: 100%;
-     text-align: center;
-     display: flex;
-     justify-content: center;
-     flex-direction: column;
-     align-items: center;
-     margin: auto;
-     margin-top: var(--spacing-medium);
-     margin-bottom: var(--spacing-medium);
-   }
-   .faqTitle {
-     margin-bottom: calc(var(--spacing-medium) * 2);
-     font-family: var(--main-font);
-     font-size: calc(var(--main-fontSize) * 1.5);
-     color: var(--secondary-color);
-   }
- 
-   .faqText {
-     padding: var(--spacing-small);
-     font-size: var(--main-fontSize);
-     color: var(--main-color);
-   }
-   .faqText2 {
-     padding: var(--spacing-small);
-     font-size: var(--main-fontSize);
-     color: rgb(51, 51, 51);
-   }
-   .contactImg {
-     height: 58px;
-     width: 58px;
-   }
    .curved {
      height: 350px;
      width: 100%;
@@ -861,38 +829,7 @@
       display: flex;
       padding: 8px 8px 8px 8px;
     }
-    .faqContainer {
-      width: 100%;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      margin: auto;
-      margin-top: var(--spacing-medium);
-      margin-bottom: var(--spacing-medium);
-    }
-    .faqTitle {
-      margin-bottom: calc(var(--spacing-medium) * 2);
-      font-family: var(--main-font);
-      font-size: calc(var(--main-fontSize) * 1.5);
-      color: var(--secondary-color);
-    }
-  
-    .faqText {
-      padding: var(--spacing-small);
-      font-size: var(--main-fontSize);
-      color: var(--main-color);
-    }
-    .faqText2 {
-      padding: var(--spacing-small);
-      font-size: var(--main-fontSize);
-      color: rgb(51, 51, 51);
-    }
-    .contactImg {
-      height: 58px;
-      width: 58px;
-    }
+    
     .curved {
       height: 350px;
       width: 100%;

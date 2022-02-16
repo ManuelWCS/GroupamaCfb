@@ -67,6 +67,9 @@ import twi from "../../assets/CompressedPictures/twitter.webp";
 /*<------------------------IMPORT  FAQ---------------------------------> */
 import Faq from '../FAQ/Faq'
 
+/*<------------------------IMPORT PARTIE SPONSO---------------------------------> */
+import Sponso from '../Sponso/Sponso.jsx'
+
 function Clean() {
   const [allcities, setallcities] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -883,16 +886,7 @@ function Clean() {
           </div>
         </div>
         <Faq />
-
-        {/* <div className="faqContainer">
-          <h6 className="faqTitle">FAQ ! BESOIN D'AIDE ? </h6>
-
-          <p className="faqText">
-            Vous avez une question ? Nous avons probablement la réponse !
-          </p>
-          <p className="faqText2">Cliquez ici pour poser votre question</p>
-          <img src={contactImage} className="contactImg" />
-        </div> */}
+        <Sponso/>
 
         {/* Fin de desktopContainer*/}
         <div className="curved">
@@ -936,7 +930,10 @@ function Clean() {
               </a>
             </div>
           </div>
-          <div className="foooooter">
+
+
+          
+          {/* <div className="foooooter">
             <div className="logos">
               <a
                 href="https://www.facebook.com/LCFofficiel/?ref=bookmarks"
@@ -974,7 +971,7 @@ function Clean() {
                 />
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

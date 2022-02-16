@@ -1,0 +1,13 @@
+.foooooter {
+    height: 28px;
+    width: 100%;
+    background-color: #293d6b;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .logos {
+    height: 18px;
+    width: 18px;
+  }

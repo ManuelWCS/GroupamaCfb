@@ -231,19 +231,7 @@
     align-content: stretch;
   }
 
-  .faqContainer {
-    height: 250px;
-    width: 450px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-    padding: 12px 12px 12px 12px;
-    margin-top: var(--spacing-medium);
-    margin-bottom: var(--spacing-medium);
-  }
+
 
   .BlocFiltres {
     max-height: 500px;
@@ -283,82 +271,12 @@
     /* creates padding around scroll thumb */
   }
 
-  .faqTitle {
-    margin-bottom: calc(var(--spacing-medium) * 2);
-    font-family: var(--main-font);
-    font-size: calc(var(--main-fontSize) * 2);
-    color: var(--secondary-color);
-  }
 
-  .faqText {
-    padding: var(--spacing-small);
-    font-size: var(--main-fontSize);
-    color: var(--main-color);
-    font-family: var(--secondary-font);
-  }
 
-  .faqText2 {
-    padding: var(--spacing-small);
-    font-size: var(--main-fontSize);
-    color: rgb(51, 51, 51);
-    font-family: var(--secondary-font);
-  }
 
-  .contactImg {
-    height: 78px;
-    width: 78px;
-  }
 
-  .curved {
-    height: 310px;
-    width: 100vw;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
-    background-color: #bebebe;
-    /* -webkit-clip-path: ellipse(57% 67% at 53% 98%); */
 
-    clip-path: ellipse(83% 100% at 31.08% 100%);
-    /* clip-path: ellipse(60% 100% at 50% 100%); */
-  }
-
-  .sponsorContainer {
-    position: relative;
-    height: 150px;
-    width: 350px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .LinkGroupama {
-    height: 26px;
-    width: 26px;
-    position: relative;
-    z-index: 1000;
-  }
-
-  .sponsoLinks {
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-  }
-
-  .GroupamaLogo {
-    width: 280px;
-    height: 110px;
-  }
-
-  .sponsoText {
-    font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize) / 1.1);
-  }
+ 
 
   .filtersNoSearch {
     display: flex;
@@ -656,14 +574,7 @@
     height: 100px;
   }
 
-  .foooooter {
-    height: 28px;
-    width: 100%;
-    background-color: #293d6b;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
+
 
   .legendMarker1 {
     height: 58px;
