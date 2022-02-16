@@ -1,9 +1,9 @@
 import React from 'react';
 
 /*<<<<<<<<<<<<<<<<<<<<<<<< IMPORT IMAGES>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-import fb from "../../assets/CompressedPictures/fb.webp";
-import web from "../../assets/CompressedPictures/web.webp"
-import yt from "../../assets/CompressedPictures/youtube.webp"
+import fb from "../../assets/CompressedPictures/Footer/fb.webp";
+import web from "../../assets/CompressedPictures/Footer/web.webp"
+import yt from "../../assets/CompressedPictures/Footer/youtube.webp"
 import Logo from "../../assets/CompressedPictures/GroupamaLogo.webp"
 import twi from '../../assets/CompressedPictures/twitter.webp'
 

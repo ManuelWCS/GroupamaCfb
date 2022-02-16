@@ -1,4 +1,9 @@
 import React from 'react'
+import fb from "../../assets/CompressedPictures/Footer/fb.webp"
+import yt from '../../assets/CompressedPictures/Footer/youtube.webp';
+import web from '../../assets/CompressedPictures/Footer/web.webp';
+import '../Footer/Footer.css';
+
 
 function Footer() {
   return (

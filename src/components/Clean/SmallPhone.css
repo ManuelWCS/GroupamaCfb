@@ -325,54 +325,8 @@
     display: flex;
     padding: 8px 8px 8px 8px;
   }
-  
-  .curved {
-    height: 260px;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
-    background-color: #bebebe;
-    /* -webkit-clip-path: ellipse(57% 67% at 53% 98%); */
 
-    clip-path: ellipse(93% 100% at 31.08% 100%);
-  }
 
-  .sponsorContainer {
-    position: relative;
-    height: 150px;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .LinkGroupama {
-    height: 26px;
-    width: 26px;
-    position: relative;
-    z-index: 1000;
-  }
-
-  .sponsoLinks {
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-  }
-  .GroupamaLogo {
-    width: 280px;
-    height: 100px;
-  }
-  .sponsoText {
-    font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize) / 1.1);
-    margin-top: calc(var(--spacing-large) * 2.5);
-  }
 
   /*********** STYLES CARTES*/
   .cardResult {
@@ -515,14 +469,7 @@
     background-color: transparent;
   }
 
-  .foooooter {
-    height: 28px;
-    width: 100%;
-    background-color: #293d6b;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
+
   .labelClub {
     height: 45px;
     width: 50px;
@@ -644,28 +591,6 @@
     font-size: calc(var(--main-fontSize) * 1.5);
     margin-bottom: calc(var(--spacing-large) / 1);
     color: var(--secondary-color);
-  }
-  .curved {
-    height: 350px;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
-    background-color: #bebebe;
-    /* -webkit-clip-path: ellipse(57% 67% at 53% 98%); */
-
-    clip-path: ellipse(93% 100% at 31.08% 100%);
-  }
-
-  .sponsoText {
-    font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize) / 1.4);
-    margin-top: calc(var(--spacing-large) * 2.5);
-    padding: var(--spacing-small);
   }
   .BlocFiltresEX {
     width: 90%;

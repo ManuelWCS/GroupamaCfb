@@ -53,22 +53,19 @@ import Autocomplete from "@mui/material/Autocomplete";
 import btnPicture from "../../assets/CompressedPictures/buttontransparent.webp";
 import Button2 from "@mui/material/Button";
 
-/* import du Footer */
-import fb from "../../assets/CompressedPictures/fb.webp";
-import web from "../../assets/CompressedPictures/web.webp";
-import yt from "../../assets/CompressedPictures/youtube.webp";
-import Logo from "../../assets/CompressedPictures/GroupamaLogo.webp";
-import twi from "../../assets/CompressedPictures/twitter.webp";
-
-/*<------------------------PARTIE DESKTOP---------------------------------> */
 
 
 
-/*<------------------------IMPORT  FAQ---------------------------------> */
+
+
+/*<------------------------IMPORT COMPOSANTS ---------------------------------> */
 import Faq from '../FAQ/Faq'
-
-/*<------------------------IMPORT PARTIE SPONSO---------------------------------> */
+import Footer from '../Footer/Footer'
 import Sponso from '../Sponso/Sponso.jsx'
+
+
+
+
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -426,23 +423,23 @@ function Clean() {
                 >
                   {clubSearch.length !== 0
                     ? clubSearch.slice(0, 150).map((res, index2) => {
-                        console.log(res);
-                        return (
-                          <Marker
-                            icon={
-                              res.label.length > 0
-                                ? clubMarqueurLabel
-                                : clubMarqueur
-                            }
-                            key={index2}
-                            position={[res.Latitude, res.Longitude]}
-                          >
-                            <Popup key={index2} className="markersPopUp">
-                              <p onClick={scrollCard}> {res.NomClub}</p>
-                            </Popup>
-                          </Marker>
-                        );
-                      })
+                      console.log(res);
+                      return (
+                        <Marker
+                          icon={
+                            res.label.length > 0
+                              ? clubMarqueurLabel
+                              : clubMarqueur
+                          }
+                          key={index2}
+                          position={[res.Latitude, res.Longitude]}
+                        >
+                          <Popup key={index2} className="markersPopUp">
+                            <p onClick={scrollCard}> {res.NomClub}</p>
+                          </Popup>
+                        </Marker>
+                      );
+                    })
                     : null}
                 </MarkerClusterGroup>
                 <Marker position={[47.830261, 1.93609]} icon={LigueMarqueur}>
@@ -671,14 +668,14 @@ function Clean() {
                             } else {
                               formData.type === "Futsal"
                                 ? setformData({
-                                    ...formData,
-                                    gender: e.target.value,
-                                    type: "",
-                                  })
+                                  ...formData,
+                                  gender: e.target.value,
+                                  type: "",
+                                })
                                 : setformData({
-                                    ...formData,
-                                    gender: e.target.value,
-                                  });
+                                  ...formData,
+                                  gender: e.target.value,
+                                });
                             }
                           }}
                         >
@@ -736,7 +733,7 @@ function Clean() {
                             control={<Radio />}
                             label="Futsal"
                             title="Pratique proposée aux séniors Hommes et aux 17-18 masculins"
-                            // disable={inputFutsal}
+                          // disable={inputFutsal}
                           />
                         </RadioGroup>
 
@@ -886,93 +883,12 @@ function Clean() {
           </div>
         </div>
         <Faq />
-        <Sponso/>
 
         {/* Fin de desktopContainer*/}
-        <div className="curved">
-          <div className="sponsorContainer">
-            <p className="sponsoText">
-              {" "}
-              Cette plateforme est soutenue par le Groupama
-            </p>
-            <img src={Logo} className="GroupamaLogo" />
-            <div className="sponsoLinks">
-              <a
-                href="https://www.facebook.com/groupama"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={fb} alt="" className="LinkGroupama" />
-              </a>
 
-              <a
-                href="https://www.youtube.com/channel/UCcVU-JnuCbANGOl4vGcGpEg"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={yt} alt="" className="LinkGroupama" />
-              </a>
+        <Sponso />
+        <Footer />
 
-              <a
-                href="https://www.groupama.fr/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={web} alt="" className="LinkGroupama" />
-              </a>
-
-              <a
-                href="https://twitter.com/GroupeGroupama"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={twi} alt="" className="LinkGroupama" />
-              </a>
-            </div>
-          </div>
-
-
-          
-          {/* <div className="foooooter">
-            <div className="logos">
-              <a
-                href="https://www.facebook.com/LCFofficiel/?ref=bookmarks"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img className="logos" alt="logo Facebook" src={fb} />
-              </a>
-            </div>
-
-            <div className="logos">
-              <a
-                href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  className="logos"
-                  alt="logo site Ligue Centre Val de Loire"
-                  src={web}
-                />
-              </a>
-            </div>
-
-            <div className="logos">
-              <a
-                href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  className="logos"
-                  alt="logo Youtube Ligue Centre-Val de Loire"
-                  src={yt}
-                />
-              </a>
-            </div>
-          </div> */}
-        </div>
       </div>
     </div>
   );

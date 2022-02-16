@@ -1,6 +1,56 @@
 .curved {
-    height: 310px;
-    width: 100vw;
+  height: 310px;
+  width: 100vw;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #bebebe;
+  clip-path: ellipse(83% 100% at 31.08% 100%);
+}
+
+.sponsorContainer {
+  position: relative;
+  height: 150px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsoText {
+  font-family: var(--secondary-font);
+  font-size: calc(var(--main-fontSize) / 1.1);
+  margin-right: var(--spacing-medium);
+  margin-left: var(--spacing-medium);
+}
+
+.LinkGroupama {
+  height: 26px;
+  width: 26px;
+  position: relative;
+  z-index: 1000;
+}
+
+.sponsoLinks {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.GroupamaLogo {
+  width: 280px;
+  height: 110px;
+}
+
+/* AFFICHAGE TELEPHONE*/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .curved {
+    height: 260px;
+    width: 100%;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -9,32 +59,113 @@
     align-items: center;
     z-index: 0;
     background-color: #bebebe;
-    /* -webkit-clip-path: ellipse(57% 67% at 53% 98%); */
-
-    clip-path: ellipse(83% 100% at 31.08% 100%);
-    /* clip-path: ellipse(60% 100% at 50% 100%); */
+    clip-path: ellipse(93% 100% at 31.08% 100%);
   }
-
 
   .sponsorContainer {
     position: relative;
     height: 150px;
-    width: 350px;
+    width: 100%;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-
-
   .sponsoText {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) / 1.1);
+    margin-top: calc(var(--spacing-large) * 2.5);
+  }
+  .LinkGroupama {
+    height: 26px;
+    width: 26px;
+  }
+  .sponsoLinks {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+  }
+  .GroupamaLogo {
+    width: 280px;
+    height: 100px;
+  }
+}
+
+/* AFFICHAGE TELEPHONE*/
+
+@media screen and (min-width: 320px) and (max-width: 479px) {
+  .curved {
+    height: 350px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    background-color: #bebebe;
+    clip-path: ellipse(93% 100% at 31.08% 100%);
   }
 
+  .sponsorContainer {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .sponsoText {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) / 1.1);
+    margin-top: calc(var(--spacing-large) * 2.5);
+  }
 
+  .LinkGroupama {
+    height: 26px;
+    width: 26px;
+  }
+  .sponsoLinks {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+  }
+  .GroupamaLogo {
+    width: 280px;
+    height: 100px;
+  }
+}
 
+/* AFFICHAGE TABLETTE */
+
+@media screen and (min-width:480px) and (max-width:672px) {
+  .curved {
+    height: 350px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    background-color: #bebebe;
+    clip-path: ellipse(93% 100% at 31.08% 100%);
+  }
+  .sponsorContainer {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .LinkGroupama {
     height: 26px;
     width: 26px;
@@ -47,8 +178,64 @@
     justify-content: space-around;
     width: 50%;
   }
-
   .GroupamaLogo {
     width: 280px;
-    height: 110px;
+    height: 100px;
   }
+  .sponsoText {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) / 1.1);
+    margin-top: calc(var(--spacing-large) * 2.5);
+  }
+}
+
+ /* VERSION GRANDE TABLETTE */
+ @media screen and (min-width:672px) and (max-width:1023px) {
+  .curved {
+    height: 350px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    background-color: #bebebb;
+    /* -webkit-clip-path: ellipse(57% 67% at 53% 98%); */
+
+    clip-path: ellipse(93% 100% at 31.08% 100%);
+  }
+  .sponsorContainer {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .LinkGroupama {
+    height: 26px;
+    width: 26px;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .sponsoLinks {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+  }
+  .GroupamaLogo {
+    width: 280px;
+    height: 100px;
+  }
+  .sponsoText {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) / 1.1);
+    margin-top: calc(var(--spacing-large) * 2.5);
+  }
+
+ }
