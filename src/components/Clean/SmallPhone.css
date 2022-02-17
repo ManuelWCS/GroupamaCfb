@@ -23,7 +23,7 @@
     max-width: 100%;
     width: 100vw;
     overflow-x: hidden;
-    background-size: cover;
+    /* background-size: cover; */
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
