@@ -41,15 +41,13 @@
 
   .mainContent {
     height: 250px;
-    width: 90%;
+    width: 89.1vw;
     margin-top: -5px;
     background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
-/* background-image: url('../../assets/TEST/FondTel.png'); */
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
     z-index: -1;
     position: relative;
-    margin:auto;
     
   }
 
