@@ -1,6 +1,6 @@
 @import url("./Clean.css");
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
+@media screen  and (max-width: 480px) {
   .fullApp,
   .wrapper {
     display: flex;
@@ -26,7 +26,8 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../../assets/CompressedPictures/Mobile.webp");
+    /* background-image: url("../../assets/CompressedPictures/Mobile.webp"); */
+    background-image: url('../../assets/TEST/FondTel.png');
     /* background-image: url("../../assets/Habillage/nouveauFond.png"); */
     /* Garder ce fond pour que ça corresponde avec le header*/
   }

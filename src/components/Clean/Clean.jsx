@@ -18,8 +18,6 @@ import { useState, useEffect } from "react";
 import Geolocalisation from "../Hook/Geolocalisation";
 /* import de la librairie axios qui nous permettra de récupérer des données */
 
-
-
 /* import des marqueurs promotionnels*/
 import LabelMarker from "../../assets/CA/labelCA.png";
 import agenceGroupama from "../../assets/CompressedPictures/Markers/MarqueurGroupama.webp";
@@ -31,8 +29,8 @@ import clubMarker from "../../assets/CompressedPictures/Markers/LogoClub.webp";
 
 /* import des données des clubs */
 import data from "../../components/Map/data/data.json";
-import categoriesData from '../Map/data/categories.json';
-import citiesData from '../Map/data/cities.json';
+import categoriesData from "../Map/data/categories.json";
+import citiesData from "../Map/data/cities.json";
 
 /* import des élements nécessaires au formulaire */
 import TextField from "@mui/material/TextField";
@@ -47,20 +45,12 @@ import Autocomplete from "@mui/material/Autocomplete";
 import btnPicture from "../../assets/CompressedPictures/buttontransparent.webp";
 import Button2 from "@mui/material/Button";
 
-
-
-
-
-
 /*<------------------------IMPORT COMPOSANTS ---------------------------------> */
-import Faq from '../FAQ/Faq'
-import Footer from '../Footer/Footer'
-import Sponso from '../Sponso/Sponso.jsx'
+import Faq from "../FAQ/Faq";
+import Footer from "../Footer/Footer";
+import Sponso from "../Sponso/Sponso.jsx";
 import Instances from "../Instances/Instaces.jsx";
-import Legend from "../Legend/Legend.jsx"
-
-
-
+import Legend from "../Legend/Legend.jsx";
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -82,7 +72,6 @@ function Clean() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
 
   const style = {
     position: "absolute",
@@ -127,7 +116,6 @@ function Clean() {
   const [inputFutsal, setinputFutsal] = useState(false);
   // Hook qui permets de charger le loader :
 
-  
   const clubMarqueur = L.icon({
     iconSize: [50, 60],
     iconAnchor: [13.5, 47],
@@ -139,7 +127,6 @@ function Clean() {
     iconAnchor: [13.5, 47],
     iconUrl: LabelMarker,
   });
-
 
   /* Fonction pour chercher un club */
 
@@ -179,7 +166,7 @@ function Clean() {
       }
     }
 
-   // Initiliasation d'une variable pour la pratique souhaitée
+    // Initiliasation d'une variable pour la pratique souhaitée
     let categorieType = [];
     // Vérifier si c'est rempli
     if (formData.type !== null) {
@@ -242,20 +229,19 @@ function Clean() {
   const newSearch = () => {
     setDeclenche(false);
     setclubSearch([]);
-  }
-  
-/* CHARGEMENT DES DONNEES  */
+  };
+
+  /* CHARGEMENT DES DONNEES  */
   useEffect(() => {
-    let result = []
-    let data = citiesData
+    let result = [];
+    let data = citiesData;
     data.forEach((element) => {
-      result.push({label : element.name })
+      result.push({ label: element.name });
     });
-    setallcities(result)
+    setallcities(result);
+  }, []);
 
-  }, [])
-
-  useEffect(() => { 
+  useEffect(() => {
     setCategories(categoriesData);
   }, []);
 
@@ -304,74 +290,73 @@ function Clean() {
   return (
     <div className="fullApp">
       {/* Fin de BlocTel <<<<<<<<<<<<<VERSION DESKTOP>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/}
-        <div className="mainContent">
-          <div className="titlesContainer">
-            <h1 className="mainTitle"> BIENVENUE !</h1>
-            <h3 className="secondaryTitle">
-              TROUVEZ UN CLUB PRÈS DE CHEZ VOUS !
-            </h3>
+      <div className="mainContent">
+        <div className="titlesContainer">
+          <h1 className="mainTitle"> BIENVENUE !</h1>
+          <h3 className="secondaryTitle">
+            TROUVEZ UN CLUB PRÈS DE CHEZ VOUS !
+          </h3>
+        </div>
+      </div>
+      <div className="descriptionContainer">
+        <h2 className="mainDescription">
+          541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
+        </h2>
+        <h4 className="secondaryDescription">
+          La Ligue Centre-Val de Loire de Football et son partenaire Groupama
+          Paris-Val de Loire vous proposent cette plateforme afin de découvrir
+          l'ensemble des clubs de notre Région !
+        </h4>
+      </div>
+
+      <div className="bannerContainer">
+        <h5 className="bannerTitle">À VOUS DE JOUER</h5>
+      </div>
+
+      <div className="desktopInstructions">
+        <h6 className="instructionsTitle">
+          Entrez votre âge et la compétition souhaitée pour découvrir les clubs
+          à proximité :
+        </h6>
+      </div>
+
+      <div className="mainContainer">
+        <div className="mapContainer">
+          <div className="legendContainer">
+            <p className="mapTitle">CARTE INTERACTIVE</p>
           </div>
-        </div>
-        <div className="descriptionContainer">
-          <h2 className="mainDescription">
-            541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
-          </h2>
-          <h4 className="secondaryDescription">
-            La Ligue Centre-Val de Loire de Football et son partenaire Groupama
-            Paris-Val de Loire vous proposent cette plateforme afin de découvrir
-            l'ensemble des clubs de notre Région !
-          </h4>
-        </div>
 
-        <div className="bannerContainer">
-          <h5 className="bannerTitle">À VOUS DE JOUER</h5>
-        </div>
+          <div className="BlocCarte">
+            <MapContainer
+              className="mapLeaflet"
+              id="map"
+              center={[48.856614, 2.3522219]}
+              zoom={13}
+              scrollWheelZoom={true}
+              minZoom={6}
+              doubleClickZoom={true}
+              zoomControl={true}
+              whenCreated={setMap}
+            >
+              <TileLayer
+                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
 
-        <div className="desktopInstructions">
-          <h6 className="instructionsTitle">
-            Entrez votre âge et la compétition souhaitée pour découvrir les
-            clubs à proximité :
-          </h6>
-        </div>
+              <Geolocalisation />
 
-        <div className="mainContainer">
-          <div className="mapContainer">
-            <div className="legendContainer">
-              <p className="mapTitle">CARTE INTERACTIVE</p>
-            </div>
-
-            <div className="BlocCarte">
-
-              <MapContainer
-                className="mapLeaflet"
-                id="map"
-                center={[48.856614, 2.3522219]}
-                zoom={13}
-                scrollWheelZoom={true}
-                minZoom={6}
-                doubleClickZoom={true}
-                zoomControl={true}
-                whenCreated={setMap}
+              <MarkerClusterGroup
+                animate={true}
+                onClusterClick={(cluster) =>
+                  console.warn(
+                    "cluster-click",
+                    cluster,
+                    cluster.layer.getAllChildMarkers()
+                  )
+                }
               >
-                <TileLayer
-                  attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-
-                <Geolocalisation />
-
-                <MarkerClusterGroup
-                  animate={true}
-                  onClusterClick={(cluster) =>
-                    console.warn(
-                      "cluster-click",
-                      cluster,
-                      cluster.layer.getAllChildMarkers()
-                    )
-                  }
-                >
-                  {clubSearch.length !== 0
-                    ? clubSearch.slice(0, 500).map((res, index2) => {
+                {clubSearch.length !== 0
+                  ? clubSearch.slice(0, 500).map((res, index2) => {
                       console.log(res);
                       return (
                         <Marker
@@ -389,369 +374,357 @@ function Clean() {
                         </Marker>
                       );
                     })
-                    : null}
-                </MarkerClusterGroup>
-                
-                <Instances/>
+                  : null}
+              </MarkerClusterGroup>
 
-              </MapContainer>
-            </div>
-            <Legend />
+              <Instances />
+            </MapContainer>
           </div>
+          <Legend />
+        </div>
+
+        <div
+          className={clubSearch.length !== 0 ? "formContainer" : "dataResult"}
+        >
+          <span className="cardLegendText">COMPLÉTEZ VOS INFOS </span>
 
           <div
-            className={clubSearch.length !== 0 ? "formContainer" : "dataResult"}
+            className={
+              clubSearch.length !== 0 ? "BlocFiltresEX" : "BlocFiltres"
+            }
           >
-            <span className="cardLegendText">COMPLÉTEZ VOS INFOS </span>
+            {clubSearch.length > 0 ? (
+              clubSearch.map((clubSelected, Uniqueindex) => {
+                return (
+                  <div className="cardResult" key={Uniqueindex} id="cardresult">
+                    <div className="titleCardContainer">
+                      <span className="titleCard" onClick={scrollTop}>
+                        {clubSelected.NomClub}
+                      </span>
+                    </div>
 
-            <div
-              className={
-                clubSearch.length !== 0 ? "BlocFiltresEX" : "BlocFiltres"
-              }
-            >
-              {clubSearch.length > 0 ? (
-                clubSearch.map((clubSelected, Uniqueindex) => {
-                  return (
-                    <div
-                      className="cardResult"
-                      key={Uniqueindex}
-                      id="cardresult"
-                    >
-                      <div className="titleCardContainer">
-                        <span className="titleCard" onClick={scrollTop}>
-                          {clubSelected.NomClub}
-                        </span>
+                    <div className="columnContainer">
+                      <div className="column1">
+                        <div className="logo1"></div>
+                        <div className="logo2"></div>
+                        <div className="logo3"></div>
                       </div>
-
-                      <div className="columnContainer">
-                        <div className="column1">
-                          <div className="logo1"></div>
-                          <div className="logo2"></div>
-                          <div className="logo3"></div>
-                        </div>
-                        <div className="column2">
-                          <div className="info1">
-                            {" "}
-                            <a
-                              className="mail"
-                              href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre
+                      <div className="column2">
+                        <div className="info1">
+                          {" "}
+                          <a
+                            className="mail"
+                            href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre
                                 demande "`}
-                            >
-                              {clubSelected.Mail}{" "}
-                            </a>
-                          </div>
-                          <div className="info2">
-                            {clubSelected.AdressePostale}
-                          </div>
-                          <div className="info3">
-                            <a
-                              href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}
-                            >
-                              Voir plus d'infos
-                            </a>
-                            <img
-                              className={
-                                clubSelected.label.length > 0
-                                  ? "labelClub"
-                                  : "labelHide"
-                              }
-                              src={
-                                clubSelected.label.length > 0
-                                  ? LabelMarker
-                                  : null
-                              }
-                              alt="Marqueur Club labellisé"
-                            />
-                          </div>
+                          >
+                            {clubSelected.Mail}{" "}
+                          </a>
+                        </div>
+                        <div className="info2">
+                          {clubSelected.AdressePostale}
+                        </div>
+                        <div className="info3">
+                          <a
+                            href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}
+                          >
+                            Voir plus d'infos
+                          </a>
+                          <img
+                            className={
+                              clubSelected.label.length > 0
+                                ? "labelClub"
+                                : "labelHide"
+                            }
+                            src={
+                              clubSelected.label.length > 0 ? LabelMarker : null
+                            }
+                            alt="Marqueur Club labellisé"
+                          />
                         </div>
                       </div>
                     </div>
-                  );
-                })
-              ) : (
-                <div className="filtersNoSearch">
-                  <form
-                    className="filtrationsWrapper"
-                    onSubmit={(e) => searchClub(e)}
-                  >
-                    <div className="filter">
-                      <div className="inputBox">
-                        <span className="inputTitle">VOTRE ÂGE </span>
-                      </div>
+                  </div>
+                );
+              })
+            ) : (
+              <div className="filtersNoSearch">
+                <form
+                  className="filtrationsWrapper"
+                  onSubmit={(e) => searchClub(e)}
+                >
+                  <div className="filter">
+                    <div className="inputBox">
+                      <span className="inputTitle">VOTRE ÂGE </span>
+                    </div>
 
-                      <TextField
-                        variant="outlined"
-                        label="Âge"
-                        type="number"
-                        margin="normal"
-                        name="age"
-                        onChange={(e) => {
-                          if (e.target.value < 18) {
-                            if (formData.type === "Loisir") {
-                              setformData({
-                                ...formData,
-                                type: "",
-                                age: e.target.value,
-                              });
-                            } else {
-                              setformData({ ...formData, age: e.target.value });
-                            }
+                    <TextField
+                      variant="outlined"
+                      label="Âge"
+                      type="number"
+                      margin="normal"
+                      name="age"
+                      onChange={(e) => {
+                        if (e.target.value < 18) {
+                          if (formData.type === "Loisir") {
+                            setformData({
+                              ...formData,
+                              type: "",
+                              age: e.target.value,
+                            });
                           } else {
                             setformData({ ...formData, age: e.target.value });
                           }
-                        }}
-                        focused
-                        inputProps={{
-                          inputMode: "numeric",
-                          pattern: "[0-9]*",
-                          placeholder: "10, 15, 30...",
-                        }}
-                      />
-                    </div>
+                        } else {
+                          setformData({ ...formData, age: e.target.value });
+                        }
+                      }}
+                      focused
+                      inputProps={{
+                        inputMode: "numeric",
+                        pattern: "[0-9]*",
+                        placeholder: "10, 15, 30...",
+                      }}
+                    />
+                  </div>
 
-                    <div className="filter">
-                      <FormControl component="fieldset" required={true}>
-                        <div className="inputBox">
-                          <span className="inputTitle">VOTRE GENRE </span>
-                        </div>
-                        <RadioGroup
-                          row
-                          aria-label="gender"
-                          name="gender"
-                          error="Vous devez renseigner une compétition"
-                          onChange={(e) => {
-                            handleChange(e);
-                            if (e.target.value === "Male") {
-                              setformData({
-                                ...formData,
-                                gender: e.target.value,
-                              });
-                            } else {
-                              formData.type === "Futsal"
-                                ? setformData({
+                  <div className="filter">
+                    <FormControl component="fieldset" required={true}>
+                      <div className="inputBox">
+                        <span className="inputTitle">VOTRE GENRE </span>
+                      </div>
+                      <RadioGroup
+                        row
+                        aria-label="gender"
+                        name="gender"
+                        error="Vous devez renseigner une compétition"
+                        onChange={(e) => {
+                          handleChange(e);
+                          if (e.target.value === "Male") {
+                            setformData({
+                              ...formData,
+                              gender: e.target.value,
+                            });
+                          } else {
+                            formData.type === "Futsal"
+                              ? setformData({
                                   ...formData,
                                   gender: e.target.value,
                                   type: "",
                                 })
-                                : setformData({
+                              : setformData({
                                   ...formData,
                                   gender: e.target.value,
                                 });
-                            }
-                          }}
-                        >
-                          <FormControlLabel
-                            value="Male"
-                            className="radio1"
-                            control={<Radio />}
-                            label="Masculin"
-                          />
-                          <FormControlLabel
-                            className="radio1"
-                            value="Female"
-                            control={<Radio />}
-                            label="Féminin"
-                          />
-                        </RadioGroup>
-                      </FormControl>
-                    </div>
-
-                    <div className="filter">
-                      <FormControl component="fieldset" required={true}>
-                        <div className="inputBox">
-                          <span className="inputTitle">
-                            PRATIQUE SOUHAITÉE{" "}
-                          </span>
-                        </div>
-                        <RadioGroup
-                          value={formData.type}
-                          row
-                          aria-label="type"
-                          name="type"
-                          error="Vous devez renseigner une compétition"
-                          onChange={(e) => handleChange(e)}
-                          required={true}
-                        >
-                          <FormControlLabel
-                            value="Libre"
-                            className="radio1"
-                            control={<Radio />}
-                            label="Libre"
-                            title="Football en compétition à 11 joueurs"
-                          />
-                          <FormControlLabel
-                            disabled={inputLoisir}
-                            className="radio1"
-                            value="Loisir"
-                            control={<Radio />}
-                            label="Loisir"
-                            title="Pratique proposée aux seniors Hommes exclusivement"
-                          />
-                          <FormControlLabel
-                            disabled={inputFutsal}
-                            className="radio1"
-                            value="Futsal"
-                            control={<Radio />}
-                            label="Futsal"
-                            title="Pratique proposée aux séniors Hommes et aux 17-18 masculins"
-                          // disable={inputFutsal}
-                          />
-                        </RadioGroup>
-
-                        <div className="modalDiv">
-                          <Button2 className="modalTitle" onClick={handleOpen}>
-                            <div className="btnOpenPopup">
-                              <p className="btnTextPopUp">
-                                Détails sur les catégories
-                              </p>
-                            </div>
-                          </Button2>
-
-                          <Modal
-                            open={open}
-                            onClose={handleClose}
-                            aria-labelledby="modal-modal-title"
-                            aria-describedby="modal-modal-description"
-                          >
-                            <Box id="box" sx={style}>
-                              <Typography
-                                id="modal-modal-title"
-                                variant="h6"
-                                component="h2"
-                              >
-                                <p className="modalTitle">
-                                  {" "}
-                                  Informations complémentaires sur les
-                                  catégories :
-                                </p>
-                              </Typography>
-                              <Typography
-                                id="modal-modal-description"
-                                sx={{ mt: 2 }}
-                              >
-                                <p className="boldText">Libre : </p>
-                                <p className="popupText">
-                                  Football en compétiton
-                                </p>
-                                <p className="boldText"> Loisir :</p>
-                                <p className="popupText">
-                                  {" "}
-                                  Pratique proposée aux seniors Hommes
-                                  exclusivement
-                                </p>
-
-                                <p className="boldText">Futsal : </p>
-                                <p className="popupText">
-                                  {" "}
-                                  Pratique proposée aux seniors Hommes et aux
-                                  17-18 ans Hommes
-                                </p>
-                                <div
-                                  onClick={handleClose}
-                                  className="btnClosePopUp"
-                                >
-                                  <p onClick={handleClose}>FERMER</p>
-                                </div>
-                              </Typography>
-                            </Box>
-                          </Modal>
-                        </div>
-                      </FormControl>
-                    </div>
-
-                    <div className="filter">
-                      <div className="inputBox2">
-                        <span className="inputTitle">VOTRE VILLE </span>
-                      </div>
-
-                      <Autocomplete
-                        disablePortal
-                        className="inputCity"
-                        id="combo-box-demo"
-                        inputValue={formData.city}
-                        options={allcities}
-                        noOptionsText="Pas de club disponible dans cette commune"
-                        onInputChange={(event, newInputValue) => {
-                          setformData({ ...formData, city: newInputValue });
+                          }
                         }}
-                        sx={{ width: 230 }}
-                        renderInput={(params) => (
-                          <TextField {...params} label="Rechercher" />
-                        )}
-                      />
-                    </div>
-
-                    <div className="btnContainer" id="test2">
-                      <button
-                        className="btnBackground"
-                        id="scrollBtn"
-                        type="submit"
                       >
-                        <img
-                          className="findclubBtn"
-                          alt="trouvez votre club"
-                          src={btnPicture}
+                        <FormControlLabel
+                          value="Male"
+                          className="radio1"
+                          control={<Radio />}
+                          label="Masculin"
                         />
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              )}
-              <Modal
-                open={clubSearch.length === 0 && Declenche ? true : false}
-                onClose={handleClosePop}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-              >
-                <Box id="box" sx={style2}>
-                  {!formData.age || !formData.type || !formData.city ? (
-                    <div>
-                      <p className="textNoResults">
-                        {" "}
-                        Aucun résultat pour votre recherche !
-                      </p>
-                      <p className="btnNoResults" onClick={handleClosePop}>
-                        FERMER
-                      </p>{" "}
-                      {/* GESTION DES ERREURS DANS LA RECHERCHE */}
-                    </div>
-                  ) : (
-                    <div>
-                      <p>
-                        Pas de résultats trouvés pour la catégorie :{" "}
-                        {formData.type} à {formData.city}
-                      </p>
+                        <FormControlLabel
+                          className="radio1"
+                          value="Female"
+                          control={<Radio />}
+                          label="Féminin"
+                        />
+                      </RadioGroup>
+                    </FormControl>
+                  </div>
 
-                      <p className="btnNoResults" onClick={handleClosePop}>
-                        FERMER
-                      </p>
+                  <div className="filter">
+                    <FormControl component="fieldset" required={true}>
+                      <div className="inputBox">
+                        <span className="inputTitle">PRATIQUE SOUHAITÉE </span>
+                      </div>
+                      <RadioGroup
+                        value={formData.type}
+                        row
+                        aria-label="type"
+                        name="type"
+                        error="Vous devez renseigner une compétition"
+                        onChange={(e) => handleChange(e)}
+                        required={true}
+                      >
+                        <FormControlLabel
+                          value="Libre"
+                          className="radio1"
+                          control={<Radio />}
+                          label="Libre"
+                          title="Football en compétition à 11 joueurs"
+                        />
+                        <FormControlLabel
+                          disabled={inputLoisir}
+                          className="radio1"
+                          value="Loisir"
+                          control={<Radio />}
+                          label="Loisir"
+                          title="Pratique proposée aux seniors Hommes exclusivement"
+                        />
+                        <FormControlLabel
+                          disabled={inputFutsal}
+                          className="radio1"
+                          value="Futsal"
+                          control={<Radio />}
+                          label="Futsal"
+                          title="Pratique proposée aux séniors Hommes et aux 17-18 masculins"
+                          // disable={inputFutsal}
+                        />
+                      </RadioGroup>
+
+                      <div className="modalDiv">
+                        <Button2 className="modalTitle" onClick={handleOpen}>
+                          <div className="btnOpenPopup">
+                            <p className="btnTextPopUp">
+                              Détails sur les catégories
+                            </p>
+                          </div>
+                        </Button2>
+
+                        <Modal
+                          open={open}
+                          onClose={handleClose}
+                          aria-labelledby="modal-modal-title"
+                          aria-describedby="modal-modal-description"
+                        >
+                          <Box id="box" sx={style}>
+                            <Typography
+                              id="modal-modal-title"
+                              variant="h6"
+                              component="h2"
+                            >
+                              <p className="modalTitle">
+                                {" "}
+                                Informations complémentaires sur les catégories
+                                :
+                              </p>
+                            </Typography>
+                            <Typography
+                              id="modal-modal-description"
+                              sx={{ mt: 2 }}
+                            >
+                              <p className="boldText">Libre : </p>
+                              <p className="popupText">
+                                Football en compétiton
+                              </p>
+                              <p className="boldText"> Loisir :</p>
+                              <p className="popupText">
+                                {" "}
+                                Pratique proposée aux seniors Hommes
+                                exclusivement
+                              </p>
+
+                              <p className="boldText">Futsal : </p>
+                              <p className="popupText">
+                                {" "}
+                                Pratique proposée aux seniors Hommes et aux
+                                17-18 ans Hommes
+                              </p>
+                              <div
+                                onClick={handleClose}
+                                className="btnClosePopUp"
+                              >
+                                <p onClick={handleClose}>FERMER</p>
+                              </div>
+                            </Typography>
+                          </Box>
+                        </Modal>
+                      </div>
+                    </FormControl>
+                  </div>
+
+                  <div className="filter">
+                    <div className="inputBox2">
+                      <span className="inputTitle">VOTRE VILLE </span>
                     </div>
-                  )}
-                </Box>
-              </Modal>
-              <div className="newSearchContainer">
-                <button
-                  className={
-                    clubSearch.length !== 0 ? "btnAfterSearch" : "hide"
-                  }
-                  onClick={newSearch}
-                >
-                  NOUVELLE RECHERCHE
-                </button>
+
+                    <Autocomplete
+                      disablePortal
+                      className="inputCity"
+                      id="combo-box-demo"
+                      inputValue={formData.city}
+                      options={allcities}
+                      noOptionsText="Pas de club disponible dans cette commune"
+                      onInputChange={(event, newInputValue) => {
+                        setformData({ ...formData, city: newInputValue });
+                      }}
+                      sx={{ width: 230 }}
+                      renderInput={(params) => (
+                        <TextField {...params} label="Rechercher" />
+                      )}
+                    />
+                  </div>
+
+                  <div className="btnContainer" id="test2">
+                    <button
+                      className="btnBackground"
+                      id="scrollBtn"
+                      type="submit"
+                    >
+                      <img
+                        className="findclubBtn"
+                        alt="trouvez votre club"
+                        src={btnPicture}
+                      />
+                    </button>
+                  </div>
+                </form>
               </div>
+            )}
+            <Modal
+              open={clubSearch.length === 0 && Declenche ? true : false}
+              onClose={handleClosePop}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box id="box" sx={style2}>
+                {!formData.age || !formData.type || !formData.city ? (
+                  <div>
+                    <p className="textNoResults">
+                      {" "}
+                      Aucun résultat pour votre recherche !
+                    </p>
+                    <p className="btnNoResults" onClick={handleClosePop}>
+                      FERMER
+                    </p>{" "}
+                    {/* GESTION DES ERREURS DANS LA RECHERCHE */}
+                  </div>
+                ) : (
+                  <div>
+                    <p>
+                      Pas de résultats trouvés pour la catégorie :{" "}
+                      {formData.type} à {formData.city}
+                    </p>
+
+                    <p className="btnNoResults" onClick={handleClosePop}>
+                      FERMER
+                    </p>
+                  </div>
+                )}
+              </Box>
+            </Modal>
+            <div className="newSearchContainer">
+              <button
+                className={clubSearch.length !== 0 ? "btnAfterSearch" : "hide"}
+                onClick={newSearch}
+              >
+                NOUVELLE RECHERCHE
+              </button>
             </div>
-
-            {/* FIN DE LA  GESTION DES ERREURS DANS LA RECHERCHE */}
           </div>
+
+          {/* FIN DE LA  GESTION DES ERREURS DANS LA RECHERCHE */}
         </div>
-        <Faq />
-
-        {/* Fin de desktopContainer*/}
-
-        <Sponso />
-        <Footer />
-
       </div>
+      <Faq />
+
+      {/* Fin de desktopContainer*/}
+
+      <Sponso />
+      <Footer />
+    </div>
   );
 }
 
