@@ -180,16 +180,7 @@
     color: var(--secondary-color);
   }
 
-  .legendContainer {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: stretch;
-    height: 250px;
-    width: 100%;
-  }
+ 
 
   .submitContainer {
     height: 100px;
@@ -549,51 +540,8 @@
     padding: 8px 8px 8px 8px;
   }
 
-  .legendMarker {
-    width: 50px;
-    height: 60px;
-  }
+  
 
-  .markerContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: space-between;
-    width: 100%;
-  }
-
-  .markerWrapper {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-    height: 100px;
-  }
-
-
-
-  .legendMarker1 {
-    height: 58px;
-  }
-
-  .legendMarker2 {
-    height: 60px;
-  }
-
-  .legendMarker3 {
-    width: 58px;
-  }
-
-  .markerDescription {
-    font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize) / 1);
-    padding-right: 6px;
-    padding-left: 6px;
-  }
 }
 
 /*<<<<<<<<<<<<<<<<<<<<<<<<< FIN DE LA VERSIONS DESKTOP>>>>>>>>>>>>>>>>>>>>>>>>>> */

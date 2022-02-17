@@ -156,59 +156,6 @@
     padding: var(--spacing-medium);
   }
 
-  .legendContainer {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: stretch;
-    width: 100%;
-  }
-  .markerContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: space-between;
-    width: 100%;
-  }
-  .markerWrapper {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    height: 100px;
-    text-align: center;
-    padding-top: var(--spacing-small);
-    padding-bottom: var(--spacing-small);
-    margin-top: var(--spacing-medium);
-    margin-bottom: var(--spacing-medium);
-  }
-  .legendMarker1 {
-    height: 58px;
-  }
-
-  .legendMarker2 {
-    height: 62px;
-  }
-
-  .legendMarker3 {
-    width: 62px;
-  }
-  .legendMarker {
-    width: 50px;
-    height: 70px;
-  }
-  .markerDescription {
-    font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize) / 1);
-    padding: var(--spacing-small);
-  }
-
   .formContainer {
     width: 100%;
     display: flex;
@@ -600,7 +547,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* background-color: dodgerblue; */
     padding: var(--spacing-large);
   }
  

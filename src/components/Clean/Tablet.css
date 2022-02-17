@@ -162,59 +162,7 @@
      margin-bottom: var(--spacing-large);
    }
  
-   .legendContainer {
-     display: flex;
-     flex-direction: column;
-     flex-wrap: nowrap;
-     justify-content: center;
-     align-items: center;
-     align-content: stretch;
-     width: 100%;
-   }
-   .markerContainer {
-     display: flex;
-     flex-direction: row;
-     flex-wrap: nowrap;
-     justify-content: space-evenly;
-     align-items: center;
-     align-content: space-between;
-     width: 100%;
-   }
-   .markerWrapper {
-     display: flex;
-     flex-direction: column;
-     flex-wrap: nowrap;
-     justify-content: center;
-     align-items: center;
-     align-content: center;
-     height: 100px;
-     text-align: center;
-     padding-top: var(--spacing-small);
-     padding-bottom: var(--spacing-small);
-     margin-top: var(--spacing-medium);
-     margin-bottom: var(--spacing-medium);
-   }
- 
-   .legendMarker1 {
-     height: 58px;
-   }
- 
-   .legendMarker2 {
-     height: 62px;
-   }
- 
-   .legendMarker3 {
-     width: 62px;
-   }
-   .legendMarker {
-     width: 50px;
-     height: 70px;
-   }
-   .markerDescription {
-     font-family: var(--secondary-font);
-     font-size: calc(var(--main-fontSize) / 1);
-     padding: var(--spacing-small);
-   }
+  
  
    .formContainer {
      width: 100%;
@@ -494,8 +442,8 @@
       background-attachment: fixed;
       background-repeat: no-repeat;
       background-position: center;
-      background-image: url("../../assets/CompressedPictures/Mobile.webp");
-      /* background-image: url("../../assets/Habillage/nouveauFond.png"); */
+      /* background-image: url("../../assets/CompressedPictures/Mobile.webp"); */
+      background-image: url("../../assets/Habillage/nouveauFond.png");
       /* Garder ce fond pour que ça corresponde avec le header*/
     }
   
@@ -620,59 +568,7 @@
       margin-bottom: var(--spacing-large);
     }
   
-    .legendContainer {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-      align-content: stretch;
-      width: 100%;
-    }
-    .markerContainer {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-evenly;
-      align-items: center;
-      align-content: space-between;
-      width: 100%;
-    }
-    .markerWrapper {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-      height: 100px;
-      text-align: center;
-      padding-top: var(--spacing-small);
-      padding-bottom: var(--spacing-small);
-      margin-top: var(--spacing-medium);
-      margin-bottom: var(--spacing-medium);
-    }
-  
-    .legendMarker1 {
-      height: 58px;
-    }
-  
-    .legendMarker2 {
-      height: 62px;
-    }
-  
-    .legendMarker3 {
-      width: 62px;
-    }
-    .legendMarker {
-      width: 50px;
-      height: 70px;
-    }
-    .markerDescription {
-      font-family: var(--secondary-font);
-      font-size: calc(var(--main-fontSize) / 1);
-      padding: var(--spacing-small);
-    }
+    
   
     .formContainer {
       width: 100%;
@@ -700,7 +596,10 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 90%;
+      width: 100%;
+      padding-top: var(--spacing-large);
+      padding-bottom: var(--spacing-large);
+
     }
     .BlocFiltresEX {
       width: 90%;

@@ -17,16 +17,14 @@ import { useState, useEffect } from "react";
 /* import du Hook nécessaire à la Geoloc */
 import Geolocalisation from "../Hook/Geolocalisation";
 /* import de la librairie axios qui nous permettra de récupérer des données */
-import axios from "axios";
-/* import des différents marqueurs de district*/
 
 
 
 /* import des marqueurs promotionnels*/
 import LabelMarker from "../../assets/CA/labelCA.png";
-import agenceGroupama from "../../assets/CompressedPictures/MarqueurGroupama.webp";
+import agenceGroupama from "../../assets/CompressedPictures/Markers/MarqueurGroupama.webp";
 import marqueurG from "../../assets/CompressedPictures/Markers/MarqueurG.webp";
-import labelCA from "../../assets/CompressedPictures/labelCA.webp";
+import labelCA from "../../assets/CompressedPictures/Markers/labelCA.webp";
 
 /* import des marqueurs utilisateurs*/
 import clubMarker from "../../assets/CompressedPictures/Markers/LogoClub.webp";
@@ -59,6 +57,7 @@ import Faq from '../FAQ/Faq'
 import Footer from '../Footer/Footer'
 import Sponso from '../Sponso/Sponso.jsx'
 import Instances from "../Instances/Instaces.jsx";
+import Legend from "../Legend/Legend.jsx"
 
 
 
@@ -180,7 +179,7 @@ function Clean() {
       }
     }
 
-    // PInitiliasation d'une variable pour la pratique souhaitée
+   // Initiliasation d'une variable pour la pratique souhaitée
     let categorieType = [];
     // Vérifier si c'est rempli
     if (formData.type !== null) {
@@ -243,21 +242,9 @@ function Clean() {
   const newSearch = () => {
     setDeclenche(false);
     setclubSearch([]);
-  };
-
-  // Fonction qui changera le marqueur en fonction de s'il est labélisé ou pas
-
-  // useEffect(() => {
-  //   //à mettre en dur aussi
-  //   axios.get("https://api-clubs-cvl.herokuapp.com/cities").then((res) => {
-  //     let result = [];
-  //     res.data.forEach((element) => {
-  //       result.push({ label: element.name });
-  //     });
-  //     setallcities(result);
-  //   });
-  // }, []);
-
+  }
+  
+/* CHARGEMENT DES DONNEES  */
   useEffect(() => {
     let result = []
     let data = citiesData
@@ -270,7 +257,7 @@ function Clean() {
 
   useEffect(() => { 
     setCategories(categoriesData);
-  }, [categories]);
+  }, []);
 
   useEffect(() => {
     setClubs(data);
@@ -313,11 +300,10 @@ function Clean() {
 
   console.log(clubSearch);
   // console.log(categories)
-  console.log(allcities)
+
   return (
     <div className="fullApp">
       {/* Fin de BlocTel <<<<<<<<<<<<<VERSION DESKTOP>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/}
-      <div className="wrapper">
         <div className="mainContent">
           <div className="titlesContainer">
             <h1 className="mainTitle"> BIENVENUE !</h1>
@@ -344,7 +330,7 @@ function Clean() {
         <div className="desktopInstructions">
           <h6 className="instructionsTitle">
             Entrez votre âge et la compétition souhaitée pour découvrir les
-            clubs à proximité
+            clubs à proximité :
           </h6>
         </div>
 
@@ -355,6 +341,7 @@ function Clean() {
             </div>
 
             <div className="BlocCarte">
+
               <MapContainer
                 className="mapLeaflet"
                 id="map"
@@ -384,7 +371,7 @@ function Clean() {
                   }
                 >
                   {clubSearch.length !== 0
-                    ? clubSearch.slice(0, 150).map((res, index2) => {
+                    ? clubSearch.slice(0, 500).map((res, index2) => {
                       console.log(res);
                       return (
                         <Marker
@@ -409,30 +396,9 @@ function Clean() {
 
               </MapContainer>
             </div>
-
-            <div className="legendContainer">
-              <div className="markerContainer">
-                <div className="markerWrapper">
-                  <img src={marqueurG} className="legendMarker1" />
-                  <span className="markerDescription">Votre position</span>
-                </div>
-                <div className="markerWrapper">
-                  <img src={clubMarker} className="legendMarker2" />
-                  <span className="markerDescription">Club de football</span>
-                </div>
-
-                <div className="markerWrapper">
-                  <img src={agenceGroupama} className="legendMarker" />
-                  <span className="markerDescription">Groupama</span>
-                </div>
-
-                <div className="markerWrapper">
-                  <img src={labelCA} className="legendMarker3" />
-                  <span className="markerDescription">Club labéllisé</span>
-                </div>
-              </div>
-            </div>
+            <Legend />
           </div>
+
           <div
             className={clubSearch.length !== 0 ? "formContainer" : "dataResult"}
           >
@@ -640,6 +606,7 @@ function Clean() {
                               </p>
                             </div>
                           </Button2>
+
                           <Modal
                             open={open}
                             onClose={handleClose}
@@ -785,7 +752,6 @@ function Clean() {
         <Footer />
 
       </div>
-    </div>
   );
 }
 

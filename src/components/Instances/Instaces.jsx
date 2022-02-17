@@ -13,7 +13,7 @@ import indreEtLoireMarker from "../../assets/CompressedPictures/Markers/Marqueur
 import loirEtcher from "../../assets/CompressedPictures/Markers/Marqueur-Loir-et-Cher.webp";
 import cherMarker from "../../assets/CompressedPictures/Markers/Marqueur-Cher.webp";
 import loiretMarker from "../../assets/CompressedPictures/Markers/Marqueur-Loiret.webp";
-import agenceGroupama from "../../assets/CompressedPictures/MarqueurGroupama.webp";
+import agenceGroupama from "../../assets/CompressedPictures/Markers/MarqueurGroupama.webp";
 
 
 

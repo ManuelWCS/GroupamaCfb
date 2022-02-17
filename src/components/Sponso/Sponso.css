@@ -225,8 +225,8 @@
 
   .sponsoLinks {
     display: flex;
-    justify-content: space-around;
-    width: 50%;
+    justify-content: space-evenly;
+    width: 30%;
   }
   .GroupamaLogo {
     width: 280px;
