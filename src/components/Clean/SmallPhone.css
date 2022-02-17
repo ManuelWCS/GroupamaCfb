@@ -7,30 +7,39 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90vw;
+    width: 100vw;
     margin: auto;
   }
+  #background_wrap {
+    z-index: 1;
+    position: relative;
+    /* top: 0; */
+    /* left: 0; */
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+    background-image: url('../../assets/TEST/FondTel.png');
+    background-attachment: fixed;
+}
 
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+
+
 
   html,
   body {
     max-width: 100%;
-    width: 100vw;
+    width: 100%;
     overflow-x: hidden;
-    /* background-size: cover; */
+    background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     /* background-image: url("../../assets/CompressedPictures/Mobile.webp"); */
-    background-image: url('../../assets/TEST/FondTel.png');
+    /* background-image: url('../../assets/TEST/FondTel.png'); */
     /* background-image: url("../../assets/Habillage/nouveauFond.png"); */
     /* Garder ce fond pour que ça corresponde avec le header*/
+    /* -webkit-background-size: 480px 1000px; */
+
   }
 
   .mainContent {
@@ -52,6 +61,7 @@
     padding-left: var(--spacing-small);
     padding-top: var(--spacing-small);
     padding-bottom: var(--spacing-small);
+    margin-left: 16px;
   }
   .mainTitle {
     font-size: calc(var(--main-fontSize) * 2);

@@ -288,7 +288,7 @@ function Clean() {
   // console.log(categories)
 
   return (
-    <div className="fullApp">
+    <div className="fullApp" id="background_wrap">
       {/* Fin de BlocTel <<<<<<<<<<<<<VERSION DESKTOP>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/}
       <div className="mainContent">
         <div className="titlesContainer">
