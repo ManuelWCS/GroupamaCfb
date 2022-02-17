@@ -52,6 +52,8 @@ import Sponso from "../Sponso/Sponso.jsx";
 import Instances from "../Instances/Instaces.jsx";
 import Legend from "../Legend/Legend.jsx";
 
+import Header from '../Header2/Header2.jsx'
+
 function Clean() {
   const [allcities, setallcities] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -289,6 +291,7 @@ function Clean() {
 
   return (
     <div className="fullApp" id="background_wrap">
+      <Header/>
       {/* Fin de BlocTel <<<<<<<<<<<<<VERSION DESKTOP>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/}
       <div className="mainContent">
         <div className="titlesContainer">

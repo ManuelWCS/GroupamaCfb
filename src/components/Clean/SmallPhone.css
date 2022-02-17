@@ -1,6 +1,6 @@
 @import url("./Clean.css");
 
-@media screen  and (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .fullApp,
   .wrapper {
     display: flex;
@@ -10,20 +10,18 @@
     width: 100vw;
     margin: auto;
   }
+
   #background_wrap {
     z-index: 1;
     position: relative;
-    /* top: 0; */
-    /* left: 0; */
     height: 100%;
     width: 100%;
     background-size: 100%;
-    background-image: url('../../assets/TEST/FondTel.png');
+    /* background-image: url("../../assets/TEST/FondTel.png"); */
+     background-image: url("../../assets/CompressedPictures/Mobile.webp"); 
+
     background-attachment: fixed;
-}
-
-
-
+  }
 
   html,
   body {
@@ -39,20 +37,20 @@
     /* background-image: url("../../assets/Habillage/nouveauFond.png"); */
     /* Garder ce fond pour que ça corresponde avec le header*/
     /* -webkit-background-size: 480px 1000px; */
-
   }
 
   .mainContent {
     height: 250px;
-    width: 100%;
-    margin-top: -2px;
-    background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp"); 
-    /* background-image: url('../../assets/TEST/FondTel.png'); */
-
+    width: 90%;
+    margin-top: -5px;
+    background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
+/* background-image: url('../../assets/TEST/FondTel.png'); */
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
     position: relative;
+    margin:auto;
+    
   }
 
   .titlesContainer {
@@ -287,8 +285,6 @@
     padding: 8px 8px 8px 8px;
   }
 
-
-
   /*********** STYLES CARTES*/
   .cardResult {
     height: 220px;
@@ -430,7 +426,6 @@
     background-color: transparent;
   }
 
-
   .labelClub {
     height: 45px;
     width: 50px;
@@ -563,5 +558,4 @@
     justify-content: center;
     padding: var(--spacing-large);
   }
- 
 }

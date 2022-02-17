@@ -7,7 +7,6 @@ import Clean from './components/Clean/Clean.jsx';
 function App() {
   return (
     <div className="App">
-      <Newheader/>
       <Clean/>
     
     </div>
