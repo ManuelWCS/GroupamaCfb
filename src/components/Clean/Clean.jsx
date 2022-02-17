@@ -33,7 +33,8 @@ import clubMarker from "../../assets/CompressedPictures/Markers/LogoClub.webp";
 
 /* import des données des clubs */
 import data from "../../components/Map/data/data.json";
-import categoriesData from '../Map/data/categories.json'
+import categoriesData from '../Map/data/categories.json';
+import citiesData from '../Map/data/cities.json';
 
 /* import des élements nécessaires au formulaire */
 import TextField from "@mui/material/TextField";
@@ -246,21 +247,30 @@ function Clean() {
 
   // Fonction qui changera le marqueur en fonction de s'il est labélisé ou pas
 
+  // useEffect(() => {
+  //   //à mettre en dur aussi
+  //   axios.get("https://api-clubs-cvl.herokuapp.com/cities").then((res) => {
+  //     let result = [];
+  //     res.data.forEach((element) => {
+  //       result.push({ label: element.name });
+  //     });
+  //     setallcities(result);
+  //   });
+  // }, []);
+
   useEffect(() => {
-    //à mettre en dur aussi
-    axios.get("https://api-clubs-cvl.herokuapp.com/cities").then((res) => {
-      let result = [];
-      res.data.forEach((element) => {
-        result.push({ label: element.name });
-      });
-      setallcities(result);
+    let result = []
+    let data = citiesData
+    data.forEach((element) => {
+      result.push({label : element.name })
     });
-  }, []);
+    setallcities(result)
+
+  }, [])
 
   useEffect(() => { 
     setCategories(categoriesData);
-    console.log(JSON.stringify(categories))
-  }, []);
+  }, [categories]);
 
   useEffect(() => {
     setClubs(data);
@@ -302,7 +312,8 @@ function Clean() {
   }, [formData]);
 
   console.log(clubSearch);
-
+  // console.log(categories)
+  console.log(allcities)
   return (
     <div className="fullApp">
       {/* Fin de BlocTel <<<<<<<<<<<<<VERSION DESKTOP>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/}
