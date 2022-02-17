@@ -18,7 +18,7 @@
     width: 100%;
     background-size: 100%;
     /* background-image: url("../../assets/TEST/FondTel.png"); */
-     background-image: url("../../assets/CompressedPictures/Mobile.webp"); 
+    background-image: url("../../assets/CompressedPictures/Mobile.webp");
 
     background-attachment: fixed;
   }
@@ -48,7 +48,6 @@
     background-repeat: no-repeat;
     z-index: -1;
     position: relative;
-    
   }
 
   .titlesContainer {
@@ -464,14 +463,35 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 404px) {
-  .mainContent {
+  #background_wrap {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+    /* background-image: url("../../assets/TEST/FondTel.png"); */
+    background-image: url("../../assets/CompressedPictures/Mobile.webp");
+    background-attachment: fixed;
+  }
+  /* .mainContent {
     height: 150px;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
     position: relative;
+  } */
+  .mainContent {
+    height: 100px;
+    width: 89.1vw;
+    margin-top: -5px;
+    background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: relative;
   }
+
   .titlesContainer {
     position: relative;
     width: fit-content;
