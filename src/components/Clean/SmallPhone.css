@@ -79,6 +79,7 @@
     color: var(--main-color);
     font-size: calc(var(--main-fontSize) * 1.2);
     padding-bottom: 16px;
+    margin-top: -60px;
   }
 
   .secondaryDescription {
@@ -513,7 +514,7 @@
   }
  
   .mainContent {
-    height: 650px;
+    height: 400px;
     width: 89.1vw;
     margin-top: -5px;
     /* background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp"); */
