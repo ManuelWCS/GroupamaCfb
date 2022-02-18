@@ -83,11 +83,12 @@
 
   .secondaryDescription {
     font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize) * 0.9);
+    font-size: calc(var(--main-fontSize) * 0.8);
     padding-bottom: 16px;
     color: rgb(51, 51, 51);
     margin-left: var(--spacing-small);    
     margin-right: var(--spacing-small);
+    text-align: center;
 
   }
 
