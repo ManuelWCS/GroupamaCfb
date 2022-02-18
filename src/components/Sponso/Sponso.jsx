@@ -19,7 +19,7 @@ function Sponso() {
     <div className="sponsorContainer">
       <p className="sponsoText">
         {" "}
-        Cette plateforme est soutenue par le Groupama
+        Merci Groupama tu m'as bien khalass
       </p>
       <img src={Logo} className="GroupamaLogo" />
       <div className="sponsoLinks">
