@@ -19,7 +19,8 @@ function Sponso() {
     <div className="sponsorContainer">
       <p className="sponsoText">
         {" "}
-        Merci Marine et Floriane pour les travaux 🚧
+        Merci Marine et Floriane pour les travaux 🚧 <br>
+        </br>
         👑 MIGUEL PRESIDENT 👑
       </p>
       <img src={Logo} className="GroupamaLogo" />
