@@ -16,23 +16,22 @@
      justify-content: center;
      align-items: center;
    }
- 
-   html,
-   body {
-     max-width: 100%;
-     overflow-x: hidden;
-     background-size: cover;
-     background-attachment: fixed;
-     background-repeat: no-repeat;
-     background-position: center;
-     background-image: url("../../assets/CompressedPictures/Mobile.webp");
-     /* background-image: url("../../assets/Habillage/nouveauFond.png"); */
-     /* Garder ce fond pour que ça corresponde avec le header*/
-   }
+   #background_wrap {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+    /* background-image: url("../../assets/TEST/FondTel.png"); */
+    background-image: url("../../assets/CompressedPictures/Mobile.webp");
+    background-attachment: fixed;
+    background-position: center;
+  }
+
  
    .mainContent {
      height: 250px;
-     width: 100%;
+     width: 10%;
      margin-top: -2px;
      background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
      background-size: cover;
@@ -72,7 +71,7 @@
      color: var(--main-color);
      font-size: calc(var(--main-fontSize) * 1.2);
      padding-bottom: 16px;
-     margin-top:-54px
+     margin-top:-32px
    }
    .secondaryDescription {
      font-family: var(--secondary-font);
@@ -400,6 +399,21 @@
  }
  /* VERSION GRANDE TABLETTE */
 @media screen and (min-width:672px) and (max-width:1023px) {
+  
+
+  #background_wrap {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-size: 100%;
+  /* background-image: url("../../assets/TEST/FondTel.png"); */
+  background-image: url("../../assets/CompressedPictures/Mobile.webp");
+  background-attachment: fixed;
+  background-position: center;
+}
+
+
 
     .contactImg {
       height: 32px;
@@ -439,7 +453,7 @@
   
     .mainContent {
       height: 370px;
-      width: 100%;
+      width: 89%;
       margin-top: -20px;
       background-image: url("../../assets/CompressedPictures/final2.webp");
       background-size: cover;
@@ -488,7 +502,7 @@
     }
   
     .bannerContainer {
-      width: 100%;
+      width: 90%;
       height: 100px;
       display: flex;
       flex-direction: row;

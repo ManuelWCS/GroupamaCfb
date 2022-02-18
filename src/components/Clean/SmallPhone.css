@@ -19,7 +19,6 @@
     background-size: 100%;
     /* background-image: url("../../assets/TEST/FondTel.png"); */
     background-image: url("../../assets/CompressedPictures/Mobile.webp");
-
     background-attachment: fixed;
   }
 
@@ -38,7 +37,7 @@
     height: 250px;
     width: 89.1vw;
     margin-top: -5px;
-    background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
+    /* background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp"); */
     background-size: 100%;
     background-repeat: no-repeat;
     z-index: -1;
@@ -392,6 +391,39 @@
     background-size: cover;
   }
 
+.titleCard {
+  height: 64px;
+  width: 305px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 4px;
+  font-family: var(--main-font);
+  color:white;
+  font-size: calc(var(--main-fontSize) / 1.2);
+
+}
+
+.column1 {
+  height: 146px;
+  width: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 16px;
+}
+
+.column2 {
+  height: 164px;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+
+
   .resultats {
     display: flex;
     flex-direction: column;
@@ -481,22 +513,25 @@
   }
  
   .mainContent {
-    height: 130px;
+    height: 350px;
     width: 89.1vw;
     margin-top: -5px;
-    background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
+    /* background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp"); */
+    background-image: url('../../assets/TEST/mobileVertical.png');
     background-size: 100%;
     background-repeat: no-repeat;
     z-index: -1;
     position: relative;
+    border: 5px magenta;;
   }
 
   .titlesContainer {
-    position: relative;
+    /* position: relative;
     width: fit-content;
     padding-left: var(--spacing-small);
     padding-top: var(--spacing-medium);
-    padding-bottom: var(--spacing-small);
+    padding-bottom: var(--spacing-small); */
+    display: none;
   }
   .mainTitle {
     font-size: calc(var(--main-fontSize) * 1.5);

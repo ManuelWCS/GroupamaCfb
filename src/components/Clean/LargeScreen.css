@@ -33,9 +33,7 @@
     z-index: -1;
     position: relative;
   }
-  #map {
-    margin-left: 500px;
-  }
+ 
 }
 
 @media screen and (min-width: 1401px) {
