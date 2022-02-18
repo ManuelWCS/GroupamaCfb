@@ -33,6 +33,9 @@
     z-index: -1;
     position: relative;
   }
+  #map {
+    margin-left: 500px;
+  }
 }
 
 @media screen and (min-width: 1401px) {
@@ -63,11 +66,14 @@
     left: 200px;
     top: 50px;
     width: fit-content;
+
   }
   .mainTitle {
     font-size: calc(var(--main-fontSize) * 6);
     font-family: var(--main-font);
     color: var(--red-color);
+
+
   }
 
   .secondaryTitle {

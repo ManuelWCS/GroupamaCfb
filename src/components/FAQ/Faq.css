@@ -43,10 +43,10 @@
 
 
   /*<<<<<<<<<<<<<< AFFICHAGE TELEPHONE >>>>>>>>>>>>>>>>>> */
-  @media screen and (min-width: 320px) and (max-width: 480px) {
+  @media screen and (max-width: 480px) {
 
   .faqContainer {
-    width: 100%;
+    width: 90%;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -58,6 +58,14 @@
     padding-top:  var(--spacing-medium);
     padding-bottom:  var(--spacing-medium);
   }
+
+  .faqTitle {
+    margin-bottom: calc(var(--spacing-medium) * 2);
+    font-family: var(--main-font);
+    font-size: calc(var(--main-fontSize) *1.5);
+    color: var(--secondary-color);
+  }
+  
 
 
   .faqText {
@@ -78,7 +86,7 @@
   }
 }
 
-
+/* 
 @media screen and (min-width: 320px) and (max-width: 404px) {
   .faqContainer {
     width: 100%;
@@ -110,7 +118,7 @@
     width: 58px;
   }
 
-}
+} */
 
 
   /*<<<<<<<<<<<<<< AFFICHAGE TABLETTE >>>>>>>>>>>>>>>>>> */
@@ -152,7 +160,7 @@
 
 
   /* VERSION GRANDE TABLETTE */
-@media screen and (min-width:67px) and (max-width:1023px) {
+@media screen and (min-width:767px) and (max-width:1023px) {
 
 
   .faqContainer {

@@ -32,15 +32,10 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
-    /* background-image: url("../../assets/CompressedPictures/Mobile.webp"); */
-    /* background-image: url('../../assets/TEST/FondTel.png'); */
-    /* background-image: url("../../assets/Habillage/nouveauFond.png"); */
-    /* Garder ce fond pour que ça corresponde avec le header*/
-    /* -webkit-background-size: 480px 1000px; */
   }
 
   .mainContent {
-    height: 250px;
+    height: 210px;
     width: 89.1vw;
     margin-top: -5px;
     background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
@@ -54,18 +49,18 @@
     position: relative;
     width: fit-content;
     padding-left: var(--spacing-small);
-    padding-top: var(--spacing-small);
+    padding-top: var(--spacing-medium);
     padding-bottom: var(--spacing-small);
-    margin-left: 16px;
+    margin-left:8px;
   }
   .mainTitle {
-    font-size: calc(var(--main-fontSize) * 2);
+    font-size: calc(var(--main-fontSize) * 1.5);
     font-family: var(--main-font);
     color: var(--red-color);
   }
 
   .secondaryTitle {
-    font-size: calc(var(--main-fontSize) * 0.9);
+    font-size: calc(var(--main-fontSize) * 0.8);
     font-family: var(--main-font);
     color: white;
   }
@@ -89,14 +84,17 @@
 
   .secondaryDescription {
     font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize) * 1);
+    font-size: calc(var(--main-fontSize) * 0.9);
     padding-bottom: 16px;
     color: rgb(51, 51, 51);
+    margin-left: var(--spacing-small);    
+    margin-right: var(--spacing-small);
+
   }
 
   .bannerContainer {
-    width: 100%;
-    height: 100px;
+    width: 90%;
+    height: 90px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -112,8 +110,9 @@
     margin-bottom: var(--spacing-medium);
   }
   .bannerTitle {
-    padding-left: calc(var(--spacing-large) * 0.5);
-    font-size: calc(var(--main-fontSize) * 1.1);
+    padding-left: calc(var(--spacing-large) * 0.1);
+    padding-top: calc(var(--spacing-large) * 0.4);;
+    font-size: calc(var(--main-fontSize) * 0.9);
     font-family: var(--main-font);
     color: white;
   }
@@ -128,9 +127,11 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    margin: auto;
-    margin-bottom: var(--spacing-medium);
-  }
+    margin-left: var(--spacing-large);
+    margin-right:  var(--spacing-large);
+    padding-right: var(--spacing-large);
+    padding-left: var(--spacing-large);
+    }
 
   .instructionsTitle {
     font-family: var(--secondary-font);
@@ -138,6 +139,10 @@
     padding-bottom: calc(var(--spacing-medium) * 1);
     color: rgb(51, 51, 51);
     text-align: center;
+    margin-left: var(--spacing-medium);
+    margin-right:  var(--spacing-medium);
+    padding-right: var(--spacing-small);
+    padding-left: var(--spacing-small);
   }
   .mainContainer {
     width: 85vw;
@@ -159,7 +164,7 @@
 
   .mapTitle {
     font-family: var(--main-font);
-    font-size: calc(var(--main-fontSize) * 2);
+    font-size: calc(var(--main-fontSize) * 1.3);
     color: var(--secondary-color);
     text-align: center;
     padding: var(--spacing-medium);
@@ -182,8 +187,8 @@
     width: 100%;
     text-align: center;
     font-family: var(--main-font);
-    font-size: calc(var(--main-fontSize) * 2);
-    margin-bottom: calc(var(--spacing-large) / 1);
+    font-size: calc(var(--main-fontSize) * 1.3);
+    margin-bottom: calc(var(--spacing-large) / 2);
     color: var(--secondary-color);
   }
   .BlocFiltres {
@@ -462,6 +467,9 @@
   }
 }
 
+
+
+/* 
 @media screen and (min-width: 320px) and (max-width: 404px) {
   #background_wrap {
     z-index: 1;
@@ -469,18 +477,10 @@
     height: 100%;
     width: 100%;
     background-size: 100%;
-    /* background-image: url("../../assets/TEST/FondTel.png"); */
     background-image: url("../../assets/CompressedPictures/Mobile.webp");
     background-attachment: fixed;
   }
-  /* .mainContent {
-    height: 150px;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;
-    position: relative;
-  } */
+ 
   .mainContent {
     height: 100px;
     width: 89.1vw;
@@ -522,7 +522,6 @@
   .instructionsTitle {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) * 1);
-    /* padding-bottom: calc(var(--spacing-medium) * 1); */
     color: rgb(51, 51, 51);
     text-align: center;
     padding: var(--spacing-small);
@@ -576,4 +575,4 @@
     justify-content: center;
     padding: var(--spacing-large);
   }
-}
+} */
