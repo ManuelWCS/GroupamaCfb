@@ -35,7 +35,7 @@
   }
 
   .mainContent {
-    height: 210px;
+    height: 250px;
     width: 89.1vw;
     margin-top: -5px;
     background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
@@ -200,7 +200,6 @@
     margin: auto;
   }
   .BlocFiltresEX {
-    width: 90%;
     overflow: scroll;
     overflow-x: hidden;
     position: relative;
@@ -469,7 +468,7 @@
 
 
 
-/* 
+
 @media screen and (min-width: 320px) and (max-width: 404px) {
   #background_wrap {
     z-index: 1;
@@ -482,7 +481,7 @@
   }
  
   .mainContent {
-    height: 100px;
+    height: 130px;
     width: 89.1vw;
     margin-top: -5px;
     background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
@@ -566,7 +565,6 @@
     color: var(--secondary-color);
   }
   .BlocFiltresEX {
-    width: 90%;
     overflow: scroll;
     overflow-x: hidden;
     position: relative;
@@ -575,4 +573,4 @@
     justify-content: center;
     padding: var(--spacing-large);
   }
-} */
+}

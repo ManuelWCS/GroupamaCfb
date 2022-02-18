@@ -291,8 +291,8 @@ function Clean() {
 
   return (
     <div className="fullApp" id="background_wrap">
+
       <Header/>
-      {/* Fin de BlocTel <<<<<<<<<<<<<VERSION DESKTOP>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/}
       <div className="mainContent">
         <div className="titlesContainer">
           <h1 className="mainTitle"> BIENVENUE !</h1>
