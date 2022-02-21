@@ -11,6 +11,12 @@
     margin: auto;
   }
 
+          
+  .homeimg {
+    height: 100%;
+    width: 100%;
+  }
+
   #background_wrap {
     z-index: 1;
     position: relative;
@@ -18,7 +24,7 @@
     width: 100%;
     background-size: 100%;
     /* background-image: url("../../assets/TEST/FondTel.png"); */
-    background-image: url("../../assets/CompressedPictures/Mobile.webp");
+    /* background-image: url("../../assets/CompressedPictures/Mobile.webp"); */
     background-attachment: fixed;
   }
 
@@ -38,7 +44,7 @@
     width: 89.1vw;
     margin-top: -5px;
     /* background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp"); */
-    background-image: url('../../assets/TEST/mobileVertical.png');
+    /* background-image: url('../../assets/TEST/mobileVertical.png'); */
     background-size: 100%;
     background-repeat: no-repeat;
     z-index: -1;
@@ -531,7 +537,7 @@
     width: 89.1vw;
     margin-top: -5px;
     /* background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp"); */
-    background-image: url('../../assets/TEST/mobileVertical.png');
+    /* background-image: url('../../assets/TEST/mobileVertical.png'); */
     background-size: 100%;
     background-repeat: no-repeat;
     z-index: -1;

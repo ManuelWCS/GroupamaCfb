@@ -20,9 +20,7 @@ import Geolocalisation from "../Hook/Geolocalisation";
 
 /* import des marqueurs promotionnels*/
 import LabelMarker from "../../assets/CA/labelCA.png";
-import agenceGroupama from "../../assets/CompressedPictures/Markers/MarqueurGroupama.webp";
-import marqueurG from "../../assets/CompressedPictures/Markers/MarqueurG.webp";
-import labelCA from "../../assets/CompressedPictures/Markers/labelCA.webp";
+
 
 /* import des marqueurs utilisateurs*/
 import clubMarker from "../../assets/CompressedPictures/Markers/LogoClub.webp";
@@ -51,8 +49,11 @@ import Footer from "../Footer/Footer";
 import Sponso from "../Sponso/Sponso.jsx";
 import Instances from "../Instances/Instaces.jsx";
 import Legend from "../Legend/Legend.jsx";
-
 import Header from '../Header2/Header2.jsx'
+
+/*<------------------------IMPORT IMAGES ---------------------------------> */
+import homepageImg from '../../assets/TEST/mobileVertical.png'
+
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -294,6 +295,9 @@ function Clean() {
 
       <Header/>
       <div className="mainContent">
+        <img src={homepageImg} className="homeimg">
+
+        </img>
         <div className="titlesContainer">
           <h1 className="mainTitle"> BIENVENUE !</h1>
           <h3 className="secondaryTitle">
