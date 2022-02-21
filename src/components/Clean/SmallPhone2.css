@@ -1,8 +1,6 @@
 @import url("./Clean.css");
 
-
-@media screen and (max-width:480px) {
-
+@media screen and (max-width: 480px) {
   html,
   body {
     max-width: 100%;
@@ -13,7 +11,7 @@
     background-repeat: no-repeat;
     background-position: center;
   }
-    .fullApp{
+  .fullApp {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,6 +47,8 @@
     margin-right: 7.5vw;
     margin-left: 7.5vw;
     margin-bottom: calc(var(--spacing-medium) * 2);
+    margin-top: -180px;
+    padding: 8px 8px 8px 8px;
   }
   .mainDescription {
     font-family: var(--main-font);
@@ -459,12 +459,28 @@
     margin-right: 5vw;
     margin-left: 5vw;
   }
-
-  
-
-
-
-
-
-    
 }
+
+
+/* Breakpoints pour gérer l'espacement entre le texte et l'image */
+
+
+@media screen and (min-width: 365px) {
+  .descriptionContainer {
+    margin-top:-150px;
+  }
+}
+
+
+@media screen and (min-width: 400px) and (max-width:480px) {
+  .descriptionContainer {
+    margin-top:-110px;
+  }
+}
+
+@media screen and (min-width: 441px) and (max-width:480px) {
+  .descriptionContainer {
+    margin-top:-60px;
+  }
+}
+
