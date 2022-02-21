@@ -290,14 +290,12 @@ function Clean() {
   console.log(clubSearch);
   // console.log(categories)
 
-  return (
+  return (<>
+      <Header/>
     <div className="fullApp" id="background_wrap">
 
-      <Header/>
       <div className="mainContent">
-        <img src={homepageImg} className="homeimg">
 
-        </img>
         <div className="titlesContainer">
           <h1 className="mainTitle"> BIENVENUE !</h1>
           <h3 className="secondaryTitle">
@@ -732,6 +730,7 @@ function Clean() {
       <Sponso />
       <Footer />
     </div>
+    </>
   );
 }
 
