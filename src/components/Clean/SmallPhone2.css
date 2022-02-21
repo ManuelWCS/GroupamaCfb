@@ -47,7 +47,7 @@
     margin-right: 7.5vw;
     margin-left: 7.5vw;
     margin-bottom: calc(var(--spacing-medium) * 2);
-    margin-top: -180px;
+    margin-top: -220px;
     padding: 8px 8px 8px 8px;
   }
   .mainDescription {
@@ -55,6 +55,8 @@
     color: var(--main-color);
     font-size: calc(var(--main-fontSize) * 1.3);
     padding-bottom: 16px;
+    text-align: center;
+
   }
   .secondaryDescription {
     font-family: var(--secondary-font);
@@ -463,7 +465,11 @@
 
 
 /* Breakpoints pour gérer l'espacement entre le texte et l'image */
-
+@media screen and (min-width: 330px) {
+  .descriptionContainer {
+    margin-top:-170px;
+  }
+}
 
 @media screen and (min-width: 365px) {
   .descriptionContainer {
@@ -472,13 +478,20 @@
 }
 
 
-@media screen and (min-width: 400px) and (max-width:480px) {
+@media screen and (min-width: 400px){
   .descriptionContainer {
     margin-top:-110px;
+    text-align: center;
   }
 }
 
-@media screen and (min-width: 441px) and (max-width:480px) {
+@media screen and (min-width: 441px) {
+  .descriptionContainer {
+    margin-top:-90px;
+  }
+}
+
+@media screen and (min-width: 460px) and (max-width:480px) {
   .descriptionContainer {
     margin-top:-60px;
   }

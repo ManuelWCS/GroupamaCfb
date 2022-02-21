@@ -1,0 +1,49 @@
+
+@import url('./Clean.css');
+
+@media screen and (min-width:481px) and (max-width:672px) {
+    html,
+    body {
+      max-width: 100%;
+      width: 100%;
+      overflow-x: hidden;
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    #background_wrap {
+        z-index: 1;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        background-size: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-image: url('../../assets/CompressedPictures/bandesdeTypeBlanc.webp');
+      }
+      .fullApp {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+      }
+      .mainContent {
+        height: 750px;
+        width: 89%;
+        background-image: url("../../assets/TEST/mobileVertical.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin-top: -2px;
+        min-height: 500px;
+        min-width: 89%;
+      }
+      
+
+
+
+
+}
