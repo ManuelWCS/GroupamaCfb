@@ -18,9 +18,8 @@
     width: 100%;
     background-size: 100%;
     /* background-image: url("../../assets/TEST/FondTel.png"); */
-    /* background-image: url("../../assets/CompressedPictures/Mobile.webp"); */
+    background-image: url("../../assets/CompressedPictures/Mobile.webp");
     background-attachment: fixed;
-    background-color: cadetblue;
   }
 
   html,
@@ -34,14 +33,22 @@
     background-position: center;
   }
 
-  .mainContent {
+  /* .mainContent {
     height: auto;
     width: auto;
-    /* background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp"); */
     background-image: url("../../assets/TEST/mobileVertical.png");
     background-size: 100%;
-    background-size: cover;
+  } */
+
+  .mainContent {
+    height: 550px;
+    width: 89%;
+    background-image: url("../../assets/TEST/mobileVertical.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-top: -2px
   }
+
 
   .titlesContainer {
     display: none;
@@ -513,25 +520,26 @@
     justify-content: center;
   }
 
-  .mainContent {
+  /* .mainContent {
     height: 400px;
     width: 89.1vw;
     margin-top: -5px;
-    /* background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp"); */
-    /* background-image: url('../../assets/TEST/mobileVertical.png'); */
+    background-image: url('../../assets/TEST/mobileVertical.png');
     background-size: 100%;
     background-repeat: no-repeat;
     z-index: -1;
     position: relative;
-    border: 5px magenta;
+  } */
+  .mainContent {
+    height: 350px;
+    width: 89%;
+    background-image: url("../../assets/TEST/mobileVertical.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-top: -2px
   }
 
   .titlesContainer {
-    /* position: relative;
-    width: fit-content;
-    padding-left: var(--spacing-small);
-    padding-top: var(--spacing-medium);
-    padding-bottom: var(--spacing-small); */
     display: none;
   }
   .mainTitle {
