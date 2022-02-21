@@ -407,10 +407,9 @@
   height: 100%;
   width: 100%;
   background-size: 100%;
-  /* background-image: url("../../assets/TEST/FondTel.png"); */
-  background-image: url("../../assets/CompressedPictures/Mobile.webp");
   background-attachment: fixed;
   background-position: center;
+  background-image: url('../../assets/CompressedPictures/bandesdeTypeBlanc.webp');
 }
 
 
@@ -447,18 +446,21 @@
       background-repeat: no-repeat;
       background-position: center;
       /* background-image: url("../../assets/CompressedPictures/Mobile.webp"); */
+
       background-image: url("../../assets/Habillage/nouveauFond.png");
       /* Garder ce fond pour que ça corresponde avec le header*/
     }
   
     .mainContent {
       height: 370px;
-      width: 89%;
+      width: 93%;
       margin-top: -20px;
+      margin-left: 3.5%;
+      margin-right: 3.5%;
       background-image: url("../../assets/CompressedPictures/final2.webp");
       background-size: cover;
       background-repeat: no-repeat;
-      z-index: -1;
+      z-index: -5;
       position: relative;
     }
   

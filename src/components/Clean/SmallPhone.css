@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width:90%;
     margin: auto;
   }
 
@@ -499,6 +499,18 @@
 
 
 @media screen and (min-width: 320px) and (max-width: 404px) {
+
+  .fullApp,
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:90%;
+    margin: auto;
+  }
+
+
   #background_wrap {
     z-index: 1;
     position: relative;
@@ -507,6 +519,11 @@
     background-size: 100%;
     background-image: url("../../assets/CompressedPictures/Mobile.webp");
     background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
   }
  
   .mainContent {
