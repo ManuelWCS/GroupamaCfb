@@ -1,7 +1,7 @@
 import React from "react";
 /* import du CSS*/
 import "./Clean.css";
-import "./SmallPhone.css";
+import "./SmallPhone2.css";
 import "./Tablet.css";
 import "./LargeScreen.css";
 /* Fin de l'import des différentes versions*/

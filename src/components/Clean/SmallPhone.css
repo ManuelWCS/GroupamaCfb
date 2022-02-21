@@ -17,7 +17,6 @@
     height: 100%;
     width: 100%;
     background-size: 100%;
-    /* background-image: url("../../assets/TEST/FondTel.png"); */
     background-image: url("../../assets/CompressedPictures/Mobile.webp");
     background-attachment: fixed;
   }
@@ -206,7 +205,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* background-color: dodgerblue; */
     padding: var(--spacing-large);
   }
 
@@ -493,6 +491,7 @@
     margin-right: 5vw;
     margin-left: 5vw;
   }
+  
 }
 
 @media screen and (min-width: 320px) and (max-width: 404px) {
@@ -530,6 +529,7 @@
     z-index: -1;
     position: relative;
   } */
+
   .mainContent {
     height: 350px;
     width: 89%;
