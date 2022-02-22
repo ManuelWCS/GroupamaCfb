@@ -570,7 +570,7 @@ function Clean() {
                             title="Football en compétition à 11 joueurs"
                           />
                           <FormControlLabel
-                            // disabled={inputLoisir}
+                            disabled={inputLoisir}
                             className="radio1"
                             value="Loisir"
                             control={<Radio />}
@@ -578,7 +578,7 @@ function Clean() {
                             title="Pratique proposée aux seniors Hommes exclusivement"
                           />
                           <FormControlLabel
-                            // disabled={inputFutsal}
+                            disabled={inputFutsal}
                             className="radio1"
                             value="Futsal"
                             control={<Radio />}
