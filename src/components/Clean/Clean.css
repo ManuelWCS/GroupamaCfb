@@ -65,7 +65,8 @@
     background-attachment: fixed;
     background-position: center;
     /* background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp"); */
-    background-image: url("../../assets/Habillage/nouveauFond.png");
+    /* background-image: url("../../assets/Habillage/nouveauFond.png"); */
+    background-image: url('../../assets/TEST/Ordi22.png');
   }
 
   .fullApp {
@@ -670,21 +671,21 @@
 @media screen and (min-width: 1077px) and (max-width: 1111px) {
   .mainContent {
     width: 93%;
-    margin-top: -19px;
+    margin-top: -3.5px;
   }
 }
 
 @media screen and (min-width: 1110px) and (max-width: 1194px) {
   .mainContent {
     width: 93%;
-    margin-top: -19px;
+    margin-top: -3.5px;
   }
 }
 
-@media screen and (min-width: 1110px) {
+@media screen and (min-width: 1194px) and (max-width: 1400px) {
   .mainContent {
     width: 93%;
-    margin-top: -20px;
+    margin-top: -3.5px;
   }
 
   .mainContainer {
@@ -693,5 +694,9 @@
 
   .bannerContainer {
     width: 92%;
+  }
+  .descriptionContainer {
+    margin-top: 0px;
+    position: relative;
   }
 }

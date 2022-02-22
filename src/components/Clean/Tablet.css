@@ -35,6 +35,7 @@
     width: 100%;
     background-size: 100%;
     background-image: url("../../assets/CompressedPictures/Mobile.webp");
+
     background-attachment: fixed;
   }
 
@@ -899,7 +900,8 @@
     height: 100%;
     width: 100%;
     background-size: 100%;
-    background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
+    /* background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp"); */
+    background-image: url('../../assets/TEST/Tablette22.png');
 
     background-attachment: fixed;
   }
@@ -909,7 +911,7 @@
     width: 93%;
     margin-left: 3.5vw;
     margin-right: 3.5vw;
-    margin-top: -18px;
+    margin-top: -4px;
     background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
     background-size: 100%;
     background-repeat: no-repeat;

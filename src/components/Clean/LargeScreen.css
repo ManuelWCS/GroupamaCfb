@@ -1,15 +1,21 @@
-/* @import url("./Clean.css");
+@import url("./Clean.css");
 
-@media screen and (min-width: 1025px)and (max-width: 1200px) {
+@media screen and (min-width: 1400px) {
+  #background_wrap {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    /* background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp"); */
+    background-image: url("../../assets/Habillage/nouveauFond.png");
+  }
   html,
   body {
     max-width: 100%;
     overflow-x: hidden;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
   }
 
   body::-webkit-scrollbar {
@@ -33,49 +39,70 @@
     z-index: -1;
     position: relative;
   }
- 
+  .titlesContainer {
+    position: relative;
+    left: 48px;
+    top: 16px;
+    width: fit-content;
+  }
+  .mainTitle {
+    font-size: calc(var(--main-fontSize) * 4.5);
+    font-family: var(--main-font);
+    color: var(--red-color);
+  }
+
+  .secondaryTitle {
+    font-size: calc(var(--main-fontSize) * 2.5);
+    font-family: var(--main-font);
+    color: white;
+  }
 }
+
+
 
 @media screen and (min-width: 1401px) {
   html,
   body {
     max-width: 100%;
     overflow-x: hidden;
-    background-size: cover;
+  }
+
+
+  #background_wrap {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
     background-attachment: fixed;
-    background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
+    background-image: url("../../assets/Habillage/nouveauFond.png");
   }
 
   .mainContent {
-    height: 680px;
-    margin-top: -32px;
+    height: 550px;
     background-image: url("../../assets/CompressedPictures/final2.webp");
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
     position: relative;
-    margin-top: -50px;
+    margin-top:-4.7px;
   }
 
   .titlesContainer {
     position: relative;
-    left: 200px;
+    left: 100px;
     top: 50px;
     width: fit-content;
-
   }
   .mainTitle {
-    font-size: calc(var(--main-fontSize) * 6);
+    font-size: calc(var(--main-fontSize) * 4);
     font-family: var(--main-font);
     color: var(--red-color);
-
-
   }
 
   .secondaryTitle {
-    font-size: calc(var(--main-fontSize) * 3);
+    font-size: calc(var(--main-fontSize) * 2);
     font-family: var(--main-font);
     color: white;
   }
@@ -102,9 +129,15 @@
   }
   #map {
     height: 700px;
-    width: 800px;
+    width: 700px;
     margin-bottom: calc(var(--spacing-large) * 1);
   }
+
+  .mainContainer {
+    width: 90vw;
+  }
+
+ 
 
   .markerContainer {
     margin-bottom: var(--spacing-large);
@@ -122,6 +155,7 @@
   .mainContainer {
     padding: var(--spacing-small);
     margin-bottom: calc(var(--spacing-large) * 10);
+    justify-content: center;
   }
 
   .resultats {
@@ -184,4 +218,12 @@
     align-items: center;
     align-content: stretch;
   }
-} */
+
+  .BlocFiltresEX {
+    width: 400px;
+  }
+
+  .column2 {
+    height: 161px;
+  }
+}
