@@ -22,13 +22,6 @@
   body {
     max-width: 100%;
     overflow-x: hidden;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
-    /* background-image:url("../../assets/Habillage/nouveauFond.png") */
-
     /* Garder ce fond pour que ça corresponde avec le header*/
   }
 
@@ -51,10 +44,11 @@
 
   /* PREMIERE DIV AVEC DU CONTENU : IMAGE CENTREE AVEC TEXTE*/
   .mainContent {
-    height: 500px;
-    width: 90%;
+    height: 450px;
+    min-height: 440px;
+    width: 92.8%;
     margin: auto;
-    margin-top: -21px;
+    margin-top: -18px;
     background-image: url("../../assets/CompressedPictures/final2.webp");
     background-size: cover;
     background-repeat: no-repeat;
@@ -68,10 +62,19 @@
     height: 100%;
     width: 100%;
     background-size: 100%;
-    /* background-image: url("../../assets/TEST/FondTel.png"); */
-    background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
     background-attachment: fixed;
     background-position: center;
+    /* background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp"); */
+    background-image: url("../../assets/Habillage/nouveauFond.png");
+  }
+
+  .fullApp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: auto;
   }
 
   /* Container avec les titres */
@@ -79,12 +82,12 @@
   .titlesContainer {
     position: relative;
     left: 18px;
-    top: 0px;
+    top: 16px;
     width: fit-content;
   }
 
   .mainTitle {
-    font-size: calc(var(--main-fontSize) * 4);
+    font-size: calc(var(--main-fontSize) * 3.5);
     font-family: var(--main-font);
     color: var(--red-color);
   }
@@ -107,7 +110,7 @@
   .mainDescription {
     font-family: var(--main-font);
     color: var(--main-color);
-    font-size: calc(var(--main-fontSize) * 2);
+    font-size: calc(var(--main-fontSize) * 1.8);
     padding-bottom: 16px;
   }
 
@@ -117,6 +120,7 @@
     padding-bottom: 16px;
     color: rgb(51, 51, 51);
   }
+
   /* FIN DE L'AFFICHAGE DES TITRES ET DESCRIPTION*/
 
   .bannerContainer {
@@ -131,10 +135,8 @@
     background-image: url("../../assets/CompressedPictures/banner.webp");
     background-size: cover;
     background-position: 50% 60%;
-    margin-bottom: 32px;
     position: relative;
     z-index: -2;
-    margin-bottom: 64px;
     margin: auto;
   }
 
@@ -167,20 +169,21 @@
     font-size: calc(var(--main-fontSize) * 1.2);
     padding-bottom: calc(var(--spacing-medium) * 3);
     color: rgb(51, 51, 51);
+    margin-top: calc(var(--spacing-large) * 2);
   }
 
   /*CONTAINER QUI CONTIENT LA MAP ET LE FORM  */
 
   .mainContainer {
     height: 700px;
-    width: 90vw;
+    width: 95vw;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: baseline;
     align-content: stretch;
-    margin:auto;
-    justify-content: space-around;
+    margin: auto;
+    justify-content: space-between;
   }
 
   #map {
@@ -192,9 +195,8 @@
     font-family: var(--main-font);
     font-size: calc(var(--main-fontSize) * 2);
     color: var(--secondary-color);
+    margin-bottom: var(--spacing-large);
   }
-
- 
 
   .submitContainer {
     height: 100px;
@@ -211,11 +213,12 @@
     justify-content: center;
     align-items: center;
     align-content: stretch;
+    padding-left: 32px;
   }
 
   .formContainer {
     height: 800px;
-    width: 520px;
+    width: 440px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -235,8 +238,6 @@
     align-content: stretch;
   }
 
-
-
   .BlocFiltres {
     max-height: 500px;
     /* width: 520px; */
@@ -247,7 +248,7 @@
   }
 
   .BlocFiltresEX {
-    width: 520px;
+    width: 350px;
     overflow: scroll;
     overflow-x: hidden;
     position: relative;
@@ -274,13 +275,6 @@
     border: 8px solid #293d6b;
     /* creates padding around scroll thumb */
   }
-
-
-
-
-
-
- 
 
   .filtersNoSearch {
     display: flex;
@@ -356,9 +350,6 @@
     width: 150px;
     margin-left: 45px;
     margin-right: 45px;
-  }
-
-  #test2 {
   }
 
   .testing {
@@ -534,7 +525,7 @@
     text-align: center;
     font-family: var(--main-font);
     font-size: calc(var(--main-fontSize) * 2);
-    margin-bottom: calc(var(--spacing-large));
+    margin-bottom: calc(var(--spacing-large) * 1.5);
     color: var(--secondary-color);
   }
 
@@ -553,8 +544,154 @@
     padding: 8px 8px 8px 8px;
   }
 
-  
+  /*********** STYLES CARTES*/
+  .titleCard {
+    height: 64px;
+    width: 305px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 4px;
+    font-family: var(--main-font);
+    color: white;
+    font-size: calc(var(--main-fontSize) / 1.2);
+  }
 
+  .column1 {
+    height: 146px;
+    width: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 16px;
+  }
+
+  .column2 {
+    height: 139px;
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .resultats {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    height: max-content;
+    margin-top: 16px;
+    margin-bottom: 180px;
+    padding-bottom: 64px;
+  }
+
+  .logo1,
+  .logo2,
+  .logo3 {
+    height: 32px;
+    width: 32px;
+  }
+  .labelHide {
+    display: none;
+  }
+
+  /* Affichage du club labélisé*/
+  .labelClub {
+    height: 45px;
+    width: 50px;
+    margin-left: 58px;
+    background: transparent;
+    background-color: transparent;
+  }
+
+  .labelClub {
+    height: 45px;
+    width: 50px;
+    margin-left: 58px;
+    background: transparent;
+    background-color: transparent;
+  }
+
+  .info1,
+  .info2,
+  .info3 {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) / 1.2);
+  }
+
+  .info1 a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .info3 a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .info3 a:visited {
+    text-decoration: none;
+  }
+
+  .dataResult {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .resultats::-webkit-scrollbar {
+    width: 8px;
+    /* width of the entire scrollbar */
+  }
+
+  .resultats::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+    /* color of the scroll thumb */
+  }
+
+  .resultats::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 8px solid #293d6b;
+    /* creates padding around scroll thumb */
+  }
 }
 
 /*<<<<<<<<<<<<<<<<<<<<<<<<< FIN DE LA VERSIONS DESKTOP>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* Breakpoints pour garder en place l'image */
+
+@media screen and (min-width: 1077px) and (max-width: 1111px) {
+  .mainContent {
+    width: 93%;
+    margin-top: -19px;
+  }
+}
+
+@media screen and (min-width: 1110px) and (max-width: 1194px) {
+  .mainContent {
+    width: 93%;
+    margin-top: -19px;
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  .mainContent {
+    width: 93%;
+    margin-top: -20px;
+  }
+
+  .mainContainer {
+    width: 85vw;
+  }
+
+  .bannerContainer {
+    width: 92%;
+  }
+}

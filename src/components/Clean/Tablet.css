@@ -6,7 +6,8 @@
   .contactImg {
     height: 32px;
     width: 32px;
-  } 
+  }
+
   html,
   body {
     max-width: 100%;
@@ -26,6 +27,7 @@
     width: 90%;
     margin: auto;
   }
+
   #background_wrap {
     z-index: 1;
     position: relative;
@@ -35,7 +37,7 @@
     background-image: url("../../assets/CompressedPictures/Mobile.webp");
     background-attachment: fixed;
   }
-    
+
   .mainContent {
     height: 250px;
     width: 89.2%;
@@ -54,11 +56,13 @@
     padding-top: var(--spacing-small);
     padding-bottom: var(--spacing-small);
   }
+
   .mainTitle {
     font-size: calc(var(--main-fontSize) * 2);
     font-family: var(--main-font);
     color: var(--red-color);
   }
+
   .secondaryTitle {
     font-size: calc(var(--main-fontSize) * 0.9);
     font-family: var(--main-font);
@@ -71,7 +75,7 @@
     margin-right: 7.5vw;
     margin-left: 7.5vw;
     margin-bottom: calc(var(--spacing-medium) * 2);
-    margin-top:-20px;
+    margin-top: -20px;
   }
 
   .mainDescription {
@@ -81,6 +85,7 @@
     padding-bottom: 16px;
     margin-top: -32px;
   }
+
   .secondaryDescription {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) * 1);
@@ -105,12 +110,14 @@
     z-index: -2;
     margin-bottom: var(--spacing-large);
   }
+
   .bannerTitle {
     padding-left: calc(var(--spacing-large) * 1);
     font-size: calc(var(--main-fontSize) * 1.2);
     font-family: var(--main-font);
     color: white;
   }
+
   .desktopInstructions {
     width: 90%;
     height: max-content;
@@ -133,6 +140,7 @@
     color: rgb(51, 51, 51);
     text-align: center;
   }
+
   .mainContainer {
     width: 85vw;
     margin-left: 7.5vw;
@@ -144,6 +152,7 @@
     align-items: center;
     align-content: center;
   }
+
   #map {
     height: 350px;
     width: 75vw;
@@ -171,6 +180,7 @@
     margin-bottom: var(--spacing-large);
     padding: var(--spacing-medium);
   }
+
   .cardLegendText {
     height: 50px;
     width: 100%;
@@ -180,16 +190,18 @@
     margin-bottom: calc(var(--spacing-large) / 1);
     color: var(--secondary-color);
   }
+
   .BlocFiltres {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 90%;
-    margin-top:calc(var(--spacing-large)  / 1 );
+    margin-top: calc(var(--spacing-large) / 1);
     margin-right: auto;
     margin-left: auto;
   }
+
   .BlocFiltresEX {
     width: 90%;
     overflow: scroll;
@@ -201,9 +213,11 @@
     /* background-color: dodgerblue; */
     padding: var(--spacing-large);
   }
+
   .hide {
     display: block;
   }
+
   .inputBox {
     font-family: var(--main-font);
     height: 35px;
@@ -219,6 +233,7 @@
     margin-bottom: 4px;
     padding-top: 2px;
   }
+
   .inputBox2 {
     font-family: var(--main-font);
     height: 35px;
@@ -233,14 +248,17 @@
     margin-top: 4px;
     margin-bottom: 16px;
   }
+
   .inputTitle {
     color: white;
     font-family: var(--main-color);
     padding-left: 8px;
   }
+
   .filter {
     margin: auto;
   }
+
   .btnContainer {
     position: relative;
     display: flex;
@@ -254,12 +272,14 @@
     margin-left: 45px;
     margin-right: 45px;
   }
+
   .btnAfterSearch {
     width: 250px;
     height: 100px;
     border-radius: 20px;
     padding: 8px 8px 8px 8px;
   }
+
   .newSearchContainer {
     margin: auto;
     display: flex;
@@ -379,6 +399,7 @@
     height: 32px;
     width: 32px;
   }
+
   .labelHide {
     display: none;
   }
@@ -400,6 +421,7 @@
     background-color: transparent;
   }
 }
+
 /* VERSION GRANDE TABLETTE */
 @media screen and (min-width: 616px) and (max-width: 672px) {
   html,
@@ -421,6 +443,7 @@
     width: 90%;
     margin: auto;
   }
+
   #background_wrap {
     z-index: 1;
     position: relative;
@@ -430,15 +453,11 @@
     background-image: url("../../assets/CompressedPictures/Mobile.webp");
     background-attachment: fixed;
   }
-  
 
   .contactImg {
     height: 32px;
     width: 32px;
   }
-
-
-  
 
   .mainContent {
     height: 250px;
@@ -458,11 +477,13 @@
     padding-top: var(--spacing-large);
     padding-bottom: var(--spacing-small);
   }
+
   .mainTitle {
     font-size: calc(var(--main-fontSize) * 2.3);
     font-family: var(--main-font);
     color: var(--red-color);
   }
+
   .secondaryTitle {
     font-size: calc(var(--main-fontSize) * 1);
     font-family: var(--main-font);
@@ -475,7 +496,7 @@
     margin-right: 7.5vw;
     margin-left: 7.5vw;
     margin-bottom: calc(var(--spacing-medium) * 2);
-    margin-top:46px;
+    margin-top: 46px;
   }
 
   .mainDescription {
@@ -484,6 +505,7 @@
     font-size: calc(var(--main-fontSize) * 1.7);
     padding-bottom: 16px;
   }
+
   .secondaryDescription {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) * 1.5);
@@ -508,12 +530,14 @@
     z-index: -2;
     margin-bottom: var(--spacing-large);
   }
+
   .bannerTitle {
     padding-left: calc(var(--spacing-large) * 1.6);
     font-size: calc(var(--main-fontSize) * 1.5);
     font-family: var(--main-font);
     color: white;
   }
+
   .desktopInstructions {
     width: 90%;
     height: max-content;
@@ -535,7 +559,10 @@
     padding-bottom: calc(var(--spacing-medium) * 1);
     color: rgb(51, 51, 51);
     text-align: center;
+    padding-left: calc(var(--spacing-large) * 2);
+    padding-right: calc(var(--spacing-large) * 2);
   }
+
   .mainContainer {
     width: 85vw;
     margin-left: 7.5vw;
@@ -547,6 +574,7 @@
     align-items: center;
     align-content: center;
   }
+
   #map {
     height: 350px;
     width: 75vw;
@@ -571,6 +599,444 @@
     align-items: center;
     align-content: stretch;
     /* background-color: navajowhite; */
+    margin-bottom: var(--spacing-large);
+    padding: var(--spacing-medium);
+  }
+
+  .cardLegendText {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    font-family: var(--main-font);
+    font-size: calc(var(--main-fontSize) * 2);
+    margin-bottom: calc(var(--spacing-large) / 1);
+    color: var(--secondary-color);
+  }
+
+  .BlocFiltres {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: var(--spacing-large);
+    padding-bottom: var(--spacing-large);
+  }
+
+  .BlocFiltresEX {
+    width: 90%;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: dodgerblue; */
+    padding: var(--spacing-large);
+  }
+
+  .hide {
+    display: block;
+  }
+
+  .inputBox {
+    font-family: var(--main-font);
+    height: 35px;
+    border-radius: 22px;
+    width: 255px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--main-color);
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-top: 2px;
+  }
+
+  .inputBox2 {
+    font-family: var(--main-font);
+    height: 35px;
+    border-radius: 22px;
+    width: 250px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--main-color);
+    margin-top: 4px;
+    margin-bottom: 16px;
+  }
+
+  .inputTitle {
+    color: white;
+    font-family: var(--main-color);
+    padding-left: 8px;
+  }
+
+  .filter {
+    margin: auto;
+  }
+
+  .btnContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .findclubBtn {
+    height: 100px;
+    width: 150px;
+    margin-left: 45px;
+    margin-right: 45px;
+  }
+
+  .btnAfterSearch {
+    width: 250px;
+    height: 100px;
+    border-radius: 20px;
+    padding: 8px 8px 8px 8px;
+  }
+
+  .newSearchContainer {
+    margin: auto;
+    display: flex;
+    padding: 8px 8px 8px 8px;
+  }
+
+  /*********** STYLES CARTES*/
+  .cardResult {
+    height: 220px;
+    width: 305px;
+    background-image: url("../../assets/Cartes/Carte-bleu.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    padding: 8px 8px 8px 8px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cardResult:nth-child(2n) {
+    height: 220px;
+    width: 300px;
+    background-image: url("../../assets/Cartes/Carte-rouge.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+  }
+
+  .cardResult:nth-child(3n) {
+    height: 220px;
+    width: 305px;
+    background-image: url("../../assets/Cartes/Carte-grise.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+  }
+
+  .cardResult:nth-child(4n) {
+    height: 220px;
+    width: 305px;
+    background-image: url("../../assets/Cartes/Carte-turquoise.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .cardResult:nth-child(1n) .logo1:nth-child(1n) {
+    background-image: url("../../assets/Logos/Mail-bleu.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(2n) .logo1:nth-child(1n) {
+    background-image: url("../../assets/Logos/Mail-rouge.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(2n) .logo2:nth-child(2n) {
+    background-image: url("../../assets/Logos/Localisation-rouge.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(2n) .logo3:nth-child(3n) {
+    background-image: url("../../assets/Logos/Info-rouge.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(3n) .logo1:nth-child(1n) {
+    background-image: url("../../assets/Logos/Mail-gris.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(3n) .logo2:nth-child(2n) {
+    background-image: url("../../assets/Logos/Localisation-gris.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(3n) .logo3:nth-child(3n) {
+    background-image: url("../../assets/Logos/Info-gris.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(4n) .logo1:nth-child(1n) {
+    background-image: url("../../assets/Logos/Mail-turquoise.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(4n) .logo2:nth-child(2n) {
+    background-image: url("../../assets/Logos/Localisation-turquoise.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cardResult:nth-child(4n) .logo3:nth-child(3n) {
+    background-image: url("../../assets/Logos/Info-turquoise.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .logo1,
+  .logo2,
+  .logo3 {
+    height: 32px;
+    width: 32px;
+  }
+
+  .labelHide {
+    display: none;
+  }
+
+  /* Affichage du club labélisé*/
+  .labelClub {
+    height: 45px;
+    width: 50px;
+    margin-left: 58px;
+    background: transparent;
+    background-color: transparent;
+  }
+
+  .labelClub {
+    height: 45px;
+    width: 50px;
+    margin-left: 58px;
+    background: transparent;
+    background-color: transparent;
+  }
+
+  .column1 {
+    height: 146px;
+    width: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 16px;
+  }
+
+  .column2 {
+    height: 139px;
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .titleCard {
+    height: 64px;
+    width: 305px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 4px;
+    font-family: var(--main-font);
+    color: white;
+    font-size: calc(var(--main-fontSize) / 1);
+  }
+}
+
+@media screen and (min-width: 673px) and (max-width: 1023px) {
+  html,
+  body {
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .fullApp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+  }
+
+  #background_wrap {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+    background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
+
+    background-attachment: fixed;
+  }
+
+  .mainContent {
+    height: 340px;
+    width: 93%;
+    margin-left: 3.5vw;
+    margin-right: 3.5vw;
+    margin-top: -18px;
+    background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: relative;
+  }
+
+  .titlesContainer {
+    position: relative;
+    width: fit-content;
+    padding-left: calc(var(--spacing-large) * 0.5);
+    padding-top: var(--spacing-large);
+    padding-bottom: var(--spacing-small);
+  }
+  .mainTitle {
+    font-size: calc(var(--main-fontSize) * 2.7);
+    font-family: var(--main-font);
+    color: var(--red-color);
+  }
+
+  .secondaryTitle {
+    font-size: calc(var(--main-fontSize) * 1.3);
+    font-family: var(--main-font);
+    color: white;
+  }
+  .descriptionContainer {
+    height: max-content;
+    width: 85vw;
+    margin-right: 7.5vw;
+    margin-left: 7.5vw;
+    margin-bottom: calc(var(--spacing-medium) * 2);
+    margin-top: -78px;
+  }
+
+  .mainDescription {
+    font-family: var(--main-font);
+    color: var(--main-color);
+    font-size: calc(var(--main-fontSize) * 1.7);
+    padding-bottom: 16px;
+  }
+
+  .secondaryDescription {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) * 1.2);
+    padding-bottom: 16px;
+    color: rgb(51, 51, 51);
+  }
+  .bannerContainer {
+    width: 90%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    background-image: url("../../assets/CompressedPictures/banner.webp");
+    background-size: cover;
+    background-position: 50% 60%;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: -2;
+    margin-bottom: var(--spacing-large);
+  }
+  .bannerTitle {
+    padding-left: calc(var(--spacing-large) * 1);
+    font-size: calc(var(--main-fontSize) * 1.5);
+    font-family: var(--main-font);
+    color: white;
+  }
+  .desktopInstructions {
+    width: 90%;
+    height: max-content;
+    padding: var(--spacing-small);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+    margin-bottom: var(--spacing-medium);
+    text-align: center;
+  }
+
+  .instructionsTitle {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) * 1.2);
+    padding-bottom: calc(var(--spacing-medium) * 1);
+    color: rgb(51, 51, 51);
+    text-align: center;
+    padding-left: calc(var(--spacing-large) * 2);
+    padding-right: calc(var(--spacing-large) * 2);
+  }
+  .mainContainer {
+    width: 85vw;
+    margin-left: 7.5vw;
+    margin-right: 7.5vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .mapTitle {
+    font-family: var(--main-font);
+    font-size: calc(var(--main-fontSize) * 2);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: var(--spacing-medium);
+    margin-bottom: var(--spacing-large);
+  }
+  #map {
+    height: 450px;
+    width: 75vw;
+    margin: auto;
+  }
+
+  .formContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
     margin-bottom: var(--spacing-large);
     padding: var(--spacing-medium);
   }
@@ -606,6 +1072,7 @@
   .hide {
     display: block;
   }
+
   .inputBox {
     font-family: var(--main-font);
     height: 35px;
@@ -621,6 +1088,7 @@
     margin-bottom: 4px;
     padding-top: 2px;
   }
+
   .inputBox2 {
     font-family: var(--main-font);
     height: 35px;
@@ -635,14 +1103,17 @@
     margin-top: 4px;
     margin-bottom: 16px;
   }
+
   .inputTitle {
     color: white;
     font-family: var(--main-color);
     padding-left: 8px;
   }
+
   .filter {
     margin: auto;
   }
+
   .btnContainer {
     position: relative;
     display: flex;
@@ -656,12 +1127,14 @@
     margin-left: 45px;
     margin-right: 45px;
   }
+
   .btnAfterSearch {
     width: 250px;
     height: 100px;
     border-radius: 20px;
     padding: 8px 8px 8px 8px;
   }
+
   .newSearchContainer {
     margin: auto;
     display: flex;
@@ -781,6 +1254,7 @@
     height: 32px;
     width: 32px;
   }
+
   .labelHide {
     display: none;
   }
@@ -801,6 +1275,7 @@
     background: transparent;
     background-color: transparent;
   }
+
   .column1 {
     height: 146px;
     width: 44px;
@@ -831,48 +1306,14 @@
   }
 }
 
-
-@media screen and (min-width:673px) and (max-width:1023px) {
-  html,
-  body {
-    max-width: 100%;
-    width: 100%;
-    overflow-x: hidden;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
+@media screen and (min-width: 815px) and (max-width: 1023px) {
+  .descriptionContainer {
+    margin-top: -38px;
   }
+}
 
-  .fullApp {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    margin: auto;
+@media screen and (min-width: 918px) and (max-width: 1023px) {
+  .descriptionContainer {
+    margin-top: -8px;
   }
-  #background_wrap {
-    z-index: 1;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    background-size: 100%;
-    background-image: url("../../assets/CompressedPictures/Mobile.webp");
-    background-attachment: fixed;
-  }
-
-  .mainContent {
-    height: 250px;
-    width: 93%;
-    margin-top: -14px;
-    background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    z-index: -1;
-    position: relative;
-  }
-
-  
-
 }

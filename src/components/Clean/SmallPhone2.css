@@ -465,27 +465,27 @@
 
 
 /* Breakpoints pour gérer l'espacement entre le texte et l'image */
-@media screen and (min-width: 330px) {
+@media screen and (min-width: 330px) and (max-width:365px) {
   .descriptionContainer {
     margin-top:-170px;
   }
 }
 
-@media screen and (min-width: 365px) {
+@media screen and (min-width: 365px) and (max-width:400px)  {
   .descriptionContainer {
     margin-top:-150px;
   }
 }
 
 
-@media screen and (min-width: 400px){
+@media screen and (min-width: 400px) and (max-width:441px) {
   .descriptionContainer {
     margin-top:-110px;
     text-align: center;
   }
 }
 
-@media screen and (min-width: 441px) {
+@media screen and (min-width: 441px) and (max-width:460px) {
   .descriptionContainer {
     margin-top:-90px;
   }
