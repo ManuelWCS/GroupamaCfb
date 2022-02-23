@@ -299,7 +299,7 @@ function Clean() {
       <div className="fullApp" id="background_wrap">
         <div className="mainContent">
           <div className="titlesContainer">
-            <h1 className="mainTitle"> BIENVENUE !</h1>
+            <h1 className="mainTitle"> BONJOUR !</h1>
             <h3 className="secondaryTitle">
               TROUVEZ UN CLUB PRÈS DE CHEZ VOUS !
             </h3>
@@ -745,3 +745,4 @@ function Clean() {
 }
 
 export default Clean;
+ 
