@@ -213,7 +213,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* background-color: dodgerblue; */
     padding: var(--spacing-large);
   }
 
@@ -302,6 +301,8 @@
     padding: 8px 8px 8px 8px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: var(--spacing-large);
+
   }
 
   .cardResult:nth-child(2n) {
@@ -406,6 +407,35 @@
   .labelHide {
     display: none;
   }
+
+  .titleCard {
+    height: 64px;
+    width: 305px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 4px;
+    font-family: var(--main-font);
+    color: white;
+    font-size: calc(var(--main-fontSize) / 1);
+  }
+  .column1 {
+    height: 150px;
+    width: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 16px;
+  }
+
+  .column2 {
+    height: 150px;
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
 
   /* Affichage du club labélisé*/
   .labelClub {
@@ -847,7 +877,7 @@
   }
 
   .column1 {
-    height: 146px;
+    height: 150px;
     width: 44px;
     display: flex;
     flex-direction: column;
@@ -856,7 +886,7 @@
   }
 
   .column2 {
-    height: 139px;
+    height: 150px;
     width: 230px;
     display: flex;
     flex-direction: column;
@@ -1284,7 +1314,7 @@
   }
 
   .column1 {
-    height: 146px;
+    height: 150px;
     width: 44px;
     display: flex;
     flex-direction: column;
@@ -1293,7 +1323,7 @@
   }
 
   .column2 {
-    height: 139px;
+    height: 150px;
     width: 230px;
     display: flex;
     flex-direction: column;

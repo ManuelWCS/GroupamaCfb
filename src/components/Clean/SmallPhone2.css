@@ -27,7 +27,7 @@
     background-size: 100%;
     background-image: url("../../assets/CompressedPictures/Mobile.webp");
     background-attachment: fixed;
-    margin-top:-1px;
+    margin-top:-1px
   }
   .mainContent {
     height: 550px;
@@ -258,7 +258,7 @@
   /*********** STYLES CARTES*/
   .cardResult {
     height: 220px;
-    width: 290px;
+    width: 250px;
     background-image: url("../../assets/Cartes/Carte-bleu.png");
     background-position: center;
     background-size: cover;
@@ -271,7 +271,7 @@
 
   .cardResult:nth-child(2n) {
     height: 220px;
-    width: 290px;
+    width: 250px;
     background-image: url("../../assets/Cartes/Carte-rouge.png");
     background-position: center;
     background-size: cover;
@@ -281,7 +281,7 @@
 
   .cardResult:nth-child(3n) {
     height: 220px;
-    width: 290px;
+    width: 250px;
     background-image: url("../../assets/Cartes/Carte-grise.png");
     background-position: center;
     background-size: cover;
@@ -291,7 +291,7 @@
 
   .cardResult:nth-child(4n) {
     height: 220px;
-    width: 290px;
+    width: 250px;
     background-image: url("../../assets/Cartes/Carte-turquoise.png");
     background-position: center;
     background-size: cover;
@@ -383,7 +383,7 @@
   }
 
   .column2 {
-    height: 139px;
+    height: 146px;
     width: 230px;
     display: flex;
     flex-direction: column;

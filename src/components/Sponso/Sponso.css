@@ -26,6 +26,8 @@
   font-size: calc(var(--main-fontSize) / 1.1);
   margin-right: var(--spacing-medium);
   margin-left: var(--spacing-medium);
+  margin:auto;
+  text-align: center;
 }
 
 .LinkGroupama {
@@ -76,6 +78,8 @@
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) / 1.1);
     margin-top: calc(var(--spacing-large) * 2.5);
+    margin:auto;
+    text-align: center;
   }
   .LinkGroupama {
     height: 26px;
@@ -138,6 +142,8 @@
     width: 280px;
     height: 100px;
   }
+  margin:auto;
+  text-align: center;
 }
 
 /* AFFICHAGE TABLETTE */
@@ -185,7 +191,8 @@
   .sponsoText {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) / 1.1);
-    margin-top: calc(var(--spacing-large) * 2.5);
+    margin-top: calc(var(--spacing-large) * 2.5);  margin:auto;
+    text-align: center;
   }
 }
 
@@ -236,6 +243,8 @@
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) / 1.1);
     margin-top: calc(var(--spacing-large) * 2.5);
+    margin:auto;
+    text-align: center;
   }
 
  }
