@@ -267,9 +267,7 @@
 
 @media screen and (min-width:1401px) {
 
-  .mainDescription {
-    margin-top:12px;
-  }
+  
   .legendContainer, .markerContainer {
     width: 750px;
   }

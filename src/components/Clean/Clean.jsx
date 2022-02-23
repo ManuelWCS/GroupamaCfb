@@ -143,15 +143,14 @@ function Clean() {
         filtersOptions.push(
           // ici on fais un includes car on la data avec laquelles on compare c'est un array
           // item.gender: ["male","female]
-          (item) => item.gender.includes(formData.gender),
-          
+          (item) => item.gender.includes(formData.gender)
         );
       }
     }
 
     // Si la ville est renseignée
     if (formData.city !== null) {
-      console.log('ville renseignée')
+      console.log("ville renseignée");
       if (formData.city.length > 0) {
         filtersOptions.push((item) => item.Localite === formData.city);
       }
@@ -159,7 +158,7 @@ function Clean() {
 
     // Si l'âge de la personne est renseignée
     if (formData.age !== null) {
-      console.log('âge renseigné')
+      console.log("âge renseigné");
 
       if (formData.age.length > 0) {
         if (parseInt(formData.age) !== 0) {
@@ -180,7 +179,7 @@ function Clean() {
         categories.forEach((element) => {
           // pour chaque catégories tu vérifie si sont element.type  === formData.type
           // si oui tu pousse element.name dans ton tableau
-          if (element.type === formData.type ) {
+          if (element.type === formData.type) {
             categorieType.push(element.name);
           }
         });

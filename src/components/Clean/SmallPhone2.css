@@ -27,6 +27,7 @@
     background-size: 100%;
     background-image: url("../../assets/CompressedPictures/Mobile.webp");
     background-attachment: fixed;
+    margin-top:-1px;
   }
   .mainContent {
     height: 550px;

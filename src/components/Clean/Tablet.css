@@ -37,6 +37,8 @@
     background-image: url("../../assets/CompressedPictures/Mobile.webp");
 
     background-attachment: fixed;
+    margin-top:-1px
+
   }
 
   .mainContent {
@@ -453,6 +455,7 @@
     background-size: 100%;
     background-image: url("../../assets/CompressedPictures/Mobile.webp");
     background-attachment: fixed;
+    margin-top:-2px;
   }
 
   .contactImg {
@@ -904,6 +907,8 @@
     background-image: url('../../assets/TEST/Tablette22.png');
 
     background-attachment: fixed;
+    margin-top:-4px;
+
   }
 
   .mainContent {
@@ -1310,12 +1315,12 @@
 
 @media screen and (min-width: 815px) and (max-width: 1023px) {
   .descriptionContainer {
-    margin-top: -38px;
+    margin-top: -18px;
   }
 }
 
 @media screen and (min-width: 918px) and (max-width: 1023px) {
   .descriptionContainer {
-    margin-top: -8px;
+    margin-top: 36px;
   }
 }

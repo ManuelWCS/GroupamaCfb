@@ -58,15 +58,12 @@
   }
 }
 
-
-
 @media screen and (min-width: 1401px) {
   html,
   body {
     max-width: 100%;
     overflow-x: hidden;
   }
-
 
   #background_wrap {
     z-index: 1;
@@ -86,7 +83,7 @@
     background-repeat: no-repeat;
     z-index: -1;
     position: relative;
-    margin-top:-4.7px;
+    margin-top: -4.7px;
   }
 
   .titlesContainer {
@@ -136,8 +133,6 @@
   .mainContainer {
     width: 90vw;
   }
-
- 
 
   .markerContainer {
     margin-bottom: var(--spacing-large);
@@ -227,3 +222,65 @@
     height: 161px;
   }
 }
+
+@media screen and (min-width: 1580px) and (max-width: 1680px) {
+  .mainDescription {
+    margin-top: 5vh;
+  }
+
+  .mainContent {
+    height: 580px;
+  }
+
+  #map {
+    height: 800px;
+    width: 900px;
+  }
+
+
+
+
+
+}
+
+@media screen and (min-width: 1681px) and (max-width:1980px) {
+  .mainDescription {
+    margin-top: 5vh;
+  }
+
+  #map {
+    height: 800px;
+    width: 900px;
+  }
+
+  .mainContainer {
+    height: 950px;
+    width: 1450px;
+    margin-top: 64px;
+    justify-content: space-around;
+  }
+  .mainContent {
+    height: 650px;
+    min-height: 630px;
+  }
+}
+
+
+@media screen and (min-width:1981px) {
+  .mainContent {
+    min-height: 60vh;
+  }
+  .mainDescription {
+    margin-top: 5vh;
+  }
+  #map {
+    height: 800px;
+    width: 900px;
+  }
+  .mainContainer {
+
+    margin-top: 64px;
+    justify-content: space-around;
+  }
+
+} 

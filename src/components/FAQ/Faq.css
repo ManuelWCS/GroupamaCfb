@@ -8,8 +8,7 @@
     flex-direction: column;
     align-items: center;
     margin: auto;
-    margin-top: var(--spacing-medium);
-    /* padding: 12px 12px 12px 12px; */
+    margin-top: calc(var(--spacing-large)*3);
     margin-bottom: var(--spacing-medium);
   }
 
@@ -86,39 +85,6 @@
   }
 }
 
-/* 
-@media screen and (min-width: 320px) and (max-width: 404px) {
-  .faqContainer {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-    margin-top: var(--spacing-medium);
-    margin-bottom: var(--spacing-medium);
-  }
-
-
-  .faqText {
-    padding: var(--spacing-small);
-    font-size: var(--main-fontSize);
-    color: var(--main-color);
-    font-family: var(--secondary-font);
-  }
-  .faqText2 {
-    padding: var(--spacing-small);
-    font-size: var(--main-fontSize);
-    color: rgb(51, 51, 51);
-    font-family: var(--secondary-font);
-  }
-  .contactImg {
-    height: 58px;
-    width: 58px;
-  }
-
-} */
 
 
   /*<<<<<<<<<<<<<< AFFICHAGE TABLETTE >>>>>>>>>>>>>>>>>> */
