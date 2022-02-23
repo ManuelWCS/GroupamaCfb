@@ -17,7 +17,6 @@ function Sponso() {
         <p className="sponsoText">
           {" "}
           Cette plateforme est soutenue par Groupama Paris-Val de Loire<br></br>
-          👑 MIGUEL PRESIDENT 👑
         </p>
         <img src={Logo} className="GroupamaLogo" />
         <div className="sponsoLinks">

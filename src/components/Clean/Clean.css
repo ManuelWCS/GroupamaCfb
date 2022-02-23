@@ -51,7 +51,7 @@
     background-image: url("../../assets/CompressedPictures/final2.webp");
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: -1;
+    z-index: -5;
     position: relative;
   }
 
@@ -63,8 +63,9 @@
     background-size: 100%;
     background-attachment: fixed;
     background-position: center 65%;
-    background-image: url('../../assets/TEST/Ordi22.png');
-    margin-top:-5px;
+    background-image: url("../../assets/TEST/bandesdeTypeBlanc.png");
+    background-repeat: no-repeat;
+    margin-top: -15.5px;
   }
 
   .fullApp {

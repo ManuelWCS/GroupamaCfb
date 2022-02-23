@@ -937,7 +937,7 @@
     background-image: url('../../assets/TEST/Tablette22.png');
 
     background-attachment: fixed;
-    margin-top:-4px;
+    margin-top:-17px;
 
   }
 
@@ -946,7 +946,6 @@
     width: 93%;
     margin-left: 3.5vw;
     margin-right: 3.5vw;
-    margin-top: -4px;
     background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
     background-size: 100%;
     background-repeat: no-repeat;
