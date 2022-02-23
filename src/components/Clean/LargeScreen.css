@@ -73,7 +73,7 @@
     background-size: 100%;
     background-attachment: fixed;
     background-position: center;
-    background-image: url("../../assets/Habillage/nouveauFond.png");
+    background-image: url("../../assets/TEST/Ordi22.png");
   }
 
   .mainContent {
@@ -268,7 +268,8 @@
 
 @media screen and (min-width: 1981px) {
   .mainContent {
-    min-height: 50vh;
+    max-height: 40vh;
+    min-height: 890px;
   }
   .mainDescription {
     margin-top: 5vh;

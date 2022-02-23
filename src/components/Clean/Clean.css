@@ -216,7 +216,7 @@
   }
 
   .formContainer {
-    height: 800px;
+    height: 600px;
     width: 440px;
     display: flex;
     flex-direction: column;
@@ -357,21 +357,7 @@
     background-color: #293d6b;
   }
 
-  .resultats {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    width: 90vw;
-    margin-left: auto;
-    margin-right: auto;
-    height: max-content;
-    margin-top: 16px;
-    margin-bottom: 180px;
-    padding-bottom: 64px;
-  }
+  
 
   /* Texte indiquant le nombre de résultats */
 

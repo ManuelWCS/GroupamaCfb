@@ -278,7 +278,10 @@ function Clean() {
   useEffect(() => {
     if (formData.gender === "Female") {
       setinputFutsal(true);
-    } else if (parseInt(formData.age) < 17 && formData.gender === "Male") {
+    } else if (
+      (parseInt(formData.age) < 17 && formData.gender === "Male") ||
+      formData.gender === "Female"
+    ) {
       setinputFutsal(true);
       if (formData.type === "Futsal") {
         setformData((state) => ({ ...state, type: "" }));
@@ -289,7 +292,6 @@ function Clean() {
   }, [formData]);
 
   console.log(clubSearch);
-  // console.log(categories)
 
   return (
     <>
@@ -718,16 +720,14 @@ function Clean() {
                   )}
                 </Box>
               </Modal>
-              <div className="newSearchContainer">
-                <button
-                  className={
-                    clubSearch.length !== 0 ? "btnAfterSearch" : "hide"
-                  }
-                  onClick={newSearch}
-                >
-                  NOUVELLE RECHERCHE
-                </button>
-              </div>
+            </div>
+            <div className="newSearchContainer">
+              <button
+                className={clubSearch.length !== 0 ? "btnAfterSearch" : "hide"}
+                onClick={newSearch}
+              >
+                NOUVELLE RECHERCHE
+              </button>
             </div>
 
             {/* FIN DE LA  GESTION DES ERREURS DANS LA RECHERCHE */}
