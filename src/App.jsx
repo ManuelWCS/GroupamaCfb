@@ -1,16 +1,14 @@
 import "./App.css";
-import "./App.css";
-import { Switch, Route } from 'react-router';
-import Mobile from './components/Mobile/Mobile.jsx'
-
+import { Switch, Route } from "react-router";
+import Newheader from './components/Header2/Header2.jsx'
+import Clean from './components/Clean/Clean.jsx';
 
 
 function App() {
   return (
     <div className="App">
-             <Switch>
-            <Route exact path="/" component={Mobile}/> 
-       </Switch>
+      <Clean/>
+    
     </div>
   );
 }

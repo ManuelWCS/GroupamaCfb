@@ -1,0 +1,95 @@
+/*<<<<< AFFICHAGE DESKTOP>>>>>>>>>>>>>>>> */
+
+.logos {
+  height: 18px;
+  width: 18px;
+}
+
+@media screen and (min-width: 1023px) {
+  .foooooter {
+    height: 28px;
+    width: 100%;
+    background-color: #293d6b;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .logos {
+    height: 18px;
+    width: 18px;
+  }
+}
+/*<<<<< AFFICHAGE GRAND ECRAN >>>>>>>>>>>>>>>> */
+
+
+@media screen and (min-width: 1401px) {
+  .foooooter {
+    height: 28px;
+    width: 100%;
+    background-color: #293d6b;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .logos {
+    height: 18px;
+    width: 18px;
+  }
+}
+
+
+/* <<<<<<<<<<<<<<< VERSION TABLETTE PETIT >>>>>>>>>>>>>>>>>>*/
+
+@media screen and (min-width:480px) and (max-width:672px) {
+  .foooooter {
+    height: 28px;
+    width: 100%;
+    background-color: #293d6b;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .logos {
+    height: 18px;
+    width: 18px;
+  }
+
+}
+
+ /* VERSION GRANDE TABLETTE */
+ @media screen and (min-width:672px) and (max-width:1023px) {
+
+  .foooooter {
+    height: 28px;
+    width: 100%;
+    background-color: #293d6b;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .logos {
+    height: 18px;
+    width: 18px;
+  }
+
+ }
+
+ /* <<<<<<<<<<<<<<< AFFICHAGE TELEPHONE >>>>>>>>>>>>>>>>>>*/
+
+ @media screen and (min-width: 320px) and (max-width: 480px) {
+  .foooooter {
+    height: 28px;
+    width: 100vw;
+    background-color: #293d6b;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .logos {
+    height: 18px;
+    width: 18px;
+  }
+
+}

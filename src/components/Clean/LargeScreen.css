@@ -1,0 +1,291 @@
+@import url("./Clean.css");
+
+@media screen and (min-width: 1400px) {
+  #background_wrap {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    /* background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp"); */
+    background-image: url("../../assets/Habillage/nouveauFond.png");
+  }
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 8px solid #293d6b;
+  }
+
+  .mainContent {
+    height: 500px;
+    background-image: url("../../assets/CompressedPictures/final2.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: relative;
+  }
+  .titlesContainer {
+    position: relative;
+    left: 48px;
+    top: 16px;
+    width: fit-content;
+  }
+  .mainTitle {
+    font-size: calc(var(--main-fontSize) * 4.5);
+    font-family: var(--main-font);
+    color: var(--red-color);
+  }
+
+  .secondaryTitle {
+    font-size: calc(var(--main-fontSize) * 2.5);
+    font-family: var(--main-font);
+    color: white;
+  }
+}
+
+@media screen and (min-width: 1401px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  #background_wrap {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-image: url("../../assets/TEST/Ordi22.png");
+  }
+
+  .mainContent {
+    height: 550px;
+    background-image: url("../../assets/CompressedPictures/final2.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: relative;
+    margin-top: -4.7px;
+  }
+
+  .titlesContainer {
+    position: relative;
+    left: 100px;
+    top: 50px;
+    width: fit-content;
+  }
+  .mainTitle {
+    font-size: calc(var(--main-fontSize) * 4);
+    font-family: var(--main-font);
+    color: var(--red-color);
+  }
+
+  .secondaryTitle {
+    font-size: calc(var(--main-fontSize) * 2);
+    font-family: var(--main-font);
+    color: white;
+  }
+
+  .descriptionContainer {
+    height: max-content;
+    width: 80vw;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    margin-bottom: 64px;
+  }
+  .mainDescription {
+    font-family: var(--main-font);
+    color: var(--main-color);
+    font-size: calc(var(--main-fontSize) * 3);
+    padding: var(--spacing-large);
+  }
+
+  .secondaryDescription {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) * 2);
+    padding-bottom: 16px;
+    color: rgb(51, 51, 51);
+
+  }
+
+  .instructionsTitle {
+    font-size: calc(var(--main-fontSize) * 2);
+  }
+  #map {
+    height: 700px;
+    width: 700px;
+    margin-bottom: calc(var(--spacing-large) * 1);
+  }
+
+  .mainContainer {
+  }
+
+  .markerContainer {
+    margin-bottom: var(--spacing-large);
+    width: 900px;
+  }
+
+  .mapTitle {
+    margin-bottom: 32px;
+  }
+
+  .cardLegendText {
+    margin-bottom: calc(var(--spacing-large) * 5);
+  }
+
+  .mainContainer {
+    padding: var(--spacing-small);
+    margin-bottom: calc(var(--spacing-large) * 10);
+    justify-content: center;
+  }
+
+  .resultats {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    height: max-content;
+    margin-top: 16px;
+    margin-bottom: 180px;
+    padding-bottom: 64px;
+    height: 700px;
+  }
+
+  .BlocFiltresEX {
+    width: 520px;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 700px;
+    margin-top: -148px;
+  }
+
+  .formContainer {
+    height: 800px;
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
+  }
+
+  .filter {
+    padding-top: var(--spacing-medium);
+    padding-bottom: var(--spacing-medium);
+  }
+
+  .inputBox {
+    margin-top: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+  }
+
+  .dataResult {
+    height: 850px;
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+  }
+
+  .BlocFiltresEX {
+    width: 400px;
+  }
+  .column1 {
+    height: 161px;
+  }
+  .column2 {
+    height: 161px;
+  }
+}
+
+@media screen and (min-width: 1580px) and (max-width: 1680px) {
+  .mainDescription {
+    margin-top: 5vh;
+  }
+
+  .mainContent {
+    height: 580px;
+  }
+
+  #map {
+    height: 800px;
+    width: 900px;
+  }
+}
+
+@media screen and (min-width: 1681px) and (max-width: 1980px) {
+  .mainDescription {
+    margin-top: 5vh;
+  }
+
+  #map {
+    height: 800px;
+    width: 900px;
+  }
+
+  .mainContainer {
+    height: 950px;
+    width: 1450px;
+    margin-top: 64px;
+    justify-content: space-around;
+  }
+  .mainContent {
+    height: 650px;
+    min-height: 630px;
+  }
+}
+
+@media screen and (min-width: 1981px) {
+  .mainContent {
+    max-height: 40vh;
+    min-height: 890px;
+  }
+  .mainDescription {
+    margin-top: 5vh;
+  }
+  #map {
+    height: 800px;
+    width: 900px;
+  }
+  .bannerContainer {
+    height: 12vh;
+  }
+  .bannerTitle {
+    font-size: calc(var(--main-fontSize)*3);
+  }
+  .mainContainer {
+    margin-top: 64px;
+    justify-content: space-around;
+  }
+}

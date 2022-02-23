@@ -1,0 +1,15 @@
+.smallHeader {
+    display: none;
+}
+
+
+@media screen and (max-width:672px) {
+    .bigHeader {
+        display: none;
+    }
+    .smallHeader {
+        display: block;
+    }
+
+
+}

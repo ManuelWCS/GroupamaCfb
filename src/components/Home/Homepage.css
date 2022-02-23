@@ -1,0 +1,280 @@
+.homepage {
+  height: 280vh;
+  position:relative;
+}
+
+.mainContent {
+  height: 250px;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  
+}
+
+.photo {
+  height: 80vh;
+  width: 100vw;
+  filter: contrast(100%);
+  background: url("../../assets/img/final2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom 15px;
+  position: absolute;
+  z-index: -3;
+  box-sizing: border-box;
+  border: none !important;
+  margin-top:-55px;
+}
+
+
+.photo2 {
+  display: none;
+}
+
+.contentWrapper {
+  box-sizing: border-box;
+}
+
+/* .mainTitle {
+  font-family: var(--main-font);
+  padding-top: 64px;
+  padding-left: 64px;
+  color: var(--red-color);
+  font-size: 48px;
+} */
+
+
+
+.imageWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-content: flex-end;
+}
+
+.regionPicture {
+  width: 370px;
+  height: 250px;
+  margin-right: 5vw;
+  margin-top: 15vh;
+  z-index: 2;
+  position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+.formContent {
+  margin-top: 250px;
+}
+
+
+
+
+
+
+.mapAndForm {
+  margin-bottom: 10vh;
+}
+
+
+
+.legendMarker {
+  width: 45px;
+  height: 58px;
+  padding-bottom: 8px;
+}
+.legendMarker1 {
+  width: 58px;
+  height: 58px;
+  padding-bottom: 8px;
+
+}
+.legendMarker2 {
+  width: 64px;
+  height: 58px;
+  padding-bottom: 8px;
+
+}
+.legendMarker3 {
+  width: 64px;
+  height: 60px;
+  padding-bottom: 8px;
+
+}
+.legendMarkerG { 
+  width: 50px;
+  height: 62px;
+  padding-bottom: 2px;
+
+}
+
+.markerContainer {
+  height: 100px;
+  width: 135px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-top:8px;
+}
+
+
+
+/*<<<<<<<<<<<<<<<<<<<<< SPONSOR>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+
+
+.logoCA {
+  height: 90px;
+  width: 150px;
+}
+
+
+.sponsoLinks {
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
+  margin-top:-32px;
+
+
+}
+
+.LinkCA {
+  height: 20px;
+  width: 20px;
+  padding-top: 16px;
+
+}
+
+
+
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< RESPONSIVE NOUVELLE VERSION >>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* AFFICHAGE MODE TELEPHONE */
+
+@media screen and (min-width: 315px) and (max-width: 765px) {
+
+
+  .homepage {
+    height: 1900px;
+    max-height: max-content;
+    width: 100vw;
+    position: relative;
+  }
+  
+  .mainContent {
+    height: 235px;   
+    width: 100vw;
+    margin:0;
+    padding: 0;
+  }
+  
+  .photo {
+    display: none;
+  }
+  
+  .photo2 {
+    display: block;
+    height: 250px;
+    width: 100vw;
+    background-image: url('../../assets/img/bannerMobileFinal.png');
+    background-size: cover;
+    top:0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position: relative;
+    z-index: -5;
+    margin-top: -1px;
+    background-position:  center;
+  }
+
+  
+  .mainTitle {
+    padding-top: 0px;
+    padding-left: 0px;
+    font-size: 18px;
+    top:0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position:absolute;
+    margin-left: 24px;
+    margin-top:12px;
+  }
+/* CACHER LE TEXTE .titlePart  */
+
+  .titlePart1, .titlePart2 {
+    display: none;
+  }
+  .mainDescription {
+    padding-left: 0px;
+    position:absolute;
+    top:28px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    font-size: 10px;
+    margin-left: 24px;
+    color: white;
+  }
+  
+  .mobiletitleContainer {
+    display: none;
+  }
+
+/* Container qui engloble tout */
+
+
+/* Englobe la carte  */
+
+
+/* Style quand il n'y a pas de recherche */
+
+/* Carte leaflet  */
+
+
+
+/* On va volontairement descendre l'élément pour laisser la place à la carte  */
+
+
+/* Ancienne légende à cacher */
+.legendMapMobile {
+  display: none;
+}
+
+.filtersNoSearch {
+  width: 90vw;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 95vw;
+}
+
+
+
+
+/* Gerer l'affichage des résultats une fois qu'on a rentré les inputs */
+/* .filtrations{}
+
+.resultats {
+
+} */
+
+
+/* FOOTER */
+
+  
+  }
