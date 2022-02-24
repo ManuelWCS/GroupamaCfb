@@ -1,0 +1,17 @@
+@import url('../../components/Clean/Clean.css');
+
+div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+img {
+    height: 500px;
+    margin-top:45px;
+}

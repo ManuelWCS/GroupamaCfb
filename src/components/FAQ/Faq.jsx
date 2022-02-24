@@ -2,6 +2,9 @@ import React from 'react';
 import './Faq.css';
 import mailPicture from '../../assets/CompressedPictures/FAQ/contact.webp'
 
+/*<------------------------IMPORT ROUTER ---------------------------------> */
+import {Link} from 'react-router-dom'
+
 function Faq() {
   return (
     <div className="faqContainer">
@@ -12,7 +15,10 @@ function Faq() {
     </p>
     <span className="faqText">Nous avons probablement la réponse ! </span>
     <p className="faqText2">Cliquez ici pour poser votre question</p>
+    <Link to="/faq">
+
     <img src={mailPicture} className="contactImg" />
+    </Link>
   </div>
   )
 }

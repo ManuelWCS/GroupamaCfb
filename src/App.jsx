@@ -1,15 +1,19 @@
 import "./App.css";
-import { Switch, Route } from "react-router";
-import Newheader from './components/Header2/Header2.jsx'
-import Clean from './components/Clean/Clean.jsx';
-
+import Clean from "./components/Clean/Clean.jsx";
+import Faq from './components/FrequentlyAskedQuestions/FrequentlyAskedQuestions.jsx'
+import {  Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Clean/>
-    
-    </div>
+    <>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Clean/>} />
+
+          <Route path="/faq" element={<Faq/>} />
+        </Routes>
+      </div>
+    </>
   );
 }
 

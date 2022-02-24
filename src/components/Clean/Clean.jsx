@@ -51,7 +51,8 @@ import Legend from "../Legend/Legend.jsx";
 import Header from "../Header2/Header2.jsx";
 
 /*<------------------------IMPORT IMAGES ---------------------------------> */
-import homepageImg from "../../assets/TEST/mobileVertical.png";
+
+
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
