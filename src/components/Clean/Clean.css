@@ -22,7 +22,7 @@
   body {
     max-width: 100%;
     overflow-x: hidden;
-    /* Garder ce fond pour que ça corresponde avec le header*/
+      /* Garder ce fond pour que ça corresponde avec le header*/
   }
 
   body::-webkit-scrollbar {
@@ -62,9 +62,10 @@
     width: 100%;
     background-size: 100%;
     background-attachment: fixed;
-    background-position: center 65%;
-    background-image: url('../../assets/TEST/Ordi22.png');
-    margin-top:-5px;
+    background-position: center 5px;
+    /* background-image: url("../../assets/TEST/Ordi22.png"); */
+    background-image: url('../../assets/CompressedPictures/bandesdeTypeBlanc.webp');
+    margin-top: -5px;
   }
 
   .fullApp {
@@ -356,8 +357,6 @@
     height: 500px;
     background-color: #293d6b;
   }
-
-  
 
   /* Texte indiquant le nombre de résultats */
 

@@ -118,7 +118,7 @@ function Clean() {
   // Hook qui permets de charger le loader :
 
   const clubMarqueur = L.icon({
-    iconSize: [50, 60],
+    iconSize: [55, 60],
     iconAnchor: [13.5, 47],
     iconUrl: clubMarker,
   });
@@ -295,13 +295,14 @@ function Clean() {
 
   return (
     <>
-      <Header />
+    <Header/>
       <div className="fullApp" id="background_wrap">
+
         <div className="mainContent">
           <div className="titlesContainer">
-            <h1 className="mainTitle"> BONJOUR !</h1>
+            <h1 className="mainTitle"> SALUT A TOUS C'EST SQUEEZIE !</h1>
             <h3 className="secondaryTitle">
-              TROUVEZ UN CLUB PRÈS DE CHEZ VOUS !
+              ON SE RETROUVE POUR UNE NOUVELLE VIDEO!
             </h3>
           </div>
         </div>
@@ -745,4 +746,3 @@ function Clean() {
 }
 
 export default Clean;
- 
