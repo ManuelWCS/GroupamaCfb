@@ -127,6 +127,7 @@
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) / 1.1);
     margin-top: calc(var(--spacing-large) * 2.5);
+    width: 80%;
   }
 
   .LinkGroupama {
@@ -142,8 +143,7 @@
     width: 280px;
     height: 100px;
   }
-  margin:auto;
-  text-align: center;
+
 }
 
 /* AFFICHAGE TABLETTE */

@@ -217,6 +217,9 @@
     align-items: center;
     align-content: stretch;
   }
+  .formContainer{
+    height: 950px;
+  }
 
   .BlocFiltresEX {
     width: 400px;
@@ -272,20 +275,25 @@
     min-height: 890px;
   }
   .mainDescription {
-    margin-top: 5vh;
+    margin-top: 1vh;
+    font-size: calc(var(--main-fontSize)*4);
+  }
+  .secondaryDescription{
+    font-size: calc(var(--main-fontSize)*2.5);
+
   }
   #map {
     height: 800px;
     width: 900px;
   }
   .bannerContainer {
-    height: 12vh;
+    height: 2vh;
   }
   .bannerTitle {
     font-size: calc(var(--main-fontSize)*3);
   }
   .mainContainer {
     margin-top: 64px;
-    justify-content: space-around;
+    justify-content: center;
   }
 }

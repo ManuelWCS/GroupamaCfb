@@ -300,10 +300,9 @@ function Clean() {
 
         <div className="mainContent">
           <div className="titlesContainer">
-            <h1 className="mainTitle"> SALUT A TOUS C'EST SQUEEZIE !</h1>
+            <h1 className="mainTitle"> BIENVENUE ! </h1>
             <h3 className="secondaryTitle">
-              ON SE RETROUVE POUR UNE NOUVELLE VIDEO!
-            </h3>
+TROUVEZ UN CLUB PRÈS DE CHEZ VOUS            </h3>
           </div>
         </div>
         <div className="descriptionContainer">
@@ -419,7 +418,9 @@ function Clean() {
                         <div className="column1">
                           <div className="logo1"></div>
                           <div className="logo2"></div>
-                          <div className="logo3"></div>
+                          <div className="logo3">
+                      
+                          </div>
                         </div>
                         <div className="column2">
                           <div className="info1">
@@ -441,7 +442,7 @@ function Clean() {
                             >
                               Voir plus d'infos
                             </a>
-                            <img
+                            {/* <img
                               className={
                                 clubSelected.label.length > 0
                                   ? "labelClub"
@@ -453,7 +454,17 @@ function Clean() {
                                   : null
                               }
                               alt="Marqueur Club labellisé"
-                            />
+                            /> */}
+                            <p className={
+                                clubSelected.label.length > 0
+                                  ? "labelClub"
+                                  : "labelHide"
+                              }>
+                                labellisé
+
+
+
+                            </p>
                           </div>
                         </div>
                       </div>

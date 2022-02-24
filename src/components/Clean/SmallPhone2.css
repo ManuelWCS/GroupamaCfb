@@ -257,7 +257,7 @@
   }
   /*********** STYLES CARTES*/
   .cardResult {
-    height: 220px;
+    height: 240px;
     width: 250px;
     background-image: url("../../assets/Cartes/Carte-bleu.png");
     background-position: center;
@@ -270,7 +270,7 @@
   }
 
   .cardResult:nth-child(2n) {
-    height: 220px;
+    height: 240px;
     width: 250px;
     background-image: url("../../assets/Cartes/Carte-rouge.png");
     background-position: center;
@@ -280,7 +280,7 @@
   }
 
   .cardResult:nth-child(3n) {
-    height: 220px;
+    height: 240px;
     width: 250px;
     background-image: url("../../assets/Cartes/Carte-grise.png");
     background-position: center;
@@ -290,7 +290,7 @@
   }
 
   .cardResult:nth-child(4n) {
-    height: 220px;
+    height: 240px;
     width: 250px;
     background-image: url("../../assets/Cartes/Carte-turquoise.png");
     background-position: center;
@@ -361,6 +361,12 @@
     background-size: cover;
   }
 
+.columnContainer {
+  display: flex;
+  padding-top:8px
+}
+
+
   .titleCard {
     height: 64px;
     width: 305px;
@@ -374,16 +380,16 @@
   }
 
   .column1 {
-    height: 146px;
+    height: 160px;
     width: 44px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding-left: 16px;
+    padding-left: 8px;
   }
 
   .column2 {
-    height: 146px;
+    height: 160px;
     width: 230px;
     display: flex;
     flex-direction: column;
@@ -426,15 +432,15 @@
   }
 
   .labelClub {
-    height: 45px;
-    width: 50px;
+    height: 10px;
+    width: 40px;
     margin-left: 24px;
-    background: transparent;
-    background-color: transparent;
+    
+
   }
 
   .info1,
-  .info2,
+  .info2, 
   .info3 {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) / 1.2);
@@ -452,6 +458,16 @@
 
   .info3 a:visited {
     text-decoration: none;
+  }
+
+
+
+  
+
+  .label {
+    height: 50px;
+    width: 50px;
+    background-color: orangered;
   }
 
   .dataResult {
