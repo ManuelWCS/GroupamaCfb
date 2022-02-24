@@ -1,6 +1,6 @@
 @import url('../../components/Clean/Clean.css');
 
-div {
+.Migouz {
     height: 100%;
     width: 100%;
     display: flex;
@@ -11,7 +11,7 @@ div {
 	align-content: center;
 }
 
-img {
+.MigouzImg {
     height: 500px;
     margin-top:45px;
 }

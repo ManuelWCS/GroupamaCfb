@@ -4,8 +4,8 @@ import Migouz from '../../assets/TEST/migouzFAQ.jpg'
 
 function FrequentlyAskedQuestions() {
   return (
-    <div>
-      <img src={Migouz}/>
+    <div className='Migouz'>
+      <img className='MigouzImg' src={Migouz}/>
 
 
     </div>
