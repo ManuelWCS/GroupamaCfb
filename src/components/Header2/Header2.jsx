@@ -15,7 +15,6 @@ function Header2() {
             src={LargeGroupama2}
             width="100%"
             height="50%"
-            className="d-inline-block align-top"
             className="bigHeader"
           />
 
@@ -24,7 +23,6 @@ function Header2() {
             src={SmallGroupama}
             width="100%"
             height="5%"
-            className="d-inline-block align-top"
             className="smallHeader"
           />
         </Navbar.Brand>{" "}

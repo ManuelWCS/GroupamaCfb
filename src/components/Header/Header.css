@@ -1,0 +1,16 @@
+.Header {
+    min-height: 10vh;
+    background-image: url('../../assets/CompressedPictures/mobileGroupama.webp');
+}
+
+@media screen and (min-width:672px) {
+
+    .Header {
+        background-image: url('../../assets/TEST/header22.png');
+        background-position: center;
+        background-size: cover;
+        height: 18vh;
+        width: 99.97%;
+        
+    }
+}
