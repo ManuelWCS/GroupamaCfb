@@ -2,14 +2,13 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import "./Header2.css";
 import SmallGroupama from "../../assets/CompressedPictures/mobileGroupama.webp";
-import LargeGroupama from "../../assets/CompressedPictures/headerGroupama.webp";
 /* import du nouveau header Février 2022 -22 */
 import LargeGroupama2 from "../../assets/TEST/header22.png"
 
 function Header2() {
   return (
     <div className="header">
-      <Navbar bg="dark" variant="dark" fixed="top">
+      <Navbar bg="" variant="" fixed="top">
         <Navbar.Brand href="./">
           <img
             alt=""

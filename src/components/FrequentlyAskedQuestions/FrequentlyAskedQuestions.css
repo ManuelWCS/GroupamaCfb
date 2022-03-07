@@ -1,17 +1,70 @@
-@import url('../../components/Clean/Clean.css');
+@import url("../../components/Clean/Clean.css");
 
-.Migouz {
-    height: 100%;
+.maxContainer {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
+  background-size: 100%;
+  background-position: center 60px;
+  background-attachment: fixed;
+  margin-top: -5px;
+  flex-direction: column;
+
+}
+
+.faqWrapper {
     width: 100%;
+    margin-top:160px;
     display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
+	flex-direction: column;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	align-content: center;
+
 }
 
-.MigouzImg {
-    height: 500px;
-    margin-top:45px;
+.itemContainer {
+  height: 300px;
+  width: 70%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.itemTitleContainer {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.itemTitle {
+  height: 50px;
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Nuvel";
+  color: var(--red-color);
+}
+.listContainer {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.questionDiv {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+@media screen and (max-width: 672px) {
+  .maxContainer {
+    background-image: url("../../assets/CompressedPictures/Mobile.webp");
+    background-position: center 3px;
+  }
 }

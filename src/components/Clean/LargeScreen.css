@@ -6,15 +6,13 @@
     position: relative;
     height: 100%;
     width: 100%;
-    background-size: 100%;
+    background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    /* background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp"); */
-    background-image: url("../../assets/Habillage/nouveauFond.png");
   }
   html,
   body {
-    max-width: 100%;
+    max-width: 100%; 
     overflow-x: hidden;
   }
 
@@ -72,9 +70,8 @@
     width: 100%;
     background-size: 100%;
     background-attachment: fixed;
-    background-position: center;
-    background-image: url("../../assets/TEST/Ordi22.png");
-  }
+    background-position: center 85px;
+    background-image: url('../../assets/CompressedPictures/bandesdeTypeBlanc.webp');  }
 
   .mainContent {
     height: 550px;
