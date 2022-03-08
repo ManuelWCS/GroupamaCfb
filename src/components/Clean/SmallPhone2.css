@@ -478,6 +478,23 @@
     margin-right: 5vw;
     margin-left: 5vw;
   }
+  .toggleSearch {
+    width: 320px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .newSearchBtn {
+    width: 255px;
+    
+
+  }
+
+
+
+
 }
 
 

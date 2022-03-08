@@ -504,12 +504,13 @@
     background-image: url('../../assets/CompressedPictures/Buttons/nouvelleRecherche.png');
     background-position: center;
     background-size: cover;
-  }
+  }  
+
   .newSearchBtn {
     width: 350px;
     height: 350px;
   }
-
+/* BREAKPOINTS pour bouton nouvelle recherche */
   .toggleSearch {
     width: 350px;
     height: 150px;

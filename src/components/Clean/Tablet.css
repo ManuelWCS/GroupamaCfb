@@ -37,8 +37,7 @@
     background-image: url("../../assets/CompressedPictures/Mobile.webp");
 
     background-attachment: fixed;
-    margin-top:-1px
-
+    margin-top: -1px;
   }
 
   .mainContent {
@@ -302,7 +301,6 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: var(--spacing-large);
-
   }
 
   .cardResult:nth-child(2n) {
@@ -435,7 +433,6 @@
     flex-direction: column;
     justify-content: space-around;
   }
-  
 
   /* Affichage du club labélisé*/
   .labelClub {
@@ -486,7 +483,7 @@
     background-image: url("../../assets/CompressedPictures/Mobile.webp");
     background-attachment: fixed;
     background-position: center 1px;
-    margin-top:-2px;
+    margin-top: -2px;
   }
 
   .contactImg {
@@ -934,11 +931,10 @@
     height: 100%;
     width: 100%;
     background-size: 100%;
-    background-image: url('../../assets/TEST/Tablette22.png');
+    background-image: url("../../assets/TEST/Tablette22.png");
     background-attachment: fixed;
     background-position: center 5px;
-    margin-top:-4px;
-
+    margin-top: -4px;
   }
 
   .mainContent {
@@ -1340,6 +1336,17 @@
     font-family: var(--main-font);
     color: white;
     font-size: calc(var(--main-fontSize) / 1);
+  }
+  .toggleSearch {
+    width: 320px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .newSearchBtn {
+    width: 380px;
   }
 }
 
