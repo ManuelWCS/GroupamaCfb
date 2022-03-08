@@ -29,11 +29,6 @@ function FrequentlyAskedQuestions() {
     setOptions(Selector);
   }
 
-  const remplirSelection = (option) => {
-    setSelection(option)
-    console.log(selection)
-  }
-
 
   
 
@@ -68,7 +63,7 @@ function FrequentlyAskedQuestions() {
       <Container fluid className="FullContent">
         <Container fluid className="FAQTitleContainer">
           <div className="hero">
-            <div class="content">
+            <div className="content">
               <h1>Example Hero!</h1>
               <p>Example Hero!</p>
             </div>

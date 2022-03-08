@@ -14,21 +14,21 @@ function Legend() {
     <div className="legendContainer">
     <div className="markerContainer">
       <div className="markerWrapper">
-        <img src={userMarker} className="legendMarker1" />
+        <img src={userMarker} className="legendMarker1" alt="Marqueur Utilisateur / User Marker"/>
         <span className="markerDescription">Votre position</span>
       </div>
       <div className="markerWrapper">
-        <img src={clubMarker} className="legendMarker2" />
+        <img src={clubMarker} className="legendMarker2" alt="Marqueur club de Football" />
         <span className="markerDescription">Club de football</span>
       </div>
 
       <div className="markerWrapper">
-        <img src={markerAgence} className="legendMarker" />
+        <img src={markerAgence} className="legendMarker" alt="Marqueur Groupama" />
         <span className="markerDescription">Groupama</span>
       </div>
 
       <div className="markerWrapper">
-        <img src={labelMarker} className="legendMarker3"/>
+        <img src={labelMarker} className="legendMarker3" alt="Marqueur Club Labellisé "/>
         <span className="markerDescription">Club labéllisé</span>
       </div>
     </div>

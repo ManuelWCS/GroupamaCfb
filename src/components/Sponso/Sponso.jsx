@@ -18,7 +18,7 @@ function Sponso() {
           {" "}
           Cette plateforme est soutenue par Groupama Paris-Val de Loire<br></br>
         </p>
-        <img src={Logo} className="GroupamaLogo" />
+        <img src={Logo} className="GroupamaLogo" alt="Groupama Logo" />
         <div className="sponsoLinks">
           <a
             href="https://www.facebook.com/groupama"

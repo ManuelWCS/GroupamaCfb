@@ -17,7 +17,7 @@ function Faq() {
     <p className="faqText2">Cliquez ici pour poser votre question</p>
     <Link to="/faq">
 
-    <img src={mailPicture} className="contactImg" />
+    <img src={mailPicture} className="contactImg" alt="courrier électronique" />
     </Link>
   </div>
   )

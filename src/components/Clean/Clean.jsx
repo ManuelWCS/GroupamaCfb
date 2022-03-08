@@ -292,7 +292,7 @@ function Clean() {
     }
   }, [formData]);
 
-  console.log(clubSearch);
+  console.log('Recherche', clubSearch);
 
   return (
     <>
@@ -338,7 +338,7 @@ TROUVEZ UN CLUB PRÈS DE CHEZ VOUS            </h3>
               <MapContainer
                 className="mapLeaflet"
                 id="map"
-                center={[48.856614, 2.3522219]}
+                center={[47.90289, 1.90389]}
                 zoom={13}
                 scrollWheelZoom={true}
                 minZoom={6}
