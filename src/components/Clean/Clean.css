@@ -383,6 +383,21 @@
     margin-left: auto;
     margin-right: auto;
   }
+  /* CARTE CLUB LABELLISE  */
+
+  .cardResultLabel {
+    height: 220px;
+    width: 305px;
+    background-image: url("../../assets/CompressedPictures/Cards/card_label.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    padding: 8px 8px 8px 8px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .cardResult:nth-child(2n) {
     height: 220px;

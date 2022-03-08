@@ -404,9 +404,9 @@ function Clean() {
                 clubSearch.map((clubSelected, Uniqueindex) => {
                   return (
                     <div
-                      className="cardResult"
-                      key={Uniqueindex}
-                      id="cardresult"
+                      className={clubSelected.label.length > 0
+                          ? "cardResultLabel"
+                          : "cardResult"}
                     >
                       <div className="titleCardContainer">
                         <span className="titleCard" onClick={scrollTop}>
@@ -440,28 +440,7 @@ function Clean() {
                             >
                               Voir plus d'infos
                             </a>
-                            {/* <img
-                              className={
-                                clubSelected.label.length > 0
-                                  ? "labelClub"
-                                  : "labelHide"
-                              }
-                              src={
-                                clubSelected.label.length > 0
-                                  ? LabelMarker
-                                  : null
-                              }
-                              alt="Marqueur Club labellisé"
-                            /> */}
-                            <p
-                              className={
-                                clubSelected.label.length > 0
-                                  ? "labelClub"
-                                  : "labelHide"
-                              }
-                            >
-                              labellisé
-                            </p>
+                             
                           </div>
                         </div>
                       </div>
