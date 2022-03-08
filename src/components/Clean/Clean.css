@@ -217,7 +217,7 @@
   }
 
   .formContainer {
-    height: 600px;
+    height: 850px;
     width: 440px;
     display: flex;
     flex-direction: column;
@@ -497,10 +497,26 @@
   }
 
   .btnAfterSearch {
-    width: 120px;
-    height: 58px;
+    width: 180px;
+    height: 158px;
     margin: auto;
     border-radius: 12px;
+    background-image: url('../../assets/CompressedPictures/Buttons/nouvelleRecherche.png');
+    background-position: center;
+    background-size: cover;
+  }
+  .newSearchBtn {
+    width: 350px;
+    height: 350px;
+  }
+
+  .toggleSearch {
+    width: 350px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 
   .cardLegendText {

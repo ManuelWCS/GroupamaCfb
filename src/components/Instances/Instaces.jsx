@@ -15,11 +15,12 @@ import cherMarker from "../../assets/CompressedPictures/Markers/Marqueur-Cher.we
 import loiretMarker from "../../assets/CompressedPictures/Markers/Marqueur-Loiret.webp";
 import agenceGroupama from "../../assets/CompressedPictures/Markers/MarqueurGroupama.webp";
 
+/* CSS STYLES DES TITRES */
+import './Instances.css'
 
 
 function Instaces() {
    
-
 
     const LigueMarqueur = L.icon({
         iconSize: [50, 60],
@@ -73,7 +74,8 @@ function Instaces() {
             position: [47.830261, 1.93609],
             link: "https://foot-centre.fff.fr/",
             icon: LigueMarqueur,
-            id: 1      
+            id: 1,
+          
     
         },
         {
@@ -142,10 +144,13 @@ useEffect(() => {
     setMarkers(dataMarkers);
   }, []);
 
+  
+
 
 
   return (
     <>
+   
 
     {markers.map((marker, index) => {
         return (
@@ -154,7 +159,9 @@ useEffect(() => {
             key={index}
             position={marker.position}>
                 <Popup key={index}>
-                    <p>{marker.name}{marker.id}</p>
+                  <a href={marker.link}>
+                    <p className='mapMarkers'>{marker.name}</p>
+                    </a>
                 </Popup>
             </Marker>
         )

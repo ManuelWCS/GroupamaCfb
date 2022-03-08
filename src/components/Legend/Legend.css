@@ -175,17 +175,17 @@
   }
 
   .legendMarker1 {
-    height: 67px;
-    width: 55px;  }
+    height: 57px;
+    width: 45px;  }
   .legendMarker2 {
-    height: 67px;
-    width: 55px; }
+    height: 57px;
+    width: 45px; }
   .legendMarker3 {
-    height: 67px;
-    width: 55px; }
+    height: 57px;
+    width: 45px; }
   .legendMarker {
-    height: 67px;
-    width: 55px;
+    height: 60px;
+    width: 48px;
   }
   .markerDescription {
     padding-top:var(--spacing-large);

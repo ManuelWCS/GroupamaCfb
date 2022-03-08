@@ -1,0 +1,23 @@
+@import url('../../components/Clean/Clean.css');
+
+.mapMarkers {
+    color: var(--secondary-color);
+    font-size: var(--main-fontSize);
+    text-align: left;
+    word-wrap: normal;
+    font-family: var(--secondary-font);
+    text-decoration: none;
+
+}
+.mapMarkers p a:link {
+    text-decoration: none;
+}
+.mapMarkers a:visited {
+    text-decoration: none;
+}
+.mapMarkers a:hover {
+    text-decoration: none;
+}
+.mapMarkers a:active {
+    text-decoration: none;
+}

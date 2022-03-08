@@ -51,8 +51,7 @@ import Legend from "../Legend/Legend.jsx";
 import Header from "../Header2/Header2.jsx";
 
 /*<------------------------IMPORT IMAGES ---------------------------------> */
-
-
+import btnNewSearch from "../../assets/CompressedPictures/Buttons/nouvelleRecherche.png";
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -292,18 +291,18 @@ function Clean() {
     }
   }, [formData]);
 
-  console.log('Recherche', clubSearch);
+  console.log("Recherche", clubSearch);
 
   return (
     <>
-    <Header/>
+      <Header />
       <div className="fullApp" id="background_wrap">
-
         <div className="mainContent">
           <div className="titlesContainer">
             <h1 className="mainTitle"> BIENVENUE ! </h1>
             <h3 className="secondaryTitle">
-TROUVEZ UN CLUB PRÈS DE CHEZ VOUS            </h3>
+              TROUVEZ UN CLUB PRÈS DE CHEZ VOUS{" "}
+            </h3>
           </div>
         </div>
         <div className="descriptionContainer">
@@ -419,9 +418,7 @@ TROUVEZ UN CLUB PRÈS DE CHEZ VOUS            </h3>
                         <div className="column1">
                           <div className="logo1"></div>
                           <div className="logo2"></div>
-                          <div className="logo3">
-                      
-                          </div>
+                          <div className="logo3"></div>
                         </div>
                         <div className="column2">
                           <div className="info1">
@@ -456,15 +453,14 @@ TROUVEZ UN CLUB PRÈS DE CHEZ VOUS            </h3>
                               }
                               alt="Marqueur Club labellisé"
                             /> */}
-                            <p className={
+                            <p
+                              className={
                                 clubSelected.label.length > 0
                                   ? "labelClub"
                                   : "labelHide"
-                              }>
-                                labellisé
-
-
-
+                              }
+                            >
+                              labellisé
                             </p>
                           </div>
                         </div>
@@ -734,13 +730,13 @@ TROUVEZ UN CLUB PRÈS DE CHEZ VOUS            </h3>
                 </Box>
               </Modal>
             </div>
-            <div className="newSearchContainer">
-              <button
-                className={clubSearch.length !== 0 ? "btnAfterSearch" : "hide"}
+
+            <div className={clubSearch.length !== 0 ? "toggleSearch" : "hide "}>
+              <img
+                src={btnNewSearch}
+                className="newSearchBtn"
                 onClick={newSearch}
-              >
-                NOUVELLE RECHERCHE
-              </button>
+              ></img>
             </div>
 
             {/* FIN DE LA  GESTION DES ERREURS DANS LA RECHERCHE */}
