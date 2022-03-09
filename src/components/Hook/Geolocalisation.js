@@ -23,8 +23,8 @@ function Geolocalisation() {
               setPositionFound(e.latlng);
               map.flyTo(e.latlng, map.getZoom());
               const radius = e.accuracy;
-              const circle = L.circle(e.latlng, radius + 1000);
-              circle.addTo(map); 
+            //   const circle = L.circle(e.latlng, radius + 1000);
+            //   circle.addTo(map); 
    })
       }, [map]);
 
