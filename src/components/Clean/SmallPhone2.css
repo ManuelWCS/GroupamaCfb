@@ -301,11 +301,11 @@
     margin-bottom: 16px;
   }
 
-  .cardResult:nth-child(1n) .logo1:nth-child(1n) {
+  /* .cardResult:nth-child(1n) .logo1:nth-child(1n) {
     background-image: url("../../assets/Logos/Mail-bleu.png");
     background-position: center;
     background-size: cover;
-  }
+  } */
 
   .cardResult:nth-child(2n) .logo1:nth-child(1n) {
     background-image: url("../../assets/Logos/Mail-rouge.png");
