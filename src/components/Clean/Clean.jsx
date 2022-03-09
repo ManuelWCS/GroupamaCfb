@@ -140,7 +140,7 @@ function Clean() {
 
     // Si le genre est renseigné, filtre fonctionnel
     if (formData.gender !== null) {
-      console.log("sexe renseigné");
+      // console.log("sexe renseigné");
       if (formData.gender.length > 0) {
         // je pousse le filtre dans un tableau
         filtersOptions.push(
@@ -153,7 +153,7 @@ function Clean() {
 
     // Si la ville est renseignée
     if (formData.city !== null) {
-      console.log("ville renseignée");
+      // console.log("ville renseignée");
       if (formData.city.length > 0) {
         filtersOptions.push((item) => item.Localite === formData.city);
       }
@@ -211,9 +211,9 @@ function Clean() {
     }
 
     if (resultofSearch.label !== null) {
-      console.log("il y a un club labelLisé ");
+      // console.log("il y a un club labelLisé ");
     } else {
-      console.log("pas de clubs labéllisés");
+      // console.log("pas de clubs labéllisés");
     }
 
     setclubSearch(resultofSearch);
@@ -222,12 +222,14 @@ function Clean() {
   };
 
   function scrollTop() {
-    window.location.href = "#top";
+    window.location.href = "#redirect";
   }
   // Fonction permettant de scroller vers la carte en question
   function scrollCard() {
-    window.location.href = "#cardresult";
+    window.location.href = "#cardClub";
   }
+
+
   // Fonction handle qui va gérer les changements des inputs
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.name]: e.target.value });
@@ -333,7 +335,7 @@ function Clean() {
         <div className="mainContainer">
           <div className="mapContainer">
             <div className="legendContainer">
-              <p className="mapTitle">CARTE INTERACTIVE</p>
+              <p className="mapTitle" id='redirect'>CARTE INTERACTIVE</p>
             </div>
 
             <div className="BlocCarte">
@@ -410,6 +412,8 @@ function Clean() {
                       className={clubSelected.label.length > 0
                           ? "cardResultLabel"
                           : "cardResult"}
+                          id='cardClub'
+                          
                     >
                       <div className="titleCardContainer">
                         <span className="titleCard" onClick={scrollTop}>
@@ -434,7 +438,7 @@ function Clean() {
                               {clubSelected.Mail}{" "}
                             </a>
                           </div>
-                          <div className="info2">
+                          <div className="info2" onClick={scrollTop}>
                             {clubSelected.AdressePostale}
                           </div>
                           <div className="info3">
