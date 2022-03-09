@@ -6,6 +6,9 @@ import "./Tablet.css";
 import "./LargeScreen.css";
 /* Fin de l'import des différentes versions*/
 
+/* import styles des cartes*/
+import '../Clean/Cards/Cards.css'
+
 import "../../components/Map/fonts.css";
 /* import de la librairie Leaflet*/
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";

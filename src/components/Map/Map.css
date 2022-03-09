@@ -393,64 +393,7 @@
 /* <<<<<<<<<<<<<<< Styles des cartes générées pour les résultats >>>>>>>>>>>> */
 
 
-/* <---------- Styles des informations des Cartes Clubs ----------> */
 
-.titleCardContainer {
-  height: 64px;
-  width: 305px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 8px;
-  font-family: var(--main-font);
-
-}
-
-.columnContainer {
-  display: flex;
-}
-
-
-
-.logo2 {
-  background-image: url("../../assets/Logos/Localisation-bleu.png");
-  background-position: center;
-  background-size: cover;
-}
-
-.logo3 {
-  background-image: url("../../assets/Logos/Info-bleu.png");
-  background-position: center;
-  background-size: cover;
-}
-
-.info1,
-.info2,
-.info3 {
-  font-family: var(--secondary-font);
-
-}
-
-.info1 a {
-  text-decoration: none;
-  color: black;
-}
-
-.info3 a {
-  text-decoration: none;
-  color: black;
-}
-
-.info3 a:visited {
-  text-decoration: none;
-}
-
-.info3 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-}
 
 /* Image affichée si le club est labélisé */
 

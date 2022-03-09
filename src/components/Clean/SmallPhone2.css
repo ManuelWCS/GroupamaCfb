@@ -367,17 +367,7 @@
 }
 
 
-  .titleCard {
-    height: 64px;
-    width: 305px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 4px;
-    font-family: var(--main-font);
-    color: white;
-    font-size: calc(var(--main-fontSize) / 1.2);
-  }
+
 
   .column1 {
     height: 160px;
