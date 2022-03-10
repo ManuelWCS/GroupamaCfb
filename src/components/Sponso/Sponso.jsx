@@ -4,7 +4,7 @@ import React from "react";
 import fb from "../../assets/CompressedPictures/Footer/fb.webp";
 import web from "../../assets/CompressedPictures/Footer/web.webp";
 import yt from "../../assets/CompressedPictures/Footer/youtube.webp";
-import Logo from "../../assets/CompressedPictures/GroupamaLogo.webp";
+import Logo from "../../assets/CompressedPictures/Logos/LogoLigue.webp";
 import twi from "../../assets/CompressedPictures/twitter.webp";
 
 /*<<<<<<<<<<<<<<<<<<<<<<<< IMPORT CSS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -14,11 +14,11 @@ function Sponso() {
   return (
     <div className="curved">
       <div className="sponsorContainer">
+        <img src={Logo} className="sponsoLogo" alt="Groupama Logo" />
         <p className="sponsoText">
           {" "}
-          Cette plateforme est soutenue par Groupama Paris-Val de Loire<br></br>
+          Cette plateforme a été développée par la Ligue Centre-Val de Loire<br></br>
         </p>
-        <img src={Logo} className="GroupamaLogo" alt="Groupama Logo" />
         <div className="sponsoLinks">
           <a
             href="https://www.facebook.com/groupama"

@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import "./Header2.css";
-import SmallGroupama from "../../assets/CompressedPictures/mobileGroupama.webp";
+import SmallGroupama from '../../assets/CompressedPictures/Header/headerMobile.png'
 /* import du nouveau header Février 2022 -22 */
-import LargeGroupama2 from "../../assets/TEST/header22.png"
+import LargeGroupama from '../../assets/CompressedPictures/Header/headerDesktop.png'
 
 function Header2() {
   return (
@@ -12,7 +12,7 @@ function Header2() {
         <Navbar.Brand href="./">
           <img
             alt=""
-            src={LargeGroupama2}
+            src={LargeGroupama}
             width="100%"
             height="50%"
             className="bigHeader"
