@@ -173,7 +173,7 @@
     margin: auto;
   }
   .BlocFiltresEX {
-    overflow: scroll;
+    overflow: hidden;
     overflow-x: hidden;
     position: relative;
     display: flex;
