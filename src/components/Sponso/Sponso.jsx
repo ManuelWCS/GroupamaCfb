@@ -17,36 +17,33 @@ function Sponso() {
         <img src={Logo} className="sponsoLogo" alt="Groupama Logo" />
         <p className="sponsoText">
           {" "}
-          Cette plateforme a été développée par la Ligue Centre-Val de Loire<br></br>
+          Cette plateforme a été développée par la Ligue Centre-Val de Loire de Football<br></br>
         </p>
         <div className="sponsoLinks">
-          <a
-            href="https://www.facebook.com/groupama"
-            target="_blank"
-            rel="noreferrer"
-          >
+        <a
+                href="https://www.facebook.com/LCFofficiel/?ref=bookmarks"
+                target="_blank"
+                rel="noreferrer"
+              >
             <img src={fb} alt="" className="LinkGroupama" />
           </a>
 
           <a
-            href="https://www.youtube.com/channel/UCcVU-JnuCbANGOl4vGcGpEg"
-            target="_blank"
-            rel="noreferrer"
-          >
+                href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q"
+                target="_blank"
+                rel="noreferrer"
+              >
             <img src={yt} alt="" className="LinkGroupama" />
           </a>
 
-          <a href="https://www.groupama.fr/" target="_blank" rel="noreferrer">
-            <img src={web} alt="" className="LinkGroupama" />
+          <a
+                href="https://foot-centre.fff.fr/wp-content/uploads/sites/9/prehome/prehome/index.html"
+                target="_blank"
+                rel="noreferrer"
+              >            
+              <img src={web} alt="" className="LinkGroupama" />
           </a>
 
-          <a
-            href="https://twitter.com/GroupeGroupama"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={twi} alt="" className="LinkGroupama" />
-          </a>
         </div>
       </div>
     </div>

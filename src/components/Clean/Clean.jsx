@@ -315,7 +315,7 @@ function Clean() {
             541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
           </h2>
           <h4 className="secondaryDescription">
-            La Ligue Centre-Val de Loire de Footballvous propose cette plateforme afin de découvrir
+            La Ligue Centre-Val de Loire de Football vous propose cette plateforme afin de découvrir
             l'ensemble des clubs de notre Région !
           </h4>
         </div>
@@ -732,7 +732,6 @@ function Clean() {
         {/* Fin de desktopContainer*/}
 
         <Sponso />
-        <Footer />
       </div>
     </>
   );

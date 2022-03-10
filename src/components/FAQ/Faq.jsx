@@ -15,10 +15,10 @@ function Faq() {
     </p>
     <span className="faqText">Nous avons probablement la réponse ! </span>
     <p className="faqText2">Cliquez ici pour poser votre question</p>
-    {/* <Link to="/faq"> */}
+    <Link to="/faq">
 
     <img src={mailPicture} className="contactImg" alt="courrier électronique" />
-    {/* </Link> */}
+    </Link>
   </div>
   )
 }
