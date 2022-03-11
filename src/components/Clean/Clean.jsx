@@ -47,7 +47,6 @@ import Button2 from "@mui/material/Button";
 
 /*<------------------------IMPORT COMPOSANTS ---------------------------------> */
 import Faq from "../FAQ/Faq";
-import Footer from "../Footer/Footer";
 import Sponso from "../Sponso/Sponso.jsx";
 import Instances from "../Instances/Instaces.jsx";
 import Legend from "../Legend/Legend.jsx";
@@ -229,6 +228,15 @@ function Clean() {
     window.location.href = "#cardClub";
   }
 
+  /* trier les villes par odre ? */
+
+  function Alphabet() {
+    let tableauVilles = allcities
+    let tableauVilleRangees = tableauVilles.sort()
+    let tableaufinal = tableauVilleRangees.reverse()
+    console.log('alphabet', tableaufinal)
+  }
+
 
   // Fonction handle qui va gérer les changements des inputs
   const handleChange = (e) => {
@@ -257,6 +265,10 @@ function Clean() {
   useEffect(() => {
     setClubs(data);
   }, []);
+
+  useEffect(() => {
+    Alphabet()
+  })
 
   // UseEffect qui gere le changement d'etat en fonction de l'age
   //Règle numéro 1: Si ageUtilisateur inférieur a 18, il faut désactiver la catégorie Loisir
@@ -721,6 +733,7 @@ function Clean() {
                 src={btnNewSearch}
                 className="newSearchBtn"
                 onClick={newSearch}
+                alt="nouvelle recherche"
               ></img>
             </div>
 

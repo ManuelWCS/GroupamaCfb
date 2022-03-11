@@ -4,7 +4,6 @@ import './Legend.css';
 
 import userMarker from '../../assets/CompressedPictures/Markers/userMarker.png';
 import clubMarker from '../../assets/CompressedPictures/Markers/clubMarker.png';
-import markerAgence from '../../assets/CompressedPictures/Markers/markerAgence.png';
 import labelMarker from '../../assets/CompressedPictures/Markers/labelMarker.png'
 import LigueMarker from '../../assets/CompressedPictures/Markers/MarqueurLigue.webp'
 

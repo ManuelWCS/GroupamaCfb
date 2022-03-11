@@ -29,12 +29,30 @@ function FrequentlyAskedQuestions() {
     setOptions(Selector);
   }
 
+  const tick = () => {
+    setInterval(() => {
+      console.log(selection)
+    }, 5000);
+
+  }
+
+  const majSelection = (value, index) => () => {
+    let majCopy = [...selection]
+    majCopy[index] = value;
+    setSelection(majCopy)
+  }
+
+  const addItem = () => {
+    setSelection([...selection])
+  }
+
 
   
 
   useEffect(() => {
     remplirOptions();
     console.log(selection)
+    tick()
   }, []);
 
   function Accordion() {
@@ -87,7 +105,7 @@ function FrequentlyAskedQuestions() {
                   return (
                     <div classsName="optionBox">
                       <p className="TitleFAQ">{el.name}</p>
-                      <img src={el.src} alt="" onClick={() => {setSelection(el.name)}}/>
+                      <img src={el.src} alt="" onClick={addItem}/>
                     </div>
                   );
                 })}
@@ -98,6 +116,8 @@ function FrequentlyAskedQuestions() {
 
               <p className="SecondaryTitle"> - Les questions fréquentes - </p>
               <p className="TitleFAQ">  {selection.length < 1 ? "Veuillez choisir une catégorie de question" : selection } </p>
+
+
                 </div>
         </Container>
       </Container>

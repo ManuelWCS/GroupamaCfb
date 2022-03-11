@@ -5,7 +5,6 @@ import fb from "../../assets/CompressedPictures/Footer/fb.webp";
 import web from "../../assets/CompressedPictures/Footer/web.webp";
 import yt from "../../assets/CompressedPictures/Footer/youtube.webp";
 import Logo from "../../assets/CompressedPictures/Logos/LogoLigue.webp";
-import twi from "../../assets/CompressedPictures/twitter.webp";
 
 /*<<<<<<<<<<<<<<<<<<<<<<<< IMPORT CSS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 import "./Sponso.css";

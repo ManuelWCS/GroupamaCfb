@@ -126,13 +126,13 @@ function Instaces() {
             id: 7
         },
     
-        {
-            name : "Agence Groupama",
-            position: [47.84524, 1.9247],
-            link: "https://groupama.fr/",
-            icon: marqueurBanque,
-            id: 8
-        },
+        // {
+        //     name : "Agence Groupama",
+        //     position: [47.84524, 1.9247],
+        //     link: "https://groupama.fr/",
+        //     icon: marqueurBanque,
+        //     id: 8
+        // },
     
     
     ]
