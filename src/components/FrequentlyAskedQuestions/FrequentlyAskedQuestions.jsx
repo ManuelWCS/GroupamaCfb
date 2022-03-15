@@ -6,54 +6,24 @@ import Header from "../Header2/Header2.jsx";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import Question from "../../components/Questions/Questions.jsx";
 
+/* import données partie Questions*/
+import FaqData from "./faqData.json";
+
 function FrequentlyAskedQuestions() {
   const [options, setOptions] = useState([]);
-  const [selection, setSelection] = useState([])
+  const [selection, setSelection] = useState([]);
 
-  function remplirOptions() {
-    console.log("init");
-
-    let Selector = [
-      {
-        id: 1,
-        name: "Naviguer sur cfb",
-        src: "https://via.placeholder.com/50",
-      },
-      {
-        id: 2,
-        name: "La carte",
-        src: "https://via.placeholder.com/50",
-      },
-    ];
-
-    setOptions(Selector);
-  }
+  useEffect(() => {
+    setOptions(FaqData);
+    console.log(options, " <--- LES OPTIONS.... LA SELECTION ---->", selection);
+    tick();
+  }, []);
 
   const tick = () => {
     setInterval(() => {
-      console.log(selection)
+      console.log(selection);
     }, 5000);
-
-  }
-
-  const majSelection = (value, index) => () => {
-    let majCopy = [...selection]
-    majCopy[index] = value;
-    setSelection(majCopy)
-  }
-
-  const addItem = () => {
-    setSelection([...selection])
-  }
-
-
-  
-
-  useEffect(() => {
-    remplirOptions();
-    console.log(selection)
-    tick()
-  }, []);
+  };
 
   function Accordion() {
     var acc = document.getElementsByClassName("accordion");
@@ -64,7 +34,6 @@ function FrequentlyAskedQuestions() {
         /* Toggle between adding and removing the "active" class,
     to highlight the button that controls the panel */
         this.classList.toggle("active");
-
         /* Toggle between hiding and showing the active panel */
         var panel = this.nextElementSibling;
         if (panel.style.display === "block") {
@@ -75,6 +44,22 @@ function FrequentlyAskedQuestions() {
       });
     }
   }
+
+  function selectCategory(e) {
+
+    if (!selection ) {
+      setSelection(e.target.value);
+      console.log(selection);
+    } else {
+      setSelection([]);
+      console.log(selection);
+    }
+  }
+
+  const onChange = (e) => {
+    setSelection({ selection : e.target.value})
+  }
+
   return (
     <>
       <Header />
@@ -104,21 +89,22 @@ function FrequentlyAskedQuestions() {
                 {options.map((el, idx) => {
                   return (
                     <div classsName="optionBox">
-                      <p className="TitleFAQ">{el.name}</p>
-                      <img src={el.src} alt="" onClick={addItem}/>
+                      <p className="TitleFAQ" onClick={selectCategory}>
+                        {el.theme}
+                      </p>
+                      <img src={el.src} alt="" />
                     </div>
                   );
                 })}
               </div>
             </div>
           </div>
-              <div className="TitleSelectorContainer">
+
+          {/* <div className="TitleSelectorContainer">
 
               <p className="SecondaryTitle"> - Les questions fréquentes - </p>
               <p className="TitleFAQ">  {selection.length < 1 ? "Veuillez choisir une catégorie de question" : selection } </p>
-
-
-                </div>
+                </div> */}
         </Container>
       </Container>
     </>

@@ -7,7 +7,7 @@ import "./LargeScreen.css";
 /* Fin de l'import des différentes versions*/
 
 /* import styles des cartes*/
-import '../Clean/Cards/Cards.css'
+import "../Clean/Cards/Cards.css";
 
 import "../../components/Map/fonts.css";
 /* import de la librairie Leaflet*/
@@ -16,8 +16,10 @@ import MarkerClusterGroup from "react-leaflet-markercluster";
 import L from "leaflet";
 
 /* import du nécessaire React */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 /* import du Hook nécessaire à la Geoloc */
+
+
 import Geolocalisation from "../Hook/Geolocalisation";
 /* import de la librairie axios qui nous permettra de récupérer des données */
 
@@ -54,6 +56,8 @@ import Header from "../Header2/Header2.jsx";
 
 /*<------------------------IMPORT IMAGES ---------------------------------> */
 import btnNewSearch from "../../assets/CompressedPictures/Buttons/nouvelleRecherche.png";
+
+import useGeolocation from "../Hook/useGeolocation";
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -228,16 +232,6 @@ function Clean() {
     window.location.href = "#cardClub";
   }
 
-  /* trier les villes par odre ? */
-
-  function Alphabet() {
-    let tableauVilles = allcities
-    let tableauVilleRangees = tableauVilles.sort()
-    let tableaufinal = tableauVilleRangees.reverse()
-    console.log('alphabet', tableaufinal)
-  }
-
-
   // Fonction handle qui va gérer les changements des inputs
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.name]: e.target.value });
@@ -265,10 +259,6 @@ function Clean() {
   useEffect(() => {
     setClubs(data);
   }, []);
-
-  useEffect(() => {
-    Alphabet()
-  })
 
   // UseEffect qui gere le changement d'etat en fonction de l'age
   //Règle numéro 1: Si ageUtilisateur inférieur a 18, il faut désactiver la catégorie Loisir
@@ -310,6 +300,60 @@ function Clean() {
 
   console.log("Recherche", clubSearch);
 
+  /* FONCTION DE GEOLOCALISATION */
+
+  const location = useGeolocation();
+  const mapRef = useRef();
+
+  const showMyLocation = () => {
+    if (location.loaded && !location.error) {
+      map.flyTo([location.coordinates.lat, location.coordinates.lng], 15, {
+        animate: true,
+      });
+
+      console.log('la suite du code fonctionne')
+    } else {
+      alert(location.error.message);
+    }
+  };
+
+  const [clubsClose, setclubsClose] = useState([]);
+  const [latMin, setLatMin] = useState(0)
+  const [latMax, setLatMax] = useState(0)
+  const [lngMin, setLngMin] = useState(0)
+  const [lngMax, setLngMax] = useState(0)
+
+  useEffect(() => {
+    if (location.loaded === true) {
+      setLatMin(location.coordinates.lat - 0.08)
+      setLatMax(location.coordinates.lat + 0.08)
+      setLngMin(location.coordinates.lng - 0.08)
+      setLngMax(location.coordinates.lng + 0.08)
+    } else {
+      setLatMin(0)
+      setLatMax(0)
+      setLngMin(0)
+      setLngMax(0)
+    }
+  }, [location])
+
+  let clubsProches = clubs.filter(function(clubsAlentour){
+    // console.log(clubsAlentour)
+    return(
+      clubsAlentour.Latitude <= latMax && clubsAlentour.Latitude >= latMin && clubsAlentour.Longitude <= lngMax && clubsAlentour.Longitude >= lngMin
+    )
+  })
+
+  useEffect(() => {
+    setclubsClose(clubsProches.length)
+  }, [clubsProches])
+
+
+
+
+
+
+
   return (
     <>
       <Header />
@@ -327,8 +371,8 @@ function Clean() {
             541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
           </h2>
           <h4 className="secondaryDescription">
-            La Ligue Centre-Val de Loire de Football vous propose cette plateforme afin de découvrir
-            l'ensemble des clubs de notre Région !
+            La Ligue Centre-Val de Loire de Football vous propose cette
+            plateforme afin de découvrir l'ensemble des clubs de notre Région !
           </h4>
         </div>
 
@@ -346,7 +390,9 @@ function Clean() {
         <div className="mainContainer">
           <div className="mapContainer">
             <div className="legendContainer">
-              <p className="mapTitle" id='redirect'>CARTE INTERACTIVE</p>
+              <p className="mapTitle" id="redirect">
+                CARTE INTERACTIVE
+              </p>
             </div>
 
             <div className="BlocCarte">
@@ -360,13 +406,38 @@ function Clean() {
                 doubleClickZoom={true}
                 zoomControl={true}
                 whenCreated={setMap}
+                ref={mapRef}
               >
                 <TileLayer
                   attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
 
-                <Geolocalisation />
+                {/* <Geolocalisation /> */}
+
+                {location.loaded && !location.error && (
+                  <Marker
+                    position={[
+                      location.coordinates.lat,
+                      location.coordinates.lng,
+                    ]}
+                  >
+                    <Popup>
+                      Il y a {clubsProches.length} clubs près de chez vous : 
+                      {clubsProches.map((el) => {
+                        return (
+                        <span>
+                         || {el.NomClub} ||
+
+                        </span>)
+
+                      })}
+                    
+
+
+                    </Popup>
+                  </Marker>
+                )}
 
                 <MarkerClusterGroup
                   animate={true}
@@ -404,6 +475,7 @@ function Clean() {
               </MapContainer>
             </div>
             <Legend />
+            <button onClick={showMyLocation}>ME LOCALISER</button>
           </div>
 
           <div
@@ -420,11 +492,12 @@ function Clean() {
                 clubSearch.map((clubSelected, Uniqueindex) => {
                   return (
                     <div
-                      className={clubSelected.label.length > 0
+                      className={
+                        clubSelected.label.length > 0
                           ? "cardResultLabel"
-                          : "cardResult"}
-                          id='cardClub'
-                          
+                          : "cardResult"
+                      }
+                      id="cardClub"
                     >
                       <div className="titleCardContainer">
                         <span className="titleCard" onClick={scrollTop}>
@@ -458,7 +531,6 @@ function Clean() {
                             >
                               Voir plus d'infos
                             </a>
-                             
                           </div>
                         </div>
                       </div>
