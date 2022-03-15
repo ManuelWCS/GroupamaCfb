@@ -11,14 +11,13 @@ import "../Clean/Cards/Cards.css";
 
 import "../../components/Map/fonts.css";
 /* import de la librairie Leaflet*/
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, Circle } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import L from "leaflet";
 
 /* import du nécessaire React */
 import { useState, useEffect, useRef } from "react";
 /* import du Hook nécessaire à la Geoloc */
-
 
 import Geolocalisation from "../Hook/Geolocalisation";
 /* import de la librairie axios qui nous permettra de récupérer des données */
@@ -303,56 +302,84 @@ function Clean() {
   /* FONCTION DE GEOLOCALISATION */
 
   const location = useGeolocation();
-  const mapRef = useRef();
+  // const mapRef = useRef();
 
-  const showMyLocation = () => {
+  const showMyLocation = (e) => {
     if (location.loaded && !location.error) {
       map.flyTo([location.coordinates.lat, location.coordinates.lng], 15, {
         animate: true,
       });
 
-      console.log('la suite du code fonctionne')
     } else {
       alert(location.error.message);
     }
   };
 
   const [clubsClose, setclubsClose] = useState([]);
-  const [latMin, setLatMin] = useState(0)
-  const [latMax, setLatMax] = useState(0)
-  const [lngMin, setLngMin] = useState(0)
-  const [lngMax, setLngMax] = useState(0)
+  const [latMin, setLatMin] = useState(0);
+  const [latMax, setLatMax] = useState(0);
+  const [lngMin, setLngMin] = useState(0);
+  const [lngMax, setLngMax] = useState(0);
 
   useEffect(() => {
     if (location.loaded === true) {
-      setLatMin(location.coordinates.lat - 0.08)
-      setLatMax(location.coordinates.lat + 0.08)
-      setLngMin(location.coordinates.lng - 0.08)
-      setLngMax(location.coordinates.lng + 0.08)
+      setLatMin(location.coordinates.lat - 0.08);
+      setLatMax(location.coordinates.lat + 0.08);
+      setLngMin(location.coordinates.lng - 0.08);
+      setLngMax(location.coordinates.lng + 0.08);
     } else {
-      setLatMin(0)
-      setLatMax(0)
-      setLngMin(0)
-      setLngMax(0)
+      setLatMin(0);
+      setLatMax(0);
+      setLngMin(0);
+      setLngMax(0);
     }
-  }, [location])
+  }, [location]);
 
-  let clubsProches = clubs.filter(function(clubsAlentour){
+  let clubsProches = clubs.filter(function (clubsAlentour) {
     // console.log(clubsAlentour)
-    return(
-      clubsAlentour.Latitude <= latMax && clubsAlentour.Latitude >= latMin && clubsAlentour.Longitude <= lngMax && clubsAlentour.Longitude >= lngMin
-    )
-  })
+    return (
+      clubsAlentour.Latitude <= latMax &&
+      clubsAlentour.Latitude >= latMin &&
+      clubsAlentour.Longitude <= lngMax &&
+      clubsAlentour.Longitude >= lngMin
+    );
+  });
 
   useEffect(() => {
-    setclubsClose(clubsProches.length)
-  }, [clubsProches])
+    setclubsClose(clubsProches.length);
+  }, [clubsProches]);
+
+  /* CERCLE DE 10KM DE RAYON */
+
+  // function MonCercle() {
+  //   const circleRef = useRef();
+
+  //   useEffect(() => {
+  //     const radius = circleRef.current.getRadius();
+  //   });
+    
+
+  //   if(location.loaded === true ) {
 
 
+  //     return (
+  //       <Circle
+  //         ref={circleRef}
+  //         center={[location.coordinates.lat, location.coordinates.lng]}
+  //         radius={1000}
+  //       />
+  //     );
 
 
+  //   } else {
+  //     return(
 
+  //       null 
 
+  //     )
+  //   }
+
+  // }
 
   return (
     <>
@@ -406,7 +433,7 @@ function Clean() {
                 doubleClickZoom={true}
                 zoomControl={true}
                 whenCreated={setMap}
-                ref={mapRef}
+                // ref={mapRef}
               >
                 <TileLayer
                   attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -423,21 +450,21 @@ function Clean() {
                     ]}
                   >
                     <Popup>
-                      Il y a {clubsProches.length} clubs près de chez vous : 
-                      {clubsProches.map((el) => {
-                        return (
-                        <span>
-                         || {el.NomClub} ||
-
-                        </span>)
-
-                      })}
-                    
-
-
+                      Il y a {clubsProches.length} clubs près de chez vous :
                     </Popup>
                   </Marker>
                 )}
+
+                {/* <MonCercle /> */}
+
+                {clubsProches.map((cloub) => {
+                  return (
+                    <Marker
+                      position={[cloub.Latitude, cloub.Longitude]}
+                      icon={clubMarqueur}
+                    />
+                  );
+                })}
 
                 <MarkerClusterGroup
                   animate={true}
