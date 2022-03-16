@@ -74,7 +74,7 @@ function Clean() {
 
   console.log(formData);
 
-  // POP UP DETAILS DES CATEGORIES
+  /* POP UP DETAILS DES CATEGORIES  ET STYLE DU MODAL */
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -105,7 +105,6 @@ function Clean() {
     borderRadius: 12,
     p: 4,
   };
-  const [clubs, setClubs] = useState([]);
 
   // PopUp en cas d'erreur
 
@@ -116,6 +115,7 @@ function Clean() {
   };
   const [Declenche, setDeclenche] = useState(false);
 
+  const [clubs, setClubs] = useState([]);
   // Paramétrage des inputs radio lors de la sélection
 
   const [inputLoisir, setinputLoisir] = useState(false);
@@ -134,7 +134,7 @@ function Clean() {
     iconUrl: LabelMarker,
   });
 
-  /* Fonction pour chercher un club */
+  /*<<<<<<<<<<<<<<<<< Fonction pour chercher un club  >>>>>>>>>>>>>>>>>*/
 
   const searchClub = (e) => {
     e.preventDefault();
@@ -223,6 +223,8 @@ function Clean() {
     setDeclenche(true);
   };
 
+  /* <<<<<<<<<<<<<<<<<<<<FONCTION DE NAVIGATION>>>>>>>>>>>>>>>>>>>*/
+
   function scrollTop() {
     window.location.href = "#redirect";
   }
@@ -299,17 +301,17 @@ function Clean() {
 
   console.log("Recherche", clubSearch);
 
-  /* FONCTION DE GEOLOCALISATION */
+  /* FONCTION DE GEOLOCALISATION AVEC LES CLUBS AUX ALENTOURS */
 
   const location = useGeolocation();
   // const mapRef = useRef();
 
   const showMyLocation = (e) => {
     if (location.loaded && !location.error) {
+      setProximity(true);
       map.flyTo([location.coordinates.lat, location.coordinates.lng], 15, {
         animate: true,
       });
-
     } else {
       alert(location.error.message);
     }
@@ -323,11 +325,13 @@ function Clean() {
 
   useEffect(() => {
     if (location.loaded === true) {
+      setProximity(true);
       setLatMin(location.coordinates.lat - 0.08);
       setLatMax(location.coordinates.lat + 0.08);
       setLngMin(location.coordinates.lng - 0.08);
       setLngMax(location.coordinates.lng + 0.08);
     } else {
+      setProximity(false);
       setLatMin(0);
       setLatMax(0);
       setLngMin(0);
@@ -347,39 +351,10 @@ function Clean() {
 
   useEffect(() => {
     setclubsClose(clubsProches.length);
+    console.log(proximity, "<- statut de la loc");
   }, [clubsProches]);
 
-  /* CERCLE DE 10KM DE RAYON */
-
-  // function MonCercle() {
-  //   const circleRef = useRef();
-
-  //   useEffect(() => {
-  //     const radius = circleRef.current.getRadius();
-  //   });
-    
-
-  //   if(location.loaded === true ) {
-
-
-  //     return (
-  //       <Circle
-  //         ref={circleRef}
-  //         center={[location.coordinates.lat, location.coordinates.lng]}
-  //         radius={1000}
-  //       />
-  //     );
-
-
-  //   } else {
-  //     return(
-
-  //       null 
-
-  //     )
-  //   }
-
-  // }
+  const [proximity, setProximity] = useState(false);
 
   return (
     <>
@@ -455,16 +430,27 @@ function Clean() {
                   </Marker>
                 )}
 
-                {/* <MonCercle /> */}
+                {proximity === true ? (
+                  <Circle
+                    center={[
+                      location.coordinates.lat,
+                      location.coordinates.lng,
+                    ]}
+                    radius={10000}
+                    pathOptions={{ color: "green" }}
+                  />
+                ) : null}
 
-                {clubsProches.map((cloub) => {
+                {/* {clubsProches.map((cloub) => {
                   return (
                     <Marker
                       position={[cloub.Latitude, cloub.Longitude]}
                       icon={clubMarqueur}
-                    />
+                    >
+                      <Popup className="markersPopUp">{cloub.NomClub}</Popup>
+                    </Marker>
                   );
-                })}
+                })} */}
 
                 <MarkerClusterGroup
                   animate={true}
@@ -502,7 +488,11 @@ function Clean() {
               </MapContainer>
             </div>
             <Legend />
-            <button onClick={showMyLocation}>ME LOCALISER</button>
+            {proximity === true ? (
+              <button onClick={showMyLocation}>ME LOCALISER</button>
+            ) : (
+              <button>Activer ma geoloc </button>
+            )}
           </div>
 
           <div
@@ -554,7 +544,8 @@ function Clean() {
                           </div>
                           <div className="info3">
                             <a
-                              href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}
+                              href={`https://foot-centre.fff.fr/recherche-clubs/?query-affil=${clubSelected.NumClub}`}
+                              target="_blank"
                             >
                               Voir plus d'infos
                             </a>

@@ -87,7 +87,7 @@ function Instaces() {
     
         },
         {
-            name : "District de Football d'Eure Et Loire",
+            name : "District de Football d'Eure Et Loir",
             position: [48.42918, 1.46021],
             link: "https://eure-et-loir.fff.fr/",
             icon: eureEtLoirMarqueur,
