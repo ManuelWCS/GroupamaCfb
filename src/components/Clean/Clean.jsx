@@ -314,7 +314,7 @@ function Clean() {
       setProximity(true);
       map.flyTo([location.coordinates.lat, location.coordinates.lng], 15, {
         animate: true,
-      });
+      })
     } else {
       alert(location.error.message);
     }
@@ -534,7 +534,7 @@ function Clean() {
             <span>Distance : 1 à 25km</span>
             <Slider
               aria-label="Distance"
-              defaultValue={25}
+              defaultValue={10}
               getAriaValueText={valuetext}
               // getAriaLabel={true}
               valueLabelDisplay="on"
