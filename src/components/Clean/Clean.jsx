@@ -58,6 +58,9 @@ import btnNewSearch from "../../assets/CompressedPictures/Buttons/nouvelleRecher
 
 import useGeolocation from "../Hook/useGeolocation";
 
+/* import SLIDER  */
+import Slider from "@mui/material/Slider";
+
 function Clean() {
   const [allcities, setallcities] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -123,7 +126,7 @@ function Clean() {
   // Hook qui permets de charger le loader :
 
   const clubMarqueur = L.icon({
-    iconSize: [55, 60],
+    iconSize: [65, 60],
     iconAnchor: [13.5, 47],
     iconUrl: clubMarker,
   });
@@ -326,10 +329,10 @@ function Clean() {
   useEffect(() => {
     if (location.loaded === true) {
       setProximity(true);
-      setLatMin(location.coordinates.lat - 0.08);
-      setLatMax(location.coordinates.lat + 0.08);
-      setLngMin(location.coordinates.lng - 0.08);
-      setLngMax(location.coordinates.lng + 0.08);
+      setLatMin(location.coordinates.lat - convertedDistance);
+      setLatMax(location.coordinates.lat + convertedDistance);
+      setLngMin(location.coordinates.lng - convertedDistance);
+      setLngMax(location.coordinates.lng + convertedDistance);
     } else {
       setProximity(false);
       setLatMin(0);
@@ -337,6 +340,7 @@ function Clean() {
       setLngMin(0);
       setLngMax(0);
     }
+    
   }, [location]);
 
   let clubsProches = clubs.filter(function (clubsAlentour) {
@@ -347,6 +351,7 @@ function Clean() {
       clubsAlentour.Longitude <= lngMax &&
       clubsAlentour.Longitude >= lngMin
     );
+    
   });
 
   useEffect(() => {
@@ -355,6 +360,36 @@ function Clean() {
   }, [clubsProches]);
 
   const [proximity, setProximity] = useState(false);
+
+  /* Mapper les clubs proches de l'utilisateur */
+
+  /* SLIDER*/
+  const [valeurSlider, setValeurSlider] = useState(0);
+  const [rayon, setRayon] = useState(0);
+  const [distance, setDistance] = useState(0);
+  const [convertedDistance, setConvertedDistance] = useState(0)
+
+  function valuetext(value) {
+    setValeurSlider(value);
+    console.log(valeurSlider);
+    changeRadius();
+  }
+
+  function changeRadius() {
+    setDistance(valeurSlider);
+
+    let RayonCercle = distance + "000";
+
+    setConvertedDistance(distance / 100)
+    console.log('yo typeof', typeof(distance))
+
+
+    setRayon(RayonCercle);
+    console.log(convertedDistance, 'distance convertie')
+
+    console.log(RayonCercle);
+    console.log(distance, "distance");
+  }
 
   return (
     <>
@@ -436,12 +471,12 @@ function Clean() {
                       location.coordinates.lat,
                       location.coordinates.lng,
                     ]}
-                    radius={10000}
+                    radius={rayon}
                     pathOptions={{ color: "green" }}
                   />
                 ) : null}
 
-                {/* {clubsProches.map((cloub) => {
+                {clubsProches.map((cloub) => {
                   return (
                     <Marker
                       position={[cloub.Latitude, cloub.Longitude]}
@@ -450,7 +485,7 @@ function Clean() {
                       <Popup className="markersPopUp">{cloub.NomClub}</Popup>
                     </Marker>
                   );
-                })} */}
+                })}
 
                 <MarkerClusterGroup
                   animate={true}
@@ -494,6 +529,21 @@ function Clean() {
               <button>Activer ma geoloc </button>
             )}
           </div>
+
+          <Box sx={{ width: 300 }}>
+            <span>Distance : 1 à 25km</span>
+            <Slider
+              aria-label="Distance"
+              defaultValue={25}
+              getAriaValueText={valuetext}
+              // getAriaLabel={true}
+              valueLabelDisplay="on"
+              step={1}
+              marks={true}
+              min={1}
+              max={25}
+            />
+          </Box>
 
           <div
             className={clubSearch.length !== 0 ? "formContainer" : "dataResult"}
@@ -546,6 +596,7 @@ function Clean() {
                             <a
                               href={`https://foot-centre.fff.fr/recherche-clubs/?query-affil=${clubSelected.NumClub}`}
                               target="_blank"
+                              rel="noreferrer"
                             >
                               Voir plus d'infos
                             </a>
