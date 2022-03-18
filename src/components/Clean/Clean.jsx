@@ -528,8 +528,6 @@ function Clean() {
             ) : (
               <button>Activer ma geoloc </button>
             )}
-          </div>
-
           <Box sx={{ width: 300 }}>
             <span>Distance : 1 à 25km</span>
             <Slider
@@ -544,6 +542,8 @@ function Clean() {
               max={25}
             />
           </Box>
+          </div>
+
 
           <div
             className={clubSearch.length !== 0 ? "formContainer" : "dataResult"}
