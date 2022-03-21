@@ -60,7 +60,7 @@ import Header from "../Header2/Header2.jsx";
 import btnNewSearch from "../../assets/CompressedPictures/Buttons/nouvelleRecherche.png";
 import btnPicture from "../../assets/CompressedPictures/buttontransparent.webp";
 
-import useGeolocation from "../Hook/useGeolocation";
+import useGeolocation from "../Hook/Newhook";
 
 /* import SLIDER  */
 
@@ -357,6 +357,8 @@ function Clean() {
     );
   });
 
+ 
+
   useEffect(() => {
     setclubsClose(clubsProches.length);
     console.log(proximity, "<- statut de la loc");
@@ -392,6 +394,7 @@ function Clean() {
     // console.log(RayonCercle);
     // console.log(distance, "distance");
   }
+
 
   return (
     <>
@@ -521,7 +524,7 @@ function Clean() {
               </MapContainer>
             </div>
 
-            {location.loaded === true && proximity === true ?  (
+            {/* {location.loaded === true && proximity === true ?  (
               <Box sx={{ width: 300 }}>
                 <span>Distance : 1 à 25km</span>
                 <Slider
@@ -549,7 +552,7 @@ function Clean() {
 
             
             
-            }
+            } */}
 
             <Legend />
             {proximity === true ? (
