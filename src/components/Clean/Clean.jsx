@@ -11,13 +11,19 @@ import "../Clean/Cards/Cards.css";
 
 import "../../components/Map/fonts.css";
 /* import de la librairie Leaflet*/
-import { MapContainer, TileLayer, Marker, Popup, Circle } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  Circle,
+  useMapEvents,
+} from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import L from "leaflet";
 
 /* import du nécessaire React */
-import { useState, useEffect, useRef } from "react";
-
+import { useState, useEffect } from "react";
 
 /* import des marqueurs promotionnels*/
 import LabelMarker from "../../assets/CA/labelCA.png";
@@ -72,7 +78,7 @@ function Clean() {
     category: "",
   });
 
-  console.log(formData);
+  // console.log(formData);
 
   /* POP UP DETAILS DES CATEGORIES  ET STYLE DU MODAL */
   const [open, setOpen] = useState(false);
@@ -255,6 +261,7 @@ function Clean() {
 
   useEffect(() => {
     setCategories(categoriesData);
+    console.log(clubSearch, "ce kon cherche");
   }, []);
 
   useEffect(() => {
@@ -311,9 +318,9 @@ function Clean() {
       setProximity(true);
       map.flyTo([location.coordinates.lat, location.coordinates.lng], 15, {
         animate: true,
-      })
+      });
     } else {
-      alert(location.error.message);
+      console.log("il se passe quelque chose de terrible ");
     }
   };
 
@@ -330,47 +337,47 @@ function Clean() {
       setLatMax(location.coordinates.lat + convertedDistance);
       setLngMin(location.coordinates.lng - convertedDistance);
       setLngMax(location.coordinates.lng + convertedDistance);
-      console.log(location)
+      console.log(location.coordinates);
+      console.log(clubsProches);
     } else {
-    
       setProximity(false);
       setLatMin(0);
       setLatMax(0);
       setLngMin(0);
       setLngMax(0);
     }
-    
   }, [location]);
 
   let clubsProches = clubs.filter(function (clubsAlentour) {
-    // console.log(clubsAlentour)
     return (
       clubsAlentour.Latitude <= latMax &&
       clubsAlentour.Latitude >= latMin &&
       clubsAlentour.Longitude <= lngMax &&
       clubsAlentour.Longitude >= lngMin
     );
-    
   });
+
+ 
 
   useEffect(() => {
     setclubsClose(clubsProches.length);
     console.log(proximity, "<- statut de la loc");
+    console.log(location, "GPS ");
+    console.log(clubsProches, "tema les clubs proches");
   }, [clubsProches]);
 
   const [proximity, setProximity] = useState(false);
 
-  /* Mapper les clubs proches de l'utilisateur */
+  /* Centrer jusqu'à position utilisateur */
 
   /* SLIDER*/
   const [valeurSlider, setValeurSlider] = useState(0);
   const [rayon, setRayon] = useState(0);
   const [distance, setDistance] = useState(0);
-  const [convertedDistance, setConvertedDistance] = useState(0)
+  const [convertedDistance, setConvertedDistance] = useState(0);
 
   function valuetext(value) {
     setValeurSlider(value);
-    console.log(valeurSlider);
     changeRadius();
   }
 
@@ -379,16 +386,15 @@ function Clean() {
 
     let RayonCercle = distance + "000";
 
-    setConvertedDistance(distance / 100)
-    console.log('yo typeof', typeof(distance))
-
+    setConvertedDistance(distance / 100);
 
     setRayon(RayonCercle);
-    console.log(convertedDistance, 'distance convertie')
+    // console.log(convertedDistance, 'distance convertie')
 
-    console.log(RayonCercle);
-    console.log(distance, "distance");
+    // console.log(RayonCercle);
+    // console.log(distance, "distance");
   }
+
 
   return (
     <>
@@ -448,8 +454,6 @@ function Clean() {
                   attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-
-
                 {location.loaded && !location.error && (
                   <Marker
                     position={[
@@ -459,10 +463,10 @@ function Clean() {
                   >
                     <Popup>
                       Il y a {clubsProches.length} clubs près de chez vous :
+                      sinon y'a close : {clubsClose} et open pop :
                     </Popup>
                   </Marker>
                 )}
-
                 {proximity === true ? (
                   <Circle
                     center={[
@@ -516,30 +520,26 @@ function Clean() {
                       })
                     : null}
                 </MarkerClusterGroup>
-
                 <Instances />
               </MapContainer>
             </div>
 
-            {location.loaded === true ?
-          <Box sx={{ width: 300 }}>
-            <span>Distance : 1 à 25km</span>
-            <Slider
-              aria-label="Distance"
-              defaultValue={10}
-              getAriaValueText={valuetext}
-              // getAriaLabel={true}
-              valueLabelDisplay="on"
-              step={1}
-              marks={true}
-              min={1}
-              max={25}
-            />
-          </Box> : null } 
-
-
-
-
+            {location.loaded === true ? (
+              <Box sx={{ width: 300 }}>
+                <span>Distance : 1 à 25km</span>
+                <Slider
+                  aria-label="Distance"
+                  defaultValue={10}
+                  getAriaValueText={valuetext}
+                  // getAriaLabel={true}
+                  valueLabelDisplay="on"
+                  step={1}
+                  marks={true}
+                  min={1}
+                  max={25}
+                />
+              </Box>
+            ) : null}
 
             <Legend />
             {proximity === true ? (
@@ -548,7 +548,6 @@ function Clean() {
               <button>Activer ma geoloc </button>
             )}
           </div>
-
 
           <div
             className={clubSearch.length !== 0 ? "formContainer" : "dataResult"}
@@ -570,6 +569,7 @@ function Clean() {
                           : "cardResult"
                       }
                       id="cardClub"
+                      index={Uniqueindex}
                     >
                       <div className="titleCardContainer">
                         <span className="titleCard" onClick={scrollTop}>
@@ -825,17 +825,13 @@ function Clean() {
                     </div>
 
                     <div className="btnContainer" id="test2">
-                      <button
-                        className="btnBackground"
+                      <img
+                        className="findclubBtn"
+                        alt="trouvez votre club"
+                        src={btnPicture}
+                        onClick={searchClub}
                         id="scrollBtn"
-                        type="submit"
-                      >
-                        <img
-                          className="findclubBtn"
-                          alt="trouvez votre club"
-                          src={btnPicture}
-                        />
-                      </button>
+                      />
                     </div>
                   </form>
                 </div>
@@ -874,7 +870,7 @@ function Clean() {
               </Modal>
             </div>
 
-            <div className={clubSearch.length !== 0 ? "toggleSearch" : "hide "}>
+            <div className={clubSearch.length === 0 ? "hide" : "toggleSearch "}>
               <img
                 src={btnNewSearch}
                 className="newSearchBtn"

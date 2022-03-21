@@ -45,7 +45,7 @@ const useGeolocation = () => {
         Sans localisation votre position est automatiquement assignée à ORLEANS`
         if (!("geolocation" in navigator)) {
         PositionError({
-            message: console.warn(message)
+            message: console.log('problem')
 
         });
         } 

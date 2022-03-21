@@ -1,14 +1,19 @@
-import React, {useState, useEffect } from 'react';
-import {Marker, Popup, useMap } from "react-leaflet";
+import React, { useEffect } from 'react';
+import {Marker, Popup, map } from "react-leaflet";
 import L from "leaflet";
 import '../Map/Map.css'
+import { useState } from 'react';
 
 import marqueurUtilisateur from '../../assets/CompressedPictures/Markers/userMarker.png'
 
 
 
 function Geolocalisation() {
+    
+    const [map, SetMap] = useState(null)
     const [positionFound, setPositionFound] = useState(null)
+
+    
     
     L.icon({
         iconSize: [25, 41],
@@ -24,15 +29,14 @@ function Geolocalisation() {
           iconUrl:  marqueurUtilisateur,
       })
 
-      const map = useMap();
 
       useEffect(() => {
-          map.locate().on("locationfound", function(e) {
-              setPositionFound(e.latlng);
-              map.flyTo(e.latlng, map.getZoom());
-              
-   })
-      }, [map]);
+        map.locate().on("locationfound", function(e) {
+            setPositionFound(e.latlng);
+            map.flyTo(e.latlng, map.getZoom());
+            
+ })
+    }, [map]);
 
     return positionFound === null ? "Geolocalisation not supported" : (
         <Marker className="MyPosition"position={positionFound} icon={utilisateurMarqueur} >
