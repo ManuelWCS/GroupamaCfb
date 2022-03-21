@@ -17,10 +17,7 @@ import L from "leaflet";
 
 /* import du nécessaire React */
 import { useState, useEffect, useRef } from "react";
-/* import du Hook nécessaire à la Geoloc */
 
-import Geolocalisation from "../Hook/Geolocalisation";
-/* import de la librairie axios qui nous permettra de récupérer des données */
 
 /* import des marqueurs promotionnels*/
 import LabelMarker from "../../assets/CA/labelCA.png";
@@ -43,8 +40,8 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Autocomplete from "@mui/material/Autocomplete";
-import btnPicture from "../../assets/CompressedPictures/buttontransparent.webp";
 import Button2 from "@mui/material/Button";
+import Slider from "@mui/material/Slider";
 
 /*<------------------------IMPORT COMPOSANTS ---------------------------------> */
 import Faq from "../FAQ/Faq";
@@ -55,11 +52,11 @@ import Header from "../Header2/Header2.jsx";
 
 /*<------------------------IMPORT IMAGES ---------------------------------> */
 import btnNewSearch from "../../assets/CompressedPictures/Buttons/nouvelleRecherche.png";
+import btnPicture from "../../assets/CompressedPictures/buttontransparent.webp";
 
-import useGeolocation from "../Hook/useGeolocation";
+import useGeolocation from "../Hook/Newhook";
 
 /* import SLIDER  */
-import Slider from "@mui/material/Slider";
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -333,7 +330,9 @@ function Clean() {
       setLatMax(location.coordinates.lat + convertedDistance);
       setLngMin(location.coordinates.lng - convertedDistance);
       setLngMax(location.coordinates.lng + convertedDistance);
+      console.log(location)
     } else {
+    
       setProximity(false);
       setLatMin(0);
       setLatMax(0);
@@ -450,7 +449,6 @@ function Clean() {
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
 
-                {/* <Geolocalisation /> */}
 
                 {location.loaded && !location.error && (
                   <Marker
@@ -522,12 +520,8 @@ function Clean() {
                 <Instances />
               </MapContainer>
             </div>
-            <Legend />
-            {proximity === true ? (
-              <button onClick={showMyLocation}>ME LOCALISER</button>
-            ) : (
-              <button>Activer ma geoloc </button>
-            )}
+
+            {location.loaded === true ?
           <Box sx={{ width: 300 }}>
             <span>Distance : 1 à 25km</span>
             <Slider
@@ -541,7 +535,18 @@ function Clean() {
               min={1}
               max={25}
             />
-          </Box>
+          </Box> : null } 
+
+
+
+
+
+            <Legend />
+            {proximity === true ? (
+              <button onClick={showMyLocation}>ME LOCALISER</button>
+            ) : (
+              <button>Activer ma geoloc </button>
+            )}
           </div>
 
 

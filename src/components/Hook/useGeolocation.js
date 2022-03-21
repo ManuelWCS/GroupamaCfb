@@ -23,12 +23,23 @@ const useGeolocation = () => {
 
 
   const onError = (error) => {
+    let message = 'Veuillez activer la localisation pour voir les clubs près de chez vous'
+
       setLocation({
           loaded: true,
-          error: {
-              code: error.code,
-              message : error.message,
-          },
+        //   error: {
+        //       code: error.code,
+        //       message : error.message,
+        //   },
+        coordinates: {
+            lat : "47.902964",
+            lng: "1.909251"
+        },
+
+        error : {
+            code: error.code,
+            message: message
+        }
       })
   };
 
