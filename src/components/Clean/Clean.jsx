@@ -552,7 +552,27 @@ function Clean() {
             }
 
             <Legend />
+            {proximity === true ? (
+              <button onClick={showMyLocation}>ME LOCALISER</button>
+            ) : (
+              <button>Activer ma geoloc </button>
+            )}
           </div>
+
+          <Box sx={{ width: 300 }}>
+            <span>Distance : 1 à 25km</span>
+            <Slider
+              aria-label="Distance"
+              defaultValue={10}
+              getAriaValueText={valuetext}
+              // getAriaLabel={true}
+              valueLabelDisplay="on"
+              step={1}
+              marks={true}
+              min={1}
+              max={25}
+            />
+          </Box>
 
           <div
             className={clubSearch.length !== 0 ? "formContainer" : "dataResult"}
