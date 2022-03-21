@@ -78,7 +78,7 @@ function Clean() {
     category: "",
   });
 
-  // console.log(formData);
+  // console.log(formData)
 
   /* POP UP DETAILS DES CATEGORIES  ET STYLE DU MODAL */
   const [open, setOpen] = useState(false);
@@ -521,7 +521,7 @@ function Clean() {
               </MapContainer>
             </div>
 
-            {location.loaded === true ? (
+            {location.loaded === true && proximity === true ?  (
               <Box sx={{ width: 300 }}>
                 <span>Distance : 1 à 25km</span>
                 <Slider
@@ -535,15 +535,23 @@ function Clean() {
                   min={1}
                   max={25}
                 />
+                <button onClick={showMyLocation}>ME LOCALISER</button>
+
+
+
+
+
               </Box>
-            ) : null}
+
+
+            ) : 
+            <button>Activer ma geoloc </button>
+
+            
+            
+            }
 
             <Legend />
-            {proximity === true ? (
-              <button onClick={showMyLocation}>ME LOCALISER</button>
-            ) : (
-              <button>Activer ma geoloc </button>
-            )}
           </div>
 
           <div
