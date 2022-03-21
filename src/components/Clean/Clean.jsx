@@ -60,7 +60,7 @@ import Header from "../Header2/Header2.jsx";
 import btnNewSearch from "../../assets/CompressedPictures/Buttons/nouvelleRecherche.png";
 import btnPicture from "../../assets/CompressedPictures/buttontransparent.webp";
 
-import useGeolocation from "../Hook/Newhook";
+import useGeolocation from "../Hook/useGeolocation";
 
 /* import SLIDER  */
 
@@ -357,8 +357,6 @@ function Clean() {
     );
   });
 
- 
-
   useEffect(() => {
     setclubsClose(clubsProches.length);
     console.log(proximity, "<- statut de la loc");
@@ -394,7 +392,6 @@ function Clean() {
     // console.log(RayonCercle);
     // console.log(distance, "distance");
   }
-
 
   return (
     <>
