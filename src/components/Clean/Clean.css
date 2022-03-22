@@ -73,7 +73,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 10vw;
     margin: auto;
   }
 
@@ -172,11 +172,20 @@
     margin-top: calc(var(--spacing-large) * 2);
   }
 
+  .firstContainer {
+    width: 100vw;
+    height: 450px;
+    margin-top: 150px;
+    text-align: center;
+
+
+  }
+
   /*CONTAINER QUI CONTIENT LA MAP ET LE FORM  */
 
   .mainContainer {
     height: 700px;
-    width: 95vw;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -184,11 +193,13 @@
     align-content: stretch;
     margin: auto;
     justify-content: space-between;
+    background-color: blue;
   }
 
   #map {
-    height: 400px;
-    width: 520px;
+    height: 60vh;
+    width: 93vw;
+    margin:auto;
   }
 
   .mapTitle {
@@ -206,7 +217,7 @@
     justify-content: center;
     align-items: center;
     align-content: stretch;
-    padding-left: 32px;
+    margin-bottom: 250px;
   }
 
   .formContainer {

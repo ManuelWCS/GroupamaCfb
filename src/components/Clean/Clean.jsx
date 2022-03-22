@@ -414,9 +414,8 @@ function Clean() {
           </h6>
         </div>
 
-        <div className="mainContainer">
           <div className="mapContainer">
-            <div className="legendContainer">
+            <div className="firstContainer">
               <p className="mapTitle" id="redirect">
                 CARTE INTERACTIVE
               </p>
@@ -427,7 +426,7 @@ function Clean() {
                 className="mapLeaflet"
                 id="map"
                 center={[47.90289, 1.90389]}
-                zoom={13}
+                zoom={1}
                 scrollWheelZoom={true}
                 minZoom={6}
                 doubleClickZoom={true}
@@ -460,7 +459,7 @@ function Clean() {
                       location.coordinates.lng,
                     ]}
                     radius={rayon}
-                    pathOptions={{ color: "green" }}
+                    pathOptions={{ color: "blue" }}
                   />
                 ) : null}
 
@@ -512,7 +511,6 @@ function Clean() {
                 <Instances />
               </MapContainer>
             </div>
-            <Legend />
             {proximity === true ? (
               <button onClick={showMyLocation}>ME LOCALISER</button>
             ) : (
@@ -532,6 +530,7 @@ function Clean() {
               max={25}
             />
           </Box>
+          <Legend/>
           </div>
 
 
@@ -876,7 +875,6 @@ function Clean() {
         {/* Fin de desktopContainer*/}
 
         <Sponso />
-      </div>
     </>
   );
 }
