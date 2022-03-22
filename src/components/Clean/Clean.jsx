@@ -308,7 +308,7 @@ function Clean() {
 
   console.log("Recherche", clubSearch);
 
-  /* FONCTION DE GEOLOCALISATION AVEC LES CLUBS AUX ALENTOURS */
+  /* FONCTION DE GEOLOCALISATION AVEC LES CLUBS AUX ALENTOUR */
 
   const location = useGeolocation();
   // const mapRef = useRef();
