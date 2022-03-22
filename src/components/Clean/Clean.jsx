@@ -16,10 +16,8 @@ import MarkerClusterGroup from "react-leaflet-markercluster";
 import L from "leaflet";
 
 /* import du nécessaire React */
-import { useState, useEffect, useRef } from "react";
-/* import du Hook nécessaire à la Geoloc */
+import { useState, useEffect } from "react";
 
-import Geolocalisation from "../Hook/Geolocalisation";
 /* import de la librairie axios qui nous permettra de récupérer des données */
 
 /* import des marqueurs promotionnels*/
