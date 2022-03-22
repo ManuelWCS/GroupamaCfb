@@ -352,43 +352,35 @@ function Clean() {
     
   });
 
+
   useEffect(() => {
     setclubsClose(clubsProches.length);
     console.log(proximity, "<- statut de la loc");
   }, [clubsProches]);
-
-  const [proximity, setProximity] = useState(false);
-
-  /* Mapper les clubs proches de l'utilisateur */
-
-  /* SLIDER*/
+  
+  const [proximity, setProximity] = useState(false); 
+  const [convertedDistance, setConvertedDistance] = useState(0)
   const [valeurSlider, setValeurSlider] = useState(0);
   const [rayon, setRayon] = useState(0);
   const [distance, setDistance] = useState(0);
-  const [convertedDistance, setConvertedDistance] = useState(0)
+  
+
+
+
 
   function valuetext(value) {
     setValeurSlider(value);
-    console.log(valeurSlider);
     changeRadius();
   }
 
+
+
   function changeRadius() {
     setDistance(valeurSlider);
-
     let RayonCercle = distance + "000";
-
     setConvertedDistance(distance / 100)
-    console.log('yo typeof', typeof(distance))
-
-
     setRayon(RayonCercle);
-    console.log(convertedDistance, 'distance convertie')
-
-    console.log(RayonCercle);
-    console.log(distance, "distance");
   }
-
   return (
     <>
       <Header />
@@ -441,14 +433,12 @@ function Clean() {
                 doubleClickZoom={true}
                 zoomControl={true}
                 whenCreated={setMap}
-                // ref={mapRef}
               >
                 <TileLayer
                   attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
 
-                {/* <Geolocalisation /> */}
 
                 {location.loaded && !location.error && (
                   <Marker
@@ -474,16 +464,18 @@ function Clean() {
                   />
                 ) : null}
 
-                {clubsProches.map((cloub) => {
+                {clubsProches.map((cloub, idxClub) => {
                   return (
                     <Marker
                       position={[cloub.Latitude, cloub.Longitude]}
                       icon={clubMarqueur}
+                      key={idxClub}
                     >
                       <Popup className="markersPopUp">{cloub.NomClub}</Popup>
                     </Marker>
                   );
                 })}
+
 
                 <MarkerClusterGroup
                   animate={true}
