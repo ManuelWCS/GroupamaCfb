@@ -18,8 +18,6 @@ import L from "leaflet";
 /* import du nécessaire React */
 import { useState, useEffect } from "react";
 
-/* import de la librairie axios qui nous permettra de récupérer des données */
-
 /* import des marqueurs promotionnels*/
 import LabelMarker from "../../assets/CA/labelCA.png";
 
@@ -58,6 +56,12 @@ import useGeolocation from "../Hook/useGeolocation";
 
 /* import SLIDER  */
 import Slider from "@mui/material/Slider";
+
+/* Marqueur utilisateur*/
+import UsrMkr from "../../components/MarkersUtilisateur/MarkersUser.jsx";
+
+import CloseMkr from "../../components/MarkersUtilisateur/MarkersClose.jsx";
+import Submit from "../Submit/Submit";
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -239,12 +243,15 @@ function Clean() {
     setformData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  //Fonction qui gère la nouvelle recherche de clubs
+
   const newSearch = () => {
     setDeclenche(false);
     setclubSearch([]);
   };
 
   /* CHARGEMENT DES DONNEES  */
+
   useEffect(() => {
     let result = [];
     let data = citiesData;
@@ -256,9 +263,6 @@ function Clean() {
 
   useEffect(() => {
     setCategories(categoriesData);
-  }, []);
-
-  useEffect(() => {
     setClubs(data);
   }, []);
 
@@ -312,7 +316,7 @@ function Clean() {
       setProximity(true);
       map.flyTo([location.coordinates.lat, location.coordinates.lng], 15, {
         animate: true,
-      })
+      });
     } else {
       alert(location.error.message);
     }
@@ -324,6 +328,9 @@ function Clean() {
   const [lngMin, setLngMin] = useState(0);
   const [lngMax, setLngMax] = useState(0);
 
+  // Hook qui permets de cacher et d'afficher les clubs
+  const [visibilityMarker, setVisibilityMarker] = useState(true);
+
   useEffect(() => {
     if (location.loaded === true) {
       setProximity(true);
@@ -333,12 +340,11 @@ function Clean() {
       setLngMax(location.coordinates.lng + convertedDistance);
     } else {
       setProximity(false);
-      setLatMin(0);
+      setLatMin(47.902964);
       setLatMax(0);
-      setLngMin(0);
+      setLngMin(1.909251);
       setLngMax(0);
     }
-    
   }, [location]);
 
   let clubsProches = clubs.filter(function (clubsAlentour) {
@@ -349,38 +355,69 @@ function Clean() {
       clubsAlentour.Longitude <= lngMax &&
       clubsAlentour.Longitude >= lngMin
     );
-    
   });
-
 
   useEffect(() => {
     setclubsClose(clubsProches.length);
     console.log(proximity, "<- statut de la loc");
+    console.log(clubsProches);
   }, [clubsProches]);
-  
-  const [proximity, setProximity] = useState(false); 
-  const [convertedDistance, setConvertedDistance] = useState(0)
+
+ 
+
+  const [proximity, setProximity] = useState(false);
+  const [convertedDistance, setConvertedDistance] = useState(0);
   const [valeurSlider, setValeurSlider] = useState(0);
   const [rayon, setRayon] = useState(0);
   const [distance, setDistance] = useState(0);
-  
-
-
-
 
   function valuetext(value) {
     setValeurSlider(value);
     changeRadius();
   }
 
-
-
   function changeRadius() {
     setDistance(valeurSlider);
     let RayonCercle = distance + "000";
-    setConvertedDistance(distance / 100)
+    setConvertedDistance(distance / 115);
     setRayon(RayonCercle);
   }
+
+  const hideMarkers = () => {
+    if (visibilityMarker === true) {
+      setVisibilityMarker(false);
+    } else {
+      setVisibilityMarker(true);
+    }
+  };
+
+  const [visibilityInstanceMarkers, setVisibilityInstanceMarkers] =
+    useState(true);
+
+  const hideInstanceMarkers = () => {
+    if (visibilityInstanceMarkers === true) {
+      setVisibilityInstanceMarkers(false);
+    } else {
+      setVisibilityInstanceMarkers(true);
+    }
+  };
+
+  //Function that know distance between two points
+  // function distanceBetweenPoints(lat1, lon1, lat2, lon2) {s
+  //   var R = 6371; // Radius of the earth in km
+  //   var dLat = deg2rad(lat2 - lat1); // deg2rad below
+  //   var dLon = deg2rad(lon2 - lon1);
+  //   var a =
+  //     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+  //     Math.cos(deg2rad(lat1)) *
+  //       Math.cos(deg2rad(lat2)) *
+  //       Math.sin(dLon / 2) *
+  //       Math.sin(dLon / 2);
+  //   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  //   var d = R * c; // Distance in km
+  //   return d;
+  // }
+
   return (
     <>
       <Header />
@@ -439,16 +476,13 @@ function Clean() {
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
 
-
-                {location.loaded && !location.error && (
-                  <Marker
-                    position={[
-                      location.coordinates.lat,
-                      location.coordinates.lng,
-                    ]}
-                  >
+                {location.loaded && !location.error ? (
+                  <UsrMkr />
+                ) : (
+                  <Marker position={[latMin, lngMin]}>
                     <Popup>
-                      Il y a {clubsProches.length} clubs près de chez vous :
+                      Vous n'avez pas activé la localisation, votre position à
+                      été déinie par défault à Orléans !
                     </Popup>
                   </Marker>
                 )}
@@ -463,19 +497,9 @@ function Clean() {
                     pathOptions={{ color: "green" }}
                   />
                 ) : null}
-
-                {clubsProches.map((cloub, idxClub) => {
-                  return (
-                    <Marker
-                      position={[cloub.Latitude, cloub.Longitude]}
-                      icon={clubMarqueur}
-                      key={idxClub}
-                    >
-                      <Popup className="markersPopUp">{cloub.NomClub}</Popup>
-                    </Marker>
-                  );
-                })}
-
+                {visibilityMarker === true ? (
+                  <CloseMkr distance={convertedDistance} />
+                ) : null}
 
                 <MarkerClusterGroup
                   animate={true}
@@ -489,7 +513,7 @@ function Clean() {
                 >
                   {clubSearch.length !== 0
                     ? clubSearch.slice(0, 500).map((res, index2) => {
-                        console.log(res);
+                        // console.log(res);
                         return (
                           <Marker
                             icon={
@@ -509,31 +533,34 @@ function Clean() {
                     : null}
                 </MarkerClusterGroup>
 
-                <Instances />
+                {visibilityInstanceMarkers === true ? <Instances /> : null}
               </MapContainer>
             </div>
             <Legend />
             {proximity === true ? (
-              <button onClick={showMyLocation}>ME LOCALISER</button>
+              <div>
+                <button onClick={showMyLocation}>ME LOCALISER</button>
+                <button onClick={hideMarkers}> CLUBS PROCHES</button>
+                <button onClick={hideInstanceMarkers}>INSTANCES</button>
+              </div>
             ) : (
               <button>Activer ma geoloc </button>
             )}
-          <Box sx={{ width: 300 }}>
-            <span>Distance : 1 à 25km</span>
-            <Slider
-              aria-label="Distance"
-              defaultValue={10}
-              getAriaValueText={valuetext}
-              // getAriaLabel={true}
-              valueLabelDisplay="on"
-              step={1}
-              marks={true}
-              min={1}
-              max={25}
-            />
-          </Box>
+            <Box sx={{ width: 300 }}>
+              <span>Distance : 1 à 25km</span>
+              <Slider
+                aria-label="Distance"
+                defaultValue={10}
+                getAriaValueText={valuetext}
+                // getAriaLabel={true}
+                valueLabelDisplay="on"
+                step={1}
+                marks={true}
+                min={1}
+                max={25}
+              />
+            </Box>
           </div>
-
 
           <div
             className={clubSearch.length !== 0 ? "formContainer" : "dataResult"}
@@ -810,21 +837,37 @@ function Clean() {
                     </div>
 
                     <div className="btnContainer" id="test2">
-                      <button
-                        className="btnBackground"
-                        id="scrollBtn"
-                        type="submit"
-                      >
+                      {Declenche === true ? (
                         <img
-                          className="findclubBtn"
-                          alt="trouvez votre club"
-                          src={btnPicture}
-                        />
-                      </button>
+                          src={btnNewSearch}
+                          className="newSearchBtn"
+                          onClick={newSearch}
+                          alt="nouvelle recherche"
+                        >
+
+                        </img>
+                      ) : (
+                        <button
+                          className="btnBackground"
+                          id="scrollBtn"
+                          type="submit"
+                        >
+
+
+                          <Submit 
+                          className='findclubBtn'
+                          alt='trouvez votre club'
+                          imageBtn={btnPicture}
+                          />
+
+                        </button>
+                      )}
                     </div>
                   </form>
                 </div>
               )}
+
+
               <Modal
                 open={clubSearch.length === 0 && Declenche ? true : false}
                 onClose={handleClosePop}
@@ -859,14 +902,14 @@ function Clean() {
               </Modal>
             </div>
 
-            <div className={clubSearch.length !== 0 ? "toggleSearch" : "hide "}>
+            {/* <div className={clubSearch.length !== 0 ? "toggleSearch" : "hide "}>
               <img
                 src={btnNewSearch}
                 className="newSearchBtn"
                 onClick={newSearch}
                 alt="nouvelle recherche"
               ></img>
-            </div>
+            </div> */}
 
             {/* FIN DE LA  GESTION DES ERREURS DANS LA RECHERCHE */}
           </div>
