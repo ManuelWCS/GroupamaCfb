@@ -330,12 +330,17 @@
     align-items: center;
   }
 
-  .findclubBtn {
-    height: 100px;
-    width: 150px;
-    margin-left: 45px;
-    margin-right: 45px;
+  .findclubBtn, .SubmitButton {
+    height: 120px;
+    width: 180px;
   }
+
+  .btnBackground {
+    background-color: transparent;
+    border:none;
+
+  }
+
 
   
 
@@ -363,11 +368,19 @@
     background-image: url('../../assets/CompressedPictures/Buttons/nouvelleRecherche.png');
     background-position: center;
     background-size: cover;
-  }  
+  } 
 
-  .newSearchBtn {
-    width: 350px;
-    height: 350px;
+  .newSearchbtnContainer {
+    height: 150px;
+    width: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .newSearchImg {
+    width: 280px;
+    height: 290px;
   }
 /* BREAKPOINTS pour bouton nouvelle recherche */
   .toggleSearch {

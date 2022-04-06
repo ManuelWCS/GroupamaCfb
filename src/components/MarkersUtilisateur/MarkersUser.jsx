@@ -6,7 +6,7 @@ import L from "leaflet";
 
 
 
-function MarkersUser() {
+function MarkersUser(props) {
 
     const position = useGeolocation();
 
@@ -21,7 +21,8 @@ function MarkersUser() {
     <Marker position={[position.coordinates.lat, position.coordinates.lng]}
     icon={MarqueurUtilisateur}>
         <Popup>
-            <span>Vous êtes ici</span>
+            <span>Vous êtes ici <br>
+            </br> Il y a {props.clubsProches} clubs près de chez vous !</span>
         </Popup>
     </Marker>
 

@@ -363,8 +363,6 @@ function Clean() {
     console.log(clubsProches);
   }, [clubsProches]);
 
- 
-
   const [proximity, setProximity] = useState(false);
   const [convertedDistance, setConvertedDistance] = useState(0);
   const [valeurSlider, setValeurSlider] = useState(0);
@@ -477,7 +475,7 @@ function Clean() {
                 />
 
                 {location.loaded && !location.error ? (
-                  <UsrMkr />
+                  <UsrMkr clubsProches={clubsClose} />
                 ) : (
                   <Marker position={[latMin, lngMin]}>
                     <Popup>
@@ -494,7 +492,7 @@ function Clean() {
                       location.coordinates.lng,
                     ]}
                     radius={rayon}
-                    pathOptions={{ color: "green" }}
+                    pathOptions={{ color: "#748B9F" }}
                   />
                 ) : null}
                 {visibilityMarker === true ? (
@@ -843,30 +841,24 @@ function Clean() {
                           className="newSearchBtn"
                           onClick={newSearch}
                           alt="nouvelle recherche"
-                        >
-
-                        </img>
+                        ></img>
                       ) : (
                         <button
                           className="btnBackground"
                           id="scrollBtn"
                           type="submit"
                         >
-
-
-                          <Submit 
-                          className='findclubBtn'
-                          alt='trouvez votre club'
-                          imageBtn={btnPicture}
+                          <Submit
+                            className="findclubBtn"
+                            alt="trouvez votre club"
+                            imageBtn={btnPicture}
                           />
-
                         </button>
                       )}
                     </div>
                   </form>
                 </div>
               )}
-
 
               <Modal
                 open={clubSearch.length === 0 && Declenche ? true : false}
@@ -902,14 +894,17 @@ function Clean() {
               </Modal>
             </div>
 
-            {/* <div className={clubSearch.length !== 0 ? "toggleSearch" : "hide "}>
-              <img
-                src={btnNewSearch}
-                className="newSearchBtn"
-                onClick={newSearch}
-                alt="nouvelle recherche"
-              ></img>
-            </div> */}
+            {clubSearch.length === 0 ? null : (
+              <div className="newSearchbtnContainer">
+                <img
+                  src={btnNewSearch}
+                  className="newSearchImg"
+                  onClick={newSearch}
+                  alt="nouvelle recherche"
+                  height={150}
+                ></img>
+              </div>
+            )}
 
             {/* FIN DE LA  GESTION DES ERREURS DANS LA RECHERCHE */}
           </div>

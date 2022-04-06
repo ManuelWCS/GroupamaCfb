@@ -1147,19 +1147,27 @@
     margin: auto;
   }
 
-  .btnContainer {
-    position: relative;
-    display: flex;
+  .btnContainer {	display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    align-content: center;
+    margin: auto;
   }
 
-  .findclubBtn {
-    height: 100px;
-    width: 150px;
-    margin-left: 45px;
-    margin-right: 45px;
+  .findclubBtn, .SubmitButton {
+    height: 120px;
+    width: 180px;
   }
+
+  .btnBackground {
+    background-color: transparent;
+    border:none;
+
+  }
+
+
 
   .btnAfterSearch {
     width: 250px;

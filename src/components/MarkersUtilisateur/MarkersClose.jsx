@@ -3,6 +3,8 @@ import {  Marker, Popup  } from "react-leaflet";
 import useGeolocation from "../Hook/useGeolocation";
 import dataClubs from '../Map/data/data.json';
 import L from "leaflet";
+import MarkerClusterGroup from "react-leaflet-markercluster";
+
 import LabelMarker from "../../assets/CA/labelCA.png";
 import clubMarker from "../../assets/CompressedPictures/Markers/LogoClub.webp";
 
@@ -54,6 +56,15 @@ function MarkersClose(props) {
 
       {position.loaded === true ? (
         <>
+
+        <MarkerClusterGroup
+        animate={true}
+        onClusterClick={(cluster) => 
+        console.warn("cluster-click", cluster, cluster.layer.getAllChildMarkers()
+        )}
+        
+        >
+            
         {clubsFiltres.map((club, index) => (
             <Marker key={index} position={[club.Latitude, club.Longitude]}
             icon={ club.label.length > 0 ? 
@@ -65,6 +76,11 @@ function MarkersClose(props) {
                 </Popup>
             </Marker>
         ))}
+                    </MarkerClusterGroup>
+
+
+
+
         </>
         ) : (
             <p>Chargement...</p>

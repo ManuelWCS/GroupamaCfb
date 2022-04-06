@@ -230,12 +230,18 @@
     align-items: center;
   }
 
-  .findclubBtn {
-    height: 100px;
-    width: 150px;
-    margin-left: 45px;
-    margin-right: 45px;
+  .findclubBtn, .SubmitButton {
+    height: 120px;
+    width: 180px;
   }
+
+  .btnBackground {
+    background-color: transparent;
+    border:none;
+
+  }
+
+
   .btnAfterSearch {
     width: 120px;
     height: 58px;

@@ -291,4 +291,18 @@
     margin-top: 64px;
     justify-content: center;
   }
+
+
+  .findclubBtn, .SubmitButton {
+    height: 120px;
+    width: 180px;
+  }
+
+  .btnBackground {
+    background-color: transparent;
+    border:none;
+
+  }
+
+  
 }
