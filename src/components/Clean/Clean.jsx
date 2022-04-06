@@ -416,6 +416,12 @@ function Clean() {
   //   return d;
   // }
 
+  // function to get key of the marker cliked
+  function getKey(marker) {
+    console.log(marker.properties.id);
+    return marker.properties.id;
+  }
+
   return (
     <>
       <Header />
