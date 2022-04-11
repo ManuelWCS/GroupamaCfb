@@ -62,6 +62,11 @@ import UsrMkr from "../../components/MarkersUtilisateur/MarkersUser.jsx";
 
 import CloseMkr from "../../components/MarkersUtilisateur/MarkersClose.jsx";
 import Submit from "../Submit/Submit";
+/* import popover */
+import Popover from '../../components/Popover/Popover.jsx';
+import SearchIcon from '../../assets/CompressedPictures/Popover/trouverClub.webp'
+import LocClub from '../../assets/CompressedPictures/Popover/LocClub.webp'
+
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -400,27 +405,86 @@ function Clean() {
     }
   };
 
-  //Function that know distance between two points
-  // function distanceBetweenPoints(lat1, lon1, lat2, lon2) {s
-  //   var R = 6371; // Radius of the earth in km
-  //   var dLat = deg2rad(lat2 - lat1); // deg2rad below
-  //   var dLon = deg2rad(lon2 - lon1);
-  //   var a =
-  //     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-  //     Math.cos(deg2rad(lat1)) *
-  //       Math.cos(deg2rad(lat2)) *
-  //       Math.sin(dLon / 2) *
-  //       Math.sin(dLon / 2);
-  //   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  //   var d = R * c; // Distance in km
-  //   return d;
-  // }
+  // Function that know distance between two points
+  function distanceBetweenPoints(lat1, lon1, lat2, lon2) {
+    var R = 6371; // Radius of the earth in km
+    var dLat = deg2rad(lat2 - lat1); // deg2rad below
+    var dLon = deg2rad(lon2 - lon1);
+    var a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(deg2rad(lat1)) *
+        Math.cos(deg2rad(lat2)) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c; // Distance in km
+    var e = d.toFixed(2)
+    return e;
+  }
+
+  //deg2rad function
+  function deg2rad(deg) { 
+    return deg * (Math.PI / 180)
+  }
+
+
+
 
   // function to get key of the marker cliked
   function getKey(marker) {
     console.log(marker.properties.id);
     return marker.properties.id;
   }
+  const styleLoc = {
+    height: "60px",
+    borderRadius: "30px 30px 0px 0px",
+    backgroundColor: "var(--main-color)",
+    width: "345px",
+    border: "1px solid black",
+  };
+
+  const styleLocExpanded = {
+    height: "60px",
+    borderRadius: "30px",
+    backgroundColor: "var(--main-color)",
+    width: "345px",
+  };
+
+  const StyleGeo = {
+    height: "60px",
+    borderRadius: "30px 30px 0px 0px",
+    backgroundColor: "var(--secondary-color)",
+    width: "245px",
+    border: "1px solid black",
+  };
+
+  const StyleGeoExpanded = {
+    height: "60px",
+    borderRadius: "30px",
+    backgroundColor: "var(--secondary-color)",
+    width: "245px",
+  };
+  const StyleOff = {
+    display: "none",
+  };
+
+  const styleDiv = {
+    width: "245px",
+    backgroundColor: "white",
+    height: "400px",
+    marginTop: "-1px",
+    border: "1px solid black",
+    borderRadius: "0px 0px 30px 30px",
+  };
+
+  const styleDiv2 = {
+    width: "343px",
+    backgroundColor: "white",
+    height: "400px",
+    marginTop: "-1px",
+    border: "1px solid black",
+    borderRadius: "0px 0px 30px 30px",
+  };  
 
   return (
     <>
@@ -530,6 +594,14 @@ function Clean() {
                           >
                             <Popup key={index2} className="markersPopUp">
                               <p onClick={scrollCard}> {res.NomClub}</p>
+                              
+                              <br>
+                              </br>
+                              <h3>Se trouve à {" "}
+
+                             {distanceBetweenPoints(location.coordinates.lat, location.coordinates.lng,res.Latitude, res.Longitude)}
+                             {" "} km de vous !
+                              </h3>
                             </Popup>
                           </Marker>
                         );
@@ -565,6 +637,7 @@ function Clean() {
               />
             </Box>
           </div>
+      
 
           <div
             className={clubSearch.length !== 0 ? "formContainer" : "dataResult"}

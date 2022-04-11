@@ -1,0 +1,47 @@
+@import url('../../components/Clean/Clean.css');
+
+.container {
+    margin-left: 50px;;
+}
+
+.fullContainer {
+    height: 60px;
+    border-radius: 30px 30px 0px 0px;
+    background-color: var(--main-font);
+    width: 345px;
+    border:1px solid black;
+}
+
+.expandedContainer {
+    height: 60px;
+    border-radius: 30px;
+    background-color: var(--main-font);
+    width: 345px;
+}
+
+.searchIcon {
+    height: 28px;
+    width: 28px;
+}
+
+.TitleButton {
+    font-family: var(--main-font);
+    color: white;
+    font-size: calc(var(--main-fontSize)/ 1.3);
+
+}
+
+.btnContent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Expand {
+    width: 345px;
+    background-color: white;
+    height: 400px;
+    margin-top: -1px;
+    border:1px solid black;
+    border-radius: 0px 0px 30px 30px;
+}
