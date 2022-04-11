@@ -1,0 +1,120 @@
+@import url('../../App.css');
+
+.HomescreenFull {
+  height: 100vh;
+  width: 92vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: center;
+  background-image: url("../../assets/CompressedPictures/final3.webp");
+  background-size: cover;
+}
+
+.HomescreenTitlesContainer {
+  margin-top:15%;
+  height: 30%;
+  width: 90%;
+}
+
+
+/* MOBILE */ 
+
+@media screen and (max-width: 376px) {
+  .HomescreenFull {
+    height: 500px;
+
+  }
+
+
+}
+
+@media screen and (max-width: 480px) {
+  .HomescreenFull {
+    height: 550px;
+    width: 90vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: center;  
+    background-image: url("../../assets/TEST/mobileVertical.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .HomescreenTitlesContainer {
+    height: 30%;
+    width: 90%;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
+  } 
+
+  .HomescreenTitle {
+    font-size: calc(var(--main-fontSize) * 1.3);
+    font-family: var(--main-font);
+    color: var(--main-color);
+    text-align: center;
+  }
+
+  .HomescreenDescription {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) * 0.9);
+    padding-top: 8px;
+    color: rgb(51, 51, 51);
+    margin-left: var(--spacing-small);
+    margin-right: var(--spacing-small);
+    text-align: center;
+  }
+ } 
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .HomescreenFull {
+    height: 550px;
+    width: 90vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+
+@media screen and (min-width: 1400px) {
+  .HomescreenFull {
+    height: 100vh;
+    width: 92vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: center;
+    background-image: url("../../assets/CompressedPictures/final3.webp");
+    background-size: cover;
+    border: 1px solid black;
+  }
+  
+  .HomescreenTitlesContainer {
+    height: 40%;
+    width: 90%;
+  }
+
+}
