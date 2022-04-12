@@ -67,6 +67,8 @@ import Popover from '../../components/Popover/Popover.jsx';
 import SearchIcon from '../../assets/CompressedPictures/Popover/trouverClub.webp'
 import LocClub from '../../assets/CompressedPictures/Popover/LocClub.webp'
 
+/*import bouton A VOUS DE JOUER */
+import Avousdejouer from '../../assets/CompressedPictures/Buttons/Avousdejouer.webp'
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -485,7 +487,7 @@ function Clean() {
     border: "1px solid black",
     borderRadius: "0px 0px 30px 30px",
   };  
-
+  
   return (
     <>
       <Header />
@@ -509,7 +511,8 @@ function Clean() {
         </div>
 
         <div className="bannerContainer">
-          <h5 className="bannerTitle">À VOUS DE JOUER</h5>
+          {/* <h5 className="bannerTitle">À VOUS DE JOUER</h5> */}
+          <img src={Avousdejouer} alt="banner" className="bannerTitle" />
         </div>
 
         <div className="desktopInstructions">
