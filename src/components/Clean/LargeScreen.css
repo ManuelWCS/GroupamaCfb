@@ -285,7 +285,12 @@
     height: 8vh;
   }
   .bannerTitle {
-    font-size: calc(var(--main-fontSize) * 3);
+    width: 50%;
+    height: 170px;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    padding-top:10%;
+    padding-bottom: 10%;
   }
   .mainContainer {
     margin-top: 64px;
