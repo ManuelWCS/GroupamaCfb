@@ -605,6 +605,9 @@ function Clean() {
                              {distanceBetweenPoints(location.coordinates.lat, location.coordinates.lng,res.Latitude, res.Longitude)}
                              {" "} km de vous !
                               </h3>
+                              <p>
+                                Se rendre à ce club :
+                                <a href={`https://www.google.fr/maps/dir/${location.coordinates.lat},${location.coordinates.lng}+/${res.Latitude},+${res.Longitude}`}> En voiture </a> </p> 
                             </Popup>
                           </Marker>
                         );

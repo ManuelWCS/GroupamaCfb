@@ -83,15 +83,23 @@ function MarkersClose(props) {
                 <Popup className="markersPopUp">
                   {club.NomClub}
                   <h3>
-                    Se trouve à {" "}
+                    Se trouve à{" "}
                     {distanceBetweenPoints(
                       position.coordinates.lat,
                       position.coordinates.lng,
                       club.Latitude,
                       club.Longitude
-                    )}
-                   {" "} km de vous{" "}
+                    )}{" "}
+                    km de vous{" "}
                   </h3>
+                  <p>
+                    Se rendre à ce club :
+                    <a
+                      href={`https://www.google.fr/maps/dir/${position.coordinates.lat},${position.coordinates.lng}+/${club.Latitude},+${club.Longitude}`}
+                      target="_blank"
+                    >{" "}
+                    En voiture{" "}</a>
+                  </p>
                 </Popup>
               </Marker>
             ))}
