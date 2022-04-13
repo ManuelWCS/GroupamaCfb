@@ -67,7 +67,6 @@
     /* background-image: url("../../assets/TEST/Ordi22.png"); */
     background-image: url('../../assets/CompressedPictures/bandesdeTypeBlanc.webp');
     margin-top: -5px;
-    background-color: salmon;
   }
 
   .fullApp {
@@ -265,6 +264,15 @@
    z-index:3;
     right :2%;
     top:1%;
+  }
+
+  .filtrationsWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
   }
 
   .BlocFiltresEX::-webkit-scrollbar {

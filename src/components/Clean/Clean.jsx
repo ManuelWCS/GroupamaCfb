@@ -441,15 +441,23 @@ function Clean() {
     height: "60px",
     borderRadius: "30px 30px 0px 0px",
     backgroundColor: "var(--main-color)",
-    width: "345px",
+    width: "305px",
     border: "1px solid black",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "0 auto",
+
   };
+
+ 
 
   const styleLocExpanded = {
     height: "60px",
     borderRadius: "30px",
     backgroundColor: "var(--main-color)",
-    width: "345px"
+    width: "305px"
   };
 
   const StyleGeo = {
@@ -480,12 +488,16 @@ function Clean() {
   };
 
   const styleDiv2 = {
-    width: "343px",
+    width: "303px",
     backgroundColor: "white",
     height: "600px",
-    marginTop: "-1px",
     border: "1px solid black",
     borderRadius: "0px 0px 30px 30px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "0 auto",
   };
 
   const [active, setActive] = useState(false);
@@ -494,6 +506,11 @@ function Clean() {
     setActive(!active);
     console.log(active);
   };
+
+  var Largeur = document.documentElement.clientWidth;
+  var Hauteur = document.documentElement.clientHeight;
+  
+  console.log(Largeur, Hauteur);
   
   return (
     <>
