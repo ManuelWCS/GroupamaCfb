@@ -18,11 +18,12 @@
 /* VERSION DESKTOP */
 
 @media screen and (min-width: 1024px) {
+
   html,
   body {
     max-width: 100%;
     overflow-x: hidden;
-      /* Garder ce fond pour que ça corresponde avec le header*/
+    /* Garder ce fond pour que ça corresponde avec le header*/
   }
 
   body::-webkit-scrollbar {
@@ -141,7 +142,7 @@
   /* TITRE "A VOUS DE JOUER SUR LA BANNIERE */
 
   .bannerTitle {
-    margin:auto;
+    margin: auto;
     height: 80px;
 
   }
@@ -181,15 +182,15 @@
     margin: auto;
     justify-content: space-between;
     background-color: white;
-    position:relative;
+    position: relative;
   }
 
   #map {
     height: 400px;
-width: 93vw;
-position:absolute; 
-z-index: 1;
- }
+    width: 93vw;
+    position: absolute;
+    z-index: 1;
+  }
 
   .mapTitle {
     font-family: var(--main-font);
@@ -240,11 +241,10 @@ z-index: 1;
     align-items: center;
     justify-content: center;
     border: 5px solid purple;
-    position:absolute;
+    position: absolute;
     z-index: 2;
     background-color: wheat;
-
-  }
+   }
 
   .BlocFiltresEX {
     width: 350px;
@@ -258,7 +258,13 @@ z-index: 1;
     margin-top: -20px;
     border: 1px solid red;
     z-index: 2;
+  }
 
+  .popover {
+   position: absolute;
+   z-index:3;
+    right :2%;
+    top:1%;
   }
 
   .BlocFiltresEX::-webkit-scrollbar {
@@ -339,19 +345,20 @@ z-index: 1;
     align-items: center;
   }
 
-  .findclubBtn, .SubmitButton {
+  .findclubBtn,
+  .SubmitButton {
     height: 120px;
     width: 180px;
   }
 
   .btnBackground {
     background-color: transparent;
-    border:none;
+    border: none;
 
   }
 
 
-  
+
 
 
 
@@ -377,7 +384,7 @@ z-index: 1;
     background-image: url('../../assets/CompressedPictures/Buttons/nouvelleRecherche.png');
     background-position: center;
     background-size: cover;
-  } 
+  }
 
   .newSearchbtnContainer {
     height: 150px;
@@ -391,7 +398,8 @@ z-index: 1;
     width: 280px;
     height: 290px;
   }
-/* BREAKPOINTS pour bouton nouvelle recherche */
+
+  /* BREAKPOINTS pour bouton nouvelle recherche */
   .toggleSearch {
     width: 350px;
     height: 150px;
@@ -411,7 +419,7 @@ z-index: 1;
     color: var(--secondary-color);
   }
 
-  
+
 
 
 
@@ -445,7 +453,7 @@ z-index: 1;
     justify-content: space-around;
   }
 
-  
+
 
   .logo1,
   .logo2,
@@ -453,6 +461,7 @@ z-index: 1;
     height: 32px;
     width: 32px;
   }
+
   .labelHide {
     display: none;
   }
@@ -485,7 +494,7 @@ z-index: 1;
     width: 100%;
   }
 
-  
+
 }
 
 /*<<<<<<<<<<<<<<<<<<<<<<<<< FIN DE LA VERSIONS DESKTOP>>>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -519,6 +528,7 @@ z-index: 1;
   .bannerContainer {
     width: 92%;
   }
+
   .descriptionContainer {
     margin-top: 0px;
     position: relative;

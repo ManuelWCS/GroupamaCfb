@@ -449,7 +449,7 @@ function Clean() {
     height: "60px",
     borderRadius: "30px",
     backgroundColor: "var(--main-color)",
-    width: "345px",
+    width: "345px"
   };
 
   const StyleGeo = {
@@ -482,11 +482,18 @@ function Clean() {
   const styleDiv2 = {
     width: "343px",
     backgroundColor: "white",
-    height: "400px",
+    height: "600px",
     marginTop: "-1px",
     border: "1px solid black",
     borderRadius: "0px 0px 30px 30px",
-  };  
+  };
+
+  const [active, setActive] = useState(false);
+
+  const isClicked = () => {
+    setActive(!active);
+    console.log(active);
+  };
   
   return (
     <>
@@ -639,19 +646,29 @@ function Clean() {
               />
             </Box>
           </div>
-      
+          {/* <Popover icone={SearchIcon}
+           Title="TROUVEZ UN CLUB A PROXIMITÉ"
+           NotExtended={styleLoc}
+           Extended={styleLocExpanded}
+           ExtendedContainer={styleDiv2}
+           StyleOff={StyleOff}
+           className="PopOver1"
+           
+           >
+             </Popover> */}
+              <div className="popover">
+      <button
+        onClick={isClicked}
+        style={active ? styleLoc : styleLocExpanded}
+      >
+        <div className="btnContent">
+          <img src={SearchIcon} className="searchIcon" alt="searchIcon" />
+          <p className="TitleButton">TROUVEZ UN CLUB A PROXIMITÉ </p>
+        </div>
+      </button>
 
-          <div
-            className={clubSearch.length !== 0 ? "formContainer" : "dataResult"}
-          >
-            <span className="cardLegendText">COMPLÉTEZ VOS INFOS </span>
-
-            <div
-              className={
-                clubSearch.length !== 0 ? "BlocFiltresEX" : "BlocFiltres"
-              }
-            >
-              {clubSearch.length > 0 ? (
+      <div style={active ? styleDiv2 : StyleOff}>
+            {clubSearch.length > 0 ? (
                 clubSearch.map((clubSelected, Uniqueindex) => {
                   return (
                     <div
@@ -941,54 +958,21 @@ function Clean() {
                 </div>
               )}
 
-              <Modal
-                open={clubSearch.length === 0 && Declenche ? true : false}
-                onClose={handleClosePop}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-              >
-                <Box id="box" sx={style2}>
-                  {!formData.age || !formData.type || !formData.city ? (
-                    <div>
-                      <p className="textNoResults">
-                        {" "}
-                        Aucun résultat pour votre recherche !
-                      </p>
-                      <p className="btnNoResults" onClick={handleClosePop}>
-                        FERMER
-                      </p>{" "}
-                      {/* GESTION DES ERREURS DANS LA RECHERCHE */}
-                    </div>
-                  ) : (
-                    <div>
-                      <p>
-                        Pas de résultats trouvés pour la catégorie :{" "}
-                        {formData.type} à {formData.city}
-                      </p>
 
-                      <p className="btnNoResults" onClick={handleClosePop}>
-                        FERMER
-                      </p>
-                    </div>
-                  )}
-                </Box>
-              </Modal>
-            </div>
 
-            {clubSearch.length === 0 ? null : (
-              <div className="newSearchbtnContainer">
-                <img
-                  src={btnNewSearch}
-                  className="newSearchImg"
-                  onClick={newSearch}
-                  alt="nouvelle recherche"
-                  height={150}
-                ></img>
-              </div>
-            )}
+      </div>
+    </div>
+          {/* <Popover icone={LocClub}
+           Title="DÉCOUVRIR LES CLUBS ICI !"
+           Extended={StyleGeoExpanded}
+           NotExtended={StyleGeo}
+           ExtendedContainer={styleDiv}
+           StyleOff={StyleOff}
+           className="PopOver1"
 
-            {/* FIN DE LA  GESTION DES ERREURS DANS LA RECHERCHE */}
-          </div>
+           
+           
+           /> */}
         </div>
         <Faq />
 
