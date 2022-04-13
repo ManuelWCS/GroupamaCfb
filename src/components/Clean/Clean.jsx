@@ -500,12 +500,34 @@ function Clean() {
     margin: "0 auto",
   };
 
+
+  const styleDiv3 = {
+    width: "243px",
+    backgroundColor: "white",
+    height: "600px",
+    border: "1px solid black",
+    borderRadius: "0px 0px 30px 30px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "0 auto",
+  };
+
   const [active, setActive] = useState(false);
+  const [active2, setActive2] = useState(false);
+
 
   const isClicked = () => {
     setActive(!active);
     console.log(active);
   };
+
+  const isClicked2 = () => { 
+    setActive2(!active2);
+    console.log(active2);
+  };
+
 
   var Largeur = document.documentElement.clientWidth;
   var Hauteur = document.documentElement.clientHeight;
@@ -683,60 +705,10 @@ function Clean() {
           <p className="TitleButton">TROUVEZ UN CLUB A PROXIMITÉ </p>
         </div>
       </button>
+      
 
       <div style={active ? styleDiv2 : StyleOff}>
-            {clubSearch.length > 0 ? (
-                clubSearch.map((clubSelected, Uniqueindex) => {
-                  return (
-                    <div
-                      className={
-                        clubSelected.label.length > 0
-                          ? "cardResultLabel"
-                          : "cardResult"
-                      }
-                      id="cardClub"
-                    >
-                      <div className="titleCardContainer">
-                        <span className="titleCard" onClick={scrollTop}>
-                          {clubSelected.NomClub}
-                        </span>
-                      </div>
-
-                      <div className="columnContainer">
-                        <div className="column1">
-                          <div className="logo1"></div>
-                          <div className="logo2"></div>
-                          <div className="logo3"></div>
-                        </div>
-                        <div className="column2">
-                          <div className="info1">
-                            {" "}
-                            <a
-                              className="mail"
-                              href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre
-                                demande "`}
-                            >
-                              {clubSelected.Mail}{" "}
-                            </a>
-                          </div>
-                          <div className="info2" onClick={scrollTop}>
-                            {clubSelected.AdressePostale}
-                          </div>
-                          <div className="info3">
-                            <a
-                              href={`https://foot-centre.fff.fr/recherche-clubs/?query-affil=${clubSelected.NumClub}`}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              Voir plus d'infos
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })
-              ) : (
+           
                 <div className="filtersNoSearch">
                   <form
                     className="filtrationsWrapper"
@@ -973,7 +945,7 @@ function Clean() {
                     </div>
                   </form>
                 </div>
-              )}
+              )
 
 
 
@@ -987,7 +959,7 @@ function Clean() {
 
     <div className="popover2">
     <button
-        onClick={isClicked}
+        onClick={isClicked2}
         style={active2 ? StyleGeo : StyleGeoExpanded}
       >
           <div className="btnContent">
@@ -995,7 +967,62 @@ function Clean() {
           <p className="TitleButton">TROUVEZ UN CLUB A PROXIMITÉ </p>
         </div>
         </button>
-        <div style={active2 ? styleDiv2 : StyleOff}> YOOOOOOO
+        <div style={active2 ? styleDiv3 : StyleOff}> {clubSearch.length > 0 ? (
+                clubSearch.map((clubSelected, Uniqueindex) => {
+                  return (
+                    <div
+                      className={
+                        clubSelected.label.length > 0
+                          ? "cardResultLabel"
+                          : "cardResult"
+                      }
+                      id="cardClub"
+                    >
+                      <div className="titleCardContainer">
+                        <span className="titleCard" onClick={scrollTop}>
+                          {clubSelected.NomClub}
+                        </span>
+                      </div>
+
+                      <div className="columnContainer">
+                        <div className="column1">
+                          <div className="logo1"></div>
+                          <div className="logo2"></div>
+                          <div className="logo3"></div>
+                        </div>
+                        <div className="column2">
+                          <div className="info1">
+                            {" "}
+                            <a
+                              className="mail"
+                              href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre
+                                demande "`}
+                            >
+                              {clubSelected.Mail}{" "}
+                            </a>
+                          </div>
+                          <div className="info2" onClick={scrollTop}>
+                            {clubSelected.AdressePostale}
+                          </div>
+                          <div className="info3">
+                            <a
+                              href={`https://foot-centre.fff.fr/recherche-clubs/?query-affil=${clubSelected.NumClub}`}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              Voir plus d'infos
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })
+              ) : <p>Activez la localisation pour être un foulek</p>
+}
+
+
+
         </div>
     </div>
 
