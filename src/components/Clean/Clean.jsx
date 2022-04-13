@@ -501,10 +501,16 @@ function Clean() {
   };
 
   const [active, setActive] = useState(false);
+  const [active2, setActive2] = useState(false);
+
 
   const isClicked = () => {
     setActive(!active);
     console.log(active);
+  };
+  const isClicked2 = () => {
+    setActive2(!active2);
+    console.log(active2);
   };
 
   var Largeur = document.documentElement.clientWidth;
@@ -979,17 +985,27 @@ function Clean() {
 
       </div>
     </div>
-          {/* <Popover icone={LocClub}
-           Title="DÉCOUVRIR LES CLUBS ICI !"
-           Extended={StyleGeoExpanded}
-           NotExtended={StyleGeo}
-           ExtendedContainer={styleDiv}
-           StyleOff={StyleOff}
-           className="PopOver1"
 
-           
-           
-           /> */}
+
+
+
+
+
+    <div className="popover2">
+    <button
+        onClick={isClicked2}
+        style={active2 ? StyleGeo : StyleGeoExpanded}
+      >
+          <div className="btnContent">
+          <img src={LocClub} className="searchIcon" alt="searchIcon" />
+          <p className="TitleButton">TROUVEZ UN CLUB A PROXIMITÉ </p>
+        </div>
+        </button>
+        <div style={active2 ? styleDiv2 : StyleOff}> YOOOOOOO
+        </div>
+    </div>
+
+    
         </div>
         <Faq />
 
