@@ -97,6 +97,7 @@ function MarkersClose(props) {
                     <a
                       href={`https://www.google.fr/maps/dir/${position.coordinates.lat},${position.coordinates.lng}+/${club.Latitude},+${club.Longitude}`}
                       target="_blank"
+                      rel="noreferrer"
                     >{" "}
                     Itinéraire vers ce club{" "}</a>
                   </p>

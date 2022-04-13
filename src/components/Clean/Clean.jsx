@@ -524,11 +524,7 @@ function Clean() {
 
         <div className="mainContainer">
           <div className="mapContainer">
-            <div className="legendContainer">
-              <p className="mapTitle" id="redirect">
-                CARTE INTERACTIVE
-              </p>
-            </div>
+     
 
             <div className="BlocCarte">
               <MapContainer
@@ -607,7 +603,7 @@ function Clean() {
                               </h3>
                               <p>
                                 
-                                <a href={`https://www.google.fr/maps/dir/${location.coordinates.lat},${location.coordinates.lng}+/${res.Latitude},+${res.Longitude}` } target="_blank"> Itinéraire vers ce club </a> </p> 
+                                <a href={`https://www.google.fr/maps/dir/${location.coordinates.lat},${location.coordinates.lng}+/${res.Latitude},+${res.Longitude}` } target="_blank" rel="noreferrer"> Itinéraire vers ce club </a> </p> 
                             </Popup>
                           </Marker>
                         );

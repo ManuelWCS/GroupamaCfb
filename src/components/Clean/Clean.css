@@ -66,6 +66,7 @@
     /* background-image: url("../../assets/TEST/Ordi22.png"); */
     background-image: url('../../assets/CompressedPictures/bandesdeTypeBlanc.webp');
     margin-top: -5px;
+    background-color: salmon;
   }
 
   .fullApp {
@@ -172,20 +173,23 @@
 
   .mainContainer {
     height: 700px;
-    width: 95vw;
+    width: 93vw;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    align-items: baseline;
     align-content: stretch;
     margin: auto;
     justify-content: space-between;
+    background-color: white;
+    position:relative;
   }
 
   #map {
     height: 400px;
-    width: 520px;
-  }
+width: 93vw;
+position:absolute; 
+z-index: 1;
+ }
 
   .mapTitle {
     font-family: var(--main-font);
@@ -196,13 +200,10 @@
 
   .mapContainer {
     height: 650px;
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: stretch;
-    padding-left: 32px;
+    border: 1px solid black;
   }
 
   .formContainer {
@@ -214,6 +215,9 @@
     justify-content: flex-start;
     align-items: center;
     align-content: stretch;
+    border: 1px solid blue;
+
+
   }
 
   .dataResult {
@@ -235,18 +239,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 5px solid purple;
+    position:absolute;
+    z-index: 2;
+    background-color: wheat;
+
   }
 
   .BlocFiltresEX {
     width: 350px;
     overflow: scroll;
     overflow-x: hidden;
-    position: relative;
+    position: absolute;
     height: 480px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-top: -20px;
+    border: 1px solid red;
+    z-index: 2;
+
   }
 
   .BlocFiltresEX::-webkit-scrollbar {
