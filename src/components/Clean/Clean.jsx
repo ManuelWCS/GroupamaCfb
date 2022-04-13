@@ -501,16 +501,10 @@ function Clean() {
   };
 
   const [active, setActive] = useState(false);
-  const [active2, setActive2] = useState(false);
-
 
   const isClicked = () => {
     setActive(!active);
     console.log(active);
-  };
-  const isClicked2 = () => {
-    setActive2(!active2);
-    console.log(active2);
   };
 
   var Largeur = document.documentElement.clientWidth;
@@ -993,7 +987,7 @@ function Clean() {
 
     <div className="popover2">
     <button
-        onClick={isClicked2}
+        onClick={isClicked}
         style={active2 ? StyleGeo : StyleGeoExpanded}
       >
           <div className="btnContent">
