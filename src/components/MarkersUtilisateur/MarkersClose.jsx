@@ -93,12 +93,12 @@ function MarkersClose(props) {
                     km de vous{" "}
                   </h3>
                   <p>
-                    Se rendre à ce club :
+                   
                     <a
                       href={`https://www.google.fr/maps/dir/${position.coordinates.lat},${position.coordinates.lng}+/${club.Latitude},+${club.Longitude}`}
                       target="_blank"
                     >{" "}
-                    En voiture{" "}</a>
+                    Itinéraire vers ce club{" "}</a>
                   </p>
                 </Popup>
               </Marker>
