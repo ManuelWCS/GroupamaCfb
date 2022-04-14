@@ -27,7 +27,17 @@
 .TitleButton {
     font-family: var(--main-font);
     color: white;
-    font-size: calc(var(--main-fontSize)/ 1.3);
+    font-size: calc(var(--main-fontSize)/ 1.2);
+
+}
+
+.locImage {
+    height: 78px;
+    width: 90px;
+    position:absolute;
+    z-index: 3;
+    bottom: 10%;
+    left: 5%;
 
 }
 

@@ -73,6 +73,8 @@ import Avousdejouer from "../../assets/CompressedPictures/Buttons/Avousdejouer.w
 /* import composant Carte Club*/
 import CardClub from './Cards/CardClub.jsx'
 
+/* import bouton localisez moi*/
+import LocImage from '../../assets/CompressedPictures/Buttons/LocalisezMoi.png'
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -372,6 +374,7 @@ function Clean() {
     setclubsClose(clubsProches.length);
     console.log(proximity, "<- statut de la loc");
     console.log(clubsProches);
+    
   }, [clubsProches]);
 
   const [proximity, setProximity] = useState(false);
@@ -529,6 +532,21 @@ function Clean() {
 
   console.log(Largeur, Hauteur);
 
+  const marks = [
+    {
+      value: 10,
+      label: '10km',
+    },
+    {
+      value: 15,
+      label: '15km',
+    },
+    {
+      value: 20,
+      label: '20km',
+    }
+  ];
+
   return (
     <>
       <Header />
@@ -549,6 +567,13 @@ function Clean() {
             La Ligue Centre-Val de Loire de Football vous propose cette
             plateforme afin de découvrir l'ensemble des clubs de notre Région !
           </h4>
+          {/* <div className="dozaDiv">
+              <p className="doza2">HOLOGRAMME</p>
+              <p className="doza">HOLOGRAMME</p>
+              <p className="doza3">HOLOGRAMME</p>
+
+
+            </div> */}
         </div>
 
         <div className="bannerContainer">
@@ -570,7 +595,7 @@ function Clean() {
                 className="mapLeaflet"
                 id="map"
                 center={[47.90289, 1.90389]}
-                zoom={13}
+                zoom={11}
                 scrollWheelZoom={true}
                 minZoom={6}
                 doubleClickZoom={true}
@@ -664,41 +689,21 @@ function Clean() {
                 {visibilityInstanceMarkers === true ? <Instances /> : null}
               </MapContainer>
             </div>
+          
             <Legend />
             {proximity === true ? (
               <div>
                 <button onClick={showMyLocation}>ME LOCALISER</button>
+                <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
                 <button onClick={hideMarkers}> CLUBS PROCHES</button>
                 <button onClick={hideInstanceMarkers}>INSTANCES</button>
               </div>
             ) : (
               <button>Activer ma geoloc </button>
             )}
-            <Box sx={{ width: 300 }}>
-              <span>Distance : 1 à 25km</span>
-              <Slider
-                aria-label="Distance"
-                defaultValue={10}
-                getAriaValueText={valuetext}
-                // getAriaLabel={true}
-                valueLabelDisplay="on"
-                step={1}
-                marks={true}
-                min={1}
-                max={25}
-              />
-            </Box>
+     
           </div>
-          {/* <Popover icone={SearchIcon}
-           Title="TROUVEZ UN CLUB A PROXIMITÉ"
-           NotExtended={styleLoc}
-           Extended={styleLocExpanded}
-           ExtendedContainer={styleDiv2}
-           StyleOff={StyleOff}
-           className="PopOver1"
-           
-           >
-             </Popover> */}
+         
           <div className="popover">
             <button
               onClick={isClicked}
@@ -706,7 +711,7 @@ function Clean() {
             >
               <div className="btnContent">
                 <img src={SearchIcon} className="searchIcon" alt="searchIcon" />
-                <p className="TitleButton">TROUVEZ UN CLUB A PROXIMITÉ </p>
+                <p className="TitleButton">TROUVEZ UN CLUB A PROXIMITÉ ! &nbsp;  </p>
               </div>
             </button>
 
@@ -947,6 +952,7 @@ function Clean() {
               </div>
             </div>
           </div>
+          <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
 
           <div className="popover2">
             <button
@@ -955,12 +961,12 @@ function Clean() {
             >
               <div className="btnContent">
                 <img src={LocClub} className="searchIcon" alt="searchIcon" />
-                <p className="TitleButton">TROUVEZ UN CLUB A PROXIMITÉ </p>
+                <p className="TitleButton">DÉCOUVRIR LES CLUBS ICI ! &nbsp; &nbsp;   </p>
               </div>
             </button>
             <div style={active2 ? styleDiv3 : StyleOff}>
+              <span className="sliderText"> CHOISIS TON ÉCHELLE !</span>
             <Box sx={{ width: 190, margin:1 }}>
-              <span>Distance : 1 à 25km</span>
               <Slider
                 aria-label="Distance"
                 defaultValue={10}
@@ -968,11 +974,15 @@ function Clean() {
                 // getAriaLabel={true}
                 valueLabelDisplay="on"
                 step={1}
-                marks={true}
-                min={1}
-                max={25}
+                marks={marks}
+                min={10}
+                max={20}
               />
+                   <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
             </Box>
+            <span className="countClubText">
+              Les clubs disponibles à proximité de vous ({clubSearch.length}) :
+            </span>
               {clubSearch.length > 0 ? (
                 clubSearch.map((clubSelected, Uniqueindex) => {
                   return (

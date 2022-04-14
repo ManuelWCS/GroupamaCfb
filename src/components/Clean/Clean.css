@@ -18,7 +18,6 @@
 /* VERSION DESKTOP */
 
 @media screen and (min-width: 1024px) {
-
   html,
   body {
     max-width: 100%;
@@ -43,6 +42,47 @@
     /* creates padding around scroll thumb */
   }
 
+  .dozaDiv {
+    height: 350px;
+    width: 800px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .doza {
+    color: white;
+    font-size: 80px;
+    font-family: "doza";
+    position: absolute;
+    z-index: 2;
+  }
+
+  .doza2 {
+    font-size: 80px;
+    font-family: "doza";
+    position: absolute;
+    bottom: 45%;
+    color: rgba(14, 223, 207, 1);
+
+
+    transform: translate(5%);
+  }
+
+  .doza3 {
+    color: red;
+    font-size: 80px;
+    font-family: "doza";
+    position: absolute;
+    top: 45%;
+    color: rgba(223, 14, 95, 1);
+    transform: translate(-5%);
+
+  }
+
   /* PREMIERE DIV AVEC DU CONTENU : IMAGE CENTREE AVEC TEXTE*/
   .mainContent {
     height: 450px;
@@ -65,7 +105,7 @@
     background-attachment: fixed;
     background-position: center 60px;
     /* background-image: url("../../assets/TEST/Ordi22.png"); */
-    background-image: url('../../assets/CompressedPictures/bandesdeTypeBlanc.webp');
+    background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
     margin-top: -5px;
   }
 
@@ -143,7 +183,6 @@
   .bannerTitle {
     margin: auto;
     height: 80px;
-
   }
 
   /* Titre :" Entrez votre age" */
@@ -189,8 +228,8 @@
     position: absolute;
     z-index: 1;
     margin: auto;
-    top:0%;
-    bottom:0%;
+    top: 0%;
+    bottom: 0%;
     right: 0%;
     left: 0%;
   }
@@ -208,7 +247,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin:auto;
+    margin: auto;
   }
 
   .formContainer {
@@ -221,8 +260,6 @@
     align-items: center;
     align-content: stretch;
     border: 1px solid blue;
-
-
   }
 
   .dataResult {
@@ -234,7 +271,6 @@
     justify-content: flex-start;
     align-items: center;
     align-content: stretch;
-
   }
 
   .BlocFiltres {
@@ -248,7 +284,7 @@
     position: absolute;
     z-index: 2;
     background-color: wheat;
-   }
+  }
 
   .BlocFiltresEX {
     width: 350px;
@@ -265,18 +301,31 @@
   }
 
   .popover {
-   position: absolute;
-   z-index:3;
-    right :2%;
-    top:10%;
+    position: absolute;
+    z-index: 3;
+    right: 2%;
+    top: 10%;
   }
 
   .popover2 {
     position: absolute;
-    z-index:3;
-    left:5%;
-    top:10%;
+    z-index: 3;
+    left: 5%;
+    top: 10%;
+  }
 
+  .sliderText {
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    font-weight: bold;
+    padding-top: var(--spacing-medium);
+    padding-bottom: var(--spacing-small0);
+  }
+  .countClubText {
+    padding: 16px 8px;
+    color: black;
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) / 1.2);
   }
 
   .filtrationsWrapper {
@@ -312,7 +361,6 @@
     align-items: center;
     position: relative;
   }
-
 
   .hide {
     display: block;
@@ -375,14 +423,7 @@
   .btnBackground {
     background-color: transparent;
     border: none;
-
   }
-
-
-
-
-
-
 
   /* Affichage du club labélisé*/
   .labelClub {
@@ -402,7 +443,7 @@
     height: 158px;
     margin: auto;
     border-radius: 12px;
-    background-image: url('../../assets/CompressedPictures/Buttons/nouvelleRecherche.png');
+    background-image: url("../../assets/CompressedPictures/Buttons/nouvelleRecherche.png");
     background-position: center;
     background-size: cover;
   }
@@ -440,10 +481,6 @@
     color: var(--secondary-color);
   }
 
-
-
-
-
   /*********** STYLES CARTES*/
   .titleCard {
     height: 64px;
@@ -473,8 +510,6 @@
     flex-direction: column;
     justify-content: space-around;
   }
-
-
 
   .logo1,
   .logo2,
@@ -514,8 +549,6 @@
     justify-content: center;
     width: 100%;
   }
-
-
 }
 
 /*<<<<<<<<<<<<<<<<<<<<<<<<< FIN DE LA VERSIONS DESKTOP>>>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -544,7 +577,7 @@
 
   .mainContainer {
     width: 93vw;
-    margin:auto;
+    margin: auto;
     margin-bottom: 50vh;
     display: flex;
     justify-content: center;

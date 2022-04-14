@@ -10,3 +10,9 @@
     src: local('Century Gothic'),
     url('../../assets/fonts/CenturyGothic.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'doza';
+    src:local('doza'),
+    url('../../assets/fonts/PLANK___.TTF') format('truetype');
+}
