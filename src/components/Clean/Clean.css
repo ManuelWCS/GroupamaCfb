@@ -180,7 +180,6 @@
     align-content: stretch;
     margin: auto;
     justify-content: space-between;
-    background-color: white;
     position: relative;
   }
 
@@ -190,6 +189,10 @@
     position: absolute;
     z-index: 1;
     margin: auto;
+    top:0%;
+    bottom:0%;
+    right: 0%;
+    left: 0%;
   }
 
   .mapTitle {
@@ -201,9 +204,11 @@
 
   .mapContainer {
     height: 650px;
-    width: 100vw;
+    width: 95vw;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    margin:auto;
   }
 
   .formContainer {
@@ -263,14 +268,14 @@
    position: absolute;
    z-index:3;
     right :2%;
-    top:5%;
+    top:10%;
   }
 
   .popover2 {
     position: absolute;
     z-index:3;
     left:5%;
-    top:5%;
+    top:10%;
 
   }
 
