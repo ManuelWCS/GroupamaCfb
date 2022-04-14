@@ -70,6 +70,10 @@ import LocClub from "../../assets/CompressedPictures/Popover/LocClub.webp";
 /*import bouton A VOUS DE JOUER */
 import Avousdejouer from "../../assets/CompressedPictures/Buttons/Avousdejouer.webp";
 
+/* import composant Carte Club*/
+import CardClub from './Cards/CardClub.jsx'
+
+
 function Clean() {
   const [allcities, setallcities] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -502,7 +506,7 @@ function Clean() {
     borderRadius: "0px 0px 30px 30px",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center",
     margin: "0 auto",
   };
@@ -955,7 +959,20 @@ function Clean() {
               </div>
             </button>
             <div style={active2 ? styleDiv3 : StyleOff}>
-              {" "}
+            <Box sx={{ width: 190, margin:1 }}>
+              <span>Distance : 1 à 25km</span>
+              <Slider
+                aria-label="Distance"
+                defaultValue={10}
+                getAriaValueText={valuetext}
+                // getAriaLabel={true}
+                valueLabelDisplay="on"
+                step={1}
+                marks={true}
+                min={1}
+                max={25}
+              />
+            </Box>
               {clubSearch.length > 0 ? (
                 clubSearch.map((clubSelected, Uniqueindex) => {
                   return (
@@ -1009,8 +1026,18 @@ function Clean() {
                   );
                 })
               ) : (
-                <p>Activez la localisation pour être un foulek</p>
-              )}
+                clubSearch.map((clubSelected, Uniqueindex) => {
+                
+                <CardClub label={clubSelected.label}
+                NomClub={clubSelected.NomClub}
+                AdressePostale={clubSelected.AdressePostale}
+                Mail={clubSelected.Mail}
+                NumClub={clubSelected.NumClub}
+              />
+
+
+
+              }))}
             </div>
           </div>
         </div>
