@@ -952,7 +952,14 @@ function Clean() {
               </div>
             </div>
           </div>
+          {/* <div className="interactContainer">
+                      <div className="locImgContainer">
+
           <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
+          <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
+          <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
+                      </div>
+          </div> */}
 
           <div className="popover2">
             <button

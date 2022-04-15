@@ -33,11 +33,9 @@
 
 .locImage {
     height: 78px;
-    width: 90px;
-    position:absolute;
-    z-index: 3;
-    bottom: 10%;
-    left: 5%;
+    width: 90px;   
+    margin:auto;
+
 
 }
 
