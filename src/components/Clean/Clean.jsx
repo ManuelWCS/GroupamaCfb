@@ -924,15 +924,15 @@ function Clean() {
               />
                    {/* <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} /> */}
             </Box>
-          
-              {clubSearch.length > 0 ? (
-                clubSearch.map((clubSelected, Uniqueindex) => {
+          <div className="resultContainer">
+
+              {proximity=== true ? (
+                clubsProches.map((club, Uniqueindex) => {
                   return (
-                    
                     
                     <div
                       className={
-                        clubSelected.label.length > 0
+                        club.label.length > 0
                           ? "cardResultLabel"
                           : "cardResult"
                       }
@@ -940,7 +940,7 @@ function Clean() {
                     >
                       <div className="titleCardContainer">
                         <span className="titleCard" onClick={scrollTop}>
-                          {clubSelected.NomClub}
+                          {club.NomClub}
                         </span>
                       </div>
 
@@ -955,18 +955,18 @@ function Clean() {
                             {" "}
                             <a
                               className="mail"
-                              href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre
+                              href={`mailto:${club.Mail}?subject=[CFB] "Entrez l'objet de votre
                                 demande "`}
                             >
-                              {clubSelected.Mail}{" "}
+                              {club.Mail}{" "}
                             </a>
                           </div>
                           <div className="info2" onClick={scrollTop}>
-                            {clubSelected.AdressePostale}
+                            {club.AdressePostale}
                           </div>
                           <div className="info3">
                             <a
-                              href={`https://foot-centre.fff.fr/recherche-clubs/?query-affil=${clubSelected.NumClub}`}
+                              href={`https://foot-centre.fff.fr/recherche-clubs/?query-affil=${club.NumClub}`}
                               target="_blank"
                               rel="noreferrer"
                             >
@@ -976,12 +976,15 @@ function Clean() {
                         </div>
                       </div>
                     </div>
-                  );
-                })
-              ) : (
-                <ActivateGeoloc/>
-
-                )}
+                  )
+                }
+                )
+                )
+                : (
+                  <ActivateGeoloc/>
+                  
+                  )}
+                  </div>
             </div>
           </div>
         </div>

@@ -637,6 +637,15 @@ box-shadow:  11px 11px 2px #adadad,
       padding-left:var(--spacing-large) ;
     }
 
+    /*Container results of clubs clsoe */
+
+    .resultContainer {
+      height: 340px;
+      overflow:auto;
+      width: 100%;
+
+    }
+
 
 
 
