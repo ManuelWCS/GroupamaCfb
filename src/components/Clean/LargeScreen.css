@@ -126,12 +126,15 @@
     font-size: calc(var(--main-fontSize) * 2);
   }
   #map {
-    height: 700px;
-    width: 700px;
-    margin-bottom: calc(var(--spacing-large) * 1);
+    height: 100vh;
+    width: 92vw;
   }
 
   .mainContainer {
+    height: 100vh;
+    width: 95vw;
+    background-color: #293d6b;
+
   }
 
   .markerContainer {
@@ -278,8 +281,8 @@
     font-size: calc(var(--main-fontSize) * 2.5);
   }
   #map {
-    height: 800px;
-    width: 900px;
+    height: 100vh;
+    width: 92vw;
   }
   .bannerContainer {
     height: 8vh;
@@ -295,6 +298,13 @@
   .mainContainer {
     margin-top: 64px;
     justify-content: center;
+    height: 100vh;
+    width: 92vw;
+  }
+
+  .mapContainer {
+    height: 100vh;
+    width: 92vw;
   }
 
 

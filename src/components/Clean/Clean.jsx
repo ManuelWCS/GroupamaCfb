@@ -514,6 +514,8 @@ function Clean() {
     margin: "0 auto",
   };
 
+
+
   const [active, setActive] = useState(false);
   const [active2, setActive2] = useState(false);
 
@@ -691,8 +693,8 @@ function Clean() {
             </div>
           
             <Legend />
-            {proximity === true ? (
-              <div>
+            {/* {proximity === true ? (
+              <div className="btnDiv">
                 <button onClick={showMyLocation}>ME LOCALISER</button>
                 <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
                 <button onClick={hideMarkers}> CLUBS PROCHES</button>
@@ -701,13 +703,13 @@ function Clean() {
             ) : (
               <button>Activer ma geoloc </button>
             )}
-     
+      */}
           </div>
          
-          <div className="popover">
+          <div className="popover" >
             <button
               onClick={isClicked}
-              style={active ? styleLoc : styleLocExpanded}
+              className={active ? "styleLoc" : "styleLocExpanded"}
             >
               <div className="btnContent">
                 <img src={SearchIcon} className="searchIcon" alt="searchIcon" />
@@ -715,7 +717,7 @@ function Clean() {
               </div>
             </button>
 
-            <div style={active ? styleDiv2 : StyleOff}>
+            <div className={active ? "styleDiv2" : "styleOff"}>
               <div className="filtersNoSearch">
                 <form
                   className="filtrationsWrapper"
@@ -952,6 +954,7 @@ function Clean() {
               </div>
             </div>
           </div>
+          
           {/* <div className="interactContainer">
                       <div className="locImgContainer">
 
@@ -964,14 +967,14 @@ function Clean() {
           <div className="popover2">
             <button
               onClick={isClicked2}
-              style={active2 ? StyleGeo : StyleGeoExpanded}
+              className={active2 ? "styleGeo" : "styleGeoExpanded"}
             >
               <div className="btnContent">
                 <img src={LocClub} className="searchIcon" alt="searchIcon" />
                 <p className="TitleButton">DÉCOUVRIR LES CLUBS ICI ! &nbsp; &nbsp;   </p>
               </div>
             </button>
-            <div style={active2 ? styleDiv3 : StyleOff}>
+            <div className={active2 ? "styleDiv3" : "styleOff"}>
               <span className="sliderText"> CHOISIS TON ÉCHELLE !</span>
             <Box sx={{ width: 190, margin:1 }}>
               <Slider
