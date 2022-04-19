@@ -75,6 +75,7 @@ import CardClub from './Cards/CardClub.jsx'
 
 /* import bouton localisez moi*/
 import LocImage from '../../assets/CompressedPictures/Buttons/LocalisezMoi.png'
+import ActivateGeoloc from "../ActivateGeoloc/ActivateGeoloc";
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -436,11 +437,6 @@ function Clean() {
     return deg * (Math.PI / 180);
   }
 
-  // function to get key of the marker cliked
-  function getKey(marker) {
-    console.log(marker.properties.id);
-    return marker.properties.id;
-  }
   const styleLoc = {
     height: "60px",
     borderRadius: "30px 30px 0px 0px",
@@ -453,80 +449,18 @@ function Clean() {
     alignItems: "center",
     margin: "0 auto",
   };
-
-  const styleLocExpanded = {
-    height: "60px",
-    borderRadius: "30px",
-    backgroundColor: "var(--main-color)",
-    width: "305px",
-  };
-
-  const StyleGeo = {
-    height: "60px",
-    borderRadius: "30px 30px 0px 0px",
-    backgroundColor: "var(--secondary-color)",
-    width: "245px",
-    border: "1px solid black",
-  };
-
-  const StyleGeoExpanded = {
-    height: "60px",
-    borderRadius: "30px",
-    backgroundColor: "var(--secondary-color)",
-    width: "245px",
-  };
-  const StyleOff = {
-    display: "none",
-  };
-
-  const styleDiv = {
-    width: "245px",
-    backgroundColor: "white",
-    height: "400px",
-    marginTop: "-1px",
-    border: "1px solid black",
-    borderRadius: "0px 0px 30px 30px",
-  };
-
-  const styleDiv2 = {
-    width: "303px",
-    backgroundColor: "white",
-    height: "600px",
-    border: "1px solid black",
-    borderRadius: "0px 0px 30px 30px",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    margin: "0 auto",
-  };
-
-  const styleDiv3 = {
-    width: "243px",
-    backgroundColor: "white",
-    height: "600px",
-    border: "1px solid black",
-    borderRadius: "0px 0px 30px 30px",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    margin: "0 auto",
-  };
-
-
-
-  const [active, setActive] = useState(false);
-  const [active2, setActive2] = useState(false);
+  
+  const [form, setForm] = useState(false);
+  const [discovery, setDiscovery] = useState(false);
 
   const isClicked = () => {
-    setActive(!active);
-    console.log(active);
+    setForm(!form);
+    console.log(form);
   };
 
   const isClicked2 = () => {
-    setActive2(!active2);
-    console.log(active2);
+    setDiscovery(!discovery);
+    console.log(discovery);
   };
 
   var Largeur = document.documentElement.clientWidth;
@@ -709,7 +643,7 @@ function Clean() {
           <div className="popover" >
             <button
               onClick={isClicked}
-              className={active ? "styleLoc" : "styleLocExpanded"}
+              className={form ? "styleLoc" : "styleLocExpanded"}
             >
               <div className="btnContent">
                 <img src={SearchIcon} className="searchIcon" alt="searchIcon" />
@@ -717,7 +651,7 @@ function Clean() {
               </div>
             </button>
 
-            <div className={active ? "styleDiv2" : "styleOff"}>
+            <div className={form ? "styleDiv2" : "styleOff"}>
               <div className="filtersNoSearch">
                 <form
                   className="filtrationsWrapper"
@@ -967,14 +901,14 @@ function Clean() {
           <div className="popover2">
             <button
               onClick={isClicked2}
-              className={active2 ? "styleGeo" : "styleGeoExpanded"}
+              className={discovery ? "styleGeo" : "styleGeoExpanded"}
             >
               <div className="btnContent">
                 <img src={LocClub} className="searchIcon" alt="searchIcon" />
                 <p className="TitleButton">DÉCOUVRIR LES CLUBS ICI ! &nbsp; &nbsp;   </p>
               </div>
             </button>
-            <div className={active2 ? "styleDiv3" : "styleOff"}>
+            <div className={discovery ? "styleDiv3" : "styleOff"}>
               <span className="sliderText"> CHOISIS TON ÉCHELLE !</span>
             <Box sx={{ width: 190, margin:1 }}>
               <Slider
@@ -988,14 +922,13 @@ function Clean() {
                 min={10}
                 max={20}
               />
-                   <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
+                   {/* <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} /> */}
             </Box>
-            <span className="countClubText">
-              Les clubs disponibles à proximité de vous ({clubSearch.length}) :
-            </span>
+          
               {clubSearch.length > 0 ? (
                 clubSearch.map((clubSelected, Uniqueindex) => {
                   return (
+                    
                     
                     <div
                       className={
@@ -1046,18 +979,9 @@ function Clean() {
                   );
                 })
               ) : (
-                clubSearch.map((clubSelected, Uniqueindex) => {
-                
-                <CardClub label={clubSelected.label}
-                NomClub={clubSelected.NomClub}
-                AdressePostale={clubSelected.AdressePostale}
-                Mail={clubSelected.Mail}
-                NumClub={clubSelected.NumClub}
-              />
+                <ActivateGeoloc/>
 
-
-
-              }))}
+                )}
             </div>
           </div>
         </div>
