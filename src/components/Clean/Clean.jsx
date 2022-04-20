@@ -437,19 +437,32 @@ function Clean() {
     return deg * (Math.PI / 180);
   }
 
-  const styleLoc = {
-    height: "60px",
-    borderRadius: "30px 30px 0px 0px",
-    backgroundColor: "var(--main-color)",
-    width: "305px",
-    border: "1px solid black",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    margin: "0 auto",
-  };
-  
+// Function to make appear the clubs in order of distance from the user
+  function sortByDistance(clubsProches) {
+    let clubsSorted = clubsProches.sort(function (a, b) {
+      return distanceBetweenPoints(
+        location.coordinates.lat,
+        location.coordinates.lng,
+        a.Latitude,
+        a.Longitude
+      ) -
+        
+        
+        distanceBetweenPoints(
+          location.coordinates.lat,
+          location.coordinates.lng,
+          b.Latitude,
+          b.Longitude
+        );
+    });
+    return clubsSorted;
+  }
+
+
+
+
+
+
   const [form, setForm] = useState(false);
   const [discovery, setDiscovery] = useState(false);
 
@@ -652,6 +665,8 @@ function Clean() {
             </button>
 
             <div className={form ? "styleDiv2" : "styleOff"}>
+
+              {discovery === true ?
               <div className="filtersNoSearch">
                 <form
                   className="filtrationsWrapper"
@@ -885,8 +900,8 @@ function Clean() {
                     )}
                   </div>
                 </form>
-              </div>
-            </div>
+              </div>: <p>Rien a voir ici</p> } 
+            </div> 
           </div>
           
           {/* <div className="interactContainer">
@@ -927,8 +942,11 @@ function Clean() {
           <div className="resultContainer">
 
               {proximity=== true ? (
-                clubsProches.map((club, Uniqueindex) => {
+               
+                  sortByDistance(clubsProches).map((club, Uniqueindex) => {
                   return (
+                   
+                
                     
                     <div
                       className={
@@ -942,6 +960,16 @@ function Clean() {
                         <span className="titleCard" onClick={scrollTop}>
                           {club.NomClub}
                         </span>
+                        <p className="distanceSpan" >
+                       {distanceBetweenPoints(
+                      location.coordinates.lat,
+                      location.coordinates.lng,
+                      club.Latitude,
+                      club.Longitude
+                    )}{" "}
+                    km 
+
+                    </p>
                       </div>
 
                       <div className="columnContainer">

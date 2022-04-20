@@ -280,6 +280,16 @@
     padding: 8px 8px 8px 8px;
   }
 
+  .distanceSpan {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) * 1);
+    color: black;
+    text-align: end;
+    margin-right: var(--spacing-medium);
+    padding-bottom: 4px;
+    filter:opacity(60%)
+  }
+
   /*********** STYLES CARTES*/
   .cardResult {
     height: 240px;
