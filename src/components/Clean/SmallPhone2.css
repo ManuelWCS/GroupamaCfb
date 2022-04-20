@@ -94,7 +94,6 @@
 
   .bannerTitle {
     padding-top: calc(var(--spacing-large) * 0.4);
-    height: 45px;
     margin-bottom: 24px;
     width: 95%;
   }
@@ -289,6 +288,22 @@
     padding-bottom: 4px;
     filter:opacity(60%)
   }
+
+    /*********** STYLES RESULTAT DE RECHERCHE */
+
+    .containerResult {
+      background-color: palevioletred;
+      height: 500px;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .resultClubContainer {
+
+    }
+
+
+  
 
   /*********** STYLES CARTES*/
   .cardResult {
@@ -549,7 +564,7 @@
     border-radius: 0px 0px 30px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
     border:1px solid pink;
