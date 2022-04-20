@@ -76,6 +76,7 @@ import CardClub from "./Cards/CardClub.jsx";
 /* import bouton localisez moi*/
 import LocImage from "../../assets/CompressedPictures/Buttons/LocalisezMoi.png";
 import ActivateGeoloc from "../ActivateGeoloc/ActivateGeoloc";
+import { render } from "@testing-library/react";
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -494,6 +495,18 @@ function Clean() {
     },
   ];
 
+  //function that update the component when the user change the radius
+  const updateRadius = () => {
+    setProximity(true);
+    setLatMin(location.coordinates.lat - convertedDistance);
+    setLatMax(location.coordinates.lat + convertedDistance);
+    setLngMin(location.coordinates.lng - convertedDistance);
+    setLngMax(location.coordinates.lng + convertedDistance);
+  };
+
+
+
+
   return (
     <>
       <Header />
@@ -665,7 +678,7 @@ function Clean() {
             </button>
 
             <div className={form ? "styleDiv2" : "styleOff"}>
-              {recherche === false ? (
+              {recherche === false  ? (
                 <div className="filtersNoSearch">
                   <form
                     className="filtrationsWrapper"
@@ -903,16 +916,90 @@ function Clean() {
                   </form>
                 </div>
               ) : (
+
+
+
+
                 <div className="containerResult">
-                  {clubSearch.map((club) => (
-                    <div className="resultClubContainer" key={club.id}>
-                      {club.NumClub}, {club.NomClub}, {club.AdressePostale},{" "}
-                      {club.Ville}
+                  <p className="NumberClose"> Il y a {clubSearch.length} correspondant à votre recherche </p>
+                  <button onClick={()=> {
+                    setclubSearch([])
+                    setRecherche(false);
+                  }}>Réinitialiser recherche </button>
+                  {
+                  clubSearch.map((club) => (
+                    <div
+                    className={
+                      club.label.length > 0
+                        ? "cardResultLabel"
+                        : "cardResult"
+                    }
+                    id="cardClub"
+                  >
+                    <div className="titleCardContainer">
+                      <span className="titleCard" onClick={scrollTop}>
+                        {club.NomClub}
+                      </span>
+                      <p className="distanceSpan">
+                        {distanceBetweenPoints(
+                          location.coordinates.lat,
+                          location.coordinates.lng,
+                          club.Latitude,
+                          club.Longitude
+                        )}{" "}
+                        km
+                      </p>
                     </div>
-                  ))}
+
+                    <div className="columnContainer">
+                      <div className="column1">
+                        <div className="logo1"></div>
+                        <div className="logo2"></div>
+                        <div className="logo3"></div>
+                      </div>
+                      <div className="column2">
+                        <div className="info1">
+                          {" "}
+                          <a
+                            className="mail"
+                            href={`mailto:${club.Mail}?subject=[CFB] "Entrez l'objet de votre
+                            demande "`}
+                          >
+                            {club.Mail}{" "}
+                          </a>
+                        </div>
+                        <div className="info2" onClick={scrollTop}>
+                          {club.AdressePostale}
+                        </div>
+                        <div className="info3">
+                          <a
+                            href={`https://foot-centre.fff.fr/recherche-clubs/?query-affil=${club.NumClub}`}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Voir plus d'infos
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>)
+
+
+
+                  )}
+
+
+
+
                 </div>
+                
               )}
+              {recherche === true ? ( 
+            <button onClick={() => {
+              setRecherche(false)
+            }}> NOUVELLE RECHERCHE </button> ): null}
             </div>
+
           </div>
 
           {/* <div className="interactContainer">
@@ -949,10 +1036,17 @@ function Clean() {
                   marks={marks}
                   min={10}
                   max={20}
+                  onChange={updateRadius}
                 />
                 {/* <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} /> */}
               </Box>
               <div className="resultContainer">
+                
+                {clubsProches.length !== 0 ? 
+                <p className="NumberClose">Il y a {clubsProches.length} clubs autour de vous : </p>
+
+                : <p className="NumberClose">Il n'y a pas de club autour de vous !</p>} 
+
                 {proximity === true ? (
                   sortByDistance(clubsProches).map((club, Uniqueindex) => {
                     return (

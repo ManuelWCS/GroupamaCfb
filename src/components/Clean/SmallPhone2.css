@@ -296,12 +296,11 @@
       height: 500px;
       display: flex;
       justify-content: flex-start;
+      flex-direction: column;
+      overflow:auto;
     }
 
-    .resultClubContainer {
-
-    }
-
+    
 
   
 
@@ -620,6 +619,16 @@
     font-family: var(--secondary-font);
   }
 
+  /* PHRASE AFFICHANT LE NOMBRE DE CLUBS A NOS ALENTOURS */
+
+  .NumberClose {
+    font-size: calc(var(--main-fontSize) * 1);
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    padding-top: var(--spacing-medium);
+    padding-bottom: var(--spacing-small);
+    text-align: center;
+  }
 
     /* STYLE DU COMPOSANT ActivateGeoLocation*/
 
