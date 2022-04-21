@@ -424,9 +424,9 @@ function Clean() {
     var a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
       Math.cos(deg2rad(lat1)) *
-        Math.cos(deg2rad(lat2)) *
-        Math.sin(dLon / 2) *
-        Math.sin(dLon / 2);
+      Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = R * c; // Distance in km
     var e = d.toFixed(2);
@@ -601,45 +601,45 @@ function Clean() {
                 >
                   {clubSearch.length !== 0
                     ? clubSearch.slice(0, 500).map((res, index2) => {
-                        // console.log(res);
-                        return (
-                          <Marker
-                            icon={
-                              res.label.length > 0
-                                ? clubMarqueurLabel
-                                : clubMarqueur
-                            }
-                            key={index2}
-                            position={[res.Latitude, res.Longitude]}
-                          >
-                            <Popup key={index2} className="markersPopUp">
-                              <p onClick={scrollCard}> {res.NomClub}</p>
+                      // console.log(res);
+                      return (
+                        <Marker
+                          icon={
+                            res.label.length > 0
+                              ? clubMarqueurLabel
+                              : clubMarqueur
+                          }
+                          key={index2}
+                          position={[res.Latitude, res.Longitude]}
+                        >
+                          <Popup key={index2} className="markersPopUp">
+                            <p onClick={scrollCard}> {res.NomClub}</p>
 
-                              <br></br>
-                              <h3>
-                                Se trouve à{" "}
-                                {distanceBetweenPoints(
-                                  location.coordinates.lat,
-                                  location.coordinates.lng,
-                                  res.Latitude,
-                                  res.Longitude
-                                )}{" "}
-                                km de vous !
-                              </h3>
-                              <p>
-                                <a
-                                  href={`https://www.google.fr/maps/dir/${location.coordinates.lat},${location.coordinates.lng}+/${res.Latitude},+${res.Longitude}`}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                >
-                                  {" "}
-                                  Itinéraire vers ce club{" "}
-                                </a>{" "}
-                              </p>
-                            </Popup>
-                          </Marker>
-                        );
-                      })
+                            <br></br>
+                            <h3>
+                              Se trouve à{" "}
+                              {distanceBetweenPoints(
+                                location.coordinates.lat,
+                                location.coordinates.lng,
+                                res.Latitude,
+                                res.Longitude
+                              )}{" "}
+                              km de vous !
+                            </h3>
+                            <p>
+                              <a
+                                href={`https://www.google.fr/maps/dir/${location.coordinates.lat},${location.coordinates.lng}+/${res.Latitude},+${res.Longitude}`}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                {" "}
+                                Itinéraire vers ce club{" "}
+                              </a>{" "}
+                            </p>
+                          </Popup>
+                        </Marker>
+                      );
+                    })
                     : null}
                 </MarkerClusterGroup>
 
@@ -647,7 +647,21 @@ function Clean() {
               </MapContainer>
             </div>
 
-            <Legend />
+
+
+
+
+            {Largeur < 1024 ?
+              (
+                <div className="commandContainer">
+                  <Legend />
+
+                  <button onClick={showMyLocation}>Ma Loc</button>
+                  <button onClick={hideMarkers}>Clubs Proches </button>
+                  <button onClick={hideInstanceMarkers}>Instances</button>
+
+                </div>
+              ) : null}
             {/* {proximity === true ? (
               <div className="btnDiv">
                 <button onClick={showMyLocation}>ME LOCALISER</button>
@@ -737,14 +751,14 @@ function Clean() {
                             } else {
                               formData.type === "Futsal"
                                 ? setformData({
-                                    ...formData,
-                                    gender: e.target.value,
-                                    type: "",
-                                  })
+                                  ...formData,
+                                  gender: e.target.value,
+                                  type: "",
+                                })
                                 : setformData({
-                                    ...formData,
-                                    gender: e.target.value,
-                                  });
+                                  ...formData,
+                                  gender: e.target.value,
+                                });
                             }
                           }}
                         >
@@ -802,7 +816,7 @@ function Clean() {
                             control={<Radio />}
                             label="Futsal"
                             title="Pratique proposée aux séniors Hommes et aux 17-18 masculins"
-                            // disable={inputFutsal}
+                          // disable={inputFutsal}
                           />
                         </RadioGroup>
 
@@ -1104,6 +1118,18 @@ function Clean() {
             </div>
           </div>
         </div>
+        {Largeur >= 1024 ?
+          <div className="commandContainer">
+            <Legend />
+
+            <button onClick={showMyLocation}>Ma Loc</button>
+            <button onClick={hideMarkers}>Clubs Proches </button>
+            <button onClick={hideInstanceMarkers}>Instances</button>
+
+          </div>
+
+
+          : null}
         <Faq />
 
         {/* Fin de desktopContainer*/}
