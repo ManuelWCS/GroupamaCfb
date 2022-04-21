@@ -257,6 +257,28 @@
     border: none;
 
   }
+  .filtrationsWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+
+
+
+  /* TITRE DU FORMULAIRE */
+
+  .formTitle {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) * 1.9);
+    padding-top: calc(var(--spacing-small) * 2);
+
+    padding-bottom: calc(var(--spacing-small) * 2);
+    color: rgb(51, 51, 51);
+    text-align: center;
+  }
 
 
   .btnAfterSearch {
@@ -554,12 +576,13 @@
     border-radius: 30px;
     background-color: var(--main-color);
     width: 275px;
+    margin: var(--spacing-small)
   }
 
 
   .styleDiv2 {
     width: 275px;
-    height: 600px;
+    height: 620px;
     border-radius: 0px 0px 30px 30px;
     display: flex;
     flex-direction: column;
@@ -582,6 +605,7 @@
     border-radius: 30px 30px 0px 0px;
     background-color: var(--secondary-color);
     width: 275px;
+
   }
 
   .styleGeoExpanded {

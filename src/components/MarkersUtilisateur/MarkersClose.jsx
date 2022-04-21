@@ -14,17 +14,26 @@ function MarkersClose(props) {
   const [clubProche, setclubProche] = useState([]);
 
   let clubsFiltres = markers.filter(function (clubProximite) {
-    return (
-      clubProximite.Latitude <= position.coordinates.lat + props.distance &&
-      clubProximite.Latitude >= position.coordinates.lat - props.distance &&
-      clubProximite.Longitude <= position.coordinates.lng + props.distance &&
-      clubProximite.Longitude >= position.coordinates.lng - props.distance
-    );
+
+    if(position.coordinates ) {
+      return (
+        clubProximite.Latitude <= position.coordinates.lat + props.distance &&
+        clubProximite.Latitude >= position.coordinates.lat - props.distance &&
+        clubProximite.Longitude <= position.coordinates.lng + props.distance &&
+        clubProximite.Longitude >= position.coordinates.lng - props.distance
+      );
+
+    }
+    else {
+      return null ;
+    }
+
   });
 
   useEffect(() => {
     setMarkers(dataClubs);
-    setclubProche(clubsFiltres.length);
+    setclubProche(clubsFiltres);
+    console.log(clubProche)
   }, [position]);
 
   const clubMarqueurLabel = L.icon({
