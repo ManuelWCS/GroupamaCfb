@@ -1,7 +1,5 @@
 @import url("./Clean.css");
 
-
-
 @media screen and (min-width: 1401px) {
   html,
   body {
@@ -17,18 +15,20 @@
     background-size: 100%;
     background-attachment: fixed;
     background-position: center 85px;
-    background-image: url('../../assets/CompressedPictures/bandesdeTypeBlanc.webp');  }
+    background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
+    
+  }
 
   .mainContent {
-    height: 550px;
+    height: 650px;
     background-image: url("../../assets/CompressedPictures/final3.webp");
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
-    margin:auto;
+    margin: auto;
     position: relative;
     margin-top: -4.7px;
-    width: 93vw;
+    width: 92vw;
   }
 
   .titlesContainer {
@@ -73,18 +73,18 @@
   .instructionsTitle {
     font-size: calc(var(--main-fontSize) * 2);
   }
+
   #map {
     height: 100vh;
     width: 92vw;
-    position:relative;
+    position: relative;
     z-index: 1;
   }
 
   .mainContainer {
     height: 100vh;
     width: 92vw;
-    margin:auto;
-
+    margin: auto;
   }
 
   .markerContainer {
@@ -99,8 +99,6 @@
   .cardLegendText {
     margin-bottom: calc(var(--spacing-large) * 5);
   }
-
-
 
   .resultats {
     display: flex;
@@ -117,18 +115,6 @@
     margin-bottom: 180px;
     padding-bottom: 64px;
     height: 700px;
-  }
-
-  .BlocFiltresEX {
-    width: 520px;
-    overflow: scroll;
-    overflow-x: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 700px;
-    margin-top: -148px;
   }
 
   .formContainer {
@@ -225,6 +211,8 @@
     margin: auto;
     position: relative;
   }
+
+  /* FORM */
   .filtrationsWrapper {
     display: flex;
     flex-direction: column;
@@ -234,20 +222,69 @@
     align-content: center;
   }
 
+  .findclubBtn,
+  .SubmitButton {
+    height: 120px;
+    width: 180px;
+  }
+
+  .btnBackground {
+    background-color: transparent;
+    border: none;
+  }
+  .inputBox {
+    font-family: var(--main-font);
+    height: 35px;
+    border-radius: 22px;
+    width: 255px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--main-color);
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-top: 2px;
+  }
+
+  .inputBox2 {
+    font-family: var(--main-font);
+    height: 35px;
+    border-radius: 22px;
+    width: 250px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--main-color);
+    margin-top: 4px;
+    margin-bottom: 16px;
+  }
+
+  .inputTitle {
+    color: white;
+    font-family: var(--main-color);
+    padding-left: 8px;
+  }
+
+  .filter {
+    margin: auto;
+  }
 
   .popover {
     position: absolute;
     z-index: 5;
-    top: 43%;
-    right:8%;
+    top: 41%;
+    right: 4%;
   }
-  
 
   .popover2 {
     position: absolute;
     z-index: 5;
-    top: 43%;
-    left:8%;
+    top: 41%;
+    left: 8%;
   }
 
   /* STYLES DES POPOVERS LARGEUR BOUTONS MOBILE */
@@ -259,8 +296,8 @@
     width: 355px;
     border: 1px solid black;
     display: flex;
-    flex-direction: column; 
-    justify-content: center;
+    flex-direction: column;
+    justify-content: cefnter;
     align-items: center;
     margin: 0 auto;
   }
@@ -272,17 +309,16 @@
     width: 355px;
   }
 
-
   .styleDiv2 {
     width: 353px;
-    height: 600px;
+    height: 750px;
     border-radius: 0px 0px 30px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
-    border:1px solid black;
+    border: 1px solid black;
     margin-bottom: 16px;
     background-color: white;
   }
@@ -292,7 +328,6 @@
   }
 
   /*STYLE DEUXIEME BOUTON  */
-
 
   .styleGeo {
     height: 60px;
@@ -310,7 +345,7 @@
 
   .styleDiv3 {
     width: 360px;
-    height: 600px;
+    height: 700px;
     border-radius: 0px 0px 30px 30px;
     display: flex;
     flex-direction: column;
@@ -318,7 +353,7 @@
     align-items: center;
     margin: 0 auto;
     margin-bottom: 16px;
-    border:1px solid black;
+    border: 1px solid black;
     background-color: white;
   }
   .containerResult {
@@ -327,26 +362,25 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    overflow:auto;
+    overflow: auto;
   }
   .resultContainer {
     height: 450px;
-    overflow:auto;
+    overflow: auto;
     width: 100%;
-
   }
-   /* Style à l'intérieur des toggle */
-  
-   .sliderText {
-    padding-top:var(--spacing-medium);
-    padding-bottom:var(--spacing-small);
+  /* Style à l'intérieur des toggle */
+
+  .sliderText {
+    padding-top: var(--spacing-medium);
+    padding-bottom: var(--spacing-small);
     font-size: calc(var(--main-fontSize) * 1.3);
     color: var(--secondary-color);
     font-family: var(--secondary-font);
   }
-   /* PHRASE AFFICHANT LE NOMBRE DE CLUBS A NOS ALENTOURS */
+  /* PHRASE AFFICHANT LE NOMBRE DE CLUBS A NOS ALENTOURS */
 
-   .NumberClose {
+  .NumberClose {
     font-size: calc(var(--main-fontSize) * 1);
     color: var(--secondary-color);
     font-family: var(--secondary-font);
@@ -360,7 +394,7 @@
     color: black;
     text-align: end;
     padding-bottom: 4px;
-    filter:opacity(60%)
+    filter: opacity(60%);
   }
 
   /* TITRE DU FORMULAIRE */
@@ -368,109 +402,16 @@
   .formTitle {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) * 1.9);
-    padding-top: calc(var(--spacing-medium) *3 );
+    padding-top: calc(var(--spacing-medium) * 3);
 
     padding-bottom: calc(var(--spacing-small) * 2);
     color: rgb(51, 51, 51);
     text-align: center;
   }
 
-  
-
-
-
-
-
-
-}
-
-@media screen and (min-width: 1580px) and (max-width: 1680px) {
-  .mainDescription {
-    margin-top: 5vh;
-  }
-
-  .mainContent {
-    height: 580px;
-  }
-
-  #map {
-    height: 800px;
-    width: 900px;
-  }
-}
-
-@media screen and (min-width: 1681px) and (max-width: 1980px) {
-  .mainDescription {
-    margin-top: 5vh;
-  }
-
-  #map {
-    height: 800px;
-    width: 900px;
-  }
-
-  .mainContainer {
-    height: 950px;
-    width: 1450px;
-    margin-top: 64px;
-    justify-content: space-around;
-  }
-  .mainContent {
+  .resultContainer {
     height: 650px;
-    min-height: 630px;
+    overflow: auto;
+    width: 100%;
   }
-}
-
-@media screen and (min-width: 1981px) {
-  .mainContent {
-    max-height: 40vh;
-    min-height: 890px;
-  }
-  .mainDescription {
-    margin-top: 1vh;
-    font-size: calc(var(--main-fontSize) * 4);
-  }
-  .secondaryDescription {
-    font-size: calc(var(--main-fontSize) * 2.5);
-  }
-  #map {
-    height: 100vh;
-    width: 92vw;
-  }
-  .bannerContainer {
-    height: 8vh;
-  }
-  .bannerTitle {
-    width: 50%;
-    height: 170px;
-    margin-bottom: 10%;
-    margin-top: 10%;
-    padding-top:10%;
-    padding-bottom: 10%;
-  }
-  .mainContainer {
-    margin-top: 64px;
-    justify-content: center;
-    height: 100vh;
-    width: 92vw;
-  }
-
-  .mapContainer {
-    height: 100vh;
-    width: 92vw;
-  }
-
-
-  .findclubBtn, .SubmitButton {
-    height: 120px;
-    width: 180px;
-  }
-
-  .btnBackground {
-    background-color: transparent;
-    border:none;
-
-  }
-
-  
 }
