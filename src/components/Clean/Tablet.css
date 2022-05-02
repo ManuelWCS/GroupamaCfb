@@ -511,6 +511,22 @@
     flex-direction: column;
     justify-content: space-around;
   }
+  .commandContainer {
+    display: flex;
+    margin:auto;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .commandBtn {
+    width: 150px;
+    margin:auto;
+    border-radius: 32px;
+    height: 28px;
+    
+  }
+
 
 
 }
@@ -1059,6 +1075,23 @@ A PARTIR DE 480px*/
     padding-bottom: 4px;
     filter: opacity(60%)
   }
+
+  .commandContainer {
+    display: flex;
+    margin:auto;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .commandBtn {
+    width: 150px;
+    margin:auto;
+    border-radius: 32px;
+    height: 28px;
+    
+  }
+
 
 
 
@@ -1758,6 +1791,22 @@ A PARTIR DE 480px*/
   .newSearchBtn {
     width: 380px;
   }
+  .commandContainer {
+    display: flex;
+    margin:auto;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .commandBtn {
+    width: 150px;
+    margin:auto;
+    border-radius: 32px;
+    height: 28px;
+    
+  }
+
 }
 
 @media screen and (min-width: 815px) and (max-width: 1023px) {

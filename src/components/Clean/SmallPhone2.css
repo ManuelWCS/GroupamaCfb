@@ -711,6 +711,15 @@ box-shadow:  11px 11px 2px #adadad,
     margin:auto;
     width: 100%;
     justify-content: center;
+    flex-direction: column;
+  }
+
+  .commandBtn {
+    width: 150px;
+    margin:auto;
+    border-radius: 32px;
+    height: 28px;
+    
   }
 
 

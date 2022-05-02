@@ -50,7 +50,7 @@ import Legend from "../Legend/Legend.jsx";
 import Header from "../Header2/Header2.jsx";
 
 /*<------------------------IMPORT IMAGES ---------------------------------> */
-import btnNewSearch from "../../assets/CompressedPictures/Buttons/nouvelleRecherche.png";
+
 
 import useGeolocation from "../Hook/useGeolocation";
 
@@ -76,7 +76,6 @@ import CardClub from "./Cards/CardClub.jsx";
 /* import bouton localisez moi*/
 import LocImage from "../../assets/CompressedPictures/Buttons/LocalisezMoi.png";
 import ActivateGeoloc from "../ActivateGeoloc/ActivateGeoloc";
-import { render } from "@testing-library/react";
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -129,10 +128,7 @@ function Clean() {
   // PopUp en cas d'erreur
 
   const [openPop, setopenPop] = useState(false);
-  const handleClosePop = () => {
-    setopenPop(false);
-    setDeclenche(false);
-  };
+
   const [Declenche, setDeclenche] = useState(false);
 
   const [clubs, setClubs] = useState([]);
@@ -261,10 +257,7 @@ function Clean() {
 
   //Fonction qui gère la nouvelle recherche de clubs
 
-  const newSearch = () => {
-    setDeclenche(false);
-    setclubSearch([]);
-  };
+ 
 
   /* CHARGEMENT DES DONNEES  */
 
@@ -656,9 +649,9 @@ function Clean() {
                 <div className="commandContainer">
                   <Legend />
 
-                  <button onClick={showMyLocation}>Ma Loc</button>
-                  <button onClick={hideMarkers}>Clubs Proches </button>
-                  <button onClick={hideInstanceMarkers}>Instances</button>
+                  <button className="commandBtn" onClick={showMyLocation}>Ma Loc</button>
+                  <button className="commandBtn" onClick={hideMarkers}>Clubs Proches </button>
+                  <button className="commandBtn" onClick={hideInstanceMarkers}>Instances</button>
 
                 </div>
               ) : null}
@@ -1002,14 +995,20 @@ function Clean() {
             </div>
           </div>
 
-          {/* <div className="interactContainer">
+          {discovery === false  && Largeur >= 1024 ? ( 
+
+          <div className="interactContainer">
                       <div className="locImgContainer">
 
           <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
-          <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
-          <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
+          <img src={LocImage} alt="loc" className="locImage" onClick={hideMarkers} />
+          <img src={LocImage} alt="loc" className="locImage" onClick={hideInstanceMarkers} />
                       </div>
-          </div> */}
+          </div> ) : null}
+
+
+
+
 
           <div className="popover2">
             <button
@@ -1122,9 +1121,9 @@ function Clean() {
           <div className="commandContainer">
             <Legend />
 
-            <button onClick={showMyLocation}>Ma Loc</button>
-            <button onClick={hideMarkers}>Clubs Proches </button>
-            <button onClick={hideInstanceMarkers}>Instances</button>
+            <button className="commandBtn"onClick={showMyLocation}>Ma Loc</button>
+            <button className="commandBtn" onClick={hideMarkers}>Clubs Proches </button>
+            <button className="commandBtn" onClick={hideInstanceMarkers}>Instances</button>
 
           </div>
 

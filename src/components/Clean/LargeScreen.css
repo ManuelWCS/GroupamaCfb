@@ -16,7 +16,6 @@
     background-attachment: fixed;
     background-position: center 85px;
     background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
-    
   }
 
   .mainContent {
@@ -413,5 +412,20 @@
     height: 650px;
     overflow: auto;
     width: 100%;
+  }
+
+  .commandContainer {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .commandBtn {
+    width: 150px;
+    margin: auto;
+    border-radius: 32px;
+    height: 28px;
   }
 }

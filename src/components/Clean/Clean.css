@@ -68,7 +68,6 @@
     bottom: 45%;
     color: rgba(14, 223, 207, 1);
 
-
     transform: translate(5%);
   }
 
@@ -80,7 +79,6 @@
     top: 45%;
     color: rgba(223, 14, 95, 1);
     transform: translate(-5%);
-
   }
 
   /* PREMIERE DIV AVEC DU CONTENU : IMAGE CENTREE AVEC TEXTE*/
@@ -289,22 +287,21 @@
   }
 
   .commandContainer {
-    margin-top:50px;
+    margin-top: 50px;
   }
 
   .popover {
     position: absolute;
     z-index: 3;
     right: 2%;
-    top: 15% ;
+    top: 15%;
   }
-  
 
   .popover2 {
     position: absolute;
     z-index: 3;
     left: 5%;
-    top: 15% ;
+    top: 15%;
   }
 
   .sliderText {
@@ -329,7 +326,6 @@
     align-items: center;
     align-content: center;
   }
-
 
   .filtersNoSearch {
     display: flex;
@@ -390,32 +386,32 @@
     justify-content: center;
     align-items: center;
     height: 120px;
-
   }
 
-
   .interactContainer {
-    height: 350px;
-    width: 110px;
-    border:1px solid black;
-    position:absolute;
-    background-color: #293d6b;
-    z-index:4;
-    left:1%;
+    height: 300px;
+    width: 80px;
+    border: 1px solid black;
+    position: absolute;
+    z-index: 4;
+    left: 1%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     align-content: center;
-    bottom: 30%;
+    bottom: 28%;
+    opacity: 0.8;
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
   }
 
-  .locImgContainer{
+  .locImgContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 250px;
-
   }
 
   .findclubBtn,
@@ -442,7 +438,7 @@
     display: none;
   }
 
-  .newSearchBtn{
+  .newSearchBtn {
     height: 250px;
     width: 250px;
   }
@@ -451,8 +447,6 @@
     background-color: red;
     margin-top: 10px;
   }
-
-  
 
   .newSearchbtnContainer {
     height: 100px;
@@ -556,7 +550,6 @@
     width: 100%;
   }
 
-
   /* STYLES DES POPOVERS LARGEUR BOUTONS MOBILE */
 
   .styleLoc {
@@ -566,7 +559,7 @@
     width: 355px;
     border: 1px solid black;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
@@ -579,7 +572,6 @@
     width: 355px;
   }
 
-
   .styleDiv2 {
     width: 353px;
     height: 630px;
@@ -589,7 +581,7 @@
     justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
-    border:1px solid black;
+    border: 1px solid black;
     margin-bottom: 16px;
     background-color: white;
   }
@@ -599,7 +591,6 @@
   }
 
   /*STYLE DEUXIEME BOUTON  */
-
 
   .styleGeo {
     height: 60px;
@@ -625,7 +616,7 @@
     align-items: center;
     margin: 0 auto;
     margin-bottom: 16px;
-    border:1px solid black;
+    border: 1px solid black;
     background-color: white;
   }
   .containerResult {
@@ -634,26 +625,25 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    overflow:auto;
+    overflow: auto;
   }
   .resultContainer {
     height: 450px;
-    overflow:auto;
+    overflow: auto;
     width: 100%;
-
   }
-   /* Style à l'intérieur des toggle */
-  
-   .sliderText {
-    padding-top:var(--spacing-medium);
-    padding-bottom:var(--spacing-small);
+  /* Style à l'intérieur des toggle */
+
+  .sliderText {
+    padding-top: var(--spacing-medium);
+    padding-bottom: var(--spacing-small);
     font-size: calc(var(--main-fontSize) * 1.3);
     color: var(--secondary-color);
     font-family: var(--secondary-font);
   }
-   /* PHRASE AFFICHANT LE NOMBRE DE CLUBS A NOS ALENTOURS */
+  /* PHRASE AFFICHANT LE NOMBRE DE CLUBS A NOS ALENTOURS */
 
-   .NumberClose {
+  .NumberClose {
     font-size: calc(var(--main-fontSize) * 1);
     color: var(--secondary-color);
     font-family: var(--secondary-font);
@@ -667,7 +657,7 @@
     color: black;
     text-align: end;
     padding-bottom: 4px;
-    filter:opacity(60%)
+    filter: opacity(60%);
   }
 
   /* TITRE DU FORMULAIRE */
@@ -675,25 +665,19 @@
   .formTitle {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) * 1.9);
-    padding-top: calc(var(--spacing-medium) *2 );
+    padding-top: calc(var(--spacing-medium) * 2);
 
     padding-bottom: calc(var(--spacing-small) * 2);
     color: rgb(51, 51, 51);
     text-align: center;
   }
 
- 
-
-
-
-  
-
-
-
-
-
-
-
+  .commandBtn {
+    width: 150px;
+    margin: auto;
+    border-radius: 32px;
+    height: 28px;
+  }
 }
 
 /*<<<<<<<<<<<<<<<<<<<<<<<<< FIN DE LA VERSIONS DESKTOP>>>>>>>>>>>>>>>>>>>>>>>>>> */
