@@ -431,6 +431,8 @@ function Clean() {
     return deg * (Math.PI / 180);
   }
 
+  console.log(location, 'location')
+
   // Function to make appear the clubs in order of distance from the user
   function sortByDistance(clubsProches) {
     let clubsSorted = clubsProches.sort(function (a, b) {
