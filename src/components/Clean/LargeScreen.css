@@ -1,10 +1,27 @@
 @import url("./Clean.css");
 
 @media screen and (min-width: 1401px) {
+
   html,
   body {
     max-width: 100%;
     overflow-x: hidden;
+  }
+  body::-webkit-scrollbar {
+    width: 8px;
+    /* width of the entire scrollbar */
+  }
+
+  body::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+    /* color of the scroll thumb */
+  }
+
+  body::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 8px solid #293d6b;
+    /* creates padding around scroll thumb */
   }
 
   #background_wrap {
@@ -36,6 +53,7 @@
     top: 50px;
     width: fit-content;
   }
+
   .mainTitle {
     font-size: calc(var(--main-fontSize) * 4);
     font-family: var(--main-font);
@@ -55,6 +73,7 @@
     margin-left: 10vw;
     margin-bottom: 64px;
   }
+
   .mainDescription {
     font-family: var(--main-font);
     color: var(--main-color);
@@ -147,6 +166,7 @@
     align-items: center;
     align-content: stretch;
   }
+
   .formContainer {
     height: 950px;
   }
@@ -154,9 +174,11 @@
   .BlocFiltresEX {
     width: 400px;
   }
+
   .column1 {
     height: 161px;
   }
+
   .column2 {
     height: 161px;
   }
@@ -202,6 +224,7 @@
     color: rgb(51, 51, 51);
     margin-top: calc(var(--spacing-large) * 2);
   }
+
   .mapContainer {
     width: 95vw;
     display: flex;
@@ -231,6 +254,7 @@
     background-color: transparent;
     border: none;
   }
+
   .inputBox {
     font-family: var(--main-font);
     height: 35px;
@@ -355,6 +379,7 @@
     border: 1px solid black;
     background-color: white;
   }
+
   .containerResult {
     background-color: palevioletred;
     height: 500px;
@@ -363,11 +388,13 @@
     flex-direction: column;
     overflow: auto;
   }
+
   .resultContainer {
     height: 450px;
     overflow: auto;
     width: 100%;
   }
+
   /* Style à l'intérieur des toggle */
 
   .sliderText {
@@ -377,6 +404,7 @@
     color: var(--secondary-color);
     font-family: var(--secondary-font);
   }
+
   /* PHRASE AFFICHANT LE NOMBRE DE CLUBS A NOS ALENTOURS */
 
   .NumberClose {
@@ -387,6 +415,7 @@
     padding-bottom: var(--spacing-small);
     text-align: center;
   }
+
   .distanceSpan {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) * 1);
@@ -427,5 +456,68 @@
     margin: auto;
     border-radius: 32px;
     height: 28px;
+  }
+
+  .ActivateContainer {
+    height: 510px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30px;
+    margin: auto;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 11px 11px 2px #adadad, -11px -1px 2px #ffffff;
+  }
+
+  .ActivateGeoLoc {
+    width: 110px;
+    height: 110px;
+  }
+
+  .ActivateDescription {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) / 1.1);
+    color: var(--secondary-color);
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .navigatorDescription {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) / 1.1);
+    text-align: center;
+    padding-right: var(--spacing-large);
+    padding-left: var(--spacing-large);
+  }
+
+  /* STYLE DE LA BARRE DE NAVIGATION*/
+  .interactContainer {
+    height: 300px;
+    width: 80px;
+    border: 1px solid black;
+    position: absolute;
+    z-index: 4;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    bottom: 38%;
+    opacity: 0.9;
+    border-radius: 50px;
+    background: #ffffff;
+    box-shadow: 20px 20px 60px #bdbcbc, -20px -20px 60px #ffffff;
+  }
+
+  .locImgContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 250px;
   }
 }

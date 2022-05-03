@@ -283,14 +283,14 @@
     position: absolute;
     z-index: 3;
     right: 2%;
-    top: 2%;
+    top: 15%;
   }
 
   .popover2 {
     position: absolute;
     z-index: 3;
     left: 5%;
-    top: 2%;
+    top: 15%;
   }
 
   .sliderText {
@@ -300,6 +300,7 @@
     padding-top: var(--spacing-medium);
     padding-bottom: var(--spacing-small0);
   }
+
   .countClubText {
     padding: 16px 8px;
     color: black;
@@ -401,6 +402,44 @@
     flex-direction: column;
     justify-content: space-around;
     height: 250px;
+  }
+
+  /* Si la localisation n'est pas active, cette div apparaît dans le bouton "découvrir les clubs ici*/
+
+  .ActivateContainer {
+    height: 350px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30px;
+    margin: auto;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 11px 11px 2px #adadad, -11px -1px 2px #ffffff;
+  }
+
+  .ActivateGeoLoc {
+    width: 100px;
+    height: 100px;
+  }
+
+  .ActivateDescription {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) / 1.1);
+    color: var(--secondary-color);
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .navigatorDescription {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) / 1.1);
+    text-align: center;
+    padding-right: var(--spacing-large);
+    padding-left: var(--spacing-large);
   }
 
   .findclubBtn,
@@ -608,6 +647,7 @@
     border: 1px solid black;
     background-color: white;
   }
+
   .containerResult {
     background-color: palevioletred;
     height: 500px;
@@ -616,11 +656,13 @@
     flex-direction: column;
     overflow: auto;
   }
+
   .resultContainer {
     height: 450px;
     overflow: auto;
     width: 100%;
   }
+
   /* Style à l'intérieur des toggle */
 
   .sliderText {
@@ -630,6 +672,7 @@
     color: var(--secondary-color);
     font-family: var(--secondary-font);
   }
+
   /* PHRASE AFFICHANT LE NOMBRE DE CLUBS A NOS ALENTOURS */
 
   .NumberClose {
@@ -640,6 +683,7 @@
     padding-bottom: var(--spacing-small);
     text-align: center;
   }
+
   .distanceSpan {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) * 1);

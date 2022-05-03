@@ -66,7 +66,7 @@
 
   }
 
-  
+
 
 
   .secondaryDescription {
@@ -257,6 +257,7 @@
     border: none;
 
   }
+
   .filtrationsWrapper {
     display: flex;
     flex-direction: column;
@@ -308,23 +309,23 @@
     text-align: end;
     margin-right: var(--spacing-medium);
     padding-bottom: 4px;
-    filter:opacity(60%)
+    filter: opacity(60%)
   }
 
-    /*********** STYLES RESULTAT DE RECHERCHE */
+  /*********** STYLES RESULTAT DE RECHERCHE */
 
-    .containerResult {
-      background-color: palevioletred;
-      height: 500px;
-      display: flex;
-      justify-content: flex-start;
-      flex-direction: column;
-      overflow:auto;
-    }
+  .containerResult {
+    background-color: palevioletred;
+    height: 500px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow: auto;
+  }
 
-    
 
-  
+
+
 
   /*********** STYLES CARTES*/
   .cardResult {
@@ -565,7 +566,7 @@
     width: 275px;
     border: 1px solid black;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
@@ -589,8 +590,9 @@
     justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
-    border:1px solid pink;
-    margin-bottom: 16px;;
+    border: 1px solid pink;
+    margin-bottom: 16px;
+    ;
   }
 
   .styleOff {
@@ -628,16 +630,16 @@
     border: 1px solid black;
     border-radius: 0px 0px 20px 20px;
     background: #ffffff;
-    box-shadow:  11px 11px 22px #adadad,
-                 -11px -11px 22px #ffffff;
-          
+    box-shadow: 11px 11px 22px #adadad,
+      -11px -11px 22px #ffffff;
+
   }
 
   /* Style à l'intérieur des toggle */
-  
+
   .sliderText {
-    padding-top:var(--spacing-medium);
-    padding-bottom:var(--spacing-small);
+    padding-top: var(--spacing-medium);
+    padding-bottom: var(--spacing-small);
     font-size: calc(var(--main-fontSize) * 1.3);
     color: var(--secondary-color);
     font-family: var(--secondary-font);
@@ -654,61 +656,61 @@
     text-align: center;
   }
 
-    /* STYLE DU COMPOSANT ActivateGeoLocation*/
+  /* STYLE DU COMPOSANT ActivateGeoLocation*/
 
-    .ActivateContainer {
-      height: 250px;
-      width: 90%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      border-radius: 30px;
-      margin:auto;
-      border-radius: 20px;
-background: #ffffff;
-box-shadow:  11px 11px 2px #adadad,
-             -11px -1px 2px #ffffff;
-      
-    }
+  .ActivateContainer {
+    height: 250px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30px;
+    margin: auto;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 11px 11px 2px #adadad,
+      -11px -1px 2px #ffffff;
 
-    .ActivateGeoLoc {
-      width: 100px;
-      height: 100px;
-    }
+  }
 
-    .ActivateDescription {
-      font-family: var(--secondary-font);
-      font-size:calc( var(--main-fontSize)/ 1.1);
-      color: var(--secondary-color);
-      font-weight: bold;
-      text-align: center;
-      line-height: 1.2;
+  .ActivateGeoLoc {
+    width: 100px;
+    height: 100px;
+  }
 
-    }
+  .ActivateDescription {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize)/ 1.1);
+    color: var(--secondary-color);
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
 
-    .navigatorDescription {
-      font-family: var(--secondary-font);
-      font-size: calc(var(--main-fontSize) / 1.5);
-      text-align: center;
-      padding-right: var(--spacing-large);
-      padding-left:var(--spacing-large) ;
-    }
+  }
 
-    /*Container results of clubs clsoe */
+  .navigatorDescription {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) / 1.5);
+    text-align: center;
+    padding-right: var(--spacing-large);
+    padding-left: var(--spacing-large);
+  }
 
-    .resultContainer {
-      height: 340px;
-      overflow:auto;
-      width: 100%;
+  /*Container results of clubs clsoe */
 
-    }
+  .resultContainer {
+    height: 340px;
+    overflow: auto;
+    width: 100%;
+
+  }
 
   /* DIV ou sont regroupée les actions par rapprot à la carte*/
 
   .commandContainer {
     display: flex;
-    margin:auto;
+    margin: auto;
     width: 100%;
     justify-content: center;
     flex-direction: column;
@@ -716,25 +718,25 @@ box-shadow:  11px 11px 2px #adadad,
 
   .commandBtn {
     width: 150px;
-    margin:auto;
+    margin: auto;
     border-radius: 32px;
     height: 28px;
-    
+
   }
 
   .interactContainer {
-   width: 100%;
-   order:0;
-   margin:auto;
-   display: flex;
-   justify-content: space-evenly;
-   height: 60px;
-   padding-top:16px;
-   padding-bottom: 16px;
+    width: 100%;
+    order: 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    height: 60px;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 
   .locImgContainer {
-    margin:auto;
+    margin: auto;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
