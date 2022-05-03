@@ -209,7 +209,6 @@
   /*CONTAINER QUI CONTIENT LA MAP ET LE FORM  */
 
   .mainContainer {
-    height: 700px;
     width: 92vw;
     display: flex;
     flex-direction: row;
@@ -238,17 +237,6 @@
     color: var(--secondary-color);
     margin-bottom: var(--spacing-large);
   }
-
-  /* .mapContainer {
-    height: 38px;
-    width: 95vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-    margin-top:52px;
-    background-color: red;
-  } */
 
   .formContainer {
     height: 850px;
@@ -294,14 +282,14 @@
     position: absolute;
     z-index: 3;
     right: 2%;
-    top: 15%;
+    top: 2%;
   }
 
   .popover2 {
     position: absolute;
     z-index: 3;
     left: 5%;
-    top: 15%;
+    top: 2%;
   }
 
   .sliderText {

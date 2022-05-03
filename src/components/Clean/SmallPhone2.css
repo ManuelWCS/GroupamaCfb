@@ -727,7 +727,17 @@ box-shadow:  11px 11px 2px #adadad,
    order:0;
    margin:auto;
    display: flex;
-   justify-content: center;
+   justify-content: space-evenly;
+   height: 60px;
+   padding-top:16px;
+   padding-bottom: 16px;
+  }
+
+  .locImgContainer {
+    margin:auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
   }
 
 

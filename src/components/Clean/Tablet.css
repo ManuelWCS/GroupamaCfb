@@ -104,9 +104,10 @@
 
   .bannerTitle {
 
-    height: 10vh;
+    height: 48px;
     margin: 0 auto;
     margin-bottom: var(--spacing-medium);
+    width: 350px;
   }
 
   .desktopInstructions {
@@ -526,6 +527,28 @@
     height: 28px;
     
   }
+  /* CONTAINER NAVIGATION CARTE */
+
+  .popover {
+    order:1;
+}
+.interactContainer {
+  width: 100%;
+  order:0;
+  margin:auto;
+  display: flex;
+  justify-content: space-evenly;
+  height: 60px;
+  padding-top:16px;
+  padding-bottom: 16px;
+ }
+
+ .locImgContainer {
+   margin:auto;
+   width: 100%;
+   display: flex;
+   justify-content: space-evenly;
+ }
 
 
 
@@ -1819,4 +1842,30 @@ A PARTIR DE 480px*/
   .descriptionContainer {
     margin-top: 36px;
   }
+
+  
+}
+
+@media screen and (min-width:616px) and (max-width:1023px) {
+  .popover {
+    order:1;
+}
+.interactContainer {
+  width: 100%;
+  order:0;
+  margin:auto;
+  display: flex;
+  justify-content: space-evenly;
+  height: 60px;
+  padding-top:24px;
+  padding-bottom: 24px;
+ }
+
+ .locImgContainer {
+   margin:auto;
+   width: 100%;
+   display: flex;
+   justify-content: space-evenly;
+ }
+
 }
