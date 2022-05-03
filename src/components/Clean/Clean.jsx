@@ -74,14 +74,33 @@ import Avousdejouer from "../../assets/CompressedPictures/Buttons/Avousdejouer.w
 import CardClub from "./Cards/CardClub.jsx";
 
 /* import bouton localisez moi*/
-import LocImage from "../../assets/CompressedPictures/Buttons/LocalisezMoi.png";
 import ActivateGeoloc from "../ActivateGeoloc/ActivateGeoloc";
+
+import LocalisationImg from '../../assets/CompressedPictures/Buttons/LocalisezMoi.png';
+import StopLoc from '../../assets/CompressedPictures/Buttons/StopLoc.png';
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
   const [categories, setCategories] = useState([]);
   const [clubSearch, setclubSearch] = useState([]);
   const [map, setMap] = useState(null);
+  const [clicked1, setClicked1] = useState(false);
+  const [clicked2, setClicked2] = useState(false);
+  const [clicked3, setClicked3] = useState(false);
+
+
+  function handleClick1() {
+    setClicked1(!clicked1);
+    showMyLocation();
+  }
+  function handleClick2() {
+    setClicked2(!clicked2);
+    hideInstanceMarkers();
+  }
+  function handleClick3() {
+    setClicked3(!clicked3);
+    hideMarkers();
+  }
 
   const [formData, setformData] = useState({
     age: null,
@@ -257,7 +276,7 @@ function Clean() {
 
   //Fonction qui gère la nouvelle recherche de clubs
 
- 
+
 
   /* CHARGEMENT DES DONNEES  */
 
@@ -641,33 +660,7 @@ function Clean() {
                 {visibilityInstanceMarkers === true ? <Instances /> : null}
               </MapContainer>
             </div>
-
-
-
-
-
-            {Largeur < 1024 ?
-              (
-                <div className="commandContainer">
-                  <Legend />
-
-                  <button className="commandBtn" onClick={showMyLocation}>Ma Loc</button>
-                  <button className="commandBtn" onClick={hideMarkers}>Clubs Proches </button>
-                  <button className="commandBtn" onClick={hideInstanceMarkers}>Instances</button>
-
-                </div>
-              ) : null}
-            {/* {proximity === true ? (
-              <div className="btnDiv">
-                <button onClick={showMyLocation}>ME LOCALISER</button>
-                <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
-                <button onClick={hideMarkers}> CLUBS PROCHES</button>
-                <button onClick={hideInstanceMarkers}>INSTANCES</button>
-              </div>
-            ) : (
-              <button>Activer ma geoloc </button>
-            )}
-      */}
+            
           </div>
 
           <div className="popover">
@@ -997,16 +990,19 @@ function Clean() {
             </div>
           </div>
 
-          {discovery === false  && Largeur >= 1024 ? ( 
 
-          <div className="interactContainer">
-                      <div className="locImgContainer">
+              <div className="interactContainer">
+                <div className="locImgContainer">
 
-          <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
-          <img src={LocImage} alt="loc" className="locImage" onClick={hideMarkers} />
-          <img src={LocImage} alt="loc" className="locImage" onClick={hideInstanceMarkers} />
-                      </div>
-          </div> ) : null}
+                  <img src={clicked1 === true ? StopLoc : LocalisationImg} alt="Localisez-moi !" title="Localisez ma position" onClick={handleClick1} className="locImage" />
+                  <img src={clicked2 === true ? StopLoc : LocalisationImg} alt="Afficher ou cacher tous les marqueurs" title="Afficher ou cacher tous les marqueurs" className="locImage" onClick={handleClick2} />
+                  <img src={clicked3 === true ? StopLoc : LocalisationImg} alt="Afficher ou cacher les instances" title="Afficher ou cacher les instances" className="locImage" onClick={handleClick3} />
+                </div> 
+                </div>
+
+
+
+
 
 
 
@@ -1123,7 +1119,7 @@ function Clean() {
           <div className="commandContainer">
             <Legend />
 
-            <button className="commandBtn"onClick={showMyLocation}>Ma Loc</button>
+            <button className="commandBtn" onClick={showMyLocation}>Ma Loc</button>
             <button className="commandBtn" onClick={hideMarkers}>Clubs Proches </button>
             <button className="commandBtn" onClick={hideInstanceMarkers}>Instances</button>
 

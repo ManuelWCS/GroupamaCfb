@@ -722,6 +722,14 @@ box-shadow:  11px 11px 2px #adadad,
     
   }
 
+  .interactContainer {
+   width: 100%;
+   order:0;
+   margin:auto;
+   display: flex;
+   justify-content: center;
+  }
+
 
 
 
