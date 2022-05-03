@@ -204,6 +204,7 @@
     padding-bottom: calc(var(--spacing-medium) * 3);
     color: rgb(51, 51, 51);
     margin-top: calc(var(--spacing-large) * 2);
+    margin-bottom: 18px;
   }
 
   /*CONTAINER QUI CONTIENT LA MAP ET LE FORM  */
@@ -695,6 +696,7 @@
   .mainContainer {
     width: 93vw;
     margin: auto;
+    height: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
