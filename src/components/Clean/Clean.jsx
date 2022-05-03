@@ -380,7 +380,7 @@ function Clean() {
   useEffect(() => {
     setclubsClose(clubsProches.length);
     console.log(proximity, "<- statut de la loc");
-    console.log(clubsProches);
+    console.log(clubsProches, 'ici les clubs proches igo');
   }, [clubsProches]);
 
   const [proximity, setProximity] = useState(false);
@@ -509,6 +509,8 @@ function Clean() {
     setLngMin(location.coordinates.lng - convertedDistance);
     setLngMax(location.coordinates.lng + convertedDistance);
   };
+  console.log(proximity);
+  console.log(clubsProches)
 
   return (
     <>
@@ -1038,7 +1040,7 @@ function Clean() {
                 ) : null}
               </Box>
               <div className="resultContainer">
-                {clubsProches.length !== 0 ? (
+                {clubsProches.length === true ? (
                   <p className="NumberClose">
                     Il y a {clubsProches.length} clubs autour de vous :{" "}
                   </p>
@@ -1048,7 +1050,8 @@ function Clean() {
                   </p>
                 )}
 
-                {proximity  === true ? (
+                
+{proximity === true ? (
                   sortByDistance(clubsProches).map((club, Uniqueindex) => {
                     return (
                       <div
@@ -1111,6 +1114,7 @@ function Clean() {
                 ) : (
                   <ActivateGeoloc />
                 )}
+                
               </div>
             </div>
           </div>{" "}
