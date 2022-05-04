@@ -50,6 +50,7 @@ import Legend from "../Legend/Legend.jsx";
 import Header from "../Header2/Header2.jsx";
 
 /*<------------------------IMPORT IMAGES ---------------------------------> */
+import btnNewSearch from "../../assets/CompressedPictures/Buttons/nouvelleRecherche.png";
 
 import useGeolocation from "../Hook/useGeolocation";
 
@@ -72,6 +73,7 @@ import "../Popover/Popover.css";
 
 /* import bouton localisez moi*/
 import ActivateGeoloc from "../ActivateGeoloc/ActivateGeoloc";
+import { render } from "@testing-library/react";
 
 import LocalisationImg from "../../assets/CompressedPictures/Buttons/LocalisezMoi.png";
 import StopLoc from "../../assets/CompressedPictures/Buttons/StopLoc.png";
@@ -143,7 +145,10 @@ function Clean() {
   // PopUp en cas d'erreur
 
   const [openPop, setopenPop] = useState(false);
-
+  const handleClosePop = () => {
+    setopenPop(false);
+    setDeclenche(false);
+  };
   const [Declenche, setDeclenche] = useState(false);
 
   const [clubs, setClubs] = useState([]);
@@ -272,6 +277,11 @@ function Clean() {
 
   //Fonction qui gère la nouvelle recherche de clubs
 
+  const newSearch = () => {
+    setDeclenche(false);
+    setclubSearch([]);
+  };
+
   /* CHARGEMENT DES DONNEES  */
 
   useEffect(() => {
@@ -284,7 +294,6 @@ function Clean() {
     setCategories(categoriesData);
     setClubs(data);
   }, []);
-
 
   // UseEffect qui gere le changement d'etat en fonction de l'age
   //Règle numéro 1: Si ageUtilisateur inférieur a 18, il faut désactiver la catégorie Loisir
@@ -380,7 +389,7 @@ function Clean() {
   useEffect(() => {
     setclubsClose(clubsProches.length);
     console.log(proximity, "<- statut de la loc");
-    console.log(clubsProches, 'ici les clubs proches igo');
+    console.log(clubsProches, "ici les clubs proches igo");
   }, [clubsProches]);
 
   const [proximity, setProximity] = useState(false);
@@ -508,7 +517,7 @@ function Clean() {
     setLngMax(location.coordinates.lng + convertedDistance);
   };
   console.log(proximity);
-  console.log(clubsProches)
+  console.log(clubsProches);
 
   return (
     <>
@@ -1007,6 +1016,14 @@ function Clean() {
               </div>
             </div>
           ) : null}
+          {/* <div className="interactContainer">
+                      <div className="locImgContainer">
+
+          <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
+          <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
+          <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
+                      </div>
+          </div> */}
           <div className="popover2">
             <button
               onClick={isClicked2}
@@ -1048,8 +1065,7 @@ function Clean() {
                   </p>
                 )}
 
-                
-{proximity === true ? (
+                {proximity === true ? (
                   sortByDistance(clubsProches).map((club, Uniqueindex) => {
                     return (
                       <div
@@ -1112,17 +1128,12 @@ function Clean() {
                 ) : (
                   <ActivateGeoloc />
                 )}
-                
               </div>
             </div>
           </div>{" "}
           {/* fin div popover*/}
         </div>
-        {Largeur >= 1024 ? (
-          <div className="commandContainer">
-            <Legend />
-          </div>
-        ) : null}
+
         <Faq />
 
         {/* Fin de desktopContainer*/}

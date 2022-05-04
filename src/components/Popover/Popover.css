@@ -32,8 +32,8 @@
 }
 
 .locImage {
-    height: calc(78px/1.5);
-    width: calc(90px/1.5);   
+    height: 78px;
+    width: 90px;   
     margin:auto;
 
 
