@@ -277,15 +277,25 @@
     background-color: wheat;
   }
 
-  .commandContainer {
-    margin-top:50px;
+  .BlocFiltresEX {
+    width: 350px;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: -20px;
+    border: 1px solid red;
+    z-index: 2;
   }
 
   .popover {
     position: absolute;
     z-index: 3;
     right: 2%;
-    top: 15% ;
+    top: 15%;
   }
   
 
@@ -293,7 +303,7 @@
     position: absolute;
     z-index: 3;
     left: 5%;
-    top: 15% ;
+    top: 15%;
   }
 
   .sliderText {
