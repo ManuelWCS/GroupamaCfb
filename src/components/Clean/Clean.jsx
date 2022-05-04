@@ -77,6 +77,10 @@ import CardClub from "./Cards/CardClub.jsx";
 import LocImage from "../../assets/CompressedPictures/Buttons/LocalisezMoi.png";
 import ActivateGeoloc from "../ActivateGeoloc/ActivateGeoloc";
 
+/* REACT SCROLL */
+import {Link} from 'react-scroll'
+
+
 function Clean() {
   const [allcities, setallcities] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -507,6 +511,19 @@ function Clean() {
     setLngMax(location.coordinates.lng + convertedDistance);
   };
 
+
+  function OpenForms() {
+    if(discovery === false)
+    setTimeout(() => {
+      setDiscovery(true)
+
+  }, 1000);
+  if(form === false)
+  setTimeout(() => {
+    setForm(true)
+  }, 1500);
+} 
+
   return (
     <>
       <Header />
@@ -536,7 +553,9 @@ function Clean() {
 
         <div className="bannerContainer" >
           {/* <h5 className="bannerTitle">À VOUS DE JOUER</h5> */}
-          <img src={Avousdejouer} alt="banner" className="bannerTitle" />
+          <Link to="map" spy={true} smooth={true} duration={500}>
+           <img src={Avousdejouer} alt="banner" className="bannerTitle" onClick={OpenForms} />
+          </Link>
         </div>
 
         <div className="desktopInstructions">
@@ -1139,8 +1158,8 @@ function Clean() {
           </div>
         </div>
         {Largeur >= 1024 ?
-          <div className="commandContainer">
-            <Legend />
+          <div className="commandContainer" id="form">
+            <Legend id="form"/>
 
             <button className="commandBtn"onClick={showMyLocation}>Ma Loc</button>
             <button className="commandBtn" onClick={hideMarkers}>Clubs Proches </button>
