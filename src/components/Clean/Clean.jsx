@@ -249,6 +249,16 @@ function Clean() {
   function scrollCard() {
     window.location.href = "#cardClub";
   }
+  function scrollForm() {
+  window.scrollTo({
+    bottom: form,
+    behavior: "smooth",
+  })
+  setRecherche(true);
+  setForm(true);
+}
+
+
 
   // Fonction handle qui va gérer les changements des inputs
   const handleChange = (e) => {
@@ -524,7 +534,7 @@ function Clean() {
             </div> */}
         </div>
 
-        <div className="bannerContainer">
+        <div className="bannerContainer" >
           {/* <h5 className="bannerTitle">À VOUS DE JOUER</h5> */}
           <img src={Avousdejouer} alt="banner" className="bannerTitle" />
         </div>
@@ -686,7 +696,7 @@ function Clean() {
               </div>
             </button>
 
-            <div className={form ? "styleDiv2" : "styleOff"}>
+            <div className={form ? "styleDiv2" : "styleOff"} >
               {recherche === false ? (
                 <div className="filtersNoSearch">
                   <form
@@ -1030,7 +1040,7 @@ function Clean() {
               </div>
             </button>
             <div className={discovery ? "styleDiv3" : "styleOff"}>
-              <span className="sliderText"> CHOISIS TON ÉCHELLE !</span>
+                            <span className="sliderText"> CHOISIS TON ÉCHELLE !</span>
               <Box sx={{ width: 190, margin: 1 }}>
                 {!location.error ? (
                 <Slider
