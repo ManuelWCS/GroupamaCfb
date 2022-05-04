@@ -399,7 +399,6 @@
     width: 110px;
     border:1px solid black;
     position:absolute;
-    background-color: #293d6b;
     z-index:4;
     left:1%;
     display: flex;
@@ -408,6 +407,7 @@
     align-items: center;
     align-content: center;
     bottom: 30%;
+    opacity: 0.8;
   }
 
   .locImgContainer{
@@ -417,6 +417,8 @@
     height: 250px;
 
   }
+
+  
 
   /* Si la localisation n'est pas active, cette div apparaît dans le bouton "découvrir les clubs ici*/
 

@@ -607,6 +607,8 @@ function Clean() {
                             <p onClick={scrollCard}> {res.NomClub}</p>
 
                             <br></br>
+
+                          {!location.error ? (
                             <h3>
                               Se trouve à{" "}
                               {distanceBetweenPoints(
@@ -617,15 +619,20 @@ function Clean() {
                               )}{" "}
                               km de vous !
                             </h3>
+                          ) : null }
+                          
                             <p>
+                            {!location.error ? (
+
                               <a
                                 href={`https://www.google.fr/maps/dir/${location.coordinates.lat},${location.coordinates.lng}+/${res.Latitude},+${res.Longitude}`}
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                {" "}
-                                Itinéraire vers ce club{" "}
-                              </a>{" "}
+                                Itinéraire vers ce club
+                              </a>
+                            ) : <p> Activez la localisation pour voir un itinéraire vers ce club ! </p> }
+
                             </p>
                           </Popup>
                         </Marker>
@@ -934,15 +941,17 @@ function Clean() {
                         <span className="titleCard" onClick={scrollTop}>
                           {club.NomClub}
                         </span>
+                        {!location.error ? (                        
                         <p className="distanceSpan">
                           {distanceBetweenPoints(
                             location.coordinates.lat,
                             location.coordinates.lng,
                             club.Latitude,
                             club.Longitude
-                          )}{" "}
+                          )}
                           km
                         </p>
+                        ) : null}
                       </div>
 
                       <div className="columnContainer">
@@ -1023,6 +1032,7 @@ function Clean() {
             <div className={discovery ? "styleDiv3" : "styleOff"}>
               <span className="sliderText"> CHOISIS TON ÉCHELLE !</span>
               <Box sx={{ width: 190, margin: 1 }}>
+                {!location.error ? (
                 <Slider
                   aria-label="Distance"
                   defaultValue={10}
@@ -1034,7 +1044,10 @@ function Clean() {
                   min={10}
                   max={20}
                   onChange={updateRadius}
-                />
+                /> ) : 
+                null
+                
+                }
                 {/* <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} /> */}
               </Box>
               <div className="resultContainer">
