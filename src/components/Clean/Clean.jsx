@@ -50,7 +50,7 @@ import Legend from "../Legend/Legend.jsx";
 import Header from "../Header2/Header2.jsx";
 
 /*<------------------------IMPORT IMAGES ---------------------------------> */
-import btnNewSearch from "../../assets/CompressedPictures/Buttons/nouvelleRecherche.png";
+
 
 import useGeolocation from "../Hook/useGeolocation";
 
@@ -63,42 +63,25 @@ import UsrMkr from "../../components/MarkersUtilisateur/MarkersUser.jsx";
 import CloseMkr from "../../components/MarkersUtilisateur/MarkersClose.jsx";
 import Submit from "../Submit/Submit";
 /* import popover */
-
+import Popover from "../../components/Popover/Popover.jsx";
 import SearchIcon from "../../assets/CompressedPictures/Popover/trouverClub.webp";
 import LocClub from "../../assets/CompressedPictures/Popover/LocClub.webp";
 
 /*import bouton A VOUS DE JOUER */
 import Avousdejouer from "../../assets/CompressedPictures/Buttons/Avousdejouer.webp";
-import "../Popover/Popover.css";
+
+/* import composant Carte Club*/
+import CardClub from "./Cards/CardClub.jsx";
 
 /* import bouton localisez moi*/
+import LocImage from "../../assets/CompressedPictures/Buttons/LocalisezMoi.png";
 import ActivateGeoloc from "../ActivateGeoloc/ActivateGeoloc";
-import { render } from "@testing-library/react";
-
-import LocalisationImg from "../../assets/CompressedPictures/Buttons/LocalisezMoi.png";
-import StopLoc from "../../assets/CompressedPictures/Buttons/StopLoc.png";
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
   const [categories, setCategories] = useState([]);
   const [clubSearch, setclubSearch] = useState([]);
   const [map, setMap] = useState(null);
-  const [clicked1, setClicked1] = useState(false);
-  const [clicked2, setClicked2] = useState(false);
-  const [clicked3, setClicked3] = useState(false);
-
-  function handleClick1() {
-    setClicked1(!clicked1);
-    showMyLocation();
-  }
-  function handleClick2() {
-    setClicked2(!clicked2);
-    hideInstanceMarkers();
-  }
-  function handleClick3() {
-    setClicked3(!clicked3);
-    hideMarkers();
-  }
 
   const [formData, setformData] = useState({
     age: null,
@@ -145,10 +128,7 @@ function Clean() {
   // PopUp en cas d'erreur
 
   const [openPop, setopenPop] = useState(false);
-  const handleClosePop = () => {
-    setopenPop(false);
-    setDeclenche(false);
-  };
+
   const [Declenche, setDeclenche] = useState(false);
 
   const [clubs, setClubs] = useState([]);
@@ -277,10 +257,7 @@ function Clean() {
 
   //Fonction qui gère la nouvelle recherche de clubs
 
-  const newSearch = () => {
-    setDeclenche(false);
-    setclubSearch([]);
-  };
+ 
 
   /* CHARGEMENT DES DONNEES  */
 
@@ -291,6 +268,9 @@ function Clean() {
       result.push({ label: element.name });
     });
     setallcities(result);
+  }, []);
+
+  useEffect(() => {
     setCategories(categoriesData);
     setClubs(data);
   }, []);
@@ -389,7 +369,7 @@ function Clean() {
   useEffect(() => {
     setclubsClose(clubsProches.length);
     console.log(proximity, "<- statut de la loc");
-    console.log(clubsProches, "ici les clubs proches igo");
+    console.log(clubsProches);
   }, [clubsProches]);
 
   const [proximity, setProximity] = useState(false);
@@ -437,9 +417,9 @@ function Clean() {
     var a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
       Math.cos(deg2rad(lat1)) *
-        Math.cos(deg2rad(lat2)) *
-        Math.sin(dLon / 2) *
-        Math.sin(dLon / 2);
+      Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = R * c; // Distance in km
     var e = d.toFixed(2);
@@ -516,8 +496,6 @@ function Clean() {
     setLngMin(location.coordinates.lng - convertedDistance);
     setLngMax(location.coordinates.lng + convertedDistance);
   };
-  console.log(proximity);
-  console.log(clubsProches);
 
   return (
     <>
@@ -539,9 +517,15 @@ function Clean() {
             La Ligue Centre-Val de Loire de Football vous propose cette
             plateforme afin de découvrir l'ensemble des clubs de notre Région !
           </h4>
+          {/* <div className="dozaDiv">
+              <p className="doza2">HOLOGRAMME</p>
+              <p className="doza">HOLOGRAMME</p>
+              <p className="doza3">HOLOGRAMME</p>
+            </div> */}
         </div>
 
         <div className="bannerContainer">
+          {/* <h5 className="bannerTitle">À VOUS DE JOUER</h5> */}
           <img src={Avousdejouer} alt="banner" className="bannerTitle" />
         </div>
 
@@ -592,7 +576,7 @@ function Clean() {
                     pathOptions={{ color: "#748B9F" }}
                   />
                 ) : null}
-                {visibilityMarker && proximity === true ? (
+                {visibilityMarker === true ? (
                   <CloseMkr distance={convertedDistance} />
                 ) : null}
 
@@ -608,59 +592,80 @@ function Clean() {
                 >
                   {clubSearch.length !== 0
                     ? clubSearch.slice(0, 500).map((res, index2) => {
-                        // console.log(res);
-                        return (
-                          <Marker
-                            icon={
-                              res.label.length > 0
-                                ? clubMarqueurLabel
-                                : clubMarqueur
-                            }
-                            key={index2}
-                            position={[res.Latitude, res.Longitude]}
-                          >
-                            <Popup key={index2} className="markersPopUp">
-                              <p onClick={scrollCard}> {res.NomClub}</p>
+                      // console.log(res);
+                      return (
+                        <Marker
+                          icon={
+                            res.label.length > 0
+                              ? clubMarqueurLabel
+                              : clubMarqueur
+                          }
+                          key={index2}
+                          position={[res.Latitude, res.Longitude]}
+                        >
+                          <Popup key={index2} className="markersPopUp">
+                            <p onClick={scrollCard}> {res.NomClub}</p>
 
-                              <br></br>
-
-                              {location.loaded === true ? (
-                                <h3>
-                                  Se trouve à{" "}
-                                  {distanceBetweenPoints(
-                                    location.coordinates.lat,
-                                    location.coordinates.lng,
-                                    res.Latitude,
-                                    res.Longitude
-                                  )}{" "}
-                                  km de vous !
-                                </h3>
-                              ) : (
-                                <h3> {res.AdressePostale} </h3>
-                              )}
-                              <p>
-                                {location.loaded === true ? (
-                                  <a
-                                    href={`https://www.google.fr/maps/dir/${location.coordinates.lat},${location.coordinates.lng}+/${res.Latitude},+${res.Longitude}`}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                  >
-                                    {" "}
-                                    Itinéraire vers ce club{" "}
-                                  </a>
-                                ) : null}
-                              </p>
-                            </Popup>
-                          </Marker>
-                        );
-                      })
+                            <br></br>
+                            <h3>
+                              Se trouve à{" "}
+                              {distanceBetweenPoints(
+                                location.coordinates.lat,
+                                location.coordinates.lng,
+                                res.Latitude,
+                                res.Longitude
+                              )}{" "}
+                              km de vous !
+                            </h3>
+                            <p>
+                              <a
+                                href={`https://www.google.fr/maps/dir/${location.coordinates.lat},${location.coordinates.lng}+/${res.Latitude},+${res.Longitude}`}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                {" "}
+                                Itinéraire vers ce club{" "}
+                              </a>{" "}
+                            </p>
+                          </Popup>
+                        </Marker>
+                      );
+                    })
                     : null}
                 </MarkerClusterGroup>
 
                 {visibilityInstanceMarkers === true ? <Instances /> : null}
               </MapContainer>
             </div>
+
+
+
+
+
+            {Largeur < 1024 ?
+              (
+                <div className="commandContainer">
+                  <Legend />
+
+                  <button className="commandBtn" onClick={showMyLocation}>Ma Loc</button>
+                  <button className="commandBtn" onClick={hideMarkers}>Clubs Proches </button>
+                  <button className="commandBtn" onClick={hideInstanceMarkers}>Instances</button>
+
+                </div>
+              ) : null}
+            {/* {proximity === true ? (
+              <div className="btnDiv">
+                <button onClick={showMyLocation}>ME LOCALISER</button>
+                <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
+                <button onClick={hideMarkers}> CLUBS PROCHES</button>
+                <button onClick={hideInstanceMarkers}>INSTANCES</button>
+              </div>
+            ) : (
+              <button>Activer ma geoloc </button>
+            )}
+      */}
           </div>
+
           <div className="popover">
             <button
               onClick={isClicked}
@@ -737,14 +742,14 @@ function Clean() {
                             } else {
                               formData.type === "Futsal"
                                 ? setformData({
-                                    ...formData,
-                                    gender: e.target.value,
-                                    type: "",
-                                  })
+                                  ...formData,
+                                  gender: e.target.value,
+                                  type: "",
+                                })
                                 : setformData({
-                                    ...formData,
-                                    gender: e.target.value,
-                                  });
+                                  ...formData,
+                                  gender: e.target.value,
+                                });
                             }
                           }}
                         >
@@ -802,7 +807,7 @@ function Clean() {
                             control={<Radio />}
                             label="Futsal"
                             title="Pratique proposée aux séniors Hommes et aux 17-18 masculins"
-                            // disable={inputFutsal}
+                          // disable={inputFutsal}
                           />
                         </RadioGroup>
 
@@ -929,17 +934,15 @@ function Clean() {
                         <span className="titleCard" onClick={scrollTop}>
                           {club.NomClub}
                         </span>
-                        {location.loaded === true ? (
-                          <p className="distanceSpan">
-                            {distanceBetweenPoints(
-                              location.coordinates.lat,
-                              location.coordinates.lng,
-                              club.Latitude,
-                              club.Longitude
-                            )}{" "}
-                            km
-                          </p>
-                        ) : null}
+                        <p className="distanceSpan">
+                          {distanceBetweenPoints(
+                            location.coordinates.lat,
+                            location.coordinates.lng,
+                            club.Latitude,
+                            club.Longitude
+                          )}{" "}
+                          km
+                        </p>
                       </div>
 
                       <div className="columnContainer">
@@ -989,41 +992,22 @@ function Clean() {
               ) : null}
             </div>
           </div>
-          {discovery === false ? (
-            <div className="interactContainer">
-              <div className="locImgContainer">
-                <img
-                  src={clicked1 === true ? StopLoc : LocalisationImg}
-                  alt="Localisez-moi !"
-                  title="Localisez ma position"
-                  onClick={handleClick1}
-                  className="locImage"
-                />
-                <img
-                  src={clicked2 === true ? StopLoc : LocalisationImg}
-                  alt="Afficher ou cacher tous les marqueurs"
-                  title="Afficher ou cacher tous les marqueurs"
-                  className="locImage"
-                  onClick={handleClick2}
-                />
-                <img
-                  src={clicked3 === true ? StopLoc : LocalisationImg}
-                  alt="Afficher ou cacher les instances"
-                  title="Afficher ou cacher les instances"
-                  className="locImage"
-                  onClick={handleClick3}
-                />
-              </div>
-            </div>
-          ) : null}
-          {/* <div className="interactContainer">
+
+          {discovery === false  && Largeur >= 1024 ? ( 
+
+          <div className="interactContainer">
                       <div className="locImgContainer">
 
           <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
-          <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
-          <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
+          <img src={LocImage} alt="loc" className="locImage" onClick={hideMarkers} />
+          <img src={LocImage} alt="loc" className="locImage" onClick={hideInstanceMarkers} />
                       </div>
-          </div> */}
+          </div> ) : null}
+
+
+
+
+
           <div className="popover2">
             <button
               onClick={isClicked2}
@@ -1039,23 +1023,22 @@ function Clean() {
             <div className={discovery ? "styleDiv3" : "styleOff"}>
               <span className="sliderText"> CHOISIS TON ÉCHELLE !</span>
               <Box sx={{ width: 190, margin: 1 }}>
-                {location.loaded === true ? (
-                  <Slider
-                    aria-label="Distance"
-                    defaultValue={10}
-                    getAriaValueText={valuetext}
-                    // getAriaLabel={true}
-                    valueLabelDisplay="on"
-                    step={1}
-                    marks={marks}
-                    min={10}
-                    max={20}
-                    onChange={updateRadius}
-                  />
-                ) : null}
+                <Slider
+                  aria-label="Distance"
+                  defaultValue={10}
+                  getAriaValueText={valuetext}
+                  // getAriaLabel={true}
+                  valueLabelDisplay="on"
+                  step={1}
+                  marks={marks}
+                  min={10}
+                  max={20}
+                  onChange={updateRadius}
+                />
+                {/* <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} /> */}
               </Box>
               <div className="resultContainer">
-                {clubsProches.length === true ? (
+                {clubsProches.length !== 0 ? (
                   <p className="NumberClose">
                     Il y a {clubsProches.length} clubs autour de vous :{" "}
                   </p>
@@ -1130,10 +1113,20 @@ function Clean() {
                 )}
               </div>
             </div>
-          </div>{" "}
-          {/* fin div popover*/}
+          </div>
         </div>
+        {Largeur >= 1024 ?
+          <div className="commandContainer">
+            <Legend />
 
+            <button className="commandBtn"onClick={showMyLocation}>Ma Loc</button>
+            <button className="commandBtn" onClick={hideMarkers}>Clubs Proches </button>
+            <button className="commandBtn" onClick={hideInstanceMarkers}>Instances</button>
+
+          </div>
+
+
+          : null}
         <Faq />
 
         {/* Fin de desktopContainer*/}

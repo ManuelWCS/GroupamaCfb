@@ -1,29 +1,10 @@
 @import url("./Clean.css");
 
-
-
 @media screen and (min-width: 1401px) {
-
   html,
   body {
     max-width: 100%;
     overflow-x: hidden;
-  }
-  body::-webkit-scrollbar {
-    width: 8px;
-    /* width of the entire scrollbar */
-  }
-
-  body::-webkit-scrollbar-track {
-    background-color: #f2f2f2;
-    /* color of the scroll thumb */
-  }
-
-  body::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-    /* roundness of the scroll thumb */
-    border: 8px solid #293d6b;
-    /* creates padding around scroll thumb */
   }
 
   #background_wrap {
@@ -34,18 +15,19 @@
     background-size: 100%;
     background-attachment: fixed;
     background-position: center 85px;
-    background-image: url('../../assets/CompressedPictures/bandesdeTypeBlanc.webp');  }
+    background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
+  }
 
   .mainContent {
-    height: 550px;
+    height: 650px;
     background-image: url("../../assets/CompressedPictures/final3.webp");
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
-    margin:auto;
+    margin: auto;
     position: relative;
     margin-top: -4.7px;
-    width: 93vw;
+    width: 92vw;
   }
 
   .titlesContainer {
@@ -54,7 +36,6 @@
     top: 50px;
     width: fit-content;
   }
-
   .mainTitle {
     font-size: calc(var(--main-fontSize) * 4);
     font-family: var(--main-font);
@@ -74,7 +55,6 @@
     margin-left: 10vw;
     margin-bottom: 64px;
   }
-
   .mainDescription {
     font-family: var(--main-font);
     color: var(--main-color);
@@ -92,18 +72,18 @@
   .instructionsTitle {
     font-size: calc(var(--main-fontSize) * 2);
   }
+
   #map {
     height: 100vh;
     width: 92vw;
-    position:relative;
+    position: relative;
     z-index: 1;
   }
 
   .mainContainer {
     height: 100vh;
     width: 92vw;
-    margin:auto;
-
+    margin: auto;
   }
 
   .markerContainer {
@@ -118,8 +98,6 @@
   .cardLegendText {
     margin-bottom: calc(var(--spacing-large) * 5);
   }
-
-
 
   .resultats {
     display: flex;
@@ -136,18 +114,6 @@
     margin-bottom: 180px;
     padding-bottom: 64px;
     height: 700px;
-  }
-
-  .BlocFiltresEX {
-    width: 520px;
-    overflow: scroll;
-    overflow-x: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 700px;
-    margin-top: -148px;
   }
 
   .formContainer {
@@ -181,7 +147,6 @@
     align-items: center;
     align-content: stretch;
   }
-
   .formContainer {
     height: 950px;
   }
@@ -189,11 +154,9 @@
   .BlocFiltresEX {
     width: 400px;
   }
-
   .column1 {
     height: 161px;
   }
-
   .column2 {
     height: 161px;
   }
@@ -239,7 +202,6 @@
     color: rgb(51, 51, 51);
     margin-top: calc(var(--spacing-large) * 2);
   }
-
   .mapContainer {
     width: 95vw;
     display: flex;
@@ -248,6 +210,8 @@
     margin: auto;
     position: relative;
   }
+
+  /* FORM */
   .filtrationsWrapper {
     display: flex;
     flex-direction: column;
@@ -267,7 +231,6 @@
     background-color: transparent;
     border: none;
   }
-
   .inputBox {
     font-family: var(--main-font);
     height: 35px;
@@ -312,16 +275,15 @@
   .popover {
     position: absolute;
     z-index: 5;
-    top: 43%;
-    right:8%;
+    top: 41%;
+    right: 4%;
   }
-  
 
   .popover2 {
     position: absolute;
     z-index: 5;
-    top: 43%;
-    left:8%;
+    top: 41%;
+    left: 8%;
   }
 
   /* STYLES DES POPOVERS LARGEUR BOUTONS MOBILE */
@@ -333,8 +295,8 @@
     width: 355px;
     border: 1px solid black;
     display: flex;
-    flex-direction: column; 
-    justify-content: center;
+    flex-direction: column;
+    justify-content: cefnter;
     align-items: center;
     margin: 0 auto;
   }
@@ -346,17 +308,16 @@
     width: 355px;
   }
 
-
   .styleDiv2 {
     width: 353px;
     height: 775px;
     border-radius: 0px 0px 30px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
-    border:1px solid black;
+    border: 1px solid black;
     margin-bottom: 16px;
     background-color: white;
   }
@@ -366,7 +327,6 @@
   }
 
   /*STYLE DEUXIEME BOUTON  */
-
 
   .styleGeo {
     height: 60px;
@@ -384,7 +344,7 @@
 
   .styleDiv3 {
     width: 360px;
-    height: 600px;
+    height: 700px;
     border-radius: 0px 0px 30px 30px;
     display: flex;
     flex-direction: column;
@@ -392,41 +352,34 @@
     align-items: center;
     margin: 0 auto;
     margin-bottom: 16px;
-    border:1px solid black;
+    border: 1px solid black;
     background-color: white;
   }
-
   .containerResult {
     background-color: palevioletred;
     height: 500px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    overflow:auto;
+    overflow: auto;
   }
-
   .resultContainer {
     height: 450px;
-    overflow:auto;
+    overflow: auto;
     width: 100%;
   }
-
   /* Style à l'intérieur des toggle */
 
-  }
-   /* Style à l'intérieur des toggle */
-  
-   .sliderText {
-    padding-top:var(--spacing-medium);
-    padding-bottom:var(--spacing-small);
+  .sliderText {
+    padding-top: var(--spacing-medium);
+    padding-bottom: var(--spacing-small);
     font-size: calc(var(--main-fontSize) * 1.3);
     color: var(--secondary-color);
     font-family: var(--secondary-font);
   }
-
   /* PHRASE AFFICHANT LE NOMBRE DE CLUBS A NOS ALENTOURS */
 
-   .NumberClose {
+  .NumberClose {
     font-size: calc(var(--main-fontSize) * 1);
     color: var(--secondary-color);
     font-family: var(--secondary-font);
@@ -434,14 +387,13 @@
     padding-bottom: var(--spacing-small);
     text-align: center;
   }
-
   .distanceSpan {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) * 1);
     color: black;
     text-align: end;
     padding-bottom: 4px;
-    filter:opacity(60%)
+    filter: opacity(60%);
   }
 
   /* TITRE DU FORMULAIRE */
@@ -449,63 +401,17 @@
   .formTitle {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) * 1.9);
-    padding-top: calc(var(--spacing-medium) *3 );
+    padding-top: calc(var(--spacing-medium) * 3);
 
     padding-bottom: calc(var(--spacing-small) * 2);
     color: rgb(51, 51, 51);
     text-align: center;
   }
 
-  
-
-
-
-
-
-
-
-
-@media screen and (min-width: 1580px) and (max-width: 1680px) {
-  .mainDescription {
-    margin-top: 5vh;
-  }
-
-  .mainContent {
-    height: 580px;
-  }
-
-  #map {
-    height: 800px;
-    width: 900px;
-  }
-}
-
-@media screen and (min-width: 1681px) and (max-width: 1980px) {
-  .mainDescription {
-    margin-top: 5vh;
-  }
-
-  #map {
-    height: 800px;
-    width: 900px;
-  }
-
-  .mainContainer {
-    height: 950px;
-    width: 1450px;
-    margin-top: 64px;
-    justify-content: space-around;
-  }
-  .mainContent {
+  .resultContainer {
     height: 650px;
-    min-height: 630px;
-  }
-}
-
-@media screen and (min-width: 1981px) {
-  .mainContent {
-    max-height: 40vh;
-    min-height: 890px;
+    overflow: auto;
+    width: 100%;
   }
 
   .commandContainer {
@@ -522,7 +428,6 @@
     border-radius: 32px;
     height: 28px;
   }
-
   .ActivateContainer {
     height: 510px;
     width: 90%;
@@ -585,4 +490,7 @@
     justify-content: space-around;
     height: 250px;
   }
+
+
+
 }

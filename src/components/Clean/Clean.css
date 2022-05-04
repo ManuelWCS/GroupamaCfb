@@ -722,6 +722,47 @@
     color: rgb(51, 51, 51);
     text-align: center;
   }
+  /* STYLE DU COMPOSANT ActivateGeoLocation*/
+
+  .ActivateContainer {
+    height: 250px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30px;
+    margin: auto;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 11px 11px 2px #adadad,
+      -11px -1px 2px #ffffff;
+
+  }
+
+  .ActivateGeoLoc {
+    width: 100px;
+    height: 100px;
+  }
+
+  .ActivateDescription {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize)/ 1.1);
+    color: var(--secondary-color);
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+
+  }
+
+  .navigatorDescription {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) / 1.5);
+    text-align: center;
+    padding-right: var(--spacing-large);
+    padding-left: var(--spacing-large);
+  }
+
 
  
 
