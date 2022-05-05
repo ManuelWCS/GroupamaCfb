@@ -67,8 +67,6 @@ import Popover from "../../components/Popover/Popover.jsx";
 import SearchIcon from "../../assets/CompressedPictures/Popover/trouverClub.webp";
 import LocClub from "../../assets/CompressedPictures/Popover/LocClub.webp";
 
-/*import bouton A VOUS DE JOUER */
-import Avousdejouer from "../../assets/CompressedPictures/Buttons/Avousdejouer.webp";
 
 /* import composant Carte Club*/
 import CardClub from "./Cards/CardClub.jsx";
@@ -84,6 +82,8 @@ import {Link} from 'react-scroll'
 /* APP COMPONENTS*/
 import Landing from '../Landing/Landing';
 import Description from '../Description/Description.jsx';
+import BannerContainer from '../BannerContainer/BannerContainer.jsx';
+import Instructions from '../Instructions/Instructions.jsx';
 
 
 function Clean() {
@@ -514,11 +514,13 @@ function Clean() {
     if(discovery === false)
     setTimeout(() => {
       setDiscovery(true)
+      console.log('test')
 
   }, 1000);
   if(form === false)
   setTimeout(() => {
-    setForm(true)
+    setForm(true);
+    console.log('test');
   }, 1500);
 } 
 
@@ -548,31 +550,23 @@ function Clean() {
       <Header />
       <div className="fullApp" id="background_wrap" >
       
-        <Landing/>
-        {/* <div className="descriptionContainer">
-          <h2 className="mainDescription">
-            541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
-          </h2>
-          <h4 className="secondaryDescription">
-            La Ligue Centre-Val de Loire de Football vous propose cette
-            plateforme afin de découvrir l'ensemble des clubs de notre Région !
-          </h4>
-        </div> */}
+        <Landing/>       
         <Description/>
 
-        <div className="bannerContainer" >
-          {/* <h5 className="bannerTitle">À VOUS DE JOUER</h5> */}
-          <Link to="map" spy={true} smooth={true} duration={1000}>
+        {/* <div className="bannerContainer" >
            <img src={Avousdejouer} alt="banner" className="bannerTitle" onClick={OpenForms} />
+        </div> */}
+          <Link to="map" spy={true} smooth={true} duration={1000}>
+        <BannerContainer onClick={OpenForms}/>
           </Link>
-        </div>
 
-        <div className="desktopInstructions">
+        {/* <div className="desktopInstructions">
           <h6 className="instructionsTitle">
             Entrez votre âge et la compétition souhaitée pour découvrir les
             clubs à proximité :
           </h6>
-        </div>
+        </div> */}
+        <Instructions/>
 
         <div className="mainContainer">
           <div className="mapContainer">

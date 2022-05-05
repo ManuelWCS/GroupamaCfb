@@ -35,22 +35,9 @@
     margin-top: -1px;
   }
 
-  .descriptionContainer {
-    height: max-content;
-    width: 85vw;
-    margin-right: 7.5vw;
-    margin-left: 7.5vw;
-    margin-bottom: calc(var(--spacing-medium) * 2);
-    margin-top: -20px;
-  }
 
-  .mainDescription {
-    font-family: var(--main-font);
-    color: var(--main-color);
-    font-size: calc(var(--main-fontSize) * 1.2);
-    padding-bottom: 16px;
-    margin-top: -32px;
-  }
+
+
 
   .secondaryDescription {
     font-family: var(--secondary-font);
@@ -59,43 +46,7 @@
     color: rgb(51, 51, 51);
   }
 
-  .bannerContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  .bannerTitle {
-    height: 48px;
-    margin: 0 auto;
-    margin-bottom: var(--spacing-medium);
-    width: 350px;
-  }
-
-  .desktopInstructions {
-    width: 90%;
-    height: max-content;
-    padding: var(--spacing-small);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    margin: auto;
-    margin-bottom: var(--spacing-medium);
-    text-align: center;
-  }
-
-  .instructionsTitle {
-    font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize) * 1);
-    padding-bottom: calc(var(--spacing-medium) * 1);
-    color: rgb(51, 51, 51);
-    text-align: center;
-  }
+  
 
   .mainContainer {
     width: 85vw;
@@ -579,22 +530,9 @@ A PARTIR DE 480px*/
     margin-top: -2px;
   }
 
-  .descriptionContainer {
-    height: max-content;
-    width: 85vw;
-    margin-right: 7.5vw;
-    margin-left: 7.5vw;
-    margin-bottom: calc(var(--spacing-medium) * 2);
-    margin-top: 46px;
-  }
+  
 
-  .mainDescription {
-    font-family: var(--main-font);
-    color: var(--main-color);
-    font-size: calc(var(--main-fontSize) * 1.7);
-    padding-bottom: 16px;
-  }
-
+  
   .secondaryDescription {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) * 1.5);
@@ -602,30 +540,6 @@ A PARTIR DE 480px*/
     color: rgb(51, 51, 51);
   }
 
-  .desktopInstructions {
-    width: 90%;
-    height: max-content;
-    padding: var(--spacing-small);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    margin: auto;
-    margin-bottom: var(--spacing-medium);
-    text-align: center;
-  }
-
-  .instructionsTitle {
-    font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize) * 1.6);
-    padding-bottom: calc(var(--spacing-medium) * 1);
-    color: rgb(51, 51, 51);
-    text-align: center;
-    padding-left: calc(var(--spacing-large) * 2);
-    padding-right: calc(var(--spacing-large) * 2);
-  }
 
   .mainContainer {
     width: 85vw;
@@ -980,24 +894,7 @@ A PARTIR DE 480px*/
     border: 1px solid black;
   }
 
-  .bannerContainer {
-    width: 90%;
-    height: 110px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    position: relative;
-    z-index: -2;
-  }
-
-  .bannerTitle {
-    padding-top: calc(var(--spacing-large) * 0.4);
-    width: 90%;
-    margin: auto;
-  }
+ 
 
   /* Style à l'intérieur des toggle */
 
@@ -1153,25 +1050,7 @@ A PARTIR DE 480px*/
     border: 1px solid black;
   }
 
-  .bannerContainer {
-    width: 90%;
-    height: 110px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    position: relative;
-    z-index: -2;
-  }
-
-  .bannerTitle {
-    padding-top: calc(var(--spacing-large) * 0.4);
-    width: 90%;
-    margin: auto;
-  }
-
+  
   /* Style à l'intérieur des toggle */
 
   .sliderText {
@@ -1299,22 +1178,9 @@ A PARTIR DE 480px*/
     border: 1px solid black;
   }
 
-  .descriptionContainer {
-    height: max-content;
-    width: 85vw;
-    margin-right: 7.5vw;
-    margin-left: 7.5vw;
-    margin-bottom: calc(var(--spacing-medium) * 2);
-    margin-top: -78px;
-  }
+  
 
-  .mainDescription {
-    font-family: var(--main-font);
-    color: var(--main-color);
-    font-size: calc(var(--main-fontSize) * 1.7);
-    padding-bottom: 16px;
-    text-align: center;
-  }
+ 
 
   .secondaryDescription {
     font-family: var(--secondary-font);
@@ -1323,49 +1189,7 @@ A PARTIR DE 480px*/
     color: rgb(51, 51, 51);
   }
 
-  .bannerContainer {
-    width: 90%;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    position: relative;
-    z-index: -2;
-  }
-
-  .bannerTitle {
-    width: 80%;
-    height: 70px;
-    margin-bottom: calc(var(--spacing-large) * 0.5);
-  }
-
-  .desktopInstructions {
-    width: 90%;
-    height: max-content;
-    padding: var(--spacing-small);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    margin: auto;
-    margin-bottom: var(--spacing-medium);
-    text-align: center;
-  }
-
-  .instructionsTitle {
-    font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize) * 1.2);
-    padding-bottom: calc(var(--spacing-medium) * 1);
-    color: rgb(51, 51, 51);
-    text-align: center;
-    padding-left: calc(var(--spacing-large) * 2);
-    padding-right: calc(var(--spacing-large) * 2);
-  }
+  
 
   .mainContainer {
     width: 85vw;
@@ -1677,17 +1501,7 @@ A PARTIR DE 480px*/
   }
 }
 
-@media screen and (min-width: 815px) and (max-width: 1023px) {
-  .descriptionContainer {
-    margin-top: -18px;
-  }
-}
 
-@media screen and (min-width: 918px) and (max-width: 1023px) {
-  .descriptionContainer {
-    margin-top: 36px;
-  }
-}
 
 @media screen and (min-width: 616px) and (max-width: 1023px) {
   .popover {
