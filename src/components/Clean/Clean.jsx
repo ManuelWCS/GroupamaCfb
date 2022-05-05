@@ -524,6 +524,28 @@ function Clean() {
   }, 1500);
 } 
 
+
+  //Set the map to the center of the user
+  useEffect(() => {
+    setTimeout(() => {
+      if(map)
+      map.flyTo([location.coordinates.lat, location.coordinates.lng], 15);
+      console.log('jarrive')
+    }, 2000);
+  }, [location]);
+  
+
+
+
+// //Function that count automaticly from 1 to 541
+//   const [counter, setCounter] = useState(0);
+//   useEffect(() => {
+//     if (counter < 541) {
+//       setCounter(counter + 1);
+//     }
+//   }, [counter]);
+
+
   return (
     <>
       <Header />
@@ -1159,12 +1181,9 @@ function Clean() {
         </div>
         {Largeur >= 1024 ?
           <div className="commandContainer" id="form">
-            <Legend id="form"/>
+            <Legend />
 
-            <button className="commandBtn"onClick={showMyLocation}>Ma Loc</button>
-            <button className="commandBtn" onClick={hideMarkers}>Clubs Proches </button>
-            <button className="commandBtn" onClick={hideInstanceMarkers}>Instances</button>
-
+         
           </div>
 
 
