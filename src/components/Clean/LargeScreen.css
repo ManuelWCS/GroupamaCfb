@@ -155,26 +155,6 @@
     height: 80px;
   }
 
-  .desktopInstructions {
-    width: max-content;
-    height: max-content;
-    padding: var(--spacing-small);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    margin: auto;
-  }
-
-  .instructionsTitle {
-    font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize) * 1.8);
-    padding-bottom: calc(var(--spacing-medium) * 3);
-    color: rgb(51, 51, 51);
-    margin-top: calc(var(--spacing-large) * 2);
-  }
   .mapContainer {
     width: 95vw;
     display: flex;

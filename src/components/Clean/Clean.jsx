@@ -45,7 +45,7 @@ import Button2 from "@mui/material/Button";
 /*<------------------------IMPORT COMPOSANTS ---------------------------------> */
 import Faq from "../FAQ/Faq";
 import Sponso from "../Sponso/Sponso.jsx";
-import Instances from "../Instances/Instaces.jsx";
+import Instances from "../Instances/Instances.jsx";
 import Legend from "../Legend/Legend.jsx";
 import Header from "../Header2/Header2.jsx";
 
@@ -68,8 +68,6 @@ import SearchIcon from "../../assets/CompressedPictures/Popover/trouverClub.webp
 import LocClub from "../../assets/CompressedPictures/Popover/LocClub.webp";
 
 
-/* import composant Carte Club*/
-import CardClub from "./Cards/CardClub.jsx";
 
 /* import bouton localisez moi*/
 import LocImage from "../../assets/CompressedPictures/Buttons/LocalisezMoi.png";
@@ -84,6 +82,7 @@ import Landing from '../Landing/Landing';
 import Description from '../Description/Description.jsx';
 import BannerContainer from '../BannerContainer/BannerContainer.jsx';
 import Instructions from '../Instructions/Instructions.jsx';
+import MainContainer from '../MainContainer/MainContainer.jsx'
 
 
 function Clean() {
@@ -253,10 +252,6 @@ function Clean() {
 
   function scrollTop() {
     window.location.href = "#redirect";
-  }
-  // Fonction permettant de scroller vers la carte en question
-  function scrollCard() {
-    window.location.href = "#cardClub";
   }
 
 
@@ -472,7 +467,6 @@ function Clean() {
 
   const isClicked = () => {
     setForm(!form);
-    console.log(form);
   };
 
   const isClicked2 = () => {
@@ -533,17 +527,6 @@ function Clean() {
       console.log('jarrive')
     }, 2000);
   }, [location]);
-  
-
-
-
-// //Function that count automaticly from 1 to 541
-//   const [counter, setCounter] = useState(0);
-//   useEffect(() => {
-//     if (counter < 541) {
-//       setCounter(counter + 1);
-//     }
-//   }, [counter]);
 
   return (
     <>
@@ -553,19 +536,10 @@ function Clean() {
         <Landing/>       
         <Description/>
 
-        {/* <div className="bannerContainer" >
-           <img src={Avousdejouer} alt="banner" className="bannerTitle" onClick={OpenForms} />
-        </div> */}
           <Link to="map" spy={true} smooth={true} duration={1000}>
         <BannerContainer onClick={OpenForms}/>
           </Link>
 
-        {/* <div className="desktopInstructions">
-          <h6 className="instructionsTitle">
-            Entrez votre âge et la compétition souhaitée pour découvrir les
-            clubs à proximité :
-          </h6>
-        </div> */}
         <Instructions/>
 
         <div className="mainContainer">
@@ -636,7 +610,7 @@ function Clean() {
                           position={[res.Latitude, res.Longitude]}
                         >
                           <Popup key={index2} className="markersPopUp">
-                            <p onClick={scrollCard}> {res.NomClub}</p>
+                            <p> {res.NomClub}</p>
 
                             <br></br>
 
@@ -676,7 +650,7 @@ function Clean() {
                 {visibilityInstanceMarkers === true ? <Instances /> : null}
               </MapContainer>
             </div>
-
+               
 
 
 
@@ -692,17 +666,7 @@ function Clean() {
 
                 </div>
               ) : null}
-            {/* {proximity === true ? (
-              <div className="btnDiv">
-                <button onClick={showMyLocation}>ME LOCALISER</button>
-                <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
-                <button onClick={hideMarkers}> CLUBS PROCHES</button>
-                <button onClick={hideInstanceMarkers}>INSTANCES</button>
-              </div>
-            ) : (
-              <button>Activer ma geoloc </button>
-            )}
-      */}
+            
           </div>
 
           <div className="popover">
@@ -1160,6 +1124,7 @@ function Clean() {
             </div>
           </div>
         </div>
+        
         {Largeur >= 1024 ?
           <div className="commandContainer" id="form">
             <Legend />
