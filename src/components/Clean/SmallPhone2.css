@@ -33,20 +33,7 @@
     margin-top: -1px
   }
 
-  .mainContent {
-    height: 550px;
-    width: 89%;
-    background-image: url("../../assets/TEST/mobileVertical.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    margin-top: -2px;
-    min-height: 500px;
-    min-width: 89%;
-  }
 
-  .titlesContainer {
-    display: none;
-  }
 
   .descriptionContainer {
     height: 135px;

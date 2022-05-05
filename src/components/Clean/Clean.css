@@ -82,17 +82,7 @@
   }
 
   /* PREMIERE DIV AVEC DU CONTENU : IMAGE CENTREE AVEC TEXTE*/
-  .mainContent {
-    height: 450px;
-    min-height: 440px;
-    width: 92.8%;
-    margin: auto;
-    background-image: url("../../assets/CompressedPictures/final3.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;
-    position: relative;
-  }
+  
 
   #background_wrap {
     z-index: 1;
@@ -735,25 +725,10 @@
 
 /* Breakpoints pour garder en place l'image */
 
-@media screen and (min-width: 1077px) and (max-width: 1111px) {
-  .mainContent {
-    width: 93%;
-    margin-top: -3.5px;
-  }
-}
 
-@media screen and (min-width: 1110px) and (max-width: 1194px) {
-  .mainContent {
-    width: 93%;
-    margin-top: -3.5px;
-  }
-}
 
 @media screen and (min-width: 1194px) and (max-width: 1400px) {
-  .mainContent {
-    width: 93%;
-    margin-top: -3.5px;
-  }
+  
 
   .mainContainer {
     width: 93vw;

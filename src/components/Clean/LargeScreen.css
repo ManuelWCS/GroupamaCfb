@@ -34,35 +34,11 @@
     background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
   }
 
-  .mainContent {
-    height: 650px;
-    background-image: url("../../assets/CompressedPictures/final3.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;
-    margin: auto;
-    position: relative;
-    margin-top: -4.7px;
-    width: 92vw;
-  }
 
-  .titlesContainer {
-    position: relative;
-    left: 100px;
-    top: 50px;
-    width: fit-content;
-  }
-  .mainTitle {
-    font-size: calc(var(--main-fontSize) * 4);
-    font-family: var(--main-font);
-    color: var(--red-color);
-  }
 
-  .secondaryTitle {
-    font-size: calc(var(--main-fontSize) * 2);
-    font-family: var(--main-font);
-    color: white;
-  }
+  
+ 
+
 
   .descriptionContainer {
     height: max-content;

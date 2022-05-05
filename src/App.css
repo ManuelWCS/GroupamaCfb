@@ -35,3 +35,14 @@ body {
 
 }
 
+:root {
+	--main-color: #3586c2;
+	--secondary-color: #293d6b;
+	--red-color: #c1272d;
+	--main-font: "Nuvel";
+	--secondary-font: "Century Gothic";
+	--main-fontSize: 16px;
+	--spacing-small: 8px;
+	--spacing-medium: 16px;
+	--spacing-large: 32px;
+  }

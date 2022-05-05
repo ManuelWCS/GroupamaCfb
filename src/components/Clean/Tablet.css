@@ -3,8 +3,6 @@
 /* <<<<<<<<<<<<<<< VERSION TABLETTE >>>>>>>>>>>>>>>>>>*/
 
 @media screen and (min-width: 481px) and (max-width: 615px) {
-
-
   html,
   body {
     max-width: 100%;
@@ -37,37 +35,6 @@
     margin-top: -1px;
   }
 
-  .mainContent {
-    height: 250px;
-    width: 89.2%;
-    margin-top: -2px;
-    background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    z-index: -1;
-    position: relative;
-  }
-
-  .titlesContainer {
-    position: relative;
-    width: fit-content;
-    padding-left: calc(var(--spacing-large) * 0.6);
-    padding-top: var(--spacing-small);
-    padding-bottom: var(--spacing-small);
-  }
-
-  .mainTitle {
-    font-size: calc(var(--main-fontSize) * 2);
-    font-family: var(--main-font);
-    color: var(--red-color);
-  }
-
-  .secondaryTitle {
-    font-size: calc(var(--main-fontSize) * 0.9);
-    font-family: var(--main-font);
-    color: white;
-  }
-
   .descriptionContainer {
     height: max-content;
     width: 85vw;
@@ -92,18 +59,15 @@
     color: rgb(51, 51, 51);
   }
 
-
   .bannerContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-
   }
 
   .bannerTitle {
-
     height: 48px;
     margin: 0 auto;
     margin-bottom: var(--spacing-medium);
@@ -184,7 +148,6 @@
     text-align: center;
   }
 
-
   /* STYLES DES POPOVERS LARGEUR BOUTONS MOBILE */
 
   .styleLoc {
@@ -239,7 +202,7 @@
     text-align: end;
     margin-right: var(--spacing-medium);
     padding-bottom: 4px;
-    filter: opacity(60%)
+    filter: opacity(60%);
   }
 
   /* Container qui contient toutes les cartes correspondant aux résultats de la recherche*/
@@ -248,11 +211,7 @@
     height: 460px;
     overflow: auto;
     width: 100%;
-
   }
-
-
-
 
   .styleDiv2 {
     width: 315px;
@@ -265,7 +224,6 @@
     margin: 0 auto;
     border: 1px solid pink;
     margin-bottom: 16px;
-    ;
   }
 
   .styleOff {
@@ -273,7 +231,6 @@
   }
 
   /*STYLE DEUXIEME BOUTON  */
-
 
   .styleGeo {
     height: 60px;
@@ -289,7 +246,6 @@
     background-color: var(--secondary-color);
     width: 245px;
     margin-top: var(--spacing-small);
-
   }
 
   .styleDiv3 {
@@ -321,9 +277,7 @@
     margin: auto;
     border-radius: 20px;
     background: #ffffff;
-    box-shadow: 11px 11px 2px #adadad,
-      -11px -1px 2px #ffffff;
-
+    box-shadow: 11px 11px 2px #adadad, -11px -1px 2px #ffffff;
   }
 
   .ActivateGeoLoc {
@@ -333,12 +287,11 @@
 
   .ActivateDescription {
     font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize)/ 1.1);
+    font-size: calc(var(--main-fontSize) / 1.1);
     color: var(--secondary-color);
     font-weight: bold;
     text-align: center;
     line-height: 1.2;
-
   }
 
   .navigatorDescription {
@@ -403,7 +356,6 @@
     margin-left: 45px;
     margin-right: 45px;
   }
-
 
   /*********** STYLES CARTES*/
   .cardResult {
@@ -554,7 +506,7 @@
   }
   .commandContainer {
     display: flex;
-    margin:auto;
+    margin: auto;
     width: 100%;
     justify-content: center;
     flex-direction: column;
@@ -562,36 +514,32 @@
 
   .commandBtn {
     width: 150px;
-    margin:auto;
+    margin: auto;
     border-radius: 32px;
     height: 28px;
-    
   }
   /* CONTAINER NAVIGATION CARTE */
 
   .popover {
-    order:1;
-}
-.interactContainer {
-  width: 100%;
-  order:0;
-  margin:auto;
-  display: flex;
-  justify-content: space-evenly;
-  height: 60px;
-  padding-top:16px;
-  padding-bottom: 16px;
- }
+    order: 1;
+  }
+  .interactContainer {
+    width: 100%;
+    order: 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    height: 60px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
 
- .locImgContainer {
-   margin:auto;
-   width: 100%;
-   display: flex;
-   justify-content: space-evenly;
- }
-
-
-
+  .locImgContainer {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
 }
 
 /* VERIFIE JUSQUE LA, TOUTES LES CLASSES AU DESSUS SONT UTILISEES POUR LE FORMAT 
@@ -599,7 +547,6 @@ A PARTIR DE 480px*/
 
 /* VERSION GRANDE TABLETTE */
 @media screen and (min-width: 616px) and (max-width: 672px) {
-
   html,
   body {
     max-width: 100%;
@@ -632,38 +579,6 @@ A PARTIR DE 480px*/
     margin-top: -2px;
   }
 
-
-  .mainContent {
-    height: 250px;
-    width: 88.9%;
-    margin-top: -1px;
-    background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    z-index: -1;
-    position: relative;
-  }
-
-  .titlesContainer {
-    position: relative;
-    width: fit-content;
-    padding-left: calc(var(--spacing-large) * 0.5);
-    padding-top: var(--spacing-large);
-    padding-bottom: var(--spacing-small);
-  }
-
-  .mainTitle {
-    font-size: calc(var(--main-fontSize) * 2.3);
-    font-family: var(--main-font);
-    color: var(--red-color);
-  }
-
-  .secondaryTitle {
-    font-size: calc(var(--main-fontSize) * 1);
-    font-family: var(--main-font);
-    color: white;
-  }
-
   .descriptionContainer {
     height: max-content;
     width: 85vw;
@@ -678,7 +593,6 @@ A PARTIR DE 480px*/
     color: var(--main-color);
     font-size: calc(var(--main-fontSize) * 1.7);
     padding-bottom: 16px;
-    ;
   }
 
   .secondaryDescription {
@@ -687,8 +601,6 @@ A PARTIR DE 480px*/
     padding-bottom: 16px;
     color: rgb(51, 51, 51);
   }
-
-
 
   .desktopInstructions {
     width: 90%;
@@ -742,8 +654,6 @@ A PARTIR DE 480px*/
     margin-bottom: calc(var(--spacing-large) / 1);
     color: var(--secondary-color);
   }
-
-
 
   .hide {
     display: block;
@@ -968,7 +878,6 @@ A PARTIR DE 480px*/
     font-size: calc(var(--main-fontSize) / 1);
   }
 
-
   /* TITRE DU FORMULAIRE */
 
   .formTitle {
@@ -990,7 +899,6 @@ A PARTIR DE 480px*/
   .btnBackground {
     background-color: transparent;
     border: none;
-
   }
 
   /* STYLES DES POPOVERS LARGEUR BOUTONS MOBILE */
@@ -1008,14 +916,12 @@ A PARTIR DE 480px*/
     margin: 0 auto;
   }
 
-
   .styleLocExpanded {
     height: 60px;
     border-radius: 30px;
     background-color: var(--main-color);
     width: 325px;
   }
-
 
   .styleDiv2 {
     width: 325px;
@@ -1028,7 +934,6 @@ A PARTIR DE 480px*/
     margin: 0 auto;
     border: 1px solid pink;
     margin-bottom: 16px;
-    ;
   }
 
   .styleOff {
@@ -1044,9 +949,7 @@ A PARTIR DE 480px*/
     align-content: center;
   }
 
-
   /*STYLE DEUXIEME BOUTON  */
-
 
   .styleGeo {
     height: 60px;
@@ -1054,7 +957,6 @@ A PARTIR DE 480px*/
     background-color: var(--secondary-color);
     width: 325px;
     margin-top: var(--spacing-medium);
-
   }
 
   .styleGeoExpanded {
@@ -1118,15 +1020,12 @@ A PARTIR DE 480px*/
     text-align: center;
   }
 
-
   /*Container results of clubs clsoe */
 
   .resultContainer {
     height: 470px;
     overflow: auto;
     width: 100%;
-
-
   }
 
   .distanceSpan {
@@ -1136,18 +1035,11 @@ A PARTIR DE 480px*/
     text-align: end;
     margin-right: var(--spacing-medium);
     padding-bottom: 4px;
-    filter: opacity(60%)
+    filter: opacity(60%);
   }
-
-
-
-
-
-
 }
 
 @media screen and (min-width: 673px) and (max-width: 1023px) {
-
   html,
   body {
     max-width: 100%;
@@ -1180,7 +1072,6 @@ A PARTIR DE 480px*/
   .btnBackground {
     background-color: transparent;
     border: none;
-
   }
 
   /* STYLES DES POPOVERS LARGEUR BOUTONS MOBILE */
@@ -1198,14 +1089,12 @@ A PARTIR DE 480px*/
     margin: 0 auto;
   }
 
-
   .styleLocExpanded {
     height: 60px;
     border-radius: 30px;
     background-color: var(--main-color);
     width: 325px;
   }
-
 
   .styleDiv2 {
     width: 325px;
@@ -1218,7 +1107,6 @@ A PARTIR DE 480px*/
     margin: 0 auto;
     border: 1px solid pink;
     margin-bottom: 16px;
-    ;
   }
 
   .styleOff {
@@ -1234,9 +1122,7 @@ A PARTIR DE 480px*/
     align-content: center;
   }
 
-
   /*STYLE DEUXIEME BOUTON  */
-
 
   .styleGeo {
     height: 60px;
@@ -1244,7 +1130,6 @@ A PARTIR DE 480px*/
     background-color: var(--secondary-color);
     width: 325px;
     margin-top: var(--spacing-medium);
-
   }
 
   .styleGeoExpanded {
@@ -1308,15 +1193,12 @@ A PARTIR DE 480px*/
     text-align: center;
   }
 
-
   /*Container results of clubs clsoe */
 
   .resultContainer {
     height: 470px;
     overflow: auto;
     width: 100%;
-
-
   }
 
   .distanceSpan {
@@ -1325,7 +1207,7 @@ A PARTIR DE 480px*/
     color: black;
     text-align: end;
     padding-bottom: 4px;
-    filter: opacity(60%)
+    filter: opacity(60%);
   }
 
   .fullApp {
@@ -1371,7 +1253,6 @@ A PARTIR DE 480px*/
     width: 345px;
   }
 
-
   .styleDiv2 {
     width: 345px;
     height: 600px;
@@ -1383,7 +1264,6 @@ A PARTIR DE 480px*/
     margin: 0 auto;
     border: 1px solid pink;
     margin-bottom: 16px;
-    ;
   }
 
   .styleOff {
@@ -1391,7 +1271,6 @@ A PARTIR DE 480px*/
   }
 
   /*STYLE DEUXIEME BOUTON  */
-
 
   .styleGeo {
     height: 60px;
@@ -1418,41 +1297,6 @@ A PARTIR DE 480px*/
     margin: 0 auto;
     margin-bottom: 16px;
     border: 1px solid black;
-  }
-
-
-
-  .mainContent {
-    height: 340px;
-    width: 93%;
-    margin-left: 3.5vw;
-    margin-right: 3.5vw;
-    margin-top: -4px;
-    background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    z-index: -1;
-    position: relative;
-  }
-
-  .titlesContainer {
-    position: relative;
-    width: fit-content;
-    padding-left: calc(var(--spacing-large) * 0.5);
-    padding-top: var(--spacing-large);
-    padding-bottom: var(--spacing-small);
-  }
-
-  .mainTitle {
-    font-size: calc(var(--main-fontSize) * 2.7);
-    font-family: var(--main-font);
-    color: var(--red-color);
-  }
-
-  .secondaryTitle {
-    font-size: calc(var(--main-fontSize) * 1.3);
-    font-family: var(--main-font);
-    color: white;
   }
 
   .descriptionContainer {
@@ -1496,7 +1340,6 @@ A PARTIR DE 480px*/
     width: 80%;
     height: 70px;
     margin-bottom: calc(var(--spacing-large) * 0.5);
-
   }
 
   .desktopInstructions {
@@ -1659,10 +1502,7 @@ A PARTIR DE 480px*/
   .btnBackground {
     background-color: transparent;
     border: none;
-
   }
-
-
 
   .btnAfterSearch {
     width: 250px;
@@ -1812,8 +1652,6 @@ A PARTIR DE 480px*/
     background-color: transparent;
   }
 
-
-
   .titleCard {
     height: 64px;
     width: 305px;
@@ -1849,31 +1687,29 @@ A PARTIR DE 480px*/
   .descriptionContainer {
     margin-top: 36px;
   }
-
-  
 }
 
-@media screen and (min-width:616px) and (max-width:1023px) {
+@media screen and (min-width: 616px) and (max-width: 1023px) {
   .popover {
-    order:1;
-}
-.interactContainer {
-  width: 100%;
-  order:0;
-  margin:auto;
-  display: flex;
-  justify-content: space-evenly;
-  height: 60px;
-  padding-top:24px;
-  padding-bottom: 24px;
- }
+    order: 1;
+  }
+  .interactContainer {
+    width: 100%;
+    order: 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    height: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
 
- .locImgContainer {
-   margin:auto;
-   width: 100%;
-   display: flex;
-   justify-content: space-evenly;
- }
+  .locImgContainer {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
   /* ActivateGeoloc Component style*/
   .ActivateContainer {
     height: 350px;
@@ -1886,9 +1722,7 @@ A PARTIR DE 480px*/
     margin: auto;
     border-radius: 20px;
     background: #ffffff;
-    box-shadow: 11px 11px 2px #adadad,
-      -11px -1px 2px #ffffff;
-
+    box-shadow: 11px 11px 2px #adadad, -11px -1px 2px #ffffff;
   }
 
   .ActivateGeoLoc {
@@ -1898,12 +1732,11 @@ A PARTIR DE 480px*/
 
   .ActivateDescription {
     font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize)/ 1.1);
+    font-size: calc(var(--main-fontSize) / 1.1);
     color: var(--secondary-color);
     font-weight: bold;
     text-align: center;
     line-height: 1.2;
-
   }
 
   .navigatorDescription {
@@ -1913,5 +1746,4 @@ A PARTIR DE 480px*/
     padding-right: var(--spacing-large);
     padding-left: var(--spacing-large);
   }
-
 }

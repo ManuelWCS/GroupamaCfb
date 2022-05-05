@@ -81,6 +81,11 @@ import ActivateGeoloc from "../ActivateGeoloc/ActivateGeoloc";
 import {Link} from 'react-scroll'
 
 
+/* APP COMPONENTS*/
+import Landing from '../Landing/Landing';
+import Description from '../Description/Description.jsx';
+
+
 function Clean() {
   const [allcities, setallcities] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -253,14 +258,7 @@ function Clean() {
   function scrollCard() {
     window.location.href = "#cardClub";
   }
-  function scrollForm() {
-  window.scrollTo({
-    bottom: form,
-    behavior: "smooth",
-  })
-  setRecherche(true);
-  setForm(true);
-}
+
 
 
 
@@ -545,20 +543,13 @@ function Clean() {
 //     }
 //   }, [counter]);
 
-
   return (
     <>
       <Header />
-      <div className="fullApp" id="background_wrap">
-        <div className="mainContent">
-          <div className="titlesContainer">
-            <h1 className="mainTitle"> BIENVENUE ! </h1>
-            <h3 className="secondaryTitle">
-              TROUVEZ UN CLUB PRÈS DE CHEZ VOUS{" "}
-            </h3>
-          </div>
-        </div>
-        <div className="descriptionContainer">
+      <div className="fullApp" id="background_wrap" >
+      
+        <Landing/>
+        {/* <div className="descriptionContainer">
           <h2 className="mainDescription">
             541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
           </h2>
@@ -566,16 +557,12 @@ function Clean() {
             La Ligue Centre-Val de Loire de Football vous propose cette
             plateforme afin de découvrir l'ensemble des clubs de notre Région !
           </h4>
-          {/* <div className="dozaDiv">
-              <p className="doza2">HOLOGRAMME</p>
-              <p className="doza">HOLOGRAMME</p>
-              <p className="doza3">HOLOGRAMME</p>
-            </div> */}
-        </div>
+        </div> */}
+        <Description/>
 
         <div className="bannerContainer" >
           {/* <h5 className="bannerTitle">À VOUS DE JOUER</h5> */}
-          <Link to="map" spy={true} smooth={true} duration={500}>
+          <Link to="map" spy={true} smooth={true} duration={1000}>
            <img src={Avousdejouer} alt="banner" className="bannerTitle" onClick={OpenForms} />
           </Link>
         </div>
@@ -1191,7 +1178,10 @@ function Clean() {
         <Faq />
 
         {/* Fin de desktopContainer*/}
+        <Link to="top" spy={true} smooth={true} duration={1000}>
 
+        <button>TOP</button>
+        </Link>
         <Sponso />
       </div>
     </>
