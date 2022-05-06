@@ -111,7 +111,7 @@
         color: var(--main-color);
         font-size: calc(var(--main-fontSize) * 1.7);
         padding-bottom: 16px;
-        text-align: center;
+        text-align: left;
       }
 }
 
@@ -134,12 +134,11 @@
   @media screen and (min-width: 1024px) and (max-width: 1401px) {
 
     .descriptionContainer {
-        height: max-content;
         width: 80vw;
         margin-right: 10vw;
         margin-left: 10vw;
-        margin-top: -50px;
-        margin-bottom: 64px;
+        height: 120px;
+        
       }
       .mainDescription {
         font-family: var(--main-font);

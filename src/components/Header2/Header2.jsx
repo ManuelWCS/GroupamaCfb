@@ -7,7 +7,7 @@ import LargeGroupama from '../../assets/CompressedPictures/Header/headerDesktop.
 
 function Header2() {
   return (
-    <div className="header">
+    <div className="header" id="top">
       <Navbar bg="" variant="" fixed="top">
         <Navbar.Brand href="./">
           <img

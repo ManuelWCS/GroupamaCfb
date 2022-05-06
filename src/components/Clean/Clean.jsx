@@ -84,6 +84,8 @@ import BannerContainer from '../BannerContainer/BannerContainer.jsx';
 import Instructions from '../Instructions/Instructions.jsx';
 import MainContainer from '../MainContainer/MainContainer.jsx'
 
+import UpArrow from "../upArrow/UpArrow.jsx";
+
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -536,8 +538,8 @@ function Clean() {
         <Landing/>       
         <Description/>
 
-          <Link to="map" spy={true} smooth={true} duration={1000}>
-        <BannerContainer onClick={OpenForms}/>
+          <Link to="map" spy={true} smooth={true} duration={1000} onClick={OpenForms}>
+        <BannerContainer />
           </Link>
 
         <Instructions/>
@@ -659,11 +661,6 @@ function Clean() {
               (
                 <div className="commandContainer">
                   <Legend />
-
-                  <button className="commandBtn" onClick={showMyLocation}>Ma Loc</button>
-                  <button className="commandBtn" onClick={hideMarkers}>Clubs Proches </button>
-                  <button className="commandBtn" onClick={hideInstanceMarkers}>Instances</button>
-
                 </div>
               ) : null}
             
@@ -1139,7 +1136,7 @@ function Clean() {
         {/* Fin de desktopContainer*/}
         <Link to="top" spy={true} smooth={true} duration={1000}>
 
-        <button>TOP</button>
+        <UpArrow/>
         </Link>
         <Sponso />
       </div>

@@ -53,34 +53,6 @@
     position: relative;
   }
 
-  .doza {
-    color: white;
-    font-size: 80px;
-    font-family: "doza";
-    position: absolute;
-    z-index: 2;
-  }
-
-  .doza2 {
-    font-size: 80px;
-    font-family: "doza";
-    position: absolute;
-    bottom: 45%;
-    color: rgba(14, 223, 207, 1);
-
-    transform: translate(5%);
-  }
-
-  .doza3 {
-    color: red;
-    font-size: 80px;
-    font-family: "doza";
-    position: absolute;
-    top: 45%;
-    color: rgba(223, 14, 95, 1);
-    transform: translate(-5%);
-  }
-
   /* PREMIERE DIV AVEC DU CONTENU : IMAGE CENTREE AVEC TEXTE*/
 
   #background_wrap {
@@ -89,8 +61,8 @@
     height: 100%;
     width: 100%;
     background-size: 100%;
-    background-attachment: fixed;
-    background-position: center 60px;
+    background-attachment: local;
+    background-position: center 0px;
     /* background-image: url("../../assets/TEST/Ordi22.png"); */
     background-image: url("../../assets/CompressedPictures/bandesdeTypeBlanc.webp");
     margin-top: -5px;
@@ -135,26 +107,6 @@
 
   /* FIN DE L'AFFICHAGE DES TITRES ET DESCRIPTION*/
 
-  .bannerContainer {
-    width: 100%;
-    height: 120px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    position: relative;
-    z-index: -2;
-    margin: auto;
-  }
-
-  /* TITRE "A VOUS DE JOUER SUR LA BANNIERE */
-
-  .bannerTitle {
-    margin: auto;
-    height: 80px;
-  }
 
   /*CONTAINER QUI CONTIENT LA MAP ET LE FORM  */
 
@@ -167,6 +119,7 @@
     margin: auto;
     justify-content: space-between;
     position: relative;
+    height: 100vh;
   }
 
   #map {
