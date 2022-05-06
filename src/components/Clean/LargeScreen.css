@@ -208,15 +208,19 @@
   .popover {
     position: absolute;
     z-index: 5;
-    top: 41%;
-    right: 4%;
+    right: 18%;
+    width: 150px;
+    top: 135vh;
+
   }
 
   .popover2 {
     position: absolute;
     z-index: 5;
-    top: 41%;
-    left: 8%;
+    top: 135vh;
+    left: 5%;
+    width: 150px;
+
   }
 
   /* STYLES DES POPOVERS LARGEUR BOUTONS MOBILE */
@@ -289,12 +293,26 @@
     background-color: white;
   }
   .containerResult {
-    background-color: palevioletred;
-    height: 500px;
+    height: 680px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     overflow: auto;
+    width: 95%;
+  }
+  .Result {
+    font-family: var(--secondary-font);
+    text-align: center;
+    padding-top:var(--spacing-medium);
+    padding-bottom: var(--spacing-small);
+    font-size: 40px;
+  }
+
+  .clearSearch {
+    margin-top: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+    width: 150px;
+    float: right;
   }
   .resultContainer {
     height: 450px;

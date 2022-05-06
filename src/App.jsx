@@ -3,7 +3,6 @@ import Clean from "./components/Clean/Clean.jsx";
 // import Faq from "./components/FrequentlyAskedQuestions/FrequentlyAskedQuestions.jsx";
 import { Routes, Route } from "react-router-dom";
 
-import MainContainer from './components/MainContainer/MainContainer.jsx';
 function App() {
   return (
     <>

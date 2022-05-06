@@ -14,7 +14,7 @@ function Header2() {
             alt=""
             src={LargeGroupama}
             width="100%"
-            height="50%"
+            height="100%"
             className="bigHeader"
           />
 
@@ -22,7 +22,7 @@ function Header2() {
             alt=""
             src={SmallGroupama}
             width="100%"
-            height="5%"
+            height="100%"
             className="smallHeader"
           />
         </Navbar.Brand>{" "}

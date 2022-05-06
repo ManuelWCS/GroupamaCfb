@@ -284,6 +284,8 @@ function Clean() {
     setClubs(data);
   }, []);
 
+ 
+
   // UseEffect qui gere le changement d'etat en fonction de l'age
   //Règle numéro 1: Si ageUtilisateur inférieur a 18, il faut désactiver la catégorie Loisir
   useEffect(() => {
@@ -387,6 +389,10 @@ function Clean() {
   const [rayon, setRayon] = useState(0);
   const [distance, setDistance] = useState(0);
 
+  useEffect(()=> {
+    setProximity(proximity)
+  }, [proximity])
+  
   function valuetext(value) {
     setValeurSlider(value);
     changeRadius();
@@ -911,11 +917,13 @@ function Clean() {
                 </div>
               ) : (
                 <div className="containerResult">
+                  <h3 className="Result">RÉSULTATS</h3>
                   <p className="NumberClose">
                     {" "}
                     Il y a {clubSearch.length} correspondant à votre recherche{" "}
                   </p>
                   <button
+                  className="clearSearch"
                     onClick={() => {
                       setclubSearch([]);
                       setRecherche(false);
