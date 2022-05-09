@@ -210,14 +210,14 @@
     z-index: 5;
     right: 18%;
     width: 150px;
-    top: 135vh;
+    top: 48.5%;
 
   }
 
   .popover2 {
     position: absolute;
     z-index: 5;
-    top: 135vh;
+    top: 48.5%;
     left: 5%;
     width: 150px;
 
@@ -233,7 +233,7 @@
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    justify-content: cefnter;
+    justify-content: space-around;
     align-items: center;
     margin: 0 auto;
   }
@@ -444,4 +444,26 @@
 
 
 
+}
+
+@media screen and (min-width: 1550px) {
+
+
+  .popover {
+    position: absolute;
+    z-index: 5;
+    right: 18%;
+    width: 150px;
+    top: 42%;
+
+  }
+
+  .popover2 {
+    position: absolute;
+    z-index: 5;
+    top: 42%;
+    left: 5%;
+    width: 150px;
+
+  }
 }
