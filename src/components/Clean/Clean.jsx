@@ -82,7 +82,6 @@ import Landing from '../Landing/Landing';
 import Description from '../Description/Description.jsx';
 import BannerContainer from '../BannerContainer/BannerContainer.jsx';
 import Instructions from '../Instructions/Instructions.jsx';
-import MainContainer from '../MainContainer/MainContainer.jsx'
 
 import UpArrow from "../upArrow/UpArrow.jsx";
 
@@ -918,9 +917,10 @@ function Clean() {
               ) : (
                 <div className="containerResult">
                   <h3 className="Result">RÉSULTATS</h3>
+                  
                   <p className="NumberClose">
                     {" "}
-                    Il y a {clubSearch.length} correspondant à votre recherche{" "}
+                    Il y a {clubSearch.length} résultat(s) correspondant à votre recherche{" "}
                   </p>
                   <button
                   className="clearSearch"
