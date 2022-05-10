@@ -114,23 +114,30 @@
 
     .counterNumber {
         font-size: calc(var(--main-fontSize) * 6);
+        position:static;
 
     }
 
     .LandingTitle {
         font-size: calc(var(--main-fontSize) * 3);
+        position:static;
+
     }
 
     .LandingTitle2 {
         font-size: calc(var(--main-fontSize) * 2);
         margin-top: -16px;
         letter-spacing: 8px;
+        position:static;
+
 
     }
 
     .LandingTitle3 {
         font-size: calc(var(--main-fontSize) * 1);
         letter-spacing: 1px;
+        position:static;
+
     }
 
     .background {
