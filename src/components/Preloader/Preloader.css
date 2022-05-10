@@ -1,14 +1,18 @@
-@import url('../../App.css');
+@import url("../../App.css");
 
 .FullLanding {
     height: 100vh;
     width: 100vw;
-    background-color: pink;
-    position:relative;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 0;
+}
+
+.LandingTitlesContainer {
+    margin-top: -70px;
 }
 
 .firstLine {
@@ -19,18 +23,37 @@
 
 .counterNumber {
     font-family: var(--main-font);
-    font-size: calc(var(--main-fontSize)*5);
+    font-size: calc(var(--main-fontSize) * 12);
+    padding-right: var(--spacing-small);
+    position: static;
+}
+
+.background {
+    position: fixed;
+    z-index: 0;
+    top: 5%;
+    right: 35%;
+    bottom: 0%;
+    z-index: -1;
 }
 
 .LandingTitle {
     font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize)*2);
-
+    font-size: calc(var(--main-fontSize) * 5);
 }
+
 .LandingTitle2 {
     font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize)*2);
-    letter-spacing: 3px;
+    font-size: calc(var(--main-fontSize) * 4.5);
+    letter-spacing: 7px;
+    margin-top: -24px;
+}
+
+.LandingTitle3 {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) * 1.4);
+    padding-top: var(--spacing-small);
+    letter-spacing: 6px;
 }
 
 .BiggestTitle {
@@ -38,4 +61,49 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.NavigationTitle {
+    position: absolute;
+    bottom: 15%;
+    text-align: center;
+    margin: auto;
+    right: 20%;
+    left: 20%;
+}
+
+.LinkContainer {
+    height: 120px;
+    margin: auto;
+    bottom: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnLink {
+    width: 276px;
+    height: 64px;
+    border-radius: 70px;
+    background: #C1272D;
+    box-shadow: inset 17px 17px 35px #a42126,
+        inset -17px -17px 35px #de2d34;
+}
+
+.btnLink:active {
+
+    width: 286px;
+    height: 74px;
+    border-radius: 70px;
+    background: #C1272D;
+    box-shadow: inset -17px 17px 35px #a42126,
+        inset 17px -17px 35px #de2d34;
+}
+
+.btnContent {
+    font-family: var(--main-font);
+    color: white;
+    font-style: bold;
+    font-size: calc(var(--main-fontSize)* 1.5);
 }

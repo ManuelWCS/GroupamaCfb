@@ -9,7 +9,7 @@ function Header2() {
   return (
     <div className="header" id="top">
       <Navbar bg="" variant="" fixed="top">
-        <Navbar.Brand href="./">
+        <Navbar.Brand href="/trouvetonclub">
           <img
             alt=""
             src={LargeGroupama}
