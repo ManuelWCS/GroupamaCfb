@@ -86,24 +86,90 @@
     width: 276px;
     height: 64px;
     border-radius: 70px;
-    background: #C1272D;
-    box-shadow: inset 17px 17px 35px #a42126,
-        inset -17px -17px 35px #de2d34;
+    background: #c1272d;
+    box-shadow: inset 17px 17px 35px #a42126, inset -17px -17px 35px #de2d34;
 }
 
 .btnLink:active {
-
     width: 286px;
     height: 74px;
     border-radius: 70px;
-    background: #C1272D;
-    box-shadow: inset -17px 17px 35px #a42126,
-        inset 17px -17px 35px #de2d34;
+    background: #c1272d;
+    box-shadow: inset -17px 17px 35px #a42126, inset 17px -17px 35px #de2d34;
 }
 
 .btnContent {
     font-family: var(--main-font);
     color: white;
     font-style: bold;
-    font-size: calc(var(--main-fontSize)* 1.5);
+    font-size: calc(var(--main-fontSize) * 1.5);
+}
+
+@media screen and (max-width:480px) {
+
+
+    .LandingTitlesContainer {
+        margin-top: -20px;
+    }
+
+    .counterNumber {
+        font-size: calc(var(--main-fontSize) * 6);
+
+    }
+
+    .LandingTitle {
+        font-size: calc(var(--main-fontSize) * 3);
+    }
+
+    .LandingTitle2 {
+        font-size: calc(var(--main-fontSize) * 2);
+        margin-top: -16px;
+        letter-spacing: 8px;
+
+    }
+
+    .LandingTitle3 {
+        font-size: calc(var(--main-fontSize) * 1);
+        letter-spacing: 1px;
+    }
+
+    .background {
+        position: fixed;
+        z-index: 0;
+        top: 10%;
+        right: 0%;
+        bottom: 0%;
+        left: 0%;
+        z-index: -1;
+        width: 100%;
+    }
+
+
+.btnLink {
+    width: 184px;
+    height: 54px;
+    border-radius: 70px;
+    background: #c1272d;
+    box-shadow: inset 17px 17px 35px #a42126, inset -17px -17px 35px #de2d34;
+}
+
+.btnLink:active {
+    width: 184px;
+    height: 64px;
+    border-radius: 70px;
+    background: #c1272d;
+    box-shadow: inset -17px 17px 35px #a42126, inset 17px -17px 35px #de2d34;
+}
+
+.btnContent {
+    font-family: var(--main-font);
+    color: white;
+    font-style: bold;
+    font-size: calc(var(--main-fontSize) * 1);
+}
+
+
+
+
+
 }
