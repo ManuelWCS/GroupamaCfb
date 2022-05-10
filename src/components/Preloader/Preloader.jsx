@@ -45,22 +45,15 @@ function Preloader(props) {
             <h4 className="LandingTitle3"> EN RÉGION CENTRE VAL DE LOIRE </h4>
           </div>
         </div>
-        <div className="SmallestTitle">
-
-        </div>
+        <div className="SmallestTitle"></div>
         <div className="LinkContainer">
-        <Link to="/trouvetonclub" >
-          <button className="btnLink">
-            <p className="btnContent">
-            LOCALISEZ-MOI !
-
-            </p>
-          </button>
-
+          <Link to="/trouvetonclub">
+            <button className="btnLink">
+              <p className="btnContent">LOCALISEZ-MOI !</p>
+            </button>
           </Link>
-
         </div>
-        
+
         <div className="NavigationTitle">
           <h4 className="LandingTitle3"> TROUVEZ UN CLUB PRÈS DE CHEZ VOUS</h4>
         </div>

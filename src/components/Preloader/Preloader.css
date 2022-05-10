@@ -1,111 +1,177 @@
 @import url("../../App.css");
 
 .FullLanding {
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
 }
 
 .LandingTitlesContainer {
-    margin-top: -70px;
+  margin-top: -70px;
 }
 
 .firstLine {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
 }
 
 .counterNumber {
-    font-family: var(--main-font);
-    font-size: calc(var(--main-fontSize) * 12);
-    padding-right: var(--spacing-small);
-    position: static;
+  font-family: var(--main-font);
+  font-size: calc(var(--main-fontSize) * 12);
+  padding-right: var(--spacing-small);
+  position: static;
 }
 
 .background {
-    position: fixed;
-    z-index: 0;
-    top: 5%;
-    right: 35%;
-    bottom: 0%;
-    z-index: -1;
+  position: fixed;
+  z-index: 0;
+  top: 5%;
+  right: 35%;
+  bottom: 0%;
+  z-index: -1;
 }
 
 .LandingTitle {
-    font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize) * 5);
+  font-family: var(--secondary-font);
+  font-size: calc(var(--main-fontSize) * 5);
 }
 
 .LandingTitle2 {
-    font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize) * 4.5);
-    letter-spacing: 7px;
-    margin-top: -24px;
+  font-family: var(--secondary-font);
+  font-size: calc(var(--main-fontSize) * 4.5);
+  letter-spacing: 7px;
+  margin-top: -24px;
 }
 
 .LandingTitle3 {
-    font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize) * 1.4);
-    padding-top: var(--spacing-small);
-    letter-spacing: 6px;
+  font-family: var(--secondary-font);
+  font-size: calc(var(--main-fontSize) * 1.4);
+  padding-top: var(--spacing-small);
+  letter-spacing: 6px;
 }
 
 .BiggestTitle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .NavigationTitle {
-    position: absolute;
-    bottom: 15%;
-    text-align: center;
-    margin: auto;
-    right: 20%;
-    left: 20%;
+  position: absolute;
+  bottom: 15%;
+  text-align: center;
+  margin: auto;
+  right: 20%;
+  left: 20%;
 }
 
 .LinkContainer {
-    height: 120px;
-    margin: auto;
-    bottom: 20%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  height: 120px;
+  margin: auto;
+  bottom: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .btnLink {
-    width: 276px;
-    height: 64px;
-    border-radius: 70px;
-    background: #c1272d;
-    box-shadow: inset 17px 17px 35px #a42126, inset -17px -17px 35px #de2d34;
+  width: 276px;
+  height: 64px;
+  border-radius: 70px;
+  background: #c1272d;
+  box-shadow: inset 17px 17px 35px #a42126, inset -17px -17px 35px #de2d34;
 }
 
 .btnLink:active {
-    width: 286px;
-    height: 74px;
-    border-radius: 70px;
-    background: #c1272d;
-    box-shadow: inset -17px 17px 35px #a42126, inset 17px -17px 35px #de2d34;
+  width: 286px;
+  height: 74px;
+  border-radius: 70px;
+  background: #c1272d;
+  box-shadow: inset -17px 17px 35px #a42126, inset 17px -17px 35px #de2d34;
 }
 
 .btnContent {
+  font-family: var(--main-font);
+  color: white;
+  font-style: bold;
+  font-size: calc(var(--main-fontSize) * 1.5);
+}
+
+@media screen and (max-width: 480px) {
+  .LandingTitlesContainer {
+    background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 300px;
+    width: 300px;
+    position: static;
+  }
+
+  .LandingTitlesContainer {
+    margin-top: -20px;
+  }
+
+  .counterNumber {
+    font-size: calc(var(--main-fontSize) * 6);
+    position: static;
+  }
+
+  .LandingTitle {
+    font-size: calc(var(--main-fontSize) * 3);
+    position: static;
+  }
+
+  .LandingTitle2 {
+    font-size: calc(var(--main-fontSize) * 2);
+    margin-top: -16px;
+    letter-spacing: 8px;
+    position: static;
+  }
+
+  .LandingTitle3 {
+    font-size: calc(var(--main-fontSize) * 1);
+    letter-spacing: 1px;
+    position: static;
+  }
+
+  .background {
+    display: none;
+  }
+
+  .btnLink {
+    width: 184px;
+    height: 54px;
+    border-radius: 70px;
+    background: #c1272d;
+    box-shadow: inset 17px 17px 35px #a42126, inset -17px -17px 35px #de2d34;
+  }
+
+  .btnLink:active {
+    width: 184px;
+    height: 64px;
+    border-radius: 70px;
+    background: #c1272d;
+    box-shadow: inset -17px 17px 35px #a42126, inset 17px -17px 35px #de2d34;
+  }
+
+  .btnContent {
     font-family: var(--main-font);
     color: white;
     font-style: bold;
-    font-size: calc(var(--main-fontSize) * 1.5);
+    font-size: calc(var(--main-fontSize) * 1);
+  }
 }
 
-@media screen and (max-width:480px) {
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
     .LandingTitlesContainer {
         background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
         background-repeat: no-repeat;
@@ -113,70 +179,257 @@
         height: 300px;
         width: 300px;
         position: static;
-    }
-
-
-    .LandingTitlesContainer {
+      }
+    
+      .LandingTitlesContainer {
         margin-top: -20px;
-    }
-
-    .counterNumber {
+      }
+    
+      .counterNumber {
         font-size: calc(var(--main-fontSize) * 6);
-        position:static;
-
-    }
-
-    .LandingTitle {
+        position: static;
+      }
+    
+      .LandingTitle {
         font-size: calc(var(--main-fontSize) * 3);
-        position:static;
-
-    }
-
-    .LandingTitle2 {
+        position: static;
+      }
+    
+      .LandingTitle2 {
         font-size: calc(var(--main-fontSize) * 2);
         margin-top: -16px;
         letter-spacing: 8px;
-        position:static;
-
-
-    }
-
-    .LandingTitle3 {
+        position: static;
+      }
+    
+      .LandingTitle3 {
         font-size: calc(var(--main-fontSize) * 1);
         letter-spacing: 1px;
-        position:static;
-
-    }
-
-    .background {display: none;
-    }
-
-
-.btnLink {
-    width: 184px;
-    height: 54px;
-    border-radius: 70px;
-    background: #c1272d;
-    box-shadow: inset 17px 17px 35px #a42126, inset -17px -17px 35px #de2d34;
+        position: static;
+      }
+    
+      .background {
+        display: none;
+      }
+    
+      .btnLink {
+        width: 184px;
+        height: 54px;
+        border-radius: 70px;
+        background: #c1272d;
+        box-shadow: inset 17px 17px 35px #a42126, inset -17px -17px 35px #de2d34;
+      }
+    
+      .btnLink:active {
+        width: 184px;
+        height: 64px;
+        border-radius: 70px;
+        background: #c1272d;
+        box-shadow: inset -17px 17px 35px #a42126, inset 17px -17px 35px #de2d34;
+      }
+    
+      .btnContent {
+        font-family: var(--main-font);
+        color: white;
+        font-style: bold;
+        font-size: calc(var(--main-fontSize) * 1);
+      }
 }
 
-.btnLink:active {
-    width: 184px;
-    height: 64px;
-    border-radius: 70px;
-    background: #c1272d;
-    box-shadow: inset -17px 17px 35px #a42126, inset 17px -17px 35px #de2d34;
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .LandingTitlesContainer {
+        background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 300px;
+        width: 300px;
+        position: static;
+      }
+    
+      .LandingTitlesContainer {
+        margin-top: -20px;
+      }
+    
+      .counterNumber {
+        font-size: calc(var(--main-fontSize) * 6);
+        position: static;
+      }
+    
+      .LandingTitle {
+        font-size: calc(var(--main-fontSize) * 3);
+        position: static;
+      }
+    
+      .LandingTitle2 {
+        font-size: calc(var(--main-fontSize) * 2);
+        margin-top: -16px;
+        letter-spacing: 8px;
+        position: static;
+      }
+    
+      .LandingTitle3 {
+        font-size: calc(var(--main-fontSize) * 1);
+        letter-spacing: 1px;
+        position: static;
+      }
+    
+      .background {
+        display: none;
+      }
+    
+      .btnLink {
+        width: 184px;
+        height: 54px;
+        border-radius: 70px;
+        background: #c1272d;
+        box-shadow: inset 17px 17px 35px #a42126, inset -17px -17px 35px #de2d34;
+      }
+    
+      .btnLink:active {
+        width: 184px;
+        height: 64px;
+        border-radius: 70px;
+        background: #c1272d;
+        box-shadow: inset -17px 17px 35px #a42126, inset 17px -17px 35px #de2d34;
+      }
+    
+      .btnContent {
+        font-family: var(--main-font);
+        color: white;
+        font-style: bold;
+        font-size: calc(var(--main-fontSize) * 1);
+      }
 }
 
-.btnContent {
-    font-family: var(--main-font);
-    color: white;
-    font-style: bold;
-    font-size: calc(var(--main-fontSize) * 1);
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .LandingTitlesContainer {
+        background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 300px;
+        width: 300px;
+        position: static;
+      }
+    
+      .LandingTitlesContainer {
+        margin-top: -20px;
+      }
+    
+      .counterNumber {
+        font-size: calc(var(--main-fontSize) * 6);
+        position: static;
+      }
+    
+      .LandingTitle {
+        font-size: calc(var(--main-fontSize) * 3);
+        position: static;
+      }
+    
+      .LandingTitle2 {
+        font-size: calc(var(--main-fontSize) * 2);
+        margin-top: -16px;
+        letter-spacing: 8px;
+        position: static;
+      }
+    
+      .LandingTitle3 {
+        font-size: calc(var(--main-fontSize) * 1);
+        letter-spacing: 1px;
+        position: static;
+      }
+    
+      .background {
+        display: none;
+      }
+    
+      .btnLink {
+        width: 184px;
+        height: 54px;
+        border-radius: 70px;
+        background: #c1272d;
+        box-shadow: inset 17px 17px 35px #a42126, inset -17px -17px 35px #de2d34;
+      }
+    
+      .btnLink:active {
+        width: 184px;
+        height: 64px;
+        border-radius: 70px;
+        background: #c1272d;
+        box-shadow: inset -17px 17px 35px #a42126, inset 17px -17px 35px #de2d34;
+      }
+    
+      .btnContent {
+        font-family: var(--main-font);
+        color: white;
+        font-style: bold;
+        font-size: calc(var(--main-fontSize) * 1);
+      }
+    
 }
 
-
-
-
-
+@media screen and (min-width: 1281px) {
+    .LandingTitlesContainer {
+        background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 300px;
+        width: 300px;
+        position: static;
+      }
+    
+      .LandingTitlesContainer {
+        margin-top: -20px;
+      }
+    
+      .counterNumber {
+        font-size: calc(var(--main-fontSize) * 6);
+        position: static;
+      }
+    
+      .LandingTitle {
+        font-size: calc(var(--main-fontSize) * 3);
+        position: static;
+      }
+    
+      .LandingTitle2 {
+        font-size: calc(var(--main-fontSize) * 2);
+        margin-top: -16px;
+        letter-spacing: 8px;
+        position: static;
+      }
+    
+      .LandingTitle3 {
+        font-size: calc(var(--main-fontSize) * 1);
+        letter-spacing: 1px;
+        position: static;
+      }
+    
+      .background {
+        display: none;
+      }
+    
+      .btnLink {
+        width: 184px;
+        height: 54px;
+        border-radius: 70px;
+        background: #c1272d;
+        box-shadow: inset 17px 17px 35px #a42126, inset -17px -17px 35px #de2d34;
+      }
+    
+      .btnLink:active {
+        width: 184px;
+        height: 64px;
+        border-radius: 70px;
+        background: #c1272d;
+        box-shadow: inset -17px 17px 35px #a42126, inset 17px -17px 35px #de2d34;
+      }
+    
+      .btnContent {
+        font-family: var(--main-font);
+        color: white;
+        font-style: bold;
+        font-size: calc(var(--main-fontSize) * 1);
+      }
 }
+    
