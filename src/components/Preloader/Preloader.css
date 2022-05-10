@@ -110,8 +110,9 @@
         background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
         background-repeat: no-repeat;
         background-size: contain;
-        height: max-content;
-        width: max-content;
+        height: 300px;
+        width: 300px;
+        position: static;
     }
 
 
