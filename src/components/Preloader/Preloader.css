@@ -1,0 +1,41 @@
+@import url('../../App.css');
+
+.FullLanding {
+    height: 100vh;
+    width: 100vw;
+    background-color: pink;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.firstLine {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.counterNumber {
+    font-family: var(--main-font);
+    font-size: calc(var(--main-fontSize)*5);
+}
+
+.LandingTitle {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize)*2);
+
+}
+.LandingTitle2 {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize)*2);
+    letter-spacing: 3px;
+}
+
+.BiggestTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
