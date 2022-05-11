@@ -1,7 +1,7 @@
 @import url("../../App.css");
 
 .FullLanding {
-  height: 100vh;
+  height: 70vh;
   width: 100vw;
   position: relative;
   display: flex;
@@ -78,7 +78,7 @@
 }
 
 .LinkContainer {
-  height: 120px;
+  height: 30vh;
   margin: auto;
   bottom: 20%;
   display: flex;
