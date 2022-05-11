@@ -48,14 +48,19 @@ function Preloader(props) {
         <div className="SmallestTitle"></div>
         <div className="LinkContainer">
           <Link to="/trouvetonclub">
-            <button className="btnLink">
+            {/* <button className="btnLink">
               <p className="btnContent">LOCALISEZ-MOI !</p>
-            </button>
+            </button> */}
+               <img src={LogoCFB} alt="logo Centre Frappe & But" className="LogoPlateforme">
+            </img>
+            
+
           </Link>
         </div>
 
         <div className="NavigationTitle">
           <h4 className="LandingTitle3"> TROUVEZ UN CLUB PRÈS DE CHEZ VOUS</h4>
+          
         </div>
       </div>
     </div>
