@@ -56,7 +56,6 @@ function Preloader(props) {
        
       </div>
      
-    </div>
     <div className="LinkContainer">
           <Link to="/trouvetonclub">
             <img
@@ -71,6 +70,7 @@ function Preloader(props) {
 
         </div>
         <h4 className="LandingTitle5"> Plateforme dévéloppée par la Ligue du Centre-Val de Loire de Football </h4>
+    </div>
     </>
   );
 }
