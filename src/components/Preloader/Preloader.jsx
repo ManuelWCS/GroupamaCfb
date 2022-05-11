@@ -53,7 +53,9 @@ function Preloader(props) {
           <h4 className="LandingTitle4"> TROUVEZ UN CLUB PRÈS DE CHEZ VOUS </h4>
         </div>
         <div className="SmallestTitle"></div>
-        <div className="LinkContainer">
+       
+      </div>
+      <div className="LinkContainer">
           <Link to="/trouvetonclub">
             <img
               src={LogoCFB}
@@ -62,11 +64,11 @@ function Preloader(props) {
             ></img>
           </Link>
           <Link to="/trouvetonclub">
-
-          <button className="myButton">ACCÈDER</button>
+            <button className="myButton">ACCÈDER</button>
           </Link>
+
         </div>
-      </div>
+        <h4 className="LandingTitle5"> Plateforme dévéloppée par la Ligue du Centre-Val de Loire de Football </h4>
     </div>
   );
 }
