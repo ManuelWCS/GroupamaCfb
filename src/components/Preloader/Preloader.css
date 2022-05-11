@@ -125,6 +125,7 @@
     justify-content: center;
     margin-top: 16px;
     margin-bottom: 32px;
+    height: 100px;
   }
 
   .headerLogo {
@@ -143,6 +144,10 @@
     width: 300px;
     margin-top: 8px;
     margin-bottom: 8px;
+  }
+
+  .BiggestTitle {
+    margin-top:var(--spacing-large);
   }
 
   .counterNumber {
@@ -211,10 +216,9 @@
   .LinkContainer {
     margin-top: 36px;
     height: 180px;
-    bottom: 0;
     display: flex;
     flex-direction: column;
-    margin-bottom: 36px;;
+    margin-bottom: 36px;
 
   }
 

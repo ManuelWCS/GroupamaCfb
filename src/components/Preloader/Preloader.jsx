@@ -33,7 +33,7 @@ function Preloader(props) {
   return (
     <div className="FullLanding">
       <div className="headerPreload">
-        <Link to="/">
+        <Link to="">
           <img src={ecussonLigue} className="headerLogo" alt="logo" />
         </Link>
       </div>
@@ -52,7 +52,6 @@ function Preloader(props) {
           </div>
           <h4 className="LandingTitle4"> TROUVEZ UN CLUB PRÈS DE CHEZ VOUS </h4>
         </div>
-        <div className="SmallestTitle"></div>
        
       </div>
       <div className="LinkContainer">
