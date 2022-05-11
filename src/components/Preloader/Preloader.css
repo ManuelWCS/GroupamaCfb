@@ -121,10 +121,12 @@
 
   .headerPreload {
     width: 100%;
-    min-height: 180px;
+    min-height: 100px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    position: absolute;
+    top:0%;
     
   }
 
