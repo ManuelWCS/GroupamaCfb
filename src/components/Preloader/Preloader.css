@@ -112,6 +112,13 @@
 
 @media screen and (max-width: 480px) {
 
+  .FullLanding {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .headerPreload {
     width: 100%;
     min-height: 180px;
