@@ -182,6 +182,8 @@
     margin-top: 12px;
     color: var(--secondary-color);
     word-wrap: break-word;
+    padding-right: 16px;
+    padding-left: 16px;
   }
 
 
@@ -194,7 +196,9 @@
     margin-top: 12px;
     color: var(--secondary-color);
     word-wrap: break-word;
-    margin-bottom: 16px;
+    margin-bottom: 16px;    
+    padding-right: 16px;
+    padding-left: 16px;
   }
 
   .background {
@@ -216,7 +220,15 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 36px;
+    justify-content: center;
+    align-items: center;
 
+  }
+
+  .LogoPlateforme {
+    height: 170px;
+    width: 180px;
+    
   }
 
   .btnLink:active {
