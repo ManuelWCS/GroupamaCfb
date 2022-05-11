@@ -115,7 +115,7 @@
   .FullLanding {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
 
@@ -123,21 +123,15 @@
     width: 100%;
     min-height: 100px;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    position: absolute;
-    top:5%;
-    top:5%;
-    
+    justify-content: center;
+    margin-top:16px;
+    margin-bottom: 32px;
+
   }
 
   .headerLogo {
     width: 84px;
-    margin:auto;
-    position: absolute;
-    top: 3%;
-    right: 0%;
-    left: 0%;
+  
   }
   .LandingTitlesContainer {
     background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
@@ -145,11 +139,14 @@
     background-size: contain;
     height: 300px;
     width: 300px;
-    position: static;
   }
 
   .LandingTitlesContainer {
     height: 300px;
+    width: 300px;
+    margin-top:8px;
+    margin-bottom: 8px;
+
   }
 
   .counterNumber {
@@ -249,6 +246,7 @@
     padding:13px 37px;
     text-decoration:none;
     text-shadow:1px 3px 1px #263666;
+    margin-bottom: 32px;
   }
   .myButton:hover {
     background:linear-gradient(to bottom, #3586c2 5%, #3586c2 100%);
