@@ -78,7 +78,7 @@
 }
 
 .LinkContainer {
-  height: 30vh;
+  /* height: 30vh; */
   margin: auto;
   bottom: 20%;
   display: flex;

@@ -31,32 +31,32 @@ function Preloader(props) {
   }, [counter]);
 
   return (
-  <>
-    <div className="FullLanding">
-      <div className="headerPreload">
-        <Link to="">
-          <img src={ecussonLigue} className="headerLogo" alt="logo" />
-        </Link>
-      </div>
-      <div className="LandingTitlesContainer">
-        <div className="BiggestTitle">
-          <div className="firstLine">
-            <img src={background} className="background" alt="background" />
-            <h1 className="counterNumber">{counter}</h1>
-            <h2 className="LandingTitle">CLUBS</h2>
-          </div>
-          <div className="secondLine">
-            <h2 className="LandingTitle2">DE FOOTBALL</h2>
-          </div>
-          <div className="thirdLine">
-            <h4 className="LandingTitle3"> EN RÉGION CENTRE VAL DE LOIRE </h4>
-          </div>
-          <h4 className="LandingTitle4"> TROUVEZ UN CLUB PRÈS DE CHEZ VOUS </h4>
+    <>
+      <div className="FullLanding">
+        <div className="headerPreload">
+          <Link to="">
+            <img src={ecussonLigue} className="headerLogo" alt="logo" />
+          </Link>
         </div>
-       
-      </div>
-     
-    <div className="LinkContainer">
+        <div className="LandingTitlesContainer">
+          <div className="BiggestTitle">
+            <div className="firstLine">
+              <img src={background} className="background" alt="background" />
+              <h1 className="counterNumber">{counter}</h1>
+              <h2 className="LandingTitle">CLUBS</h2>
+            </div>
+            <div className="secondLine">
+              <h2 className="LandingTitle2">DE FOOTBALL</h2>
+            </div>
+            <div className="thirdLine">
+              <h4 className="LandingTitle3"> EN RÉGION CENTRE VAL DE LOIRE </h4>
+            </div>
+            <h4 className="LandingTitle4"> TROUVEZ UN CLUB PRÈS DE CHEZ VOUS </h4>
+          </div>
+
+        </div>
+
+        <div className="LinkContainer">
           <Link to="/trouvetonclub">
             <img
               src={LogoCFB}
@@ -70,7 +70,7 @@ function Preloader(props) {
 
         </div>
         <h4 className="LandingTitle5"> Plateforme dévéloppée par la Ligue du Centre-Val de Loire de Football </h4>
-    </div>
+      </div>
     </>
   );
 }
