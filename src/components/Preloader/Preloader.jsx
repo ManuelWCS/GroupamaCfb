@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Preloader.css";
 import LogoCFB from "../../assets/CompressedPictures/Logos/logo.png";
 import background from "../../assets/CompressedPictures/Logos/BACKGROUND.png";
+import ecussonLigue from '../../assets/CompressedPictures/Logos/LogoLigue.webp';
 import { Link } from "react-router-dom";
 
 function Preloader(props) {
@@ -31,6 +32,10 @@ function Preloader(props) {
 
   return (
     <div className="FullLanding">
+
+      <div className="headerPreload">
+        <img src={ecussonLigue} className="headerLogo" alt="logo" />
+      </div>
       <div className="LandingTitlesContainer">
         <div className="BiggestTitle">
           <div className="firstLine">
@@ -51,18 +56,18 @@ function Preloader(props) {
             {/* <button className="btnLink">
               <p className="btnContent">LOCALISEZ-MOI !</p>
             </button> */}
-               <img src={LogoCFB} alt="logo Centre Frappe & But" className="LogoPlateforme">
-            </img>
-            
-
+            <img
+              src={LogoCFB}
+              alt="logo Centre Frappe & But"
+              className="LogoPlateforme"
+            ></img>
           </Link>
         </div>
 
         <div className="NavigationTitle">
-          <h4 className="LandingTitle3"> TROUVEZ UN CLUB PRÈS DE CHEZ VOUS</h4>
-          
+    
         </div>
-      </div>
+      </div> <h4 className="LandingTitle3"> TROUVEZ UN CLUB PRÈS DE CHEZ VOUS</h4>
     </div>
   );
 }
