@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Preloader.css";
 import LogoCFB from "../../assets/CompressedPictures/Logos/logo.png";
 import background from "../../assets/CompressedPictures/Logos/BACKGROUND.png";
-import ecussonLigue from '../../assets/CompressedPictures/Logos/LogoLigue.webp';
+import ecussonLigue from "../../assets/CompressedPictures/Logos/LogoLigue.webp";
 import { Link } from "react-router-dom";
 
 function Preloader(props) {
@@ -32,9 +32,10 @@ function Preloader(props) {
 
   return (
     <div className="FullLanding">
-
       <div className="headerPreload">
-        <img src={ecussonLigue} className="headerLogo" alt="logo" />
+        <Link to="/">
+          <img src={ecussonLigue} className="headerLogo" alt="logo" />
+        </Link>
       </div>
       <div className="LandingTitlesContainer">
         <div className="BiggestTitle">
@@ -49,25 +50,23 @@ function Preloader(props) {
           <div className="thirdLine">
             <h4 className="LandingTitle3"> EN RÉGION CENTRE VAL DE LOIRE </h4>
           </div>
+          <h4 className="LandingTitle4"> TROUVEZ UN CLUB PRÈS DE CHEZ VOUS </h4>
         </div>
         <div className="SmallestTitle"></div>
         <div className="LinkContainer">
           <Link to="/trouvetonclub">
-            {/* <button className="btnLink">
-              <p className="btnContent">LOCALISEZ-MOI !</p>
-            </button> */}
             <img
               src={LogoCFB}
               alt="logo Centre Frappe & But"
               className="LogoPlateforme"
             ></img>
           </Link>
-        </div>
+          <Link to="/trouvetonclub">
 
-        <div className="NavigationTitle">
-    
+          <button className="myButton">ACCÈDER</button>
+          </Link>
         </div>
-      </div> <h4 className="LandingTitle3"> TROUVEZ UN CLUB PRÈS DE CHEZ VOUS</h4>
+      </div>
     </div>
   );
 }
