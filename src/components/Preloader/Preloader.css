@@ -79,29 +79,6 @@
   align-items: center;
 }
 
-.btnLink {
-  width: 276px;
-  height: 64px;
-  border-radius: 70px;
-  background: #c1272d;
-  box-shadow: inset 17px 17px 35px #a42126, inset -17px -17px 35px #de2d34;
-}
-
-.btnLink:active {
-  width: 286px;
-  height: 74px;
-  border-radius: 70px;
-  background: #c1272d;
-  box-shadow: inset -17px 17px 35px #a42126, inset 17px -17px 35px #de2d34;
-}
-
-.btnContent {
-  font-family: var(--main-font);
-  color: white;
-  font-style: bold;
-  font-size: calc(var(--main-fontSize) * 1.5);
-}
-
 @media screen and (max-width: 480px) {
   .generalWrapper {
     height: 100vh;
@@ -204,14 +181,6 @@
     display: none;
   }
 
-  .btnLink {
-    width: 184px;
-    height: 54px;
-    border-radius: 70px;
-    background: #c1272d;
-    box-shadow: inset 17px 17px 35px #a42126, inset -17px -17px 35px #de2d34;
-  }
-
   .LinkContainer {
     display: flex;
     flex-direction: column;
@@ -227,20 +196,7 @@
     margin-bottom: 32px;
   }
 
-  .btnLink:active {
-    width: 184px;
-    height: 64px;
-    border-radius: 70px;
-    background: #c1272d;
-    box-shadow: inset -17px 17px 35px #a42126, inset 17px -17px 35px #de2d34;
-  }
 
-  .btnContent {
-    font-family: var(--main-font);
-    color: white;
-    font-style: bold;
-    font-size: calc(var(--main-fontSize) * 1);
-  }
 
 
   .myButton {
@@ -369,26 +325,6 @@
     display: none;
   }
 
-  .btnLink {
-    width: 184px;
-    height: 54px;
-  }
-
-  .btnLink:active {
-    width: 184px;
-    height: 64px;
-    border-radius: 70px;
-    background: #c1272d;
-    box-shadow: inset -17px 17px 35px #a42126, inset 17px -17px 35px #de2d34;
-  }
-
-  .btnContent {
-    font-family: var(--main-font);
-    color: white;
-    font-style: bold;
-    font-size: calc(var(--main-fontSize) * 1);
-  }
-
   .LinkContainer {
     display: flex;
     flex-direction: column;
@@ -442,68 +378,114 @@
 
 }
 
+/* BREAKPOINTS MOBILE TABLETTE OK */
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+
+/* DIV QUI ENGLOBE TOUT LE COMPOSANT */
+  .generalWrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    
+  }
+
+  /* HEADER ET ECUSSSON */
+  .headerPreload {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .headerLogo {
+    width: 140px;
+  }
+
+  /* DIV PRINCIPALE DE CONTENU */
+
   .LandingTitlesContainer {
     background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
     background-repeat: no-repeat;
     background-size: contain;
-    height: 300px;
-    width: 300px;
-    position: static;
+    width: 95vw;
+    height: 40vh;
   }
+
+
 
   .LandingTitlesContainer {
-    margin-top: -20px;
+    background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: static;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-
+  
   .counterNumber {
+    font-size: calc(var(--main-fontSize) * 10);
+    position: static;
+    }
+  .LandingTitle {
     font-size: calc(var(--main-fontSize) * 6);
     position: static;
   }
 
-  .LandingTitle {
-    font-size: calc(var(--main-fontSize) * 3);
-    position: static;
-  }
-
   .LandingTitle2 {
-    font-size: calc(var(--main-fontSize) * 2);
+    font-size: calc(var(--main-fontSize) * 4);
     margin-top: -16px;
-    letter-spacing: 8px;
+    letter-spacing: 13px;
     position: static;
   }
 
   .LandingTitle3 {
-    font-size: calc(var(--main-fontSize) * 1);
+    font-size: calc(var(--main-fontSize) * 2);
     letter-spacing: 1px;
     position: static;
   }
+  .LandingTitle4 {
+    font-size: calc(var(--main-fontSize) * 1.4);
+    letter-spacing: 1px;
+    position: static;
+    font-family: var(--secondary-font);
+    text-align: center;
+    margin-top: 22px;
+    color: var(--secondary-color);
+    word-wrap: break-word;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .LandingTitle5 {
+    font-size: calc(var(--main-fontSize) * 0.8);
+    letter-spacing: 1px;
+    position: static;
+    font-family: var(--secondary-font);
+    text-align: center;
+    margin-top: 12px;
+    color: var(--secondary-color);
+    word-wrap: break-word;
+    padding-right: 16px;
+    padding-left: 16px;
+
+  }
+  /* FIN DES TITRES */
 
   .background {
     display: none;
   }
 
-  .btnLink {
-    width: 184px;
-    height: 54px;
-    border-radius: 70px;
-    background: #c1272d;
-    box-shadow: inset 17px 17px 35px #a42126, inset -17px -17px 35px #de2d34;
-  }
-
-  .btnLink:active {
-    width: 184px;
-    height: 64px;
-    border-radius: 70px;
-    background: #c1272d;
-    box-shadow: inset -17px 17px 35px #a42126, inset 17px -17px 35px #de2d34;
-  }
-
-  .btnContent {
-    font-family: var(--main-font);
-    color: white;
-    font-style: bold;
-    font-size: calc(var(--main-fontSize) * 1);
+  .LogoPlateforme {
+    height: 250px;
+    width: 300px;
   }
 }
 
@@ -547,29 +529,7 @@
   .background {
     display: none;
   }
-
-  .btnLink {
-    width: 184px;
-    height: 54px;
-    border-radius: 70px;
-    background: #c1272d;
-    box-shadow: inset 17px 17px 35px #a42126, inset -17px -17px 35px #de2d34;
-  }
-
-  .btnLink:active {
-    width: 184px;
-    height: 64px;
-    border-radius: 70px;
-    background: #c1272d;
-    box-shadow: inset -17px 17px 35px #a42126, inset 17px -17px 35px #de2d34;
-  }
-
-  .btnContent {
-    font-family: var(--main-font);
-    color: white;
-    font-style: bold;
-    font-size: calc(var(--main-fontSize) * 1);
-  }
+  
 }
 
 @media screen and (min-width: 1281px) {
@@ -613,26 +573,6 @@
     display: none;
   }
 
-  .btnLink {
-    width: 184px;
-    height: 54px;
-    border-radius: 70px;
-    background: #c1272d;
-    box-shadow: inset 17px 17px 35px #a42126, inset -17px -17px 35px #de2d34;
-  }
 
-  .btnLink:active {
-    width: 184px;
-    height: 64px;
-    border-radius: 70px;
-    background: #c1272d;
-    box-shadow: inset -17px 17px 35px #a42126, inset 17px -17px 35px #de2d34;
-  }
 
-  .btnContent {
-    font-family: var(--main-font);
-    color: white;
-    font-style: bold;
-    font-size: calc(var(--main-fontSize) * 1);
-  }
 }
