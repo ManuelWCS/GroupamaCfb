@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
-import "./Preloader.css";
 import LogoCFB from "../../assets/CompressedPictures/Logos/logoplateforme.png";
 import background from "../../assets/CompressedPictures/Logos/BACKGROUND.png";
 import ecussonLigue from "../../assets/CompressedPictures/Logos/LogoLigue.webp";
 import { Link } from "react-router-dom";
+
+
+/* VERSIONS CSS */
+import "./Preloader.css";
+import "./Preloader.mobile.css";
+import "./Preloader.tablet.css"
 
 function Preloader(props) {
   let limit = 541;
