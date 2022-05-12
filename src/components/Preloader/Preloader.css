@@ -68,17 +68,8 @@
   align-items: center;
 }
 
-.NavigationTitle {
-  position: absolute;
-  bottom: 15%;
-  text-align: center;
-  margin: auto;
-  right: 20%;
-  left: 20%;
-}
 
 .LinkContainer {
-  /* height: 30vh; */
   margin: auto;
   bottom: 20%;
   display: flex;
@@ -239,14 +230,7 @@
     font-style: bold;
     font-size: calc(var(--main-fontSize) * 1);
   }
-  .NavigationTitle {
-    width: 100%;
-    position: absolute;
-    bottom: 0%;
-    right: 0%;
-    left: 0%;
-    margin-top: var(--spacing-large);
-  }
+ 
 
   .myButton {
     box-shadow: inset -6px -8px 28px 5px #3586c2;
@@ -335,13 +319,7 @@
     font-size: calc(var(--main-fontSize) * 1);
   }
 
-  .NavigationTitle {
-    height: 150px;
-    width: 100%;
-    background-color: #a42126;
-    position: absolute;
-    bottom: 0%;
-  }
+  
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {

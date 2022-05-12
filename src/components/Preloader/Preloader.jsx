@@ -14,8 +14,8 @@ function Preloader(props) {
     for (let i = 0; i < limit; i++) {
       if (counter < limit) {
         setTimeout(() => {
-          setCounter(counter + 10);
-        }, 100);
+          setCounter(counter + 5);
+        }, 1);
       } else {
         setCounter(limit);
       }
