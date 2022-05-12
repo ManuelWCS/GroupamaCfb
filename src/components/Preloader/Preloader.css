@@ -259,18 +259,47 @@
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
+
+  /* HEADER PRELOAD */
+
+  .headerPreload {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    height: 20vh;
+  }
+
+  .headerLogo {
+    width: 124px;
+  }
+
+  /* FullLanding : contient le reste des élements */
+
+  .FullLanding {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    justify-content: center;
+    height: 80vh;
+    background-color: red;
+    margin:auto;
+  }
   .LandingTitlesContainer {
     background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
     background-repeat: no-repeat;
     background-size: contain;
-    height: 300px;
-    width: 300px;
-    position: static;
+    height: 35vh;
+    width: 95%;
+    margin-top:24px;
   }
 
-  .LandingTitlesContainer {
-    margin-top: -20px;
+  .LogoPlateforme {
+    height: 250px;
+    width: 250px;
   }
+
 
   .counterNumber {
     font-size: calc(var(--main-fontSize) * 6);
