@@ -1,0 +1,207 @@
+@import url('../../App.css');
+
+/* MOBILE VERSION */
+@media screen and (max-width: 480px) {
+
+.mainContent {
+    height: 550px;
+    width: 89%;
+    background-image: url("../../assets/TEST/mobileVertical.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-top: 0px;
+    min-height: 500px;
+    min-width: 89%;
+  }    
+  .titlesContainer {
+    display: none;
+  }
+}
+
+
+/* VERSION TABLETTE */
+@media screen and (min-width: 481px) and (max-width: 615px) {
+
+.mainContent {
+    height: 250px;
+    width: 89%;
+    margin-top: -1px;
+    background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: relative;
+    margin-bottom: var(--spacing-large);
+  
+  }
+  .titlesContainer {
+    position: relative;
+    width: fit-content;
+    padding-left: calc(var(--spacing-large) * 0.3);
+    padding-top: var(--spacing-small);
+    padding-bottom: var(--spacing-small);
+  }
+  .mainTitle {
+    font-size: calc(var(--main-fontSize) * 3);
+    font-family: var(--main-font);
+    color: var(--red-color);
+  }
+  .secondaryTitle {
+    font-size: calc(var(--main-fontSize) * 1.2);
+    font-family: var(--main-font);
+    color: white;
+  }
+
+}
+
+
+/* VERSION GRANDE TABLETTE */
+@media screen and (min-width: 616px) and (max-width: 672px) {
+.mainContent {
+    height: 200px;
+    width: 89%;
+    margin-top: -1px;
+    background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: relative;
+  }
+
+  .titlesContainer {
+    position: relative;
+    width: fit-content;
+    padding-left: calc(var(--spacing-large) * 0.5);
+    padding-top: var(--spacing-large);
+    padding-bottom: var(--spacing-small);
+  }
+  .mainTitle {
+    font-size: calc(var(--main-fontSize) * 3);
+    font-family: var(--main-font);
+    color: var(--red-color);
+  }
+  .secondaryTitle {
+    font-size: calc(var(--main-fontSize) * 1.3);
+    font-family: var(--main-font);
+    color: white;
+  }
+
+}
+@media screen and (min-width: 673px) and (max-width: 1023px) {
+
+
+.mainContent {
+    height: 340px;
+    width: 93%;
+    margin-left: 3.5vw;
+    margin-right: 3.5vw;
+    margin-top: -4px;
+    background-image: url("../../assets/CompressedPictures/bannerMobileFinall.webp");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: relative;
+  }
+  .titlesContainer {
+    position: relative;
+    width: fit-content;
+    padding-left: calc(var(--spacing-large) * 0.5);
+    padding-top: var(--spacing-large);
+    padding-bottom: var(--spacing-small);
+  }
+  .mainTitle {
+    font-size: calc(var(--main-fontSize) * 2.7);
+    font-family: var(--main-font);
+    color: var(--red-color);
+  }
+  .secondaryTitle {
+    font-size: calc(var(--main-fontSize) * 1.3);
+    font-family: var(--main-font);
+    color: white;
+  }
+
+
+}
+
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) {
+  
+
+.mainContent {
+    height: 450px;
+    min-height: 440px;
+    width: 92.8%;
+    margin: auto;
+    background-image: url("../../assets/CompressedPictures/final3.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: relative;
+  }
+}
+
+/* DESKTOP BREAKPOINT 1*/
+
+@media screen and (min-width: 1077px) and (max-width: 1111px) {
+    .mainContent {
+      width: 93%;
+      max-width: 94%;
+      margin-top: -3.5px;
+    }
+  }
+
+/* DESKTOP BREAKPOINT 2*/
+
+  @media screen and (min-width: 1110px) and (max-width: 1194px) {
+    .mainContent {
+      width: 93%;
+      margin-top: -3.5px;
+    }
+  }
+/* DESKTOP BREAKPOINT 3*/
+
+  @media screen and (min-width: 1194px) and (max-width: 1400px) {
+    .mainContent {
+      width: 93%;
+      margin-top: -3.5px;
+    }
+  }
+  
+
+/* LARGESCREEN */
+
+@media screen and (min-width: 1401px) {
+    .mainContent {
+        height: 710px;
+        background-image: url("../../assets/CompressedPictures/final3.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1;
+        margin: auto;
+        position: relative;
+        margin-top: -4.7px;
+        width: 92.6vw;
+      }
+
+      .titlesContainer {
+        position: relative;
+        left: 100px;
+        top: 50px;
+        width: fit-content;
+      }
+      .mainTitle {
+        font-size: calc(var(--main-fontSize) * 6);
+        font-family: var(--main-font);
+        color: var(--red-color);
+      }
+
+
+  .secondaryTitle {
+    font-size: calc(var(--main-fontSize) * 2.8);
+    font-family: var(--main-font);
+    color: white;
+  }
+
+}
+

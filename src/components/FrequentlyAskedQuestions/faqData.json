@@ -1,0 +1,74 @@
+[
+    {
+        "id" : 1,
+        "theme" : "Naviguer sur CFB",
+        "questions" : [
+            {
+            "question" : "A quoi sert la plateforme Centre, Frappe & But ?",
+            "reponse" : "Je ne sais pas"},
+
+            {
+                "question" : "Comment trouver un club près de chez moi ? ",
+                "reponse" : "Concrètement on va pas se mentir, à rien"
+            },
+
+            {
+                "question" : "La plateforme est-elle disponible sur plusieurs supports ",
+                "reponse" : "Non uniquement disponible dans une cabine téléphonique en composant le 12"
+                
+            }, 
+            {
+                "question":"Comment contacter la Ligue Centre-Val de Loire de Football ? ",
+                "reponse" : "fais jamais ça c'est nous qui te contactons"
+            },
+
+            {
+                "question": "Je rencontre un problème de navigation, je ne trouve pas la réponse à ma question",
+                "reponse":"c'est pas une question ça"
+            }
+        ]
+            
+        
+    
+    
+    
+    
+    },
+
+    {
+        "id" : 2,
+        "theme" : "La carte",
+        "questions" : [
+            {
+            "question" : "Que signie sur la carte le marqueur Ma position ? ",
+            "reponse" : "ta position"},
+
+            {
+                "question" : "Que signie sur la carte le marqueur Club de football?",
+                "reponse" : "club de football "
+            },
+
+            {
+                "question" : "Que signie sur la carte le marqueur  club labellisé ? ",
+                "reponse" : "club labellisé "
+                
+            }, 
+            {
+                "question":"Que signie sur la carte le marqueur partenaire ? ",
+                "reponse" : "je sais même pas ou t'as vu ca "
+            },
+
+            {
+                "question": "Que signifient les marqueurs sur la carte qui n'apparaissent pas dans la légende ",
+                "reponse":"qu'ils ne sont pas légendaires"
+            }
+        ]
+            
+    }
+
+
+
+
+
+
+]

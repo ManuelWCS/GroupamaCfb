@@ -17,7 +17,8 @@
 
 /* VERSION DESKTOP */
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1401px) {
+
   html,
   body {
     max-width: 100%;
@@ -54,6 +55,8 @@
     z-index: -5;
     position: relative;
   }
+
+  /* PREMIERE DIV AVEC DU CONTENU : IMAGE CENTREE AVEC TEXTE*/
 
   #background_wrap {
     z-index: 1;
@@ -98,22 +101,6 @@
     color: white;
   }
 
-  .descriptionContainer {
-    height: max-content;
-    width: 80vw;
-    margin-right: 10vw;
-    margin-left: 10vw;
-    margin-top: -50px;
-    margin-bottom: 64px;
-  }
-
-  .mainDescription {
-    font-family: var(--main-font);
-    color: var(--main-color);
-    font-size: calc(var(--main-fontSize) * 1.8);
-    padding-bottom: 16px;
-  }
-
   .secondaryDescription {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) * 1.2);
@@ -123,72 +110,31 @@
 
   /* FIN DE L'AFFICHAGE DES TITRES ET DESCRIPTION*/
 
-  .bannerContainer {
-    width: 90%;
-    height: 120px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
-    background-image: url("../../assets/CompressedPictures/banner.webp");
-    background-size: cover;
-    background-position: 50% 60%;
-    position: relative;
-    z-index: -2;
-    margin: auto;
-  }
-
-  /* TITRE "A VOUS DE JOUER SUR LA BANNIERE */
-
-  .bannerTitle {
-    padding-left: calc(var(--spacing-large) * 3);
-    font-size: calc(var(--main-fontSize) * 2);
-    font-family: var(--main-font);
-    color: white;
-  }
-
-  /* Titre :" Entrez votre age" */
-
-  .desktopInstructions {
-    width: max-content;
-    height: max-content;
-    padding: var(--spacing-small);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    margin: auto;
-  }
-
-  .instructionsTitle {
-    font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize) * 1.2);
-    padding-bottom: calc(var(--spacing-medium) * 3);
-    color: rgb(51, 51, 51);
-    margin-top: calc(var(--spacing-large) * 2);
-  }
 
   /*CONTAINER QUI CONTIENT LA MAP ET LE FORM  */
 
   .mainContainer {
-    height: 700px;
-    width: 95vw;
+    width: 92vw;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    align-items: baseline;
     align-content: stretch;
     margin: auto;
     justify-content: space-between;
+    position: relative;
+    height: 100vh;
   }
 
   #map {
-    height: 400px;
-    width: 520px;
+    height: 100vh;
+    width: 92vw;
+    position: absolute;
+    z-index: 1;
+    margin: auto;
+    top: 0%;
+    bottom: 0%;
+    right: 0%;
+    left: 0%;
   }
 
   .mapTitle {
@@ -198,26 +144,8 @@
     margin-bottom: var(--spacing-large);
   }
 
-  .submitContainer {
-    height: 100px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .mapContainer {
-    height: 650px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: stretch;
-    padding-left: 32px;
-  }
-
   .formContainer {
-    height: 600px;
+    height: 850px;
     width: 440px;
     display: flex;
     flex-direction: column;
@@ -225,6 +153,7 @@
     justify-content: flex-start;
     align-items: center;
     align-content: stretch;
+    border: 1px solid blue;
   }
 
   .dataResult {
@@ -245,35 +174,57 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 5px solid purple;
+    position: absolute;
+    z-index: 2;
+    background-color: wheat;
   }
 
-  .BlocFiltresEX {
-    width: 350px;
-    overflow: scroll;
-    overflow-x: hidden;
-    position: relative;
-    height: 480px;
+  .commandContainer {
+    margin-top: 50px;
+  }
+
+  .popover {
+    position: absolute;
+    z-index: 3;
+    right: 2%;
+    top: 9%;
+  }
+
+  .popover2 {
+    position: absolute;
+    z-index: 3;
+    left: 5%;
+    top: 4%;
+  }
+
+  .Result {
+    font-family: var(--secondary-font);
+    text-align: center;
+  }
+
+  .sliderText {
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    font-weight: bold;
+    padding-top: var(--spacing-medium);
+    padding-bottom: var(--spacing-small0);
+  }
+
+  .countClubText {
+    padding: 16px 8px;
+    color: black;
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) / 1.2);
+  }
+
+  .filtrationsWrapper {
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: space-between;
-    margin-top: -20px;
-  }
-
-  .BlocFiltresEX::-webkit-scrollbar {
-    width: 8px;
-    /* width of the entire scrollbar */
-  }
-
-  .BlocFiltresEX::-webkit-scrollbar-track {
-    background-color: #f2f2f2;
-    /* color of the scroll thumb */
-  }
-
-  .BlocFiltresEX::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-    /* roundness of the scroll thumb */
-    border: 8px solid #293d6b;
-    /* creates padding around scroll thumb */
+    align-items: center;
+    align-content: center;
   }
 
   .filtersNoSearch {
@@ -282,15 +233,6 @@
     justify-content: center;
     align-items: center;
     position: relative;
-  }
-
-  .filtrations {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 250px;
-    margin: auto;
   }
 
   .hide {
@@ -343,146 +285,82 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 120px;
   }
 
-  .findclubBtn {
+  .interactContainer {
+    height: 300px;
+    width: 80px;
+    border: 1px solid black;
+    position: absolute;
+    z-index: 4;
+    left: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    bottom: 28%;
+    opacity: 0.8;
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  }
+
+  .locImgContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 250px;
+  }
+
+  /* Si la localisation n'est pas active, cette div apparaît dans le bouton "découvrir les clubs ici*/
+
+  .ActivateContainer {
+    height: 350px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30px;
+    margin: auto;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 11px 11px 2px #adadad, -11px -1px 2px #ffffff;
+  }
+
+  .ActivateGeoLoc {
+    width: 100px;
     height: 100px;
-    width: 150px;
-    margin-left: 45px;
-    margin-right: 45px;
   }
 
-  .testing {
-    width: 500px;
-    height: 500px;
-    background-color: #293d6b;
-  }
-
-  
-
-  /* Texte indiquant le nombre de résultats */
-
-  .resultText {
-    color: var(--main-color);
-    font-size: 16px;
+  .ActivateDescription {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) / 1.1);
+    color: var(--secondary-color);
+    font-weight: bold;
     text-align: center;
-    font-family: var(--main-font);
-    padding: 8px 8px 8px 8px;
+    line-height: 1.2;
   }
 
-  /* Styles des cartes affichées lors des résultats */
-
-  .cardResult {
-    height: 220px;
-    width: 305px;
-    background-image: url("../../assets/Cartes/Carte-bleu.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 12px;
-    margin-bottom: 16px;
-    padding: 8px 8px 8px 8px;
-    margin-left: auto;
-    margin-right: auto;
+  .navigatorDescription {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) / 1.1);
+    text-align: center;
+    padding-right: var(--spacing-large);
+    padding-left: var(--spacing-large);
   }
 
-  .cardResult:nth-child(2n) {
-    height: 220px;
-    width: 300px;
-    background-image: url("../../assets/Cartes/Carte-rouge.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 12px;
+  .findclubBtn,
+  .SubmitButton {
+    height: 120px;
+    width: 180px;
   }
 
-  .cardResult:nth-child(3n) {
-    height: 220px;
-    width: 305px;
-    background-image: url("../../assets/Cartes/Carte-grise.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 12px;
-  }
-
-  .cardResult:nth-child(4n) {
-    height: 220px;
-    width: 305px;
-    background-image: url("../../assets/Cartes/Carte-turquoise.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 12px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-  }
-
-  .cardResult:nth-child(1n) .logo1:nth-child(1n) {
-    background-image: url("../../assets/Logos/Mail-bleu.png");
-    background-position: center;
-    background-size: cover;
-  }
-
-  .cardResult:nth-child(2n) .logo1:nth-child(1n) {
-    background-image: url("../../assets/Logos/Mail-rouge.png");
-    background-position: center;
-    background-size: cover;
-  }
-
-  .cardResult:nth-child(2n) .logo2:nth-child(2n) {
-    background-image: url("../../assets/Logos/Localisation-rouge.png");
-    background-position: center;
-    background-size: cover;
-  }
-
-  .cardResult:nth-child(2n) .logo3:nth-child(3n) {
-    background-image: url("../../assets/Logos/Info-rouge.png");
-    background-position: center;
-    background-size: cover;
-  }
-
-  .cardResult:nth-child(3n) .logo1:nth-child(1n) {
-    background-image: url("../../assets/Logos/Mail-gris.png");
-    background-position: center;
-    background-size: cover;
-  }
-
-  .cardResult:nth-child(3n) .logo2:nth-child(2n) {
-    background-image: url("../../assets/Logos/Localisation-gris.png");
-    background-position: center;
-    background-size: cover;
-  }
-
-  .cardResult:nth-child(3n) .logo3:nth-child(3n) {
-    background-image: url("../../assets/Logos/Info-gris.png");
-    background-position: center;
-    background-size: cover;
-  }
-
-  .cardResult:nth-child(4n) .logo1:nth-child(1n) {
-    background-image: url("../../assets/Logos/Mail-turquoise.png");
-    background-position: center;
-    background-size: cover;
-  }
-
-  .cardResult:nth-child(4n) .logo2:nth-child(2n) {
-    background-image: url("../../assets/Logos/Localisation-turquoise.png");
-    background-position: center;
-    background-size: cover;
-  }
-
-  .cardResult:nth-child(4n) .logo3:nth-child(3n) {
-    background-image: url("../../assets/Logos/Info-turquoise.png");
-    background-position: center;
-    background-size: cover;
-  }
-
-  .logo1,
-  .logo2,
-  .logo3 {
-    height: 32px;
-    width: 32px;
+  .btnBackground {
+    background-color: transparent;
+    border: none;
   }
 
   /* Affichage du club labélisé*/
@@ -498,11 +376,37 @@
     display: none;
   }
 
-  .btnAfterSearch {
-    width: 120px;
-    height: 58px;
-    margin: auto;
-    border-radius: 12px;
+  .newSearchBtn {
+    height: 250px;
+    width: 250px;
+  }
+
+  .btnDiv {
+    background-color: red;
+    margin-top: 10px;
+  }
+
+  .newSearchbtnContainer {
+    height: 100px;
+    width: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .newSearchImg {
+    width: 280px;
+    height: 290px;
+  }
+
+  /* BREAKPOINTS pour bouton nouvelle recherche */
+  .toggleSearch {
+    width: 350px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 
   .cardLegendText {
@@ -513,21 +417,6 @@
     font-size: calc(var(--main-fontSize) * 2);
     margin-bottom: calc(var(--spacing-large) * 1.5);
     color: var(--secondary-color);
-  }
-
-  .btnAfterSearch {
-    width: 250px;
-    height: 100px;
-    border-radius: 20px;
-    padding: 8px 8px 8px 8px;
-  }
-
-  .newSearchContainer {
-    height: 100px;
-    width: 350px;
-    margin: auto;
-    display: flex;
-    padding: 8px 8px 8px 8px;
   }
 
   /*********** STYLES CARTES*/
@@ -560,47 +449,15 @@
     justify-content: space-around;
   }
 
-  .resultats {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    width: 80vw;
-    margin-left: auto;
-    margin-right: auto;
-    height: max-content;
-    margin-top: 16px;
-    margin-bottom: 180px;
-    padding-bottom: 64px;
-  }
-
   .logo1,
   .logo2,
   .logo3 {
     height: 32px;
     width: 32px;
   }
+
   .labelHide {
     display: none;
-  }
-
-  /* Affichage du club labélisé*/
-  .labelClub {
-    height: 45px;
-    width: 50px;
-    margin-left: 58px;
-    background: transparent;
-    background-color: transparent;
-  }
-
-  .labelClub {
-    height: 45px;
-    width: 50px;
-    margin-left: 58px;
-    background: transparent;
-    background-color: transparent;
   }
 
   .info1,
@@ -631,21 +488,154 @@
     width: 100%;
   }
 
-  .resultats::-webkit-scrollbar {
-    width: 8px;
-    /* width of the entire scrollbar */
+  /* STYLES DES POPOVERS LARGEUR BOUTONS MOBILE */
+
+  @keyframes anim1 {
+    0% {
+      opacity: 0.1;
+      background-color: red;
+    }
+
+    50% {
+      opacity: 0.5;
+      background-color: blue;
+    }
+
+    100% {
+      opacity: 1;
+      background-color: black;
+    }
   }
 
-  .resultats::-webkit-scrollbar-track {
-    background-color: #f2f2f2;
-    /* color of the scroll thumb */
+  .styleLoc {
+    height: 60px;
+    border-radius: 30px 30px 0px 0px;
+    background-color: var(--main-color);
+    width: 355px;
+    border: 1px solid black;
+    margin: 0 auto;
+    /* animation: anim1 200s ease-in-out; */
   }
 
-  .resultats::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-    /* roundness of the scroll thumb */
-    border: 8px solid #293d6b;
-    /* creates padding around scroll thumb */
+  .styleLocExpanded {
+    height: 60px;
+    border-radius: 30px;
+    background-color: var(--main-color);
+    width: 355px;
+  }
+
+  .styleDiv2 {
+    width: 353px;
+    height: 630px;
+    border-radius: 0px 0px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+    border: 1px solid black;
+    margin-bottom: 16px;
+    background-color: white;
+    animation: grow 20s ease-in-out;
+  }
+
+  .styleOff {
+    display: none;
+  }
+
+  /*STYLE DEUXIEME BOUTON  */
+
+  .styleGeo {
+    height: 60px;
+    border-radius: 30px 30px 0px 0px;
+    background-color: var(--secondary-color);
+    width: 362px;
+  }
+
+  .styleGeoExpanded {
+    height: 60px;
+    border-radius: 30px;
+    background-color: var(--secondary-color);
+    width: 335px;
+  }
+
+  .styleDiv3 {
+    width: 360px;
+    height: 600px;
+    border-radius: 0px 0px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    border: 1px solid black;
+    background-color: white;
+    animation: grow 10s ease-in-out;
+  }
+
+  .containerResult {
+    background-color: palevioletred;
+    height: 500px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  .resultContainer {
+    height: 450px;
+    overflow: auto;
+    width: 100%;
+  }
+
+  /* Style à l'intérieur des toggle */
+
+  .sliderText {
+    padding-top: var(--spacing-medium);
+    padding-bottom: var(--spacing-small);
+    font-size: calc(var(--main-fontSize) * 1.3);
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+  }
+
+  /* PHRASE AFFICHANT LE NOMBRE DE CLUBS A NOS ALENTOURS */
+
+  .NumberClose {
+    font-size: calc(var(--main-fontSize) * 1);
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    padding-top: var(--spacing-medium);
+    padding-bottom: var(--spacing-small);
+    text-align: center;
+  }
+
+  .distanceSpan {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) * 1);
+    color: black;
+    text-align: end;
+    padding-bottom: 4px;
+    filter: opacity(60%);
+  }
+
+  /* TITRE DU FORMULAIRE */
+
+  .formTitle {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) * 1.9);
+    padding-top: calc(var(--spacing-medium) * 2);
+
+    padding-bottom: calc(var(--spacing-small) * 2);
+    color: rgb(51, 51, 51);
+    text-align: center;
+  }
+
+  .commandBtn {
+    width: 150px;
+    margin: auto;
+    border-radius: 32px;
+    height: 28px;
   }
 }
 
@@ -653,35 +643,17 @@
 
 /* Breakpoints pour garder en place l'image */
 
-@media screen and (min-width: 1077px) and (max-width: 1111px) {
-  .mainContent {
-    width: 93%;
-    margin-top: -3.5px;
-  }
-}
-
-@media screen and (min-width: 1110px) and (max-width: 1194px) {
-  .mainContent {
-    width: 93%;
-    margin-top: -3.5px;
-  }
-}
-
 @media screen and (min-width: 1194px) and (max-width: 1400px) {
-  .mainContent {
-    width: 93%;
-    margin-top: -3.5px;
-  }
-
   .mainContainer {
-    width: 85vw;
+    width: 93vw;
+    margin: auto;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .bannerContainer {
     width: 92%;
-  }
-  .descriptionContainer {
-    margin-top: 0px;
-    position: relative;
   }
 }

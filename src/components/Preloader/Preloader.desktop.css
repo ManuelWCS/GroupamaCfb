@@ -1,0 +1,48 @@
+@import url('../../App.css');
+@import url('./Preloader.css');
+
+
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .LandingTitlesContainer {
+      background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 300px;
+      width: 300px;
+      position: static;
+    }
+  
+    .LandingTitlesContainer {
+      margin-top: -20px;
+    }
+  
+    .counterNumber {
+      font-size: calc(var(--main-fontSize) * 6);
+      position: static;
+    }
+  
+    .LandingTitle {
+      font-size: calc(var(--main-fontSize) * 3);
+      position: static;
+    }
+  
+    .LandingTitle2 {
+      font-size: calc(var(--main-fontSize) * 2);
+      margin-top: -16px;
+      letter-spacing: 8px;
+      position: static;
+    }
+  
+    .LandingTitle3 {
+      font-size: calc(var(--main-fontSize) * 1);
+      letter-spacing: 1px;
+      position: static;
+    }
+  
+    .background {
+      display: none;
+    }
+  
+  }
+  

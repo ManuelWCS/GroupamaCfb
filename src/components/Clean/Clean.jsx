@@ -6,17 +6,17 @@ import "./Tablet.css";
 import "./LargeScreen.css";
 /* Fin de l'import des différentes versions*/
 
+/* import styles des cartes*/
+import "../Clean/Cards/Cards.css";
+
 import "../../components/Map/fonts.css";
 /* import de la librairie Leaflet*/
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, Circle } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import L from "leaflet";
 
 /* import du nécessaire React */
 import { useState, useEffect } from "react";
-/* import du Hook nécessaire à la Geoloc */
-import Geolocalisation from "../Hook/Geolocalisation";
-/* import de la librairie axios qui nous permettra de récupérer des données */
 
 /* import des marqueurs promotionnels*/
 import LabelMarker from "../../assets/CA/labelCA.png";
@@ -44,14 +44,47 @@ import Button2 from "@mui/material/Button";
 
 /*<------------------------IMPORT COMPOSANTS ---------------------------------> */
 import Faq from "../FAQ/Faq";
-import Footer from "../Footer/Footer";
 import Sponso from "../Sponso/Sponso.jsx";
-import Instances from "../Instances/Instaces.jsx";
+import Instances from "../Instances/Instances.jsx";
 import Legend from "../Legend/Legend.jsx";
 import Header from "../Header2/Header2.jsx";
 
 /*<------------------------IMPORT IMAGES ---------------------------------> */
-import homepageImg from "../../assets/TEST/mobileVertical.png";
+
+
+import useGeolocation from "../Hook/useGeolocation";
+
+/* import SLIDER  */
+import Slider from "@mui/material/Slider";
+
+/* Marqueur utilisateur*/
+import UsrMkr from "../../components/MarkersUtilisateur/MarkersUser.jsx";
+
+import CloseMkr from "../../components/MarkersUtilisateur/MarkersClose.jsx";
+import Submit from "../Submit/Submit";
+/* import popover */
+import Popover from "../../components/Popover/Popover.jsx";
+import SearchIcon from "../../assets/CompressedPictures/Popover/trouverClub.webp";
+import LocClub from "../../assets/CompressedPictures/Popover/LocClub.webp";
+
+
+
+/* import bouton localisez moi*/
+import LocImage from "../../assets/CompressedPictures/Buttons/LocalisezMoi.png";
+import ActivateGeoloc from "../ActivateGeoloc/ActivateGeoloc";
+
+/* REACT SCROLL */
+import {Link} from 'react-scroll'
+
+
+/* APP COMPONENTS*/
+import Landing from '../Landing/Landing';
+import Description from '../Description/Description.jsx';
+import BannerContainer from '../BannerContainer/BannerContainer.jsx';
+import Instructions from '../Instructions/Instructions.jsx';
+
+import UpArrow from "../upArrow/UpArrow.jsx";
+
 
 function Clean() {
   const [allcities, setallcities] = useState([]);
@@ -69,7 +102,7 @@ function Clean() {
 
   console.log(formData);
 
-  // POP UP DETAILS DES CATEGORIES
+  /* POP UP DETAILS DES CATEGORIES  ET STYLE DU MODAL */
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -100,17 +133,14 @@ function Clean() {
     borderRadius: 12,
     p: 4,
   };
-  const [clubs, setClubs] = useState([]);
 
   // PopUp en cas d'erreur
 
   const [openPop, setopenPop] = useState(false);
-  const handleClosePop = () => {
-    setopenPop(false);
-    setDeclenche(false);
-  };
+
   const [Declenche, setDeclenche] = useState(false);
 
+  const [clubs, setClubs] = useState([]);
   // Paramétrage des inputs radio lors de la sélection
 
   const [inputLoisir, setinputLoisir] = useState(false);
@@ -118,7 +148,7 @@ function Clean() {
   // Hook qui permets de charger le loader :
 
   const clubMarqueur = L.icon({
-    iconSize: [50, 60],
+    iconSize: [65, 60],
     iconAnchor: [13.5, 47],
     iconUrl: clubMarker,
   });
@@ -129,7 +159,7 @@ function Clean() {
     iconUrl: LabelMarker,
   });
 
-  /* Fonction pour chercher un club */
+  /*<<<<<<<<<<<<<<<<< Fonction pour chercher un club  >>>>>>>>>>>>>>>>>*/
 
   const searchClub = (e) => {
     e.preventDefault();
@@ -137,7 +167,7 @@ function Clean() {
 
     // Si le genre est renseigné, filtre fonctionnel
     if (formData.gender !== null) {
-      console.log("sexe renseigné");
+      // console.log("sexe renseigné");
       if (formData.gender.length > 0) {
         // je pousse le filtre dans un tableau
         filtersOptions.push(
@@ -150,7 +180,7 @@ function Clean() {
 
     // Si la ville est renseignée
     if (formData.city !== null) {
-      console.log("ville renseignée");
+      // console.log("ville renseignée");
       if (formData.city.length > 0) {
         filtersOptions.push((item) => item.Localite === formData.city);
       }
@@ -208,34 +238,37 @@ function Clean() {
     }
 
     if (resultofSearch.label !== null) {
-      console.log("il y a un club labelLisé ");
+      // console.log("il y a un club labelLisé ");
     } else {
-      console.log("pas de clubs labéllisés");
+      // console.log("pas de clubs labéllisés");
     }
 
     setclubSearch(resultofSearch);
     console.log(resultofSearch);
     setDeclenche(true);
+    setRecherche(true);
   };
 
+  /* <<<<<<<<<<<<<<<<<<<<FONCTION DE NAVIGATION>>>>>>>>>>>>>>>>>>>*/
+
   function scrollTop() {
-    window.location.href = "#top";
+    window.location.href = "#redirect";
   }
-  // Fonction permettant de scroller vers la carte en question
-  function scrollCard() {
-    window.location.href = "#cardresult";
-  }
+
+
+
+
   // Fonction handle qui va gérer les changements des inputs
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const newSearch = () => {
-    setDeclenche(false);
-    setclubSearch([]);
-  };
+  //Fonction qui gère la nouvelle recherche de clubs
+
+ 
 
   /* CHARGEMENT DES DONNEES  */
+
   useEffect(() => {
     let result = [];
     let data = citiesData;
@@ -247,11 +280,10 @@ function Clean() {
 
   useEffect(() => {
     setCategories(categoriesData);
-  }, []);
-
-  useEffect(() => {
     setClubs(data);
   }, []);
+
+ 
 
   // UseEffect qui gere le changement d'etat en fonction de l'age
   //Règle numéro 1: Si ageUtilisateur inférieur a 18, il faut désactiver la catégorie Loisir
@@ -291,54 +323,240 @@ function Clean() {
     }
   }, [formData]);
 
-  console.log(clubSearch);
+  console.log("Recherche", clubSearch);
+
+  /* FONCTION DE GEOLOCALISATION AVEC LES CLUBS AUX ALENTOUR */
+
+  const location = useGeolocation();
+  // const mapRef = useRef();
+
+  const showMyLocation = (e) => {
+    if (location.loaded && !location.error) {
+      setProximity(true);
+      map.flyTo([location.coordinates.lat, location.coordinates.lng], 15, {
+        animate: true,
+      });
+    } else {
+      alert(location.error.message);
+    }
+  };
+
+  const [clubsClose, setclubsClose] = useState([]);
+  const [latMin, setLatMin] = useState(0);
+  const [latMax, setLatMax] = useState(0);
+  const [lngMin, setLngMin] = useState(0);
+  const [lngMax, setLngMax] = useState(0);
+
+  // Hook qui permets de cacher et d'afficher les clubs
+  const [visibilityMarker, setVisibilityMarker] = useState(true);
+
+  useEffect(() => {
+    if (location.loaded === true) {
+      setProximity(true);
+      setLatMin(location.coordinates.lat - convertedDistance);
+      setLatMax(location.coordinates.lat + convertedDistance);
+      setLngMin(location.coordinates.lng - convertedDistance);
+      setLngMax(location.coordinates.lng + convertedDistance);
+    } else {
+      setProximity(false);
+      setLatMin(47.902964);
+      setLatMax(0);
+      setLngMin(1.909251);
+      setLngMax(0);
+    }
+  }, [location]);
+
+  let clubsProches = clubs.filter(function (clubsAlentour) {
+    // console.log(clubsAlentour)
+    return (
+      clubsAlentour.Latitude <= latMax &&
+      clubsAlentour.Latitude >= latMin &&
+      clubsAlentour.Longitude <= lngMax &&
+      clubsAlentour.Longitude >= lngMin
+    );
+  });
+
+  useEffect(() => {
+    setclubsClose(clubsProches.length);
+    console.log(proximity, "<- statut de la loc");
+    console.log(clubsProches);
+  }, [clubsProches]);
+
+  const [proximity, setProximity] = useState(false);
+  const [convertedDistance, setConvertedDistance] = useState(0);
+  const [valeurSlider, setValeurSlider] = useState(0);
+  const [rayon, setRayon] = useState(0);
+  const [distance, setDistance] = useState(0);
+
+  useEffect(()=> {
+    setProximity(proximity)
+  }, [proximity])
+  
+  function valuetext(value) {
+    setValeurSlider(value);
+    changeRadius();
+  }
+
+  function changeRadius() {
+    setDistance(valeurSlider);
+    let RayonCercle = distance + "000";
+    setConvertedDistance(distance / 115);
+    setRayon(RayonCercle);
+  }
+
+  const hideMarkers = () => {
+    if (visibilityMarker === true) {
+      setVisibilityMarker(false);
+    } else {
+      setVisibilityMarker(true);
+    }
+  };
+
+  const [visibilityInstanceMarkers, setVisibilityInstanceMarkers] =
+    useState(true);
+
+  const hideInstanceMarkers = () => {
+    if (visibilityInstanceMarkers === true) {
+      setVisibilityInstanceMarkers(false);
+    } else {
+      setVisibilityInstanceMarkers(true);
+    }
+  };
+
+  // Function that know distance between two points
+  function distanceBetweenPoints(lat1, lon1, lat2, lon2) {
+    var R = 6371; // Radius of the earth in km
+    var dLat = deg2rad(lat2 - lat1); // deg2rad below
+    var dLon = deg2rad(lon2 - lon1);
+    var a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(deg2rad(lat1)) *
+      Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c; // Distance in km
+    var e = d.toFixed(2);
+    return e;
+  }
+
+  //deg2rad function
+  function deg2rad(deg) {
+    return deg * (Math.PI / 180);
+  }
+
+  // Function to make appear the clubs in order of distance from the user
+  function sortByDistance(clubsProches) {
+    let clubsSorted = clubsProches.sort(function (a, b) {
+      return (
+        distanceBetweenPoints(
+          location.coordinates.lat,
+          location.coordinates.lng,
+          a.Latitude,
+          a.Longitude
+        ) -
+        distanceBetweenPoints(
+          location.coordinates.lat,
+          location.coordinates.lng,
+          b.Latitude,
+          b.Longitude
+        )
+      );
+    });
+    return clubsSorted;
+  }
+
+  /*HOOKS CONDITIONNELS POUR GERER LES EVENEMENTS */
+
+  const [form, setForm] = useState(false);
+  const [discovery, setDiscovery] = useState(false);
+  const [recherche, setRecherche] = useState(false);
+
+  const isClicked = () => {
+    setForm(!form);
+  };
+
+  const isClicked2 = () => {
+    setDiscovery(!discovery);
+    console.log(discovery);
+  };
+
+  var Largeur = document.documentElement.clientWidth;
+  var Hauteur = document.documentElement.clientHeight;
+
+  console.log(Largeur, Hauteur);
+
+  const marks = [
+    {
+      value: 10,
+      label: "10km",
+    },
+    {
+      value: 15,
+      label: "15km",
+    },
+    {
+      value: 20,
+      label: "20km",
+    },
+  ];
+
+  //function that update the component when the user change the radius
+  const updateRadius = () => {
+    setProximity(true);
+    setLatMin(location.coordinates.lat - convertedDistance);
+    setLatMax(location.coordinates.lat + convertedDistance);
+    setLngMin(location.coordinates.lng - convertedDistance);
+    setLngMax(location.coordinates.lng + convertedDistance);
+  };
+
+
+  function OpenForms() {
+    if(discovery === false)
+    setTimeout(() => {
+      setDiscovery(true)
+      console.log('test')
+
+  }, 1000);
+  if(form === false)
+  setTimeout(() => {
+    setForm(true);
+    console.log('test');
+  }, 1500);
+} 
+
+
+  //Set the map to the center of the user
+  useEffect(() => {
+    setTimeout(() => {
+      if(map)
+      map.flyTo([location.coordinates.lat, location.coordinates.lng], 15);
+      console.log('jarrive')
+    }, 2000);
+  }, [location]);
 
   return (
     <>
       <Header />
-      <div className="fullApp" id="background_wrap">
-        <div className="mainContent">
-          <div className="titlesContainer">
-            <h1 className="mainTitle"> BIENVENUE !</h1>
-            <h3 className="secondaryTitle">
-              TROUVEZ UN CLUB PRÈS DE CHEZ VOUS !
-            </h3>
-          </div>
-        </div>
-        <div className="descriptionContainer">
-          <h2 className="mainDescription">
-            541 CLUBS DE FOOTBALL EN RÉGION CENTRE-VAL DE LOIRE
-          </h2>
-          <h4 className="secondaryDescription">
-            La Ligue Centre-Val de Loire de Football et son partenaire Groupama
-            Paris-Val de Loire vous proposent cette plateforme afin de découvrir
-            l'ensemble des clubs de notre Région !
-          </h4>
-        </div>
+      <div className="fullApp" id="background_wrap" >
+      
+        <Landing/>       
+        <Description/>
 
-        <div className="bannerContainer">
-          <h5 className="bannerTitle">À VOUS DE JOUER</h5>
-        </div>
+          <Link to="map" spy={true} smooth={true} duration={1000} onClick={OpenForms}>
+        <BannerContainer />
+          </Link>
 
-        <div className="desktopInstructions">
-          <h6 className="instructionsTitle">
-            Entrez votre âge et la compétition souhaitée pour découvrir les
-            clubs à proximité :
-          </h6>
-        </div>
+        <Instructions/>
 
         <div className="mainContainer">
           <div className="mapContainer">
-            <div className="legendContainer">
-              <p className="mapTitle">CARTE INTERACTIVE</p>
-            </div>
-
             <div className="BlocCarte">
               <MapContainer
                 className="mapLeaflet"
                 id="map"
-                center={[48.856614, 2.3522219]}
-                zoom={13}
+                center={[47.90289, 1.90389]}
+                zoom={11}
                 scrollWheelZoom={true}
                 minZoom={6}
                 doubleClickZoom={true}
@@ -350,7 +568,30 @@ function Clean() {
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
 
-                <Geolocalisation />
+                {location.loaded && !location.error ? (
+                  <UsrMkr clubsProches={clubsClose} />
+                ) : (
+                  <Marker position={[latMin, lngMin]}>
+                    <Popup>
+                      Vous n'avez pas activé la localisation, votre position à
+                      été déinie par défault à Orléans !
+                    </Popup>
+                  </Marker>
+                )}
+
+                {proximity === true ? (
+                  <Circle
+                    center={[
+                      location.coordinates.lat,
+                      location.coordinates.lng,
+                    ]}
+                    radius={rayon}
+                    pathOptions={{ color: "#748B9F" }}
+                  />
+                ) : null}
+                {visibilityMarker === true ? (
+                  <CloseMkr distance={convertedDistance} />
+                ) : null}
 
                 <MarkerClusterGroup
                   animate={true}
@@ -364,107 +605,93 @@ function Clean() {
                 >
                   {clubSearch.length !== 0
                     ? clubSearch.slice(0, 500).map((res, index2) => {
-                        console.log(res);
-                        return (
-                          <Marker
-                            icon={
-                              res.label.length > 0
-                                ? clubMarqueurLabel
-                                : clubMarqueur
-                            }
-                            key={index2}
-                            position={[res.Latitude, res.Longitude]}
-                          >
-                            <Popup key={index2} className="markersPopUp">
-                              <p onClick={scrollCard}> {res.NomClub}</p>
-                            </Popup>
-                          </Marker>
-                        );
-                      })
+                      // console.log(res);
+                      return (
+                        <Marker
+                          icon={
+                            res.label.length > 0
+                              ? clubMarqueurLabel
+                              : clubMarqueur
+                          }
+                          key={index2}
+                          position={[res.Latitude, res.Longitude]}
+                        >
+                          <Popup key={index2} className="markersPopUp">
+                            <p> {res.NomClub}</p>
+
+                            <br></br>
+
+                          {!location.error ? (
+                            <h3>
+                              Se trouve à{" "}
+                              {distanceBetweenPoints(
+                                location.coordinates.lat,
+                                location.coordinates.lng,
+                                res.Latitude,
+                                res.Longitude
+                              )}{" "}
+                              km de vous !
+                            </h3>
+                          ) : null }
+                          
+                            <p>
+                            {!location.error ? (
+
+                              <a
+                                href={`https://www.google.fr/maps/dir/${location.coordinates.lat},${location.coordinates.lng}+/${res.Latitude},+${res.Longitude}`}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                Itinéraire vers ce club
+                              </a>
+                            ) : <p> Activez la localisation pour voir un itinéraire vers ce club ! </p> }
+
+                            </p>
+                          </Popup>
+                        </Marker>
+                      );
+                    })
                     : null}
                 </MarkerClusterGroup>
 
-                <Instances />
+                {visibilityInstanceMarkers === true ? <Instances /> : null}
               </MapContainer>
             </div>
-            <Legend />
+               
+
+
+
+
+            {Largeur < 1024 ?
+              (
+                <div className="commandContainer">
+                  <Legend />
+                </div>
+              ) : null}
+            
           </div>
 
-          <div
-            className={clubSearch.length !== 0 ? "formContainer" : "dataResult"}
-          >
-            <span className="cardLegendText">COMPLÉTEZ VOS INFOS </span>
-
-            <div
-              className={
-                clubSearch.length !== 0 ? "BlocFiltresEX" : "BlocFiltres"
-              }
+          <div className="popover">
+            <button
+              onClick={isClicked}
+              className={form ? "styleLoc" : "styleLocExpanded"}
             >
-              {clubSearch.length > 0 ? (
-                clubSearch.map((clubSelected, Uniqueindex) => {
-                  return (
-                    <div
-                      className="cardResult"
-                      key={Uniqueindex}
-                      id="cardresult"
-                    >
-                      <div className="titleCardContainer">
-                        <span className="titleCard" onClick={scrollTop}>
-                          {clubSelected.NomClub}
-                        </span>
-                      </div>
+              <div className="btnContent">
+                <img src={SearchIcon} className="searchIcon" alt="searchIcon" />
+                <p className="TitleButton">
+                  TROUVEZ UN CLUB A PROXIMITÉ ! &nbsp;{" "}
+                </p>
+              </div>
+            </button>
 
-                      <div className="columnContainer">
-                        <div className="column1">
-                          <div className="logo1"></div>
-                          <div className="logo2"></div>
-                          <div className="logo3"></div>
-                        </div>
-                        <div className="column2">
-                          <div className="info1">
-                            {" "}
-                            <a
-                              className="mail"
-                              href={`mailto:${clubSelected.Mail}?subject=[CFB] "Entrez l'objet de votre
-                                demande "`}
-                            >
-                              {clubSelected.Mail}{" "}
-                            </a>
-                          </div>
-                          <div className="info2">
-                            {clubSelected.AdressePostale}
-                          </div>
-                          <div className="info3">
-                            <a
-                              href={`https://foot-centre.fff.fr/recherche-clubs/?query=${clubSelected.Localite}`}
-                            >
-                              Voir plus d'infos
-                            </a>
-                            <img
-                              className={
-                                clubSelected.label.length > 0
-                                  ? "labelClub"
-                                  : "labelHide"
-                              }
-                              src={
-                                clubSelected.label.length > 0
-                                  ? LabelMarker
-                                  : null
-                              }
-                              alt="Marqueur Club labellisé"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })
-              ) : (
+            <div className={form ? "styleDiv2" : "styleOff"} >
+              {recherche === false ? (
                 <div className="filtersNoSearch">
                   <form
                     className="filtrationsWrapper"
                     onSubmit={(e) => searchClub(e)}
                   >
+                    <span className="formTitle">VOS INFOS</span>
                     <div className="filter">
                       <div className="inputBox">
                         <span className="inputTitle">VOTRE ÂGE </span>
@@ -520,14 +747,14 @@ function Clean() {
                             } else {
                               formData.type === "Futsal"
                                 ? setformData({
-                                    ...formData,
-                                    gender: e.target.value,
-                                    type: "",
-                                  })
+                                  ...formData,
+                                  gender: e.target.value,
+                                  type: "",
+                                })
                                 : setformData({
-                                    ...formData,
-                                    gender: e.target.value,
-                                  });
+                                  ...formData,
+                                  gender: e.target.value,
+                                });
                             }
                           }}
                         >
@@ -585,7 +812,7 @@ function Clean() {
                             control={<Radio />}
                             label="Futsal"
                             title="Pratique proposée aux séniors Hommes et aux 17-18 masculins"
-                            // disable={inputFutsal}
+                          // disable={inputFutsal}
                           />
                         </RadioGroup>
 
@@ -678,67 +905,248 @@ function Clean() {
                         id="scrollBtn"
                         type="submit"
                       >
-                        <img
+                        <Submit
                           className="findclubBtn"
                           alt="trouvez votre club"
-                          src={btnPicture}
+                          imageBtn={btnPicture}
                         />
                       </button>
                     </div>
                   </form>
                 </div>
+              ) : (
+                <div className="containerResult">
+                  <h3 className="Result">RÉSULTATS</h3>
+                  
+                  <p className="NumberClose">
+                    {" "}
+                    Il y a {clubSearch.length} résultat(s) correspondant à votre recherche{" "}
+                  </p>
+                  <button
+                  className="clearSearch"
+                    onClick={() => {
+                      setclubSearch([]);
+                      setRecherche(false);
+                    }}
+                  >
+                    Réinitialiser recherche{" "}
+                  </button>
+                  {clubSearch.map((club) => (
+                    <div
+                      className={
+                        club.label.length > 0 ? "cardResultLabel" : "cardResult"
+                      }
+                      id="cardClub"
+                    >
+                      <div className="titleCardContainer">
+                        <span className="titleCard" onClick={scrollTop}>
+                          {club.NomClub}
+                        </span>
+                        {!location.error ? (                        
+                        <p className="distanceSpan">
+                          {distanceBetweenPoints(
+                            location.coordinates.lat,
+                            location.coordinates.lng,
+                            club.Latitude,
+                            club.Longitude
+                          )}
+                          km
+                        </p>
+                        ) : null}
+                      </div>
+
+                      <div className="columnContainer">
+                        <div className="column1">
+                          <div className="logo1"></div>
+                          <div className="logo2"></div>
+                          <div className="logo3"></div>
+                        </div>
+                        <div className="column2">
+                          <div className="info1">
+                            {" "}
+                            <a
+                              className="mail"
+                              href={`mailto:${club.Mail}?subject=[CFB] "Entrez l'objet de votre
+                            demande "`}
+                            >
+                              {club.Mail}{" "}
+                            </a>
+                          </div>
+                          <div className="info2" onClick={scrollTop}>
+                            {club.AdressePostale}
+                          </div>
+                          <div className="info3">
+                            <a
+                              href={`https://foot-centre.fff.fr/recherche-clubs/?query-affil=${club.NumClub}`}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              Voir plus d'infos
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               )}
-              <Modal
-                open={clubSearch.length === 0 && Declenche ? true : false}
-                onClose={handleClosePop}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-              >
-                <Box id="box" sx={style2}>
-                  {!formData.age || !formData.type || !formData.city ? (
-                    <div>
-                      <p className="textNoResults">
-                        {" "}
-                        Aucun résultat pour votre recherche !
-                      </p>
-                      <p className="btnNoResults" onClick={handleClosePop}>
-                        FERMER
-                      </p>{" "}
-                      {/* GESTION DES ERREURS DANS LA RECHERCHE */}
-                    </div>
-                  ) : (
-                    <div>
-                      <p>
-                        Pas de résultats trouvés pour la catégorie :{" "}
-                        {formData.type} à {formData.city}
-                      </p>
-
-                      <p className="btnNoResults" onClick={handleClosePop}>
-                        FERMER
-                      </p>
-                    </div>
-                  )}
-                </Box>
-              </Modal>
+              {recherche === true ? (
+                <button
+                  onClick={() => {
+                    setRecherche(false);
+                  }}
+                >
+                  {" "}
+                  NOUVELLE RECHERCHE{" "}
+                </button>
+              ) : null}
             </div>
-            <div className="newSearchContainer">
-              <button
-                className={clubSearch.length !== 0 ? "btnAfterSearch" : "hide"}
-                onClick={newSearch}
-              >
-                NOUVELLE RECHERCHE
-              </button>
-            </div>
+          </div>
 
-            {/* FIN DE LA  GESTION DES ERREURS DANS LA RECHERCHE */}
+          {discovery === false  && Largeur >= 1024 ? ( 
+
+          <div className="interactContainer">
+                      <div className="locImgContainer">
+
+          <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} />
+          <img src={LocImage} alt="loc" className="locImage" onClick={hideMarkers} />
+          <img src={LocImage} alt="loc" className="locImage" onClick={hideInstanceMarkers} />
+                      </div>
+          </div> ) : null}
+
+
+
+
+
+          <div className="popover2">
+            <button
+              onClick={isClicked2}
+              className={discovery ? "styleGeo" : "styleGeoExpanded"}
+            >
+              <div className="btnContent">
+                <img src={LocClub} className="searchIcon" alt="searchIcon" />
+                <p className="TitleButton">
+                  DÉCOUVRIR LES CLUBS ICI ! &nbsp; &nbsp;{" "}
+                </p>
+              </div>
+            </button>
+            <div className={discovery ? "styleDiv3" : "styleOff"}>
+                            <span className="sliderText"> CHOISIS TON ÉCHELLE !</span>
+              <Box sx={{ width: 190, margin: 1 }}>
+                {!location.error ? (
+                <Slider
+                  aria-label="Distance"
+                  defaultValue={10}
+                  getAriaValueText={valuetext}
+                  // getAriaLabel={true}
+                  valueLabelDisplay="on"
+                  step={1}
+                  marks={marks}
+                  min={10}
+                  max={20}
+                  onChange={updateRadius}
+                /> ) : 
+                null
+                
+                }
+                {/* <img src={LocImage} alt="loc" className="locImage" onClick={showMyLocation} /> */}
+              </Box>
+              <div className="resultContainer">
+                {clubsProches.length !== 0 ? (
+                  <p className="NumberClose">
+                    Il y a {clubsProches.length} clubs autour de vous :{" "}
+                  </p>
+                ) : (
+                  <p className="NumberClose">
+                    Il n'y a pas de club autour de vous !
+                  </p>
+                )}
+
+                {proximity === true ? (
+                  sortByDistance(clubsProches).map((club, Uniqueindex) => {
+                    return (
+                      <div
+                        className={
+                          club.label.length > 0
+                            ? "cardResultLabel"
+                            : "cardResult"
+                        }
+                        id="cardClub"
+                      >
+                        <div className="titleCardContainer">
+                          <span className="titleCard" onClick={scrollTop}>
+                            {club.NomClub}
+                          </span>
+                          <p className="distanceSpan">
+                            {distanceBetweenPoints(
+                              location.coordinates.lat,
+                              location.coordinates.lng,
+                              club.Latitude,
+                              club.Longitude
+                            )}{" "}
+                            km
+                          </p>
+                        </div>
+
+                        <div className="columnContainer">
+                          <div className="column1">
+                            <div className="logo1"></div>
+                            <div className="logo2"></div>
+                            <div className="logo3"></div>
+                          </div>
+                          <div className="column2">
+                            <div className="info1">
+                              {" "}
+                              <a
+                                className="mail"
+                                href={`mailto:${club.Mail}?subject=[CFB] "Entrez l'objet de votre
+                                demande "`}
+                              >
+                                {club.Mail}{" "}
+                              </a>
+                            </div>
+                            <div className="info2" onClick={scrollTop}>
+                              {club.AdressePostale}
+                            </div>
+                            <div className="info3">
+                              <a
+                                href={`https://foot-centre.fff.fr/recherche-clubs/?query-affil=${club.NumClub}`}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                Voir plus d'infos
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <ActivateGeoloc />
+                )}
+              </div>
+            </div>
           </div>
         </div>
+        
+        {Largeur >= 1024 ?
+          <div className="commandContainer" id="form">
+            <Legend />
+
+         
+          </div>
+
+
+          : null}
         <Faq />
 
         {/* Fin de desktopContainer*/}
+        <Link to="top" spy={true} smooth={true} duration={1000}>
 
+        <UpArrow/>
+        </Link>
         <Sponso />
-        <Footer />
       </div>
     </>
   );

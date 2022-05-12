@@ -31,20 +31,18 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-} 
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+	scroll-behavior: smooth;
+
 }
 
+:root {
+	--main-color: #3586c2;
+	--secondary-color: #293d6b;
+	--red-color: #c1272d;
+	--main-font: "Nuvel";
+	--secondary-font: "Century Gothic";
+	--main-fontSize: 16px;
+	--spacing-small: 8px;
+	--spacing-medium: 16px;
+	--spacing-large: 32px;
+  }

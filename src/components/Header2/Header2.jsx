@@ -1,22 +1,20 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import "./Header2.css";
-import SmallGroupama from "../../assets/CompressedPictures/mobileGroupama.webp";
-import LargeGroupama from "../../assets/CompressedPictures/headerGroupama.webp";
+import SmallGroupama from '../../assets/CompressedPictures/Header/headerMobile.png'
 /* import du nouveau header Février 2022 -22 */
-import LargeGroupama2 from "../../assets/TEST/header22.png"
+import LargeGroupama from '../../assets/CompressedPictures/Header/headerDesktop.png'
 
 function Header2() {
   return (
-    <div className="header">
-      <Navbar bg="dark" variant="dark" fixed="top">
-        <Navbar.Brand href="./">
+    <div className="header" id="top">
+      <Navbar bg="" variant="" fixed="top">
+        <Navbar.Brand href="/trouvetonclub">
           <img
             alt=""
-            src={LargeGroupama2}
+            src={LargeGroupama}
             width="100%"
-            height="50%"
-            className="d-inline-block align-top"
+            height="100%"
             className="bigHeader"
           />
 
@@ -24,8 +22,7 @@ function Header2() {
             alt=""
             src={SmallGroupama}
             width="100%"
-            height="5%"
-            className="d-inline-block align-top"
+            height="100%"
             className="smallHeader"
           />
         </Navbar.Brand>{" "}

@@ -1,6 +1,7 @@
 @import url("./Clean.css");
 
 @media screen and (max-width: 480px) {
+
   html,
   body {
     max-width: 100%;
@@ -11,6 +12,7 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+
   .fullApp {
     display: flex;
     flex-direction: column;
@@ -19,6 +21,7 @@
     width: 90%;
     margin: auto;
   }
+
   #background_wrap {
     z-index: 1;
     position: relative;
@@ -41,23 +44,7 @@
   .titlesContainer {
     display: none;
   }
-  .descriptionContainer {
-    height: max-content;
-    width: 85vw;
-    margin-right: 7.5vw;
-    margin-left: 7.5vw;
-    margin-bottom: calc(var(--spacing-medium) * 2);
-    margin-top: -220px;
-    padding: 8px 8px 8px 8px;
-  }
-  .mainDescription {
-    font-family: var(--main-font);
-    color: var(--main-color);
-    font-size: calc(var(--main-fontSize) * 1.3);
-    padding-bottom: 16px;
-    text-align: center;
 
-  }
   .secondaryDescription {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) * 0.9);
@@ -68,57 +55,10 @@
     text-align: center;
   }
 
-  .bannerContainer {
-    width: 90%;
-    height: 90px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
-    background-image: url("../../assets/CompressedPictures/banner.webp");
-    background-size: cover;
-    background-position: 50% 60%;
-    margin-bottom: 32px;
-    position: relative;
-    z-index: -2;
-    margin-bottom: var(--spacing-medium);
-  }
-  .bannerTitle {
-    padding-left: calc(var(--spacing-large) * 0.2);
-    padding-top: calc(var(--spacing-large) * 0.4);
-    font-size: calc(var(--main-fontSize) * 0.9);
-    font-family: var(--main-font);
-    color: white;
-  }
-  .desktopInstructions {
-    width: 100%;
-    height: max-content;
-    padding: var(--spacing-small);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    margin-left: var(--spacing-large);
-    margin-right: var(--spacing-large);
-    padding-right: var(--spacing-large);
-    padding-left: var(--spacing-large);
-  }
 
-  .instructionsTitle {
-    font-family: var(--secondary-font);
-    font-size: calc(var(--main-fontSize) * 0.9);
-    padding-bottom: calc(var(--spacing-medium) * 1);
-    color: rgb(51, 51, 51);
-    text-align: center;
-    margin-left: var(--spacing-medium);
-    margin-right: var(--spacing-medium);
-    padding-right: var(--spacing-small);
-    padding-left: var(--spacing-small);
-  }
+
+
+ 
   .mainContainer {
     width: 85vw;
     margin-left: 7.5vw;
@@ -130,11 +70,13 @@
     align-items: center;
     align-content: center;
   }
+
   #map {
     height: 350px;
     width: 75vw;
     margin: auto;
   }
+
   .mapTitle {
     font-family: var(--main-font);
     font-size: calc(var(--main-fontSize) * 1.3);
@@ -142,6 +84,7 @@
     text-align: center;
     padding: var(--spacing-medium);
   }
+
   .formContainer {
     width: 100%;
     display: flex;
@@ -154,6 +97,7 @@
     margin-bottom: var(--spacing-large);
     padding: var(--spacing-medium);
   }
+
   .cardLegendText {
     height: 50px;
     width: 100%;
@@ -163,6 +107,7 @@
     margin-bottom: calc(var(--spacing-large) / 2);
     color: var(--secondary-color);
   }
+
   .BlocFiltres {
     display: flex;
     flex-direction: column;
@@ -171,8 +116,9 @@
     width: 90%;
     margin: auto;
   }
+
   .BlocFiltresEX {
-    overflow: scroll;
+    overflow: hidden;
     overflow-x: hidden;
     position: relative;
     display: flex;
@@ -180,9 +126,11 @@
     justify-content: space-between;
     padding: var(--spacing-large);
   }
+
   .hide {
     display: block;
   }
+
   .inputBox {
     font-family: var(--main-font);
     height: 35px;
@@ -213,6 +161,7 @@
     margin-top: 4px;
     margin-bottom: 16px;
   }
+
   .inputTitle {
     color: white;
     font-family: var(--main-color);
@@ -222,6 +171,7 @@
   .filter {
     margin: auto;
   }
+
   .btnContainer {
     position: relative;
     display: flex;
@@ -229,12 +179,42 @@
     align-items: center;
   }
 
-  .findclubBtn {
-    height: 100px;
-    width: 150px;
-    margin-left: 45px;
-    margin-right: 45px;
+  .findclubBtn,
+  .SubmitButton {
+    height: 120px;
+    width: 180px;
   }
+
+  .btnBackground {
+    background-color: transparent;
+    border: none;
+
+  }
+
+  .filtrationsWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+
+
+
+  /* TITRE DU FORMULAIRE */
+
+  .formTitle {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) * 1.9);
+    padding-top: calc(var(--spacing-small) * 2);
+
+    padding-bottom: calc(var(--spacing-small) * 2);
+    color: rgb(51, 51, 51);
+    text-align: center;
+  }
+
+
   .btnAfterSearch {
     width: 120px;
     height: 58px;
@@ -254,9 +234,35 @@
     display: flex;
     padding: 8px 8px 8px 8px;
   }
+
+  .distanceSpan {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) * 1);
+    color: black;
+    text-align: end;
+    margin-right: var(--spacing-medium);
+    padding-bottom: 4px;
+    filter: opacity(60%)
+  }
+
+  /*********** STYLES RESULTAT DE RECHERCHE */
+
+  .containerResult {
+    background-color: palevioletred;
+    height: 500px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+
+
+
+
   /*********** STYLES CARTES*/
   .cardResult {
-    height: 220px;
+    height: 240px;
     width: 250px;
     background-image: url("../../assets/Cartes/Carte-bleu.png");
     background-position: center;
@@ -269,7 +275,7 @@
   }
 
   .cardResult:nth-child(2n) {
-    height: 220px;
+    height: 240px;
     width: 250px;
     background-image: url("../../assets/Cartes/Carte-rouge.png");
     background-position: center;
@@ -279,7 +285,7 @@
   }
 
   .cardResult:nth-child(3n) {
-    height: 220px;
+    height: 240px;
     width: 250px;
     background-image: url("../../assets/Cartes/Carte-grise.png");
     background-position: center;
@@ -289,7 +295,7 @@
   }
 
   .cardResult:nth-child(4n) {
-    height: 220px;
+    height: 240px;
     width: 250px;
     background-image: url("../../assets/Cartes/Carte-turquoise.png");
     background-position: center;
@@ -300,11 +306,11 @@
     margin-bottom: 16px;
   }
 
-  .cardResult:nth-child(1n) .logo1:nth-child(1n) {
+  /* .cardResult:nth-child(1n) .logo1:nth-child(1n) {
     background-image: url("../../assets/Logos/Mail-bleu.png");
     background-position: center;
     background-size: cover;
-  }
+  } */
 
   .cardResult:nth-child(2n) .logo1:nth-child(1n) {
     background-image: url("../../assets/Logos/Mail-rouge.png");
@@ -360,29 +366,25 @@
     background-size: cover;
   }
 
-  .titleCard {
-    height: 64px;
-    width: 305px;
+  .columnContainer {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 4px;
-    font-family: var(--main-font);
-    color: white;
-    font-size: calc(var(--main-fontSize) / 1.2);
+    padding-top: 8px
   }
 
+
+
+
   .column1 {
-    height: 146px;
+    height: 160px;
     width: 44px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding-left: 16px;
+    padding-left: 8px;
   }
 
   .column2 {
-    height: 146px;
+    height: 160px;
     width: 230px;
     display: flex;
     flex-direction: column;
@@ -411,6 +413,7 @@
     height: 32px;
     width: 32px;
   }
+
   .labelHide {
     display: none;
   }
@@ -425,11 +428,11 @@
   }
 
   .labelClub {
-    height: 45px;
-    width: 50px;
-    margin-left: 58px;
-    background: transparent;
-    background-color: transparent;
+    height: 10px;
+    width: 40px;
+    margin-left: 24px;
+
+
   }
 
   .info1,
@@ -453,6 +456,16 @@
     text-decoration: none;
   }
 
+
+
+
+
+  .label {
+    height: 50px;
+    width: 50px;
+    background-color: orangered;
+  }
+
   .dataResult {
     display: flex;
     flex-direction: column;
@@ -461,39 +474,210 @@
     margin-right: 5vw;
     margin-left: 5vw;
   }
-}
 
-
-/* Breakpoints pour gérer l'espacement entre le texte et l'image */
-@media screen and (min-width: 330px) and (max-width:365px) {
-  .descriptionContainer {
-    margin-top:-170px;
+  .toggleSearch {
+    width: 320px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-}
 
-@media screen and (min-width: 365px) and (max-width:400px)  {
-  .descriptionContainer {
-    margin-top:-150px;
+  .newSearchBtn {
+    width: 255px;
+
+
   }
-}
 
 
-@media screen and (min-width: 400px) and (max-width:441px) {
-  .descriptionContainer {
-    margin-top:-110px;
+  /* STYLES DES POPOVERS LARGEUR BOUTONS MOBILE */
+
+  .styleLoc {
+    height: 60px;
+    border-radius: 30px 30px 0px 0px;
+    background-color: var(--main-color);
+    width: 275px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .styleLocExpanded {
+    height: 60px;
+    border-radius: 30px;
+    background-color: var(--main-color);
+    width: 275px;
+    margin: var(--spacing-small)
+  }
+
+
+  .styleDiv2 {
+    width: 275px;
+    height: 620px;
+    border-radius: 0px 0px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+    border: 1px solid pink;
+    margin-bottom: 16px;
+    ;
+  }
+
+  .styleOff {
+    display: none;
+  }
+
+  /*STYLE DEUXIEME BOUTON  */
+
+
+  .styleGeo {
+    height: 60px;
+    border-radius: 30px 30px 0px 0px;
+    background-color: var(--secondary-color);
+    width: 275px;
+
+  }
+
+  .styleGeoExpanded {
+    height: 60px;
+    border-radius: 30px;
+    background-color: var(--secondary-color);
+    width: 275px;
+  }
+
+  .styleDiv3 {
+    width: 273px;
+    height: 500px;
+    border-radius: 0px 0px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    border: 1px solid black;
+    border-radius: 0px 0px 20px 20px;
+    background: #ffffff;
+    box-shadow: 11px 11px 22px #adadad,
+      -11px -11px 22px #ffffff;
+
+  }
+
+  /* Style à l'intérieur des toggle */
+
+  .sliderText {
+    padding-top: var(--spacing-medium);
+    padding-bottom: var(--spacing-small);
+    font-size: calc(var(--main-fontSize) * 1.3);
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+  }
+
+  /* PHRASE AFFICHANT LE NOMBRE DE CLUBS A NOS ALENTOURS */
+
+  .NumberClose {
+    font-size: calc(var(--main-fontSize) * 1);
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    padding-top: var(--spacing-medium);
+    padding-bottom: var(--spacing-small);
     text-align: center;
   }
-}
 
-@media screen and (min-width: 441px) and (max-width:460px) {
-  .descriptionContainer {
-    margin-top:-90px;
-  }
-}
+  /* STYLE DU COMPOSANT ActivateGeoLocation*/
 
-@media screen and (min-width: 460px) and (max-width:480px) {
-  .descriptionContainer {
-    margin-top:-60px;
+  .ActivateContainer {
+    height: 250px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30px;
+    margin: auto;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 11px 11px 2px #adadad,
+      -11px -1px 2px #ffffff;
+
   }
+
+  .ActivateGeoLoc {
+    width: 100px;
+    height: 100px;
+  }
+
+  .ActivateDescription {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize)/ 1.1);
+    color: var(--secondary-color);
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+
+  }
+
+  .navigatorDescription {
+    font-family: var(--secondary-font);
+    font-size: calc(var(--main-fontSize) / 1.5);
+    text-align: center;
+    padding-right: var(--spacing-large);
+    padding-left: var(--spacing-large);
+  }
+
+  /*Container results of clubs clsoe */
+
+  .resultContainer {
+    height: 340px;
+    overflow: auto;
+    width: 100%;
+
+  }
+
+  /* DIV ou sont regroupée les actions par rapprot à la carte*/
+
+  .commandContainer {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .commandBtn {
+    width: 150px;
+    margin: auto;
+    border-radius: 32px;
+    height: 28px;
+
+  }
+
+  .interactContainer {
+    width: 100%;
+    order: 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    height: 60px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .locImgContainer {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+
+
+
+
 }
 
