@@ -34,7 +34,7 @@ function Preloader(props) {
     <>
       <div className="FullLanding">
         <div className="headerPreload">
-          <Link to="">
+          <Link to="/">
             <img src={ecussonLigue} className="headerLogo" alt="logo" />
           </Link>
         </div>

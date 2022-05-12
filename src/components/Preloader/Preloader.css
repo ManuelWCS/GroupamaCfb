@@ -121,12 +121,10 @@
 
   .headerPreload {
     width: 100%;
-    min-height: 15vh;
     display: flex;
     justify-content: center;
     margin-top: 16px;
     margin-bottom: 32px;
-    height: 15vh;
   }
 
   .headerLogo {
@@ -136,8 +134,6 @@
     background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
     background-repeat: no-repeat;
     background-size: contain;
-    height: 35vh;
-    min-height: 35vh;
     width: 95vw;
   }
 
@@ -224,8 +220,6 @@
     justify-content: center;
     align-items: center;
     width: 95vw;
-    height: 35vh;
-    min-height: 35vh;
 
   }
 
@@ -253,7 +247,6 @@
     font-size: calc(var(--main-fontSize) * 1);
   }
   .NavigationTitle {
-    height: 210px;
     width: 100%;
     position: absolute;
     bottom: 0%;
