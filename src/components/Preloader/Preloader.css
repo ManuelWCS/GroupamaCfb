@@ -226,8 +226,11 @@
   }
 
   .LogoPlateforme {
-    height: 170px;
-    width: 180px;
+    margin-top:32px;
+    height: 150px;
+    width: 170px;
+    margin-bottom:32px;
+
     
   }
 

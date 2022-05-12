@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Preloader.css";
-import LogoCFB from "../../assets/CompressedPictures/Logos/logo.png";
+import LogoCFB from "../../assets/CompressedPictures/Logos/logoplateforme.png";
 import background from "../../assets/CompressedPictures/Logos/BACKGROUND.png";
 import ecussonLigue from "../../assets/CompressedPictures/Logos/LogoLigue.webp";
 import { Link } from "react-router-dom";
@@ -51,9 +51,11 @@ function Preloader(props) {
             <div className="thirdLine">
               <h4 className="LandingTitle3"> EN RÉGION CENTRE VAL DE LOIRE </h4>
             </div>
-            <h4 className="LandingTitle4"> TROUVEZ UN CLUB PRÈS DE CHEZ VOUS </h4>
+            <h4 className="LandingTitle4">
+              {" "}
+              TROUVEZ UN CLUB PRÈS DE CHEZ VOUS{" "}
+            </h4>
           </div>
-
         </div>
 
         <div className="LinkContainer">
@@ -67,9 +69,11 @@ function Preloader(props) {
           <Link to="/trouvetonclub">
             <button className="myButton">ACCÈDER</button>
           </Link>
-
         </div>
-        <h4 className="LandingTitle5"> Plateforme dévéloppée par la Ligue du Centre-Val de Loire de Football </h4>
+        <h4 className="LandingTitle5">
+          {" "}
+          Plateforme dévéloppée par la Ligue du Centre-Val de Loire de Football{" "}
+        </h4>
       </div>
     </>
   );
