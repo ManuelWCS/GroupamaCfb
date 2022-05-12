@@ -137,6 +137,7 @@
     background-size: contain;
     height: 300px;
     width: 300px;
+    background-color: hotpink;
   }
 
   .LandingTitlesContainer {
@@ -222,6 +223,8 @@
     margin-bottom: 36px;
     justify-content: center;
     align-items: center;
+    background-color: #3586c2;
+    width: 100%;
 
   }
 
