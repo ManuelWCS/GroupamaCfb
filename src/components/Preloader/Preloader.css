@@ -116,16 +116,17 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    height: 100vh;
   }
 
   .headerPreload {
     width: 100%;
-    min-height: 100px;
+    min-height: 15vh;
     display: flex;
     justify-content: center;
     margin-top: 16px;
     margin-bottom: 32px;
-    height: 100px;
+    height: 15vh;
   }
 
   .headerLogo {
@@ -135,9 +136,9 @@
     background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
     background-repeat: no-repeat;
     background-size: contain;
-    height: 300px;
-    width: 300px;
-    background-color: hotpink;
+    height: 35vh;
+    min-height: 35vh;
+    width: 95vw;
   }
 
   .LandingTitlesContainer {
@@ -217,14 +218,14 @@
 
   .LinkContainer {
     margin-top: 36px;
-    height: 180px;
     display: flex;
     flex-direction: column;
     margin-bottom: 36px;
     justify-content: center;
     align-items: center;
-    background-color: #3586c2;
-    width: 100%;
+    width: 95vw;
+    height: 35vh;
+    min-height: 35vh;
 
   }
 
