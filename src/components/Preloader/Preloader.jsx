@@ -15,7 +15,7 @@ function Preloader(props) {
       if (counter < limit) {
         setTimeout(() => {
           setCounter(counter + 10);
-        }, 1);
+        }, 100);
       } else {
         setCounter(limit);
       }
