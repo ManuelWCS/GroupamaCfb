@@ -8,7 +8,11 @@ import { Link } from "react-router-dom";
 /* VERSIONS CSS */
 import "./Preloader.css";
 import "./Preloader.mobile.css";
-import "./Preloader.tablet.css"
+import "./Preloader.tablet.css";
+import "./Preloader.bigTablet.css";
+import "./Preloader.desktop.css";
+import "./Preloader.bigscreen.css";
+
 
 function Preloader(props) {
   let limit = 541;
