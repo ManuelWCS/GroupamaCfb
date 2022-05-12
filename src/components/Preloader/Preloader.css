@@ -55,6 +55,7 @@
   padding-top: var(--spacing-small);
   letter-spacing: 6px;
 }
+
 .LandingTitle4 {
   font-size: calc(var(--main-fontSize) * 1);
   letter-spacing: 1px;
@@ -102,7 +103,12 @@
 }
 
 @media screen and (max-width: 480px) {
-  
+  .generalWrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
   .FullLanding {
     display: flex;
     flex-direction: column;
@@ -124,6 +130,7 @@
     z-index: 2;
     position: static;
   }
+
   .LandingTitlesContainer {
     background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
     background-repeat: no-repeat;
@@ -234,7 +241,7 @@
     font-style: bold;
     font-size: calc(var(--main-fontSize) * 1);
   }
- 
+
 
   .myButton {
     box-shadow: inset -6px -8px 28px 5px #3586c2;
@@ -252,10 +259,12 @@
     text-shadow: 1px 3px 1px #263666;
     margin-bottom: 32px;
   }
+
   .myButton:hover {
     background: linear-gradient(to bottom, #3586c2 5%, #3586c2 100%);
     background-color: #3586c2;
   }
+
   .myButton:active {
     position: relative;
     top: 1px;
@@ -263,6 +272,10 @@
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
+
+  .generalWrapper {
+    height: 100vh;
+  }
 
   /* HEADER PRELOAD */
 
@@ -286,20 +299,21 @@
     flex-direction: column;
     width: 95%;
     height: 80vh;
-    margin:auto;
+    margin: auto;
   }
 
-  
+
   .LandingTitlesContainer {
     background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
     background-repeat: no-repeat;
     background-size: contain;
-    background-position:center;
+    background-position: center;
     height: 45vh;
     width: 95%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: calc(64px + 1vh)
   }
 
   .BiggestTitle {
@@ -307,6 +321,9 @@
   }
 
   .LogoPlateforme {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+
     height: 250px;
     width: 250px;
   }
@@ -372,7 +389,57 @@
     font-size: calc(var(--main-fontSize) * 1);
   }
 
-  
+  .LinkContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+  }
+
+
+  .myButton {
+    box-shadow: inset -6px -8px 28px 5px #3586c2;
+    background: linear-gradient(to bottom, #3586c2 5%, #3586c2 100%);
+    background-color: #2e466e;
+    border-radius: 17px;
+    border: 1px solid white;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: var(--secondary-font);
+    font-size: 22px;
+    padding: 13px 37px;
+    text-decoration: none;
+    text-shadow: 1px 3px 1px #263666;
+    margin-bottom: 32px;
+  }
+
+  .myButton:hover {
+    background: linear-gradient(to bottom, #3586c2 5%, #3586c2 100%);
+    background-color: #3586c2;
+  }
+
+  .myButton:active {
+    position: relative;
+    top: 1px;
+  }
+
+  .LandingTitle5 {
+    font-size: calc(var(--main-fontSize) * 0.8);
+    letter-spacing: 1px;
+    position: static;
+    font-family: var(--secondary-font);
+    text-align: center;
+    margin-top: 12px;
+    color: var(--secondary-color);
+    word-wrap: break-word;
+    margin-bottom: 32px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
