@@ -68,7 +68,6 @@
   align-items: center;
 }
 
-
 .LinkContainer {
   margin: auto;
   bottom: 20%;
@@ -102,13 +101,13 @@
 }
 
 @media screen and (max-width: 480px) {
-  
   .FullLanding {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 80vh;
+    min-height: 80vh;
   }
 
   .headerPreload {
@@ -130,6 +129,7 @@
     background-size: contain;
     width: 95vw;
     height: 40vh;
+    min-height: 40vh;
   }
 
   .LandingTitlesContainer {
@@ -234,7 +234,6 @@
     font-style: bold;
     font-size: calc(var(--main-fontSize) * 1);
   }
- 
 
   .myButton {
     box-shadow: inset -6px -8px 28px 5px #3586c2;
@@ -263,7 +262,6 @@
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-
   /* HEADER PRELOAD */
 
   .headerPreload {
@@ -286,15 +284,14 @@
     flex-direction: column;
     width: 95%;
     height: 80vh;
-    margin:auto;
+    margin: auto;
   }
 
-  
   .LandingTitlesContainer {
     background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
     background-repeat: no-repeat;
     background-size: contain;
-    background-position:center;
+    background-position: center;
     height: 45vh;
     width: 95%;
     display: flex;
@@ -303,14 +300,13 @@
   }
 
   .BiggestTitle {
-    margin-top: calc(var(--spacing-large)*3);
+    margin-top: calc(var(--spacing-large) * 3);
   }
 
   .LogoPlateforme {
     height: 250px;
     width: 250px;
   }
-
 
   .counterNumber {
     font-size: calc(var(--main-fontSize) * 8);
@@ -345,7 +341,6 @@
     word-wrap: break-word;
     padding-right: 16px;
     padding-left: 16px;
-
   }
 
   .background {
@@ -371,8 +366,6 @@
     font-style: bold;
     font-size: calc(var(--main-fontSize) * 1);
   }
-
-  
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
