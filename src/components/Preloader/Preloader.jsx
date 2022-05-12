@@ -32,12 +32,12 @@ function Preloader(props) {
 
   return (
     <>
-      <div className="FullLanding">
         <div className="headerPreload">
           <Link to="/">
             <img src={ecussonLigue} className="headerLogo" alt="logo" />
           </Link>
         </div>
+      <div className="FullLanding">
         <div className="LandingTitlesContainer">
           <div className="BiggestTitle">
             <div className="firstLine">
