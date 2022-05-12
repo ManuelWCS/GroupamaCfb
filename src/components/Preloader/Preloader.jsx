@@ -32,6 +32,8 @@ function Preloader(props) {
 
   return (
     <>
+    <div className="generalWrapper">
+
         <div className="headerPreload">
           <Link to="/">
             <img src={ecussonLigue} className="headerLogo" alt="logo" />
@@ -75,6 +77,8 @@ function Preloader(props) {
           Plateforme dévéloppée par la Ligue du Centre-Val de Loire de Football{" "}
         </h4>
       </div>
+      </div>
+
     </>
   );
 }

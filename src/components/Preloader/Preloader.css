@@ -102,12 +102,20 @@
 }
 
 @media screen and (max-width: 480px) {
+  .generalWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+
+  }
   .FullLanding {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    /* height: 80vh; */
   }
 
   .headerPreload {
@@ -115,8 +123,7 @@
     display: flex;
     justify-content: center;
     margin-top: 16px;
-    /* margin-bottom: 64px; */
-    margin-bottom:115px;
+    margin-bottom: 64px;
   }
 
   .headerLogo {
@@ -129,10 +136,11 @@
     background-repeat: no-repeat;
     background-size: contain;
     width: 95vw;
+    height: 40vh;
   }
 
   .LandingTitlesContainer {
-    height: 300px;
+    /* height: 300px; */
     width: 300px;
     margin-top: 8px;
     margin-bottom: 8px;
