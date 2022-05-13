@@ -1,17 +1,16 @@
-@import url('../../App.css');
+@import url('../../../App.css');
 @import url('./Preloader.css');
 
 
 
-@media screen and (min-width: 1281px) {
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
     .LandingTitlesContainer {
-      background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
+      background-image: url("../../../assets/CompressedPictures/Logos/BACKGROUND.png");
       background-repeat: no-repeat;
       background-size: contain;
       height: 300px;
       width: 300px;
       position: static;
-      
     }
   
     .LandingTitlesContainer {
@@ -45,6 +44,5 @@
       display: none;
     }
   
-  
-  
   }
+  

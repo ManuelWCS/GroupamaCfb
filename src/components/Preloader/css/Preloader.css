@@ -1,7 +1,7 @@
-@import url("../../App.css");
+@import url('../../../App.css');
 
 .FullLanding {
-  height: 100vh;
+  height: 80vh;
   width: 100vw;
   position: relative;
   display: flex;
@@ -77,6 +77,32 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.LogoPlateforme {
+  animation : rotation 3s linear;
+
+
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(20deg);
+  }
+
+  70% {
+    transform: rotate(20deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 

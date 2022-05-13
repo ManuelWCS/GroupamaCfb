@@ -6,13 +6,12 @@ import { Link } from "react-router-dom";
 
 
 /* VERSIONS CSS */
-import "./Preloader.css";
-import "./Preloader.mobile.css";
-import "./Preloader.tablet.css";
-import "./Preloader.bigTablet.css";
-import "./Preloader.desktop.css";
-import "./Preloader.bigscreen.css";
-
+import "./css/Preloader.css";
+import "./css/Preloader.mobile.css";
+import "./css/Preloader.tablet.css";
+import "./css/Preloader.bigTablet.css";
+import "./css/Preloader.desktop.css";
+import "./css/Preloader.bigscreen.css";
 
 function Preloader(props) {
   let limit = 541;
@@ -26,7 +25,7 @@ function Preloader(props) {
           setCounter(counter + 5);
         }, 1);
       } else {
-        setCounter(limit);
+        stop();
       }
     }
   }

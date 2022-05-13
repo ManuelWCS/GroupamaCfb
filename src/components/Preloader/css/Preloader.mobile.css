@@ -1,88 +1,79 @@
-@import url('../../App.css');
+@import url('../../../App.css');
 @import url('./Preloader.css');
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
-
+@media screen and (max-width: 480px) {
     .generalWrapper {
       height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
   
-    /* HEADER PRELOAD */
+    .FullLanding {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
   
     .headerPreload {
       width: 100%;
       display: flex;
       justify-content: center;
-      align-items: center;
       margin-top: 16px;
-      height: 20vh;
+      margin-bottom: 64px;
     }
   
     .headerLogo {
-      width: 124px;
+      width: 84px;
+      z-index: 2;
+      position: static;
     }
-  
-    /* FullLanding : contient le reste des élements */
-  
-    .FullLanding {
-      display: flex;
-      flex-direction: column;
-      width: 95%;
-      height: 80vh;
-      margin: auto;
-    }
-  
   
     .LandingTitlesContainer {
-      background-image: url("../../assets/CompressedPictures/Logos/BACKGROUND.png");
+      background-image: url("../../../assets/CompressedPictures/Logos/BACKGROUND.png");
       background-repeat: no-repeat;
       background-size: contain;
-      background-position: center;
-      height: 45vh;
-      width: 95%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin-top: calc(64px + 1vh)
+      width: 95vw;
+      height: 40vh;
+    }
+  
+    .LandingTitlesContainer {
+      /* height: 300px; */
+      width: 300px;
+      margin-top: 8px;
+      margin-bottom: 8px;
     }
   
     .BiggestTitle {
-      margin-top: calc(var(--spacing-large)*3);
+      margin-top: var(--spacing-large);
     }
-  
-    .LogoPlateforme {
-      margin-top: 1vh;
-      margin-bottom: 1vh;
-  
-      height: 250px;
-      width: 250px;
-    }
-  
   
     .counterNumber {
-      font-size: calc(var(--main-fontSize) * 8);
+      font-size: calc(var(--main-fontSize) * 6);
       position: static;
     }
   
     .LandingTitle {
-      font-size: calc(var(--main-fontSize) * 5);
+      font-size: calc(var(--main-fontSize) * 3);
       position: static;
     }
   
     .LandingTitle2 {
-      font-size: calc(var(--main-fontSize) * 3.2);
+      font-size: calc(var(--main-fontSize) * 2);
       margin-top: -16px;
       letter-spacing: 8px;
       position: static;
     }
   
     .LandingTitle3 {
-      font-size: calc(var(--main-fontSize) * 1.5);
+      font-size: calc(var(--main-fontSize) * 1);
       letter-spacing: 1px;
+      position: static;
     }
   
     .LandingTitle4 {
-      font-size: calc(var(--main-fontSize) * 1);
+      font-size: calc(var(--main-fontSize) * 0.8);
       letter-spacing: 1px;
       position: static;
       font-family: var(--secondary-font);
@@ -92,7 +83,20 @@
       word-wrap: break-word;
       padding-right: 16px;
       padding-left: 16px;
+    }
   
+    .LandingTitle5 {
+      font-size: calc(var(--main-fontSize) * 0.8);
+      letter-spacing: 1px;
+      position: static;
+      font-family: var(--secondary-font);
+      text-align: center;
+      margin-top: 12px;
+      color: var(--secondary-color);
+      word-wrap: break-word;
+      margin-bottom: 32px;
+      padding-right: 16px;
+      padding-left: 16px;
     }
   
     .background {
@@ -106,6 +110,16 @@
       align-items: center;
       width: 95vw;
     }
+  
+    .LogoPlateforme {
+      margin-top: 32px;
+      height: 210px;
+      width: 230px;
+      margin-bottom: 32px;
+
+    }
+  
+  
   
   
     .myButton {
@@ -134,21 +148,5 @@
       position: relative;
       top: 1px;
     }
-  
-    .LandingTitle5 {
-      font-size: calc(var(--main-fontSize) * 0.8);
-      letter-spacing: 1px;
-      position: static;
-      font-family: var(--secondary-font);
-      text-align: center;
-      margin-top: 12px;
-      color: var(--secondary-color);
-      word-wrap: break-word;
-      margin-bottom: 32px;
-      padding-right: 16px;
-      padding-left: 16px;
-    }
-  
-  
   }
-  
+
