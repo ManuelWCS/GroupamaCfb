@@ -10,7 +10,6 @@
     background-attachment: fixed;
     background-position: center;
     background-image: url("../../assets/TEST/bandesdeTypeBlanc.png");
-
   }
   html,
   body {
@@ -88,13 +87,6 @@
     z-index: -1;
     position: relative;
   }
-
-
-  
- 
-
-
- 
 
   .instructionsTitle {
     font-size: calc(var(--main-fontSize) * 2);
@@ -188,7 +180,6 @@
     height: 161px;
   }
 
-
   .mapContainer {
     width: 95vw;
     display: flex;
@@ -265,7 +256,6 @@
     right: 18%;
     width: 150px;
     top: 48.5%;
-
   }
 
   .popover2 {
@@ -274,7 +264,6 @@
     top: 48.5%;
     left: 5%;
     width: 150px;
-
   }
 
   /* STYLES DES POPOVERS LARGEUR BOUTONS MOBILE */
@@ -357,7 +346,7 @@
   .Result {
     font-family: var(--secondary-font);
     text-align: center;
-    padding-top:var(--spacing-medium);
+    padding-top: var(--spacing-medium);
     padding-bottom: var(--spacing-small);
     font-size: 40px;
   }
@@ -495,21 +484,15 @@
     justify-content: space-around;
     height: 250px;
   }
-
-
-
 }
 
 @media screen and (min-width: 1550px) {
-
-
   .popover {
     position: absolute;
     z-index: 5;
     right: 18%;
     width: 150px;
     top: 42%;
-
   }
 
   .popover2 {
@@ -518,6 +501,5 @@
     top: 42%;
     left: 5%;
     width: 150px;
-
   }
 }

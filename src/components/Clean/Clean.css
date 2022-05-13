@@ -186,15 +186,15 @@
   .popover {
     position: absolute;
     z-index: 3;
-    right: 2%;
-    top: 9%;
+    right: 5%;
+    top:20vh;
   }
 
   .popover2 {
     position: absolute;
     z-index: 3;
-    left: 5%;
-    top: 4%;
+    left: 9%;
+    top:20vh;
   }
 
   .Result {
