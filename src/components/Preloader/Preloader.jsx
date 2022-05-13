@@ -12,6 +12,7 @@ import "./css/Preloader.tablet.css";
 import "./css/Preloader.bigTablet.css";
 import "./css/Preloader.desktop.css";
 import "./css/Preloader.bigscreen.css";
+import "./css/Preloader.bigdesktop.css";
 
 function Preloader(props) {
   let limit = 541;
