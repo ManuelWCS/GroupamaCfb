@@ -1,50 +1,145 @@
-@import url('../../../App.css');
-@import url('./Preloader.css');
-
-
+@import url("../../../App.css");
+@import url("./Preloader.css");
 
 @media screen and (min-width: 1281px) {
-    .LandingTitlesContainer {
-      background-image: url("../../../assets/CompressedPictures/Logos/BACKGROUND.png");
-      background-repeat: no-repeat;
-      background-size: contain;
-      height: 300px;
-      width: 300px;
-      position: static;
-      
-    }
-  
-    .LandingTitlesContainer {
-      margin-top: -20px;
-    }
-  
-    .counterNumber {
-      font-size: calc(var(--main-fontSize) * 6);
-      position: static;
-    }
-  
-    .LandingTitle {
-      font-size: calc(var(--main-fontSize) * 3);
-      position: static;
-    }
-  
-    .LandingTitle2 {
-      font-size: calc(var(--main-fontSize) * 2);
-      margin-top: -16px;
-      letter-spacing: 8px;
-      position: static;
-    }
-  
-    .LandingTitle3 {
-      font-size: calc(var(--main-fontSize) * 1);
-      letter-spacing: 1px;
-      position: static;
-    }
-  
-    .background {
-      display: none;
-    }
-  
-  
-  
+  /* HEADER */
+  .generalWrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
   }
+
+  /* HEADER ET ECUSSSON */
+  .headerPreload {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .headerLogo {
+    width: 160px;
+    margin-top: 1vh;
+  }
+
+  .FullLanding {
+    height: 80vh;
+  }
+
+  .LandingTitlesContainer {
+    background-image: url("../../../assets/CompressedPictures/Logos/BACKGROUND.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 35vh;
+    width: 95vw;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0vh;
+  }
+
+  .BiggestTitle {
+    margin-top: 10vh;
+  }
+
+  .counterNumber {
+    font-size: calc(var(--main-fontSize) * 10);
+    position: static;
+  }
+
+  .LandingTitle {
+    font-size: calc(var(--main-fontSize) * 6);
+    position: static;
+  }
+
+  .LandingTitle2 {
+    font-size: calc(var(--main-fontSize) * 4);
+    letter-spacing: 13px;
+    position: static;
+  }
+
+  .LandingTitle3 {
+    font-size: calc(var(--main-fontSize) * 2);
+    letter-spacing: 1px;
+    position: static;
+  }
+
+  .LandingTitle4 {
+    font-size: calc(var(--main-fontSize) * 1.4);
+    letter-spacing: 1px;
+    position: static;
+    font-family: var(--secondary-font);
+    text-align: center;
+    margin-top: 1vh;
+    color: var(--secondary-color);
+    word-wrap: break-word;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .LandingTitle5 {
+    font-size: calc(var(--main-fontSize) * 1);
+    letter-spacing: 1px;
+    position: static;
+    font-family: var(--secondary-font);
+    text-align: center;
+    margin-top: 12px;
+    color: var(--secondary-color);
+    word-wrap: break-word;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+  }
+
+  .background {
+    display: none;
+  }
+
+  /* Container Logo + Bouton */
+  .LinkContainer {
+    display: flex;
+    flex-direction: column;
+    height: 15vh;
+    justify-content: space-around;
+  }
+
+  .LogoPlateforme {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    height: calc(200px + 1vh);
+    width: calc(220px + 1vw);
+  }
+
+  /* BOUTON ACCÈDER*/
+
+  .myButton {
+    box-shadow: inset -6px -8px 28px 5px #3586c2;
+    background: linear-gradient(to bottom, #3586c2 5%, #3586c2 100%);
+    background-color: #2e466e;
+    border-radius: 17px;
+    border: 1px solid white;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: var(--secondary-font);
+    font-size: 22px;
+    padding: 13px 37px;
+    text-decoration: none;
+    text-shadow: 1px 3px 1px #263666;
+    margin-bottom: 32px;
+  }
+
+  .myButton:hover {
+    background: linear-gradient(to bottom, #3586c2 5%, #3586c2 100%);
+    background-color: #3586c2;
+  }
+
+  .myButton:active {
+    position: relative;
+    top: 1px;
+  }
+}
