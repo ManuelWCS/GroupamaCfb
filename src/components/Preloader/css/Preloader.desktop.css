@@ -2,6 +2,7 @@
 @import url("./Preloader.css");
 
 @media screen and (min-width: 1025px) and (max-width: 1280px) {
+
   /* HEADER */
   .generalWrapper {
     height: 100vh;
@@ -24,7 +25,7 @@
   }
 
   .FullLanding {
-    height: 82vh;
+    height: 80vh;
   }
 
   .LandingTitlesContainer {
@@ -35,11 +36,11 @@
     height: 40vh;
     width: 95vw;
     position: static;
-    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 0vh
   }
 
   .BiggestTitle {
@@ -105,9 +106,12 @@
     height: 15vh;
     justify-content: space-around;
   }
+
   .LogoPlateforme {
-    height: 250px;
-    width: 250px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    height: calc(200px + 1vh);
+    width: calc(220px + 1vw)
   }
 
   /* BOUTON ACCÈDER*/
