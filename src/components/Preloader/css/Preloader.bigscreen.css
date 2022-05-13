@@ -1,7 +1,7 @@
 @import url("../../../App.css");
 @import url("./Preloader.css");
 
-@media screen and (min-width: 1281px) {
+@media screen and (min-width: 1400px) {
   /* HEADER */
   .generalWrapper {
     height: 100vh;

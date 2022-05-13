@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import LogoCFB from "../../assets/CompressedPictures/Logos/logoplateforme.png";
-import background from "../../assets/CompressedPictures/Logos/BACKGROUND.png";
+import LogoCFB from "../../assets/CompressedPictures/Logos/logoplateforme.webp";
+import background from "../../assets/CompressedPictures/Logos/BACKGROUND.webp";
 import ecussonLigue from "../../assets/CompressedPictures/Logos/LogoLigue.webp";
 import { Link } from "react-router-dom";
 
