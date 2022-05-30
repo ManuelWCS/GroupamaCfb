@@ -5,9 +5,9 @@ function Intructions() {
   return (
     <div className="desktopInstructions">
     <h6 className="instructionsTitle">
-      Entrez votre âge et la compétition souhaitée pour découvrir les
-      clubs à proximité :
+      Avec la plateforme Centre, Frappe et But, vous avez la possibilité de <strong className='fonce'>Découvrir les clubs près de chez vous</strong> (bulle en haut à gauche) ou de <em className='clair'> Trouver un club à proximité </em> correspondant à vos critères de recherche (bulle en haut à droite).
     </h6>
+   
   </div>
 
   )

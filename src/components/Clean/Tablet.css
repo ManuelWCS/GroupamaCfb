@@ -1166,6 +1166,7 @@ A PARTIR DE 480px*/
     border-radius: 30px;
     background-color: var(--secondary-color);
     width: 345px;
+    margin-bottom:8px;
   }
 
   .styleDiv3 {

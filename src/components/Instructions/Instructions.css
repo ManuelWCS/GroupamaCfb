@@ -1,5 +1,15 @@
 @import url("../../App.css");
 
+.fonce {
+  color:var(--secondary-color);
+  font-weight: bold;
+}
+.clair {
+  color:var(--main-color);
+  font-weight: bold;
+
+}
+
 @media screen and (max-width: 480px) {
 
 
@@ -129,7 +139,6 @@
   /* Titre :" Entrez votre age" */
 
   .desktopInstructions {
-    width: max-content;
     height: max-content;
     padding: var(--spacing-small);
     display: flex;
@@ -139,6 +148,7 @@
     align-items: center;
     align-content: center;
     margin: auto;
+    width: 85%;
   }
 
   .instructionsTitle {
@@ -148,6 +158,7 @@
     color: rgb(51, 51, 51);
     margin-top: calc(var(--spacing-large) * 2);
     margin-bottom: 18px;
+    text-align: center;
   }
 
 
@@ -159,7 +170,8 @@
 @media screen and (min-width: 1401px) {
 
   .desktopInstructions {
-    width: max-content;
+    width: 50%;
+
     height: max-content;
     padding: var(--spacing-small);
     display: flex;
@@ -169,6 +181,9 @@
     align-items: center;
     align-content: center;
     margin: auto;
+    width: 100%;
+    margin-top: calc(var(--spacing-large) * 2);
+
   }
 
   .instructionsTitle {
@@ -176,7 +191,10 @@
     font-size: calc(var(--main-fontSize) * 1.8);
     padding-bottom: calc(var(--spacing-medium) * 3);
     color: rgb(51, 51, 51);
-    margin-top: calc(var(--spacing-large) * 2);
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    text-align: center;
   }
 
 

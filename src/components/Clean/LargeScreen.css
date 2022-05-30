@@ -414,6 +414,9 @@
     width: 100%;
     justify-content: center;
     flex-direction: column;
+    height: 10vh;
+    min-height: 10vh;
+    margin-top:50px;
   }
 
   .commandBtn {
@@ -492,14 +495,14 @@
     z-index: 5;
     right: 18%;
     width: 150px;
-    top: 42%;
+    top: 45%;
   }
 
   .popover2 {
     position: absolute;
     z-index: 5;
-    top: 42%;
-    left: 5%;
+    top: 45%;
+    left: 8%;
     width: 150px;
   }
 }
