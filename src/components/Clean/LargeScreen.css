@@ -386,7 +386,7 @@
     font-size: calc(var(--main-fontSize) * 1);
     color: black;
     text-align: end;
-    padding-bottom: 4px;
+    padding-bottom: 6px;
     filter: opacity(60%);
   }
 

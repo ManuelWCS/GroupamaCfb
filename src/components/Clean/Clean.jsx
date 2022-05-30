@@ -402,6 +402,7 @@ function Clean() {
     let RayonCercle = distance + "000";
     setConvertedDistance(distance / 115);
     setRayon(RayonCercle);
+    console.log(convertedDistance)
   }
 
   const hideMarkers = () => {

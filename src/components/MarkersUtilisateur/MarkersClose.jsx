@@ -22,7 +22,6 @@ function MarkersClose(props) {
         clubProximite.Longitude <= position.coordinates.lng + props.distance &&
         clubProximite.Longitude >= position.coordinates.lng - props.distance
       );
-
     }
     else {
       return null ;
@@ -36,6 +35,8 @@ function MarkersClose(props) {
     console.log(clubProche)
   }, [position]);
 
+
+  
   const clubMarqueurLabel = L.icon({
     iconSize: [57, 58],
     iconAnchor: [13.5, 47],
