@@ -1,30 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Description.css";
 
 function Description() {
-  let limit = 541;
 
-  const [counter, setCounter] = useState(0);
-
-  function increment() {
-    for (let i = 0; i < limit; i++) {
-      if (counter < limit) {
-        setTimeout(() => {
-          setCounter(counter + 10);
-        }, 1);
-      } else {
-        setCounter(limit);
-      }
-    }
-  }
-  // function thaht make the counter stops at the limit
-  function stop() {
-    setCounter(limit);
-  }
-
-  useEffect(() => {
-    increment();
-  }, [counter]);
   return (
     <div className="descriptionContainer">
       <h2 className="mainDescription">

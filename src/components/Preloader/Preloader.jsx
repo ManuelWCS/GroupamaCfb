@@ -37,7 +37,7 @@ function Preloader(props) {
 
   useEffect(() => {
     increment();
-  }, [counter]);
+  }, [counter, ]);
 
   return (
     <>

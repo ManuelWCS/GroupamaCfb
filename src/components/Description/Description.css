@@ -137,7 +137,9 @@
         width: 80vw;
         margin-right: 10vw;
         margin-left: 10vw;
-        height: 120px;
+        height: 150px;
+        margin-top: 10px;
+
         
       }
       .mainDescription {
@@ -151,8 +153,7 @@
 
 @media screen and (min-width: 1194px) and (max-width: 1400px) {
     .descriptionContainer {
-        margin-top: 0px;
-        position: relative;
+       
 
       }
 }

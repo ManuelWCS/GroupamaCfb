@@ -67,7 +67,7 @@
     background-attachment: fixed;
     background-position: center 65%;
     background-image: url("../../assets/TEST/bandesdeTypeBlanc.png");
-    margin-top: -15.5px;
+    margin-top: -3px;
   }
 
   .fullApp {
@@ -113,7 +113,7 @@
   /*CONTAINER QUI CONTIENT LA MAP ET LE FORM  */
 
   .mainContainer {
-    width: 92vw;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -126,7 +126,7 @@
 
   #map {
     height: 100vh;
-    width: 92vw;
+    width: 100vw;
     position: absolute;
     z-index: 1;
     margin: auto;
@@ -567,14 +567,28 @@
     align-items: center;
     margin: 0 auto;
     margin-bottom: 16px;
-    border: 1px solid black;
     background-color: white;
-    animation: grow 10s ease-in-out;
+  }
+  .containerResult::-webkit-scrollbar {
+    width: 8px;
+    /* width of the entire scrollbar */
+  }
+
+  .containerResult::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+    /* color of the scroll thumb */
+  }
+
+  .containerResult::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 8px solid #293d6b;
+    /* creates padding around scroll thumb */
   }
 
   .containerResult {
-    background-color: palevioletred;
-    height: 500px;
+    background-color: white;
+    height: 585px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -583,8 +597,25 @@
 
   .resultContainer {
     height: 450px;
-    overflow: auto;
+    overflow:  auto;
     width: 100%;
+  }
+
+  .resultContainer::-webkit-scrollbar {
+    width: 8px;
+    /* width of the entire scrollbar */
+  }
+
+  .resultContainer::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+    /* color of the scroll thumb */
+  }
+
+  .resultContainer::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 8px solid #293d6b;
+    /* creates padding around scroll thumb */
   }
 
   /* Style à l'intérieur des toggle */
@@ -643,7 +674,9 @@
 
 @media screen and (min-width: 1194px) and (max-width: 1400px) {
   .mainContainer {
-    width: 93vw;
+    width: 100vw;
+    min-width: 100vw;
+    height: 100vh;
     margin: auto;
     height: 800px;
     display: flex;
