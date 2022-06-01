@@ -42,7 +42,7 @@ function Preloader(props) {
     <>
       <div className="generalWrapper">
         <div className="headerPreload">
-          <Link to="/trouvetonclub">
+          <Link to="/">
             <img
               src={LogoCFB}
               alt="logo Centre Frappe & But"
@@ -68,24 +68,28 @@ function Preloader(props) {
                 </h4>
               </div>
               <h4 className="LandingTitle4">
-                La Ligue Centre-Val de Loire de Football vous propose cette plateforme afin de découvrir l'ensembles des clubs de notre région !
+                La Ligue Centre-Val de Loire de Football vous propose cette
+                plateforme afin de découvrir l'ensembles des clubs de notre
+                région !
               </h4>
             </div>
           </div>
 
           <div className="LinkContainer">
-            <Link to="/trouvetonclub">
-              <button className="myButton">ACCÈDER</button>
+            <h6 className="LandingTitle6">
+              Accèdez à la carte avec deux options :
+            </h6>
+            <Link to="/">
+              <button className="myButton">CLUBS A PROXIMITIÉ</button>
             </Link>
             <Link to="/">
-              <img src={ecussonLigue} className="headerLogo" alt="logo" />
+              <button className="myButton2">CLUBS SELON MES CRITÈRES</button>
             </Link>
           </div>
-          {/* <h4 className="LandingTitle5">
-            {" "}
-            Plateforme dévéloppée par la Ligue Centre-Val de Loire de
-            Football{" "}
-          </h4> */}
+
+          <Link to="/">
+            <img src={ecussonLigue} className="headerLogo" alt="logo" />
+          </Link>
         </div>
       </div>
     </>

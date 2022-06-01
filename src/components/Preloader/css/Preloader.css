@@ -29,6 +29,7 @@
   font-size: calc(var(--main-fontSize) * 12);
   padding-right: var(--spacing-small);
   position: static;
+  color: var(--secondary-color)
 }
 
 .background {
@@ -43,6 +44,8 @@
 .LandingTitle {
   font-family: var(--secondary-font);
   font-size: calc(var(--main-fontSize) * 5);
+  color: var(--secondary-color)
+
 }
 
 .LandingTitle2 {
@@ -50,13 +53,18 @@
   font-size: calc(var(--main-fontSize) * 4.5);
   letter-spacing: 7px;
   margin-top: -24px;
+  color: var(--secondary-color)
+
 }
 
 .LandingTitle3 {
   font-family: var(--secondary-font);
   font-size: calc(var(--main-fontSize) * 1.4);
   padding-top: var(--spacing-small);
-  letter-spacing: 6px;
+  letter-spacing: 8px;
+  width: 100%;
+  color: black;
+
 }
 
 .LandingTitle4 {
@@ -111,3 +119,31 @@
 
 
 /* BREAKPOINTS MOBILE TABLETTE OK */
+
+
+.myButton2 {
+  box-shadow: inset -6px -8px 28px 5px #c1272d;
+  background: linear-gradient(to bottom, #c1272d 5%, #c1272d 100%);
+  background-color: #2e466e;
+  border-radius: 17px;
+  border: 1px solid white;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: var(--secondary-font);
+  font-size: 16px;
+  padding: 13px 37px;
+  text-decoration: none;
+  text-shadow: 1px 3px 1px #263666;
+  margin-bottom: 16px;
+}
+
+.myButton2:hover {
+  background: linear-gradient(to bottom, #c1272d 5%, #c1272d 100%);
+  background-color: #c1272d;
+}
+
+.myButton2:active {
+  position: relative;
+  top: 1px;
+}
