@@ -29,7 +29,7 @@
   }
 
   .LandingTitlesContainer {
-    background-image: url("../../../assets/CompressedPictures/Logos/BACKGROUND.png");
+    background-image: url("../../../assets/Juin/BackgroundBonneCouleur.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -78,7 +78,6 @@
     font-family: var(--secondary-font);
     text-align: center;
     margin-top: 1vh;
-    color: var(--secondary-color);
     word-wrap: break-word;
     padding-right: 16px;
     padding-left: 16px;

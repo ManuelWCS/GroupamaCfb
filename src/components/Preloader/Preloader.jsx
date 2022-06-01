@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import LogoCFB from "../../assets/CompressedPictures/Logos/logoplateforme.webp";
-import background from "../../assets/CompressedPictures/Logos/BACKGROUND.webp";
 import ecussonLigue from "../../assets/CompressedPictures/Logos/LogoLigue.webp";
 import { Link } from "react-router-dom";
+import background from "../../assets/Juin/BackgroundBonneCouleur.png";
 
 /* VERSIONS CSS */
 import "./css/Preloader.css";
@@ -54,7 +54,7 @@ function Preloader(props) {
           <div className="LandingTitlesContainer">
             <div className="BiggestTitle">
               <div className="firstLine">
-                <img src={background} className="background" alt="background" />
+                {/* <img src={background} className="background" alt="background" /> */}
                 <h1 className="counterNumber">{counter}</h1>
                 <h2 className="LandingTitle">CLUBS</h2>
               </div>
@@ -68,8 +68,7 @@ function Preloader(props) {
                 </h4>
               </div>
               <h4 className="LandingTitle4">
-                {" "}
-                TROUVEZ UN CLUB PRÈS DE CHEZ VOUS{" "}
+                La Ligue Centre-Val de Loire de Football vous propose cette plateforme afin de découvrir l'ensembles des clubs de notre région !
               </h4>
             </div>
           </div>
@@ -82,11 +81,11 @@ function Preloader(props) {
               <img src={ecussonLigue} className="headerLogo" alt="logo" />
             </Link>
           </div>
-          <h4 className="LandingTitle5">
+          {/* <h4 className="LandingTitle5">
             {" "}
-            Plateforme dévéloppée par la Ligue du Centre-Val de Loire de
+            Plateforme dévéloppée par la Ligue Centre-Val de Loire de
             Football{" "}
-          </h4>
+          </h4> */}
         </div>
       </div>
     </>
