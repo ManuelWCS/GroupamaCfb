@@ -7,8 +7,16 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: baseline;
+  }
+
+  .FullLanding {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 95%;
+    height: 80vh;
+    margin: auto;
   }
 
   /* HEADER ET ECUSSSON */
@@ -18,15 +26,17 @@
     justify-content: center;
     ;
   }
+  .LogoPlateforme { 
+    height: 150px;
+    width: 180px;
+    }
+  
 
   .headerLogo {
     width: 80px;
-    margin-top: 1vh;
   }
 
-  .FullLanding {
-    height: 80vh;
-  }
+
 
   .LandingTitlesContainer {
     background-image: url("../../../assets/Juin/BackgroundBonneCouleur.png");
@@ -34,38 +44,37 @@
     background-size: contain;
     background-position: center;
     height: 30vh;
-    width: 95vw;
-    position: static;
+    width: 100vw;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 0vh;
+    margin-top: 0px;
+    margin-bottom: 0px;
     
   }
 
   .BiggestTitle {
-    margin-top: 10vh;
+    margin-top: calc(var(--spacing-large) * 3);
   }
 
   .counterNumber {
-    font-size: calc(var(--main-fontSize) * 7);
+    font-size: calc(var(--main-fontSize) * 10);
     position: static;
   }
 
   .LandingTitle {
-    font-size: calc(var(--main-fontSize) * 4);
+    font-size: calc(var(--main-fontSize) * 6);
     position: static;
   }
 
   .LandingTitle2 {
-    font-size: calc(var(--main-fontSize) * 2);
-    letter-spacing: 16px;
+    font-size: calc(var(--main-fontSize) * 3);
+    letter-spacing: 20px;
     position: static;
   }
 
   .LandingTitle3 {
-    font-size: calc(var(--main-fontSize) * 1.5);
+    font-size: calc(var(--main-fontSize) * 2);
     letter-spacing: 1px;
     position: static;
     
@@ -110,12 +119,17 @@
     
   }
 
-  .LogoPlateforme {
-    margin-bottom: 1vh;
-    height: calc(98px + 1vh);
-    width: calc(98px + 1vw);
-    margin-top:16px;
-    
+  
+   /* Images dans les boutons */
+
+   .Loupe {
+    height: 18px;
+    width: 18px;
+  }
+
+  .Loc {
+    height: 22px;
+    width: 22px;
   }
 
   /* BOUTON ACCÈDER*/
