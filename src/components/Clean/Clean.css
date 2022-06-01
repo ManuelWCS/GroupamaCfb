@@ -672,18 +672,3 @@
 
 /* Breakpoints pour garder en place l'image */
 
-@media screen and (min-width: 1194px) and (max-width: 1400px) {
-  .mainContainer {
-    width: 100vw;
-    min-width: 100vw;
-    height: 100vh;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .bannerContainer {
-    width: 92%;
-  }
-}

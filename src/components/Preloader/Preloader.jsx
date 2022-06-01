@@ -13,8 +13,8 @@ import "./css/Preloader.bigscreen.css";
 import "./css/Preloader.bigdesktop.css";
 
 /* IMPORT DES IMAGES DANS LES BOUTONS */
-import Loc from '../../assets/Juin/Loc.png';
-import Loupe from '../../assets/Juin/Loupe.png';
+import Loc from "../../assets/Juin/Loc.png";
+import Loupe from "../../assets/Juin/Loupe.png";
 
 function Preloader(props) {
   let limit = 541;
@@ -81,31 +81,24 @@ function Preloader(props) {
             <h6 className="LandingTitle6">
               Accèdez à la carte avec deux options :
             </h6>
+              <div className="rowBtn">
             <Link to="/">
-              
               <button className="myButton2">
-              <div className="BtnContainer">
-              <img src={Loc} alt="Loupe" className="Loc"></img>
-              <p className="btnText">
-
-                CLUBS A PROXIMITÉ </p>
-                </div>               
-                
-                </button>
+                <div className="BtnContainer">
+                  <img src={Loc} alt="Loupe" className="Loc"></img>
+                  <p className="btnText">CLUBS A PROXIMITÉ </p>
+                </div>
+              </button>
             </Link>
             <Link to="/">
               <button className="myButton">
                 <div className="BtnContainer2">
-
-                <img src={Loupe} alt="Loupe" className="Loupe"></img>
-                <p className="btnText">
-
-                CLUBS SELON MES CRITÈRES
-                </p>
+                  <img src={Loupe} alt="Loupe" className="Loupe"></img>
+                  <p className="btnText">CLUBS SELON MES CRITÈRES</p>
                 </div>
-                
-                </button>
+              </button>
             </Link>
+              </div>
           </div>
           <Link to="/">
             <img src={ecussonLigue} className="headerLogo" alt="logo" />

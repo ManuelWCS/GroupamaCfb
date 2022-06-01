@@ -15,31 +15,36 @@
       align-items: center;
       height: 80vh;
     }
+      /* HEADER PRELOAD */
+
   
     .headerPreload {
       width: 100%;
       display: flex;
       justify-content: center;
+      align-items: center;
       margin-top: 16px;
       margin-bottom: 16px;
+    }
+
+
+    .LogoPlateforme {
+      height: 110px;
+      width: 130px;
     }
   
     .headerLogo {
       width: 84px;
-      z-index: 2;
       margin-bottom: 22px;
     }
+
+      /* LandingTitlesContainer : contient le reste des élements */
   
     .LandingTitlesContainer {
       background-image: url("../../../assets/Juin/BackgroundBonneCouleur.png");
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
-      width: 100vw;
-      height: 40vh;
-    }
-  
-    .LandingTitlesContainer {
       width: 100vw;
       margin-top: 0px;
       margin-bottom: 0px;
@@ -49,19 +54,25 @@
       margin-right: auto;
     }
   
+    /* Plus gros titre*/
+
     .BiggestTitle {
       margin-top: var(--spacing-large);
     }
-  
+    /* 541 chiffre */
+
     .counterNumber {
       font-size: calc(var(--main-fontSize) * 6);
       position: static;
     }
-  
+    /* CLUBS */
+
     .LandingTitle {
       font-size: calc(var(--main-fontSize) * 3);
       position: static;
-    }
+    }    
+    
+    /* DE FOOTBALL */
   
     .LandingTitle2 {
       font-size: calc(var(--main-fontSize) * 2);
@@ -98,14 +109,12 @@
       font-weight: bold;
       color:var(--secondary-color);
       font-family: var(--secondary-font);
-
-
     }
   
-    .background {
-      display: none;
-    }
-  
+      /* FIN GROS TITRES */
+
+ /* Conteneur Boutons et instructions*/
+
     .LinkContainer {
       display: flex;
       flex-direction: column;
@@ -115,11 +124,7 @@
       height: 15vh;
     }
   
-    .LogoPlateforme {
-      height: 110px;
-      width: 130px;
-
-    }
+   
 
     /* Contenu bouton*/
 
@@ -173,6 +178,39 @@
     }
   
     .myButton:active {
+      position: relative;
+      top: 1px;
+    }
+
+    .myButton2 {
+      box-shadow: inset -6px -8px 28px 5px #c1272d;
+      background: linear-gradient(to bottom, #c1272d 5%, #c1272d 100%);
+      background-color: #2e466e;
+      border-radius: 17px;
+      border: 1px solid white;
+      display: inline-block;
+      cursor: pointer;
+      color: #ffffff;
+      font-family: var(--main-font);
+      font-size: 14px;
+      padding: 13px 37px;
+      text-decoration: none;
+      margin-bottom: 16px;
+      width: 286px;
+    
+    }
+    
+    .btnText {
+    padding-left:12px;
+    }
+    
+    
+    .myButton2:hover {
+      background: linear-gradient(to bottom, #c1272d 5%, #c1272d 100%);
+      background-color: #c1272d;
+    }
+    
+    .myButton2:active {
       position: relative;
       top: 1px;
     }
