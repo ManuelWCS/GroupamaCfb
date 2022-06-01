@@ -10,7 +10,8 @@ function App() {
     <>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Clean />} />
+          <Route path="/" element={<Preload />} />
+          <Route path="/trouvetonclub" element={<Clean />} />
         </Routes>
       </div>
     </>

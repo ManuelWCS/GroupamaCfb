@@ -41,6 +41,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 0vh;
+    
   }
 
   .BiggestTitle {
@@ -67,6 +68,7 @@
     font-size: calc(var(--main-fontSize) * 1.5);
     letter-spacing: 1px;
     position: static;
+    
   }
 
   .LandingTitle4 {
@@ -88,11 +90,12 @@
     position: static;
     font-family: var(--secondary-font);
     text-align: center;
-    margin-top: 12px;
+    padding-bottom: 12px;
     color: var(--secondary-color);
     word-wrap: break-word;
     padding-right: 16px;
     padding-left: 16px;
+
   }
 
   .background {
@@ -105,6 +108,7 @@
     flex-direction: column;
     height: 15vh;
     justify-content:space-evenly;
+    
   }
 
   .LogoPlateforme {
@@ -112,6 +116,7 @@
     height: calc(98px + 1vh);
     width: calc(98px + 1vw);
     margin-top:16px;
+    
   }
 
   /* BOUTON ACCÈDER*/

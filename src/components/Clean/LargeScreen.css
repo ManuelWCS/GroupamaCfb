@@ -253,16 +253,16 @@
   .popover {
     position: absolute;
     z-index: 5;
-    right: 18%;
+    right: 20%;
     width: 150px;
-    top: 48.5%;
+bottom: -10vh;
   }
 
   .popover2 {
     position: absolute;
     z-index: 5;
-    top: 48.5%;
-    left: 5%;
+    bottom: -10vh;
+    left: 8%;
     width: 150px;
   }
 
@@ -495,13 +495,13 @@
     z-index: 5;
     right: 18%;
     width: 150px;
-    top: 45%;
+    bottom: -10vh;
   }
 
   .popover2 {
     position: absolute;
     z-index: 5;
-    top: 45%;
+    bottom: -10vh;
     left: 8%;
     width: 150px;
   }

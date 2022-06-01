@@ -99,11 +99,11 @@
     position: static;
     font-family: var(--secondary-font);
     text-align: center;
-    margin-top: 12px;
     color: var(--secondary-color);
     word-wrap: break-word;
     padding-right: 16px;
     padding-left: 16px;
+    padding-bottom: 12px;
 
   }
 
