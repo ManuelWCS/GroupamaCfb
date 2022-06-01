@@ -27,11 +27,11 @@
     .headerLogo {
       width: 84px;
       z-index: 2;
-      position: static;
+      margin-bottom: -16px;
     }
   
     .LandingTitlesContainer {
-      background-image: url("../../../assets/CompressedPictures/Logos/BACKGROUND.png");
+      background-image: url("../../../assets/Juin/BackgroundBonneCouleur.png");
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
@@ -82,7 +82,7 @@
       position: static;
       font-family: var(--secondary-font);
       text-align: center;
-      margin-top: 12px;
+      margin-top: 38px;
       color: var(--secondary-color);
       word-wrap: break-word;
       padding-right: 16px;
@@ -97,6 +97,7 @@
       padding: 8px 8px 8px 8px;
       font-weight: bold;
       color:var(--secondary-color);
+      font-family: var(--secondary-font);
 
 
     }
@@ -108,9 +109,10 @@
     .LinkContainer {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       width: 95vw;
+      height: 15vh;
     }
   
     .LogoPlateforme {
@@ -118,7 +120,33 @@
       width: 130px;
 
     }
-  
+
+    /* Contenu bouton*/
+
+    .BtnContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .BtnContainer2 {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    /* Images dans les boutons */
+
+     .Loupe {
+      height: 18px;
+      width: 18px;
+    }
+    .Loc {
+      height: 22px;
+      width: 22px;
+    }
   
   
   
@@ -131,11 +159,10 @@
       display: inline-block;
       cursor: pointer;
       color: #ffffff;
-      font-family: var(--secondary-font);
-      font-size: 16px;
+      font-family: var(--main-font);
+      font-size: 13.4px;
       padding: 13px 37px;
       text-decoration: none;
-      text-shadow: 1px 3px 1px #263666;
       margin-bottom: 32px;
       width: 286px;
     }

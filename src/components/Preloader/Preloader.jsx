@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import LogoCFB from "../../assets/CompressedPictures/Logos/logoplateforme.webp";
 import ecussonLigue from "../../assets/CompressedPictures/Logos/LogoLigue.webp";
 import { Link } from "react-router-dom";
-import background from "../../assets/Juin/BackgroundBonneCouleur.png";
 
 /* VERSIONS CSS */
 import "./css/Preloader.css";
@@ -12,6 +11,10 @@ import "./css/Preloader.bigTablet.css";
 import "./css/Preloader.desktop.css";
 import "./css/Preloader.bigscreen.css";
 import "./css/Preloader.bigdesktop.css";
+
+/* IMPORT DES IMAGES DANS LES BOUTONS */
+import Loc from '../../assets/Juin/Loc.png';
+import Loupe from '../../assets/Juin/Loupe.png';
 
 function Preloader(props) {
   let limit = 541;
@@ -54,7 +57,6 @@ function Preloader(props) {
           <div className="LandingTitlesContainer">
             <div className="BiggestTitle">
               <div className="firstLine">
-                {/* <img src={background} className="background" alt="background" /> */}
                 <h1 className="counterNumber">{counter}</h1>
                 <h2 className="LandingTitle">CLUBS</h2>
               </div>
@@ -80,13 +82,31 @@ function Preloader(props) {
               Accèdez à la carte avec deux options :
             </h6>
             <Link to="/">
-              <button className="myButton">CLUBS A PROXIMITIÉ</button>
+              
+              <button className="myButton2">
+              <div className="BtnContainer">
+              <img src={Loc} alt="Loupe" className="Loc"></img>
+              <p className="btnText">
+
+                CLUBS A PROXIMITÉ </p>
+                </div>               
+                
+                </button>
             </Link>
             <Link to="/">
-              <button className="myButton2">CLUBS SELON MES CRITÈRES</button>
+              <button className="myButton">
+                <div className="BtnContainer2">
+
+                <img src={Loupe} alt="Loupe" className="Loupe"></img>
+                <p className="btnText">
+
+                CLUBS SELON MES CRITÈRES
+                </p>
+                </div>
+                
+                </button>
             </Link>
           </div>
-
           <Link to="/">
             <img src={ecussonLigue} className="headerLogo" alt="logo" />
           </Link>

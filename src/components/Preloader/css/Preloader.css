@@ -130,13 +130,19 @@
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-family: var(--secondary-font);
-  font-size: 16px;
+  font-family: var(--main-font);
+  font-size: 14px;
   padding: 13px 37px;
   text-decoration: none;
-  text-shadow: 1px 3px 1px #263666;
   margin-bottom: 16px;
+  width: 286px;
+
 }
+
+.btnText {
+padding-left:12px;
+}
+
 
 .myButton2:hover {
   background: linear-gradient(to bottom, #c1272d 5%, #c1272d 100%);

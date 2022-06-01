@@ -1,48 +1,172 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
-	scroll-behavior: smooth;
-
+  line-height: 1;
+  scroll-behavior: smooth;
 }
 
 :root {
-	--main-color: #3586c2;
-	--secondary-color: #293d6b;
-	--red-color: #c1272d;
-	--main-font: "Nuvel";
-	--secondary-font: "Century Gothic";
-	--main-fontSize: 16px;
-	--spacing-small: 8px;
-	--spacing-medium: 16px;
-	--spacing-large: 32px;
-  }
+  --main-color: #3586c2;
+  --secondary-color: #293d6b;
+  --red-color: #c1272d;
+  --main-font: "Nuvel";
+  --secondary-font: "Century Gothic";
+  --main-fontSize: 16px;
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 32px;
+}
+
+/*STYLES DES MARQUEURS */
+
+.marker-cluster-small {
+	background-color: var(--main-color);
+	
+}
+
+.marker-cluster-small div {
+  background-color: var(--main-color);
+	
+}
+
+.myButton {
+	font-family: var(--main-font);
+}
+
+.LandingTitle6 {
+	margin-bottom:24px;
+}
+
+.marker-cluster span {
+	color: white;
+	font-weight: bold;
+	font-family: var(--secondary-font);
+	font-size: calc(var(--main-fontSize) * 1);
+}
+
+.marker-cluster-medium {
+	background-color: var(--secondary-color);	
+}
+	.marker-cluster-medium div {
+background-color: var(--secondary-color);	
+
+}
+
+.marker-cluster span {
+	color: white;
+	font-weight: bold;
+	font-family: var(--secondary-font);
+	font-size: calc(var(--main-fontSize) * 1);
+}
+
+.marker-cluster-large {
+	background-color: var(--red-color)
+	}
+	.marker-cluster-large div {	background-color: var(--red-color)
+
+	}
