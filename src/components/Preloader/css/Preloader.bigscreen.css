@@ -1,14 +1,22 @@
-@import url("../../../App.css");
-@import url("./Preloader.css");
+@import url('../../../App.css');
+@import url('./Preloader.css');
 
-@media screen and (min-width: 1401px) {
-  /* HEADER */
+@media screen and (min-width:1281px) and (max-width:1400px) {
+      /* HEADER */
   .generalWrapper {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: baseline;
+  }
+
+  .FullLanding {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 95%;
+    height: 80vh;
+    margin: auto;
   }
 
   /* HEADER ET ECUSSSON */
@@ -16,34 +24,37 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    ;
   }
+  .LogoPlateforme { 
+    height: 150px;
+    width: 180px;
+    }
+  
 
   .headerLogo {
-    width: 95px;
-    margin-top: 1vh;
+    width: 80px;
   }
 
-  .FullLanding {
-    height: 80vh;
-  }
+
 
   .LandingTitlesContainer {
-    background-image: url("../../../assets/CompressedPictures/Logos/BACKGROUND.png");
+    background-image: url("../../../assets/Juin/BackgroundBonneCouleur.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    height: 35vh;
-    width: 95vw;
-    position: static;
+    height: 30vh;
+    width: 100vw;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 0vh;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    
   }
 
   .BiggestTitle {
-    margin-top: 10vh;
+    margin-top: calc(var(--spacing-large) * 3);
   }
 
   .counterNumber {
@@ -57,8 +68,8 @@
   }
 
   .LandingTitle2 {
-    font-size: calc(var(--main-fontSize) * 4);
-    letter-spacing: 13px;
+    font-size: calc(var(--main-fontSize) * 3);
+    letter-spacing: 20px;
     position: static;
   }
 
@@ -66,51 +77,71 @@
     font-size: calc(var(--main-fontSize) * 2);
     letter-spacing: 1px;
     position: static;
+    
   }
 
   .LandingTitle4 {
-    font-size: calc(var(--main-fontSize) * 1.4);
-    letter-spacing: 1px;
-    position: static;
-    font-family: var(--secondary-font);
-    text-align: center;
-    margin-top: 1vh;
-    word-wrap: break-word;
-    padding-right: 16px;
-    padding-left: 16px;
-  }
-
-  .LandingTitle5 {
     font-size: calc(var(--main-fontSize) * 1);
     letter-spacing: 1px;
     position: static;
     font-family: var(--secondary-font);
     text-align: center;
-    margin-top: 12px;
-    color: var(--secondary-color);
+    margin-top: 1vh;
     word-wrap: break-word;
     padding-right: 16px;
     padding-left: 16px;
-    padding-bottom: 16px;
   }
 
-  .background {
-    display: none;
+  .LandingTitle6 {
+    font-size: calc(var(--main-fontSize) * 1);
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+    padding: 8px 8px 8px 8px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    margin-top: 88px;
+    margin-bottom: 24px;
   }
+
 
   /* Container Logo + Bouton */
-  .LinkContainer {
-    display: flex;
+  .LinkContainer {    display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 95vw;
     height: 15vh;
-    justify-content: space-around;
   }
 
-  .LogoPlateforme {
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    height: calc(200px + 1vh);
-    width: calc(220px + 1vw);
+    /* Contenu bouton*/
+
+    .BtnContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .BtnContainer2 {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  
+
+  
+   /* Images dans les boutons */
+
+   .Loupe {
+    height: 18px;
+    width: 18px;
+  }
+
+  .Loc {
+    height: 22px;
+    width: 22px;
   }
 
   /* BOUTON ACCÈDER*/
@@ -124,12 +155,14 @@
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-family: var(--secondary-font);
-    font-size: 22px;
+    font-family: var(--main-font);
+    font-size: 13.4px;
     padding: 13px 37px;
     text-decoration: none;
-    text-shadow: 1px 3px 1px #263666;
     margin-bottom: 32px;
+    width: 286px;
+    height: 50px;
+    
   }
 
   .myButton:hover {
@@ -140,5 +173,47 @@
   .myButton:active {
     position: relative;
     top: 1px;
+  }
+
+
+  .myButton2 {
+    box-shadow: inset -6px -8px 28px 5px #c1272d;
+    background: linear-gradient(to bottom, #c1272d 5%, #c1272d 100%);
+    background-color: #2e466e;
+    border-radius: 17px;
+    border: 1px solid white;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: var(--main-font);
+    font-size: 14px;
+    padding: 13px 37px;
+    text-decoration: none;
+    margin-bottom: 16px;
+    width: 286px;
+    height: 50px;
+
+  }
+
+  .btnText {
+    padding-left: 12px;
+  }
+
+  .myButton2:hover {
+    background: linear-gradient(to bottom, #c1272d 5%, #c1272d 100%);
+    background-color: #c1272d;
+  }
+
+  .myButton2:active {
+    position: relative;
+    top: 1px;
+  }
+  .rowBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    margin-top:16px;
+    width: 70%;
   }
 }
