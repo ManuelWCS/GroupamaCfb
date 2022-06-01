@@ -86,7 +86,7 @@ function Preloader(props) {
               <button className="myButton2">
                 <div className="BtnContainer">
                   <img src={Loc} alt="Loupe" className="Loc"></img>
-                  <p className="btnText">CLUBS A PROXIMITÉ </p>
+                  <p className="btnText">CLUBS Á PROXIMITÉ </p>
                 </div>
               </button>
             </Link>

@@ -1,19 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 @import url("../Map/fonts.css");
-
+@import url("../../App.css");
 /* VARIABLES CSS CHARTE GRAPHIQUE  */
 
-:root {
-  --main-color: #3586c2;
-  --secondary-color: #293d6b;
-  --red-color: #c1272d;
-  --main-font: "Nuvel";
-  --secondary-font: "Century Gothic";
-  --main-fontSize: 16px;
-  --spacing-small: 8px;
-  --spacing-medium: 16px;
-  --spacing-large: 32px;
-}
 
 /* VERSION DESKTOP */
 

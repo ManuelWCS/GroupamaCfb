@@ -540,7 +540,7 @@ function Clean() {
                 <Circle
                   center={[location.coordinates.lat, location.coordinates.lng]}
                   radius={rayon}
-                  pathOptions={{ color: "#748B9F" }}
+                  pathOptions={{ color: "#3586c2" }}
                 />
               ) : null}
               {visibilityMarker === true ? (
