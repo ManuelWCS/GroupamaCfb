@@ -1,1 +1,25 @@
 @import url('../../../App.css');
+
+.LocalisationTexte {
+    display: flex;
+    font-family: var(--secondary-font);
+    text-align: center;
+    flex-direction: column;
+    font-size: var(--main-fontSize);
+}
+
+.LocalisationTexte2 {
+    font-family: var(--secondary-font);
+    text-align: center;
+    width: 100%;    
+    font-size: var(--main-fontSize);
+
+}
+
+.nbrClub {
+    font-weight:  bolder;
+    color: var(--main-color)
+}
+
+/* POP UP CLUBS */
+

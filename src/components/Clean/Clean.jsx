@@ -4,6 +4,7 @@ import "./css/Clean.css";
 import "./css/SmallPhone2.css";
 import "./css/Tablet.css";
 import "./css/LargeScreen.css";
+import "./css/Popup.css"
 /* Fin de l'import des différentes versions*/
 
 /* import styles des cartes*/
@@ -583,13 +584,12 @@ function Clean(props) {
                           key={index2}
                           position={[res.Latitude, res.Longitude]}
                         >
-                          <Popup key={index2} className="markersPopUp">
-                            <p> {res.NomClub}</p>
+                          <Popup key={index2} width={500} className="markersPopUp">
+                            <h4 className="TitlePopUp"> {res.NomClub}</h4>
 
-                            <br></br>
 
                             {!location.error ? (
-                              <h3>
+                              <h3 className="TitlePopUp">
                                 Se trouve à{" "}
                                 {distanceBetweenPoints(
                                   location.coordinates.lat,
