@@ -445,17 +445,9 @@ function Clean(props) {
 
   /*HOOKS CONDITIONNELS POUR GERER LES EVENEMENTS */
 
-  const [form, setForm] = useState(false);
-  const [discovery, setDiscovery] = useState(true);
   const [recherche, setRecherche] = useState(false);
 
-  const isClicked = () => {
-    setForm(!form);
-  };
 
-  const isClicked2 = () => {
-    setDiscovery(!discovery);
-  };
 
   var Largeur = document.documentElement.clientWidth;
 
@@ -484,22 +476,12 @@ function Clean(props) {
     setLngMax(location.coordinates.lng + convertedDistance);
   };
 
-  function OpenForms() {
-    if (discovery === false)
-      setTimeout(() => {
-        setDiscovery(true);
-      }, 1000);
-    if (form === false)
-      setTimeout(() => {
-        setForm(true);
-      }, 1500);
-  }
 
   //Set the map to the center of the user
   useEffect(() => {
     setTimeout(() => {
       if (map)
-        map.flyTo([location.coordinates.lat, location.coordinates.lng], 15);
+        map.flyTo([location.coordinates.lat, location.coordinates.lng], 11);
     }, 2000);
   }, [location]);
 
@@ -508,17 +490,32 @@ function Clean(props) {
 
   /* PARTIE ANIMATION SCROLL DES BOUTONS */
 
-  const [clicked, setClicked] = useState(false);
+  const [btn1, setBtn1] = useState(null);
 
-  const callBackEnfant = (childData) => {
-    setClicked({cliked : childData});
-    console.log('jai été cliqué bro')
-  }
+  const passData = data => { setTimeout(() => {
+    setBtn1(data);
+  }, 1000)
+}
 
+const [btn2, setBtn2]= useState(null);
+
+const passData2 = data2 => {setTimeout(() => {
+  setBtn2(data2);
+}, 1000)}
+
+const isClicked = () => {
+  setBtn2(!btn2);
+};
+
+const isClicked2 = () => {    
+  setBtn1(!btn1)
+};
+
+/* FIN ANIMATION SCROLL*/
 
   return (
     <>
-      <Preload parentCallback={props.callBackEnfant}/>
+      <Preload passData={passData} passData2={passData2} />
 
       <div className="mainContainer"id="middle">
         <div className="mapContainer">
@@ -638,8 +635,8 @@ function Clean(props) {
 
         <div className="popover" id="popover">
           <button
-            onClick={isClicked}
-            className={form ? "styleLoc" : "styleLocExpanded"}
+            onClick={(isClicked)}
+            className={btn2 === true ? "styleLoc" : "styleLocExpanded"}
           >
             <div className="btnContent1">
               <img src={SearchIcon} className="searchIcon" alt="searchIcon" />
@@ -649,7 +646,7 @@ function Clean(props) {
             </div>
           </button>
 
-          <div className={form ? "styleDiv2" : "styleOff"}>
+          <div className={btn2 === true  ? "styleDiv2" : "styleOff"}>
             {recherche === false ? (
               <div className="filtersNoSearch">
                 <form
@@ -967,7 +964,7 @@ function Clean(props) {
         <div className="popover2" id="popover2">
           <button
             onClick={isClicked2}
-            className={discovery === true ? "styleGeo" : "styleGeoExpanded"}
+            className={btn1 === true ? "styleGeo" : "styleGeoExpanded"}
           >
             <div className="btnContent">
               <img src={LocClub} className="searchIcon" alt="searchIcon" />
@@ -976,7 +973,7 @@ function Clean(props) {
               </p>
             </div>
           </button>
-          <div className={discovery === true ? "styleDiv3" : "styleOff"}>
+          <div className={btn1 === true ? "styleDiv3" : "styleOff"}>
             <span className="sliderText"> CHOISIS TON ÉCHELLE !</span>
             <Box sx={{ width: 190, margin: 1 }}>
               {!location.error ? (
@@ -985,7 +982,8 @@ function Clean(props) {
                   defaultValue={10}
                   getAriaValueText={valuetext}
                   // getAriaLabel={true}
-                  valueLabelDisplay="on"
+                  valueLabelDisplay="auto"
+
                   step={1}
                   marks={marks}
                   min={10}
@@ -1071,10 +1069,6 @@ function Clean(props) {
         </div>
       </div>
       <Faq />
-
-      <Link to="top" spy={true} smooth={true} duration={1000}>
-        <UpArrow />
-      </Link>
       <Sponso />
     </>
   );

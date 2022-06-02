@@ -43,9 +43,28 @@ function Preloader(props) {
     increment();
   }, [counter]);
 
-  const onTrigger = (event) => {
-    props.parentCallBack(console.log('ici lenfant mdr'))
+  const [scrollLeft, setScrollLeft ] = useState(false);
+
+  const buttonClick = () => {
+    props.passData(!scrollLeft);
+  };
+
+  const [scrollRight, setScrollRight] = useState(false);
+  
+  const buttonClick2 = () => {
+    props.passData2(!scrollRight);
   }
+
+  useEffect(() => {
+    setScrollLeft(props.scrollLeft);
+    setScrollRight(props.scrollRight);
+  }, [props.scrollLeft, props.scrollRight]);
+
+
+
+
+
+
 
 
   return (
@@ -93,11 +112,11 @@ function Preloader(props) {
                 hashSpy={true}
                 offset={50}
                 duration={1000}
-                delay={100}
+                delay={0}
                 isDynamic={true}
                 ignoreCancelEvents={false}
                 spyThrottle={500}>
-                <button className="myButton2" onClick={props.onTrigger}>
+                <button className="myButton2" onClick={buttonClick}>
                   <div className="BtnContainer">
                     <img src={Loc} alt="Loupe" className="Loc"></img>
                     <p className="btnText">CLUBS Á PROXIMITÉ </p>
@@ -113,7 +132,7 @@ function Preloader(props) {
                 isDynamic={true}
                 ignoreCancelEvents={false}
                 spyThrottle={500}>
-                <button className="myButton">
+                <button className="myButton" onClick={buttonClick2}>
                   <div className="BtnContainer2">
                     <img src={Loupe} alt="Loupe" className="Loupe"></img>
                     <p className="btnText">CLUBS SELON MES CRITÈRES</p>
