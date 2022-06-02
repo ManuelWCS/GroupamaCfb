@@ -41,6 +41,7 @@ function Preloader(props) {
     increment();
   }, [counter]);
 
+
   return (
     <>
       <div className="generalWrapper">

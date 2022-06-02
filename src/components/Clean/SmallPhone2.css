@@ -246,14 +246,37 @@
   }
 
   /*********** STYLES RESULTAT DE RECHERCHE */
+  .Result {
+  
+    font-family: var(--secondary-font);
+    text-align: center;
+    padding-top:28px;
+    font-size: calc(var(--main-fontSize)*2);
+  }
 
   .containerResult {
-    background-color: palevioletred;
-    height: 500px;
+    height: auto;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     overflow: auto;
+  }
+
+  .containerResult:-webkit-scrollbar {
+    width: 8px;
+    /* width of the entire scrollbar */
+  }
+
+  .containerResult::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+    /* color of the scroll thumb */
+  }
+
+  .containerResult::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 8px solid #293d6b;
+    /* creates padding around scroll thumb */
   }
 
 
@@ -496,13 +519,14 @@
     height: 60px;
     border-radius: 30px 30px 0px 0px;
     background-color: var(--main-color);
-    width: 275px;
+    width: 305px;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    margin-top:24px;
   }
 
   .styleLocExpanded {
@@ -515,7 +539,7 @@
 
 
   .styleDiv2 {
-    width: 275px;
+    width: 303px;
     height: 620px;
     border-radius: 0px 0px 30px 30px;
     display: flex;
@@ -523,7 +547,7 @@
     justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
-    border: 1px solid pink;
+    border: 1px solid grey;
     margin-bottom: 16px;
     ;
   }
@@ -538,33 +562,29 @@
   .styleGeo {
     height: 60px;
     border-radius: 30px 30px 0px 0px;
-    background-color: var(--secondary-color);
-    width: 275px;
+    background-color: var(--red-color);
+    width: 305px;
 
   }
 
   .styleGeoExpanded {
     height: 60px;
     border-radius: 30px;
-    background-color: var(--secondary-color);
+    background-color: var(--red-color);
     width: 275px;
   }
 
   .styleDiv3 {
-    width: 273px;
-    height: 500px;
+    width: 303px;
+    height: 620px;
     border-radius: 0px 0px 30px 30px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
+    border: 1px solid grey;
     margin-bottom: 16px;
-    border: 1px solid black;
-    border-radius: 0px 0px 20px 20px;
-    background: #ffffff;
-    box-shadow: 11px 11px 22px #adadad,
-      -11px -11px 22px #ffffff;
 
   }
 
@@ -633,7 +653,7 @@
   /*Container results of clubs clsoe */
 
   .resultContainer {
-    height: 340px;
+    height: auto;
     overflow: auto;
     width: 100%;
 

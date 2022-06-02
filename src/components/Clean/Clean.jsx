@@ -628,10 +628,10 @@ function Clean() {
             onClick={isClicked}
             className={form ? "styleLoc" : "styleLocExpanded"}
           >
-            <div className="btnContent">
+            <div className="btnContent1">
               <img src={SearchIcon} className="searchIcon" alt="searchIcon" />
               <p className="TitleButton">
-                TROUVEZ UN CLUB A PROXIMITÉ ! &nbsp;{" "}
+                CLUBS SELON CRITÈRES &nbsp;{" "}
               </p>
             </div>
           </button>
@@ -868,10 +868,7 @@ function Clean() {
               <div className="containerResult">
                 <h3 className="Result">RÉSULTATS</h3>
 
-                <p className="NumberClose">
-                  {" "}
-                  Il y a {clubSearch.length} résultat(s) correspondant à votre
-                  recherche{" "}
+                <p className="NumberClose">   Aucun club correspondant à vos critères est disponible. Pour trouver les clubs disponibles les plus proches de chez vous, essayez les fonctionnalités <u> localisation</u>  ou réinititialisez votre recherche
                 </p>
                 <button
                   className="clearSearch"
@@ -962,7 +959,7 @@ function Clean() {
             <div className="btnContent">
               <img src={LocClub} className="searchIcon" alt="searchIcon" />
               <p className="TitleButton">
-                DÉCOUVRIR LES CLUBS ICI ! &nbsp; &nbsp;{" "}
+                CLUBS À PROXIMITÉ ! &nbsp; &nbsp;{" "}
               </p>
             </div>
           </button>

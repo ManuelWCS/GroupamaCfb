@@ -38,11 +38,17 @@
 
 
 }
-
 .btnContent {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.btnContent1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
 }
 
 .Expand {

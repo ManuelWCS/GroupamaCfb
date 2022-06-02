@@ -112,7 +112,7 @@
 }
 
 .cardResult:nth-child(2n) .logo2:nth-child(2n) {
-  background-image: url("../../../assets/Logos/Localisation-rouge.png");
+  background-image: url("../../../assets/Logos/Localisation-gris.png");
   background-position: center;
   background-size: cover;
 }
@@ -123,11 +123,6 @@
   background-size: cover;
 }
 
-.cardResult:nth-child(3n) .logo2:nth-child(2n) {
-  background-image: url("../../../assets/Logos/Localisation-gris.png");
-  background-position: center;
-  background-size: cover;
-}
 
 /* Logo Info */
 
