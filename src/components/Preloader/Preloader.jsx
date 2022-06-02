@@ -27,7 +27,9 @@ function Preloader(props) {
         setTimeout(() => {
           setCounter(counter + 5);
         }, 1);
-      } else {
+      } 
+        
+      else {
         stop();
       }
     }
@@ -50,21 +52,12 @@ function Preloader(props) {
     <>
       <div className="generalWrapper">
         <div className="headerPreload">
-          <Link to="map" spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={1000}
-                delay={100}
-                isDynamic={true}
-                ignoreCancelEvents={false}
-                spyThrottle={500}>
+        
             <img
               src={LogoCFB}
               alt="logo Centre Frappe & But"
               className="LogoPlateforme"
             ></img>
-          </Link>
         </div>
         <div className="FullLanding">
           <div className="LandingTitlesContainer">
@@ -95,7 +88,7 @@ function Preloader(props) {
               Accèdez à la carte avec deux options :
             </h6>
             <div className="rowBtn">
-              <Link to="map" spy={true}
+              <Link to="middle" spy={true}
                 smooth={true}
                 hashSpy={true}
                 offset={50}
@@ -111,7 +104,15 @@ function Preloader(props) {
                   </div>
                 </button>
               </Link>
-              <Link to="map">
+              <Link to="middle" spy={true}
+                smooth={true}
+                hashSpy={true}
+                offset={50}
+                duration={1000}
+                delay={100}
+                isDynamic={true}
+                ignoreCancelEvents={false}
+                spyThrottle={500}>
                 <button className="myButton">
                   <div className="BtnContainer2">
                     <img src={Loupe} alt="Loupe" className="Loupe"></img>

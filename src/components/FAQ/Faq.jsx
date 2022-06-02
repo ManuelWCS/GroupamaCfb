@@ -9,12 +9,7 @@ function Faq() {
   return (
     <div className="faqContainer">
     <h6 className="faqTitle">FAQ ! BESOIN D'AIDE ? </h6>
-
-    <p className="faqText">
-      Vous avez une question ? 
-    </p>
-    <span className="faqText">Nous avons probablement la réponse ! </span>
-    <p className="faqText2">Cliquez ici pour poser votre question</p>
+    <p className="faqText2">Vous avez une question ? Nous avons probablement la réponse !</p>
     <Link to="/faq">
 
     <img src={mailPicture} className="contactImg" alt="courrier électronique" />

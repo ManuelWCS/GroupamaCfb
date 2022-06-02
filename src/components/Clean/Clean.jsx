@@ -445,7 +445,7 @@ function Clean(props) {
   /*HOOKS CONDITIONNELS POUR GERER LES EVENEMENTS */
 
   const [form, setForm] = useState(false);
-  const [discovery, setDiscovery] = useState(false);
+  const [discovery, setDiscovery] = useState(true);
   const [recherche, setRecherche] = useState(false);
 
   const isClicked = () => {
@@ -519,7 +519,7 @@ function Clean(props) {
     <>
       <Preload parentCallback={props.callBackEnfant}/>
 
-      <div className="mainContainer">
+      <div className="mainContainer"id="middle">
         <div className="mapContainer">
           <div className="BlocCarte">
             <MapContainer
@@ -636,7 +636,7 @@ function Clean(props) {
           ) : null}
         </div>
 
-        <div className="popover">
+        <div className="popover" id="popover">
           <button
             onClick={isClicked}
             className={form ? "styleLoc" : "styleLocExpanded"}
@@ -964,7 +964,7 @@ function Clean(props) {
           </div>
         </div>
 
-        <div className="popover2">
+        <div className="popover2" id="popover2">
           <button
             onClick={isClicked2}
             className={discovery === true ? "styleGeo" : "styleGeoExpanded"}
