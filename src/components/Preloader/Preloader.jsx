@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import LogoCFB from "../../assets/CompressedPictures/Logos/logoplateforme.webp";
 import ecussonLigue from "../../assets/Juin/EcussonLigue.png";
-import { Link } from "react-router-dom";
+import { Link } from 'react-scroll'
 
 /* VERSIONS CSS */
 import "./css/Preloader.css";
@@ -41,12 +41,24 @@ function Preloader(props) {
     increment();
   }, [counter]);
 
+  const onTrigger = (event) => {
+    props.parentCallBack(console.log('ici lenfant mdr'))
+  }
+
 
   return (
     <>
       <div className="generalWrapper">
         <div className="headerPreload">
-          <Link to="/">
+          <Link to="map" spy={true}
+                smooth={true}
+                hashSpy={true}
+                offset={50}
+                duration={1000}
+                delay={100}
+                isDynamic={true}
+                ignoreCancelEvents={false}
+                spyThrottle={500}>
             <img
               src={LogoCFB}
               alt="logo Centre Frappe & But"
@@ -82,24 +94,32 @@ function Preloader(props) {
             <h6 className="LandingTitle6">
               Accèdez à la carte avec deux options :
             </h6>
-              <div className="rowBtn">
-            <Link to="/">
-              <button className="myButton2">
-                <div className="BtnContainer">
-                  <img src={Loc} alt="Loupe" className="Loc"></img>
-                  <p className="btnText">CLUBS Á PROXIMITÉ </p>
-                </div>
-              </button>
-            </Link>
-            <Link to="/">
-              <button className="myButton">
-                <div className="BtnContainer2">
-                  <img src={Loupe} alt="Loupe" className="Loupe"></img>
-                  <p className="btnText">CLUBS SELON MES CRITÈRES</p>
-                </div>
-              </button>
-            </Link>
-              </div>
+            <div className="rowBtn">
+              <Link to="map" spy={true}
+                smooth={true}
+                hashSpy={true}
+                offset={50}
+                duration={1000}
+                delay={100}
+                isDynamic={true}
+                ignoreCancelEvents={false}
+                spyThrottle={500}>
+                <button className="myButton2" onClick={props.onTrigger}>
+                  <div className="BtnContainer">
+                    <img src={Loc} alt="Loupe" className="Loc"></img>
+                    <p className="btnText">CLUBS Á PROXIMITÉ </p>
+                  </div>
+                </button>
+              </Link>
+              <Link to="map">
+                <button className="myButton">
+                  <div className="BtnContainer2">
+                    <img src={Loupe} alt="Loupe" className="Loupe"></img>
+                    <p className="btnText">CLUBS SELON MES CRITÈRES</p>
+                  </div>
+                </button>
+              </Link>
+            </div>
           </div>
           <Link to="/">
             <img src={ecussonLigue} className="headerLogo" alt="logo" />

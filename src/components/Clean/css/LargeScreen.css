@@ -9,7 +9,7 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    background-image: url("../../assets/TEST/bandesdeTypeBlanc.png");
+    background-image: url("../../../assets/TEST/bandesdeTypeBlanc.png");
   }
   html,
   body {
@@ -34,7 +34,7 @@
 
   .mainContent {
     height: 500px;
-    background-image: url("../../assets/CompressedPictures/final2.webp");
+    background-image: url("../../../assets/CompressedPictures/final2.webp");
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
@@ -81,7 +81,7 @@
 
   .mainContent {
     height: 550px;
-    background-image: url("../../assets/CompressedPictures/final2.webp");
+    background-image: url("../../../assets/CompressedPictures/final2.webp");
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;

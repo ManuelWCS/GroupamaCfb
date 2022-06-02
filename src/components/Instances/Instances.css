@@ -1,4 +1,4 @@
-@import url('../../components/Clean/Clean.css');
+@import url("../../components/Clean/css/Clean.css");
 
 .mapMarkers {
     color: var(--secondary-color);

@@ -1,9 +1,9 @@
 import React from "react";
 /* import du CSS*/
-import "./Clean.css";
-import "./SmallPhone2.css";
-import "./Tablet.css";
-import "./LargeScreen.css";
+import "./css/Clean.css";
+import "./css/SmallPhone2.css";
+import "./css/Tablet.css";
+import "./css/LargeScreen.css";
 /* Fin de l'import des différentes versions*/
 
 /* import styles des cartes*/
@@ -66,8 +66,11 @@ import LocClub from "../../assets/CompressedPictures/Popover/LocClub.webp";
 import "../Popover/Popover.css";
 
 /* import bouton localisez moi*/
-import LocImage from "../../assets/CompressedPictures/Buttons/LocalisezMoi.png";
 import ActivateGeoloc from "../ActivateGeoloc/ActivateGeoloc";
+
+/* Import styles par rapport à la cart0*/
+
+
 
 /* REACT SCROLL */
 import { Link } from "react-scroll";
@@ -77,7 +80,7 @@ import { Link } from "react-scroll";
 import Preload from "../Preloader/Preloader.jsx";
 import UpArrow from "../upArrow/UpArrow.jsx";
 
-function Clean() {
+function Clean(props) {
   const [allcities, setallcities] = useState([]);
   const [categories, setCategories] = useState([]);
   const [clubSearch, setclubSearch] = useState([]);
@@ -502,9 +505,19 @@ function Clean() {
   useEffect(() => {
   }, [convertedDistance]);
 
+  /* PARTIE ANIMATION SCROLL DES BOUTONS */
+
+  const [clicked, setClicked] = useState(false);
+
+  const callBackEnfant = (childData) => {
+    setClicked({cliked : childData});
+    console.log('jai été cliqué bro')
+  }
+
+
   return (
     <>
-      <Preload />
+      <Preload parentCallback={props.callBackEnfant}/>
 
       <div className="mainContainer">
         <div className="mapContainer">
@@ -954,7 +967,7 @@ function Clean() {
         <div className="popover2">
           <button
             onClick={isClicked2}
-            className={discovery ? "styleGeo" : "styleGeoExpanded"}
+            className={discovery === true ? "styleGeo" : "styleGeoExpanded"}
           >
             <div className="btnContent">
               <img src={LocClub} className="searchIcon" alt="searchIcon" />
@@ -963,7 +976,7 @@ function Clean() {
               </p>
             </div>
           </button>
-          <div className={discovery ? "styleDiv3" : "styleOff"}>
+          <div className={discovery === true ? "styleDiv3" : "styleOff"}>
             <span className="sliderText"> CHOISIS TON ÉCHELLE !</span>
             <Box sx={{ width: 190, margin: 1 }}>
               {!location.error ? (

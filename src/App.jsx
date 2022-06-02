@@ -3,7 +3,6 @@ import Clean from "./components/Clean/Clean.jsx";
 // import Faq from "./components/FrequentlyAskedQuestions/FrequentlyAskedQuestions.jsx";
 import { Routes, Route } from "react-router-dom";
 
-import Preload from "./components/Preloader/Preloader";
 
 function App() {
   return (

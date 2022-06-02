@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
-@import url("../Map/fonts.css");
-@import url("../../App.css");
+@import url("../../Map/fonts.css");
+@import url("../../../App.css");
 /* VARIABLES CSS CHARTE GRAPHIQUE  */
 
 /* SCROLL BARS*/
@@ -43,7 +43,7 @@
     min-height: 440px;
     width: 92.8%;
     margin: auto;
-    background-image: url("../../assets/CompressedPictures/final2.webp");
+    background-image: url("../../../assets/CompressedPictures/final2.webp");
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -5;
@@ -60,7 +60,7 @@
     background-size: 100%;
     background-attachment: fixed;
     background-position: center 65%;
-    background-image: url("../../assets/TEST/bandesdeTypeBlanc.png");
+    background-image: url("../../../assets/TEST/bandesdeTypeBlanc.png");
     margin-top: -3px;
   }
 

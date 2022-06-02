@@ -28,14 +28,14 @@
     height: 100%;
     width: 100%;
     background-size: 100%;
-    background-image: url("../../assets/CompressedPictures/Mobile.webp");
+    background-image: url("../../../assets/CompressedPictures/Mobile.webp");
     background-attachment: fixed;
     margin-top:-1px
   }
   .mainContent {
     height: 550px;
     width: 89%;
-    background-image: url("../../assets/TEST/mobileVertical.png");
+    background-image: url("../../../assets/TEST/mobileVertical.png");
     background-size: 100%;
     background-repeat: no-repeat;
     min-height: 500px;
@@ -287,7 +287,7 @@
   .cardResult {
     height: 240px;
     width: 250px;
-    background-image: url("../../assets/Cartes/Carte-bleu.png");
+    background-image: url("../../../assets/Cartes/Carte-bleu.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -300,7 +300,7 @@
   .cardResult:nth-child(2n) {
     height: 240px;
     width: 250px;
-    background-image: url("../../assets/Cartes/Carte-rouge.png");
+    background-image: url("../../../assets/Cartes/Carte-rouge.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -310,7 +310,7 @@
   .cardResult:nth-child(3n) {
     height: 240px;
     width: 250px;
-    background-image: url("../../assets/Cartes/Carte-grise.png");
+    background-image: url("../../../assets/Cartes/Carte-grise.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -320,7 +320,7 @@
   .cardResult:nth-child(4n) {
     height: 240px;
     width: 250px;
-    background-image: url("../../assets/Cartes/Carte-turquoise.png");
+    background-image: url("../../../assets/Cartes/Carte-turquoise.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -329,62 +329,58 @@
     margin-bottom: 16px;
   }
 
-  /* .cardResult:nth-child(1n) .logo1:nth-child(1n) {
-    background-image: url("../../assets/Logos/Mail-bleu.png");
-    background-position: center;
-    background-size: cover;
-  } */
+
 
   .cardResult:nth-child(2n) .logo1:nth-child(1n) {
-    background-image: url("../../assets/Logos/Mail-rouge.png");
+    background-image: url("../../../assets/Logos/Mail-rouge.png");
     background-position: center;
     background-size: cover;
   }
 
   .cardResult:nth-child(2n) .logo2:nth-child(2n) {
-    background-image: url("../../assets/Logos/Localisation-rouge.png");
+    background-image: url("../../../assets/Logos/Localisation-rouge.png");
     background-position: center;
     background-size: cover;
   }
 
   .cardResult:nth-child(2n) .logo3:nth-child(3n) {
-    background-image: url("../../assets/Logos/Info-rouge.png");
+    background-image: url("../../../assets/Logos/Info-rouge.png");
     background-position: center;
     background-size: cover;
   }
 
   .cardResult:nth-child(3n) .logo1:nth-child(1n) {
-    background-image: url("../../assets/Logos/Mail-gris.png");
+    background-image: url("../../../assets/Logos/Mail-gris.png");
     background-position: center;
     background-size: cover;
   }
 
   .cardResult:nth-child(3n) .logo2:nth-child(2n) {
-    background-image: url("../../assets/Logos/Localisation-gris.png");
+    background-image: url("../../../assets/Logos/Localisation-gris.png");
     background-position: center;
     background-size: cover;
   }
 
   .cardResult:nth-child(3n) .logo3:nth-child(3n) {
-    background-image: url("../../assets/Logos/Info-gris.png");
+    background-image: url("../../../assets/Logos/Info-gris.png");
     background-position: center;
     background-size: cover;
   }
 
   .cardResult:nth-child(4n) .logo1:nth-child(1n) {
-    background-image: url("../../assets/Logos/Mail-turquoise.png");
+    background-image: url("../../../assets/Logos/Mail-turquoise.png");
     background-position: center;
     background-size: cover;
   }
 
   .cardResult:nth-child(4n) .logo2:nth-child(2n) {
-    background-image: url("../../assets/Logos/Localisation-turquoise.png");
+    background-image: url("../../../assets/Logos/Localisation-turquoise.png");
     background-position: center;
     background-size: cover;
   }
 
   .cardResult:nth-child(4n) .logo3:nth-child(3n) {
-    background-image: url("../../assets/Logos/Info-turquoise.png");
+    background-image: url("../../../assets/Logos/Info-turquoise.png");
     background-position: center;
     background-size: cover;
   }
