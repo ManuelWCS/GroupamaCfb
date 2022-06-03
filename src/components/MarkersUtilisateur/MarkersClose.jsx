@@ -99,11 +99,10 @@ function MarkersClose(props) {
                       position.coordinates.lng,
                       club.Latitude,
                       club.Longitude
-                    )}{" "}</em>
-                    km de vous{" "}
+                    )}{" "}
+                    km de vous{" "}</em>
                   </h3>
-                  <p className="AdressePopUp">
-                  {club.AdressePostale}  </p>
+                  <p>
                    
                     <a
                       href={`https://www.google.fr/maps/dir/${position.coordinates.lat},${position.coordinates.lng}+/${club.Latitude},+${club.Longitude}`}
@@ -112,7 +111,7 @@ function MarkersClose(props) {
                       className="DirectionsPopUp2"
                     >{" "}&#8627;	
                     Itinéraire vers ce club{" "}</a>
-                
+                  </p>
                 </Popup>
               </Marker>
             ))}
