@@ -1077,14 +1077,9 @@ const isClicked2 = () => {
         </div>
         </div>
       </div>
-            
+    </div>
+  </div>
 
-        </div>
-
-        
-
-    
-      </div>
       <Faq />
       <Sponso />
     </>
