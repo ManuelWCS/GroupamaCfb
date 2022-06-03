@@ -112,19 +112,7 @@
     margin-bottom: 16px;
   }
 
-  .popover {
-    position: absolute;
-    z-index: 3;
-    right: 5%;
-    top:3vh;
-  }
-
-  .popover2 {
-    position: absolute;
-    z-index: 3;
-    left: 9%;
-    top:3vh;
-  }
+ 
 
   .Result {
     font-family: var(--secondary-font);

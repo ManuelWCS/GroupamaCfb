@@ -6,6 +6,7 @@ import "./css/Tablet.css";
 import "./css/LargeScreen.css";
 import "./css/Popup.css"
 import "./css/Expandables.css";
+import "./css/Map.css"
 /* Fin de l'import des différentes versions*/
 
 /* import styles des cartes*/
@@ -519,9 +520,11 @@ const isClicked2 = () => {
       <Preload passData={passData} passData2={passData2} />
 
       <div className="mainContainer"id="middle">
+        <div className="LegendMap">
+          Helllo
+        </div>
         <div className="mapContainer">
-          <div className="BlocCarte">
-            <MapContainer
+        <MapContainer
               className="mapLeaflet"
               id="map"
               center={[47.90289, 1.90389]}
@@ -637,16 +640,8 @@ const isClicked2 = () => {
 
               {visibilityInstanceMarkers === true ? <Instances /> : null}
             </MapContainer>
-          </div>
-
-          {Largeur < 1024 ? (
-            <div className="commandContainer">
-              <Legend />
-            </div>
-          ) : null}
-        </div>
-
-        <div className="popover" id="popover">
+        <div className="BlocCarte">
+          <div className="popover" id="popover">
           <button
             onClick={(isClicked)}
             className={btn2 === true ? "styleLoc" : "styleLocExpanded"}
@@ -972,9 +967,9 @@ const isClicked2 = () => {
               </button>
             ) : null}
           </div>
-        </div>
 
-        <div className="popover2" id="popover2">
+
+          <div className="popover2" id="popover2">
           <button
             onClick={isClicked2}
             className={btn1 === true ? "styleGeo" : "styleGeoExpanded"}
@@ -1080,6 +1075,15 @@ const isClicked2 = () => {
             </div>
           </div>
         </div>
+        </div>
+      </div>
+            
+
+        </div>
+
+        
+
+    
       </div>
       <Faq />
       <Sponso />

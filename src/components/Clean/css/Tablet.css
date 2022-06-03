@@ -1216,11 +1216,6 @@ A PARTIR DE 480px*/
     margin-bottom: var(--spacing-large);
   }
 
-  #map {
-    height: 450px;
-    width: 75vw;
-    margin: auto;
-  }
 
   .formContainer {
     width: 100%;
@@ -1508,9 +1503,7 @@ A PARTIR DE 480px*/
 
 
 @media screen and (min-width: 616px) and (max-width: 1023px) {
-  .popover {
-    order: 1;
-  }
+  
   .interactContainer {
     width: 100%;
     order: 0;
