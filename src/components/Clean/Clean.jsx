@@ -582,8 +582,11 @@ const isClicked2 = () => {
                           key={index2}
                           position={[res.Latitude, res.Longitude]}
                         >
-                          <Popup key={index2} width={500} className="markersPopUp">
+
+                          
+                          <Popup key={index2} width={300} className="markersPopUp">
                             <h4 className="TitlePopUp"> {res.NomClub}</h4>
+                            
 
 
                             {!location.error ? (
@@ -597,9 +600,14 @@ const isClicked2 = () => {
                                 )}</em> {" "}
                                 km de vous !
                               </h3>
+                              
+                              
+                              
                             ) : null}
 
                             <p>
+                            <p className="AdressePopUp">
+                  {res.AdressePostale}  </p>
                               {!location.error ? (
                                 <a
                                   href={`https://www.google.fr/maps/dir/${location.coordinates.lat},${location.coordinates.lng}+/${res.Latitude},+${res.Longitude}`}
@@ -607,8 +615,9 @@ const isClicked2 = () => {
                                   rel="noreferrer"
                                   className="DirectionsPopUp"
                                 >
-                                  Itinéraire vers ce club
+                                  &#8627;	Itinéraire vers ce club
                                 </a>
+                                
                               ) : (
                                 <p>
                                   {" "}
@@ -617,6 +626,8 @@ const isClicked2 = () => {
                                 </p>
                               )}
                             </p>
+                       
+                         
                           </Popup>
                         </Marker>
                       );

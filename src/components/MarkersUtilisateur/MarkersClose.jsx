@@ -90,7 +90,7 @@ function MarkersClose(props) {
                 position={[club.Latitude, club.Longitude]}
                 icon={club.label.length > 0 ? clubMarqueurLabel : clubMarqueur}
               >
-                <Popup className="markersPopUp">
+                <Popup className="markersPopUp" width={300} >
                 <h3 className="TitlePopUp">  {club.NomClub}</h3>
                   <h3 className="DistancePopUp">
                     Se trouve à{" "}<em className="distanceNumber">
@@ -110,7 +110,7 @@ function MarkersClose(props) {
                       target="_blank"
                       rel="noreferrer"
                       className="DirectionsPopUp2"
-                    >{" "}
+                    >{" "}&#8627;	
                     Itinéraire vers ce club{" "}</a>
                 
                 </Popup>
