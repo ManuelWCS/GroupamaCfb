@@ -49,8 +49,7 @@
 }
 
 #map {
-    height: 80%;
-    width: 90%;
+    display: none;
 }
 
 .popover {
@@ -62,4 +61,19 @@
     margin-left: auto;
     position: absolute;
     z-index: 3;
+    
 }
+
+@media screen and (min-width:480px) {
+    .mainContainer {
+        height: 100vh;
+        width: 90vh;
+    }
+
+    .styleLocExpanded, .btnContent1 {
+        display: none;
+    }
+    
+}
+
+
