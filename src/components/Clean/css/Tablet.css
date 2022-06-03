@@ -3,6 +3,7 @@
 /* <<<<<<<<<<<<<<< VERSION TABLETTE >>>>>>>>>>>>>>>>>>*/
 
 @media screen and (min-width: 481px) and (max-width: 615px) {
+
   html,
   body {
     max-width: 100%;
@@ -46,7 +47,7 @@
     color: rgb(51, 51, 51);
   }
 
-  
+
 
   .mainContainer {
     width: 85vw;
@@ -114,12 +115,7 @@
     margin: 0 auto;
   }
 
-  .styleLocExpanded {
-    height: 60px;
-    border-radius: 30px;
-    background-color: var(--main-color);
-    width: 315px;
-  }
+ 
 
   .searchIcon {
     padding-right: 16px;
@@ -191,13 +187,7 @@
     margin-top: var(--spacing-small);
   }
 
-  .styleGeoExpanded {
-    height: 60px;
-    border-radius: 30px;
-    background-color: var(--secondary-color);
-    width: 245px;
-    margin-top: var(--spacing-small);
-  }
+
 
   .styleDiv3 {
     width: 315px;
@@ -455,6 +445,7 @@
     flex-direction: column;
     justify-content: space-around;
   }
+
   .commandContainer {
     display: flex;
     margin: auto;
@@ -469,11 +460,13 @@
     border-radius: 32px;
     height: 28px;
   }
+
   /* CONTAINER NAVIGATION CARTE */
 
   .popover {
     order: 1;
   }
+
   .interactContainer {
     width: 100%;
     order: 0;
@@ -498,6 +491,7 @@ A PARTIR DE 480px*/
 
 /* VERSION GRANDE TABLETTE */
 @media screen and (min-width: 616px) and (max-width: 672px) {
+
   html,
   body {
     max-width: 100%;
@@ -530,9 +524,9 @@ A PARTIR DE 480px*/
     margin-top: -2px;
   }
 
-  
 
-  
+
+
   .secondaryDescription {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) * 1.5);
@@ -817,25 +811,7 @@ A PARTIR DE 480px*/
 
   /* STYLES DES POPOVERS LARGEUR BOUTONS MOBILE */
 
-  .styleLoc {
-    height: 60px;
-    border-radius: 30px 30px 0px 0px;
-    background-color: var(--main-color);
-    width: 325px;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-
-  .styleLocExpanded {
-    height: 60px;
-    border-radius: 30px;
-    background-color: var(--main-color);
-    width: 325px;
-  }
+  
 
   .styleDiv2 {
     width: 325px;
@@ -894,7 +870,7 @@ A PARTIR DE 480px*/
     border: 1px solid black;
   }
 
- 
+
 
   /* Style à l'intérieur des toggle */
 
@@ -937,6 +913,7 @@ A PARTIR DE 480px*/
 }
 
 @media screen and (min-width: 673px) and (max-width: 1023px) {
+
   html,
   body {
     max-width: 100%;
@@ -953,11 +930,12 @@ A PARTIR DE 480px*/
   .formTitle {
     font-family: var(--secondary-font);
     font-size: calc(var(--main-fontSize) * 1.9);
-    padding-top: calc(var(--spacing-small) * 2);
-
+    margin-top: calc(var(--spacing-small) * 3);
     padding-bottom: calc(var(--spacing-small) * 2);
     color: rgb(51, 51, 51);
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 
   .findclubBtn,
@@ -1002,8 +980,8 @@ A PARTIR DE 480px*/
     justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
-    border: 1px solid pink;
     margin-bottom: 16px;
+    border:1px grey;
   }
 
   .styleOff {
@@ -1053,7 +1031,7 @@ A PARTIR DE 480px*/
     border: 1px solid black;
   }
 
-  
+
   /* Style à l'intérieur des toggle */
 
   .sliderText {
@@ -1144,8 +1122,8 @@ A PARTIR DE 480px*/
     justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
-    border: 1px solid pink;
     margin-bottom: 16px;
+    border: 1px solid grey;
   }
 
   .styleOff {
@@ -1166,7 +1144,7 @@ A PARTIR DE 480px*/
     border-radius: 30px;
     background-color: var(--secondary-color);
     width: 345px;
-    margin-bottom:8px;
+    margin-bottom: 8px;
   }
 
   .styleDiv3 {
@@ -1182,9 +1160,9 @@ A PARTIR DE 480px*/
     border: 1px solid black;
   }
 
-  
 
- 
+
+
 
   .secondaryDescription {
     font-family: var(--secondary-font);
@@ -1193,7 +1171,7 @@ A PARTIR DE 480px*/
     color: rgb(51, 51, 51);
   }
 
-  
+
 
   .mainContainer {
     width: 85vw;
@@ -1503,7 +1481,7 @@ A PARTIR DE 480px*/
 
 
 @media screen and (min-width: 616px) and (max-width: 1023px) {
-  
+
   .interactContainer {
     width: 100%;
     order: 0;
@@ -1521,6 +1499,7 @@ A PARTIR DE 480px*/
     display: flex;
     justify-content: space-evenly;
   }
+
   /* ActivateGeoloc Component style*/
   .ActivateContainer {
     height: 350px;

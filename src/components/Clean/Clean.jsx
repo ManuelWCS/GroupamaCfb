@@ -585,11 +585,8 @@ const isClicked2 = () => {
                           key={index2}
                           position={[res.Latitude, res.Longitude]}
                         >
-
-                          
-                          <Popup key={index2} width={300} className="markersPopUp">
+                          <Popup key={index2} width={500} className="markersPopUp">
                             <h4 className="TitlePopUp"> {res.NomClub}</h4>
-                            
 
 
                             {!location.error ? (
@@ -603,23 +600,17 @@ const isClicked2 = () => {
                                 )}{" "}
                                 km de vous !
                               </h3>
-                              
-                              
-                              
                             ) : null}
 
                             <p>
-                            <p className="AdressePopUp">
-                  {res.AdressePostale}  </p>
                               {!location.error ? (
                                 <a
                                   href={`https://www.google.fr/maps/dir/${location.coordinates.lat},${location.coordinates.lng}+/${res.Latitude},+${res.Longitude}`}
                                   target="_blank"
                                   rel="noreferrer"
                                 >
-                                  &#8627;	Itinéraire vers ce club
+                                  Itinéraire vers ce club
                                 </a>
-                                
                               ) : (
                                 <p>
                                   {" "}
@@ -628,8 +619,6 @@ const isClicked2 = () => {
                                 </p>
                               )}
                             </p>
-                       
-                         
                           </Popup>
                         </Marker>
                       );

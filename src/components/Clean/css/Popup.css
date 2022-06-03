@@ -53,23 +53,23 @@
 
 .DirectionsPopUp {
     text-align: center;
+    margin-left: 24px;
     font-style:italic;
     color:var(--main-color);
     font-size: var(--main-fontSize);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: var(--secondary-font);
 }
 
 .DirectionsPopUp2 {
     text-align: center;
+    margin-left: 4px;
     font-style:italic;
     color:var(--main-color);
     font-size: var(--main-fontSize);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: var(--secondary-font);
 
 }
