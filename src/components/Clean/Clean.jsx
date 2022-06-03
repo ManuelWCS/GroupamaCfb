@@ -587,14 +587,14 @@ const isClicked2 = () => {
 
 
                             {!location.error ? (
-                              <h3 className="TitlePopUp">
-                                Se trouve à{" "}
+                              <h3 className="DistancePopUp">
+                                Se trouve à{" "}<em className="distanceNumber">
                                 {distanceBetweenPoints(
                                   location.coordinates.lat,
                                   location.coordinates.lng,
                                   res.Latitude,
                                   res.Longitude
-                                )}{" "}
+                                )}</em> {" "}
                                 km de vous !
                               </h3>
                             ) : null}
@@ -605,6 +605,7 @@ const isClicked2 = () => {
                                   href={`https://www.google.fr/maps/dir/${location.coordinates.lat},${location.coordinates.lng}+/${res.Latitude},+${res.Longitude}`}
                                   target="_blank"
                                   rel="noreferrer"
+                                  className="DirectionsPopUp"
                                 >
                                   Itinéraire vers ce club
                                 </a>

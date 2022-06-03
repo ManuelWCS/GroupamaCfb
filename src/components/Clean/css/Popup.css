@@ -23,3 +23,53 @@
 
 /* POP UP CLUBS */
 
+
+
+.TitlePopUp {
+    text-align: center;
+    font-family: var(--main-font);
+    color: var(--secondary-color);
+    font-size: calc(var(--main-fontSize) * 1.2);
+
+}
+
+.DistancePopUp {
+    text-align: center;
+    font-family: var(--secondary-font);
+    color: var(--secondary-color);
+}
+
+.distanceNumber {
+    font-weight: bold;
+}
+
+.AdressePopUp {
+    text-align: center;
+    font-family: var(--secondary-font);
+    color: var(--secondary-color);
+    width: 100%;
+    font-size: calc(var(--main-fontSize) / 1.6);
+}
+
+.DirectionsPopUp {
+    text-align: center;
+    margin-left: 24px;
+    font-style:italic;
+    color:var(--main-color);
+    font-size: var(--main-fontSize);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.DirectionsPopUp2 {
+    text-align: center;
+    margin-left: 4px;
+    font-style:italic;
+    color:var(--main-color);
+    font-size: var(--main-fontSize);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}

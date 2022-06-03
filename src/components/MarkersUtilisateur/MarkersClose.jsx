@@ -91,26 +91,28 @@ function MarkersClose(props) {
                 icon={club.label.length > 0 ? clubMarqueurLabel : clubMarqueur}
               >
                 <Popup className="markersPopUp">
-                  {club.NomClub}
-                  <h3>
-                    Se trouve à{" "}
+                <h3 className="TitlePopUp">  {club.NomClub}</h3>
+                  <h3 className="DistancePopUp">
+                    Se trouve à{" "}<em className="distanceNumber">
                     {distanceBetweenPoints(
                       position.coordinates.lat,
                       position.coordinates.lng,
                       club.Latitude,
                       club.Longitude
-                    )}{" "}
+                    )}{" "}</em>
                     km de vous{" "}
                   </h3>
-                  <p>
+                  <p className="AdressePopUp">
+                  {club.AdressePostale}  </p>
                    
                     <a
                       href={`https://www.google.fr/maps/dir/${position.coordinates.lat},${position.coordinates.lng}+/${club.Latitude},+${club.Longitude}`}
                       target="_blank"
                       rel="noreferrer"
+                      className="DirectionsPopUp2"
                     >{" "}
                     Itinéraire vers ce club{" "}</a>
-                  </p>
+                
                 </Popup>
               </Marker>
             ))}
