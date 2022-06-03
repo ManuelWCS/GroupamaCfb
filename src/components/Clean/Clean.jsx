@@ -5,6 +5,7 @@ import "./css/SmallPhone2.css";
 import "./css/Tablet.css";
 import "./css/LargeScreen.css";
 import "./css/Popup.css"
+import "./css/Expandables.css";
 /* Fin de l'import des différentes versions*/
 
 /* import styles des cartes*/
@@ -878,7 +879,7 @@ const isClicked2 = () => {
               <div className="containerResult">
                 <h3 className="Result">RÉSULTATS</h3>
 
-                <p className="NumberClose">   Aucun club correspondant à vos critères est disponible. Pour trouver les clubs disponibles les plus proches de chez vous, essayez les fonctionnalités <u> localisation</u>  ou réinititialisez votre recherche
+                <p className="NumberClose"> Il y a <u> {clubSearch.length} </u> club(s) correspondant à votre recherche  
                 </p>
                 <button
                   className="clearSearch"
