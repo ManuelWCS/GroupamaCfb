@@ -4,14 +4,15 @@ import ecussonLigue from "../../assets/Juin/EcussonLigue.png";
 import { Link } from 'react-scroll'
 
 /* VERSIONS CSS */
-import "./css/Preloader.css";
-import "./css/Preloader.mobile.css";
-import "./css/Preloader.tablet.css";
-import "./css/Preloader.bigTablet.css";
-import "./css/Preloader.desktop.css";
-import "./css/Preloader.bigscreen.css";
-import "./css/Preloader.bigdesktop.css";
-import "./css/Preloader.maxScreen.css"
+//  import "./css/Preloader.css";
+//  import "./css/Preloader.mobile.css";
+// import "./css/Preloader.tablet.css";
+// import "./css/Preloader.bigTablet.css";
+// import "./css/Preloader.desktop.css";
+//  import "./css/Preloader.bigscreen.css";
+//  import "./css/Preloader.bigdesktop.css";
+//  import "./css/Preloader.maxScreen.css"
+import "./css/Preloader.NewResponsive.css"
 /* IMPORT DES IMAGES DANS LES BOUTONS */
 import Loc from "../../assets/Juin/Loc.png";
 import Loupe from "../../assets/Juin/Loupe.png";
@@ -98,7 +99,7 @@ function Preloader(props) {
               </div>
               <h4 className="LandingTitle4">
                 La Ligue Centre-Val de Loire de Football vous propose cette
-                plateforme afin de découvrir l'ensembles des clubs de notre
+                plateforme afin de découvrir l'ensemble des clubs de notre
                 région !
               </h4>
             </div>
@@ -142,10 +143,10 @@ function Preloader(props) {
                 </button>
               </Link>
             </div>
-          </div>
           <Link to="/">
             <img src={ecussonLigue} className="headerLogo" alt="logo" />
           </Link>
+          </div>
         </div>
       </div>
     </>
