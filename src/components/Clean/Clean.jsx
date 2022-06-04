@@ -521,7 +521,6 @@ const isClicked2 = () => {
 
       <div className="mainContainer"id="middle">
         <div className="LegendMap">
-          Helllo
         </div>
         <div className="mapContainer">
         <MapContainer
