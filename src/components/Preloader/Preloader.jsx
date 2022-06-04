@@ -16,6 +16,11 @@ import "./css/Preloader.maxScreen.css"
 import Loc from "../../assets/Juin/Loc.png";
 import Loupe from "../../assets/Juin/Loupe.png";
 
+/* BS 04/06*/
+import { MDBContainer } from 'mdb-react-ui-kit';
+
+
+
 function Preloader(props) {
   let limit = 541;
 
