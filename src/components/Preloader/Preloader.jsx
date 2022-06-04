@@ -16,9 +16,6 @@ import "./css/Preloader.maxScreen.css"
 import Loc from "../../assets/Juin/Loc.png";
 import Loupe from "../../assets/Juin/Loupe.png";
 
-/* BS 04/06*/
-import { MDBContainer } from 'mdb-react-ui-kit';
-
 
 
 function Preloader(props) {
@@ -73,7 +70,7 @@ function Preloader(props) {
 
 
   return (
-    <>
+    <>    
       <div className="generalWrapper">
         <div className="headerPreload">
         
