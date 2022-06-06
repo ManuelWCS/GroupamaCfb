@@ -107,6 +107,7 @@ background-position: center;
     position: static;
     font-family: var(--secondary-font);
     margin-top:-8px;
+    font-size: calc(var(--main-fontSize)+ 2vw);
 }
 /*  CONTAINER DU DEUXIEME TEXTE*/
 
