@@ -92,7 +92,7 @@ background-position: center;
 
 .secondLine {
     height: 5vh;
-    width: 75vw;
+    width: 90vw;
     margin:auto;
     display: flex;
     flex-direction: row;
@@ -107,7 +107,7 @@ background-position: center;
     position: static;
     font-family: var(--secondary-font);
     margin-top:-8px;
-    font-size: calc(var(--main-fontSize)+ 2vw);
+    font-size: calc( 8px + 2vw);
 }
 /*  CONTAINER DU DEUXIEME TEXTE*/
 

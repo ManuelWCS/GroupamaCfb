@@ -521,6 +521,7 @@ const isClicked2 = () => {
 
       <div className="mainContainer"id="middle">
         <div className="LegendMap">
+          <Legend className="LegendContent" />
         </div>
         <div className="mapContainer">
         <MapContainer
@@ -629,6 +630,8 @@ const isClicked2 = () => {
             </MapContainer>
         <div className="BlocCarte">
           <div className="popover" id="popover">
+            <div className={ btn2 === true ? "divFormOpen" : "divFormClose"}>
+
           <button
             onClick={(isClicked)}
             className={btn2 === true ? "styleLoc" : "styleLocExpanded"}
@@ -954,9 +957,11 @@ const isClicked2 = () => {
               </button>
             ) : null}
           </div>
+        </div>
 
 
-          <div className="popover2" id="popover2">
+        <div className={ btn2 === true ? "divLocOpen" : "divLocClose"}>
+
           <button
             onClick={isClicked2}
             className={btn1 === true ? "styleGeo" : "styleGeoExpanded"}

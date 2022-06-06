@@ -116,8 +116,8 @@
 
 
     .mainContainer {
-        height: 100vh;
-        width: 100vw;
+        height: 70vh;
+        width: 99vw;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -125,6 +125,7 @@
         align-items: center;
         align-content: center;
         margin: auto;
+        border:5px solid black;
     }
 
     .LegendMap {
@@ -132,6 +133,8 @@
         height: 10%;
         display: flex;
         flex-direction: row;
+        border: 5px solid yellow;
+        order: 2;
     }
 
     .mapContainer {
@@ -142,6 +145,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        border: 5px solid blue; 
         order: 3;
     }
 
@@ -153,19 +157,56 @@
         z-index: 1;
     }
 
+
+
+
     .popover {
         height: auto;
-        margin-top: 32px;
-        margin-bottom: 32px;
         width: 100vw;
         margin: auto;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: space-around;
-        position: absolute;
-        left: 0px;
         z-index: 5;
-        margin-top: -60vh;
+        border:5px solid red;
+
+
+
     }
+
+    /* DIV FORMULAIRE  */
+
+    .divFormOpen {
+        height: 500px;
+        position:absolute;
+        bottom: -57vh;
+        z-index:2;
+        right: 9vw;
+        order:2;
+    }
+
+    .divFormClose {
+        position:absolute;
+        bottom: -17vh;
+        z-index:2;
+        right: 9vw;
+    }
+
+    .divLocOpen {
+        height: 500px;
+        position:absolute;
+        bottom: -60vh;
+        z-index:2;
+        left:  9vw;
+    }
+
+    .divLocClose {
+        position:absolute;
+        bottom: -17vh;
+        z-index:2;
+        left: 9vw;
+    }
+
+   
 }
