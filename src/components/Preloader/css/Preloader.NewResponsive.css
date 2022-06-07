@@ -1,348 +1,256 @@
-@import url("../../../App.css");
+@import url('../../../App.css');
 
-/* MOBILE FIRST */
+/* MOBILE FIRST */ 
 
 /* Tailles des images */
 
-
 .LogoPlateforme {
-  width: 130px;
-  height: 110px;
-  margin-left: -18px;
+    width:  100px;
+    height: 90px;
 }
-
 .headerLogo {
-  width: 90px;
-  height: 100px;
+
+    width:60px;
+    height: 70px;
 }
 
-.Loupe,
-.Loc {
-  height: 20px;
-  width: 20px;
+.Loupe, .Loc {
+    height:  20px;
+    width:  20px;
 }
-
 /* Fin taille des images */
 
 .generalWrapper {
-  width: 100vw;
-  height: 100vh;
+    width: 100vw;
+    height: 100vh;
 }
-
 .headerPreload {
-  width: 100vw;
-  height: 20vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .FullLanding {
-  width: 100vw;
-  height: 80vh;
-
-
+    width: 100vw;
+    height: 80vh;
 }
 
 /* ELEMENTS RESTANT DOIVENT SE PARATAGER LES 80VH RESTANTS*/
 
-.LandingTitlesContainer {
-  width: 100vw;
-  height: 40vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-}
-
-/* Container du 541 CLUBS */
-.BiggestTitle {
-  height: 20vh;
-  width: 100vw;
-}
-
-.firstLine {
-  height: 10vh;
-  width: 30vw;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: baseline;
-  margin-top: 60px;
-}
-
-/* TYPO 541 CLUBS */
-
-.counterNumber {
-  font-weight: bold;
-  font-family: var(--main-font);
-  color: var(--secondary-color);
-  font-size: calc(var(--main-fontSize) + 8vh);
-}
-
-.LandingTitle {
-  font-size: calc(var(--main-fontSize) + 5vh);
-  font-weight: lighter;
-  font-family: var(--secondary-font);
-  color: var(--secondary-color);
-}
-
-/* DEUXIEME LIGNE */
-
-.secondLine {
-  height: 5vh;
-  width: 90vw;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: baseline;
-}
-
-/* TYPO "DE FOOTBALL"*/
-
-.LandingTitle2 {
-  letter-spacing: 8px;
-  position: static;
-  font-family: var(--secondary-font);
-  font-size: calc(12px + 5vh);
-}
-
-/*  CONTAINER DU DEUXIEME TEXTE*/
-
-.thirdLine {
-  width: 95vw;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: baseline;
-}
-
-.LandingTitle3 {
-  font-family: var(--secondary-font);
-  font-size: calc(8px + 1vh);
-  width: 100vw;
-  color: #000;
-  text-align: center;
-}
-
-/* TYPO "LA LIGUE */
-.LandingTitle4 {
-  font-size: 13px;
-  word-wrap: break-word;
-  width: 95vw;
-  margin: auto;
-  font-family: var(--secondary-font);
-  text-align: center;
-  color: var(--secondary-color);
-}
-
-/* DEUXIEME CONTAINER 40vh*/
-
-.LinkContainer {
-  width: 95vw;
-  min-height: 20vh;
-  height: 30vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-  margin: auto;
-}
-
-/* TYPO "ACCEDEZ A LA CARTE*/
-
-.LandingTitle6 {
-  font-size: 13px;
-  letter-spacing: 1px;
-  width: 100vw;
-  font-weight: 700;
-  text-align: center;
-  font-family: var(--secondary-font);
-  color: var(--secondary-color);
-}
-
-/* CONTAINER DES BOUTONS */
-
-.rowBtn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* ELEMENTS DANS LE BOUTON */
-
-.BtnContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-
-/* STYLE BOUTON */
-
-.myButton2 {
-  box-shadow: inset -6px -8px 28px 5px #c1272d;
-  background: linear-gradient(180deg, #c1272d 5%, #c1272d);
-  background-color: #2e466e;
-  border-radius: 17px;
-  border: 1px solid #fff;
-  display: inline-block;
-  cursor: pointer;
-  color: #fff;
-  font-family: var(--main-font);
-  font-size: 14px;
-  padding: 13px 37px;
-  text-decoration: none;
-  width: 235px;
-  margin-bottom: 8px;
-}
-
-/* TEXTE BOUTON */
-
-.btnText {
-  font-family: var(--main-font);
-  font-size: 12px;
-}
-
-/* DEUXIEME BOUTON */
-
-.myButton {
-  box-shadow: inset -6px -8px 28px 5px #3586c2;
-  background: linear-gradient(180deg, #3586c2 5%, #3586c2);
-  background-color: #2e466e;
-  border-radius: 17px;
-  border: 1px solid #fff;
-  display: inline-block;
-  cursor: pointer;
-  color: #fff;
-  font-family: var(--main-font);
-  font-size: 14px;
-  padding: 13px 37px;
-  text-decoration: none;
-  width: 235px;
-  margin-bottom: 16px;
-}
-
-.BtnContainer2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  width: 233px;
-}
-
-.Loupe {
-  margin-left: -12px;
-  padding-right: 8px;
-}
-
-.headerLogo {
-  margin-top: -34px;
-}
-
-/* On fixe le background jusqu'a 479px */
-@media screen and (max-width:479px) {
-  .LandingTitlesContainer {
+.LandingTitlesContainer  {
     width: 100vw;
     height: 40vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
-    background-size: 90% auto;
-    background-repeat: no-repeat;
-    background-position: center bottom 70%;
-  }
+    
 }
 
-
-/* Breakpoint pour gerer l'image de fond si l'écran est grand*/
-@media screen and (max-width:500px) {
-  .LandingTitlesContainer {
-    background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
-    background-size: 70% auto;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 20vh;
-    height: 28vh;
-  }
-}
-
-
-/* Smartphones (portrait) ----------- */
-
-/* Ipad2 (portrait) ----------- */
-/* @media only screen and (min-width : 768px){...} */
-
-/* Ipad2 (paysage) ----------- */
-/* @media only screen and (min-width : 1024px){...} */
-
-/* Ordi (Petit) ----------- */
-/* @media only screen and (min-width : 1224px){...} */
-
-/* Desktops and laptops ----------- */
-/* @media only screen and (min-width : 1824px){...} */
-
-
-
-/* TAILLE DES LOGOS */
-
-@media screen and (max-width:768px) {
-
-  .LogoPlateforme {
-    width: 130px;
-    height: 110px;
-    margin-left: -18px;
-    margin-top: 16px;
-  }
-
-  .headerLogo {
-    width: 70px;
-    height: 80px;
-  }
-
-  .headerPreload {
-    height: 15vh;
-    margin: auto;
-  }
-  .FullLanding {
-    height: 85vh;
+/* Container du 541 CLUBS */
+.BiggestTitle {
+    height: 20vh;
     width: 100vw;
-    margin:auto;
-  }
+    background-image:url('../../../assets/Juin/BackgroundBonneCouleur.png');
+    background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
 
-  .LandingTitlesContainer {
-    background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
-    background-size: 70% auto;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 20vh;
-    height: 28vh;
-  }
+}
 
-  .BiggestTitle {
+.firstLine {
     height: 10vh;
+    width: 30vw;
+    margin:auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 30px;
+
+}
+
+/* TYPO 541 CLUBS */
+
+.counterNumber {
+    font-size: 10vh;
+    font-weight: bold;
+    font-family: var(--main-font);
+    color: var(--secondary-color);
+}
+
+.LandingTitle {
+    font-size: 5vh;
+    font-weight: lighter;
+    font-family: var(--secondary-font);
+    color: var(--secondary-color);    
+}
+
+/* DEUXIEME LIGNE */
+
+.secondLine {
+    height: 5vh;
+    width: 90vw;
+    margin:auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
+/* TYPO "DE FOOTBALL"*/
+
+.LandingTitle2 {
+    letter-spacing: 8px;
+    position: static;
+    font-family: var(--secondary-font);
+    margin-top:-8px;
+    font-size: calc( 8px + 2vw);
+}
+/*  CONTAINER DU DEUXIEME TEXTE*/
+
+
+.thirdLine {
+    height: 5vh;
+    width: 80vw;
+    margin:auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+.LandingTitle3 {
+    font-family: var(--secondary-font);
+    font-size: 12px;
+    width: 100%;
+    color: #000;
+    text-align: center;
+}
+/* TYPO "LA LIGUE */
+.LandingTitle4 {
+    font-size: 13px;
+    word-wrap: break-word;
+    width: 80vw;
+    margin: auto;
+    font-family: var(--secondary-font);
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+/* DEUXIEME CONTAINER 40vh*/
+
+.LinkContainer  {
+    width: 100vw;
+    height: 40vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+/* TYPO "ACCEDEZ A LA CARTE*/
+
+.LandingTitle6 {
+    font-size: 13px;
+    letter-spacing: 1px;
+    width: 100vw;
+    font-weight: 700;
+    text-align: center;
+    font-family: var(--secondary-font);
+    color: var(--secondary-color);
+    margin-top: -16px;
+}
+
+/* CONTAINER DES BOUTONS */
+
+.rowBtn{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-  .firstLine {
-    margin-top: 0px;
-  }
-
-  .footerLanding {
-    display: flex;
-    margin: auto;
-    width: 100%;
     justify-content: center;
-    margin-top: 48px;
-
-  }
+    align-items: center;
 }
+
+/* ELEMENTS DANS LE BOUTON */
+
+.BtnContainer {     
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-around;
+}
+
+/* STYLE BOUTON */
+
+.myButton2 {
+    box-shadow: inset -6px -8px 28px 5px #c1272d;
+    background: linear-gradient(180deg,#c1272d 5%,#c1272d);
+    background-color: #2e466e;
+    border-radius: 17px;
+    border: 1px solid #fff;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-family: var(--main-font);
+    font-size: 14px;
+    padding: 13px 37px;
+    text-decoration: none;
+    width: 235px;
+    margin-bottom: 8px;
+}
+
+/* TEXTE BOUTON */
+
+.btnText {
+    font-family: var(--main-font);
+    font-size:12px ;
+}
+
+/* DEUXIEME BOUTON */
+
+.myButton {
+    box-shadow: inset -6px -8px 28px 5px #3586c2;
+    background: linear-gradient(180deg,#3586c2 5%,#3586c2);
+    background-color: #2e466e;border-radius: 17px;
+    border: 1px solid #fff;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-family: var(--main-font);
+    font-size: 14px;
+    padding: 13px 37px;
+    text-decoration: none;
+    width: 235px;    
+
+}
+
+.BtnContainer2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 233px;
+}
+
+.Loupe {
+    margin-left: -12px;
+    padding-right: 8px;
+}
+
+.headerLogo {
+    margin-bottom: -2px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
