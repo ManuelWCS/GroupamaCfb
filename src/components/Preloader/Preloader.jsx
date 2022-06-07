@@ -80,6 +80,10 @@ function Preloader(props) {
               alt="logo Centre Frappe & But"
               className="LogoPlateforme"
             ></img>
+             <Link to="/">
+            <img src={ecussonLigue} className="headerLogo" alt="logo" />
+          </Link>
+
         </div>
         <div className="FullLanding">
           <div className="LandingTitlesContainer">
@@ -100,7 +104,7 @@ function Preloader(props) {
               <h4 className="LandingTitle4">
                 La Ligue Centre-Val de Loire de Football vous propose cette
                 plateforme afin de découvrir l'ensemble des clubs de notre
-                région !
+                Région !
               </h4>
             </div>
           </div>
@@ -110,7 +114,7 @@ function Preloader(props) {
               Accèdez à la carte avec deux options :
             </h6>
             <div className="rowBtn">
-              <Link to="middle" spy={true}
+              <Link to="popover" spy={true}
                 smooth={true}
                 hashSpy={true}
                 offset={50}
@@ -126,7 +130,7 @@ function Preloader(props) {
                   </div>
                 </button>
               </Link>
-              <Link to="middle" spy={true}
+              <Link to="popover2" spy={true}
                 smooth={true}
                 hashSpy={true}
                 offset={50}
@@ -143,9 +147,7 @@ function Preloader(props) {
                 </button>
               </Link>
             </div>
-          <Link to="/">
-            <img src={ecussonLigue} className="headerLogo" alt="logo" />
-          </Link>
+         
           </div>
         </div>
       </div>

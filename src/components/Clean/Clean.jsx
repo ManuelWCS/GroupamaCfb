@@ -629,14 +629,14 @@ const isClicked2 = () => {
               {visibilityInstanceMarkers === true ? <Instances /> : null}
             </MapContainer>
         <div className="BlocCarte">
-          <div className="popover" id="popover">
+          <div className="popover" id="popover" >
             <div className={ btn2 === true ? "divFormOpen" : "divFormClose"}>
 
           <button
             onClick={(isClicked)}
             className={btn2 === true ? "styleLoc" : "styleLocExpanded"}
           >
-            <div className="btnContent1">
+            <div className="btnContent1" id="popover2">
               <img src={SearchIcon} className="searchIcon" alt="searchIcon" />
               <p className="TitleButton">
                 CLUBS SELON CRITÈRES &nbsp;{" "}
@@ -775,7 +775,7 @@ const isClicked2 = () => {
                       </RadioGroup>
 
                       <div className="modalDiv">
-                        <Button2 className="modalTitle" onClick={handleOpen}>
+                        <Button2 className="modalTitle" onClick={handleOpen} >
                           <div className="btnOpenPopup">
                             <p className="btnTextPopUp">
                               Détails sur les catégories
@@ -857,7 +857,7 @@ const isClicked2 = () => {
                     />
                   </div>
 
-                  <div className="btnContainer" id="test2">
+                  <div className="btnContainer" >
                     <button
                       className="btnBackground"
                       id="scrollBtn"
@@ -960,7 +960,7 @@ const isClicked2 = () => {
         </div>
 
 
-        <div className={ btn2 === true ? "divLocOpen" : "divLocClose"}>
+        <div className={ btn2 === true ? "divLocOpen" : "divLocClose"} id="popover2">
 
           <button
             onClick={isClicked2}
