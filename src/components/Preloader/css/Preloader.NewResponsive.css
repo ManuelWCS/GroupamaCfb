@@ -57,7 +57,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: baseline;
-  margin-top: 52px;
+  margin-top: 89px;
 }
 
 /* TYPO 541 CLUBS */
@@ -94,14 +94,13 @@
   letter-spacing: 7px;
   position: static;
   font-family: var(--secondary-font);
-  margin-top: 4px;
+  margin-top: -16px;
   font-size: calc(12px + 2vh);
 }
 /*  CONTAINER DU DEUXIEME TEXTE*/
 
 .thirdLine {
-  height: 5vh;
-  width: 80vw;
+   width: 95vw;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -110,11 +109,11 @@
 }
 .LandingTitle3 {
   font-family: var(--secondary-font);
-  font-size: calc(12px);
-  width: 100%;
+  font-size: calc(8px + 1vh);
+  width: 100vw;
   color: #000;
   text-align: center;
-  padding-top:3vh;
+  margin-top:-16px;
 }
 /* TYPO "LA LIGUE */
 .LandingTitle4 {
@@ -187,6 +186,7 @@
   text-decoration: none;
   width: 235px;
   margin-bottom: 8px;
+  height: 56px;
 }
 
 /* TEXTE BOUTON */
@@ -212,6 +212,7 @@
   padding: 13px 37px;
   text-decoration: none;
   width: 235px;
+  height: 56px;
 }
 
 .BtnContainer2 {
