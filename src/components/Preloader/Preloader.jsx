@@ -4,8 +4,9 @@ import ecussonLigue from "../../assets/Juin/EcussonLigue.png";
 import { Link } from 'react-scroll'
 
 /* VERSIONS CSS */
- import "./css/Preloader.NewResponsive.Landscape.css";
-import "./css/Preloader.NewResponsive.css"
+//  import "./css/Preloader.NewResponsive.Landscape.css";
+// import "./css/Preloader.NewResponsive.css"
+import "./css/Preloader.New.css"
 /* IMPORT DES IMAGES DANS LES BOUTONS */
 import Loc from "../../assets/Juin/Loc.png";
 import Loupe from "../../assets/Juin/Loupe.png";
@@ -55,13 +56,6 @@ function Preloader(props) {
     setScrollLeft(props.scrollLeft);
     setScrollRight(props.scrollRight);
   }, [props.scrollLeft, props.scrollRight]);
-
-
-
-
-
-
-
 
   return (
     <>    

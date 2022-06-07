@@ -1,0 +1,48 @@
+@import url("../../../App.css");
+
+
+@media screen and (max-width: 768px) {
+
+    .LogoPlateforme, .headerLogo, .Loupe, .Loc {
+        display: none;
+    }
+    .generalWrapper {
+        background-color: red;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    .headerPreload {
+        background-color: blue;
+        width: 100vw;
+        height: 10vh;
+    }
+
+    .FullLanding {
+        height: 90vh;
+        width: 100vw;
+        background-color: aqua;
+    }
+
+    .LandingTitlesContainer {
+        height: 40vh;
+        width: 100vw;
+        background-color: red;
+    }
+
+    .LinkContainer {
+        height: 40vh;
+        width: 100vw;
+        background-color: pink;
+    }
+
+    .footerLanding {
+        height: 10vh;
+        width: 100vw;
+        background-color: violet;
+    }
+
+
+}

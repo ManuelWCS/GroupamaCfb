@@ -267,63 +267,9 @@
     background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
     background-size: 70% auto;
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
     min-height: 20vh;
     height: 28vh;
-  }
-}
-
-@media screen and (max-width:768px) {
-
-  .LandingTitlesContainer {
-    background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
-    background-size: 70% auto;
-    background-repeat: no-repeat;
-    background-position: top;
-    min-height: 20vh;
-    height: 28vh;
-  }
-
-  .firstLine {
-    margin-top: 32px;
-  }
-
-  .LandingTitle2 {
-    margin-top: 8px;
-  }
-
-  .LandingTitle4 {
-    width: 95vw;
-    ;
-  }
-
-
-  .counterNumber {
-    font-size: calc(var(--main-fontSize) + 8vh);
-  }
-
-  .LandingTitle {
-    font-size: calc(var(--main-fontSize) + 5vh);
-  }
-
-  .LandingTitle2 {
-    font-size: 12px;
-  }
-
-  .LandingTitle3 {
-    font-size: 12px;
-  }
-
-  .LandingTitle4 {
-    font-size: 12px;
-    margin-top: 16px;
-  }
-
-  .LandingTitle6 {
-    font-size: calc(8px + 1vh);
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-
   }
 }
 
@@ -361,8 +307,34 @@
   }
 
   .headerPreload {
-    height: 20vh;
+    height: 15vh;
     margin: auto;
+  }
+  .FullLanding {
+    height: 85vh;
+    width: 100vw;
+    margin:auto;
+  }
+
+  .LandingTitlesContainer {
+    background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
+    background-size: 70% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 20vh;
+    height: 28vh;
+  }
+
+  .BiggestTitle {
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .firstLine {
+    margin-top: 0px;
   }
 
   .footerLanding {
