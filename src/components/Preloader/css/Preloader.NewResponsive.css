@@ -136,12 +136,13 @@
 /* DEUXIEME CONTAINER 40vh*/
 
 .LinkContainer {
-  width: 100vw;
+  width: 95vw;
   height: 20vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  margin:auto;
 }
 
 /* TYPO "ACCEDEZ A LA CARTE*/
@@ -262,6 +263,8 @@
         background-size: 70% auto ;
         background-repeat: no-repeat;
         background-position: top;  
+        min-height: 20vh;
+        height: 35vh;
     }
 
     .firstLine {
@@ -278,7 +281,7 @@
     
 
     .counterNumber {
-        font-size: calc(var(--main-fontSize) + 11vh);
+        font-size: calc(var(--main-fontSize) + 9vh);
     }
     .LandingTitle {
       font-size: calc(var(--main-fontSize) + 5vh);
@@ -298,6 +301,7 @@
     .LandingTitle6 {
         font-size: calc(8px + 1vh);
         padding-bottom: 8px;
+        margin-bottom: 8px;
 
     }
 }
