@@ -110,7 +110,7 @@ function Preloader(props) {
               Accèdez à la carte avec deux options :
             </h6>
             <div className="rowBtn">
-              <Link to="middle" spy={true}
+              <Link to="popover2" spy={true}
                 smooth={true}
                 hashSpy={true}
                 offset={50}
@@ -126,7 +126,7 @@ function Preloader(props) {
                   </div>
                 </button>
               </Link>
-              <Link to="middle" spy={true}
+              <Link to="Form" spy={true}
                 smooth={true}
                 hashSpy={true}
                 offset={50}
