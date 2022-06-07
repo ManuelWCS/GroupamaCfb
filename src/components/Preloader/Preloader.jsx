@@ -4,14 +4,18 @@ import ecussonLigue from "../../assets/Juin/EcussonLigue.png";
 import { Link } from 'react-scroll'
 
 /* VERSIONS CSS */
-//  import "./css/Preloader.NewResponsive.Landscape.css";
-// import "./css/Preloader.NewResponsive.css"
-import "./css/Preloader.New.css"
+//  import "./css/Preloader.css";
+//  import "./css/Preloader.mobile.css";
+// import "./css/Preloader.tablet.css";
+// import "./css/Preloader.bigTablet.css";
+// import "./css/Preloader.desktop.css";
+//  import "./css/Preloader.bigscreen.css";
+//  import "./css/Preloader.bigdesktop.css";
+//  import "./css/Preloader.maxScreen.css"
+import "./css/Preloader.NewResponsive.css"
 /* IMPORT DES IMAGES DANS LES BOUTONS */
 import Loc from "../../assets/Juin/Loc.png";
 import Loupe from "../../assets/Juin/Loupe.png";
-
-import Landing from '../../components/Preloader/css/landing.png'
 
 
 
@@ -59,27 +63,26 @@ function Preloader(props) {
     setScrollRight(props.scrollRight);
   }, [props.scrollLeft, props.scrollRight]);
 
+
+
+
+
+
+
+
   return (
     <>    
       <div className="generalWrapper">
-        <div className="imgContainer">
-          <img className="landingPic" alt="" src={Landing} />
-
-
-        </div>
-        
-        {/* <div className="headerPreload">
+        <div className="headerPreload">
         
             <img
               src={LogoCFB}
               alt="logo Centre Frappe & But"
               className="LogoPlateforme"
             ></img>
-            
-
         </div>
-        <div className="FullLanding"> */}
-          {/* <div className="LandingTitlesContainer">
+        <div className="FullLanding">
+          <div className="LandingTitlesContainer">
             <div className="BiggestTitle">
               <div className="firstLine">
                 <h1 className="counterNumber">{counter}</h1>
@@ -97,17 +100,17 @@ function Preloader(props) {
               <h4 className="LandingTitle4">
                 La Ligue Centre-Val de Loire de Football vous propose cette
                 plateforme afin de découvrir l'ensemble des clubs de notre
-                Région !
+                région !
               </h4>
             </div>
-          </div> */}
+          </div>
 
           <div className="LinkContainer">
             <h6 className="LandingTitle6">
               Accèdez à la carte avec deux options :
             </h6>
             <div className="rowBtn">
-              <Link to="popover" spy={true}
+              <Link to="middle" spy={true}
                 smooth={true}
                 hashSpy={true}
                 offset={50}
@@ -123,7 +126,7 @@ function Preloader(props) {
                   </div>
                 </button>
               </Link>
-              <Link to="popover2" spy={true}
+              <Link to="middle" spy={true}
                 smooth={true}
                 hashSpy={true}
                 offset={50}
@@ -140,19 +143,12 @@ function Preloader(props) {
                 </button>
               </Link>
             </div>
-
-
-         
-          </div>
-          <div className="footerLanding">
-
-        <Link to="/">
+          <Link to="/">
             <img src={ecussonLigue} className="headerLogo" alt="logo" />
           </Link>
           </div>
-       
         </div>
-      {/* </div> */}
+      </div>
     </>
   );
 }
