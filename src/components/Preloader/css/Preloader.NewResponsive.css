@@ -10,6 +10,7 @@
   height: 110px;
   margin-left: -18px;
 }
+
 .headerLogo {
   width: 90px;
   height: 100px;
@@ -20,12 +21,14 @@
   height: 20px;
   width: 20px;
 }
+
 /* Fin taille des images */
 
 .generalWrapper {
   width: 100vw;
   height: 100vh;
 }
+
 .headerPreload {
   width: 100vw;
   height: 20vh;
@@ -49,7 +52,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-direction: column;  
+  flex-direction: column;
 }
 
 /* Container du 541 CLUBS */
@@ -105,16 +108,18 @@
   font-family: var(--secondary-font);
   font-size: calc(12px + 5vh);
 }
+
 /*  CONTAINER DU DEUXIEME TEXTE*/
 
 .thirdLine {
-   width: 95vw;
+  width: 95vw;
   margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: baseline;
 }
+
 .LandingTitle3 {
   font-family: var(--secondary-font);
   font-size: calc(8px + 1vh);
@@ -122,6 +127,7 @@
   color: #000;
   text-align: center;
 }
+
 /* TYPO "LA LIGUE */
 .LandingTitle4 {
   font-size: 13px;
@@ -143,7 +149,7 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  margin:auto;
+  margin: auto;
 }
 
 /* TYPO "ACCEDEZ A LA CARTE*/
@@ -240,13 +246,13 @@
 
 /* On fixe le background jusqu'a 479px */
 @media screen and (max-width:479px) {
-.LandingTitlesContainer {
+  .LandingTitlesContainer {
     width: 100vw;
     height: 40vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    flex-direction: column;  
+    flex-direction: column;
     background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
     background-size: 90% auto;
     background-repeat: no-repeat;
@@ -256,55 +262,70 @@
 
 
 /* Breakpoint pour gerer l'image de fond si l'écran est grand*/
+@media screen and (max-width:500px) {
+  .LandingTitlesContainer {
+    background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
+    background-size: 70% auto;
+    background-repeat: no-repeat;
+    background-position: top;
+    min-height: 20vh;
+    height: 35vh;
+  }
+}
 
 @media screen and (max-width:768px) {
 
-    .LandingTitlesContainer {
-        background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
-        background-size: 70% auto ;
-        background-repeat: no-repeat;
-        background-position: top;  
-        min-height: 20vh;
-        height: 35vh;
-    }
+  .LandingTitlesContainer {
+    background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
+    /* background-size: 70% auto; */
+    background-repeat: no-repeat;
+    background-position: top;
+    min-height: 20vh;
+    height: 35vh;
+    background-size: contain;
+  }
 
-    .firstLine {
-      margin-top:32px;
-    }
-    
-    .LandingTitle2 {
-      margin-top:8px;
-    }
+  .firstLine {
+    margin-top: 32px;
+  }
 
-    .LandingTitle4 {
-        width: 95vw;;
-    }
-    
+  .LandingTitle2 {
+    margin-top: 8px;
+  }
 
-    .counterNumber {
-        font-size: calc(var(--main-fontSize) + 8vh);
-    }
-    .LandingTitle {
-      font-size: calc(var(--main-fontSize) + 5vh);
-    }
+  .LandingTitle4 {
+    width: 95vw;
+    ;
+  }
 
-    .LandingTitle2 {
-      font-size:12px;    }
 
-    .LandingTitle3 {
-      font-size:12px;    }
+  .counterNumber {
+    font-size: calc(var(--main-fontSize) + 8vh);
+  }
 
-    .LandingTitle4 {
-        font-size:12px;
-        margin-top:16px;
-    }
+  .LandingTitle {
+    font-size: calc(var(--main-fontSize) + 5vh);
+  }
 
-    .LandingTitle6 {
-        font-size: calc(8px + 1vh);
-        padding-bottom: 8px;
-        margin-bottom: 8px;
+  .LandingTitle2 {
+    font-size: 12px;
+  }
 
-    }
+  .LandingTitle3 {
+    font-size: 12px;
+  }
+
+  .LandingTitle4 {
+    font-size: 12px;
+    margin-top: 16px;
+  }
+
+  .LandingTitle6 {
+    font-size: calc(8px + 1vh);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+
+  }
 }
 
 
@@ -332,23 +353,25 @@
     width: 130px;
     height: 110px;
     margin-left: -18px;
-    margin-top:16px;
+    margin-top: 16px;
   }
+
   .headerLogo {
     width: 70px;
     height: 80px;
-}
-.headerPreload {
-height: 20vh;
-margin:auto;
-}
+  }
 
-.footerLanding {
-  display: flex;
-  margin:auto;
-  width: 100%;
-  justify-content: center;
-  margin-top:48px;
+  .headerPreload {
+    height: 20vh;
+    margin: auto;
+  }
 
-}
+  .footerLanding {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    justify-content: center;
+    margin-top: 48px;
+
+  }
 }
