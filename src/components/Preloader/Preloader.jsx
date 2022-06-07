@@ -73,9 +73,7 @@ function Preloader(props) {
               alt="logo Centre Frappe & But"
               className="LogoPlateforme"
             ></img>
-             <Link to="/">
-            <img src={ecussonLigue} className="headerLogo" alt="logo" />
-          </Link>
+            
 
         </div>
         <div className="FullLanding">
@@ -140,8 +138,17 @@ function Preloader(props) {
                 </button>
               </Link>
             </div>
+
+
          
           </div>
+          <div className="footerLanding">
+
+        <Link to="/">
+            <img src={ecussonLigue} className="headerLogo" alt="logo" />
+          </Link>
+          </div>
+       
         </div>
       </div>
     </>

@@ -327,4 +327,13 @@
 height: 15vh;
 margin:auto;
 }
+
+.footerLanding {
+  display: flex;
+  margin:auto;
+  width: 100%;
+  justify-content: center;
+  margin-top:48px;
+
+}
 }
