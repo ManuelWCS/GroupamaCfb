@@ -277,12 +277,11 @@
 
   .LandingTitlesContainer {
     background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
-    /* background-size: 70% auto; */
+    background-size: 70% auto;
     background-repeat: no-repeat;
     background-position: top;
     min-height: 20vh;
     height: 35vh;
-    background-size: contain;
   }
 
   .firstLine {
