@@ -5,6 +5,15 @@
 /* Tailles des images */
 
 
+.LogoPlateforme {
+  width: 130px;
+  height: 110px;
+  margin-left: -18px;
+}
+.headerLogo {
+  width: 90px;
+  height: 100px;
+}
 
 .Loupe,
 .Loc {
@@ -57,7 +66,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: baseline;
-  margin-top: 89px;
+  margin-top: 60px;
 }
 
 /* TYPO 541 CLUBS */
@@ -94,7 +103,6 @@
   letter-spacing: 7px;
   position: static;
   font-family: var(--secondary-font);
-  margin-top: -16px;
   font-size: calc(12px + 2vh);
 }
 /*  CONTAINER DU DEUXIEME TEXTE*/
@@ -318,13 +326,14 @@
     width: 130px;
     height: 110px;
     margin-left: -18px;
+    margin-top:16px;
   }
   .headerLogo {
     width: 90px;
     height: 100px;
 }
 .headerPreload {
-height: 15vh;
+height: 20vh;
 margin:auto;
 }
 
