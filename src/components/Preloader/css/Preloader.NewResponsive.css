@@ -282,7 +282,7 @@
     
 
     .counterNumber {
-        font-size: calc(var(--main-fontSize) + 9vh);
+        font-size: calc(var(--main-fontSize) + 8vh);
     }
     .LandingTitle {
       font-size: calc(var(--main-fontSize) + 5vh);

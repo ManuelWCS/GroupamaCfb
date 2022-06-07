@@ -62,13 +62,10 @@
         background-position: center;
         background-size: contain;
     }
-    .counterNumber {
-        font-size: calc(20px + 10vh) ;
-    }
+    
     .rowBtn {
         display: flex;
         flex-direction: row;
-        background-color: red;
     }
 
     
