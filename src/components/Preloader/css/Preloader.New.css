@@ -12,8 +12,17 @@
         display: flex;
         flex-direction: column;
         width: 100vw;
+        justify-content: flex-start;
+        align-items: center;
     }
 
+    .landingPic {
+        width: auto;
+        height: auto;
+        margin-left:auto;
+        margin-right: auto;
+    }
+/* 
     .headerPreload {
         background-color: blue;
         width: 100vw;
@@ -24,13 +33,13 @@
         height: 90vh;
         width: 100vw;
         background-color: aqua;
-    }
-
+    } */
+/* 
     .LandingTitlesContainer {
         height: 40vh;
         width: 100vw;
         background-color: red;
-    }
+    } */
 
     .LinkContainer {
         height: 40vh;
@@ -38,11 +47,11 @@
         background-color: pink;
     }
 
-    .footerLanding {
+    /* .footerLanding {
         height: 10vh;
         width: 100vw;
         background-color: violet;
-    }
+    } */
 
 
 }

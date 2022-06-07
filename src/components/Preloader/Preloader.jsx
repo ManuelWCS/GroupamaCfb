@@ -11,6 +11,8 @@ import "./css/Preloader.New.css"
 import Loc from "../../assets/Juin/Loc.png";
 import Loupe from "../../assets/Juin/Loupe.png";
 
+import Landing from '../../components/Preloader/css/landing.png'
+
 
 
 function Preloader(props) {
@@ -60,7 +62,13 @@ function Preloader(props) {
   return (
     <>    
       <div className="generalWrapper">
-        <div className="headerPreload">
+        <div className="imgContainer">
+          <img className="landingPic" alt="" src={Landing} />
+
+
+        </div>
+        
+        {/* <div className="headerPreload">
         
             <img
               src={LogoCFB}
@@ -70,8 +78,8 @@ function Preloader(props) {
             
 
         </div>
-        <div className="FullLanding">
-          <div className="LandingTitlesContainer">
+        <div className="FullLanding"> */}
+          {/* <div className="LandingTitlesContainer">
             <div className="BiggestTitle">
               <div className="firstLine">
                 <h1 className="counterNumber">{counter}</h1>
@@ -92,7 +100,7 @@ function Preloader(props) {
                 Région !
               </h4>
             </div>
-          </div>
+          </div> */}
 
           <div className="LinkContainer">
             <h6 className="LandingTitle6">
@@ -144,7 +152,7 @@ function Preloader(props) {
           </div>
        
         </div>
-      </div>
+      {/* </div> */}
     </>
   );
 }
