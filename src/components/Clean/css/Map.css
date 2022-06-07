@@ -180,7 +180,7 @@
     .divFormOpen {
         height: 500px;
         position:absolute;
-        bottom: -66.5vh;
+        bottom: -60vh;
         z-index:2;
         right: 9vw;
         order:2;
@@ -188,26 +188,40 @@
 
     .divFormClose {
         position:absolute;
-        bottom: -28vh;
+        bottom: -15vh;
         z-index:2;
         right: 9vw;
+        height: 0px;
+
     }
 
     .divLocOpen {
         height: 500px;
         position:absolute;
-        bottom: -68vh;
+        bottom: -61vh;
         z-index:2;
         left:  9vw;
     }
 
     .divLocClose {
         position:absolute;
-        bottom: -28vh;
+        bottom: -15vh;
         z-index:2;
         left: 9vw;
-        height: 75px;
+        height: 0px;
     }
 
    
 }
+
+
+@media screen and (min-width: 1225px) and (max-width:1824px) {
+
+    #map {
+        height: 60vh;
+        width: 90vw;
+        margin: auto;
+    }
+}
+
+

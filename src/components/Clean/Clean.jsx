@@ -960,7 +960,7 @@ const isClicked2 = () => {
         </div>
 
 
-        <div className={ btn2 === true ? "divLocOpen" : "divLocClose"} id="popover2">
+        <div className={ btn1 === true ? "divLocOpen" : "divLocClose"} id="popover2">
 
           <button
             onClick={isClicked2}

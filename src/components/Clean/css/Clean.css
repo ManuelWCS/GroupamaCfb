@@ -406,17 +406,10 @@
     background-color: var(--main-color);
     width: 355px;
     margin: 0 auto;
+    border:none;
     /* animation: anim1 200s ease-in-out; */
   }
 
-  .styleLocExpanded {
-    height: 60px;
-    border-radius: 30px;
-    background-color: var(--main-color);
-    width: 275px;
-    margin: var(--spacing-small);
-    border: none;
-  }
 
   .styleDiv2 {
     width: 353px;
@@ -445,14 +438,6 @@
     border: none;
   }
 
-  .styleGeoExpanded {
-    height: 60px;
-    border-radius: 30px;
-    background-color: var(--red-color);
-    width: 275px;
-    margin: var(--spacing-small);
-    border: none;
-  }
 
   .styleDiv3 {
     width: 360px;

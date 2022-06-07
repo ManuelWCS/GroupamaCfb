@@ -40,7 +40,12 @@
         background-size: 50% auto;
         background-repeat: no-repeat;
         background-position: top;
-    }
+;    }
+
+.rowBtn {
+    display: flex;
+    flex-direction: row;
+}
 
     /* .counterNumber {
         font-size: calc(20px + 10vh) ;
@@ -49,3 +54,37 @@
 
 
 /* Breakpoint grand ecran */
+@media screen and (min-width:1225px) and (max-width: 1823px) {
+    .LandingTitlesContainer {
+        background-image: url("../../../assets/Juin/BackgroundBonneCouleur.png");
+        background-size: 80% auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    .counterNumber {
+        font-size: calc(20px + 10vh) ;
+    }
+    .rowBtn {
+        display: flex;
+        flex-direction: row;
+        background-color: red;
+    }
+
+
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1824px){ 
+    .LandingTitlesContainer {
+    background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
+    background-size: 50% auto;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: red
+;    }
+    
+
+
+}
