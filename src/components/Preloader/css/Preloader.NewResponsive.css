@@ -4,14 +4,7 @@
 
 /* Tailles des images */
 
-.LogoPlateforme {
-  width: calc(100px + 5vw) ;
-  height: calc(90px + 2vh )
-}
-.headerLogo {
-  width: 60px;
-  height: 70px;
-}
+
 
 .Loupe,
 .Loc {
@@ -139,7 +132,7 @@
 
 .LinkContainer {
   width: 100vw;
-  height: 40vh;
+  height: 20vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -156,7 +149,7 @@
   text-align: center;
   font-family: var(--secondary-font);
   color: var(--secondary-color);
-  padding-top: 36px;
+  padding-bottom: 36px;
 }
 
 /* CONTAINER DES BOUTONS */
@@ -313,3 +306,24 @@
 
 /* Desktops and laptops ----------- */
 /* @media only screen and (min-width : 1824px){...} */
+
+
+
+/* TAILLE DES LOGOS */
+
+@media screen and (max-width:480px) {
+
+  .LogoPlateforme {
+    width: 130px;
+    height: 110px;
+    margin-left: -18px;
+  }
+  .headerLogo {
+    width: 90px;
+    height: 100px;
+}
+.headerPreload {
+height: 15vh;
+margin:auto;
+}
+}
