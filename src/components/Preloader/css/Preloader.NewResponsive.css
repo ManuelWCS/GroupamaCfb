@@ -100,10 +100,10 @@
 /* TYPO "DE FOOTBALL"*/
 
 .LandingTitle2 {
-  letter-spacing: 7px;
+  letter-spacing: 8px;
   position: static;
   font-family: var(--secondary-font);
-  font-size: calc(12px + 2vh);
+  font-size: calc(12px + 5vh);
 }
 /*  CONTAINER DU DEUXIEME TEXTE*/
 
@@ -121,7 +121,6 @@
   width: 100vw;
   color: #000;
   text-align: center;
-  margin-top:-16px;
 }
 /* TYPO "LA LIGUE */
 .LandingTitle4 {
@@ -132,7 +131,6 @@
   font-family: var(--secondary-font);
   text-align: center;
   color: var(--secondary-color);
-  padding-top: 32px;
 }
 
 /* DEUXIEME CONTAINER 40vh*/
@@ -156,7 +154,6 @@
   text-align: center;
   font-family: var(--secondary-font);
   color: var(--secondary-color);
-  padding-bottom: 36px;
 }
 
 /* CONTAINER DES BOUTONS */
@@ -194,7 +191,6 @@
   text-decoration: none;
   width: 235px;
   margin-bottom: 8px;
-  height: 56px;
 }
 
 /* TEXTE BOUTON */
@@ -220,7 +216,7 @@
   padding: 13px 37px;
   text-decoration: none;
   width: 235px;
-  height: 56px;
+  margin-bottom: 16px;
 }
 
 .BtnContainer2 {
@@ -237,7 +233,7 @@
 }
 
 .headerLogo {
-  margin-bottom: -2px;
+  margin-top: -34px;
 }
 
 /* On fixe le background jusqu'a 479px */
@@ -259,7 +255,7 @@
 
 /* Breakpoint pour gerer l'image de fond si l'écran est grand*/
 
-@media screen and (min-width: 480px) and (max-width:768px) {
+@media screen and (max-width:768px) {
 
     .LandingTitlesContainer {
         background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
@@ -269,34 +265,39 @@
     }
 
     .firstLine {
-        margin-top:10vh
+      margin-top:32px;
+    }
+    
+    .LandingTitle2 {
+      margin-top:8px;
     }
 
     .LandingTitle4 {
         width: 95vw;;
     }
+    
 
     .counterNumber {
         font-size: calc(var(--main-fontSize) + 11vh);
     }
     .LandingTitle {
-        font-size: calc(12px + 8vh);
+      font-size: calc(var(--main-fontSize) + 5vh);
     }
 
     .LandingTitle2 {
-        font-size: calc(12px + 4vh);
-    }
+      font-size:12px;    }
+
     .LandingTitle3 {
-        font-size: calc(8px + 2vh);
-    }
+      font-size:12px;    }
+
     .LandingTitle4 {
-        font-size: calc(8px + 2vh);
-        margin-top:4vh;
+        font-size:12px;
+        margin-top:16px;
     }
 
     .LandingTitle6 {
-        font-size: calc(8px + 2vh);
-        margin-top:2vh;
+        font-size: calc(8px + 1vh);
+        padding-bottom: 8px;
 
     }
 }
@@ -320,7 +321,7 @@
 
 /* TAILLE DES LOGOS */
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:768px) {
 
   .LogoPlateforme {
     width: 130px;
@@ -329,8 +330,8 @@
     margin-top:16px;
   }
   .headerLogo {
-    width: 90px;
-    height: 100px;
+    width: 70px;
+    height: 80px;
 }
 .headerPreload {
 height: 20vh;
