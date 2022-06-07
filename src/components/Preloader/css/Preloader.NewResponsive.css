@@ -36,10 +36,7 @@
   width: 100vw;
   height: 80vh;
 
-  background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top;
+
 }
 
 /* ELEMENTS RESTANT DOIVENT SE PARATAGER LES 80VH RESTANTS*/
@@ -50,7 +47,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column;  
 }
 
 /* Container du 541 CLUBS */
@@ -67,20 +64,20 @@
   flex-direction: row;
   justify-content: center;
   align-items: baseline;
-  margin-top: 30px;
+  margin-top: 52px;
 }
 
 /* TYPO 541 CLUBS */
 
 .counterNumber {
-  font-size: 10vh;
   font-weight: bold;
   font-family: var(--main-font);
   color: var(--secondary-color);
+  font-size: calc(var(--main-fontSize) + 10vh);
 }
 
 .LandingTitle {
-  font-size: 5vh;
+  font-size: calc(var(--main-fontSize) + 5vh);
   font-weight: lighter;
   font-family: var(--secondary-font);
   color: var(--secondary-color);
@@ -101,11 +98,11 @@
 /* TYPO "DE FOOTBALL"*/
 
 .LandingTitle2 {
-  letter-spacing: 8px;
+  letter-spacing: 7px;
   position: static;
   font-family: var(--secondary-font);
-  margin-top: -8px;
-  font-size: calc(8px + 2vw);
+  margin-top: 4px;
+  font-size: calc(12px + 2vh);
 }
 /*  CONTAINER DU DEUXIEME TEXTE*/
 
@@ -120,21 +117,22 @@
 }
 .LandingTitle3 {
   font-family: var(--secondary-font);
-  font-size: 12px;
+  font-size: calc(12px);
   width: 100%;
   color: #000;
   text-align: center;
+  padding-top:3vh;
 }
 /* TYPO "LA LIGUE */
 .LandingTitle4 {
   font-size: 13px;
   word-wrap: break-word;
-  width: 100vw;
+  width: 95vw;
   margin: auto;
   font-family: var(--secondary-font);
   text-align: center;
   color: var(--secondary-color);
-  padding-top: 52px;
+  padding-top: 32px;
 }
 
 /* DEUXIEME CONTAINER 40vh*/
@@ -239,6 +237,68 @@
 .headerLogo {
   margin-bottom: -2px;
 }
+
+/* On fixe le background jusqu'a 479px */
+@media screen and (max-width:479px) {
+.LandingTitlesContainer {
+    width: 100vw;
+    height: 40vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;  
+    background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
+    background-size: 90% auto;
+    background-repeat: no-repeat;
+    background-position: center bottom 70%;
+  }
+}
+
+
+/* Breakpoint pour gerer l'image de fond si l'écran est grand*/
+
+@media screen and (min-width: 480px) and (max-width:768px) {
+
+    .LandingTitlesContainer {
+        background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
+        background-size: 70% auto ;
+        background-repeat: no-repeat;
+        background-position: top;  
+    }
+
+    .firstLine {
+        margin-top:10vh
+    }
+
+    .LandingTitle4 {
+        width: 95vw;;
+    }
+
+    .counterNumber {
+        font-size: calc(var(--main-fontSize) + 11vh);
+    }
+    .LandingTitle {
+        font-size: calc(12px + 8vh);
+    }
+
+    .LandingTitle2 {
+        font-size: calc(12px + 4vh);
+    }
+    .LandingTitle3 {
+        font-size: calc(8px + 2vh);
+    }
+    .LandingTitle4 {
+        font-size: calc(8px + 2vh);
+        margin-top:4vh;
+    }
+
+    .LandingTitle6 {
+        font-size: calc(8px + 2vh);
+        margin-top:2vh;
+
+    }
+}
+
 
 /* Smartphones (portrait) ----------- */
 

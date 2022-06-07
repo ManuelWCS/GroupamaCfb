@@ -1,0 +1,51 @@
+@import url('../../../App.css');
+
+/* MODE TABLETTE PAYSAGE DE 769px a 1024px*/
+
+
+@media screen and (min-width:769px) and (max-width:1023px) {
+        .LandingTitlesContainer {
+            width: 100vw;
+            height: 40vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;  
+            background-image: url("../../../assets/Juin/BackgroundBonneCouleur.png");
+            background-size: 60% auto;
+            background-repeat: no-repeat;
+            background-position: center bottom 70%;
+          }
+
+          .LandingTitle {
+            font-size: calc(var(--main-fontSize) + 7vh)
+          }
+          
+    }
+    
+
+@media screen and (min-width:1024px) and (max-width: 1224px) {
+
+    .LogoPlateforme {
+        width: calc((100px) + 3vw) ;
+        height: calc((90px) + 3vh) ;
+    }
+
+    .headerLogo {
+        width: calc((60px) + 3vw) ;
+        height: calc((70px) + 3vh) ;
+    }
+    .LandingTitlesContainer {
+        background-image: url("../../../assets/Juin/BackgroundBonneCouleurPEtit.png");
+        background-size: 50% auto;
+        background-repeat: no-repeat;
+        background-position: top;
+    }
+
+    /* .counterNumber {
+        font-size: calc(20px + 10vh) ;
+    } */
+}
+
+
+/* Breakpoint grand ecran */

@@ -4,14 +4,7 @@ import ecussonLigue from "../../assets/Juin/EcussonLigue.png";
 import { Link } from 'react-scroll'
 
 /* VERSIONS CSS */
-//  import "./css/Preloader.css";
-//  import "./css/Preloader.mobile.css";
-// import "./css/Preloader.tablet.css";
-// import "./css/Preloader.bigTablet.css";
-// import "./css/Preloader.desktop.css";
-//  import "./css/Preloader.bigscreen.css";
-//  import "./css/Preloader.bigdesktop.css";
-//  import "./css/Preloader.maxScreen.css"
+ import "./css/Preloader.NewResponsive.Landscape.css";
 import "./css/Preloader.NewResponsive.css"
 /* IMPORT DES IMAGES DANS LES BOUTONS */
 import Loc from "../../assets/Juin/Loc.png";

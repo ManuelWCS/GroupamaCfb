@@ -413,7 +413,9 @@
     height: 60px;
     border-radius: 30px;
     background-color: var(--main-color);
-    width: 355px;
+    width: 275px;
+    margin: var(--spacing-small);
+    border: none;
   }
 
   .styleDiv2 {
@@ -438,15 +440,18 @@
   .styleGeo {
     height: 60px;
     border-radius: 30px 30px 0px 0px;
-    background-color: var(--secondary-color);
-    width: 362px;
+    background-color: var(--red-color);
+    width: 360px;
+    border: none;
   }
 
   .styleGeoExpanded {
     height: 60px;
     border-radius: 30px;
-    background-color: var(--secondary-color);
-    width: 335px;
+    background-color: var(--red-color);
+    width: 275px;
+    margin: var(--spacing-small);
+    border: none;
   }
 
   .styleDiv3 {
