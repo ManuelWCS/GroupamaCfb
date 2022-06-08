@@ -6,8 +6,24 @@
 /* SCROLL BARS*/
 .markersPopUp{margin-top:24px}
 
+/* POP UP */
+.modalTitle {
+  text-align: center;
+  font-family: var(--secondary-font);
+}
+.boldText {
+  font-weight: bolder;
+  font-family: var(--secondary-font);
 
+}
 
+.popupText {
+color: var(--secondary-color)}
+.btnClosePopUp {
+  text-align: center;
+  padding-top: 24px;
+  color: var(--main-color)
+}
 /* VERSION DESKTOP */
 
 @media screen and (min-width: 1024px) and (max-width: 1401px) {
