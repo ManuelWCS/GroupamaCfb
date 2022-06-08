@@ -630,7 +630,7 @@ const isClicked2 = () => {
           >
             <div className="btnContent1" id="popover2">
               <img src={SearchIcon} className="searchIcon" alt="searchIcon" />
-              <p className="TitleButton">
+              <p className="TitleButton" id="TitleButton1">
                 CLUBS SELON CRITÈRES &nbsp;{" "}
               </p>
             </div>
@@ -876,8 +876,10 @@ const isClicked2 = () => {
                     setclubSearch([]);
                     setRecherche(false);
                   }}
-                >
+                ><p className="resetText">
                   Réinitialiser recherche{" "}
+
+                </p>
                 </button>
                 {clubSearch.map((club) => (
                   <div
@@ -938,17 +940,20 @@ const isClicked2 = () => {
                 ))}
               </div>
             )}
-            {recherche === true ? (
+            {/* {recherche === true ? (
               <button
                 onClick={() => {
                   setRecherche(false);
                 }}
-              >
+              className="clearSearch">
                 {" "}
+                <p className="resetText">
                 NOUVELLE RECHERCHE{" "}
+                </p>
               </button>
-            ) : null}
+            ) : null} */}
           </div>
+      
         </div>
 
 
@@ -1058,9 +1063,13 @@ const isClicked2 = () => {
               )}
             </div>
           </div>
+          
         </div>
         </div>
       </div>
+      <div className="LegendMap">
+          <Legend className="LegendContent" />
+        </div>
     </div>
   </div>
 

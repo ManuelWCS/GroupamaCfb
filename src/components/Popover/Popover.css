@@ -68,3 +68,43 @@
         order: 1;
     }
 }
+
+@media screen and (min-width:1023px) {
+    .TitleButton {
+        font-size: 16px;
+      }
+      .btnContent1 {
+          width: 100%;
+      }
+      #TitleButton1 {
+          margin-left: -16px;
+
+      }
+
+      .Result {
+          padding-top:8px;
+      }
+
+      .clearSearch {
+        width: 200px;
+        margin: auto;
+        border-radius: 32px;
+        height: 45px;
+        background-color: var(--secondary-color);
+        border:none;
+      
+      }
+    
+      .resetText{
+        color :white;
+        font-family: var(--secondary-font);
+        font-weight: bold;
+        
+      }
+
+      .contactImg {
+          height: 98px;
+          width: 98px;
+      }
+    
+}

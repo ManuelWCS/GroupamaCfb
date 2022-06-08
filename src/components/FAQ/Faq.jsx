@@ -1,6 +1,6 @@
 import React from 'react';
 import './Faq.css';
-import mailPicture from '../../assets/CompressedPictures/FAQ/contact.webp'
+import mailPicture from "../../assets/Juin/BoutonFAQ.png"
 
 /*<------------------------IMPORT ROUTER ---------------------------------> */
 import {Link} from 'react-router-dom'

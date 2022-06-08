@@ -547,6 +547,23 @@
     justify-content: space-evenly;
   }
 
+  .clearSearch {
+    width: 200px;
+    margin: auto;
+    border-radius: 32px;
+    height: 35px;
+    background-color: var(--secondary-color);
+    border:none;
+  
+  }
+
+  .resetText{
+    color :white;
+    font-family: var(--secondary-font);
+    font-weight: bold;
+    
+  }
+
 
 
 

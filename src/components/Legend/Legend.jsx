@@ -2,7 +2,7 @@ import React from 'react'
 import './Legend.css';
 /* <<<<<<<<<<<<<<<<<<<<<<<<<IMPORT MARQUEURS LEGENDE  >>>>>>>>>>>>>>>>>>>>*/
 
-import userMarker from '../../assets/CompressedPictures/Markers/userMarker.png';
+import userMarker from '../../assets/CompressedPictures/UserMarker/UserMarker.webp';
 import clubMarker from '../../assets/CompressedPictures/Markers/clubMarker.png';
 import labelMarker from '../../assets/CompressedPictures/Markers/labelMarker.png'
 import LigueMarker from '../../assets/CompressedPictures/Markers/MarqueurLigue.webp'
@@ -14,7 +14,7 @@ function Legend() {
     <div className="legendContainer">
     <div className="markerContainer">
       <div className="markerWrapper">
-        <img src={userMarker} className="legendMarker1" alt="Marqueur Utilisateur / User Marker"/>
+        <img src={userMarker} className="legendMarker1"  id="markerUser" alt="Marqueur Utilisateur / User Marker"/>
         <span className="markerDescription">Votre position</span>
       </div>
       <div className="markerWrapper">

@@ -522,7 +522,7 @@
     font-size: calc(var(--main-fontSize) * 1);
     color: black;
     text-align: end;
-    padding-bottom: 4px;
+    padding-bottom: 8px;
     filter: opacity(60%);
   }
 
@@ -544,6 +544,7 @@
     border-radius: 32px;
     height: 28px;
   }
+ 
 }
 
 /*<<<<<<<<<<<<<<<<<<<<<<<<< FIN DE LA VERSIONS DESKTOP>>>>>>>>>>>>>>>>>>>>>>>>>> */

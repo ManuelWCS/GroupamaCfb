@@ -74,8 +74,9 @@
     font-family: var(--secondary-font);
   }
   .contactImg {
-    height: 58px;
-    width: 58px;
+    padding-top:16px;
+    height: 88px;
+    width: 88px;
   }
 }
 
