@@ -85,7 +85,7 @@ function Preloader(props) {
           <div className="LandingTitlesContainer">
             <div className="BiggestTitle">
               <div className="firstLine">
-                <h1 className="counterNumber">{counter}</h1>
+                <h1 className="counterNumber">541</h1>
                 <h2 className="LandingTitle">CLUBS</h2>
               </div>
               <div className="secondLine">
