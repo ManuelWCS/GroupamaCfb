@@ -81,7 +81,8 @@ import { Link } from "react-scroll";
 /* APP COMPONENTS*/
 
 import Preload from "../Preloader/Preloader.jsx";
-import UpArrow from "../upArrow/UpArrow.jsx";
+/* Bootstrap */
+import { Container, Row } from 'react-bootstrap';
 
 function Clean(props) {
   const [allcities, setallcities] = useState([]);
