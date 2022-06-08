@@ -24,7 +24,7 @@ function Legend() {
 
       <div className="markerWrapper">
         <img src={LigueMarker} className="legendMarker" alt="Marqueur Groupama" />
-        <span className="markerDescription">Insitutions Fédérales</span>
+        <span className="markerDescription">Institutions Fédérales</span>
       </div>
 
       <div className="markerWrapper">

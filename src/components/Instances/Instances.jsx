@@ -115,7 +115,7 @@ function Instaces() {
       setMarkers(dataMarkers);
     };
     LoadMarkers();
-    console.log("chargement des instances..");
+    // console.log("chargement des instances..");
   }, []);
 
   return (

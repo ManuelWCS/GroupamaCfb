@@ -32,7 +32,7 @@ function MarkersClose(props) {
   useEffect(() => {
     setMarkers(dataClubs);
     setclubProche(clubsFiltres);
-    console.log(clubProche)
+    // console.log(clubProche)
   }, [position]);
 
 
