@@ -10,7 +10,7 @@ function App() {
     <>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Clean />} />
+          <Route path="/" element={<Clean />} />         
         </Routes>
         <CookieConsent debug={true}
         location="bottom"
@@ -18,10 +18,12 @@ function App() {
         buttonStyle={{color: "#293d6b", backgroundColor: "white", borderRadius:"17px", width:'200px'}}  
         buttonText="J'accepte"
         CookieConsent="cookie"
-        declineButton="En savoir plus"
+        enableDeclineButton={true}
+        declineButtonText="Refuser"
+        declineButtonStyle={{"backgroundColor": "#ff0000", "color": "#fff", "borderRadius": "17px", "width": "200px"}}
         ><p className="cookieTitle">La Ligue Centre-Val de Loire respecte votre vie privée !</p>
         <p className="cookieDescription"> 
-        Avec votre accord, nos partenaires et nous utilisons des cookies ou technologies similaires pour stocker et accéder à des informations personnelles comme votre visite sur ce site. Vous pouvez retirer votre consentement ou vous opposer aux traitements basés sur l'intérêt légitime à tout moment en cliquant  <a href="https://www.fff.fr/456-protection-des-donnees.html">ici </a> ou dans notre politique de confidentialité sur le site de la Ligue du Centre-Val de Loire de Football</p>
+        Avec votre accord, nos partenaires et nous utilisons des cookies ou technologies similaires pour stocker et accéder aux informations suivantes : données de géolocalisation précises, contenu personnalisé, informations stockées sur votre terminal </p>
         </CookieConsent>
       </div>
     </>
