@@ -222,7 +222,7 @@
 
     .popover {
         display: flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
         margin:auto;
         justify-content: space-around;
         position:absolute;
