@@ -3,27 +3,52 @@ import Clean from "./components/Clean/Clean.jsx";
 import { Routes, Route } from "react-router-dom";
 import CookieConsent from "react-cookie-consent";
 
-
-
 function App() {
   return (
     <>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Clean />} />         
+          <Route path="/" element={<Clean />} />
         </Routes>
-        <CookieConsent debug={true}
-        location="bottom"
-        style={{background: "#3586c2",}}
-        buttonStyle={{color: "#293d6b", backgroundColor: "white", borderRadius:"17px", width:'200px'}}  
-        buttonText="J'accepte"
-        CookieConsent="cookie"
-        enableDeclineButton={true}
-        declineButtonText="Refuser"
-        declineButtonStyle={{"backgroundColor": "#ff0000", "color": "#fff", "borderRadius": "17px", "width": "200px"}}
-        ><p className="cookieTitle">La Ligue Centre-Val de Loire respecte votre vie privée !</p>
-        <p className="cookieDescription"> 
-        Avec votre accord, nos partenaires et nous utilisons des cookies ou technologies similaires pour stocker et accéder aux informations suivantes : données de géolocalisation précises, contenu personnalisé, informations stockées sur votre terminal </p>
+        <CookieConsent
+          debug={true}
+          location="bottom"
+          style={{ background: "#3586c2" }}
+          buttonStyle={{
+            color: "#293d6b",
+            backgroundColor: "white",
+            borderRadius: "17px",
+            width: "200px",
+          }}
+          buttonText="J'accepte"
+          CookieConsent="cookie"
+          enableDeclineButton={true}
+          declineButtonText="Refuser"
+          declineButtonStyle={{
+            backgroundColor: "#ff0000",
+            color: "#fff",
+            borderRadius: "17px",
+            width: "200px",
+          }}
+          coo
+        >
+          <p className="cookieTitle">
+            La Ligue Centre-Val de Loire respecte votre vie privée !
+          </p>
+          <p className="cookieDescription">
+            {" "}
+            Cookies : Nous utilisons des cookies pour concevoir nos sites Web de
+            manière optimale pour vous, afin d’améliorer notre produit. Comment
+            vos témoins de connexion ("cookies") sont-ils collectés ? Lors de la
+            consultation de nos sites, des informations relatives à votre
+            navigation sont susceptibles d'être enregistrées au sein de fichiers
+            appelés "cookies" qui sont stockés sur le terminal utilisé pour
+            accéder au site. Géolocalisation : Nous utilisons la géolocalisation
+            afin de vous proposer un résultat plus précis lors de la recherche
+            sur notre site. Conformément au respect du principe du consentement,
+            celui-ci vous est demandé dès l’accès au site via notre navigateur
+            internet.{" "}
+          </p>
         </CookieConsent>
       </div>
     </>
