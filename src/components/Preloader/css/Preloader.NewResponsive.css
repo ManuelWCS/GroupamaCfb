@@ -375,17 +375,17 @@
         width: 50%;
     }
     #map {
-        height: 90vh;
+        height: 95vh;
     }
 
     .divFormClose, .divLocClose, .divLocOpen, .divFormOpen {
-        margin-top: -10vh
+        margin-top: -20vh
     }
 
     .styleDiv2, .styleDiv3 {
         height: 
         748px;
-        width: 353px;
+        width: 360px;
     }
 
     .resultContainer {
