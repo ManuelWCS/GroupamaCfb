@@ -116,7 +116,7 @@
 
 
     .mainContainer {
-        height: 80vh;
+        height: 95vh;
         width: 99vw;
         display: flex;
         flex-direction: column;
@@ -146,7 +146,7 @@
     }
 
     #map {
-        height: 60vh;
+        height: 80vh;
         width: 90vw;
         margin: auto;
         position: relative;
@@ -226,7 +226,6 @@
         margin:auto;
         justify-content: space-around;
         position:absolute;
-      ;
         margin-top:-78vh;
         width: 100%;
         z-index: 3;
@@ -246,7 +245,7 @@
 
     .popover {
         display: flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
         margin-left:auto;
         margin-right: auto;
         justify-content: space-around;

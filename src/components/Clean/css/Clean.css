@@ -6,7 +6,10 @@
 /* SCROLL BARS*/
 
 
+.numberClub {
+  font-weight: bold;
 
+}
 
 
 /* VERSION DESKTOP */
@@ -441,7 +444,7 @@
 
   .styleDiv3 {
     width: 360px;
-    height: 508px;
+    height: 630px;
     border-radius: 0px 0px 30px 30px;
     display: flex;
     flex-direction: column;
@@ -470,7 +473,7 @@
 
   .containerResult {
     background-color: white;
-    height: 585px;
+    height: 430px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -478,7 +481,7 @@
   }
 
   .resultContainer {
-    height: 450px;
+    height: 498px;
     overflow:  auto;
     width: 95%;
   }

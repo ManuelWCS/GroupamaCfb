@@ -626,12 +626,12 @@ const isClicked2 = () => {
 
           <button
             onClick={(isClicked)}
-            className={btn2 === true ? "styleLoc" : "styleLocExpanded"}
+            className={btn2 === true ? "styleLoc" : "styleLocExpanded" } id="Form"
           >
             <div className="btnContent1" id="popover2">
               <img src={SearchIcon} className="searchIcon" alt="searchIcon" />
               <p className="TitleButton" id="TitleButton1">
-                CLUBS SELON CRITÈRES &nbsp;{" "}
+                CLUBS SELON MES CRITÈRES &nbsp;{" "}
               </p>
             </div>
           </button>
@@ -868,7 +868,7 @@ const isClicked2 = () => {
               <div className="containerResult">
                 <h3 className="Result">RÉSULTATS</h3>
 
-                <p className="NumberClose"> Il y a <u> {clubSearch.length} </u> club(s) correspondant à votre recherche  
+                <p className="NumberClose"> Il y a <span className="numberClub"> {clubSearch.length} </span> club(s) correspondant à votre recherche  
                 </p>
                 <button
                   className="clearSearch"

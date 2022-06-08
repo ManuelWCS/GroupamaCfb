@@ -1,7 +1,32 @@
 /* MOBILE*/
 
+@media screen and (min-width:1024px) {
+ .styleGeo {
+  height: 60px;
+  border-radius: 30px 30px 0px 0px;
+  background-color: var(--red-color);
+  width: 360px;
+  border: none; 
+}
+.styleLocExpanded {
+  height: 60px;
+  border-radius: 30px;
+  background-color: var(--main-color);
+  width: 275px;
+  margin: var(--spacing-small);
+  border:none;
+}
+.styleGeoExpanded {
+  height: 60px;
+  border-radius: 30px;
+  background-color: var(--red-color);
+  width: 275px;
+  margin: var(--spacing-small);
+  border:none;
+}
 
 
+}
 @media screen and (max-width: 768px) {
 
 
@@ -86,7 +111,7 @@
 
 /*TABLETTE*/
 
-@media only screen and (max-width : 1024px) {
+@media only screen and (max-width : 1023px) {
   
     .styleLoc {
       margin-top:24px;
@@ -129,7 +154,7 @@
 
 @media only screen and (min-width : 1025px) {
   
-  .styleLoc {
+  .styleLoc, .styleGeo {
     margin-top:24px;
   }
   .styleGeo {
