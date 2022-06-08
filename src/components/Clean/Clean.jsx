@@ -477,9 +477,10 @@ function Clean(props) {
   //Set the map to the center of the user
   useEffect(() => {
     setTimeout(() => {
-      if (map)
+      if (map && location)
         map.flyTo([location.coordinates.lat, location.coordinates.lng], 11);
-    }, 2000);
+    }, 2000)
+
   }, [location]);
 
   useEffect(() => {

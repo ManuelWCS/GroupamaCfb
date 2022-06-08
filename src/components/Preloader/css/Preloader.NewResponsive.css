@@ -412,8 +412,26 @@
         font-family: var(--secondary-font);
         }
 
+        .mainContainer {
+            height: 120vh;
+        }
+
         .popover {
-            margin-top:-89vh;
+            margin-top:-100vh;
+        }
+
+        #map {
+            height: 100vh;
+        }
+
+        .divLocOpen, .divFormOpen {
+            margin-top:-1vh;
+        }
+
+       
+
+        .styleDiv2 , .styleDiv3 {
+            height: 600px;
         }
 }
 
