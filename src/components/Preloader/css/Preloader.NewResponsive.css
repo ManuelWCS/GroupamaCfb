@@ -1,256 +1,289 @@
-@import url('../../../App.css');
-
-/* MOBILE FIRST */ 
+@import url("../../../App.css");
 
 /* Tailles des images */
 
 .LogoPlateforme {
-    width:  100px;
-    height: 90px;
+  width: 100px;
+  height: 90px;
 }
 .headerLogo {
-
-    width:60px;
-    height: 70px;
+  width: 60px;
+  height: 70px;
 }
 
-.Loupe, .Loc {
-    height:  20px;
-    width:  20px;
+.Loupe,
+.Loc {
+  height: 20px;
+  width: 20px;
 }
 /* Fin taille des images */
 
 .generalWrapper {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 }
 .headerPreload {
-    width: 100vw;
-    height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .FullLanding {
-    width: 100vw;
-    height: 80vh;
+  width: 100vw;
+  height: 80vh;
 }
 
 /* ELEMENTS RESTANT DOIVENT SE PARATAGER LES 80VH RESTANTS*/
 
-.LandingTitlesContainer  {
-    width: 100vw;
-    height: 40vh;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    
+.LandingTitlesContainer {
+  width: 100vw;
+  height: 40vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* Container du 541 CLUBS */
 .BiggestTitle {
-    height: 20vh;
-    width: 100vw;
-    background-image:url('../../../assets/Juin/BackgroundBonneCouleur.png');
-    background-size: contain;
-background-repeat: no-repeat;
-background-position: center;
-
+  height: 20vh;
+  width: 100vw;
+  background-image: url("../../../assets/Juin/BackgroundBonneCouleur.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .firstLine {
-    height: 10vh;
-    width: 30vw;
-    margin:auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: baseline;
-    margin-top: 30px;
-
+  height: 10vh;
+  width: 30vw;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 30px;
 }
 
 /* TYPO 541 CLUBS */
 
 .counterNumber {
-    font-size: 10vh;
-    font-weight: bold;
-    font-family: var(--main-font);
-    color: var(--secondary-color);
+  font-size: 10vh;
+  font-weight: bold;
+  font-family: var(--main-font);
+  color: var(--secondary-color);
 }
 
 .LandingTitle {
-    font-size: 5vh;
-    font-weight: lighter;
-    font-family: var(--secondary-font);
-    color: var(--secondary-color);    
+  font-size: 5vh;
+  font-weight: lighter;
+  font-family: var(--secondary-font);
+  color: var(--secondary-color);
 }
 
 /* DEUXIEME LIGNE */
 
 .secondLine {
-    height: 5vh;
-    width: 90vw;
-    margin:auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: baseline;
+  height: 5vh;
+  width: 90vw;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
 }
 
 /* TYPO "DE FOOTBALL"*/
 
 .LandingTitle2 {
-    letter-spacing: 8px;
-    position: static;
-    font-family: var(--secondary-font);
-    margin-top:-8px;
-    font-size: calc( 8px + 2vw);
+  letter-spacing: 8px;
+  position: static;
+  font-family: var(--secondary-font);
+  margin-top: -8px;
+  font-size: calc(8px + 2vw);
 }
 /*  CONTAINER DU DEUXIEME TEXTE*/
 
-
 .thirdLine {
-    height: 5vh;
-    width: 80vw;
-    margin:auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: baseline;
+  height: 5vh;
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
 }
 .LandingTitle3 {
-    font-family: var(--secondary-font);
-    font-size: 12px;
-    width: 100%;
-    color: #000;
-    text-align: center;
+  font-family: var(--secondary-font);
+  font-size: 12px;
+  width: 100%;
+  color: #000;
+  text-align: center;
 }
 /* TYPO "LA LIGUE */
 .LandingTitle4 {
-    font-size: 13px;
-    word-wrap: break-word;
-    width: 80vw;
-    margin: auto;
-    font-family: var(--secondary-font);
-    text-align: center;
-    color: var(--secondary-color);
+  font-size: 13px;
+  word-wrap: break-word;
+  width: 80vw;
+  margin: auto;
+  font-family: var(--secondary-font);
+  text-align: center;
+  color: var(--secondary-color);
 }
 
 /* DEUXIEME CONTAINER 40vh*/
 
-.LinkContainer  {
-    width: 100vw;
-    height: 40vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    
+.LinkContainer {
+  width: 100vw;
+  height: 40vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* TYPO "ACCEDEZ A LA CARTE*/
 
 .LandingTitle6 {
-    font-size: 13px;
-    letter-spacing: 1px;
-    width: 100vw;
-    font-weight: 700;
-    text-align: center;
-    font-family: var(--secondary-font);
-    color: var(--secondary-color);
-    margin-top: -16px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  width: 100vw;
+  font-weight: 700;
+  text-align: center;
+  font-family: var(--secondary-font);
+  color: var(--secondary-color);
+  margin-top: -16px;
 }
 
 /* CONTAINER DES BOUTONS */
 
-.rowBtn{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.rowBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ELEMENTS DANS LE BOUTON */
 
-.BtnContainer {     
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-around;
+.BtnContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
 /* STYLE BOUTON */
 
 .myButton2 {
-    box-shadow: inset -6px -8px 28px 5px #c1272d;
-    background: linear-gradient(180deg,#c1272d 5%,#c1272d);
-    background-color: #2e466e;
-    border-radius: 17px;
-    border: 1px solid #fff;
-    display: inline-block;
-    cursor: pointer;
-    color: #fff;
-    font-family: var(--main-font);
-    font-size: 14px;
-    padding: 13px 37px;
-    text-decoration: none;
-    width: 235px;
-    margin-bottom: 8px;
+  box-shadow: inset -6px -8px 28px 5px #c1272d;
+  background: linear-gradient(180deg, #c1272d 5%, #c1272d);
+  background-color: #2e466e;
+  border-radius: 17px;
+  border: 1px solid #fff;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  font-family: var(--main-font);
+  font-size: 14px;
+  padding: 13px 37px;
+  text-decoration: none;
+  width: 235px;
+  margin-bottom: 8px;
 }
 
 /* TEXTE BOUTON */
 
 .btnText {
-    font-family: var(--main-font);
-    font-size:12px ;
+  font-family: var(--main-font);
+  font-size: 12px;
 }
 
 /* DEUXIEME BOUTON */
 
 .myButton {
-    box-shadow: inset -6px -8px 28px 5px #3586c2;
-    background: linear-gradient(180deg,#3586c2 5%,#3586c2);
-    background-color: #2e466e;border-radius: 17px;
-    border: 1px solid #fff;
-    display: inline-block;
-    cursor: pointer;
-    color: #fff;
-    font-family: var(--main-font);
-    font-size: 14px;
-    padding: 13px 37px;
-    text-decoration: none;
-    width: 235px;    
-
+  box-shadow: inset -6px -8px 28px 5px #3586c2;
+  background: linear-gradient(180deg, #3586c2 5%, #3586c2);
+  background-color: #2e466e;
+  border-radius: 17px;
+  border: 1px solid #fff;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  font-family: var(--main-font);
+  font-size: 14px;
+  padding: 13px 37px;
+  text-decoration: none;
+  width: 235px;
 }
 
 .BtnContainer2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 233px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 233px;
 }
 
 .Loupe {
-    margin-left: -12px;
-    padding-right: 8px;
+  margin-left: -12px;
+  padding-right: 8px;
 }
 
 .headerLogo {
-    margin-bottom: -2px;
-
+  margin-bottom: -2px;
 }
 
+/* DESKTOP FIRST */
+/* Soit les propriétés sont héritées, soit on défini plus bas pour changer la priorité*/
 
+@media screen and (min-width: 1024px) {
+  .rowBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 50%;
+  }
+  /* Container du 541 CLUBS */
+  .BiggestTitle {
+    height: 30vh;
+    width: 100vw;
+    background-image: url("../../../assets/Juin/BackgroundBonneCouleur.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
 
+  .counterNumber {
+    font-size: 12vh;
+    font-weight: bold;
+    font-family: var(--main-font);
+    color: var(--secondary-color);
+  }
+  .LandingTitle {
+    font-size: 8vh;
 
+  }
+  .secondLine {
+      padding-top:8px;
+  }
+  .LandingTitle2 {
+    font-size: calc(8px + 3vh);
+  }
 
+  .thirdLine {
+      padding-top:32px;
+  }
 
+  .LandingTitle3 {
+    font-size: calc(8px + 2vh);
 
-
-
-
-
+  }
+  .firstLine
+  {
+      padding-top:48px;
+  }
+}

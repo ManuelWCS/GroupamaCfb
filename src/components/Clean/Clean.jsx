@@ -43,7 +43,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Autocomplete from "@mui/material/Autocomplete";
 import btnPicture from "../../assets/CompressedPictures/buttontransparent.webp";
-import Button2 from "@mui/material/Button";
+import Button2 from "@mui/material/Button";   
 
 /*<------------------------IMPORT COMPOSANTS ---------------------------------> */
 import Faq from "../FAQ/Faq";
@@ -71,18 +71,11 @@ import "../Popover/Popover.css";
 /* import bouton localisez moi*/
 import ActivateGeoloc from "../ActivateGeoloc/ActivateGeoloc";
 
-/* Import styles par rapport à la cart0*/
 
-
-
-/* REACT SCROLL */
-import { Link } from "react-scroll";
 
 /* APP COMPONENTS*/
 
 import Preload from "../Preloader/Preloader.jsx";
-/* Bootstrap */
-import { Container, Row } from 'react-bootstrap';
 
 function Clean(props) {
   const [allcities, setallcities] = useState([]);

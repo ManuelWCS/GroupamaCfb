@@ -125,28 +125,24 @@
         align-items: center;
         align-content: center;
         margin: auto;
-        border:5px solid black;
     }
 
     .LegendMap {
         width: 100%;
         display: flex;
         flex-direction: row;
-        border: 5px solid yellow;
         order: 2;
     }
 
     .mapContainer {
 
         width: 100vw;
-        height: 12%;
+        height: 100%;
         height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        border: 5px solid blue; 
-        order: 3;
     }
 
     #map {
@@ -169,7 +165,6 @@
         align-items: center;
         justify-content: space-around;
         z-index: 5;
-        border:5px solid red;
 
 
 
@@ -180,7 +175,7 @@
     .divFormOpen {
         height: 500px;
         position:absolute;
-        bottom: -60vh;
+        bottom: -55vh;
         z-index:2;
         right: 9vw;
         order:2;
@@ -188,7 +183,7 @@
 
     .divFormClose {
         position:absolute;
-        bottom: -15vh;
+        bottom: 0vh;
         z-index:2;
         right: 9vw;
         height: 0px;
@@ -198,14 +193,14 @@
     .divLocOpen {
         height: 500px;
         position:absolute;
-        bottom: -61vh;
+        bottom: -55vh;
         z-index:2;
-        left:  9vw;
+        left:  10vw;
     }
 
     .divLocClose {
         position:absolute;
-        bottom: -15vh;
+        bottom: 0vh;
         z-index:2;
         left: 9vw;
         height: 0px;

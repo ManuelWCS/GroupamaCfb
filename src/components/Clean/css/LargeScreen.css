@@ -49,6 +49,7 @@
 
   .containerResult::-webkit-scrollbar  {
     width: 10px;
+    height: 90%;
     /* width of the entire scrollbar */
   }
   .containerResult::-webkit-scrollbar-track {
