@@ -144,7 +144,7 @@ function Preloader(props) {
               </Link>
             </div>
           <Link to="/">
-            <img src={ecussonLigue} className="headerLogo" alt="logo" />
+            <img src={ecussonLigue} className="headerLogo" alt="logo" id="ecusson" />
           </Link>
           </div>
         </div>

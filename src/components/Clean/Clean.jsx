@@ -70,7 +70,8 @@ import "../Popover/Popover.css";
 
 /* import bouton localisez moi*/
 import ActivateGeoloc from "../ActivateGeoloc/ActivateGeoloc";
-
+/* react scroll*/
+import { Link } from 'react-scroll'
 
 
 /* APP COMPONENTS*/
@@ -582,14 +583,14 @@ const isClicked2 = () => {
 
 
                             {!location.error ? (
-                              <h3 className="TitlePopUp">
-                                Se trouve à{" "}
+                              <h3 className="DistancePopUp">
+                                Se trouve à{" "}<em className="distanceNumber">
                                 {distanceBetweenPoints(
                                   location.coordinates.lat,
                                   location.coordinates.lng,
                                   res.Latitude,
                                   res.Longitude
-                                )}{" "}
+                                )}{" "}</em>
                                 km de vous !
                               </h3>
                             ) : null}
@@ -600,6 +601,7 @@ const isClicked2 = () => {
                                   href={`https://www.google.fr/maps/dir/${location.coordinates.lat},${location.coordinates.lng}+/${res.Latitude},+${res.Longitude}`}
                                   target="_blank"
                                   rel="noreferrer"
+                                  className="DirectionsPopUp2"
                                 >
                                   Itinéraire vers ce club
                                 </a>
@@ -643,7 +645,7 @@ const isClicked2 = () => {
                   className="filtrationsWrapper"
                   onSubmit={(e) => searchClub(e)}
                 >
-                  <span className="formTitle">VOS INFOS</span>
+                  <span className="formTitle">VOS INFOS :</span>
                   <div className="filter">
                     <div className="inputBox">
                       <span className="inputTitle">VOTRE ÂGE </span>
@@ -848,7 +850,6 @@ const isClicked2 = () => {
                       )}
                     />
                   </div>
-
                   <div className="btnContainer" >
                     <button
                       className="btnBackground"

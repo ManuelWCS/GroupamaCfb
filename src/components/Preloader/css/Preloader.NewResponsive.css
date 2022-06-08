@@ -262,8 +262,8 @@
     }
 
     .headerLogo {
-        height: 150px;
-        width: 130px;
+        height: 130px;
+        width: 110px;
     }
 
     .rowBtn {
@@ -315,7 +315,6 @@
         font-size: calc(8px + 1vw);
         width: 90%;
         margin: auto;
-        line-height: 1.5;
         text-align: center;
     }
 
@@ -351,9 +350,9 @@
     }
 }
 
-@media screen and (min-width: 1225px) {
+@media screen and (min-width: 1225px) and (max-width:1444px) {
     .rowBtn {
-        width: 44%;
+        width: 50%;
     }
 }
 
@@ -368,6 +367,33 @@
 
     .styleLocExpanded, .styleGeoExpanded {
         width: 350px;
+    }
+}
+
+@media screen and (min-width:1446px) {
+    .rowBtn {
+        width: 50%;
+    }
+    #map {
+        height: 90vh;
+    }
+
+    .divFormClose, .divLocClose, .divLocOpen, .divFormOpen {
+        margin-top: -10vh
+    }
+
+    .styleDiv2, .styleDiv3 {
+        height: 
+        748px;
+        width: 353px;
+    }
+
+    .resultContainer {
+        height: 610px;
+    }
+
+    .SubmitButton {
+        margin-top:-16px;
     }
 }
 
