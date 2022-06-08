@@ -167,4 +167,16 @@ background-color: var(--secondary-color);
 	}
 	.marker-cluster-large div {	background-color: var(--red-color)
 
-	}
+}
+
+.cookieTitle {
+  font-weight: bold;
+  text-align: start;
+}
+
+.cookieDescription {
+  font-size: 12px;
+  font-style: var(--secondary-font);
+  text-align: start;
+
+}
