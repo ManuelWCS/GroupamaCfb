@@ -10,7 +10,7 @@ function Faq() {
     <div className="faqContainer">
     <h6 className="faqTitle">FAQ ! BESOIN D'AIDE ? </h6>
     <p className="faqText2">Vous avez une question ? Nous avons probablement la réponse !</p>
-    <a href="mailto:name@email.com">
+    <a href="mailto:mrobinard@centre.fff.fr?subject=Vous rencontrez un bug, faites moi part du problème !">
     <img src={mailPicture} className="contactImg" alt="courrier électronique" />
     </a>
  
