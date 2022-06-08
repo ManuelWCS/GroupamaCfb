@@ -514,9 +514,7 @@ const isClicked2 = () => {
       <Preload passData={passData} passData2={passData2} />
 
       <div className="mainContainer"id="middle">
-        <div className="LegendMap">
-          <Legend className="LegendContent" />
-        </div>
+      
         <div className="mapContainer">
         <MapContainer
               className="mapLeaflet"

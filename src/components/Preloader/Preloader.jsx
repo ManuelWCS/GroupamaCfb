@@ -100,7 +100,7 @@ function Preloader(props) {
               <h4 className="LandingTitle4">
                 La Ligue Centre-Val de Loire de Football vous propose cette
                 plateforme afin de découvrir l'ensemble des clubs de notre
-                région !
+                Région !
               </h4>
             </div>
           </div>
@@ -138,7 +138,7 @@ function Preloader(props) {
                 <button className="myButton" onClick={buttonClick2}>
                   <div className="BtnContainer2">
                     <img src={Loupe} alt="Loupe" className="Loupe"></img>
-                    <p className="btnText">CLUBS SELON MES CRITÈRES</p>
+                    <p className="btnText" id="btnText2">CLUBS SELON MES CRITÈRES</p>
                   </div>
                 </button>
               </Link>
