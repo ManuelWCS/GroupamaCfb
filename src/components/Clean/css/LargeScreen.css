@@ -335,7 +335,7 @@
     background-color: white;
   }
   .containerResult {
-    height: 680px;
+    height: auto;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;

@@ -172,11 +172,24 @@ background-color: var(--secondary-color);
 .cookieTitle {
   font-weight: bold;
   text-align: start;
+  font-family: var(--secondary-font);
 }
 
 .cookieDescription {
-  font-size: 12px;
-  font-style: var(--secondary-font);
+  font-size: 10px;
+  font-family: var(--secondary-font);
   text-align: start;
+  width: 92%;
+  padding-top: 8px;
+  text-align: justify;
+  line-height: 1.1;
 
+}
+
+.CookieConsent {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: auto;
 }

@@ -11,27 +11,29 @@ function App() {
           <Route path="/" element={<Clean />} />
         </Routes>
         <CookieConsent
-          debug={true}
+        className="cookie-consent"
+          debug={false}
           location="bottom"
-          style={{ background: "#3586c2" }}
+          style={{ background: "#293d6b", position: "fixed", bottom: "0", width: "100%", color: "#fff", zIndex: "999" }}
           buttonStyle={{
             color: "#293d6b",
             backgroundColor: "white",
             borderRadius: "17px",
             width: "200px",
+            height: "40px",
           }}
           buttonText="J'accepte"
           CookieConsent="cookie"
           enableDeclineButton={true}
           declineButtonText="Refuser"
           declineButtonStyle={{
-            backgroundColor: "#ff0000",
+            backgroundColor: "#c1272d",
             color: "#fff",
             borderRadius: "17px",
             width: "200px",
-          }}
-          coo
-        >
+            height: "40px",           
+          }}>
+
           <p className="cookieTitle">
             La Ligue Centre-Val de Loire respecte votre vie privée !
           </p>

@@ -206,7 +206,7 @@ function Clean(props) {
         );
       }
     }
-
+    
     const resultofSearch = clubs.filter((clubWanted) =>
       // j'execute les filtezs de mon tableau
       filtersOptions.every((f) => f(clubWanted))
@@ -503,6 +503,7 @@ function Clean(props) {
     setBtn1(!btn1);
   };
 
+
   /* FIN ANIMATION SCROLL*/
 
   return (
@@ -560,8 +561,8 @@ function Clean(props) {
               }
             >
               {clubSearch.length !== 0
-                ? clubSearch.slice(0, 500).map((res, index2) => {
-                    // console.log(res);
+                ? clubSearch.slice(0, 1000).map((res, index2) => {
+                    //console.log(res);
                     return (
                       <Marker
                         icon={
@@ -797,7 +798,7 @@ function Clean(props) {
                                 aria-labelledby="modal-modal-title"
                                 aria-describedby="modal-modal-description"
                               >
-                                <Box id="box" sx={style}>
+                                <Box id="box" sx={style2}>
                                   <Typography
                                     id="modal-modal-title"
                                     variant="h6"

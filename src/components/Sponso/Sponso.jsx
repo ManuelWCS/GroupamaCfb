@@ -24,7 +24,7 @@ function Sponso() {
                 target="_blank"
                 rel="noreferrer"
               >
-            <img src={fb} alt="" className="LinkGroupama" />
+            <img src={fb} alt="Lien vers le facebook de la ligue" className="LinkGroupama" />
           </a>
 
           <a
@@ -32,7 +32,7 @@ function Sponso() {
                 target="_blank"
                 rel="noreferrer"
               >
-            <img src={yt} alt="" className="LinkGroupama" />
+            <img src={yt} alt="Lien vers la chaîne youtube" className="LinkGroupama" />
           </a>
 
           <a
@@ -40,7 +40,7 @@ function Sponso() {
                 target="_blank"
                 rel="noreferrer"
               >            
-              <img src={web} alt="" className="LinkGroupama" />
+              <img src={web} alt="Lien vers le site de la ligue" className="LinkGroupama" />
           </a>
 
         </div>
