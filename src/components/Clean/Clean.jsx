@@ -71,7 +71,6 @@ import "../Popover/Popover.css";
 /* import bouton localisez moi*/
 import ActivateGeoloc from "../ActivateGeoloc/ActivateGeoloc";
 /* react scroll*/
-import { Link } from "react-scroll";
 
 /* APP COMPONENTS*/
 
@@ -96,19 +95,6 @@ function Clean(props) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 300,
-    fontFamily: "Century Gothic",
-    bgcolor: "background.paper",
-    border: "2px solid #3586c2 ",
-    boxShadow: 24,
-    borderRadius: 12,
-    p: 4,
-  };
   const style2 = {
     position: "absolute",
     top: "50%",
@@ -125,7 +111,6 @@ function Clean(props) {
 
   // PopUp en cas d'erreur
 
-  const [openPop, setopenPop] = useState(false);
 
   const [Declenche, setDeclenche] = useState(false);
 
@@ -310,16 +295,16 @@ function Clean(props) {
   const location = useGeolocation();
   // const mapRef = useRef();
 
-  const showMyLocation = (e) => {
-    if (location.loaded && !location.error) {
-      setProximity(true);
-      map.flyTo([location.coordinates.lat, location.coordinates.lng], 15, {
-        animate: true,
-      });
-    } else {
-      alert(location.error.message);
-    }
-  };
+  // const showMyLocation = (e) => {
+  //   if (location.loaded && !location.error) {
+  //     setProximity(true);
+  //     map.flyTo([location.coordinates.lat, location.coordinates.lng], 15, {
+  //       animate: true,
+  //     });
+  //   } else {
+  //     alert(location.error.message);
+  //   }
+  // };
 
   const [clubsClose, setclubsClose] = useState([]);
   const [latMin, setLatMin] = useState(0);
@@ -441,7 +426,6 @@ function Clean(props) {
 
   const [recherche, setRecherche] = useState(false);
 
-  var Largeur = document.documentElement.clientWidth;
 
   const marks = [
     {

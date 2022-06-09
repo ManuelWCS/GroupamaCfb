@@ -1119,7 +1119,7 @@ A PARTIR DE 480px*/
 
   .styleDiv2 {
     width: 345px;
-    height: 600px;
+    height: 620px;
     border-radius: 0px 0px 30px 30px;
     display: flex;
     flex-direction: column;
@@ -1161,7 +1161,6 @@ A PARTIR DE 480px*/
     align-items: center;
     margin: 0 auto;
     margin-bottom: 16px;
-    border: 1px solid black;
   }
 
 

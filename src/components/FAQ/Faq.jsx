@@ -3,7 +3,6 @@ import './Faq.css';
 import mailPicture from "../../assets/Juin/BoutonFAQ.png"
 
 /*<------------------------IMPORT ROUTER ---------------------------------> */
-import {Link} from 'react-router-dom'
 
 function Faq() {
   return (
