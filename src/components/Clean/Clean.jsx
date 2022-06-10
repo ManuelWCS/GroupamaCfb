@@ -364,7 +364,7 @@ function Clean(props) {
   function changeRadius() {
     setDistance(valeurSlider);
     let RayonCercle = distance + "000";
-    setConvertedDistance(distance / 115);
+    setConvertedDistance(distance / 95);
     setRayon(RayonCercle);
   }
 
@@ -587,7 +587,7 @@ function Clean(props) {
                                 rel="noreferrer"
                                 className="DirectionsPopUp2"
                               >
-                                Itinéraire vers ce club
+                                &#8627;	Itinéraire vers ce club
                               </a>
                             ) : (
                               <p>

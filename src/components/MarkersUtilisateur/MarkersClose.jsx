@@ -110,9 +110,9 @@ function MarkersClose(props) {
                       rel="noreferrer"
                       className="DirectionsPopUp2"
                     >{" "}
-                    Itinéraire vers ce club{" "}</a>
+                    &#8627;	Itinéraire vers ce club{" "}</a>
                   </p>
-                </Popup>
+                </Popup> 
               </Marker>
             ))}
           </MarkerClusterGroup>
