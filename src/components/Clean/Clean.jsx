@@ -453,10 +453,16 @@ function Clean(props) {
 
   //Set the map to the center of the user
   useEffect(() => {
+
+    if(location.loaded === true){
     setTimeout(() => {
       if (map && location)
         map.flyTo([location.coordinates.lat, location.coordinates.lng], 11);
-    }, 2000);
+    }, 2000)
+    
+  } else {
+    console.warn('La localisation n\'est pas disponible')
+  };
   }, [location]);
 
   useEffect(() => {}, [convertedDistance]);
@@ -590,11 +596,19 @@ function Clean(props) {
                                 &#8627;	Itinéraire vers ce club
                               </a>
                             ) : (
-                              <p>
-                                {" "}
-                                Activez la localisation pour voir un itinéraire
-                                vers ce club !{" "}
-                              </p>
+                              <div>
+                                  <span className="clubAdress">
+                                  {res.AdressePostale}
+                                </span>
+
+                                <p className="DirectionsPopUp2">
+                                  {" "}
+                                  Activez la localisation pour voir un itinéraire
+                                  vers ce club !{" "}
+                                
+                                </p>
+                                
+                              </div>
                             )}
                           </p>
                         </Popup>

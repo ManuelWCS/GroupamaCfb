@@ -17,6 +17,13 @@
 
 }
 
+.clubAdress {
+  font-family: var(--secondary-font);
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+
 .popupText {
 color: var(--secondary-color)}
 .btnClosePopUp {
