@@ -1,0 +1,116 @@
+@import url("../../../App.css");
+
+/* MOBILE FIRST  */
+/* Container des mentions légales */
+
+.LegalMentions {
+  height: 100vh;
+  width: 100vw;
+}
+
+.headerML {
+  margin-bottom: 2em;
+  background: rgb(41, 61, 107);
+  background: -moz-linear-gradient(
+    9deg,
+    rgba(41, 61, 107, 1) 21%,
+    rgba(53, 134, 194, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    9deg,
+    rgba(41, 61, 107, 1) 21%,
+    rgba(53, 134, 194, 1) 100%
+  );
+  background: linear-gradient(
+    9deg,
+    rgba(41, 61, 107, 1) 21%,
+    rgba(53, 134, 194, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#293d6b", endColorstr="#3586c2", GradientType=1);
+  width: 100vw;
+  height: 22vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LogoPlateformeML {
+  height: calc(220px / 2);
+  width: calc(235px / 2);
+  margin-top: 0px;
+}
+
+.backBtn {
+  font-size: 4vh;
+  margin-left: 16px;
+  color: var(--main-color);
+  text-underline-offset: none;
+}
+
+.backBtn a {
+  color: var(--main-color);
+}
+
+.Section1title,
+.Section2title,
+.Section3title {
+  color: var(--secondary-color);
+  font-family: var(--main-font);
+  font-size: 5vh;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  text-align: left;
+}
+
+.Section1Container,
+.Section2Container,
+.Section3Container {
+  text-align: center;
+  width: 95vw;
+  margin-top: 1em;
+  height: auto;
+  margin: auto;
+  font-family: var(--secondary-font);
+}
+
+.Section1,
+.Section2,
+.Section3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  width: 90vw;
+  margin: auto;
+  font-size: 3vh;
+}
+
+.Section1 div:nth-child(1n) {
+  font-size: 2.4vh;
+  font-style: italic;
+  margin-top: 1em;
+}
+
+.Section3Container {
+  margin-bottom: 48px;
+}
+
+.footerContainer {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.backBtn2 {
+  font-size: 4vh;
+  margin-right: 16px;
+  color: var(--main-color);
+  text-underline-offset: none;
+}
+
+.backBtn2 a {
+  color: var(--main-color);
+}

@@ -191,7 +191,7 @@ function Clean(props) {
         );
       }
     }
-    
+
     const resultofSearch = clubs.filter((clubWanted) =>
       // j'execute les filtezs de mon tableau
       filtersOptions.every((f) => f(clubWanted))
@@ -387,9 +387,9 @@ function Clean(props) {
     var a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
       Math.cos(deg2rad(lat1)) *
-        Math.cos(deg2rad(lat2)) *
-        Math.sin(dLon / 2) *
-        Math.sin(dLon / 2);
+      Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = R * c; // Distance in km
     var e = d.toFixed(2);
@@ -454,18 +454,18 @@ function Clean(props) {
   //Set the map to the center of the user
   useEffect(() => {
 
-    if(location.loaded === true){
-    setTimeout(() => {
-      if (map && location)
-        map.flyTo([location.coordinates.lat, location.coordinates.lng], 11);
-    }, 2000)
-    
-  } else {
-    console.warn('La localisation n\'est pas disponible')
-  };
+    if (location.loaded === true) {
+      setTimeout(() => {
+        if (map && location)
+          map.flyTo([location.coordinates.lat, location.coordinates.lng], 11);
+      }, 2000)
+
+    } else {
+      console.warn('La localisation n\'est pas disponible')
+    };
   }, [location]);
 
-  useEffect(() => {}, [convertedDistance]);
+  useEffect(() => { }, [convertedDistance]);
 
   /* PARTIE ANIMATION SCROLL DES BOUTONS */
 
@@ -552,69 +552,69 @@ function Clean(props) {
             >
               {clubSearch.length !== 0
                 ? clubSearch.slice(0, 1000).map((res, index2) => {
-                    //console.log(res);
-                    return (
-                      <Marker
-                        icon={
-                          res.label.length > 0
-                            ? clubMarqueurLabel
-                            : clubMarqueur
-                        }
+                  //console.log(res);
+                  return (
+                    <Marker
+                      icon={
+                        res.label.length > 0
+                          ? clubMarqueurLabel
+                          : clubMarqueur
+                      }
+                      key={index2}
+                      position={[res.Latitude, res.Longitude]}
+                    >
+                      <Popup
                         key={index2}
-                        position={[res.Latitude, res.Longitude]}
+                        width={500}
+                        className="markersPopUp"
                       >
-                        <Popup
-                          key={index2}
-                          width={500}
-                          className="markersPopUp"
-                        >
-                          <h4 className="TitlePopUp"> {res.NomClub}</h4>
+                        <h4 className="TitlePopUp"> {res.NomClub}</h4>
 
+                        {!location.error ? (
+                          <h3 className="DistancePopUp">
+                            Se trouve à{" "}
+                            <em className="distanceNumber">
+                              {distanceBetweenPoints(
+                                location.coordinates.lat,
+                                location.coordinates.lng,
+                                res.Latitude,
+                                res.Longitude
+                              )}{" "}
+                            </em>
+                            km de vous !
+                          </h3>
+                        ) : null}
+
+                        <p>
                           {!location.error ? (
-                            <h3 className="DistancePopUp">
-                              Se trouve à{" "}
-                              <em className="distanceNumber">
-                                {distanceBetweenPoints(
-                                  location.coordinates.lat,
-                                  location.coordinates.lng,
-                                  res.Latitude,
-                                  res.Longitude
-                                )}{" "}
-                              </em>
-                              km de vous !
-                            </h3>
-                          ) : null}
+                            <a
+                              href={`https://www.google.fr/maps/dir/${location.coordinates.lat},${location.coordinates.lng}+/${res.Latitude},+${res.Longitude}`}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="DirectionsPopUp2"
+                            >
+                              &#8627;	Itinéraire vers ce club
+                            </a>
+                          ) : (
+                            <div>
+                              <span className="clubAdress">
+                                {res.AdressePostale}
+                              </span>
 
-                          <p>
-                            {!location.error ? (
-                              <a
-                                href={`https://www.google.fr/maps/dir/${location.coordinates.lat},${location.coordinates.lng}+/${res.Latitude},+${res.Longitude}`}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="DirectionsPopUp2"
-                              >
-                                &#8627;	Itinéraire vers ce club
-                              </a>
-                            ) : (
-                              <div>
-                                  <span className="clubAdress">
-                                  {res.AdressePostale}
-                                </span>
+                              <p className="DirectionsPopUp2">
+                                {" "}
+                                Activez la localisation pour voir un itinéraire
+                                vers ce club !{" "}
 
-                                <p className="DirectionsPopUp2">
-                                  {" "}
-                                  Activez la localisation pour voir un itinéraire
-                                  vers ce club !{" "}
-                                
-                                </p>
-                                
-                              </div>
-                            )}
-                          </p>
-                        </Popup>
-                      </Marker>
-                    );
-                  })
+                              </p>
+
+                            </div>
+                          )}
+                        </p>
+                      </Popup>
+                    </Marker>
+                  );
+                })
                 : null}
             </MarkerClusterGroup>
 
@@ -709,14 +709,14 @@ function Clean(props) {
                                 } else {
                                   formData.type === "Futsal"
                                     ? setformData({
-                                        ...formData,
-                                        gender: e.target.value,
-                                        type: "",
-                                      })
+                                      ...formData,
+                                      gender: e.target.value,
+                                      type: "",
+                                    })
                                     : setformData({
-                                        ...formData,
-                                        gender: e.target.value,
-                                      });
+                                      ...formData,
+                                      gender: e.target.value,
+                                    });
                                 }
                               }}
                             >
@@ -774,7 +774,7 @@ function Clean(props) {
                                 control={<Radio />}
                                 label="Futsal"
                                 title="Pratique proposée aux séniors Hommes et aux 17-18 masculins"
-                                // disable={inputFutsal}
+                              // disable={inputFutsal}
                               />
                             </RadioGroup>
 
@@ -961,18 +961,6 @@ function Clean(props) {
                       ))}
                     </div>
                   )}
-                  {/* {recherche === true ? (
-              <button
-                onClick={() => {
-                  setRecherche(false);
-                }}
-              className="clearSearch">
-                {" "}
-                <p className="resetText">
-                NOUVELLE RECHERCHE{" "}
-                </p>
-              </button>
-            ) : null} */}
                 </div>
               </div>
 

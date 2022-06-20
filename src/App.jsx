@@ -3,12 +3,16 @@ import Clean from "./components/Clean/Clean.jsx";
 import { Routes, Route } from "react-router-dom";
 import CookieConsent from "react-cookie-consent";
 
+import MentionsLegales from "./components/MentionsLegales/LegalMentions.jsx"
 function App() {
   return (
     <>
       <div className="App">
         <Routes>
           <Route path="/" element={<Clean />} />
+          <Route path="/mentionslegales" element={<MentionsLegales />} />
+
+
         </Routes>
         <CookieConsent
         className="cookie-consent"
