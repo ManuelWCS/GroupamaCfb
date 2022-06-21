@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom"
 /*<<<<<<<<<<<<<<<<<<<<<<<< IMPORT IMAGES>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 import fb from "../../assets/CompressedPictures/Footer/fb.webp";
 import web from "../../assets/CompressedPictures/Footer/web.webp";
@@ -43,8 +43,11 @@ function Sponso() {
               <img src={web} alt="Lien vers le site de la ligue" className="LinkGroupama" />
           </a>
 
-        </div>
       </div>
+      <p className="legalMentions"> <Link to="/mentionslegales">
+       
+          Mentions legales </Link></p>
+        </div>
     </div>
   );
 }

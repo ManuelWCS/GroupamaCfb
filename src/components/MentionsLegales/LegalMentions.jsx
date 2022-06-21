@@ -2,17 +2,21 @@ import React from "react";
 import LogoCFB from "../../assets/CompressedPictures/Logos/logoplateforme.webp";
 import "./css/LegalMentions.css";
 import { Link } from "react-router-dom";
-import Footer from '../Sponso/Sponso.jsx'
+import Footer from '../Sponso/Sponso.jsx';
 
 function LegalMentions() {
   return (
     <div className="LegalMentions">
       <div className="headerML">
-        <img
+      
+        <h1 className="MLtitle1">CENTRE <span className="MLtitle2"> FRAPPE</span> <span className="MLtitle3"> & BUT</span></h1>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          
+       <img
           src={LogoCFB}
           alt="logo Centre Frappe & But"
           className="LogoPlateformeML"
-        ></img>
+        ></img> </Link>
       </div>
       <span className="backBtn">
         <Link to="/" style={{ textDecoration: "none" }}>
@@ -23,7 +27,7 @@ function LegalMentions() {
       <div className="Section1Container">
         <h1 className="Section1title">MENTIONS LÉGALES </h1>
         <section className="Section1">
-          Le présent site https://cfb.foot-centre.fr est la propriété exclusive
+          Le présent site https://cfb.foot-centre.fr  est la propriété exclusive
           de l'association loi 1901 reconnue d'utilité publique Ligue Centre-Val
           de Loire de Football affiliée à la Fédération Française de Football
           (FFF), dont le siège social est situé 13, Rue Paul Langevin (n° de TVA
@@ -56,7 +60,7 @@ function LegalMentions() {
           Nous utilisons la géolocalisation afin de vous proposer un résultat
           plus précis lors de la recherche sur notre site.Conformément au
           respect du principe du consentement, celui-ci vous est demandé dès
-          l’accès au site via notre navigateur internet.site.
+          l’accès au site via notre navigateur internet.
         </section>
       </div>
 

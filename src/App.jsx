@@ -1,6 +1,6 @@
 import "./App.css";
 import Clean from "./components/Clean/Clean.jsx";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import CookieConsent from "react-cookie-consent";
 
 import MentionsLegales from "./components/MentionsLegales/LegalMentions.jsx"
@@ -54,6 +54,9 @@ function App() {
             sur notre site. Conformément au respect du principe du consentement,
             celui-ci vous est demandé dès l’accès au site via notre navigateur
             internet.{" "}
+            <Link to="/mentionslegales">
+              Consultez nos mentions légales
+              </Link>
           </p>
         </CookieConsent>
       </div>
