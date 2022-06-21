@@ -132,7 +132,7 @@
   font-size: 1.2vh;
   font-style: italic;
   margin-top: 1em;
-  line-height: 0.5;
+  line-height: 1.5;
 }
 
 .Section3Container {
@@ -167,6 +167,14 @@
 .Section3 {
   font-size: 2vh;
 }
+
+.Section1 div:nth-child(1n) {
+  font-size: 1.2vh;
+  font-style: italic;
+  margin-top: 1em;
+  line-height: 0.5;
+}
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -194,6 +202,13 @@
   font-style: italic;
   margin-top: 1em;
 }
+.Section1 div:nth-child(1n) {
+  font-size: 1.8vh;
+  font-style: italic;
+  margin-top: 1em;
+  line-height: 1;
+}
+
 }
 
 
@@ -223,6 +238,12 @@
 .Section3 {
   font-size: 3vh;
 }
+.Section1 div:nth-child(1n) {
+  font-size:2vh;
+  font-style: italic;
+  margin-top: 1em;
+}
+
  
   
 }
