@@ -46,7 +46,7 @@ function Sponso() {
       </div>
       <p className="legalMentions"> <Link to="/mentionslegales">
        
-          Mentions legales </Link></p>
+          Mentions légales </Link></p>
         </div>
     </div>
   );

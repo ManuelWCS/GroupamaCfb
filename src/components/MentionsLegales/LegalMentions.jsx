@@ -31,12 +31,17 @@ function LegalMentions() {
           de l'association loi 1901 reconnue d'utilité publique Ligue Centre-Val
           de Loire de Football affiliée à la Fédération Française de Football
           (FFF), dont le siège social est situé 13, Rue Paul Langevin (n° de TVA
-          : 297 7551 1546 et n° de SIRET : 775 511 546 000 35).{" "}
+          : 297 7551 1546 et n° de SIRET : 775 511 546 000 35). Tel : 02 38 69 73 18.
+          {" "}
           <div>
-            Tel : 02 38 69 73 18. Le directeur de la publication du Site est M.
+            Le directeur de la publication du site est M.
             TEIXEIRA Antonio, en qualité de Président de la Ligue Centre-Val de
-            Loire de Football. a société IONOS SARL, 7, place de la Gare - BP
-            70109 57201 SARREGUEMINES assure l'hébergement du Site.
+            Loire de Football. 
+            <div>
+            La société IONOS SARL, 7, place de la Gare - BP
+            70109 57201 SARREGUEMINES assure l'hébergement du site.
+              </div>
+              
           </div>
         </section>
       </div>
@@ -45,12 +50,14 @@ function LegalMentions() {
         <h1 className="Section2title">COOKIES </h1>
         <section className="Section2">
           Nous utilisons des cookies pour concevoir nos sites Web de manière
-          optimale pour vous, afin d’améliorer notre produit. Comment vos
-          témoins de connexion ("cookies") sont-ils collectés ? Lors de la
+          optimale pour vous, afin d’améliorer notre produit.<div>
+             Comment vos
+          témoins de connexion ("cookies") sont-ils collectés ? </div> 
+          <div> Lors de la
           consultation de nos sites, des informations relatives à votre
           navigation sont susceptibles d'être enregistrées au sein de fichiers
           appelés "cookies" qui sont stockés sur le terminal utilisé pour
-          accéder au site.
+          accéder au site. </div>
         </section>
       </div>
 
@@ -58,7 +65,7 @@ function LegalMentions() {
         <h1 className="Section3title">GÉOLOCALISATION </h1>
         <section className="Section3">
           Nous utilisons la géolocalisation afin de vous proposer un résultat
-          plus précis lors de la recherche sur notre site.Conformément au
+          plus précis lors de la recherche sur notre site. Conformément au
           respect du principe du consentement, celui-ci vous est demandé dès
           l’accès au site via notre navigateur internet.
         </section>
