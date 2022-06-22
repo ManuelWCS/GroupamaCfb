@@ -2,8 +2,8 @@ import "./App.css";
 import Clean from "./components/Clean/Clean.jsx";
 import { Routes, Route, Link } from "react-router-dom";
 import CookieConsent from "react-cookie-consent";
-
-import MentionsLegales from "./components/MentionsLegales/LegalMentions.jsx"
+import MentionsLegales from "./components/MentionsLegales/LegalMentions.jsx";
+import FAQ from "./components/FrequentlyAskedQuestions/FrequentlyAskedQuestions.jsx"
 function App() {
 
 
@@ -13,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Clean />} />
           <Route path="/mentionslegales" element={<MentionsLegales />} />
+          <Route path="/faq" element={<FAQ />} />
 
 
         </Routes>
