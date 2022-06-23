@@ -5,6 +5,12 @@ import { faqs } from "./faqs.js";
 import { faqMap } from "./faqMap.js";
 import LogoCFB from "../../assets/CompressedPictures/Logos/logoplateforme.webp";
 
+import Footer from '../../components/Sponso/Sponso.jsx'
+
+
+/* images*/
+import internet from '../../assets/Juin/internet2.png';
+import map from '../../assets/Juin/map2.png';
 function FrequentlyAskedQuestions() {
   const [clicked, setClicked] = useState("0");
 
@@ -32,51 +38,75 @@ function FrequentlyAskedQuestions() {
           className="LogoPlateforme"
         ></img>
       </div>
-      
+
       <div className="chooseContainer">
-        <button 
-        onClick={handleSelect} 
-        value="1" 
-        className="chooseBtn"> Naviguer sur CFB </button>
-        <button 
-        onClick={handleSelect}
-        value="2"
-        className="chooseBtn">La carte</button>
+        <span className="categorySelector">
+          CHOISIR UNE CATÉGORIE :
+        </span>
+        <div className="categoriesBtn">
+          <div className="columnBtn">
+            <button
+              onClick={handleSelect}
+              value="1"
+              className="chooseBtn">
+              NAVIGUER SUR CFB
+            </button>
+
+            <div className="btnImg1">
+              <img src={internet} alt="internet" className="internetCategory" />
+            </div>
+
+          </div>
+          <div className="columnBtn">
+            <button
+              onClick={handleSelect}
+              value="2"
+              className="chooseBtn">LA CARTE
+            </button>
+            <div className="btnImg1">
+              <img src={map} alt="internet" className="internetCategory" />
+            </div>
+          </div>
+        </div>
       </div>
-      {selected ? ( 
-      <span>{selected === "1" ? "Naviguer sur CFB " : "carte" }</span> ) : null }
+
+
+      <h3 className="categorySelectedTitle"> - LES QUESTIONS FRÉQUENTES - </h3>
+      {selected ? (
+        <span className="categorySelectedTexte">{selected === "1" ? "Naviguer sur CFB " : "carte"}</span>) : null}
 
 
       <div className="rowToColumnContainer">
 
         {selected === "1" ? (
-      <ul className="accordion">
-        {faqs.map((faq, index) => {
-          return (
-            <AccordionItem
-              key={index}
-              faq={faq}
-              onToggle={() => handleToggle(index)}
-              active={clicked === index}
-            />
-          );
-        })}
-      </ul> ) : (
-      <ul className="accordion">
-        {faqMap.map((faq, index) => {
-          return (
-            <AccordionItem
-              key={index}
-              faq={faq}
-              onToggle={() => handleToggle(index)}
-              active={clicked === index}
-            />
-          );
-        })}
-      </ul> ) }
+          <ul className="accordion">
+            {faqs.map((faq, index) => {
+              return (
+                <AccordionItem
+                  key={index}
+                  faq={faq}
+                  onToggle={() => handleToggle(index)}
+                  active={clicked === index}
+                />
+              );
+            })}
+          </ul>) : (
+          <ul className="accordion">
+            {faqMap.map((faq, index) => {
+              return (
+                <AccordionItem
+                  key={index}
+                  faq={faq}
+                  onToggle={() => handleToggle(index)}
+                  active={clicked === index}
+                />
+              );
+            })}
+          </ul>)}
 
       </div>
-      
+
+      <Footer/>
     </main>
   );
 }
