@@ -73,7 +73,7 @@ function FrequentlyAskedQuestions() {
 
       <h3 className="categorySelectedTitle"> - LES QUESTIONS FRÉQUENTES - </h3>
       {selected ? (
-        <span className="categorySelectedTexte">{selected === "1" ? "Naviguer sur CFB " : "carte"}</span>) : null}
+        <h1 className="categorySelectedTexte">{selected === "1" ? "Naviguer sur CFB " : "carte"}</h1>) : null}
 
 
       <div className="rowToColumnContainer">
