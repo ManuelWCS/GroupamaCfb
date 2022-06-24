@@ -1,0 +1,37 @@
+@import url('../../App.css');
+
+/* Mobile first */
+
+
+@media screen and (max-width:768px) {
+
+    .faqSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        margin:auto;
+        text-align: center;    
+    }
+
+
+    .faqSectionDescription {
+        font-size: calc(var(--main-fontSize) * 1);
+        padding-bottom: 16px;
+        color: var(--secondary-color);
+        font-family: var(--secondary-font);
+
+    }
+    .faqSectionDescription2 {
+        font-size: calc(var(--main-fontSize) * 0.9);
+        color: grey;
+        font-family: var(--secondary-font);
+        width: 90%;
+        line-height: 1.2;
+        padding-top:4px;
+        padding-bottom: 4px;
+
+
+    }
+}

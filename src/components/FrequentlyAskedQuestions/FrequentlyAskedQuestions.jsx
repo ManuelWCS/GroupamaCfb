@@ -5,7 +5,8 @@ import { faqs } from "./faqs.js";
 import { faqMap } from "./faqMap.js";
 import LogoCFB from "../../assets/CompressedPictures/Logos/logoplateforme.webp";
 
-import Footer from '../../components/Sponso/Sponso.jsx'
+import Footer from '../../components/Sponso/Sponso.jsx';
+import Faq from '../../components/FAQ/FaqSection'
 
 
 /* images*/
@@ -38,6 +39,10 @@ function FrequentlyAskedQuestions() {
           className="LogoPlateforme"
         ></img>
       </div>
+
+      <Faq/>
+
+
 
       <div className="chooseContainer">
         <span className="categorySelector">
