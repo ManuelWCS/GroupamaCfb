@@ -113,7 +113,7 @@
         color: var(--secondary-color);
         font-family: var(--main-font);
         padding-bottom: 16px;
-        padding-top:32px;
+        padding-top:16px;
     }
     .faqSectionDescription {
         font-size: calc(var(--main-fontSize) * 1.3);
