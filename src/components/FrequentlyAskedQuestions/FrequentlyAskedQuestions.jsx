@@ -36,7 +36,7 @@ function FrequentlyAskedQuestions() {
         <img
           src={LogoCFB}
           alt="logo Centre Frappe & But"
-          className="LogoPlateforme"
+          className="headerLogo"
         ></img>
       </div>
 
