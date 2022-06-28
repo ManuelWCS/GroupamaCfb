@@ -7,7 +7,7 @@
   margin: auto;
 }
 
-.headerLogo {
+.FAQheaderLogo {
   width: 120px;
   height: 100px;
 }
@@ -271,7 +271,7 @@ ul li {
     font-size: 1.1rem;
   }
 
-  .headerLogo {
+  .FAQheaderLogo {
     width: 180px;
     height: 160px;
   }
@@ -283,7 +283,7 @@ ul li {
 
 
 @media screen and (min-width:1024px) and (max-width:1250px) {
-  .headerLogo {
+  .FAQheaderLogo {
     width: 140px;
     height: 120px;
   }
@@ -330,7 +330,7 @@ ul li {
 }
 
 @media screen and (min-width:1251px) {
-  .headerLogo {
+  .FAQheaderLogo {
     width: 150px;
     height: 130px;
     margin-top:8px;
