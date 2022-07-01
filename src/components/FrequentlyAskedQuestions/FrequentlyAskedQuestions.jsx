@@ -55,7 +55,7 @@ function FrequentlyAskedQuestions() {
           <div className="columnBtn">
             <button
               onClick={handleSelect}
-              value="1"
+              value="NAVIGUER SUR CFB"
               className="chooseBtn">
               NAVIGUER SUR CFB
             </button>
@@ -68,7 +68,7 @@ function FrequentlyAskedQuestions() {
           <div className="columnBtn">
             <button
               onClick={handleSelect}
-              value="2"
+              value="LA CARTE"
               className="chooseBtn">LA CARTE
             </button>
             <div className="btnImg1">
@@ -80,14 +80,18 @@ function FrequentlyAskedQuestions() {
 
 
 
-      <h3 className="categorySelectedTitle"> - LES QUESTIONS FRÉQUENTES - </h3>
-      {selected ? (
-        <h1 className="categorySelectedTexte">{selected === "1" ? "Naviguer sur CFB " : "carte"}</h1>) : null}
+      {isClicked  ? (
+      <div className="conditionnalRender">
+        <h3 className="categorySelectedTitle"> - LES QUESTIONS FRÉQUENTES - </h3>
+          <h1 className="categorySelectedTexte">{selected}</h1>
+
+      </div>
+      ) : null } 
 
 
       <div className="rowToColumnContainer">
 
-        {selected === "1" && isClicked === true ? (
+        {selected === "NAVIGUER SUR CFB" && isClicked === true ? (
           <ul className="accordion">
             {faqs.map((faq, index) => {
               return (
@@ -100,7 +104,7 @@ function FrequentlyAskedQuestions() {
               );
             })}
           </ul>)  : null}
-          {selected === "2" && isClicked === true ? (
+          {selected === "LA CARTE" && isClicked === true ? (
 
           <ul className="accordion">
             {faqMap.map((faq, index) => {

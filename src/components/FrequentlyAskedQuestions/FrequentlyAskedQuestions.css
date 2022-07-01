@@ -221,6 +221,13 @@ ul li {
   clip-path: ellipse(-83% 100% at 80% 100%);
 }
 
+.conditionnalRender {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* MOBILE-FIRST TERMINÉ */
 
 /* TABLETTE JUSQU'A DESKTOP */
