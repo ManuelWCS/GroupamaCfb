@@ -40,13 +40,10 @@ function FrequentlyAskedQuestions() {
           src={LogoCFB}
           alt="logo Centre Frappe & But"
           className="FAQheaderLogo"
+          
         ></img>
       </div>
-
       <Faq/>
-
-
-
       <div className="chooseContainer">
         <span className="categorySelector">
           CHOISIR UNE CATÉGORIE :
@@ -61,7 +58,9 @@ function FrequentlyAskedQuestions() {
             </button>
 
             <div className="btnImg1">
-              <img src={internet} alt="internet" className="internetCategory" />
+              <img src={internet} alt="internet" className="internetCategory"
+                onClick={() => handleSelect({ target: { value: "NAVIGUER SUR CFB" } })}
+              />
             </div>
 
           </div>
@@ -72,7 +71,8 @@ function FrequentlyAskedQuestions() {
               className="chooseBtn">LA CARTE
             </button>
             <div className="btnImg1">
-              <img src={map} alt="internet" className="internetCategory" />
+              <img src={map} alt="internet" className="internetCategory"
+               onClick={() => handleSelect({ target: { value: "LA CARTE" } })} />
             </div>
           </div>
         </div>

@@ -6,12 +6,10 @@
   align-items: center;
   margin: auto;
 }
-
 .FAQheaderLogo {
   width: 120px;
   height: 100px;
 }
-
 .rowToColumnContainer {
   display: flex;
   flex-direction: column;
@@ -20,7 +18,6 @@
   width: 90vw;
   margin: auto;
 }
-
 ul {
   list-style: none;
   padding: 0;
@@ -28,13 +25,10 @@ ul {
   width: 100%;
   margin-top: 16px;
   margin-bottom: 16px;
-
 }
-
 ul li {
   border-top: 1px solid grey;
 }
-
 .button {
   min-height: 60px;
   height: auto;
@@ -47,8 +41,6 @@ ul li {
   font-size: 0.85rem;
   text-align: left;
 }
-
-
 /* activate toggle */
 .accordion_item.active .button {
   background-color: var(--secondary-color);
@@ -59,12 +51,9 @@ ul li {
   padding-left: 8px;
   padding-right: 8px;
 }
-
 .accordion_item.active {
   height: auto;
-
 }
-
 .answer_wrapper {
   height: 0;
   overflow: hidden;
@@ -117,7 +106,7 @@ ul li {
   justify-content: flex-start;
   align-items: center;
   border-radius: 25px;
-  margin-top:36px;
+  margin-top: 36px;
   margin-bottom: 18px;
 
 }
@@ -147,7 +136,7 @@ ul li {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color:rgb(220,220,220);  
+  background-color: rgb(220, 220, 220);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
 
@@ -196,7 +185,7 @@ ul li {
   font-family: var(--secondary-font);
   font-size: 1.3rem;
   color: rgb(68, 68, 68);
-  padding:8px 8px 8px 8px;
+  padding: 8px 8px 8px 8px;
   text-align: center;
 }
 
@@ -204,7 +193,7 @@ ul li {
   font-family: var(--main-font);
   font-size: 1.6rem;
   color: var(--secondary-color);
-  padding:8px 8px 8px 8px;
+  padding: 8px 8px 8px 8px;
 }
 
 
@@ -233,7 +222,7 @@ ul li {
 /* TABLETTE JUSQU'A DESKTOP */
 
 @media screen and (min-width:768px) and (max-width:1023px) {
-  
+
   .chooseContainer {
     height: 275px;
     margin-bottom: 0px;
@@ -243,7 +232,7 @@ ul li {
     height: 200px;
     width: 80%;
   }
-  
+
   .categorySelector {
     font-size: 24px;
     width: 85%;
@@ -274,7 +263,7 @@ ul li {
     font-size: 1.1rem;
   }
 
-  .answer{
+  .answer {
     font-size: 1.1rem;
   }
 
@@ -283,7 +272,7 @@ ul li {
     height: 160px;
   }
 
-  
+
 }
 
 /* DESKTOP 1024px*/
@@ -294,6 +283,7 @@ ul li {
     width: 140px;
     height: 120px;
   }
+
   .chooseContainer {
     width: 65vw;
     height: 250px;
@@ -301,7 +291,7 @@ ul li {
 
   .categoriesBtn {
     width: 100%;
-    height: 200px; 
+    height: 200px;
   }
 
   .categorySelector {
@@ -310,13 +300,14 @@ ul li {
     height: 50px;
   }
 
-  .chooseBtn{
+  .chooseBtn {
     font-size: 1.4em;
     padding-bottom: 16px;
-    padding-top:16px;
+    padding-top: 16px;
     ;
   }
-  .internetCategory{
+
+  .internetCategory {
     height: 98px;
     width: 98px;
   }
@@ -339,8 +330,8 @@ ul li {
 @media screen and (min-width:1251px) {
   .FAQheaderLogo {
     width: 150px;
-    height: 130px;  
-    margin-top:8px;
+    height: 130px;
+    margin-top: 8px;
   }
 
   .chooseContainer {
@@ -350,7 +341,7 @@ ul li {
 
   .categoriesBtn {
     width: 100%;
-    height: 200px; 
+    height: 200px;
   }
 
   .categorySelector {
@@ -359,20 +350,21 @@ ul li {
     height: 55px;
   }
 
-  .chooseBtn{
+  .chooseBtn {
     font-size: 1.6em;
-    padding-top:24px;
+    padding-top: 24px;
     ;
   }
-  .internetCategory{
-    margin-top:16px;
+
+  .internetCategory {
+    margin-top: 16px;
     height: 100px;
     width: 100px;
   }
 
   .categorySelectedTitle {
     font-size: 1.8rem;
-    padding-top:32px
+    padding-top: 32px
   }
 
   .categorySelectedTexte {
@@ -385,8 +377,8 @@ ul li {
 
   .accordion_item {
     height: auto;
-    padding-top:8px;
-    padding-bottom:8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 
   .answer {
