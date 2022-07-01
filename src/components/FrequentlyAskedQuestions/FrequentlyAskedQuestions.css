@@ -332,7 +332,7 @@ ul li {
 @media screen and (min-width:1251px) {
   .FAQheaderLogo {
     width: 150px;
-    height: 130px;
+    height: 130px;  
     margin-top:8px;
   }
 
@@ -373,7 +373,7 @@ ul li {
   }
 
   .button {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
   .accordion_item {
@@ -383,7 +383,7 @@ ul li {
   }
 
   .answer {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
 }

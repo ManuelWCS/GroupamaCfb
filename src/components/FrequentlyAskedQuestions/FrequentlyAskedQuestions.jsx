@@ -11,7 +11,7 @@ import Faq from '../../components/FAQ/FaqSection'
 
 /* images*/
 import internet from '../../assets/Juin/internet2.png';
-import map from '../../assets/Juin/map2.png';
+import map from '../../assets/Juin/map2.png'; 
 function FrequentlyAskedQuestions() {
   const [clicked, setClicked] = useState("0");
 
@@ -23,12 +23,15 @@ function FrequentlyAskedQuestions() {
   };
 
   const [selected, setSelected] = useState("1");
+  const [isClicked, setIsClicked] = useState(false);
 
 
   const handleSelect = (e) => {
     setSelected(e.target.value);
-    console.log(selected, "select");
+    setIsClicked(true);
+    console.log(selected, "select", isClicked, "is clicked"); 
   }
+  
 
   return (
     <main className="containerFAQ">
@@ -76,6 +79,7 @@ function FrequentlyAskedQuestions() {
       </div>
 
 
+
       <h3 className="categorySelectedTitle"> - LES QUESTIONS FRÉQUENTES - </h3>
       {selected ? (
         <h1 className="categorySelectedTexte">{selected === "1" ? "Naviguer sur CFB " : "carte"}</h1>) : null}
@@ -83,7 +87,7 @@ function FrequentlyAskedQuestions() {
 
       <div className="rowToColumnContainer">
 
-        {selected === "1" ? (
+        {selected === "1" && isClicked === true ? (
           <ul className="accordion">
             {faqs.map((faq, index) => {
               return (
@@ -95,7 +99,9 @@ function FrequentlyAskedQuestions() {
                 />
               );
             })}
-          </ul>) : (
+          </ul>)  : null}
+          {selected === "2" && isClicked === true ? (
+
           <ul className="accordion">
             {faqMap.map((faq, index) => {
               return (
@@ -107,7 +113,7 @@ function FrequentlyAskedQuestions() {
                 />
               );
             })}
-          </ul>)}
+          </ul> ) : null}
 
       </div>
 

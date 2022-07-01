@@ -12,8 +12,8 @@ const AccordionItem = ({ faq }) => {
     return (
      <li className={`accordion_item ${clicked ? "active" : ""}`}>
       <button className="button" onClick={handleToggle}>
-       {question}
        <span className="control">{clicked ? "  —  " : "  +  "} </span>
+       {question}
       </button>
       <div 
       ref={contentEl} 
