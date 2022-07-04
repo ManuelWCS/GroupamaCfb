@@ -55,15 +55,15 @@
 }
 
 .legalMentions {
-  padding-top: 24px;
+  padding-top: 16px;
 
 
 }
 
 .legalMentions a {
   color: black;
-  text-decoration: none;
   font-family: var(--secondary-font);
+  font-size: 12px;
 }
 
 /* AFFICHAGE TELEPHONE*/

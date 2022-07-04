@@ -25,7 +25,7 @@
   font-weight: bold;
   text-align: center;
   font-family: var(--main-font);
-  color:var(--red-color);
+  color:white;
 }
 
 
@@ -34,29 +34,17 @@
   font-weight: bold;
   text-align: center;
   font-family: var(--main-font);
-  color:var(--secondary-color);
+  color:white;
 }
 
 
 .headerML {
   margin-bottom: 2em;
-  background: rgb(160, 168, 185);
-  background: -moz-linear-gradient(
-    9deg,
-    rgb(166, 183, 221) 21%,
-    rgba(53, 134, 194, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    9deg,
-    rgb(191, 195, 206) 21%,
-    rgba(53, 134, 194, 1) 100%
-  );
-  background: linear-gradient(
-    9deg,
-    rgb(119, 140, 189) 21%,
-    rgba(53, 134, 194, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#293d6b", endColorstr="#3586c2", GradientType=1);
+  background: rgb(41,61,107);
+background: -moz-linear-gradient(9deg, rgba(41,61,107,1) 21%, rgba(41,61,96,1) 100%);
+background: -webkit-linear-gradient(9deg, rgba(41,61,107,1) 21%, rgba(41,61,96,1) 100%);
+background: linear-gradient(9deg, rgba(41,61,107,1) 21%, rgba(41,61,96,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#293d6b",endColorstr="#293d60",GradientType=1);
   width: 100vw;
   height: 22vh;
   display: flex;
@@ -216,10 +204,10 @@
 @media screen and (min-width: 1440px) {
 
   .Section1title, .Section2title, .Section3title {
-    font-size: 4vh;
+    font-size: 3vh;
   }
   .MLtitle1, .MLtitle2, .MLtitle3 {
-    font-size: 5rem;
+    font-size: 2.5rem;
   }
 
   .LogoPlateformeML {
@@ -236,7 +224,7 @@
   .Section1,
 .Section2,
 .Section3 {
-  font-size: 3vh;
+  font-size: 1.3rem;
 }
 .Section1 div:nth-child(1n) {
   font-size:2vh;
