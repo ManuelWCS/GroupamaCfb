@@ -10,8 +10,10 @@ import Faq from '../../components/FAQ/FaqSection'
 
 
 /* images*/
-import internet from '../../assets/Juin/internet2.png';
-import map from '../../assets/Juin/map2.png'; 
+import internet from '../../assets/Juin/internet3.png';
+import map from '../../assets/Juin/map3.png'; 
+
+
 function FrequentlyAskedQuestions() {
   const [clicked, setClicked] = useState("0");
 

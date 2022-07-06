@@ -2,7 +2,7 @@ import React, {useRef, useState} from 'react'
 import './FrequentlyAskedQuestions.css'
 
 const AccordionItem = ({ faq }) => {
-    const { question, answer, img  } = faq;
+    const { question, answer, img, styleName, styleNameDesktop  } = faq;
     const [clicked, setClicked] = useState(false);
     const contentEl = useRef();
     const handleToggle = () => {
@@ -26,11 +26,11 @@ const AccordionItem = ({ faq }) => {
       }
       >
         <div className="answerPic">
-        {img ? <img className="FAQmarkerMobile" src={img} alt=""/> : null} 
+        {img && styleName  ? <img className={styleName} src={img} alt=""/> : null} 
 
         </div>
        <div className="answer">
-        {img ? <><img className="FAQmarkerAnswer" src={img} alt=""/> <p>  </p> </> : null}  {answer}</div>
+        {img && styleNameDesktop ? <> <img  className={styleNameDesktop} src={img} alt=""/> <p>  </p> </> : null}  {answer} </div>
       </div>
      </li>
     );

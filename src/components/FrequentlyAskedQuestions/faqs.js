@@ -4,7 +4,7 @@ export const faqs = [{
     },
     {
         question: "Comment trouver un club près de chez moi ? ",
-        answer: "Première solution : Cliquez sur le bouton rouge « clubs à proximité », activez votre localisation, choisissez votre échelle et les clubs disponibles apparaissent sur votre gauche, par ordre de distance Deuxième solution : Cliquez sur le bouton bleu  clubs selon mes critères , remplissez les différentes informations et retrouvez la liste des clubs correspondants "
+        answer: "Première solution : Cliquez sur le bouton rouge « clubs à proximité », activez votre localisation, choisissez votre échelle et les clubs disponibles apparaissent sur votre gauche, par ordre de distance Deuxième solution : Cliquez sur le bouton bleu  clubs selon mes critères , remplissez les différentes informations et retrouvez la liste des clubs correspondants. "
     },
     {
         question: "La plateforme est-elle disponible sur plusieurs supports ? ",
