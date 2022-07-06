@@ -217,6 +217,23 @@ ul li {
   align-items: center;
 }
 
+.answerPic {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: center;
+  padding-top:8px;
+  padding-bottom:8px;
+}
+
+.FAQmarkerSmall {
+  display: none;
+}
+
+.FAQmarkerAnswer {
+  display: none;
+}
+
 /* MOBILE-FIRST TERMINÉ */
 
 /* TABLETTE JUSQU'A DESKTOP */
