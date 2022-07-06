@@ -227,7 +227,9 @@ ul li {
 }
 
 .FAQmarkerSmall {
-  display: none;
+  height: 28px;
+  width: 28px;
+
 }
 
 .FAQmarkerAnswer {
@@ -289,6 +291,11 @@ ul li {
     height: 160px;
   }
 
+  .FAQmarkerSmall {
+    width: 38px;
+    height: 38px;
+  }
+
 
 }
 
@@ -339,6 +346,11 @@ ul li {
 
   .button {
     font-size: 1.1em;
+  }
+
+  .FAQmarkerSmall {
+    width: 38px;
+    height: 38px;
   }
 
 
@@ -400,6 +412,10 @@ ul li {
 
   .answer {
     font-size: 1em;
+  }
+  .FAQmarkerSmall {
+    width: 38px;
+    height: 38px;
   }
 
 }
