@@ -20,7 +20,7 @@ function LegalMentions() {
       </div>
       <span className="backBtn">
         <Link to="/" style={{ textDecoration: "none" }}>
-          Retour au 
+          Retour à l'accueil 
         </Link>
       </span>
 

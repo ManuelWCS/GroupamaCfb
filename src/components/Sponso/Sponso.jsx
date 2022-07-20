@@ -26,7 +26,6 @@ function Sponso() {
               >
             <img src={fb} alt="Lien vers le facebook de la ligue" className="LinkGroupama" />
           </a>
-
           <a
                 href="https://www.youtube.com/channel/UCs6RtJ9tefoU0iRnTkNzD6Q"
                 target="_blank"
@@ -44,8 +43,8 @@ function Sponso() {
           </a>
 
       </div>
-      <p className="legalMentions"> <Link to="/mentionslegales">
-       
+      <p className="legalMentions"> 
+      <Link to="/mentionslegales">       
           Mentions légales </Link></p>
         </div>
     </div>

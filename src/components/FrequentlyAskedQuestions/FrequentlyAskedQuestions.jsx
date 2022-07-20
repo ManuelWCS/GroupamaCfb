@@ -11,7 +11,9 @@ import Faq from '../../components/FAQ/FaqSection'
 
 /* images*/
 import internet from '../../assets/Juin/internet3.png';
-import map from '../../assets/Juin/map3.png'; 
+import map from '../../assets/Juin/map3.png';
+import { Link } from "react-router-dom";
+
 
 
 function FrequentlyAskedQuestions() {
@@ -38,12 +40,15 @@ function FrequentlyAskedQuestions() {
   return (
     <main className="containerFAQ">
       <div className="headerPreload">
+        <Link to="/">
+
         <img
           src={LogoCFB}
           alt="logo Centre Frappe & But"
           className="FAQheaderLogo"
           
         ></img>
+        </Link>
       </div>
       <Faq/>
       <div className="chooseContainer">
